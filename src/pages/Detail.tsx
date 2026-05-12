@@ -14,15 +14,19 @@ export default function Detail() {
   const { data, loading } = useRepoData(repo || '')
   const [selectedWeek, setSelectedWeek] = useState('W1')
   const [selectedStep, setSelectedStep] = useState<Step | null>(null)
+  const [selectedTrackIdx, setSelectedTrackIdx] = useState(0)
   const [activeTab, setActiveTab] = useState<'detail' | 'changelog'>('detail')
 
   if (loading || !data) return <div className="p-8 text-stone-400">Loading...</div>
 
-  const track = data.tracks[0]
-  const totalChecks = track?.weeks.reduce((s, w) => s + w.totalChecks, 0) || 0
-  const doneChecks = track?.weeks.reduce((s, w) => s + w.doneChecks, 0) || 0
+  const hasMultipleTracks = data.tracks.length > 1
+  const track = data.tracks[selectedTrackIdx] || data.tracks[0]
+
+  const totalChecks = data.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0)
+  const doneChecks = data.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
   const percent = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0
 
+  const owners = data.tracks.map(t => t.owner).join(' · ')
   const currentWeek = track?.weeks.find(w => w.week === selectedWeek)
   const prdWeek = data.prd.find(p => p.week === selectedWeek)
 
@@ -30,7 +34,7 @@ export default function Detail() {
     <div className="min-h-screen bg-stone-50">
       <Header
         overallPercent={percent}
-        subtitle={`${data.repo} · ${track?.owner || ''}`}
+        subtitle={`${data.repo} · ${owners}`}
         backLink="#/"
       />
 
@@ -51,6 +55,23 @@ export default function Detail() {
 
       {activeTab === 'detail' && (
         <>
+          {hasMultipleTracks && (
+            <div className="flex bg-stone-700 px-6">
+              {data.tracks.map((t, i) => (
+                <button
+                  key={t.name}
+                  onClick={() => { setSelectedTrackIdx(i); setSelectedStep(null) }}
+                  className={`px-4 py-2 text-xs transition-colors ${
+                    i === selectedTrackIdx
+                      ? 'text-amber-light bg-stone-600 font-semibold'
+                      : 'text-stone-400 hover:text-stone-300'
+                  }`}
+                >
+                  {t.name} ({t.owner})
+                </button>
+              ))}
+            </div>
+          )}
           <WeekTabs selected={selectedWeek} onChange={w => { setSelectedWeek(w); setSelectedStep(null) }} />
           <div className="grid grid-cols-1 lg:grid-cols-3 min-h-[400px]">
             <PrdColumn prdWeek={prdWeek} />
