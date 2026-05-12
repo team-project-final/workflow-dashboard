@@ -12,12 +12,45 @@ const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] 
 
 const REPOS = DEFAULT_TRACKS.map(d => d.repo)
 
+const WEEKS_META = [
+  { week: 'W1', period: '05-12~05-16' },
+  { week: 'W2', period: '05-19~05-23' },
+  { week: 'W3', period: '05-26~05-29' },
+  { week: 'W4', period: '06-01~06-05' },
+  { week: 'W5', period: '06-08~06-12' },
+]
+
+const PHASE_NAMES = [
+  'TASK 시작', '요구사항 분석', 'Security 1차', 'ERD 설계',
+  'Security 2차', 'DTO/Entity', 'Repository', 'Service+Test',
+  'Controller+Test', 'View+Test',
+]
+
 function emptyRepoData(repo: string, tracks: { name: string; owner: string }[]): RepoData {
   return {
     repo,
     updatedAt: '',
-    tracks: tracks.map(t => ({ name: t.name, owner: t.owner, weeks: [] })),
-    prd: [],
+    tracks: tracks.map(t => ({
+      name: t.name,
+      owner: t.owner,
+      weeks: WEEKS_META.map(wm => {
+        const step = {
+          name: `${t.name} (${wm.week})`,
+          status: 'Not Started' as const,
+          phases: PHASE_NAMES.map(name => ({ name, total: 0, done: 0 })),
+          totalChecks: 0,
+          doneChecks: 0,
+        }
+        return {
+          week: wm.week,
+          period: wm.period,
+          steps: [step],
+          totalChecks: 0,
+          doneChecks: 0,
+        }
+      }),
+    })),
+    prd: WEEKS_META.map(wm => ({ week: wm.week, items: [] })),
     history: [],
     changelog: [],
   }
