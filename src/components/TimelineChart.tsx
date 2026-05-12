@@ -1,0 +1,67 @@
+import { Line } from 'react-chartjs-2'
+import {
+  Chart as ChartJS,
+  CategoryScale, LinearScale, PointElement, LineElement,
+  Title, Tooltip, Legend, Filler,
+} from 'chart.js'
+import type { RepoData } from '../types'
+
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler)
+
+const TRACK_COLORS: Record<string, string> = {
+  platform: '#D97706',
+  engagement: '#0D9488',
+  'knowledge-1': '#78716C',
+  'knowledge-2': '#A8A29E',
+  'learning-card': '#0EA5E9',
+  'learning-ai': '#8B5CF6',
+  frontend: '#EC4899',
+  'team-lead': '#16A34A',
+}
+
+interface Props {
+  data: RepoData[]
+}
+
+export default function TimelineChart({ data }: Props) {
+  const allDates = [...new Set(data.flatMap(d => d.history.map(h => h.date)))].sort()
+
+  const datasets = data.flatMap(d =>
+    d.tracks.map(t => ({
+      label: t.name,
+      data: allDates.map(date => {
+        const entry = d.history.find(h => h.date === date)
+        if (!entry || entry.totalChecks === 0) return null
+        return Math.round(entry.doneChecks / entry.totalChecks * 100)
+      }),
+      borderColor: TRACK_COLORS[t.name] || '#78716C',
+      backgroundColor: 'transparent',
+      tension: 0.3,
+      pointRadius: 2,
+      borderWidth: 2,
+    }))
+  )
+
+  return (
+    <div className="bg-white rounded-xl p-4 shadow-sm">
+      <h3 className="text-sm font-semibold text-stone-600 mb-2">진행률 추이</h3>
+      <div className="h-[250px]">
+      <Line
+        data={{ labels: allDates, datasets }}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: { min: 0, max: 100, ticks: { callback: v => `${v}%` } },
+          },
+          plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+            tooltip: { callbacks: { label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y}%` } },
+          },
+        }}
+        height={250}
+      />
+      </div>
+    </div>
+  )
+}

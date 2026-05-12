@@ -1,0 +1,933 @@
+{
+  "repo": "synapse-engagement-svc",
+  "updatedAt": "2026-05-12T05:10:42.860Z",
+  "tracks": [
+    {
+      "name": "engagement",
+      "owner": "한승완",
+      "weeks": [
+        {
+          "week": "W1",
+          "period": "05-12~05-16",
+          "steps": [
+            {
+              "name": "engagement Step 1 (W1)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 5,
+                  "done": 5
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 5,
+                  "done": 5
+                },
+                {
+                  "name": "Repository",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 3,
+                  "done": 2
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 3,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 33,
+              "doneChecks": 27
+            },
+            {
+              "name": "engagement Step 2 (W1)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 5
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "Repository",
+                  "total": 5,
+                  "done": 5
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 2,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 32,
+              "doneChecks": 23
+            }
+          ],
+          "totalChecks": 65,
+          "doneChecks": 50
+        },
+        {
+          "week": "W2",
+          "period": "05-19~05-23",
+          "steps": [
+            {
+              "name": "engagement Step 1 (W2)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 4,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 33,
+              "doneChecks": 13
+            },
+            {
+              "name": "engagement Step 2 (W2)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 4,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 33,
+              "doneChecks": 11
+            },
+            {
+              "name": "engagement Step 3 (W2)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 4,
+                  "done": 4
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 3,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 32,
+              "doneChecks": 7
+            }
+          ],
+          "totalChecks": 98,
+          "doneChecks": 31
+        },
+        {
+          "week": "W3",
+          "period": "05-26~05-29",
+          "steps": [
+            {
+              "name": "engagement Step 1 (W3)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 1
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 5,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 37,
+              "doneChecks": 1
+            },
+            {
+              "name": "engagement Step 2 (W3)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 1
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 5,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 38,
+              "doneChecks": 1
+            },
+            {
+              "name": "engagement Step 3 (W3)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 2
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 3,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 33,
+              "doneChecks": 2
+            }
+          ],
+          "totalChecks": 108,
+          "doneChecks": 4
+        },
+        {
+          "week": "W4",
+          "period": "06-01~06-05",
+          "steps": [
+            {
+              "name": "engagement Step 1 (W4)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 2,
+                  "done": 2
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 2,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 38,
+              "doneChecks": 2
+            },
+            {
+              "name": "engagement Step 2 (W4)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 4,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 39,
+              "doneChecks": 3
+            },
+            {
+              "name": "engagement Step 3 (W4)",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 5,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 45,
+              "doneChecks": 0
+            },
+            {
+              "name": "engagement Step 4 (W4)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 5,
+                  "done": 2
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 3,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 35,
+              "doneChecks": 2
+            }
+          ],
+          "totalChecks": 157,
+          "doneChecks": 7
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "engagement Step 1 (W5)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 3
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 4,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 37,
+              "doneChecks": 3
+            },
+            {
+              "name": "engagement Step 2 (W5)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 5,
+                  "done": 1
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Security 1차",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Security 2차",
+                  "total": 4,
+                  "done": 0
+                },
+                {
+                  "name": "DTO/Entity",
+                  "total": 3,
+                  "done": 0
+                },
+                {
+                  "name": "Repository",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "Service+Test",
+                  "total": 2,
+                  "done": 0
+                },
+                {
+                  "name": "Controller+Test",
+                  "total": 5,
+                  "done": 0
+                },
+                {
+                  "name": "View+Test",
+                  "total": 2,
+                  "done": 0
+                }
+              ],
+              "totalChecks": 38,
+              "doneChecks": 1
+            }
+          ],
+          "totalChecks": 75,
+          "doneChecks": 4
+        }
+      ]
+    }
+  ],
+  "prd": [
+    {
+      "week": "W1",
+      "items": [
+        {
+          "id": "FR-EG-001",
+          "title": "기능 A",
+          "status": "done"
+        },
+        {
+          "id": "FR-EG-002",
+          "title": "기능 B",
+          "status": "in_progress"
+        },
+        {
+          "id": "FR-EG-003",
+          "title": "기능 C",
+          "status": "not_started"
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-05-12",
+      "totalChecks": 160,
+      "doneChecks": 10
+    },
+    {
+      "date": "2026-05-13",
+      "totalChecks": 160,
+      "doneChecks": 34
+    },
+    {
+      "date": "2026-05-14",
+      "totalChecks": 160,
+      "doneChecks": 48
+    }
+  ],
+  "changelog": [
+    {
+      "date": "2026-05-13T17:20:00+09:00",
+      "commit": "abc1234",
+      "author": "한승완",
+      "file": "TASK_engagement.md",
+      "changes": [
+        {
+          "type": "step_modified",
+          "target": "Step 2",
+          "field": "Scope",
+          "before": "Google OAuth만",
+          "after": "Google + GitHub OAuth"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-13T11:00:00+09:00",
+      "commit": "def5678",
+      "author": "한승완",
+      "file": "WORKFLOW_engagement_W1.md",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "Step 1 > Security 1차",
+          "detail": "3개 항목 완료"
+        }
+      ]
+    }
+  ]
+}
