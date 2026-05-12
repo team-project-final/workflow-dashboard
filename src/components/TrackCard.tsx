@@ -16,7 +16,8 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
   const doneChecks = track.weeks.reduce((s, w) => s + w.doneChecks, 0)
   const percent = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0
 
-  const borderColor = percent >= 60 ? 'border-amber' : percent >= 30 ? 'border-stone-300' : 'border-danger'
+  const hasData = totalChecks > 0
+  const borderColor = !hasData ? 'border-stone-200' : percent >= 60 ? 'border-amber' : percent >= 30 ? 'border-stone-300' : 'border-danger'
 
   return (
     <div
@@ -25,7 +26,7 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
         hover:shadow-lg transition-shadow`}
     >
       <div className={`text-3xl font-bold font-display ${
-        percent >= 60 ? 'text-amber' : percent >= 30 ? 'text-stone-600' : 'text-danger'
+        !hasData ? 'text-stone-400' : percent >= 60 ? 'text-amber' : percent >= 30 ? 'text-stone-600' : 'text-danger'
       }`}>
         {percent}%
       </div>
