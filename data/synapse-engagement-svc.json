@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-05-12T05:42:45.840Z",
+  "updatedAt": "2026-05-13T00:42:13.706Z",
   "tracks": [
     {
       "name": "engagement",
@@ -17,52 +17,200 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (0.5일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "community/gamification 2개 모듈 역할 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "platform-svc와 동일 빌드 구조 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: No (골격만 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No (Health endpoint만)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — ERD 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "모듈별 패키지 구조도 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당 (골격 단계)",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 불필요",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
+                      "done": false
+                    },
+                    {
+                      "text": "각 모듈 package-info.java 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — Repository 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "ApplicationModulesTest 구조 검증 테스트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "빈 Service 클래스 생성 (2개 모듈)",
+                      "done": false
+                    },
+                    {
+                      "text": "ApplicationModulesTest 통과 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "`./gradlew build` 성공 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "빈 Controller 클래스 생성 (2개 모듈)",
+                      "done": false
+                    },
+                    {
+                      "text": "Dockerfile 작성 (multi-stage build)",
+                      "done": false
+                    },
+                    {
+                      "text": "Docker 이미지 빌드 성공 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "docker compose에서 engagement-svc 실행 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 32,
@@ -75,52 +223,232 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-CM-xxx 그룹 기능)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (1.5일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "그룹 CRUD API 엔드포인트 5개 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "소유자 권한 검증 로직 설계",
+                      "done": false
+                    },
+                    {
+                      "text": "페이징 처리 요건 (기본 20건)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (수정/삭제는 소유자만)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "groups 테이블 설계 (id, name, description, is_public, owner_id, created_at, updated_at, deleted_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (owner_id, is_public)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (groups.owner_id → users.id FK)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 논리삭제 (deleted_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (수정/삭제 시 owner_id 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GroupCreateRequest 정의 (name, description, isPublic)",
+                      "done": false
+                    },
+                    {
+                      "text": "GroupUpdateRequest 정의 (name, description, isPublic)",
+                      "done": false
+                    },
+                    {
+                      "text": "GroupResponse 정의 (id, name, description, isPublic, ownerId, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Group Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GroupRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByOwnerId, countByOwnerId 커스텀 쿼리",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GroupService 구현 (create, findAll, findById, update, delete)",
+                      "done": false
+                    },
+                    {
+                      "text": "소유자 권한 검증 로직 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "한 사용자 최대 10개 그룹 제한 로직 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GroupController REST API 구현 (5개 엔드포인트)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트 (미인증, 비소유자)",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (@SpringBootTest + TestContainers)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 40,
@@ -133,52 +461,248 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-CM-xxx 멤버 관리)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (2일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "멤버 초대/가입/승인/탈퇴/강퇴 플로우 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "역할 기반 권한 (OWNER, ADMIN, MEMBER) 설계",
+                      "done": false
+                    },
+                    {
+                      "text": "멤버 상태 (PENDING, ACTIVE, KICKED) 전이 다이어그램",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 역할 기반 (OWNER > ADMIN > MEMBER)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "group_members 테이블 설계 (id, group_id, user_id, role, status, joined_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (group_id+user_id UNIQUE, status)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (group_members → groups FK, group_members → users FK)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 상태 변경 (KICKED) — 물리삭제 아님",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (역할별 작업 권한 분리)",
+                      "done": false
+                    },
+                    {
+                      "text": "강퇴 멤버 7일간 재가입 불가 정책",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 8,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "MemberInviteRequest 정의 (userId)",
+                      "done": false
+                    },
+                    {
+                      "text": "MemberApproveRequest 정의 (memberId)",
+                      "done": false
+                    },
+                    {
+                      "text": "MemberResponse 정의 (id, userId, role, status, joinedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "GroupMember Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "MemberRole Enum 작성 (OWNER, ADMIN, MEMBER)",
+                      "done": false
+                    },
+                    {
+                      "text": "MemberStatus Enum 작성 (PENDING, ACTIVE, KICKED)",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GroupMemberRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByGroupIdAndUserId, findByGroupIdAndStatus 커스텀 쿼리",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "MemberService 구현 (invite, join, approve, leave, kick)",
+                      "done": false
+                    },
+                    {
+                      "text": "역할 기반 권한 검증 로직 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "공개/비공개 그룹 가입 정책 분기",
+                      "done": false
+                    },
+                    {
+                      "text": "강퇴 멤버 7일 재가입 차단 로직",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito — 역할별 시나리오)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "MemberController REST API 구현 (invite, join, approve, leave/kick, list)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트 (미인증, 권한 부족)",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (역할별 시나리오)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 44,
@@ -199,52 +723,276 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (gamification XP)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "XP 이벤트 종류 정의 (card.reviewed, note.created 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트별 XP 부여량 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "사용자 총 XP 조회 요건 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "card.reviewed Kafka 컨슈머 요건 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 XP만 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "Kafka 메시지 위변조 방지 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "xp_events 테이블 설계 (id, userId, eventType, xpAmount, sourceId, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "user_xp 테이블 설계 (id, userId UNIQUE, totalXp, level, updatedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (xp_events.userId, xp_events.createdAt, user_xp.userId UNIQUE)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (xp_events.userId → user_xp.userId)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "XP 적립 중복 방지 (idempotency key: eventType + sourceId)",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 물리삭제 없음 (이벤트 로그 누적 보관)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (userId 기반)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "XpEventResponse 정의 (eventType, xpAmount, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "UserXpResponse 정의 (totalXp, level)",
+                      "done": false
+                    },
+                    {
+                      "text": "XpEvent Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "UserXp Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "EventType Enum 작성 (CARD_REVIEWED, NOTE_CREATED 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "XpEventRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "UserXpRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByUserId 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "existsByUserIdAndEventTypeAndSourceId 중복 체크 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 8,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "XpService 구현 (addXp, getUserXp, getXpHistory)",
+                      "done": false
+                    },
+                    {
+                      "text": "XP 적립 서비스 구현 (이벤트 → xp_events 기록 → user_xp 갱신)",
+                      "done": false
+                    },
+                    {
+                      "text": "card.reviewed Kafka Consumer 구현 (KafkaListener)",
+                      "done": false
+                    },
+                    {
+                      "text": "중복 적립 방지 로직 (idempotency)",
+                      "done": false
+                    },
+                    {
+                      "text": "레벨 계산 로직 (XP → Level 매핑)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "Kafka Consumer 테스트 (@EmbeddedKafka)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GET /api/v1/gamification/xp 엔드포인트 구현 (사용자 총 XP/레벨 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/gamification/xp/history 엔드포인트 구현 (XP 이력 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 51,
@@ -257,52 +1005,280 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (커뮤니티 공유)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "share_token 발행/검증 플로우 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "공유 콘텐츠 유형 정의 (Deck, Note 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "공유 콘텐츠 검색 요건 (키워드, 카테고리)",
+                      "done": false
+                    },
+                    {
+                      "text": "공유 콘텐츠 복사(fork) 요건 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (공유 등록/복사 시 JWT 필요, 검색은 공개 가능)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 콘텐츠만 공유 등록)",
+                      "done": false
+                    },
+                    {
+                      "text": "share_token 만료/무효화 정책 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "shared_contents 테이블 설계 (id, ownerId, contentType, contentId, shareToken, title, description, tags, downloadCount, createdAt, updatedAt, deletedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (shared_contents.shareToken UNIQUE, shared_contents.ownerId, shared_contents.contentType)",
+                      "done": false
+                    },
+                    {
+                      "text": "전문 검색 인덱스 (title, description, tags)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "share_token UUID v4 + URL-safe 인코딩 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 논리삭제 (deletedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (ownerId 기반 수정/삭제)",
+                      "done": false
+                    },
+                    {
+                      "text": "공유 콘텐츠 부적절 내용 신고 기능 검토",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ShareContentRequest 정의 (contentType, contentId, title, description, tags)",
+                      "done": false
+                    },
+                    {
+                      "text": "SharedContentResponse 정의 (id, shareToken, title, description, tags, downloadCount, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "ShareTokenResponse 정의 (shareToken, shareUrl)",
+                      "done": false
+                    },
+                    {
+                      "text": "SharedContent Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "ContentType Enum 작성 (DECK, NOTE)",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "SharedContentRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByShareToken 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "findByContentTypeAndTitleContaining 검색 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 8,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "SharedContentService 구현 (share, findByToken, search, fork, delete)",
+                      "done": false
+                    },
+                    {
+                      "text": "share_token 발행 로직 (UUID v4 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "share_token 검증 로직 (존재 여부 + 만료 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "공유 콘텐츠 검색 서비스 구현 (키워드 + 카테고리 필터)",
+                      "done": false
+                    },
+                    {
+                      "text": "콘텐츠 복사(fork) 서비스 구현 (원본 → 사용자 소유 복사)",
+                      "done": false
+                    },
+                    {
+                      "text": "Bean Validation 적용",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 9,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/community/share 엔드포인트 구현 (공유 등록)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/community/share/{token} 엔드포인트 구현 (토큰 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/community/search 엔드포인트 구현 (검색)",
+                      "done": false
+                    },
+                    {
+                      "text": "POST /api/v1/community/share/{token}/fork 엔드포인트 구현 (복사)",
+                      "done": false
+                    },
+                    {
+                      "text": "DELETE /api/v1/community/share/{id} 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 52,
@@ -323,52 +1299,256 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (gamification 완성)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "배지 수여 조건 정의 (복습 횟수, 연속 스트릭, 레벨 달성 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "레벨 시스템 설계 (XP 기반 레벨 구간 정의)",
+                      "done": false
+                    },
+                    {
+                      "text": "스트릭 추적 로직 분석 (연속 복습 일수 계산)",
+                      "done": false
+                    },
+                    {
+                      "text": "리더보드 정렬 기준 (XP 총합, 주간/월간 필터)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (로그인 사용자)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 본인 데이터만 조회 (리더보드는 공개)",
+                      "done": false
+                    },
+                    {
+                      "text": "XP 조작 방지: 서버 사이드 검증만 허용",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "badges 테이블 설계 (id, name, description, icon_url, condition_type, condition_value)",
+                      "done": false
+                    },
+                    {
+                      "text": "user_badges 테이블 설계 (id, user_id, badge_id, earned_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "user_streaks 테이블 설계 (id, user_id, current_streak, longest_streak, last_activity_date)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (user_id on user_badges, user_id on user_streaks)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "리더보드 사용자 정보 최소 노출 (닉네임 + 아바타만)",
+                      "done": false
+                    },
+                    {
+                      "text": "XP/레벨 수정 API 관리자 전용",
+                      "done": false
+                    },
+                    {
+                      "text": "스트릭 자동 리셋 로직 서버 사이드 전용",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Badge Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "UserBadge Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "UserStreak Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "BadgeResponse DTO 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "LeaderboardEntryResponse DTO 정의 (rank, userId, nickname, xp, level)",
+                      "done": false
+                    },
+                    {
+                      "text": "UserGamificationResponse DTO 정의 (xp, level, streak, badges)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "BadgeRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "UserBadgeRepository 인터페이스 작성 (findByUserId)",
+                      "done": false
+                    },
+                    {
+                      "text": "UserStreakRepository 인터페이스 작성 (findByUserId)",
+                      "done": false
+                    },
+                    {
+                      "text": "리더보드 쿼리 (상위 N명, XP 기준 정렬)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "BadgeService 구현 (배지 조건 평가 → 수여)",
+                      "done": false
+                    },
+                    {
+                      "text": "LevelService 구현 (XP → 레벨 계산, 레벨업 판정)",
+                      "done": false
+                    },
+                    {
+                      "text": "StreakService 구현 (일일 활동 기록, 연속 일수 계산, 자정 리셋)",
+                      "done": false
+                    },
+                    {
+                      "text": "LeaderboardService 구현 (XP 기준 랭킹 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (각 서비스별 Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GET /gamification/me 엔드포인트 구현 (내 XP, 레벨, 스트릭, 배지)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /gamification/leaderboard 엔드포인트 구현 (주간/월간/전체)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /gamification/badges 엔드포인트 구현 (전체 배지 목록)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 46,
@@ -381,52 +1561,224 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (Kafka 이벤트 발행)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "gamification.level_up 이벤트 스키마 정의 (userId, oldLevel, newLevel, xp)",
+                      "done": false
+                    },
+                    {
+                      "text": "gamification.badge_earned 이벤트 스키마 정의 (userId, badgeId, badgeName, earnedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 발행 트리거 시점 정의 (레벨업 시, 배지 수여 시)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Kafka 토픽 ACL 설정 (engagement-svc만 발행 권한)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 페이로드 민감정보 미포함 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "Schema Registry Avro/JSON Schema 등록",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Kafka 토픽 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "gamification.level_up 토픽 설정 (파티션, 복제, 보존)",
+                      "done": false
+                    },
+                    {
+                      "text": "gamification.badge_earned 토픽 설정",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 키 전략 (userId 기반 파티셔닝)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "이벤트 중복 발행 방지 (멱등성 Producer 설정)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 스키마 버전 관리 (호환성 모드: BACKWARD)",
+                      "done": false
+                    },
+                    {
+                      "text": "소비자 측 실패 시 재시도 정책 가이드 제공",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "LevelUpEvent DTO 정의 (userId, oldLevel, newLevel, totalXp, occurredAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "BadgeEarnedEvent DTO 정의 (userId, badgeId, badgeName, occurredAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Avro/JSON Schema 작성 → Schema Registry 등록",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Producer 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GamificationKafkaProducer 구현 (KafkaTemplate)",
+                      "done": false
+                    },
+                    {
+                      "text": "publishLevelUp() 메서드 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "publishBadgeEarned() 메서드 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "멱등성 Producer 설정 (enable.idempotence=true)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service 연동 + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "LevelService → 레벨업 시 GamificationKafkaProducer.publishLevelUp() 호출",
+                      "done": false
+                    },
+                    {
+                      "text": "BadgeService → 배지 수여 시 GamificationKafkaProducer.publishBadgeEarned() 호출",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 작성 (EmbeddedKafka)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 발행 → 토픽 수신 검증",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 검증",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Docker Compose 환경에서 이벤트 발행 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "kafka-console-consumer로 이벤트 수신 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "이벤트 스키마 문서화",
+                      "done": false
+                    },
+                    {
+                      "text": "소비자 가이드 작성 (토픽명, 스키마, 파티션 키)",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 38,
@@ -439,52 +1791,244 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (신고/모더레이션)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "신고 유형 정의 (스팸, 욕설, 부적절 콘텐츠 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "신고 대상 정의 (게시글, 댓글, 사용자)",
+                      "done": false
+                    },
+                    {
+                      "text": "관리자 모더레이션 워크플로우 (접수 → 검토 → 승인/거부)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (신고: 로그인 사용자, 처리: 관리자)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: USER(신고), ADMIN(처리)",
+                      "done": false
+                    },
+                    {
+                      "text": "중복 신고 방지 (동일 사용자 → 동일 대상 1회 제한)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "reports 테이블 설계 (id, reporter_id, target_type, target_id, reason, status, admin_note, created_at, resolved_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "status ENUM 정의 (PENDING, APPROVED, REJECTED)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (status, reporter_id, target_type+target_id)",
+                      "done": false
+                    },
+                    {
+                      "text": "UNIQUE 제약: reporter_id + target_type + target_id",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "신고자 익명성 보장 (신고 대상자에게 신고자 미노출)",
+                      "done": false
+                    },
+                    {
+                      "text": "승인 시 콘텐츠 숨김/삭제 처리 + audit 이벤트 발행",
+                      "done": false
+                    },
+                    {
+                      "text": "거부 시 신고 무효 처리 + 사유 기록",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Report Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "ReportCreateRequest DTO 정의 (targetType, targetId, reason)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReportResponse DTO 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "ReportModerateRequest DTO 정의 (status, adminNote)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReportRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByStatus 커스텀 쿼리 (PENDING 목록)",
+                      "done": false
+                    },
+                    {
+                      "text": "existsByReporterIdAndTargetTypeAndTargetId 중복 검사 쿼리",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReportService 구현 (신고 접수 — 중복 검사, 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "ModerationService 구현 (관리자 처리 — 승인/거부, 콘텐츠 숨김)",
+                      "done": false
+                    },
+                    {
+                      "text": "승인 시 community.report.approved Kafka 이벤트 발행",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /reports 엔드포인트 구현 (신고 접수)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /admin/reports 엔드포인트 구현 (관리자 신고 목록, 페이징)",
+                      "done": false
+                    },
+                    {
+                      "text": "PATCH /admin/reports/{id} 엔드포인트 구현 (승인/거부 처리)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "403 Forbidden 테스트 (비관리자 처리 시도)",
+                      "done": false
+                    },
+                    {
+                      "text": "409 Conflict 테스트 (중복 신고)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 43,
@@ -505,32 +2049,92 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "게이미피케이션 플로우 시나리오 작성 (복습→XP→배지→레벨업→리더보드→알림)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "게이미피케이션 전체 플로우 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 12,
@@ -543,32 +2147,96 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "커뮤니티 플로우 시나리오 작성 (공유→검색→복사 + 신고→처리)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "커뮤니티 전체 플로우 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "커뮤니티 관련 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 13,
@@ -716,6 +2384,11 @@
   "history": [
     {
       "date": "2026-05-12",
+      "totalChecks": 371,
+      "doneChecks": 0
+    },
+    {
+      "date": "2026-05-13",
       "totalChecks": 371,
       "doneChecks": 0
     }

@@ -1,7 +1,13 @@
+export interface CheckItem {
+  text: string
+  done: boolean
+}
+
 export interface Phase {
   name: string
   total: number
   done: number
+  items: CheckItem[]
 }
 
 export interface Step {

@@ -22,8 +22,8 @@ const repos = [
   {
     repo: 'synapse-learning-svc',
     tracks: [
-      { name: 'learning-card', owner: '김나경' },
-      { name: 'learning-ai', owner: '조유지' },
+      { name: 'learning-card', owner: '조유지' },
+      { name: 'learning-ai', owner: '김나경' },
     ],
     prdPrefix: 'FR-LC',
   },

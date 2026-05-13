@@ -39,6 +39,7 @@ function parseWorkflowFile(filePath) {
         name: phaseNames[j] || `Phase ${j + 1}`,
         total: checks.length,
         done: checks.filter(c => c.done).length,
+        items: checks.map(c => ({ text: c.text, done: c.done })),
       })
     })
 
@@ -85,7 +86,7 @@ for (const file of workflowFiles) {
 const ownerMap = {
   'platform': '김해준', 'engagement': '한승완',
   'knowledge-1': '김현지', 'knowledge-2': '박은서',
-  'learning-card': '김나경', 'learning-ai': '조유지',
+  'learning-card': '조유지', 'learning-ai': '김나경',
   'frontend': '전원', 'team-lead': '김민구',
 }
 

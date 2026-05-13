@@ -5,7 +5,7 @@ const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] 
   { repo: 'synapse-platform-svc', tracks: [{ name: 'platform', owner: '김해준' }] },
   { repo: 'synapse-engagement-svc', tracks: [{ name: 'engagement', owner: '한승완' }] },
   { repo: 'synapse-knowledge-svc', tracks: [{ name: 'knowledge-1', owner: '김현지' }, { name: 'knowledge-2', owner: '박은서' }] },
-  { repo: 'synapse-learning-svc', tracks: [{ name: 'learning-card', owner: '김나경' }, { name: 'learning-ai', owner: '조유지' }] },
+  { repo: 'synapse-learning-svc', tracks: [{ name: 'learning-card', owner: '조유지' }, { name: 'learning-ai', owner: '김나경' }] },
   { repo: 'synapse-frontend', tracks: [{ name: 'frontend', owner: '전원' }] },
   { repo: 'synapse-shared', tracks: [{ name: 'team-lead', owner: '김민구' }] },
 ]
@@ -37,7 +37,7 @@ function emptyRepoData(repo: string, tracks: { name: string; owner: string }[]):
         const step = {
           name: `${t.name} (${wm.week})`,
           status: 'Not Started' as const,
-          phases: PHASE_NAMES.map(name => ({ name, total: 0, done: 0 })),
+          phases: PHASE_NAMES.map(name => ({ name, total: 0, done: 0, items: [] })),
           totalChecks: 0,
           doneChecks: 0,
         }

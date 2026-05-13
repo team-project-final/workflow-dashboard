@@ -1,10 +1,10 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-12T05:42:46.006Z",
+  "updatedAt": "2026-05-13T00:47:54.056Z",
   "tracks": [
     {
       "name": "learning-ai",
-      "owner": "조유지",
+      "owner": "김나경",
       "weeks": [
         {
           "week": "W1",
@@ -17,52 +17,204 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (0.5일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "FastAPI + uvicorn 프로젝트 구조 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "디렉토리 구조 설계 (app/, app/api/, app/core/, app/services/)",
+                      "done": false
+                    },
+                    {
+                      "text": "Python 3.12+ 의존성 목록 도출 (pyproject.toml)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: No (골격만 생성, Health endpoint)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: Yes (/health만 공개)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — DB 연동 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "프로젝트 디렉토리 구조도 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당 (골격 단계)",
+                      "done": false
+                    },
+                    {
+                      "text": ".env.example 작성 (시크릿 플레이스홀더만)",
+                      "done": false
+                    },
+                    {
+                      "text": "pydantic-settings 환경변수 관리 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "HealthResponse Pydantic 모델 정의 (service, version, status)",
+                      "done": false
+                    },
+                    {
+                      "text": "공통 설정 모델 (Settings) 작성 (pydantic-settings)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — Repository 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "pyproject.toml 기반 프로젝트 초기화 (Poetry 또는 uv)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "FastAPI app 인스턴스 생성",
+                      "done": false
+                    },
+                    {
+                      "text": "/health 엔드포인트 구현 (200 OK + 서비스명/버전 응답)",
+                      "done": false
+                    },
+                    {
+                      "text": "pytest 설정 및 health 테스트 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Dockerfile 작성 (multi-stage build)",
+                      "done": false
+                    },
+                    {
+                      "text": "docker-compose.yml에 서비스 추가",
+                      "done": false
+                    },
+                    {
+                      "text": "uvicorn 실행 확인 (포트 8090)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "Docker 컨테이너 실행 + /health 응답 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 33,
@@ -75,52 +227,228 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-AI-xxx AI 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (1.5일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Anthropic Python SDK 문서 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "에러 핸들링 시나리오 정의 (429 Rate Limit, 500 Internal)",
+                      "done": false
+                    },
+                    {
+                      "text": "Exponential backoff 재시도 정책 (1s, 2s, 4s / 최대 3회)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "API Key 환경변수 관리 (ANTHROPIC_API_KEY) — 하드코딩 금지",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Claude API 연동 — DB 테이블 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "Request/Response 스키마 설계",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: API Key 환경변수 전용 (코드 노출 금지)",
+                      "done": false
+                    },
+                    {
+                      "text": "사용자 입력 검증 (프롬프트 인젝션 방지)",
+                      "done": false
+                    },
+                    {
+                      "text": "응답 토큰 제한 (최대 4096)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GenerateRequest Pydantic 모델 정의 (prompt, max_tokens, temperature)",
+                      "done": false
+                    },
+                    {
+                      "text": "GenerateResponse Pydantic 모델 정의 (content, model, usage)",
+                      "done": false
+                    },
+                    {
+                      "text": "ErrorResponse Pydantic 모델 정의 (detail, code)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "DB 연동 없음 — 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "`anthropic` Python SDK 의존성 추가 (pyproject.toml)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ClaudeService 클래스 생성 (비동기 클라이언트)",
+                      "done": false
+                    },
+                    {
+                      "text": "429 Rate Limit 시 exponential backoff 재시도 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "500 에러 시 fallback 응답 처리",
+                      "done": false
+                    },
+                    {
+                      "text": "타임아웃 30초 설정",
+                      "done": false
+                    },
+                    {
+                      "text": "pytest mock 테스트 작성 (정상/429/500 시나리오)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/ai/generate 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "입력값 검증 (max_tokens 제한 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "에러 핸들러 미들웨어 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "pytest 통합 테스트 (mock 기반)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "OpenAPI(Swagger) 문서 자동 생성 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 39,
@@ -133,52 +461,240 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-AI-xxx 임베딩)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (2일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "OpenAI Embedding API 문서 분석 (text-embedding-3-small)",
+                      "done": false
+                    },
+                    {
+                      "text": "벡터 차원 확인 (1536차원)",
+                      "done": false
+                    },
+                    {
+                      "text": "배치 임베딩 요건 (최대 20건 동시)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "API Key 환경변수 관리 (OPENAI_API_KEY) — 하드코딩 금지",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계 (pgvector 스키마)",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "embeddings 테이블 설계 (id, source_id, source_type, vector(1536), created_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "pgvector 확장 활성화 (`CREATE EXTENSION vector`)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (ivfflat 또는 hnsw)",
+                      "done": false
+                    },
+                    {
+                      "text": "Alembic 마이그레이션 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: API Key 환경변수 전용",
+                      "done": false
+                    },
+                    {
+                      "text": "입력 텍스트 길이 검증 (최대 8192 토큰)",
+                      "done": false
+                    },
+                    {
+                      "text": "벡터 저장 시 normalize 적용",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "EmbedRequest Pydantic 모델 정의 (texts: List[str])",
+                      "done": false
+                    },
+                    {
+                      "text": "EmbedResponse Pydantic 모델 정의 (embeddings: List[List[float]], model)",
+                      "done": false
+                    },
+                    {
+                      "text": "Embedding SQLAlchemy 모델 작성 (pgvector Column)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "EmbeddingRepository 클래스 작성 (async SQLAlchemy)",
+                      "done": false
+                    },
+                    {
+                      "text": "pgvector 확장 + embeddings 테이블 Alembic 마이그레이션",
+                      "done": false
+                    },
+                    {
+                      "text": "`openai` Python SDK 의존성 추가",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "EmbeddingService 클래스 생성 (비동기)",
+                      "done": false
+                    },
+                    {
+                      "text": "텍스트 → 1536차원 벡터 변환 로직",
+                      "done": false
+                    },
+                    {
+                      "text": "배치 임베딩 지원 (최대 20개)",
+                      "done": false
+                    },
+                    {
+                      "text": "입력 텍스트 길이 검증",
+                      "done": false
+                    },
+                    {
+                      "text": "pytest mock 테스트 작성 (단일/배치/에러 시나리오)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/ai/embed 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "배치 크기 검증 (최대 20건)",
+                      "done": false
+                    },
+                    {
+                      "text": "에러 핸들링 (OpenAI API 에러)",
+                      "done": false
+                    },
+                    {
+                      "text": "pytest 통합 테스트 (mock 기반)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "OpenAPI(Swagger) 문서 자동 생성 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 42,
@@ -199,52 +715,256 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (시맨틱 검색)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "pgvector 확장 모듈 설정 요건 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "임베딩 벡터 차원 정의 (1536 — OpenAI ada-002 기준)",
+                      "done": false
+                    },
+                    {
+                      "text": "코사인 유사도 검색 요건 (top-K, threshold)",
+                      "done": false
+                    },
+                    {
+                      "text": "청크 기반 임베딩 저장 구조 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 노트 임베딩만)",
+                      "done": false
+                    },
+                    {
+                      "text": "OpenAI API Key 관리: 환경변수 관리, 코드 내 하드코딩 금지",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "chunk_embeddings 테이블 설계 (id, chunkId, embedding vector(1536), model, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "pgvector 확장 활성화 (CREATE EXTENSION vector)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (ivfflat 또는 hnsw 인덱스 — 코사인 유사도)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (chunk_embeddings.chunkId → chunks.id FK)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "임베딩 데이터 접근 제어 (내부 서비스만)",
+                      "done": false
+                    },
+                    {
+                      "text": "OpenAI API 호출 rate limit 관리",
+                      "done": false
+                    },
+                    {
+                      "text": "청크 삭제 시 임베딩 cascade 삭제 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "EmbeddingRequest 정의 (chunkId, content)",
+                      "done": false
+                    },
+                    {
+                      "text": "SemanticSearchRequest 정의 (query, topK, threshold)",
+                      "done": false
+                    },
+                    {
+                      "text": "SemanticSearchResultResponse 정의 (chunkId, noteId, content, score)",
+                      "done": false
+                    },
+                    {
+                      "text": "ChunkEmbedding Entity 작성 (SQLAlchemy + pgvector)",
+                      "done": false
+                    },
+                    {
+                      "text": "Pydantic 모델 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ChunkEmbeddingRepository 구현 (SQLAlchemy)",
+                      "done": false
+                    },
+                    {
+                      "text": "pgvector 코사인 유사도 검색 쿼리 (1 - (embedding <=> query_vector))",
+                      "done": false
+                    },
+                    {
+                      "text": "배치 임베딩 저장 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "Alembic 마이그레이션 스크립트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "EmbeddingService 구현 (generate_embedding, store_embedding, search_similar)",
+                      "done": false
+                    },
+                    {
+                      "text": "OpenAI Embedding API 호출 구현 (text-embedding-ada-002)",
+                      "done": false
+                    },
+                    {
+                      "text": "코사인 유사도 검색 서비스 (top-K + threshold 필터)",
+                      "done": false
+                    },
+                    {
+                      "text": "배치 임베딩 생성 (청크 목록 → 벡터 목록)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (pytest — OpenAI API mock)",
+                      "done": false
+                    },
+                    {
+                      "text": "유사도 검색 테스트 (고정 벡터 사용)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/ai/embeddings 엔드포인트 구현 (임베딩 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "POST /api/v1/ai/search/semantic 엔드포인트 구현 (시맨틱 검색)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (임베딩 저장 → 시맨틱 검색 → 결과 검증)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger/OpenAPI 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 46,
@@ -257,52 +977,272 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (AI 카드 자동 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Note → LLM → Card 목록 생성 플로우 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 입력 포맷 정의 (노트 내용 + 시스템 프롬프트)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 출력 포맷 정의 (JSON — front/back 리스트)",
+                      "done": false
+                    },
+                    {
+                      "text": "생성 카드 수 제한 (max_cards)",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 엔지니어링 요건 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 노트만)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM API Key 관리: 환경변수 관리, 코드 내 하드코딩 금지",
+                      "done": false
+                    },
+                    {
+                      "text": "사용자 입력 → LLM 전달 시 프롬프트 인젝션 방어",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ai_card_generations 테이블 설계 (id, userId, noteId, status, cardCount, model, promptTokens, completionTokens, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (ai_card_generations.userId, ai_card_generations.noteId)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "LLM 응답 검증 (JSON 파싱 실패 시 처리)",
+                      "done": false
+                    },
+                    {
+                      "text": "생성 카드 내용 최소 검증 (빈 문자열, 과도한 길이)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM API 호출 비용 제한 (사용자별 일일 한도)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "CardGenerateRequest 정의 (noteId, maxCards, language)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardGenerateResponse 정의 (generationId, cards[{front, back}], status)",
+                      "done": false
+                    },
+                    {
+                      "text": "GeneratedCardDto 정의 (front, back)",
+                      "done": false
+                    },
+                    {
+                      "text": "AiCardGeneration Entity 작성 (SQLAlchemy)",
+                      "done": false
+                    },
+                    {
+                      "text": "GenerationStatus Enum 작성 (PENDING, COMPLETED, FAILED)",
+                      "done": false
+                    },
+                    {
+                      "text": "Pydantic 모델 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "AiCardGenerationRepository 구현 (SQLAlchemy)",
+                      "done": false
+                    },
+                    {
+                      "text": "findByUserIdOrderByCreatedAtDesc 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "Alembic 마이그레이션 스크립트 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 템플릿 파일 관리 (prompts/ 디렉토리)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 9,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "CardGenerationService 구현 (generate_cards, get_generation_status)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 프롬프트 엔지니어링 구현 (시스템 프롬프트 + 노트 내용)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 응답 JSON 파싱 로직 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "생성 카드 검증 로직 (front/back 비어있지 않음, 길이 제한)",
+                      "done": false
+                    },
+                    {
+                      "text": "비동기 처리 구현 (생성 요청 → 상태 폴링)",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 인젝션 방어 로직 (입력 sanitization)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (pytest — LLM API mock)",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 변형 테스트 (한국어/영어, 짧은/긴 노트)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/ai/cards/generate 엔드포인트 구현 (카드 생성 요청)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/ai/cards/generations/{id} 엔드포인트 구현 (상태 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/ai/cards/generations 엔드포인트 구현 (생성 이력)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (노트 → LLM → 카드 목록 생성 플로우)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger/OpenAPI 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 50,
@@ -323,52 +1263,244 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (AI 카드 자동 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "note.created Kafka 이벤트 스키마 분석 (noteId, userId, title, content)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 프롬프트 설계 (노트 내용 → Q&A 카드 생성, 최대 5장)",
+                      "done": false
+                    },
+                    {
+                      "text": "learning-card API 호출 스펙 분석 (POST /cards bulk create)",
+                      "done": false
+                    },
+                    {
+                      "text": "생성 실패 시 재시도/DLQ 전략 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: No (내부 Kafka 소비 + 서비스 간 호출)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM API 키 관리 (External Secrets)",
+                      "done": false
+                    },
+                    {
+                      "text": "서비스 간 인증 (ServiceAccount JWT 또는 내부 토큰)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "아키텍처 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "파이프라인 설계 (note.created 소비 → 노트 내용 조회 → LLM 호출 → 카드 생성 API)",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 모델 선택 (GPT-4o / Claude 등) + 토큰 제한 설정",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 템플릿 설계 (시스템 프롬프트 + 노트 내용 + 출력 포맷)",
+                      "done": false
+                    },
+                    {
+                      "text": "비동기 처리 설계 (Kafka 소비 → 별도 스레드풀에서 LLM 호출)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "LLM으로 전송되는 노트 내용 민감정보 필터링",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 응답 검증 (유효한 Q&A 포맷인지 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "비용 제어 (사용자당 일일 호출 제한)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteCreatedEvent DTO 정의 (Kafka 소비용)",
+                      "done": false
+                    },
+                    {
+                      "text": "LlmCardGenerationRequest DTO 정의 (noteContent, maxCards)",
+                      "done": false
+                    },
+                    {
+                      "text": "LlmCardGenerationResponse DTO 정의 (cards[]: question, answer, difficulty)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardCreateRequest DTO 정의 (learning-card API 호출용)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Client 구현",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteApiClient 구현 (knowledge-svc에서 노트 내용 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "LlmClient 구현 (OpenAI/Anthropic API 호출, 프롬프트 전송, 응답 파싱)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardApiClient 구현 (learning-card-svc POST /cards 호출)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "AiCardKafkaConsumer 구현 (note.created 토픽 소비)",
+                      "done": false
+                    },
+                    {
+                      "text": "AiCardGenerationService 구현 (노트 조회 → LLM 호출 → 응답 파싱 → 카드 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 템플릿 관리 (외부 설정 파일)",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 시 재시도 (3회) + DLQ 전송",
+                      "done": false
+                    },
+                    {
+                      "text": "일일 호출 제한 (Redis 카운터, 사용자당 최대 N회)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (LLM 응답 모킹)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 검증",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Docker Compose 환경에서 note.created 이벤트 발행 → 카드 자동 생성 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "생성된 카드 품질 검수 (Q&A 포맷, 한국어/영어 지원)",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 시 DLQ 적재 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "LLM 응답 시간 측정 (< 10초 기준)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "프롬프트 템플릿 문서화",
+                      "done": false
+                    },
+                    {
+                      "text": "비용 추정 (일일 예상 LLM API 호출 비용)",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 43,
@@ -381,52 +1513,240 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (RAG Q&A)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (시간 허용 시 진행)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "RAG 파이프라인 분석 (질문 → 관련 청크 검색 → LLM 컨텍스트 주입 → 답변)",
+                      "done": false
+                    },
+                    {
+                      "text": "시맨틱 캐시 요건 분석 (유사 질문 캐시 히트 → LLM 호출 스킵)",
+                      "done": false
+                    },
+                    {
+                      "text": "청크 검색 전략 (pgvector 시맨틱 검색, top-K=5)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (로그인 사용자)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 본인 노트 기반 RAG만 허용",
+                      "done": false
+                    },
+                    {
+                      "text": "청크 검색 시 접근 제어 필터 적용 필수",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "아키텍처 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "RAG 파이프라인 설계 (질문 임베딩 → pgvector 검색 → 청크 수집 → LLM 프롬프트 구성 → 답변)",
+                      "done": false
+                    },
+                    {
+                      "text": "시맨틱 캐시 설계 (질문 임베딩 → Redis 유사도 검색, threshold=0.95)",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 템플릿 설계 (시스템 프롬프트 + 관련 청크 + 질문)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "LLM 프롬프트 인젝션 방지 (사용자 질문 새니타이징)",
+                      "done": false
+                    },
+                    {
+                      "text": "답변에 출처(노트 제목, 링크) 포함",
+                      "done": false
+                    },
+                    {
+                      "text": "시맨틱 캐시 사용자별 격리",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "RagQuestionRequest DTO 정의 (question, maxChunks)",
+                      "done": false
+                    },
+                    {
+                      "text": "RagAnswerResponse DTO 정의 (answer, sources[], cached)",
+                      "done": false
+                    },
+                    {
+                      "text": "RagSource DTO 정의 (noteId, noteTitle, chunkText, similarity)",
+                      "done": false
+                    },
+                    {
+                      "text": "SemanticCacheEntry 모델 정의 (questionEmbedding, answer, sources, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository / Client 구현",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ChunkSearchRepository 구현 (pgvector 유사도 검색 + 사용자 필터)",
+                      "done": false
+                    },
+                    {
+                      "text": "SemanticCacheRepository 구현 (Redis 기반 임베딩 유사도 검색)",
+                      "done": false
+                    },
+                    {
+                      "text": "LlmClient 재사용 (Step 6 구현체)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "RagService 구현 (질문 → 캐시 확인 → 청크 검색 → LLM 호출 → 답변 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "SemanticCacheService 구현 (유사 질문 검색, 캐시 저장, TTL 관리)",
+                      "done": false
+                    },
+                    {
+                      "text": "청크 수집 로직 (top-K=5, 최소 유사도 threshold=0.7)",
+                      "done": false
+                    },
+                    {
+                      "text": "프롬프트 구성 로직 (청크 컨텍스트 + 질문 + 출처 포맷 지시)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (LLM 응답 모킹, 캐시 히트/미스 시나리오)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /ai/ask 엔드포인트 구현 (RAG Q&A)",
+                      "done": false
+                    },
+                    {
+                      "text": "응답에 출처 정보 포함 (노트 제목 + 관련도)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "캐시 히트 시 빠른 응답 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "결과 정리",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "RAG 파이프라인 아키텍처 문서화",
+                      "done": false
+                    },
+                    {
+                      "text": "시맨틱 캐시 히트율 측정 방안",
+                      "done": false
+                    },
+                    {
+                      "text": "답변 품질 평가 기준 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 42,
@@ -447,32 +1767,92 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "AI 카드 자동 생성 플로우 시나리오 작성 (노트→이벤트→AI→카드저장)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "AI 카드 자동 생성 전체 플로우 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 12,
@@ -485,32 +1865,96 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "시맨틱 검색 정확도 검증 시나리오 목록 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "시맨틱 검색 정확도 검증 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "시맨틱 검색 관련 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 13,
@@ -524,7 +1968,7 @@
     },
     {
       "name": "learning-card",
-      "owner": "김나경",
+      "owner": "조유지",
       "weeks": [
         {
           "week": "W1",
@@ -537,52 +1981,204 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (0.5일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "card/srs 2개 모듈 역할 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "팀 공통 Gradle 설정 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: No (골격만 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No (Health endpoint만)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — ERD 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "모듈별 패키지 구조도 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당 (골격 단계)",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 불필요",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
+                      "done": false
+                    },
+                    {
+                      "text": "각 모듈 package-info.java + @ApplicationModule 설정",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — Repository 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "ApplicationModulesTest 구조 검증 테스트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "빈 Service 클래스 생성 (card, srs 모듈)",
+                      "done": false
+                    },
+                    {
+                      "text": "ApplicationModulesTest 통과 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "`./gradlew build` 성공 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "Health endpoint (`/actuator/health`) 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "빈 Controller 클래스 생성 (card, srs 모듈)",
+                      "done": false
+                    },
+                    {
+                      "text": "Dockerfile 작성 (multi-stage build)",
+                      "done": false
+                    },
+                    {
+                      "text": "Docker 이미지 빌드 성공 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "docker compose에서 learning-card-svc 실행 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 33,
@@ -595,52 +2191,260 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-LC-xxx 덱/카드 CRUD)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (2일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Deck/Card CRUD API 엔드포인트 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "1:N 관계 (Deck → Card) RESTful URL 규칙 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "페이지네이션 요건 (기본 20건, 최대 100건)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요, userId는 JWT에서 추출)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 덱/카드만)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "decks 테이블 설계 (id, userId, title, description, createdAt, updatedAt, deletedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "cards 테이블 설계 (id, deckId, front, back, createdAt, updatedAt, deletedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (decks.userId, cards.deckId)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (cards.deckId → decks.id FK)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 논리삭제 (deletedAt 컬럼)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (userId 기반 덱 소유 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 8,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "DeckCreateRequest 정의 (title, description)",
+                      "done": false
+                    },
+                    {
+                      "text": "DeckResponse 정의 (id, title, description, cardCount, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardCreateRequest 정의 (front, back)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardResponse 정의 (id, front, back, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Deck Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Card Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "DeckRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "CardRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByUserIdAndDeletedAtIsNull 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "DeckService CRUD 구현 (create, findAll, findById, update, delete)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardService CRUD 구현 (create, findByDeckId, update, delete)",
+                      "done": false
+                    },
+                    {
+                      "text": "소유자 검증 로직 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "Bean Validation 적용",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "DeckController REST API 구현 (POST/GET/PUT/DELETE)",
+                      "done": false
+                    },
+                    {
+                      "text": "CardController REST API 구현 (`/api/v1/decks/{deckId}/cards`)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (각 엔드포인트별)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 47,
@@ -653,52 +2457,240 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-LC-xxx SM-2 복습)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (1.5일)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "SM-2 알고리즘 논문/명세 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "rating enum 정의 (Again=0, Hard=1, Good=2, Easy=3)",
+                      "done": false
+                    },
+                    {
+                      "text": "interval/EF 계산 규칙 정리",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 카드만 복습)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "review_logs 테이블 설계 (id, cardId, userId, rating, interval, easeFactor, reviewedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (cardId+userId, reviewedAt DESC)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (review_logs.cardId → cards.id FK)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 물리삭제 (로그 누적 보관)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (본인 카드 복습 기록만)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewRequest 정의 (rating)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewResponse 정의 (nextReviewDate, interval, easeFactor)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewLog Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Rating Enum 작성 (AGAIN, HARD, GOOD, EASY)",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewLogRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findTopByCardIdOrderByReviewedAtDesc 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Sm2Calculator 도메인 서비스 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "interval 계산 로직 (Again→1, Hard→유지, Good→interval*EF, Easy→interval*EF*2)",
+                      "done": false
+                    },
+                    {
+                      "text": "easeFactor 업데이트 로직 (최소 1.3 보장)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (4개 rating x 초기/중간/고EF 경계값)",
+                      "done": false
+                    },
+                    {
+                      "text": "부동소수점 반올림 처리 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/cards/{cardId}/review 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (복습 → interval 변경 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 42,
@@ -719,52 +2711,280 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (SRS 복습 세션)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "오늘 복습 대상 카드 큐 조회 로직 정의 (nextReviewDate <= today)",
+                      "done": false
+                    },
+                    {
+                      "text": "복습 세션 생성/완료 플로우 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "rating 제출 → SM-2 → 다음 복습일 계산 플로우 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "세션 내 카드 순서 정책 (오래된 순 / 랜덤)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 카드만 복습)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "review_sessions 테이블 설계 (id, userId, startedAt, completedAt, totalCards, reviewedCards, createdAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "cards 테이블 갱신 확인 (nextReviewDate, interval, easeFactor 컬럼)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (review_sessions.userId, cards.userId+nextReviewDate)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (review_sessions.userId → users.id)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "세션 데이터 접근 제어 (본인 세션만)",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 물리삭제 없음 (세션 이력 보관)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (userId 기반)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewSessionResponse 정의 (id, totalCards, reviewedCards, startedAt, completedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewQueueResponse 정의 (cards[], totalCount)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewCardResponse 정의 (cardId, front, back, deckTitle)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewSubmitRequest 정의 (cardId, rating)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewSession Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewSessionRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByUserIdOrderByStartedAtDesc 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "findDueCards 쿼리 (nextReviewDate <= today AND userId = ?)",
+                      "done": false
+                    },
+                    {
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 9,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewSessionService 구현 (startSession, submitReview, completeSession, getQueue)",
+                      "done": false
+                    },
+                    {
+                      "text": "오늘 복습 카드 큐 조회 서비스 (due cards)",
+                      "done": false
+                    },
+                    {
+                      "text": "세션 시작 로직 (totalCards 스냅샷)",
+                      "done": false
+                    },
+                    {
+                      "text": "rating 제출 → SM-2 호출 → nextReviewDate 갱신",
+                      "done": false
+                    },
+                    {
+                      "text": "세션 완료 로직 (completedAt + reviewedCards 갱신)",
+                      "done": false
+                    },
+                    {
+                      "text": "Bean Validation 적용",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (세션 시작 → 복습 → 완료 플로우)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 8,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "POST /api/v1/review/sessions 엔드포인트 구현 (세션 시작)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/review/sessions/{id}/queue 엔드포인트 구현 (카드 큐)",
+                      "done": false
+                    },
+                    {
+                      "text": "POST /api/v1/review/sessions/{id}/submit 엔드포인트 구현 (rating 제출)",
+                      "done": false
+                    },
+                    {
+                      "text": "POST /api/v1/review/sessions/{id}/complete 엔드포인트 구현 (세션 완료)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (전체 복습 플로우)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 52,
@@ -777,52 +2997,228 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (card.reviewed Kafka 발행)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "card.reviewed 이벤트 페이로드 정의 (userId, cardId, deckId, rating, reviewedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Avro 스키마 필드 타입 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "Schema Registry 등록 절차 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 발행 시점 정의 (rating 제출 직후)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Kafka 프로듀서 인증 설정 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "메시지 무결성 보장 (Avro 직렬화)",
+                      "done": false
+                    },
+                    {
+                      "text": "민감 정보 포함 여부 확인 (userId만, 개인정보 미포함)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ERD 해당 없음 (이벤트 발행 — DB 변경 없음)",
+                      "done": false
+                    },
+                    {
+                      "text": "Avro 스키마 파일 설계 (.avsc)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Schema Registry BACKWARD 호환성 검증 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "메시지 암호화 전송 (TLS) 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "CardReviewedEvent Avro 스키마 정의 (card_reviewed.avsc)",
+                      "done": false
+                    },
+                    {
+                      "text": "필드 정의: userId(string), cardId(string), deckId(string), rating(enum), reviewedAt(timestamp-millis)",
+                      "done": false
+                    },
+                    {
+                      "text": "default 값 설정 (BACKWARD 호환성)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Avro 스키마 파일 작성 (src/main/avro/card_reviewed.avsc)",
+                      "done": false
+                    },
+                    {
+                      "text": "Avro 코드 생성 플러그인 설정 (Gradle avro plugin)",
+                      "done": false
+                    },
+                    {
+                      "text": "Schema Registry에 스키마 등록 (POST /subjects/card.reviewed-value/versions)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "CardReviewedEventPublisher 구현 (KafkaTemplate + Avro 직렬화)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewSessionService에 이벤트 발행 로직 추가 (rating 제출 후)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 발행 실패 시 재시도/로깅 처리",
+                      "done": false
+                    },
+                    {
+                      "text": "트랜잭션 아웃박스 패턴 검토 (선택)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito — KafkaTemplate mock)",
+                      "done": false
+                    },
+                    {
+                      "text": "Kafka 발행 테스트 (@EmbeddedKafka)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Controller 해당 없음 (내부 이벤트 발행)",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (rating 제출 → Kafka 메시지 발행 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "Schema Registry 호환성 테스트 (비호환 스키마 → 거부)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "Kafka 토픽 메시지 확인 (kafka-console-consumer)",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 39,
@@ -835,52 +3231,252 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W2 해당 요구사항 확인 (복습 통계)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "일별 복습 수 집계 요건 (최근 N일)",
+                      "done": false
+                    },
+                    {
+                      "text": "주별 복습 수 집계 요건 (최근 N주)",
+                      "done": false
+                    },
+                    {
+                      "text": "정답률 계산 기준 정의 (Good+Easy / 전체)",
+                      "done": false
+                    },
+                    {
+                      "text": "통계 데이터 응답 포맷 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 통계만)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "추가 테이블 불필요 (review_logs + review_sessions 기반 집계)",
+                      "done": false
+                    },
+                    {
+                      "text": "집계 쿼리 설계 (GROUP BY date/week, COUNT, 정답률 계산)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 최적화 확인 (review_logs.userId + reviewedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "통계 데이터 접근 제어 (본인만)",
+                      "done": false
+                    },
+                    {
+                      "text": "다른 사용자 통계 접근 불가 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "DailyReviewStatResponse 정의 (date, reviewCount, correctRate)",
+                      "done": false
+                    },
+                    {
+                      "text": "WeeklyReviewStatResponse 정의 (weekStart, reviewCount, correctRate)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewStatsResponse 정의 (daily[], weekly[], totalReviews, overallCorrectRate)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewLogRepository 커스텀 쿼리 추가",
+                      "done": false
+                    },
+                    {
+                      "text": "일별 집계 쿼리 (GROUP BY DATE(reviewedAt), COUNT, 정답률)",
+                      "done": false
+                    },
+                    {
+                      "text": "주별 집계 쿼리 (GROUP BY WEEK, COUNT, 정답률)",
+                      "done": false
+                    },
+                    {
+                      "text": "Native Query 또는 JPQL 작성",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 8,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewStatsService 구현 (getDailyStats, getWeeklyStats, getOverallStats)",
+                      "done": false
+                    },
+                    {
+                      "text": "일별 복습 수 + 정답률 계산 로직",
+                      "done": false
+                    },
+                    {
+                      "text": "주별 복습 수 + 정답률 계산 로직",
+                      "done": false
+                    },
+                    {
+                      "text": "기간 필터링 (최근 30일 / 12주)",
+                      "done": false
+                    },
+                    {
+                      "text": "데이터 없는 날짜 0으로 채우기 로직",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "경계값 테스트 (데이터 없는 기간, 정답률 0%)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GET /api/v1/review/stats/daily?days={n} 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/review/stats/weekly?weeks={n} 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /api/v1/review/stats 엔드포인트 구현 (종합)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (복습 데이터 → 통계 API 검증)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 45,
@@ -901,52 +3497,228 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (복습 알림 Kafka 발행)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "스케줄러 실행 시간 정의 (매일 오전 8시 KST)",
+                      "done": false
+                    },
+                    {
+                      "text": "복습 대상 판정 기준 분석 (SM-2 알고리즘 next_review_date ≤ today)",
+                      "done": false
+                    },
+                    {
+                      "text": "card.review.due 이벤트 스키마 정의 (userId, cardCount, dueDate)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: No (내부 스케줄러, API 미노출)",
+                      "done": false
+                    },
+                    {
+                      "text": "Kafka 토픽 ACL: learning-card-svc만 발행 권한",
+                      "done": false
+                    },
+                    {
+                      "text": "스케줄러 중복 실행 방지 (ShedLock 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Kafka 토픽 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "card.review.due 토픽 설정 (파티션, 복제, 보존)",
+                      "done": false
+                    },
+                    {
+                      "text": "이벤트 키 전략 (userId 기반 파티셔닝)",
+                      "done": false
+                    },
+                    {
+                      "text": "Schema Registry 스키마 등록",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "이벤트 페이로드 민감정보 미포함 확인 (카드 내용 X, 건수만)",
+                      "done": false
+                    },
+                    {
+                      "text": "스케줄러 실패 시 재시도 정책 (최대 3회)",
+                      "done": false
+                    },
+                    {
+                      "text": "대량 사용자 처리 시 배치 크기 제한",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "CardReviewDueEvent DTO 정의 (userId, cardCount, dueDate, occurredAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "Avro/JSON Schema 작성 → Schema Registry 등록",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Producer 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewDueKafkaProducer 구현 (KafkaTemplate)",
+                      "done": false
+                    },
+                    {
+                      "text": "publishReviewDue(userId, cardCount) 메서드 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "멱등성 Producer 설정 (enable.idempotence=true)",
+                      "done": false
+                    },
+                    {
+                      "text": "배치 발행 최적화 (사용자별 개별 이벤트)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewDueScheduler 구현 (@Scheduled cron = \"0 0 8 * * *\" Asia/Seoul)",
+                      "done": false
+                    },
+                    {
+                      "text": "ShedLock 설정 (중복 실행 방지, lockAtMostFor=30m)",
+                      "done": false
+                    },
+                    {
+                      "text": "복습 대상 사용자 조회 쿼리 (next_review_date ≤ today, GROUP BY user_id)",
+                      "done": false
+                    },
+                    {
+                      "text": "사용자별 card.review.due 이벤트 발행",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 작성 (EmbeddedKafka + 스케줄러 트리거)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 검증",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Docker Compose 환경에서 스케줄러 수동 트리거",
+                      "done": false
+                    },
+                    {
+                      "text": "kafka-console-consumer로 card.review.due 이벤트 수신 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송)",
+                      "done": false
+                    },
+                    {
+                      "text": "대량 사용자 시뮬레이션 (1000명 기준 처리 시간 측정)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "이벤트 스키마 문서화",
+                      "done": false
+                    },
+                    {
+                      "text": "스케줄러 모니터링 방안 (실행 로그, 실패 알림)",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 39,
@@ -959,52 +3731,248 @@
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W3 해당 요구사항 확인 (복습 통계 대시보드)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "일별 복습 통계 요건 (복습 수, 정답률)",
+                      "done": false
+                    },
+                    {
+                      "text": "주별 복습 통계 요건 (주간 합산, 추세 그래프 데이터)",
+                      "done": false
+                    },
+                    {
+                      "text": "스트릭 통합 요건 (engagement-svc user_streaks 연동)",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (로그인 사용자)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 본인 통계만 조회 가능",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "데이터 모델 설계",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "일별 통계 집계 방식 결정 (실시간 집계 vs 사전 집계 테이블)",
+                      "done": false
+                    },
+                    {
+                      "text": "review_daily_stats 테이블 설계 (user_id, date, review_count, correct_count, total_count)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (user_id + date)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "타인 통계 조회 차단 (user_id 필터 필수)",
+                      "done": false
+                    },
+                    {
+                      "text": "통계 데이터 민감정보 미포함",
+                      "done": false
+                    },
+                    {
+                      "text": "API 응답 캐싱 (Redis TTL: 5분)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewDailyStat Entity 작성 (또는 집계 쿼리 방식 결정)",
+                      "done": false
+                    },
+                    {
+                      "text": "DailyReviewStatResponse DTO 정의 (date, reviewCount, correctRate)",
+                      "done": false
+                    },
+                    {
+                      "text": "WeeklyReviewStatResponse DTO 정의 (weekStart, totalReviews, avgCorrectRate, dailyBreakdown[])",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewDashboardResponse DTO 정의 (daily, weekly, streak 통합)",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewStatRepository 구현 (일별/주별 집계 쿼리)",
+                      "done": false
+                    },
+                    {
+                      "text": "일별 통계: GROUP BY date, COUNT(*), AVG(correct)",
+                      "done": false
+                    },
+                    {
+                      "text": "주별 통계: 최근 4주 집계",
+                      "done": false
+                    },
+                    {
+                      "text": "engagement-svc 연동 (REST 또는 Kafka로 스트릭 조회)",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "ReviewStatService 구현 (일별 통계 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewStatService 구현 (주별 통계 조회 — 최근 4주)",
+                      "done": false
+                    },
+                    {
+                      "text": "ReviewDashboardService 구현 (일별 + 주별 + 스트릭 통합)",
+                      "done": false
+                    },
+                    {
+                      "text": "스트릭 데이터 연동 (engagement-svc REST 호출 + fallback)",
+                      "done": false
+                    },
+                    {
+                      "text": "Redis 캐싱 적용 (TTL: 5분)",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GET /reviews/stats/daily?from=&to= 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /reviews/stats/weekly 엔드포인트 구현 (최근 4주)",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /reviews/dashboard 엔드포인트 구현 (통합 대시보드)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "빈 데이터, 기간 필터 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 44,
@@ -1025,32 +3993,92 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "복습 플로우 시나리오 작성 (카드→복습→SM-2→통계→XP)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "복습 전체 플로우 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 12,
@@ -1063,32 +4091,96 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Kafka 이벤트 안정화 시나리오 목록 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Kafka 이벤트 플로우 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "Kafka 이벤트 관련 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": false
+                    }
+                  ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": false
+                    }
+                  ]
                 }
               ],
               "totalChecks": 13,
@@ -1271,6 +4363,11 @@
   "history": [
     {
       "date": "2026-05-12",
+      "totalChecks": 686,
+      "doneChecks": 0
+    },
+    {
+      "date": "2026-05-13",
       "totalChecks": 686,
       "doneChecks": 0
     }
