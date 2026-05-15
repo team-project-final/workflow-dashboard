@@ -18,6 +18,9 @@ export default function TaskColumn({ steps, onSelectStep, selectedStep }: Props)
       <h3 className="text-[11px] font-bold text-amber uppercase tracking-wider mb-2.5">
         TASK — Step 상세
       </h3>
+      {steps.length === 0 && (
+        <p className="text-xs text-stone-400">해당 주차 TASK 항목 없음</p>
+      )}
       {steps.map((step, i) => {
         const cfg = STATUS_CONFIG[step.status]
         const percent = step.totalChecks > 0 ? Math.round(step.doneChecks / step.totalChecks * 100) : 0

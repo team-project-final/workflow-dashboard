@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import type { RepoData } from '../types'
+import type { PrdWeek, RepoData, Track, Week } from '../types'
 
 const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] }[] = [
   { repo: 'synapse-platform-svc', tracks: [{ name: 'platform', owner: '김해준' }] },
@@ -12,7 +12,7 @@ const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] 
 
 const REPOS = DEFAULT_TRACKS.map(d => d.repo)
 
-const WEEKS_META = [
+export const WEEKS_META = [
   { week: 'W1', period: '05-12~05-16' },
   { week: 'W2', period: '05-19~05-23' },
   { week: 'W3', period: '05-26~05-29' },
@@ -20,39 +20,74 @@ const WEEKS_META = [
   { week: 'W5', period: '06-08~06-12' },
 ]
 
-const PHASE_NAMES = [
-  'TASK 시작', '요구사항 분석', 'Security 1차', 'ERD 설계',
-  'Security 2차', 'DTO/Entity', 'Repository', 'Service+Test',
-  'Controller+Test', 'View+Test',
-]
+type TrackDef = { name: string; owner: string }
 
-function emptyRepoData(repo: string, tracks: { name: string; owner: string }[]): RepoData {
+function emptyWeek(week: string, period: string): Week {
+  return {
+    week,
+    period,
+    steps: [],
+    totalChecks: 0,
+    doneChecks: 0,
+  }
+}
+
+function normalizeWeek(week: Week | undefined, weekMeta: typeof WEEKS_META[number]): Week {
+  if (!week) return emptyWeek(weekMeta.week, weekMeta.period)
+
+  return {
+    ...week,
+    week: weekMeta.week,
+    period: week.period || weekMeta.period,
+    steps: week.steps || [],
+    totalChecks: week.totalChecks || 0,
+    doneChecks: week.doneChecks || 0,
+  }
+}
+
+function normalizeTrack(track: Track | undefined, def: TrackDef): Track {
+  return {
+    name: def.name,
+    owner: track?.owner || def.owner,
+    weeks: WEEKS_META.map(weekMeta =>
+      normalizeWeek(track?.weeks?.find(w => w.week === weekMeta.week), weekMeta)
+    ),
+  }
+}
+
+function normalizePrdWeek(prdWeek: PrdWeek | undefined, weekMeta: typeof WEEKS_META[number]): PrdWeek {
+  return {
+    week: weekMeta.week,
+    items: prdWeek?.items || [],
+  }
+}
+
+function emptyRepoData(repo: string, tracks: TrackDef[]): RepoData {
   return {
     repo,
     updatedAt: '',
-    tracks: tracks.map(t => ({
-      name: t.name,
-      owner: t.owner,
-      weeks: WEEKS_META.map(wm => {
-        const step = {
-          name: `${t.name} (${wm.week})`,
-          status: 'Not Started' as const,
-          phases: PHASE_NAMES.map(name => ({ name, total: 0, done: 0, items: [] })),
-          totalChecks: 0,
-          doneChecks: 0,
-        }
-        return {
-          week: wm.week,
-          period: wm.period,
-          steps: [step],
-          totalChecks: 0,
-          doneChecks: 0,
-        }
-      }),
-    })),
+    tracks: tracks.map(t => normalizeTrack(undefined, t)),
     prd: WEEKS_META.map(wm => ({ week: wm.week, items: [] })),
     history: [],
     changelog: [],
+  }
+}
+
+function normalizeRepoData(raw: RepoData | null, def: { repo: string; tracks: TrackDef[] }): RepoData {
+  if (!raw) return emptyRepoData(def.repo, def.tracks)
+
+  return {
+    ...raw,
+    repo: raw.repo || def.repo,
+    updatedAt: raw.updatedAt || '',
+    tracks: def.tracks.map(trackDef =>
+      normalizeTrack(raw.tracks?.find(t => t.name === trackDef.name), trackDef)
+    ),
+    prd: WEEKS_META.map(weekMeta =>
+      normalizePrdWeek(raw.prd?.find(p => p.week === weekMeta.week), weekMeta)
+    ),
+    history: raw.history || [],
+    changelog: raw.changelog || [],
   }
 }
 
@@ -70,7 +105,7 @@ export function useData() {
       )
     ).then(results => {
       const merged = DEFAULT_TRACKS.map((def, i) =>
-        results[i] as RepoData ?? emptyRepoData(def.repo, def.tracks)
+        normalizeRepoData(results[i] as RepoData | null, def)
       )
       setData(merged)
       setLoading(false)
@@ -90,22 +125,24 @@ export function useData() {
 }
 
 export function useRepoData(repo: string) {
+  const def = DEFAULT_TRACKS.find(d => d.repo === repo)
   const [data, setData] = useState<RepoData | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const def = DEFAULT_TRACKS.find(d => d.repo === repo)
+    if (!def) return
+
     fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
       .then(r => r.ok ? r.json() : null)
       .then(d => {
-        setData(d ?? (def ? emptyRepoData(def.repo, def.tracks) : null))
+        setData(normalizeRepoData(d, def))
         setLoading(false)
       })
       .catch(() => {
-        setData(def ? emptyRepoData(def.repo, def.tracks) : null)
+        setData(emptyRepoData(def.repo, def.tracks))
         setLoading(false)
       })
-  }, [repo])
+  }, [repo, def])
 
-  return { data, loading }
+  return def ? { data, loading } : { data: null, loading: false }
 }

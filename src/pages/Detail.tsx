@@ -17,7 +17,8 @@ export default function Detail() {
   const [selectedTrackIdx, setSelectedTrackIdx] = useState(0)
   const [activeTab, setActiveTab] = useState<'detail' | 'changelog'>('detail')
 
-  if (loading || !data) return <div className="p-8 text-stone-400">Loading...</div>
+  if (loading) return <div className="p-8 text-stone-400">Loading...</div>
+  if (!data) return <div className="p-8 text-stone-400">레포를 찾을 수 없습니다</div>
 
   const hasMultipleTracks = data.tracks.length > 1
   const track = data.tracks[selectedTrackIdx] || data.tracks[0]
