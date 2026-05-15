@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-13T00:42:03.526Z",
+  "updatedAt": "2026-05-15T07:12:26.464Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -1948,128 +1948,128 @@
           "steps": [
             {
               "name": "Modulith 모듈 구조 설정",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (모듈 분리 요구사항)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Spring Modulith 공식 문서 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "note/graph/chunking 모듈 간 의존성 규칙 도출",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈별 public API 인터페이스 정의 기준",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (설정 작업)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈 간 internal 패키지 외부 접근 차단 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "모듈 정의 및 구조 설계",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "note, graph, chunking 패키지 생성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "각 모듈 `package-info.java` 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "`@ApplicationModule(allowedDependencies=...)` 설정",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈별 internal 패키지 분리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈 간 public API 인터페이스 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈 구조 다이어그램 문서화",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "모듈 경계 검증",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "`ApplicationModules.verify()` 통합 테스트 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "의존 위반 시 빌드 실패 수동 검증",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "순환 의존 감지 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "internal 패키지 외부 접근 시 컴파일 에러 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -2081,7 +2081,7 @@
                 }
               ],
               "totalChecks": 22,
-              "doneChecks": 0
+              "doneChecks": 22
             },
             {
               "name": "ArchUnit 모듈 경계 테스트",
@@ -2370,7 +2370,7 @@
             }
           ],
           "totalChecks": 67,
-          "doneChecks": 0
+          "doneChecks": 22
         },
         {
           "week": "W2",
@@ -2451,19 +2451,23 @@
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 4,
+                  "total": 5,
                   "done": 0,
                   "items": [
                     {
-                      "text": "chunks 테이블 설계 (id, noteId, chunkIndex, content, tokenCount, createdAt)",
+                      "text": "note_chunks 테이블 설계 (id, note_id, chunk_index, chunk_text, token_count, embedding vector(1536), created_at)",
                       "done": false
                     },
                     {
-                      "text": "인덱스 설계 (chunks.noteId, chunks.noteId+chunkIndex UNIQUE)",
+                      "text": "참고: 임베딩은 별도 테이블(chunk_embeddings)이 아닌 note_chunks.embedding 컬럼에 저장",
                       "done": false
                     },
                     {
-                      "text": "관계 정의 (chunks.noteId → notes.id FK)",
+                      "text": "인덱스 설계 (note_chunks.note_id, note_chunks.note_id+chunk_index UNIQUE)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (note_chunks.note_id → notes.id FK)",
                       "done": false
                     },
                     {
@@ -2501,15 +2505,15 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "ChunkResponse 정의 (id, noteId, chunkIndex, content, tokenCount)",
+                      "text": "ChunkResponse 정의 (id, note_id, chunk_index, chunk_text, token_count)",
                       "done": false
                     },
                     {
-                      "text": "ChunkCreateEvent 정의 (noteId, content)",
+                      "text": "ChunkCreateEvent 정의 (note_id, chunk_text)",
                       "done": false
                     },
                     {
-                      "text": "Chunk Entity 작성",
+                      "text": "NoteChunk Entity 작성",
                       "done": false
                     },
                     {
@@ -2528,7 +2532,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "ChunkRepository 인터페이스 작성",
+                      "text": "NoteChunkRepository 인터페이스 작성",
                       "done": false
                     },
                     {
@@ -2551,7 +2555,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "ChunkingService 구현 (chunkNote, getChunksByNoteId, deleteChunksByNoteId)",
+                      "text": "ChunkingService 구현 (chunkNote, getNoteChunksByNoteId, deleteNoteChunksByNoteId)",
                       "done": false
                     },
                     {
@@ -2594,7 +2598,7 @@
                       "done": false
                     },
                     {
-                      "text": "관리용 청크 조회 엔드포인트 (선택): GET /api/v1/notes/{noteId}/chunks",
+                      "text": "관리용 청크 조회 엔드포인트 (선택): GET /notes/{noteId}/chunks",
                       "done": false
                     },
                     {
@@ -2627,7 +2631,7 @@
                   ]
                 }
               ],
-              "totalChecks": 44,
+              "totalChecks": 45,
               "doneChecks": 0
             },
             {
@@ -2759,7 +2763,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "SearchRequest 정의 (query, filters, page, size)",
+                      "text": "SearchRequest 정의 (query, filters, cursor, limit)",
                       "done": false
                     },
                     {
@@ -2767,7 +2771,7 @@
                       "done": false
                     },
                     {
-                      "text": "SearchPageResponse 정의 (results[], totalCount, page, size)",
+                      "text": "SearchPageResponse 정의 (results[], totalCount, cursor — cursor-based pagination)",
                       "done": false
                     },
                     {
@@ -2840,7 +2844,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "GET /api/v1/search?q={query}&page={p}&size={s} 엔드포인트 구현",
+                      "text": "GET /notes/search?q={query}&cursor=...&limit=20 엔드포인트 구현",
                       "done": false
                     },
                     {
@@ -2889,7 +2893,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 89,
+          "totalChecks": 90,
           "doneChecks": 0
         },
         {
@@ -3025,11 +3029,11 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "HybridSearchRequest DTO 정의 (query, page, size, filters)",
+                      "text": "HybridSearchRequest DTO 정의 (query, cursor, limit, filters)",
                       "done": false
                     },
                     {
-                      "text": "HybridSearchResponse DTO 정의 (results[], totalCount, searchTime)",
+                      "text": "HybridSearchResponse DTO 정의 (results[], totalCount, cursor, searchTime)",
                       "done": false
                     },
                     {
@@ -3098,11 +3102,19 @@
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 5,
+                  "total": 7,
                   "done": 0,
                   "items": [
                     {
-                      "text": "POST /search 엔드포인트 구현 (하이브리드 검색)",
+                      "text": "GET /notes/search?q=... 엔드포인트 구현 (키워드 검색)",
+                      "done": false
+                    },
+                    {
+                      "text": "POST /ai/search/semantic 엔드포인트 구현 (시맨틱 검색) — **아키텍처 주의**: `/ai/search/semantic` 및 `/ai/search/hybrid` API는 learning-ai 서비스 소관입니다. knowledge-svc에서 직접 구현하지 말고 learning-ai-svc가 제공하는 API를 호출(프록시)하는 방식으로 연동하십시오.",
+                      "done": false
+                    },
+                    {
+                      "text": "POST /ai/search/hybrid 엔드포인트 구현 (하이브리드 검색) — **아키텍처 주의**: 위 항목 참조. 해당 엔드포인트의 실제 구현 책임은 learning-ai 팀에 있습니다.",
                       "done": false
                     },
                     {
@@ -3143,7 +3155,7 @@
                   ]
                 }
               ],
-              "totalChecks": 43,
+              "totalChecks": 45,
               "doneChecks": 0
             },
             {
@@ -3397,7 +3409,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 86,
+          "totalChecks": 88,
           "doneChecks": 0
         },
         {
@@ -3782,7 +3794,26 @@
       "date": "2026-05-13",
       "totalChecks": 581,
       "doneChecks": 0
+    },
+    {
+      "date": "2026-05-15",
+      "totalChecks": 584,
+      "doneChecks": 22
     }
   ],
-  "changelog": []
+  "changelog": [
+    {
+      "date": "2026-05-15T07:12:26.464Z",
+      "commit": "a121a16",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > Modulith 모듈 구조 설정",
+          "detail": "22개 항목 완료 (0 → 22)"
+        }
+      ]
+    }
+  ]
 }
