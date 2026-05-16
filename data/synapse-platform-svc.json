@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-05-15T06:29:18.823Z",
+  "updatedAt": "2026-05-16T02:16:47.290Z",
   "tracks": [
     {
       "name": "platform",
@@ -12,713 +12,713 @@
           "steps": [
             {
               "name": "platform-svc 골격 생성",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "auth/user/notification/admin 4개 모듈 역할 정의",
-                      "done": true
+                      "text": "auth/audit/billing/notification 4개 모듈 역할 정의",
+                      "done": false
                     },
                     {
                       "text": "Gradle 의존성 목록 도출",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No (Health endpoint만)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "골격 단계 — ERD 해당 없음 (DB 마이그레이션 Out of Scope)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈별 패키지 구조도 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Soft Delete 정책: 비해당",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "각 모듈 package-info.java 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "items": [
                     {
                       "text": "골격 단계 — Repository 해당 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "ApplicationModulesTest 구조 검증 테스트 작성",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "빈 Service 클래스 생성 (4개 모듈)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "ApplicationModulesTest 통과 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "`./gradlew build` 성공 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "빈 Controller 클래스 생성 (4개 모듈)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Dockerfile 작성 (multi-stage build)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Docker 이미지 빌드 성공 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "docker compose에서 platform-svc 실행 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 32,
-              "doneChecks": 32
+              "doneChecks": 0
             },
             {
               "name": "OAuth 회원가입/로그인",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "PRD_W1 해당 요구사항 확인 (FR-PL-001, FR-PL-002)",
-                      "done": true
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx OAuth 인증)",
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "Google/GitHub OAuth 연동 플로우 분석",
-                      "done": true
+                      "text": "Google/GitHub/Apple OAuth 연동 플로우 분석 (Microsoft는 확장 Provider로 문서화)",
+                      "done": false
                     },
                     {
                       "text": "신규 사용자 자동 회원가입 로직 설계",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "기존 사용자 매핑 로직 (email 기준) 설계",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (인증 생성 API 자체)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 없음 (공개 접근)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: Yes (OAuth 콜백 엔드포인트)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "OAuth state 파라미터 CSRF 방어 필수",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
                       "text": "users 테이블 설계 (id, tenant_id, email, display_name, avatar_url, locale, status: active|suspended|deleted, created_at, updated_at)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "참고: provider, provider_id 컬럼은 users 테이블에 없음 — oauth_identities 테이블로 분리",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "oauth_identities 테이블 설계 (id, user_id, provider, provider_id, access_token_enc)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "인덱스 설계 (email UNIQUE, provider+provider_id UNIQUE)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "관계 정의 (users 1:N oauth_identities)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "민감 정보 암호화: OAuth access_token 암호화 저장 (D-007)",
-                      "done": true
+                      "text": "민감 정보 암호화: OAuth access_token 암호화 저장",
+                      "done": false
                     },
                     {
                       "text": "Soft Delete 정책: 논리삭제 (deleted_at)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요 (OAuth 콜백은 시스템 처리)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
                       "text": "OAuthCallbackRequest 정의 (code, state)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "OAuthTokenResponse 정의 (accessToken, refreshToken, expiresIn)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "User Entity 작성 (display_name, avatar_url, locale, status)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "OAuthIdentity Entity 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "UserRepository 인터페이스 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "OAuthIdentityRepository 인터페이스 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "findByEmail, findByProviderAndProviderId 커스텀 쿼리",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "OAuth2UserService 구현 (사용자 조회/생성 로직)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "신규 사용자 자동 회원가입 로직 구현",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "기존 사용자 매핑 로직 구현",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "OAuth2 콜백 핸들러 구현",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "OAuth2 성공 핸들러 구현 (JWT 발급 연계)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "통합 테스트 작성 (MockOAuth2User)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: Step 2에서는 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 43
+              "doneChecks": 0
             },
             {
               "name": "JWT + MFA 기초",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "PRD_W1 해당 요구사항 확인 (FR-PL-003, FR-PL-004)",
-                      "done": true
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx JWT/MFA)",
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "JWT Access/Refresh Token 발급 플로우 분석",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Refresh Token DB + Redis 저장 구조 설계",
-                      "done": true
+                      "text": "Refresh Token Redis 저장 구조 설계",
+                      "done": false
                     },
                     {
                       "text": "TOTP(RFC 6238) MFA 플로우 분석",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (MFA 설정은 인증 필요)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "공개 API 여부: POST /api/v1/auth/refresh는 공개, POST /api/v1/auth/mfa/* 는 인증 필요",
-                      "done": true
+                      "text": "공개 API 여부: POST /auth/refresh는 공개, POST /auth/mfa/* 는 인증 필요",
+                      "done": false
                     },
                     {
                       "text": "JWT 서명 알고리즘: RS256",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "refresh_tokens 테이블 설계 (id, user_id, token_hash, device_fingerprint, ip_address, expires_at, created_at) — ERD에 DB 테이블로 정의됨 (Redis 전용이 아님)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "mfa_credentials 테이블 설계 (id, user_id, type: totp, secret_enc, is_active, verified_at, created_at)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "인덱스 설계 (user_id UNIQUE on mfa_credentials, user_id UNIQUE on refresh_tokens)",
-                      "done": true
+                      "text": "인덱스 설계 (user_id UNIQUE on mfa_credentials)",
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "민감 정보 암호화: TOTP secret AES-256 암호화 저장",
-                      "done": true
+                      "text": "민감 정보 암호화: TOTP secret AES-256-GCM 암호화 저장",
+                      "done": false
                     },
                     {
-                      "text": "Refresh Token: DB 테이블(refresh_tokens) 저장 — token_hash, device_fingerprint, ip_address, expires_at 포함 (D-006)",
-                      "done": true
+                      "text": "Refresh Token 이중 저장 전략: Redis(활성 세션 빠른 조회용) + DB `refresh_tokens` 테이블(영속성/감사용) 병행 — token_hash, device_fingerprint, ip_address, expires_at 포함",
+                      "done": false
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (본인 MFA만 관리)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
                       "text": "TokenRefreshRequest 정의 (refreshToken)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "TokenResponse 정의 (accessToken, refreshToken, expiresIn)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "MfaSetupResponse 정의 (qrCodeUrl, secret)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "MfaVerifyRequest 정의 (code)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "MfaCredential Entity 작성 (type, is_active, verified_at) (D-008)",
-                      "done": true
+                      "text": "MfaCredential Entity 작성 (type, is_active, verified_at)",
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "items": [
                     {
                       "text": "MfaCredentialRepository 인터페이스 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "RefreshTokenRepository 인터페이스 작성 (DB 저장 + Redis 캐싱 병행)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "JwtService 구현 (생성, 파싱, 검증 — RS256)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "RefreshTokenService 구현 (DB + Redis 병행, 사용자당 1개 active token)",
-                      "done": true
+                      "text": "RefreshTokenService 구현 (Redis CRUD)",
+                      "done": false
                     },
                     {
                       "text": "MfaService 구현 (TOTP 생성, QR URL, 검증 — mfa_credentials 기반)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 7,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "POST /api/v1/auth/refresh 엔드포인트 구현",
-                      "done": true
+                      "text": "POST /auth/refresh 엔드포인트 구현",
+                      "done": false
                     },
                     {
-                      "text": "POST /api/v1/auth/mfa/setup 엔드포인트 구현",
-                      "done": true
+                      "text": "POST /auth/mfa/setup 엔드포인트 구현",
+                      "done": false
                     },
                     {
-                      "text": "POST /api/v1/auth/mfa/verify 엔드포인트 구현",
-                      "done": true
+                      "text": "POST /auth/mfa/verify 엔드포인트 구현",
+                      "done": false
                     },
                     {
                       "text": "Security Filter에 JWT 검증 추가",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Swagger API 문서 확인: 해당 없음 (SpringDoc 미구성, HANDOFF 범위 밖)",
-                      "done": true
+                      "text": "Swagger API 문서 확인",
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 43
+              "doneChecks": 0
             }
           ],
           "totalChecks": 118,
-          "doneChecks": 118
+          "doneChecks": 0
         },
         {
           "week": "W2",
@@ -807,19 +807,19 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "subscriptions 테이블 설계 (id, userId, planType, stripeSubscriptionId, status, currentPeriodStart, currentPeriodEnd, createdAt, updatedAt)",
+                      "text": "subscriptions 테이블 설계 (id, tenant_id FK, plan_code, stripe_subscription_id, status, current_period_start, current_period_end, created_at, updated_at)",
                       "done": false
                     },
                     {
-                      "text": "payment_history 테이블 설계 (id, userId, subscriptionId, stripePaymentIntentId, amount, currency, status, paidAt, createdAt)",
+                      "text": "payment_history 테이블 설계 (id, tenant_id, subscription_id, stripe_payment_intent_id, amount, currency, status, paid_at, created_at)",
                       "done": false
                     },
                     {
-                      "text": "인덱스 설계 (subscriptions.userId, payment_history.userId, payment_history.subscriptionId)",
+                      "text": "인덱스 설계 (subscriptions.tenant_id, payment_history.tenant_id, payment_history.subscription_id)",
                       "done": false
                     },
                     {
-                      "text": "관계 정의 (payment_history.subscriptionId → subscriptions.id FK)",
+                      "text": "관계 정의 (payment_history.subscription_id → subscriptions.id FK)",
                       "done": false
                     },
                     {
@@ -861,11 +861,11 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "CheckoutSessionRequest 정의 (planType, successUrl, cancelUrl)",
+                      "text": "CheckoutSessionRequest 정의 (plan_code, successUrl, cancelUrl)",
                       "done": false
                     },
                     {
-                      "text": "SubscriptionResponse 정의 (id, planType, status, currentPeriodEnd)",
+                      "text": "SubscriptionResponse 정의 (id, plan_code, status, current_period_end)",
                       "done": false
                     },
                     {
@@ -881,7 +881,7 @@
                       "done": false
                     },
                     {
-                      "text": "PlanType Enum 작성 (FREE, PRO, TEAM)",
+                      "text": "PlanCode Enum 작성 (FREE, PRO, TEAM)",
                       "done": false
                     },
                     {
@@ -958,23 +958,19 @@
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 9,
+                  "total": 8,
                   "done": 0,
                   "items": [
                     {
-                      "text": "POST /api/v1/billing/checkout 엔드포인트 구현",
+                      "text": "POST /billing/checkout 엔드포인트 구현",
                       "done": false
                     },
                     {
-                      "text": "POST /api/v1/billing/webhook 엔드포인트 구현 (Stripe Signature 검증)",
+                      "text": "POST /billing/webhooks 엔드포인트 구현 (Stripe Signature 검증)",
                       "done": false
                     },
                     {
-                      "text": "GET /api/v1/billing/subscription 엔드포인트 구현",
-                      "done": false
-                    },
-                    {
-                      "text": "GET /api/v1/billing/payments 엔드포인트 구현",
+                      "text": "GET /billing/subscription 엔드포인트 구현",
                       "done": false
                     },
                     {
@@ -1019,7 +1015,7 @@
                   ]
                 }
               ],
-              "totalChecks": 55,
+              "totalChecks": 54,
               "doneChecks": 0
             },
             {
@@ -1093,19 +1089,27 @@
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 4,
+                  "total": 6,
                   "done": 0,
                   "items": [
                     {
-                      "text": "device_tokens 테이블 설계 (id, userId, token, platform, deviceName, createdAt, updatedAt)",
+                      "text": "device_tokens 테이블 설계 (id, user_id, token, platform: ios|android|web, is_active, created_at, updated_at)",
                       "done": false
                     },
                     {
-                      "text": "notification_preferences 테이블 설계 (id, userId, type, enabled, createdAt, updatedAt)",
+                      "text": "참고: deviceName 컬럼은 ERD에 없음 — 제거",
                       "done": false
                     },
                     {
-                      "text": "인덱스 설계 (device_tokens.userId, device_tokens.token UNIQUE, notification_preferences.userId)",
+                      "text": "notification_preferences 테이블 설계 (id, user_id, push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end, created_at, updated_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "참고: notification_preferences는 컬럼 기반 구조 (type+enabled 행 기반이 아님)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (device_tokens.user_id, device_tokens.token UNIQUE, notification_preferences.user_id)",
                       "done": false
                     },
                     {
@@ -1143,23 +1147,23 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "DeviceTokenRequest 정의 (token, platform, deviceName)",
+                      "text": "DeviceTokenRequest 정의 (token, platform: ios|android|web)",
                       "done": false
                     },
                     {
-                      "text": "DeviceTokenResponse 정의 (id, platform, deviceName, createdAt)",
+                      "text": "DeviceTokenResponse 정의 (id, platform, is_active, createdAt)",
                       "done": false
                     },
                     {
-                      "text": "NotificationPreferenceRequest 정의 (type, enabled)",
+                      "text": "NotificationPreferenceRequest 정의 (push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end)",
                       "done": false
                     },
                     {
-                      "text": "NotificationPreferenceResponse 정의 (type, enabled)",
+                      "text": "NotificationPreferenceResponse 정의 (push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end)",
                       "done": false
                     },
                     {
-                      "text": "DeviceToken Entity 작성",
+                      "text": "DeviceToken Entity 작성 (is_active 컬럼 포함)",
                       "done": false
                     },
                     {
@@ -1167,7 +1171,7 @@
                       "done": false
                     },
                     {
-                      "text": "Platform Enum 작성 (ANDROID, IOS, WEB)",
+                      "text": "Platform Enum 작성 (ios, android, web — 소문자)",
                       "done": false
                     },
                     {
@@ -1240,19 +1244,19 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "POST /api/v1/notifications/devices 엔드포인트 구현 (토큰 등록)",
+                      "text": "POST /notifications/devices 엔드포인트 구현 (토큰 등록)",
                       "done": false
                     },
                     {
-                      "text": "DELETE /api/v1/notifications/devices/{id} 엔드포인트 구현",
+                      "text": "DELETE /notifications/devices/{id} 엔드포인트 구현",
                       "done": false
                     },
                     {
-                      "text": "GET /api/v1/notifications/preferences 엔드포인트 구현",
+                      "text": "GET /notifications/preferences 엔드포인트 구현",
                       "done": false
                     },
                     {
-                      "text": "PUT /api/v1/notifications/preferences 엔드포인트 구현",
+                      "text": "PUT /notifications/preferences 엔드포인트 구현",
                       "done": false
                     },
                     {
@@ -1293,11 +1297,11 @@
                   ]
                 }
               ],
-              "totalChecks": 49,
+              "totalChecks": 51,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 104,
+          "totalChecks": 105,
           "doneChecks": 0
         },
         {
@@ -1333,7 +1337,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "소비 대상 Kafka 토픽 목록 정의 (gamification.*, community.*, card.*, auth.*)",
+                      "text": "소비 대상 Kafka 토픽 목록 정의 (audit.event, user.registered, billing.subscription.changed — 아키텍처 표준. gamification.*, community.*, card.* 토픽은 audit 모듈 소비 대상 아님)",
                       "done": false
                     },
                     {
@@ -1379,11 +1383,11 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "audit_logs 테이블 설계 (id, event_type, actor_id, target_type, target_id, payload_json, created_at)",
+                      "text": "audit_logs 테이블 설계 (id, action, user_id, resource_type, resource_id, old_value jsonb, new_value jsonb, ip_address inet, user_agent, created_at)",
                       "done": false
                     },
                     {
-                      "text": "인덱스 설계 (event_type, actor_id, created_at)",
+                      "text": "인덱스 설계 (action, user_id, created_at)",
                       "done": false
                     },
                     {
@@ -1452,7 +1456,7 @@
                       "done": false
                     },
                     {
-                      "text": "findByEventType, findByActorId 커스텀 쿼리",
+                      "text": "findByAction, findByUserId 커스텀 쿼리",
                       "done": false
                     },
                     {
@@ -1498,7 +1502,7 @@
                       "done": false
                     },
                     {
-                      "text": "페이징 + 필터링 (event_type, actor_id, 기간)",
+                      "text": "페이징 + 필터링 (action, user_id, 기간)",
                       "done": false
                     },
                     {
@@ -1567,7 +1571,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "소비 대상 토픽 정의 (gamification.level_up, gamification.badge_earned, community.report.*, card.review.due)",
+                      "text": "소비 대상 토픽 정의 (`notification.send` 토픽 — 아키텍처 표준 패턴. 각 서비스(gamification, community, card 등)는 직접 notification 모듈을 호출하는 대신 `notification.send` 토픽에 이벤트를 발행하며, notification 모듈은 이 단일 토픽만 소비하여 채널별 발송을 처리함)",
                       "done": false
                     },
                     {
@@ -1613,11 +1617,11 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "notifications 테이블 설계 (id, user_id, type, title, body, is_read, channel, created_at)",
+                      "text": "notifications 테이블 설계 (id, user_id, channel, title, body, category, data_json, template_code, is_read, created_at)",
                       "done": false
                     },
                     {
-                      "text": "notification_settings 테이블 설계 (user_id, channel, event_type, enabled)",
+                      "text": "참고: notification_settings 테이블 → notification_preferences 테이블로 통합 (컬럼 기반 구조: push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end)",
                       "done": false
                     },
                     {
@@ -1655,15 +1659,11 @@
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
-                  "total": 6,
+                  "total": 5,
                   "done": 0,
                   "items": [
                     {
-                      "text": "Notification Entity 작성",
-                      "done": false
-                    },
-                    {
-                      "text": "NotificationSetting Entity 작성",
+                      "text": "Notification Entity 작성 (channel, category, data_json, template_code 컬럼 포함)",
                       "done": false
                     },
                     {
@@ -1675,7 +1675,7 @@
                       "done": false
                     },
                     {
-                      "text": "NotificationSettingRequest/Response DTO 정의",
+                      "text": "NotificationPreferenceRequest/Response DTO 정의 (notification_preferences 기반)",
                       "done": false
                     },
                     {
@@ -1694,7 +1694,7 @@
                       "done": false
                     },
                     {
-                      "text": "NotificationSettingRepository 인터페이스 작성",
+                      "text": "NotificationPreferenceRepository 인터페이스 작성",
                       "done": false
                     },
                     {
@@ -1709,7 +1709,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "NotificationKafkaConsumer 구현 (gamification.*/community.*/card.review.due 소비)",
+                      "text": "NotificationKafkaConsumer 구현 (`notification.send` 토픽 소비 — 아키텍처 표준 패턴. gamification/community/card 등 각 서비스는 `notification.send` 토픽에 발행하며, 이 Consumer가 라우팅 처리)",
                       "done": false
                     },
                     {
@@ -1725,7 +1725,7 @@
                       "done": false
                     },
                     {
-                      "text": "사용자 알림 설정 확인 로직 (opt-out 시 발송 스킵)",
+                      "text": "사용자 알림 설정 확인 로직 (notification_preferences — push_enabled/email_enabled/in_app_enabled 기반 opt-out 시 발송 스킵)",
                       "done": false
                     },
                     {
@@ -1752,11 +1752,11 @@
                       "done": false
                     },
                     {
-                      "text": "GET /notification-settings 엔드포인트 구현",
+                      "text": "GET /notifications/preferences 엔드포인트 구현",
                       "done": false
                     },
                     {
-                      "text": "PUT /notification-settings 엔드포인트 구현",
+                      "text": "PUT /notifications/preferences 엔드포인트 구현",
                       "done": false
                     },
                     {
@@ -1789,7 +1789,7 @@
                   ]
                 }
               ],
-              "totalChecks": 44,
+              "totalChecks": 43,
               "doneChecks": 0
             },
             {
@@ -1871,7 +1871,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "users 테이블 확장: status 컬럼 추가 (ACTIVE, SUSPENDED, DELETED)",
+                      "text": "users 테이블 확장: status 컬럼 확인 (active|suspended|deleted — 소문자)",
                       "done": false
                     },
                     {
@@ -1917,7 +1917,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "AdminUserListResponse DTO 정의 (id, email, name, status, created_at)",
+                      "text": "AdminUserListResponse DTO 정의 (id, email, display_name, status: active|suspended|deleted, created_at)",
                       "done": false
                     },
                     {
@@ -1967,11 +1967,11 @@
                       "done": false
                     },
                     {
-                      "text": "사용자 정지 로직 (status → SUSPENDED, 세션 무효화, audit 이벤트 발행)",
+                      "text": "사용자 정지 로직 (status → suspended, 세션 무효화, audit 이벤트 발행)",
                       "done": false
                     },
                     {
-                      "text": "사용자 삭제 로직 (status → DELETED, soft delete, 세션 무효화, audit 이벤트 발행)",
+                      "text": "사용자 삭제 로직 (status → deleted, soft delete, 세션 무효화, audit 이벤트 발행)",
                       "done": false
                     },
                     {
@@ -1994,11 +1994,11 @@
                       "done": false
                     },
                     {
-                      "text": "GET /admin/users/search 엔드포인트 구현 (검색)",
+                      "text": "GET /admin/users?q=검색어 엔드포인트 구현 (쿼리 파라미터 방식 검색)",
                       "done": false
                     },
                     {
-                      "text": "PATCH /admin/users/{id}/suspend 엔드포인트 구현",
+                      "text": "PUT /admin/users/{id}/status 엔드포인트 구현 (suspend/activate)",
                       "done": false
                     },
                     {
@@ -2043,7 +2043,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 126,
+          "totalChecks": 125,
           "doneChecks": 0
         },
         {
@@ -2261,6 +2261,122 @@
           ],
           "totalChecks": 27,
           "doneChecks": 0
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "인증/결제 E2E",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "시나리오 준비",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "OAuth 회원가입/로그인 테스트 계정 준비",
+                      "done": false
+                    },
+                    {
+                      "text": "JWT 갱신, 로그아웃, MFA 등록/검증 시나리오 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Stripe Test Mode 결제 시나리오 작성",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "실행",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "회원가입 → 로그인 → JWT 갱신 → MFA → 로그아웃 E2E 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "Stripe Checkout → Webhook → 플랜 활성화 E2E 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 케이스를 P0/P1/P2로 분류",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 6,
+              "doneChecks": 0
+            },
+            {
+              "name": "알림 안정화",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "알림 플로우 검증",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "`card.review.due` → notification → FCM/SES 경로 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "`gamification.*` → notification 경로 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "`community.*` → notification 경로 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "P0 수정",
+                  "total": 7,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증/결제/알림 P0 버그 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "알림 발송 지연 SLA 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "회귀 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "인증 E2E가 통과한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "결제 E2E가 통과한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "알림 발송 성공률과 지연 SLA가 기준을 만족한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "platform P0 버그가 0건이다.",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 10,
+              "doneChecks": 0
+            }
+          ],
+          "totalChecks": 16,
+          "doneChecks": 0
         }
       ]
     }
@@ -2407,6 +2523,11 @@
       "date": "2026-05-15",
       "totalChecks": 375,
       "doneChecks": 118
+    },
+    {
+      "date": "2026-05-16",
+      "totalChecks": 391,
+      "doneChecks": 0
     }
   ],
   "changelog": [
@@ -2430,6 +2551,29 @@
           "type": "check_done",
           "target": "W1 > JWT + MFA 기초",
           "detail": "43개 항목 완료 (0 → 43)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16T02:16:47.290Z",
+      "commit": "72e644a",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W1 > platform-svc 골격 생성",
+          "detail": "32개 항목 해제 (32 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > OAuth 회원가입/로그인",
+          "detail": "43개 항목 해제 (43 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > JWT + MFA 기초",
+          "detail": "43개 항목 해제 (43 → 0)"
         }
       ]
     }
