@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-15T08:27:20.410Z",
+  "updatedAt": "2026-05-16T02:14:18.866Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -291,15 +291,15 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "notes 테이블 설계 (id, title, content, owner_id, created_at, updated_at, deleted_at)",
+                      "text": "notes 테이블 설계 (id, tenant_id, user_id, title, content_md, content_plain, status: active|archived|trashed, word_count, metadata jsonb, created_at, updated_at, deleted_at)",
                       "done": false
                     },
                     {
-                      "text": "인덱스 설계 (owner_id, created_at DESC)",
+                      "text": "인덱스 설계 (user_id, created_at DESC)",
                       "done": false
                     },
                     {
-                      "text": "관계 정의 (notes.owner_id → users.id FK)",
+                      "text": "관계 정의 (notes.user_id → users.id FK)",
                       "done": false
                     },
                     {
@@ -322,7 +322,7 @@
                       "done": false
                     },
                     {
-                      "text": "행 단위 접근 제어: 필요 (수정/삭제 시 owner_id 확인)",
+                      "text": "행 단위 접근 제어: 필요 (수정/삭제 시 user_id 확인)",
                       "done": false
                     },
                     {
@@ -337,19 +337,19 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "NoteCreateRequest 정의 (title, content)",
+                      "text": "NoteCreateRequest 정의 (title, content_md)",
                       "done": false
                     },
                     {
-                      "text": "NoteUpdateRequest 정의 (title, content)",
+                      "text": "NoteUpdateRequest 정의 (title, content_md)",
                       "done": false
                     },
                     {
-                      "text": "NoteResponse 정의 (id, title, content, ownerId, createdAt, updatedAt)",
+                      "text": "NoteResponse 정의 (id, title, content_md, content_plain, userId, status, word_count, createdAt, updatedAt)",
                       "done": false
                     },
                     {
-                      "text": "NoteListResponse 정의 (id, title, ownerId, createdAt — content 제외)",
+                      "text": "NoteListResponse 정의 (id, title, userId, status, createdAt — content 제외)",
                       "done": false
                     },
                     {
@@ -376,7 +376,7 @@
                       "done": false
                     },
                     {
-                      "text": "findByOwnerIdAndDeletedAtIsNull 커스텀 쿼리",
+                      "text": "findByUserIdAndDeletedAtIsNull 커스텀 쿼리",
                       "done": false
                     },
                     {
@@ -533,15 +533,19 @@
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 4,
+                  "total": 5,
                   "done": 0,
                   "items": [
                     {
-                      "text": "note_links 테이블 설계 (id, source_note_id, target_title, target_note_id nullable, created_at)",
+                      "text": "note_links 테이블 설계 (id, source_note_id, target_note_id nullable, link_type: wikilink|reference|embed, context_snippet, created_at)",
                       "done": false
                     },
                     {
-                      "text": "인덱스 설계 (source_note_id, target_note_id, source+target_title UNIQUE)",
+                      "text": "참고: target_title 컬럼은 ERD에 없음 — 애플리케이션 레벨에서 target_note_id로 조회하여 처리",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (source_note_id, target_note_id, source+target_note_id UNIQUE)",
                       "done": false
                     },
                     {
@@ -583,7 +587,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "NoteLinkResponse 정의 (id, sourceNoteId, targetTitle, targetNoteId)",
+                      "text": "NoteLinkResponse 정의 (id, sourceNoteId, targetNoteId, linkType, contextSnippet)",
                       "done": false
                     },
                     {
@@ -656,7 +660,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "GET /notes/{id}/links 엔드포인트 구현",
+                      "text": "GET /notes/{id}/backlinks 엔드포인트 구현",
                       "done": false
                     },
                     {
@@ -697,11 +701,11 @@
                   ]
                 }
               ],
-              "totalChecks": 40,
+              "totalChecks": 41,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 114,
+          "totalChecks": 115,
           "doneChecks": 0
         },
         {
@@ -787,15 +791,15 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "note_links 테이블 확인/갱신 (sourceNoteId, targetNoteId, createdAt)",
+                      "text": "note_links 테이블 확인/갱신 (source_note_id, target_note_id, link_type: wikilink|reference|embed, context_snippet, created_at)",
                       "done": false
                     },
                     {
-                      "text": "양방향 조회를 위한 인덱스 설계 (sourceNoteId, targetNoteId)",
+                      "text": "양방향 조회를 위한 인덱스 설계 (source_note_id, target_note_id)",
                       "done": false
                     },
                     {
-                      "text": "복합 유니크 제약 (sourceNoteId + targetNoteId)",
+                      "text": "복합 유니크 제약 (source_note_id + target_note_id)",
                       "done": false
                     },
                     {
@@ -837,11 +841,11 @@
                       "done": false
                     },
                     {
-                      "text": "GraphNodeDto 정의 (id, title, group)",
+                      "text": "GraphNodeDto 정의 (id, title, linkCount, pageRank)",
                       "done": false
                     },
                     {
-                      "text": "GraphEdgeDto 정의 (source, target)",
+                      "text": "GraphEdgeDto 정의 (source, target, type)",
                       "done": false
                     },
                     {
@@ -907,7 +911,7 @@
                       "done": false
                     },
                     {
-                      "text": "D3.js용 노드/엣지 JSON 생성 서비스 (depth 제한 BFS/DFS)",
+                      "text": "D3.js용 노드/엣지 JSON 생성 서비스 (depth 제한 BFS/DFS — 노드: {id,title,linkCount,pageRank}, 엣지: {source,target,type})",
                       "done": false
                     },
                     {
@@ -926,19 +930,23 @@
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 7,
+                  "total": 8,
                   "done": 0,
                   "items": [
                     {
-                      "text": "GET /api/v1/notes/{noteId}/backlinks 엔드포인트 구현",
+                      "text": "GET /notes/{noteId}/backlinks 엔드포인트 구현",
                       "done": false
                     },
                     {
-                      "text": "GET /api/v1/notes/{noteId}/outlinks 엔드포인트 구현",
+                      "text": "GET /notes/{noteId}/links 엔드포인트 구현 (forward links — Wiki 추가 예정)",
                       "done": false
                     },
                     {
-                      "text": "GET /api/v1/graph?noteId={id}&depth={n} 엔드포인트 구현 (D3.js 데이터)",
+                      "text": "GET /graph/data 엔드포인트 구현 (D3.js 데이터 — nodes[{id,title,linkCount,pageRank}], edges[{source,target,type}])",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /graph/neighbors/{noteId} 엔드포인트 구현 (인접 노드 탐색)",
                       "done": false
                     },
                     {
@@ -979,7 +987,7 @@
                   ]
                 }
               ],
-              "totalChecks": 49,
+              "totalChecks": 50,
               "doneChecks": 0
             },
             {
@@ -1015,7 +1023,7 @@
                       "done": false
                     },
                     {
-                      "text": "Kafka consumer 그룹 및 토픽 (note.updated) 확인",
+                      "text": "Kafka consumer 그룹 및 토픽 (note.created, note.updated, note.deleted — 3개 토픽 모두) 확인",
                       "done": false
                     },
                     {
@@ -1145,7 +1153,7 @@
                       "done": false
                     },
                     {
-                      "text": "Kafka Consumer 구현 (note.updated 토픽 소비 → ES 인덱싱)",
+                      "text": "Kafka Consumer 구현 (note.created, note.updated, note.deleted 3개 토픽 소비 → ES 인덱싱)",
                       "done": false
                     },
                     {
@@ -1217,7 +1225,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 88,
+          "totalChecks": 89,
           "doneChecks": 0
         },
         {
@@ -1295,11 +1303,15 @@
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 5,
+                  "total": 6,
                   "done": 0,
                   "items": [
                     {
-                      "text": "note_versions 테이블 설계 (id, note_id, version_number, title, content, created_by, created_at)",
+                      "text": "note_versions 테이블 설계 (id, note_id, version_number, title, content_md, change_summary, created_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "참고: created_by 컬럼은 ERD에 없음 — 소유자는 note_id → notes.user_id 로 참조",
                       "done": false
                     },
                     {
@@ -1475,7 +1487,7 @@
                   ]
                 }
               ],
-              "totalChecks": 44,
+              "totalChecks": 45,
               "doneChecks": 0
             },
             {
@@ -1725,7 +1737,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 86,
+          "totalChecks": 87,
           "doneChecks": 0
         },
         {
@@ -1935,6 +1947,118 @@
           ],
           "totalChecks": 25,
           "doneChecks": 0
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "노트/그래프 E2E",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "시나리오 정의",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "노트 생성 → 위키링크 추출 → 백링크 조회 시나리오 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "그래프 데이터 조회 및 렌더링 데이터 검증 시나리오 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "버전/태그/첨부파일 회귀 시나리오 작성",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "실행 및 수정",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "노트/그래프 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 및 tenant 격리 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 버그 수정 및 회귀 테스트",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 6,
+              "doneChecks": 0
+            },
+            {
+              "name": "ES 동기화 안정화",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "동기화 검증",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "노트 생성/수정 → Kafka → ES 인덱싱 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "검색 반영 지연 시간 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "ES 장애/재시도 실패 케이스 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "발표 데이터",
+                  "total": 6,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "그래프 데모용 노트 세트 준비",
+                      "done": false
+                    },
+                    {
+                      "text": "깨진 위키링크 또는 누락 엣지 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "노트/그래프 E2E가 통과한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "ES 동기화 E2E가 통과한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "knowledge-1 P0 버그가 0건이다.",
+                      "done": false
+                    },
+                    {
+                      "text": "발표용 그래프 데이터가 안정적으로 조회된다.",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 9,
+              "doneChecks": 0
+            }
+          ],
+          "totalChecks": 15,
+          "doneChecks": 0
         }
       ]
     },
@@ -1948,128 +2072,128 @@
           "steps": [
             {
               "name": "Modulith 모듈 구조 설정",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (모듈 분리 요구사항)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Spring Modulith 공식 문서 분석",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "note/graph/chunking 모듈 간 의존성 규칙 도출",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈별 public API 인터페이스 정의 기준",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (설정 작업)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈 간 internal 패키지 외부 접근 차단 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "모듈 정의 및 구조 설계",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
                       "text": "note, graph, chunking 패키지 생성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "각 모듈 `package-info.java` 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "`@ApplicationModule(allowedDependencies=...)` 설정",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈별 internal 패키지 분리",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈 간 public API 인터페이스 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈 구조 다이어그램 문서화",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "모듈 경계 검증",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "`ApplicationModules.verify()` 통합 테스트 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "의존 위반 시 빌드 실패 수동 검증",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "순환 의존 감지 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "internal 패키지 외부 접근 시 컴파일 에러 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
@@ -2081,147 +2205,147 @@
                 }
               ],
               "totalChecks": 22,
-              "doneChecks": 22
+              "doneChecks": 0
             },
             {
               "name": "ArchUnit 모듈 경계 테스트",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (모듈 경계 자동 감지)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (1.5일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "ArchUnit 라이브러리 문서 분석",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 규칙 3건 도출 (직접 의존 금지, 순환 참조, internal 접근)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "CI 파이프라인 연동 요건 분석",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (테스트 작성)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "테스트 규칙 설계",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "모듈 간 직접 의존 금지 규칙 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "순환 참조 감지 규칙 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "internal 패키지 외부 접근 금지 규칙 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "CI workflow 연동 구조 설계",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "테스트 작성 및 검증",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
                       "text": "`archunit-junit5` 의존성 추가",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈 간 직접 의존 금지 테스트 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "순환 참조 감지 테스트 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "internal 패키지 외부 접근 금지 테스트 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "의도적 위반 코드 push → FAIL 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 후 위반 코드 revert",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "CI 파이프라인 연동",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "CI workflow에 ArchUnit 테스트 단계 추가",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "ArchUnit 실패 시 전체 빌드 FAIL 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 실행 시간 10초 이내 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
@@ -2233,7 +2357,7 @@
                 }
               ],
               "totalChecks": 24,
-              "doneChecks": 24
+              "doneChecks": 0
             },
             {
               "name": "Avro 스키마 등록 및 호환성 검증",
@@ -2370,7 +2494,7 @@
             }
           ],
           "totalChecks": 67,
-          "doneChecks": 46
+          "doneChecks": 0
         },
         {
           "week": "W2",
@@ -3110,7 +3234,7 @@
                       "done": false
                     },
                     {
-                      "text": "POST /ai/search/semantic 엔드포인트 구현 (시맨틱 검색) — **아키텍처 주의**: `/ai/search/semantic` 및 `/ai/search/hybrid` API는 learning-ai 서비스 소관입니다. knowledge-svc에서 직접 구현하지 말고 learning-ai-svc가 제공하는 API를 호출(프록시)하는 방식으로 연동하십시오.",
+                      "text": "POST /ai/search/semantic 엔드포인트 구현 (시맨틱 검색) — **아키텍처 주의**: `/ai/search/semantic` 및 `/ai/search/hybrid` API는 learning-ai 서비스 소관입니다. knowledge-svc에서 직접 구현하지 말고 learning-ai 런타임이 제공하는 API를 호출(프록시)하는 방식으로 연동하십시오.",
                       "done": false
                     },
                     {
@@ -3623,6 +3747,122 @@
           ],
           "totalChecks": 26,
           "doneChecks": 0
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "검색 E2E",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "시나리오 정의",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "BM25 검색 시나리오 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "시맨틱 검색 프록시 연동 시나리오 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "하이브리드 RRF 검색 시나리오 작성",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "실행 및 수정",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "검색 E2E 테스트 실행",
+                      "done": false
+                    },
+                    {
+                      "text": "검색 권한/tenant 격리 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 버그 수정 및 회귀 테스트",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 6,
+              "doneChecks": 0
+            },
+            {
+              "name": "정확도 리포트",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "데이터셋 준비",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "테스트 쿼리와 기대 결과 세트 확정",
+                      "done": false
+                    },
+                    {
+                      "text": "MRR@10 또는 Top-5 관련도 기준 확정",
+                      "done": false
+                    },
+                    {
+                      "text": "실패 쿼리 분류",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "튜닝 결과 정리",
+                  "total": 7,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "BM25/시맨틱/RRF 비교 결과 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "정확도 미달 항목 개선안 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "발표용 검색 데모 쿼리 확정",
+                      "done": false
+                    },
+                    {
+                      "text": "검색 E2E가 통과한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "정확도 리포트가 작성된다.",
+                      "done": false
+                    },
+                    {
+                      "text": "knowledge-2 P0 버그가 0건이다.",
+                      "done": false
+                    },
+                    {
+                      "text": "발표용 검색 쿼리가 안정적으로 동작한다.",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 10,
+              "doneChecks": 0
+            }
+          ],
+          "totalChecks": 16,
+          "doneChecks": 0
         }
       ]
     }
@@ -3799,6 +4039,11 @@
       "date": "2026-05-15",
       "totalChecks": 584,
       "doneChecks": 46
+    },
+    {
+      "date": "2026-05-16",
+      "totalChecks": 618,
+      "doneChecks": 0
     }
   ],
   "changelog": [
@@ -3825,6 +4070,24 @@
           "type": "check_done",
           "target": "W1 > ArchUnit 모듈 경계 테스트",
           "detail": "24개 항목 완료 (0 → 24)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-16T02:14:18.865Z",
+      "commit": "b38b872",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W1 > Modulith 모듈 구조 설정",
+          "detail": "22개 항목 해제 (22 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > ArchUnit 모듈 경계 테스트",
+          "detail": "24개 항목 해제 (24 → 0)"
         }
       ]
     }
