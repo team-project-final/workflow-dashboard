@@ -8,6 +8,7 @@ const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] 
   { repo: 'synapse-learning-svc', tracks: [{ name: 'learning-card', owner: '조유지' }, { name: 'learning-ai', owner: '김나경' }] },
   { repo: 'synapse-frontend', tracks: [{ name: 'frontend', owner: '전원' }] },
   { repo: 'synapse-shared', tracks: [{ name: 'team-lead', owner: '김민구' }] },
+  { repo: 'synapse-gitops', tracks: [{ name: 'gitops', owner: 'velka' }] },
 ]
 
 const REPOS = DEFAULT_TRACKS.map(d => d.repo)

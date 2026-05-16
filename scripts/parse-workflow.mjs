@@ -88,6 +88,7 @@ const ownerMap = {
   'knowledge-1': '김현지', 'knowledge-2': '박은서',
   'learning-card': '조유지', 'learning-ai': '김나경',
   'frontend': '전원', 'team-lead': '김민구',
+  'gitops': 'velka',
 }
 
 const periodMap = {
