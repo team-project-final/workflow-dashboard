@@ -27,7 +27,7 @@ export default function Detail() {
   const doneChecks = data.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
   const percent = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0
 
-  const owners = data.tracks.map(t => t.owner).join(' · ')
+  const owners = [...new Set(data.tracks.map(t => t.owner))].join(' · ')
   const currentWeek = track?.weeks.find(w => w.week === selectedWeek)
   const activePrd = data.prdPerTrack ? data.prdPerTrack[selectedTrackIdx] : data.prd
   const prdWeek = activePrd?.find(p => p.week === selectedWeek)

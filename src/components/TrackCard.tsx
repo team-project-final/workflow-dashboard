@@ -10,11 +10,27 @@ interface TrackCardProps {
 export default function TrackCard({ repoData, trackName, owner }: TrackCardProps) {
   const navigate = useNavigate()
   const track = repoData.tracks.find(t => t.name === trackName)
-  if (!track) return null
+  const isCombined = !track && repoData.tracks.length > 0
 
-  const totalChecks = track.weeks.reduce((s, w) => s + w.totalChecks, 0)
-  const doneChecks = track.weeks.reduce((s, w) => s + w.doneChecks, 0)
+  if (!track && !isCombined) return null
+
+  const totalChecks = isCombined
+    ? repoData.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0)
+    : track!.weeks.reduce((s, w) => s + w.totalChecks, 0)
+  const doneChecks = isCombined
+    ? repoData.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
+    : track!.weeks.reduce((s, w) => s + w.doneChecks, 0)
   const percent = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0
+
+  // For combined sparkline, merge weekly totals across all tracks
+  const WEEKS = ['W1', 'W2', 'W3', 'W4', 'W5']
+  const weeklyData = isCombined
+    ? WEEKS.map(w => {
+        const tc = repoData.tracks.reduce((s, t) => s + (t.weeks.find(wk => wk.week === w)?.totalChecks || 0), 0)
+        const dc = repoData.tracks.reduce((s, t) => s + (t.weeks.find(wk => wk.week === w)?.doneChecks || 0), 0)
+        return { week: w, totalChecks: tc, doneChecks: dc }
+      })
+    : track!.weeks
 
   const hasData = totalChecks > 0
   const borderColor = !hasData ? 'border-stone-200' : percent >= 60 ? 'border-amber' : percent >= 30 ? 'border-stone-300' : 'border-danger'
@@ -39,7 +55,7 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
         />
       </div>
       <div className="flex gap-0.5 mt-2 justify-center">
-        {track.weeks.map(w => {
+        {weeklyData.map(w => {
           const wp = w.totalChecks > 0 ? Math.round(w.doneChecks / w.totalChecks * 100) : 0
           return (
             <div key={w.week} className="flex flex-col items-center">

@@ -9,9 +9,12 @@ export default function Dashboard() {
 
   if (loading) return <div className="p-8 text-stone-400">Loading...</div>
 
-  const trackEntries = data.flatMap(d =>
-    d.tracks.map(t => ({ repoData: d, trackName: t.name, owner: t.owner }))
-  )
+  const trackEntries = data.flatMap(d => {
+    if (d.repo === 'team-lead') {
+      return [{ repoData: d, trackName: 'team-lead', owner: '김민구' }]
+    }
+    return d.tracks.map(t => ({ repoData: d, trackName: t.name, owner: t.owner }))
+  })
 
   return (
     <div className="min-h-screen bg-stone-50">
