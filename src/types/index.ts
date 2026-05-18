@@ -71,6 +71,7 @@ export interface RepoData {
   updatedAt: string
   tracks: Track[]
   prd: PrdWeek[]
+  prdPerTrack?: PrdWeek[][]
   history: HistoryEntry[]
   changelog: ChangelogEntry[]
 }
