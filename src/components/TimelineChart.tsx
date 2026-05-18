@@ -16,7 +16,8 @@ const TRACK_COLORS: Record<string, string> = {
   'learning-card': '#0EA5E9',
   'learning-ai': '#8B5CF6',
   frontend: '#EC4899',
-  'team-lead': '#16A34A',
+  'synapse-gitops': '#16A34A',
+  'synapse-shared': '#22D3EE',
 }
 
 interface Props {
