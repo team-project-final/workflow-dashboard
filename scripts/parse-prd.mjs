@@ -25,8 +25,7 @@ const REPO_FR_PREFIXES = {
   'synapse-knowledge-svc':   ['FR-KN', 'FR-K2'],
   'synapse-learning-svc':    ['FR-LC', 'FR-LA'],
   'synapse-frontend':        ['FR-FE'],
-  'synapse-shared':          ['FR-TL'],
-  'synapse-gitops':          ['FR-GO'],
+  'synapse-gitops':          ['FR-TL'],
 }
 
 // repo-json 경로에서 레포명 추출

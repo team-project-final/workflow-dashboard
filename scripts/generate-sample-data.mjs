@@ -33,7 +33,7 @@ const repos = [
     prdPrefix: 'FR-FE',
   },
   {
-    repo: 'synapse-shared',
+    repo: 'synapse-gitops',
     tracks: [{ name: 'team-lead', owner: '김민구' }],
     prdPrefix: 'FR-TL',
   },

@@ -111,7 +111,7 @@ Expected repo files:
 - `data/synapse-knowledge-svc.json`
 - `data/synapse-learning-svc.json`
 - `data/synapse-frontend.json`
-- `data/synapse-shared.json`
+- `data/synapse-gitops.json`
 
 Expected tracks:
 
@@ -122,7 +122,7 @@ Expected tracks:
 | `synapse-knowledge-svc` | `knowledge-1`, `knowledge-2` |
 | `synapse-learning-svc` | `learning-card`, `learning-ai` |
 | `synapse-frontend` | `frontend` |
-| `synapse-shared` | `team-lead` |
+| `synapse-gitops` | `team-lead` |
 
 ## Data Updates
 

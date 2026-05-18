@@ -30,7 +30,7 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
       }`}>
         {percent}%
       </div>
-      <div className="text-xs font-semibold text-stone-600 mt-1">{repoData.repo.replace('synapse-', '')}</div>
+      <div className="text-xs font-semibold text-stone-600 mt-1">{trackName}</div>
       <div className="text-[10px] text-stone-400">{owner}</div>
       <div className="mt-2 h-1.5 bg-stone-200 rounded-full overflow-hidden">
         <div

@@ -9,8 +9,7 @@ const EXPECTED_REPOS = [
   { repo: 'synapse-knowledge-svc', tracks: ['knowledge-1', 'knowledge-2'] },
   { repo: 'synapse-learning-svc', tracks: ['learning-card', 'learning-ai'] },
   { repo: 'synapse-frontend', tracks: ['frontend'] },
-  { repo: 'synapse-shared', tracks: ['team-lead'] },
-  { repo: 'synapse-gitops', tracks: ['gitops'] },
+  { repo: 'synapse-gitops', tracks: ['team-lead'] },
 ]
 
 const WEEKS = ['W1', 'W2', 'W3', 'W4', 'W5']
