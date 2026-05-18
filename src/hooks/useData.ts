@@ -7,8 +7,13 @@ const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] 
   { repo: 'synapse-knowledge-svc', tracks: [{ name: 'knowledge-1', owner: '김현지' }, { name: 'knowledge-2', owner: '박은서' }] },
   { repo: 'synapse-learning-svc', tracks: [{ name: 'learning-card', owner: '조유지' }, { name: 'learning-ai', owner: '김나경' }] },
   { repo: 'synapse-frontend', tracks: [{ name: 'frontend', owner: '전원' }] },
-  { repo: 'synapse-gitops', tracks: [{ name: 'team-lead', owner: '김민구' }] },
 ]
+
+const TEAM_LEAD_CONFIG = {
+  virtualRepo: 'team-lead',
+  sources: ['synapse-gitops', 'synapse-shared'] as const,
+  owner: '김민구',
+}
 
 const REPOS = DEFAULT_TRACKS.map(d => d.repo)
 
@@ -91,23 +96,90 @@ function normalizeRepoData(raw: RepoData | null, def: { repo: string; tracks: Tr
   }
 }
 
+function mergeTeamLeadData(
+  gitopsRaw: RepoData | null,
+  sharedRaw: RepoData | null,
+): RepoData {
+  const gitopsDef = { repo: 'synapse-gitops', tracks: [{ name: 'team-lead', owner: TEAM_LEAD_CONFIG.owner }] }
+  const sharedDef = { repo: 'synapse-shared', tracks: [{ name: 'team-lead', owner: TEAM_LEAD_CONFIG.owner }] }
+
+  const gitopsData = normalizeRepoData(gitopsRaw, gitopsDef)
+  const sharedData = normalizeRepoData(sharedRaw, sharedDef)
+
+  const gitopsTrack = gitopsData.tracks[0]
+  const sharedTrack = sharedData.tracks[0]
+
+  const tracks: Track[] = [
+    { name: 'synapse-gitops', owner: TEAM_LEAD_CONFIG.owner, weeks: gitopsTrack.weeks },
+    { name: 'synapse-shared', owner: TEAM_LEAD_CONFIG.owner, weeks: sharedTrack.weeks },
+  ]
+
+  // Merge history by date: sum totalChecks/doneChecks from both repos per date
+  const historyMap = new Map<string, { totalChecks: number; doneChecks: number }>()
+  for (const h of [...gitopsData.history, ...sharedData.history]) {
+    const existing = historyMap.get(h.date)
+    if (existing) {
+      existing.totalChecks += h.totalChecks
+      existing.doneChecks += h.doneChecks
+    } else {
+      historyMap.set(h.date, { totalChecks: h.totalChecks, doneChecks: h.doneChecks })
+    }
+  }
+  const mergedHistory = [...historyMap].map(([date, v]) => ({ date, ...v }))
+
+  const mergedChangelog = [...gitopsData.changelog, ...sharedData.changelog]
+    .sort((a, b) => b.date.localeCompare(a.date))
+
+  const combinedPrd: PrdWeek[] = WEEKS_META.map(wm => {
+    const gitopsItems = gitopsData.prd.find(p => p.week === wm.week)?.items || []
+    const sharedItems = sharedData.prd.find(p => p.week === wm.week)?.items || []
+    return { week: wm.week, items: [...gitopsItems, ...sharedItems] }
+  })
+
+  return {
+    repo: 'team-lead',
+    updatedAt: gitopsData.updatedAt > sharedData.updatedAt ? gitopsData.updatedAt : sharedData.updatedAt,
+    tracks,
+    prd: combinedPrd,
+    prdPerTrack: [gitopsData.prd, sharedData.prd],
+    history: mergedHistory,
+    changelog: mergedChangelog,
+  }
+}
+
 export function useData() {
   const [data, setData] = useState<RepoData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    Promise.all(
-      REPOS.map(repo =>
+    const allFetches = [
+      ...REPOS.map(repo =>
         fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
           .then(r => r.ok ? r.json() : null)
           .catch(() => null)
-      )
-    ).then(results => {
+      ),
+      ...TEAM_LEAD_CONFIG.sources.map(repo =>
+        fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
+          .then(r => r.ok ? r.json() : null)
+          .catch(() => null)
+      ),
+    ]
+
+    Promise.all(allFetches).then(results => {
+      const repoResults = results.slice(0, REPOS.length)
+      const [gitopsResult, sharedResult] = results.slice(REPOS.length)
+
       const merged = DEFAULT_TRACKS.map((def, i) =>
-        normalizeRepoData(results[i] as RepoData | null, def)
+        normalizeRepoData(repoResults[i] as RepoData | null, def)
       )
-      setData(merged)
+
+      const teamLeadData = mergeTeamLeadData(
+        gitopsResult as RepoData | null,
+        sharedResult as RepoData | null,
+      )
+
+      setData([...merged, teamLeadData])
       setLoading(false)
     }).catch(err => {
       setError(err.message)
@@ -126,23 +198,47 @@ export function useData() {
 
 export function useRepoData(repo: string) {
   const def = DEFAULT_TRACKS.find(d => d.repo === repo)
+  const isTeamLead = repo === 'team-lead'
   const [data, setData] = useState<RepoData | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!def) return
+    if (!def && !isTeamLead) {
+      setLoading(false)
+      return
+    }
+
+    if (isTeamLead) {
+      Promise.all(
+        TEAM_LEAD_CONFIG.sources.map(r =>
+          fetch(`${import.meta.env.BASE_URL}data/${r}.json`)
+            .then(res => res.ok ? res.json() : null)
+            .catch(() => null)
+        )
+      ).then(([gitopsResult, sharedResult]) => {
+        setData(mergeTeamLeadData(
+          gitopsResult as RepoData | null,
+          sharedResult as RepoData | null,
+        ))
+        setLoading(false)
+      }).catch(() => {
+        setData(mergeTeamLeadData(null, null))
+        setLoading(false)
+      })
+      return
+    }
 
     fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
       .then(r => r.ok ? r.json() : null)
       .then(d => {
-        setData(normalizeRepoData(d, def))
+        setData(normalizeRepoData(d, def!))
         setLoading(false)
       })
       .catch(() => {
-        setData(emptyRepoData(def.repo, def.tracks))
+        setData(emptyRepoData(def!.repo, def!.tracks))
         setLoading(false)
       })
-  }, [repo, def])
+  }, [repo, def, isTeamLead])
 
-  return def ? { data, loading } : { data: null, loading: false }
+  return (def || isTeamLead) ? { data, loading } : { data: null, loading: false }
 }
