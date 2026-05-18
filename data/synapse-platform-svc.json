@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-05-17T23:19:49.483Z",
+  "updatedAt": "2026-05-18T01:10:15.340Z",
   "tracks": [
     {
       "name": "platform",
@@ -12,713 +12,713 @@
           "steps": [
             {
               "name": "platform-svc 골격 생성",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "auth/audit/billing/notification 4개 모듈 역할 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Gradle 의존성 목록 도출",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No (Health endpoint만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "골격 단계 — ERD 해당 없음 (DB 마이그레이션 Out of Scope)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈별 패키지 구조도 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Soft Delete 정책: 비해당",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "각 모듈 package-info.java 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "골격 단계 — Repository 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ApplicationModulesTest 구조 검증 테스트 작성",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "빈 Service 클래스 생성 (4개 모듈)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ApplicationModulesTest 통과 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "`./gradlew build` 성공 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "빈 Controller 클래스 생성 (4개 모듈)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Dockerfile 작성 (multi-stage build)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Docker 이미지 빌드 성공 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "docker compose에서 platform-svc 실행 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 32,
-              "doneChecks": 0
+              "doneChecks": 32
             },
             {
               "name": "OAuth 회원가입/로그인",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx OAuth 인증)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Google/GitHub/Apple OAuth 연동 플로우 분석 (Microsoft는 확장 Provider로 문서화)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "신규 사용자 자동 회원가입 로직 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "기존 사용자 매핑 로직 (email 기준) 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (인증 생성 API 자체)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음 (공개 접근)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: Yes (OAuth 콜백 엔드포인트)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OAuth state 파라미터 CSRF 방어 필수",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "users 테이블 설계 (id, tenant_id, email, display_name, avatar_url, locale, status: active|suspended|deleted, created_at, updated_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "참고: provider, provider_id 컬럼은 users 테이블에 없음 — oauth_identities 테이블로 분리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "oauth_identities 테이블 설계 (id, user_id, provider, provider_id, access_token_enc)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "인덱스 설계 (email UNIQUE, provider+provider_id UNIQUE)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "관계 정의 (users 1:N oauth_identities)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "민감 정보 암호화: OAuth access_token 암호화 저장",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Soft Delete 정책: 논리삭제 (deleted_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요 (OAuth 콜백은 시스템 처리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "OAuthCallbackRequest 정의 (code, state)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OAuthTokenResponse 정의 (accessToken, refreshToken, expiresIn)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "User Entity 작성 (display_name, avatar_url, locale, status)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OAuthIdentity Entity 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "UserRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OAuthIdentityRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "findByEmail, findByProviderAndProviderId 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "OAuth2UserService 구현 (사용자 조회/생성 로직)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "신규 사용자 자동 회원가입 로직 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "기존 사용자 매핑 로직 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "OAuth2 콜백 핸들러 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OAuth2 성공 핸들러 구현 (JWT 발급 연계)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "통합 테스트 작성 (MockOAuth2User)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: Step 2에서는 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 0
+              "doneChecks": 43
             },
             {
               "name": "JWT + MFA 기초",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx JWT/MFA)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "JWT Access/Refresh Token 발급 플로우 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Refresh Token Redis 저장 구조 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "TOTP(RFC 6238) MFA 플로우 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (MFA 설정은 인증 필요)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 로그인 사용자",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "공개 API 여부: POST /auth/refresh는 공개, POST /auth/mfa/* 는 인증 필요",
-                      "done": false
+                      "text": "공개 API 여부: POST /auth/refresh는 공개, POST /auth/mfa/\\* 는 인증 필요",
+                      "done": true
                     },
                     {
                       "text": "JWT 서명 알고리즘: RS256",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "refresh_tokens 테이블 설계 (id, user_id, token_hash, device_fingerprint, ip_address, expires_at, created_at) — ERD에 DB 테이블로 정의됨 (Redis 전용이 아님)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "mfa_credentials 테이블 설계 (id, user_id, type: totp, secret_enc, is_active, verified_at, created_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "인덱스 설계 (user_id UNIQUE on mfa_credentials)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "민감 정보 암호화: TOTP secret AES-256-GCM 암호화 저장",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Refresh Token 이중 저장 전략: Redis(활성 세션 빠른 조회용) + DB `refresh_tokens` 테이블(영속성/감사용) 병행 — token_hash, device_fingerprint, ip_address, expires_at 포함",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (본인 MFA만 관리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "TokenRefreshRequest 정의 (refreshToken)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "TokenResponse 정의 (accessToken, refreshToken, expiresIn)",
-                      "done": false
+                      "text": "TokenResponse 정의 (accessToken, refreshToken)",
+                      "done": true
                     },
                     {
-                      "text": "MfaSetupResponse 정의 (qrCodeUrl, secret)",
-                      "done": false
+                      "text": "MfaSetupResponse 정의 (otpAuthUri, secret)",
+                      "done": true
                     },
                     {
                       "text": "MfaVerifyRequest 정의 (code)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MfaCredential Entity 작성 (type, is_active, verified_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "MfaCredentialRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RefreshTokenRepository 인터페이스 작성 (DB 저장 + Redis 캐싱 병행)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "JwtService 구현 (생성, 파싱, 검증 — RS256)",
-                      "done": false
+                      "text": "JwtTokenProvider 구현 (생성, 파싱, 검증 — RS256)",
+                      "done": true
                     },
                     {
-                      "text": "RefreshTokenService 구현 (Redis CRUD)",
-                      "done": false
+                      "text": "RefreshTokenService 구현 (DB + Redis 이중 저장, rotate 포함)",
+                      "done": true
                     },
                     {
-                      "text": "MfaService 구현 (TOTP 생성, QR URL, 검증 — mfa_credentials 기반)",
-                      "done": false
+                      "text": "TotpService 구현 (TOTP 생성, QR URL, 검증 — mfa_credentials 기반)",
+                      "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
+                      "text": "단위 테스트 작성 (Mockito + Testcontainers)",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "POST /auth/refresh 엔드포인트 구현",
-                      "done": false
+                      "text": "POST /auth/refresh 엔드포인트 구현 (AuthController)",
+                      "done": true
                     },
                     {
-                      "text": "POST /auth/mfa/setup 엔드포인트 구현",
-                      "done": false
+                      "text": "POST /auth/mfa/setup 엔드포인트 구현 (MfaController)",
+                      "done": true
                     },
                     {
-                      "text": "POST /auth/mfa/verify 엔드포인트 구현",
-                      "done": false
+                      "text": "POST /auth/mfa/verify 엔드포인트 구현 (MfaController)",
+                      "done": true
                     },
                     {
-                      "text": "Security Filter에 JWT 검증 추가",
-                      "done": false
+                      "text": "Security Filter에 JWT 검증 추가 (JwtAuthenticationFilter)",
+                      "done": true
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 0
+              "doneChecks": 43
             }
           ],
           "totalChecks": 118,
-          "doneChecks": 0
+          "doneChecks": 118
         },
         {
           "week": "W2",
@@ -2533,6 +2533,11 @@
       "date": "2026-05-17",
       "totalChecks": 391,
       "doneChecks": 0
+    },
+    {
+      "date": "2026-05-18",
+      "totalChecks": 391,
+      "doneChecks": 118
     }
   ],
   "changelog": [
@@ -2579,6 +2584,29 @@
           "type": "check_undone",
           "target": "W1 > JWT + MFA 기초",
           "detail": "43개 항목 해제 (43 → 0)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-18T01:10:15.340Z",
+      "commit": "1e69c1b",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > platform-svc 골격 생성",
+          "detail": "32개 항목 완료 (0 → 32)"
+        },
+        {
+          "type": "check_done",
+          "target": "W1 > OAuth 회원가입/로그인",
+          "detail": "43개 항목 완료 (0 → 43)"
+        },
+        {
+          "type": "check_done",
+          "target": "W1 > JWT + MFA 기초",
+          "detail": "43개 항목 완료 (0 → 43)"
         }
       ]
     }
