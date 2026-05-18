@@ -23,17 +23,43 @@ interface Props {
   data: RepoData[]
 }
 
+function buildDateRange(dates: string[]): string[] {
+  if (dates.length === 0) return []
+  const sorted = [...dates].sort()
+  const start = new Date(sorted[0])
+  const end = new Date(sorted[sorted.length - 1])
+  const range: string[] = []
+  for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+    range.push(d.toISOString().slice(0, 10))
+  }
+  return range
+}
+
+function carryForward(history: { date: string; totalChecks: number; doneChecks: number }[], dates: string[]): (number | null)[] {
+  const map = new Map(history.map(h => [h.date, h]))
+  let lastPercent: number | null = null
+  let hasStarted = false
+
+  return dates.map(date => {
+    const entry = map.get(date)
+    if (entry) {
+      hasStarted = true
+      lastPercent = entry.totalChecks > 0 ? Math.round(entry.doneChecks / entry.totalChecks * 100) : 0
+      return lastPercent
+    }
+    if (!hasStarted) return 0
+    return lastPercent ?? 0
+  })
+}
+
 export default function TimelineChart({ data }: Props) {
-  const allDates = [...new Set(data.flatMap(d => d.history.map(h => h.date)))].sort()
+  const rawDates = [...new Set(data.flatMap(d => d.history.map(h => h.date)))]
+  const allDates = buildDateRange(rawDates)
 
   const datasets = data.flatMap(d =>
     d.tracks.map(t => ({
       label: t.name,
-      data: allDates.map(date => {
-        const entry = d.history.find(h => h.date === date)
-        if (!entry || entry.totalChecks === 0) return null
-        return Math.round(entry.doneChecks / entry.totalChecks * 100)
-      }),
+      data: carryForward(d.history, allDates),
       borderColor: TRACK_COLORS[t.name] || '#78716C',
       backgroundColor: 'transparent',
       tension: 0.3,
