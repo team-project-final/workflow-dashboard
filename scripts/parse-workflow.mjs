@@ -82,6 +82,11 @@ for (const file of workflowFiles) {
   trackMap.get(trackName).set(week, join(workflowDir, file))
 }
 
+// 트랙 이름 정규화 (소스 파일명과 대시보드 트랙명이 다른 경우)
+const trackAliasMap = {
+  'gitops': 'team-lead',
+}
+
 // 트랙별 파싱
 const ownerMap = {
   'platform': '김해준', 'engagement': '한승완',
@@ -96,8 +101,9 @@ const periodMap = {
 }
 
 const tracks = []
-for (const [trackName, weekFiles] of trackMap) {
-  const taskFile = join(taskDir, `TASK_${trackName}.md`)
+for (const [rawTrackName, weekFiles] of trackMap) {
+  const trackName = trackAliasMap[rawTrackName] || rawTrackName
+  const taskFile = join(taskDir, `TASK_${rawTrackName}.md`)
   const taskInfo = existsSync(taskFile) ? parseTaskFile(taskFile) : { owner: 'unknown' }
 
   const weeks = []
