@@ -199,14 +199,12 @@ export function useData() {
 export function useRepoData(repo: string) {
   const def = DEFAULT_TRACKS.find(d => d.repo === repo)
   const isTeamLead = repo === 'team-lead'
+  const shouldFetch = !!(def || isTeamLead)
   const [data, setData] = useState<RepoData | null>(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(shouldFetch)
 
   useEffect(() => {
-    if (!def && !isTeamLead) {
-      setLoading(false)
-      return
-    }
+    if (!shouldFetch) return
 
     if (isTeamLead) {
       Promise.all(
@@ -238,7 +236,7 @@ export function useRepoData(repo: string) {
         setData(emptyRepoData(def!.repo, def!.tracks))
         setLoading(false)
       })
-  }, [repo, def, isTeamLead])
+  }, [repo, def, isTeamLead, shouldFetch])
 
-  return (def || isTeamLead) ? { data, loading } : { data: null, loading: false }
+  return shouldFetch ? { data, loading } : { data: null, loading: false }
 }
