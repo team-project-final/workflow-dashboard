@@ -29,7 +29,8 @@ export default function Detail() {
 
   const owners = data.tracks.map(t => t.owner).join(' · ')
   const currentWeek = track?.weeks.find(w => w.week === selectedWeek)
-  const prdWeek = data.prd.find(p => p.week === selectedWeek)
+  const activePrd = data.prdPerTrack ? data.prdPerTrack[selectedTrackIdx] : data.prd
+  const prdWeek = activePrd?.find(p => p.week === selectedWeek)
 
   return (
     <div className="min-h-screen bg-stone-50">
