@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-19T05:50:34.200Z",
+  "updatedAt": "2026-05-19T07:02:55.688Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -922,8 +922,8 @@
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 5,
-                  "done": 5,
+                  "total": 6,
+                  "done": 6,
                   "items": [
                     {
                       "text": "POST /ai/embeddings 엔드포인트 구현 (임베딩 생성)",
@@ -931,6 +931,10 @@
                     },
                     {
                       "text": "POST /ai/search/semantic 엔드포인트 구현 (시맨틱 검색)",
+                      "done": true
+                    },
+                    {
+                      "text": "**W2 공통 아키텍처 규정 준수 (ErrorCode L_ 접두사 적용)**",
                       "done": true
                     },
                     {
@@ -967,8 +971,8 @@
                   ]
                 }
               ],
-              "totalChecks": 46,
-              "doneChecks": 46
+              "totalChecks": 47,
+              "doneChecks": 47
             },
             {
               "name": "AI 카드 자동 생성 골격 — Note → LLM → Card 목록 생성",
@@ -1249,8 +1253,8 @@
               "doneChecks": 50
             }
           ],
-          "totalChecks": 96,
-          "doneChecks": 96
+          "totalChecks": 97,
+          "doneChecks": 97
         },
         {
           "week": "W3",
@@ -4641,8 +4645,8 @@
     },
     {
       "date": "2026-05-19",
-      "totalChecks": 724,
-      "doneChecks": 393
+      "totalChecks": 725,
+      "doneChecks": 394
     }
   ],
   "changelog": [
@@ -4732,6 +4736,19 @@
           "type": "check_done",
           "target": "W2 > SRS 복습 세션 완성 — 오늘 복습 카드 큐 + rating → SM-2 → 다음 복습일",
           "detail": "52개 항목 완료 (0 → 52)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T07:02:55.687Z",
+      "commit": "6bb54e7",
+      "author": "KimNaKim",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > 시맨틱 검색 골격 — pgvector 임베딩 저장/조회 + 코사인 유사도 검색",
+          "detail": "1개 항목 완료 (46 → 47)"
         }
       ]
     }
