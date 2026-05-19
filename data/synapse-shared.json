@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-18T07:07:22.045Z",
+  "updatedAt": "2026-05-19T03:44:12.481Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -601,116 +601,116 @@
           "steps": [
             {
               "name": "Kafka 토픽 설계 + 생성",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "PRD_W2 해당 요구사항 확인 (Kafka 토픽 설계)",
-                      "done": false
+                      "text": "PRD_W2 해당 요구사항 확인 (FR-TL-101)",
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "도메인별 토픽 목록 확정 (card.reviewed, note.updated 등)",
-                      "done": false
+                      "text": "도메인별 토픽 목록 확정 (5개: user-registered, note-created, note-updated, review-completed, cards-generated)",
+                      "done": true
                     },
                     {
-                      "text": "토픽 파티션 수 / 복제 팩터 정의",
-                      "done": false
+                      "text": "토픽 파티션 수 / 복제 팩터 정의 (3 partitions, replication-factor 2)",
+                      "done": true
                     },
                     {
-                      "text": "토픽 네이밍 컨벤션 확정 ({domain}.{event})",
-                      "done": false
+                      "text": "토픽 네이밍 컨벤션 확정 (`{service}.{domain}.{event}-v1`)",
+                      "done": true
                     },
                     {
-                      "text": "메시지 보존 기간 정책 정의",
-                      "done": false
+                      "text": "메시지 보존 기간 정책 정의 (7일)",
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의",
+                      "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의 — MSK 배포 후",
                       "done": false
                     },
                     {
-                      "text": "SASL/TLS 인증 설정 확인",
+                      "text": "SASL/TLS 인증 설정 확인 — MSK 배포 후",
                       "done": false
                     },
                     {
-                      "text": "토픽 접근 제어 최소 권한 원칙 적용",
-                      "done": false
+                      "text": "토픽 접근 제어 최소 권한 원칙 적용 (설계 완료)",
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "인프라 아키텍처 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "도메인별 토픽 목록 및 파티션 구성도 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "프로듀서/컨슈머 매핑 다이어그램 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "토픽 보존 기간 / cleanup.policy 설정 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
-                      "text": "토픽 메시지 암호화 전송 (TLS) 확인",
+                      "text": "토픽 메시지 암호화 전송 (TLS) 확인 — MSK 배포 후",
                       "done": false
                     },
                     {
-                      "text": "민감 데이터 토픽 접근 제한 확인",
+                      "text": "민감 데이터 토픽 접근 제한 확인 — MSK 배포 후",
                       "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -723,46 +723,46 @@
                 {
                   "name": "Kafka 토픽 생성",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "MSK/Kafka 클러스터에 토픽 생성 (kafka-topics.sh --create)",
+                      "text": "MSK/Kafka 클러스터에 토픽 생성 — MSK 배포 후 (`scripts/create-kafka-topics.sh` 준비됨)",
                       "done": false
                     },
                     {
-                      "text": "각 토픽 파티션 수 / 복제 팩터 설정",
-                      "done": false
+                      "text": "각 토픽 파티션 수 / 복제 팩터 설정 (스크립트에 반영)",
+                      "done": true
                     },
                     {
                       "text": "토픽 config 설정 (retention.ms, cleanup.policy)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "docker-compose에 토픽 자동 생성 스크립트 반영",
-                      "done": false
+                      "text": "docker-compose에 토픽 자동 생성 스크립트 반영 (`kafka-init` 서비스)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "토픽 검증 테스트",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "kafka-topics.sh --list 로 토픽 목록 확인",
+                      "text": "kafka-topics.sh --list 로 토픽 목록 확인 (Docker Compose 검증)",
+                      "done": true
+                    },
+                    {
+                      "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트 — MSK 배포 후",
                       "done": false
                     },
                     {
-                      "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트",
-                      "done": false
-                    },
-                    {
-                      "text": "파티션 배분 확인",
-                      "done": false
+                      "text": "파티션 배분 확인 (Docker Compose 검증)",
+                      "done": true
                     },
                     {
                       "text": "docker compose 환경에서 토픽 자동 생성 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -780,108 +780,108 @@
                 }
               ],
               "totalChecks": 27,
-              "doneChecks": 0
+              "doneChecks": 21
             },
             {
               "name": "Schema Registry BACKWARD 호환성 강제",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "PRD_W2 해당 요구사항 확인 (Schema Registry 정책)",
-                      "done": false
+                      "text": "PRD_W2 해당 요구사항 확인 (FR-TL-102)",
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Schema Registry 글로벌 호환성 정책 요건 분석 (BACKWARD)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Avro 스키마 호환성 규칙 분석 (필드 추가=default 필수, 삭제 불가)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "서비스별 스키마 등록 절차 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Schema Registry API 접근 제한 (내부 네트워크만)",
-                      "done": false
+                      "text": "Schema Registry API 접근 제한 (내부 네트워크만) — VPC 내부 설계",
+                      "done": true
                     },
                     {
                       "text": "스키마 등록/수정 권한 관리 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "인프라 아키텍처 설계",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "글로벌 호환성 레벨 설정 전략 수립",
-                      "done": false
+                      "text": "글로벌 호환성 레벨 설정 전략 수립 (BACKWARD)",
+                      "done": true
                     },
                     {
-                      "text": "스키마 버전 관리 정책 정의",
-                      "done": false
+                      "text": "스키마 버전 관리 정책 정의 (`docs/SCHEMA_EVOLUTION.md`)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "스키마 삭제 방지 정책 확인 (soft delete만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비인가 스키마 등록 방지 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -894,42 +894,42 @@
                 {
                   "name": "Schema Registry 설정 적용",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "글로벌 호환성 레벨 BACKWARD 설정 (`PUT /config`)",
-                      "done": false
+                      "text": "글로벌 호환성 레벨 BACKWARD 설정 (Docker Compose `SCHEMA_REGISTRY_COMPATIBILITY_LEVEL: BACKWARD`)",
+                      "done": true
                     },
                     {
                       "text": "기존 토픽 subject별 호환성 레벨 확인",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "docker-compose Schema Registry 환경변수 반영",
-                      "done": false
+                      "text": "docker-compose Schema Registry 환경변수 반영 (포트 8085)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "호환성 검증 테스트",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "호환 스키마 등록 → 성공 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비호환 스키마 등록 → 409 거부 확인 (필드 삭제 시)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "`GET /config` → BACKWARD 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "각 서비스별 호환성 테스트",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -947,7 +947,7 @@
                 }
               ],
               "totalChecks": 23,
-              "doneChecks": 0
+              "doneChecks": 23
             },
             {
               "name": "Gateway 라우팅",
@@ -1134,7 +1134,7 @@
             }
           ],
           "totalChecks": 77,
-          "doneChecks": 0
+          "doneChecks": 44
         },
         {
           "week": "W3",
@@ -2027,7 +2027,31 @@
       "date": "2026-05-18",
       "totalChecks": 277,
       "doneChecks": 0
+    },
+    {
+      "date": "2026-05-19",
+      "totalChecks": 277,
+      "doneChecks": 44
     }
   ],
-  "changelog": []
+  "changelog": [
+    {
+      "date": "2026-05-19T03:44:12.480Z",
+      "commit": "c27315b",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > Kafka 토픽 설계 + 생성",
+          "detail": "21개 항목 완료 (0 → 21)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > Schema Registry BACKWARD 호환성 강제",
+          "detail": "23개 항목 완료 (0 → 23)"
+        }
+      ]
+    }
+  ]
 }
