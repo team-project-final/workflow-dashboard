@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-18T07:21:07.131Z",
+  "updatedAt": "2026-05-19T03:09:31.148Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -13,282 +13,700 @@
             {
               "name": "knowledge-svc 골격 생성",
               "status": "Not Started",
-              "phases": [],
-              "totalChecks": 0,
-              "doneChecks": 0
-            },
-            {
-              "name": "note Markdown CRUD",
-              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "PRD_W1 해당 요구사항 확인 (FR-KN-xxx 노트 기능)",
-                      "done": true
+                      "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
+                      "done": false
                     },
                     {
-                      "text": "Duration 산정 확인 (2일)",
-                      "done": true
-                    }
-                  ]
-                }
-              ],
-              "totalChecks": 3,
-              "doneChecks": 3
-            },
-            {
-              "name": "note 위키링크 파싱",
-              "status": "Done",
-              "phases": [
-                {
-                  "name": "TASK 시작",
-                  "total": 3,
-                  "done": 3,
-                  "items": [
-                    {
-                      "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
-                    },
-                    {
-                      "text": "PRD_W1 해당 요구사항 확인 (FR-KN-xxx 위키링크)",
-                      "done": true
-                    },
-                    {
-                      "text": "Duration 산정 확인 (1.5일)",
-                      "done": true
+                      "text": "Duration 산정 확인 (0.5일)",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "`[[...]]` 위키링크 문법 정규식 정의",
-                      "done": true
+                      "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
+                      "done": false
                     },
                     {
-                      "text": "노트 생성/수정 시 링크 추출 → 저장 플로우 분석",
-                      "done": true
+                      "text": "note/graph/chunking 3개 모듈 역할 정의",
+                      "done": false
                     },
                     {
-                      "text": "대상 노트 미존재 시 title만 저장 정책",
-                      "done": true
+                      "text": "platform-svc와 동일 빌드 구조 확인",
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": true
+                      "text": "인증 필요 여부: No (골격만 생성)",
+                      "done": false
                     },
                     {
-                      "text": "권한 종류: 로그인 사용자 (본인 노트의 링크만 접근)",
-                      "done": true
+                      "text": "권한 종류: 없음",
+                      "done": false
                     },
                     {
-                      "text": "공개 API 여부: No",
-                      "done": true
+                      "text": "공개 API 여부: No (Health endpoint만)",
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 5,
-                  "done": 5,
+                  "total": 3,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "note_links 테이블 설계 (id, source_note_id, target_note_id nullable, link_type: wikilink|reference|embed, context_snippet, created_at)",
-                      "done": true
+                      "text": "골격 단계 — ERD 해당 없음",
+                      "done": false
                     },
                     {
-                      "text": "참고: target_title 컬럼은 ERD에 없음 — 애플리케이션 레벨에서 target_note_id로 조회하여 처리",
-                      "done": true
-                    },
-                    {
-                      "text": "인덱스 설계 (source_note_id, target_note_id, source+target_note_id UNIQUE)",
-                      "done": true
-                    },
-                    {
-                      "text": "관계 정의 (note_links → notes FK x2)",
-                      "done": true
+                      "text": "모듈별 패키지 구조도 작성",
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "민감 정보 암호화: 비해당",
-                      "done": true
+                      "text": "민감 정보 암호화: 비해당 (골격 단계)",
+                      "done": false
                     },
                     {
-                      "text": "Soft Delete 정책: 물리삭제 (링크 갱신 시 삭제+재생성)",
-                      "done": true
+                      "text": "Soft Delete 정책: 비해당",
+                      "done": false
                     },
                     {
-                      "text": "행 단위 접근 제어: 필요 (소유 노트의 링크만 조회)",
-                      "done": true
+                      "text": "행 단위 접근 제어: 불필요",
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
-                  "total": 4,
-                  "done": 4,
+                  "total": 3,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "NoteLinkResponse 정의 (id, sourceNoteId, targetNoteId, linkType, contextSnippet)",
-                      "done": true
+                      "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
+                      "done": false
                     },
                     {
-                      "text": "NoteLink Entity 작성",
-                      "done": true
-                    },
-                    {
-                      "text": "MapStruct 매퍼 작성",
-                      "done": true
+                      "text": "각 모듈 package-info.java 작성",
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 3,
-                  "done": 3,
+                  "total": 2,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "NoteLinkRepository 인터페이스 작성",
-                      "done": true
+                      "text": "골격 단계 — Repository 해당 없음",
+                      "done": false
                     },
                     {
-                      "text": "findBySourceNoteId 커스텀 쿼리",
-                      "done": true
-                    },
-                    {
-                      "text": "deleteBySourceNoteId 커스텀 쿼리",
-                      "done": true
+                      "text": "ApplicationModulesTest 구조 검증 테스트 작성",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 6,
-                  "done": 6,
+                  "total": 3,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "WikiLinkParser 유틸 구현 (정규식: `\\[\\[([^\\]]+)\\]\\]`)",
-                      "done": true
+                      "text": "빈 Service 클래스 생성 (3개 모듈)",
+                      "done": false
                     },
                     {
-                      "text": "NoteService.save/update 후처리에 링크 추출 로직 추가",
-                      "done": true
+                      "text": "ApplicationModulesTest 통과 확인",
+                      "done": false
                     },
                     {
-                      "text": "추출된 title로 notes 조회 → target_note_id 매핑",
-                      "done": true
-                    },
-                    {
-                      "text": "노트 수정 시 기존 링크 삭제 후 재생성 (트랜잭션)",
-                      "done": true
-                    },
-                    {
-                      "text": "WikiLinkParser 단위 테스트 (다양한 케이스)",
-                      "done": true
-                    },
-                    {
-                      "text": "테스트 통과 확인",
-                      "done": true
+                      "text": "`./gradlew build` 성공 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 5,
-                  "done": 5,
+                  "total": 3,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "GET /notes/{id}/backlinks 엔드포인트 구현",
-                      "done": true
+                      "text": "빈 Controller 클래스 생성 (3개 모듈)",
+                      "done": false
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": true
+                      "text": "Dockerfile 작성 (multi-stage build)",
+                      "done": false
                     },
                     {
-                      "text": "401/403 응답 테스트 (미인증, 비소유자)",
-                      "done": true
-                    },
-                    {
-                      "text": "통합 테스트 (노트 생성 → 링크 자동 저장 확인)",
-                      "done": true
-                    },
-                    {
-                      "text": "테스트 통과 확인",
-                      "done": true
+                      "text": "Docker 이미지 빌드 성공 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "text": "Flutter 화면 연동: 해당 없음",
+                      "done": false
                     },
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": true
+                      "text": "docker compose에서 knowledge-svc 실행 확인",
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 32,
+              "doneChecks": 0
+            },
+            {
+              "name": "note Markdown CRUD",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-KN-xxx 노트 기능)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (2일)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "노트 CRUD API 엔드포인트 5개 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "Markdown 원문 저장 정책 확인 (서버 렌더링 X)",
+                      "done": false
+                    },
+                    {
+                      "text": "소유자 권한 검증 로직 설계",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 1차 검토",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (수정/삭제는 소유자만)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "notes 테이블 설계 (id, tenant_id, user_id, title, content_md, content_plain, status: active|archived|trashed, word_count, metadata jsonb, created_at, updated_at, deleted_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (user_id, created_at DESC)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (notes.user_id → users.id FK)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 2차 검토",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당 (노트 내용은 평문 저장)",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 논리삭제 (deleted_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (수정/삭제 시 user_id 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "DTO / Entity 설계 (API First)",
+                  "total": 7,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteCreateRequest 정의 (title, content_md)",
+                      "done": false
+                    },
+                    {
+                      "text": "NoteUpdateRequest 정의 (title, content_md)",
+                      "done": false
+                    },
+                    {
+                      "text": "NoteResponse 정의 (id, title, content_md, content_plain, userId, status, word_count, createdAt, updatedAt)",
+                      "done": false
+                    },
+                    {
+                      "text": "NoteListResponse 정의 (id, title, userId, status, createdAt — content 제외)",
+                      "done": false
+                    },
+                    {
+                      "text": "Note Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Repository 구현",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findByUserIdAndDeletedAtIsNull 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "페이징 처리 (Pageable)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Service + Test",
+                  "total": 5,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteService 구현 (create, findAll, findById, update, delete)",
+                      "done": false
+                    },
+                    {
+                      "text": "소유자 권한 검증 로직 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "제목 200자/본문 100,000자 검증 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Controller + Test",
+                  "total": 5,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteController REST API 구현 (5개 엔드포인트)",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트 (미인증, 비소유자)",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (@SpringBootTest + TestContainers)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "View + Test (해당 시)",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 42,
+              "doneChecks": 0
+            },
+            {
+              "name": "note 위키링크 파싱",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (FR-KN-xxx 위키링크)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (1.5일)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "`[[...]]` 위키링크 문법 정규식 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "노트 생성/수정 시 링크 추출 → 저장 플로우 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "대상 노트 미존재 시 title만 저장 정책",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 1차 검토",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (본인 노트의 링크만 접근)",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 5,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "note_links 테이블 설계 (id, source_note_id, target_note_id nullable, link_type: wikilink|reference|embed, context_snippet, created_at)",
+                      "done": false
+                    },
+                    {
+                      "text": "참고: target_title 컬럼은 ERD에 없음 — 애플리케이션 레벨에서 target_note_id로 조회하여 처리",
+                      "done": false
+                    },
+                    {
+                      "text": "인덱스 설계 (source_note_id, target_note_id, source+target_note_id UNIQUE)",
+                      "done": false
+                    },
+                    {
+                      "text": "관계 정의 (note_links → notes FK x2)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 2차 검토",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 물리삭제 (링크 갱신 시 삭제+재생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (소유 노트의 링크만 조회)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "DTO / Entity 설계 (API First)",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteLinkResponse 정의 (id, sourceNoteId, targetNoteId, linkType, contextSnippet)",
+                      "done": false
+                    },
+                    {
+                      "text": "NoteLink Entity 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Repository 구현",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "NoteLinkRepository 인터페이스 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "findBySourceNoteId 커스텀 쿼리",
+                      "done": false
+                    },
+                    {
+                      "text": "deleteBySourceNoteId 커스텀 쿼리",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Service + Test",
+                  "total": 6,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "WikiLinkParser 유틸 구현 (정규식: `\\[\\[([^\\]]+)\\]\\]`)",
+                      "done": false
+                    },
+                    {
+                      "text": "NoteService.save/update 후처리에 링크 추출 로직 추가",
+                      "done": false
+                    },
+                    {
+                      "text": "추출된 title로 notes 조회 → target_note_id 매핑",
+                      "done": false
+                    },
+                    {
+                      "text": "노트 수정 시 기존 링크 삭제 후 재생성 (트랜잭션)",
+                      "done": false
+                    },
+                    {
+                      "text": "WikiLinkParser 단위 테스트 (다양한 케이스)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Controller + Test",
+                  "total": 5,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "GET /notes/{id}/backlinks 엔드포인트 구현",
+                      "done": false
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
+                    },
+                    {
+                      "text": "401/403 응답 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "통합 테스트 (노트 생성 → 링크 자동 저장 확인)",
+                      "done": false
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "View + Test (해당 시)",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": false
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 41,
-              "doneChecks": 41
+              "doneChecks": 0
             }
           ],
-          "totalChecks": 44,
-          "doneChecks": 44
+          "totalChecks": 115,
+          "doneChecks": 0
         },
         {
           "week": "W2",
@@ -1943,124 +2361,128 @@
             },
             {
               "name": "Avro 스키마 등록 및 호환성 검증",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (이벤트 스키마 관리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (1.5일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "note-created 이벤트 명세 분석 (noteId, title, content, createdAt)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Schema Registry 호환성 모드 (BACKWARD) 분석",
-                      "done": false
+                      "text": "Schema Registry 호환성 모드 (`BACKWARD_TRANSITIVE`) 분석",
+                      "done": true
                     },
                     {
-                      "text": "Avro 스키마 네이밍 규칙 (`{topic}-value`) 확인",
-                      "done": false
+                      "text": "Avro 스키마 네이밍 규칙 (`knowledge.note.note-created-v1-value`) 확인",
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (Schema Registry 내부 접근)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음 (인프라 간 통신)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No (내부 서비스 전용)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "스키마 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "`note-created-v1.avsc` 스키마 파일 작성",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "필수 필드 정의 (noteId, title, content, createdAt)",
-                      "done": false
+                      "text": "필수 필드 정의 (`noteId`, `tenantId`, `title`, `content`, `createdAt`)",
+                      "done": true
                     },
                     {
-                      "text": "subject 네이밍 확정 (`note-created-value`)",
-                      "done": false
+                      "text": "subject 네이밍 확정 (`knowledge.note.note-created-v1-value`)",
+                      "done": true
                     },
                     {
-                      "text": "Gradle Avro 플러그인 설정",
-                      "done": false
+                      "text": "Gradle Avro 플러그인 기반 `testSchemasTask` 설정",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "스키마 등록 및 검증",
-                  "total": 6,
-                  "done": 0,
+                  "total": 7,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "Schema Registry Docker 컨테이너 구성",
-                      "done": false
+                      "text": "Schema Registry Docker Compose 파일 구성 및 `docker compose ... config` 검증",
+                      "done": true
                     },
                     {
                       "text": "스키마 등록 스크립트 작성",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "BACKWARD 호환성 모드 설정",
-                      "done": false
+                      "text": "`BACKWARD_TRANSITIVE` 호환성 검사 스크립트/Gradle task 추가",
+                      "done": true
                     },
                     {
-                      "text": "비호환 변경(필드 삭제) 시 등록 거부 테스트",
-                      "done": false
+                      "text": "로컬 Docker daemon 기동 후 Registry 컨테이너 실행 확인",
+                      "done": true
                     },
                     {
-                      "text": "호환 변경(optional 필드 추가) 시 등록 성공 테스트",
-                      "done": false
+                      "text": "비호환 변경(default 없는 required 필드 추가) 시 등록 거부 런타임 검증",
+                      "done": true
                     },
                     {
-                      "text": "Avro 코드 생성 확인",
-                      "done": false
+                      "text": "호환 변경(optional 필드 추가) 시 등록 성공 런타임 검증",
+                      "done": true
+                    },
+                    {
+                      "text": "Avro 코드 생성 및 `testSchemasTask` live Registry 실행 확인",
+                      "done": true
                     }
                   ]
                 },
@@ -2071,12 +2493,12 @@
                   "items": []
                 }
               ],
-              "totalChecks": 21,
-              "doneChecks": 0
+              "totalChecks": 22,
+              "doneChecks": 22
             }
           ],
-          "totalChecks": 67,
-          "doneChecks": 46
+          "totalChecks": 68,
+          "doneChecks": 68
         },
         {
           "week": "W2",
@@ -3631,6 +4053,11 @@
       "date": "2026-05-18",
       "totalChecks": 547,
       "doneChecks": 90
+    },
+    {
+      "date": "2026-05-19",
+      "totalChecks": 619,
+      "doneChecks": 68
     }
   ],
   "changelog": [
@@ -3739,6 +4166,29 @@
           "type": "check_done",
           "target": "W1 > ArchUnit 모듈 경계 테스트",
           "detail": "24개 항목 완료 (0 → 24)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T03:09:31.148Z",
+      "commit": "98e8e17",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W1 > note Markdown CRUD",
+          "detail": "3개 항목 해제 (3 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > note 위키링크 파싱",
+          "detail": "41개 항목 해제 (41 → 0)"
+        },
+        {
+          "type": "check_done",
+          "target": "W1 > Avro 스키마 등록 및 호환성 검증",
+          "detail": "22개 항목 완료 (0 → 22)"
         }
       ]
     }
