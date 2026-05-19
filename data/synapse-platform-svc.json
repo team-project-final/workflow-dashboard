@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-05-18T08:15:36.751Z",
+  "updatedAt": "2026-05-19T04:54:43.435Z",
   "tracks": [
     {
       "name": "platform",
@@ -726,297 +726,297 @@
           "steps": [
             {
               "name": "billing 모듈 — Stripe Checkout + Webhook + 플랜 관리",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (billing 모듈)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "Stripe Checkout Session 생성 플로우 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "구독 플랜 종류 정의 (Free, Pro, Team 등)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Webhook 이벤트 처리 목록 확정 (checkout.session.completed, invoice.paid, customer.subscription.deleted)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결제 이력 조회 요건 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 구독만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Webhook 검증: Stripe Signature 검증 필수",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Stripe API Key 관리: 환경변수 관리, 코드 내 하드코딩 금지",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "subscriptions 테이블 설계 (id, tenant_id FK, plan_code, stripe_subscription_id, status, current_period_start, current_period_end, created_at, updated_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "payment_history 테이블 설계 (id, tenant_id, subscription_id, stripe_payment_intent_id, amount, currency, status, paid_at, created_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "인덱스 설계 (subscriptions.tenant_id, payment_history.tenant_id, payment_history.subscription_id)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "관계 정의 (payment_history.subscription_id → subscriptions.id FK)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "결제 정보 PCI DSS 준수 확인 (카드 정보 직접 저장 금지, Stripe 위임)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Webhook endpoint 서명 검증 구현 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Soft Delete 정책: 논리삭제 (구독 이력 보관)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (userId 기반)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 8,
-                  "done": 0,
+                  "done": 8,
                   "items": [
                     {
                       "text": "CheckoutSessionRequest 정의 (plan_code, successUrl, cancelUrl)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "SubscriptionResponse 정의 (id, plan_code, status, current_period_end)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PaymentHistoryResponse 정의 (id, amount, currency, status, paidAt)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Subscription Entity 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PaymentHistory Entity 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PlanCode Enum 작성 (FREE, PRO, TEAM)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "SubscriptionRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PaymentHistoryRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "findByUserIdAndStatusActive 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "findByUserIdOrderByPaidAtDesc 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Flyway 마이그레이션 스크립트 작성",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
                       "text": "BillingService 구현 (createCheckoutSession, handleWebhook, getSubscription, getPaymentHistory)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Stripe Checkout Session 생성 로직 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Stripe Webhook 핸들러 구현 (이벤트별 분기 처리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "구독 상태 관리 로직 (active, canceled, past_due)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Bean Validation 적용",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito — Stripe API mock)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 8,
-                  "done": 0,
+                  "done": 8,
                   "items": [
                     {
                       "text": "POST /billing/checkout 엔드포인트 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "POST /billing/webhooks 엔드포인트 구현 (Stripe Signature 검증)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "GET /billing/subscription 엔드포인트 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Webhook 서명 검증 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "통합 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 54,
-              "doneChecks": 0
+              "doneChecks": 54
             },
             {
               "name": "notification 모듈 기초 — FCM 설정 + device_tokens",
@@ -1302,7 +1302,7 @@
             }
           ],
           "totalChecks": 105,
-          "doneChecks": 0
+          "doneChecks": 54
         },
         {
           "week": "W3",
@@ -2538,6 +2538,11 @@
       "date": "2026-05-18",
       "totalChecks": 391,
       "doneChecks": 118
+    },
+    {
+      "date": "2026-05-19",
+      "totalChecks": 391,
+      "doneChecks": 172
     }
   ],
   "changelog": [
@@ -2607,6 +2612,19 @@
           "type": "check_done",
           "target": "W1 > JWT + MFA 기초",
           "detail": "43개 항목 완료 (0 → 43)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T04:54:43.434Z",
+      "commit": "f0f462f",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > billing 모듈 — Stripe Checkout + Webhook + 플랜 관리",
+          "detail": "54개 항목 완료 (0 → 54)"
         }
       ]
     }
