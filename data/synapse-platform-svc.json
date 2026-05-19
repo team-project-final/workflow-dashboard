@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-05-19T08:08:16.953Z",
+  "updatedAt": "2026-05-19T09:29:37.993Z",
   "tracks": [
     {
       "name": "platform",
@@ -1020,289 +1020,265 @@
             },
             {
               "name": "notification 모듈 기초 — FCM 설정 + device_tokens",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (notification 모듈)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "FCM (Firebase Cloud Messaging) 연동 요건 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "디바이스 토큰 등록/갱신/삭제 플로우 정의",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "알림 선호도 (notification_preferences) 항목 정의",
-                      "done": false
+                      "text": "알림 선호도 (notification_preferences) 항목 정의 — Step 7로 이관 결정 (ERD 충돌)",
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 디바이스만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "FCM 서버 키 관리: 환경변수 관리, 코드 내 하드코딩 금지",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 6,
-                  "done": 0,
+                  "total": 5,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "device_tokens 테이블 설계 (id, user_id, token, platform: ios|android|web, is_active, created_at, updated_at)",
-                      "done": false
+                      "text": "device_tokens 테이블 설계 (id, tenant_id, user_id, token, platform: ios|android|web, is_active, created_at, updated_at)",
+                      "done": true
                     },
                     {
                       "text": "참고: deviceName 컬럼은 ERD에 없음 — 제거",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "notification_preferences 테이블 설계 (id, user_id, push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end, created_at, updated_at)",
-                      "done": false
+                      "text": "notification_preferences — Step 7로 이관 (ERD JSONB vs WORKFLOW 컬럼 기반 충돌 존재)",
+                      "done": true
                     },
                     {
-                      "text": "참고: notification_preferences는 컬럼 기반 구조 (type+enabled 행 기반이 아님)",
-                      "done": false
-                    },
-                    {
-                      "text": "인덱스 설계 (device_tokens.user_id, device_tokens.token UNIQUE, notification_preferences.user_id)",
-                      "done": false
+                      "text": "인덱스 설계 (idx_device_tokens_tenant_user ON device_tokens(tenant_id, user_id), UNIQUE(token))",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "디바이스 토큰 암호화 저장 검토",
-                      "done": false
+                      "text": "디바이스 토큰 암호화 저장 검토 — 불필요 (FCM 토큰은 공개 식별자)",
+                      "done": true
                     },
                     {
                       "text": "Soft Delete 정책: 물리삭제 (토큰 만료 시 삭제)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (userId 기반)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
-                  "total": 9,
-                  "done": 0,
+                  "total": 6,
+                  "done": 6,
                   "items": [
                     {
                       "text": "DeviceTokenRequest 정의 (token, platform: ios|android|web)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "DeviceTokenResponse 정의 (id, platform, is_active, createdAt)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "NotificationPreferenceRequest 정의 (push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end)",
-                      "done": false
+                      "text": "DeviceToken Entity 작성 (tenant_id, is_active 컬럼 포함)",
+                      "done": true
                     },
                     {
-                      "text": "NotificationPreferenceResponse 정의 (push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end)",
-                      "done": false
+                      "text": "Platform Enum 작성 (ios, android, web — 소문자, @JsonCreator/@JsonValue)",
+                      "done": true
                     },
                     {
-                      "text": "DeviceToken Entity 작성 (is_active 컬럼 포함)",
-                      "done": false
-                    },
-                    {
-                      "text": "NotificationPreference Entity 작성",
-                      "done": false
-                    },
-                    {
-                      "text": "Platform Enum 작성 (ios, android, web — 소문자)",
-                      "done": false
-                    },
-                    {
-                      "text": "MapStruct 매퍼 작성",
-                      "done": false
+                      "text": "PlatformConverter 작성 (AttributeConverter<Platform, String>)",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "DeviceTokenRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "NotificationPreferenceRepository 인터페이스 작성",
-                      "done": false
+                      "text": "findByToken, countByUserId, findByUserId 커스텀 쿼리",
+                      "done": true
                     },
                     {
-                      "text": "findByUserId 커스텀 쿼리",
-                      "done": false
+                      "text": "native UPSERT (@Modifying clearAutomatically=true, flushAutomatically=true)",
+                      "done": true
                     },
                     {
-                      "text": "Flyway 마이그레이션 스크립트 작성",
-                      "done": false
+                      "text": "V27__create_device_tokens.sql Flyway 마이그레이션 스크립트 작성",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 6,
-                  "done": 0,
+                  "total": 5,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "DeviceTokenService 구현 (register, update, delete, findByUserId)",
-                      "done": false
+                      "text": "DeviceTokenService 구현 (register, unregister)",
+                      "done": true
                     },
                     {
-                      "text": "NotificationPreferenceService 구현 (getPreferences, updatePreference)",
-                      "done": false
+                      "text": "tenantId resolve — UserApi.findById(userId).defaultTenantId() 패턴",
+                      "done": true
                     },
                     {
-                      "text": "FCM 초기화 설정 (FirebaseMessaging bean)",
-                      "done": false
+                      "text": "DeviceRegistrationLimitExceededException — BusinessException 상속, PLAT-NOTIFICATION-001",
+                      "done": true
                     },
                     {
                       "text": "Bean Validation 적용",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "통합 테스트 통과 확인",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 8,
-                  "done": 0,
+                  "total": 7,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "POST /notifications/devices 엔드포인트 구현 (토큰 등록)",
-                      "done": false
+                      "text": "POST /api/v1/notifications/devices 엔드포인트 구현 (201)",
+                      "done": true
                     },
                     {
-                      "text": "DELETE /notifications/devices/{id} 엔드포인트 구현",
-                      "done": false
+                      "text": "DELETE /api/v1/notifications/devices/{id} 엔드포인트 구현 (204/403/404)",
+                      "done": true
                     },
                     {
-                      "text": "GET /notifications/preferences 엔드포인트 구현",
-                      "done": false
+                      "text": "NotificationSecurityConfig @Order(1) FilterChain 구현",
+                      "done": true
                     },
                     {
-                      "text": "PUT /notifications/preferences 엔드포인트 구현",
-                      "done": false
-                    },
-                    {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "GlobalExceptionHandler EntityNotFoundException→404, HttpMessageNotReadableException→400 추가",
+                      "done": true
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "통합 테스트",
-                      "done": false
+                      "text": "통합 테스트 9개 시나리오 통과",
+                      "done": true
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "JaCoCo 라인 커버리지 92.38% (기준 80% 충족)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 51,
-              "doneChecks": 0
+              "totalChecks": 45,
+              "doneChecks": 45
             }
           ],
-          "totalChecks": 105,
-          "doneChecks": 54
+          "totalChecks": 99,
+          "doneChecks": 99
         },
         {
           "week": "W3",
@@ -2541,8 +2517,8 @@
     },
     {
       "date": "2026-05-19",
-      "totalChecks": 391,
-      "doneChecks": 172
+      "totalChecks": 385,
+      "doneChecks": 217
     }
   ],
   "changelog": [
@@ -2625,6 +2601,19 @@
           "type": "check_done",
           "target": "W2 > billing 모듈 — Stripe Checkout + Webhook + 플랜 관리",
           "detail": "54개 항목 완료 (0 → 54)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T09:29:37.993Z",
+      "commit": "966d218",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > notification 모듈 기초 — FCM 설정 + device_tokens",
+          "detail": "45개 항목 완료 (0 → 45)"
         }
       ]
     }
