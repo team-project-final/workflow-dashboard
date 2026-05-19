@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-19T03:44:12.481Z",
+  "updatedAt": "2026-05-19T05:16:16.883Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -12,66 +12,66 @@
           "steps": [
             {
               "name": "AWS 인프라 프로비저닝",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (인프라 프로비저닝)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "EKS/RDS/MSK/ElastiCache/OpenSearch 각 서비스 스펙 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ArgoCD ApplicationSet 구성 요건 분석 (5서비스x3환경)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "VPC/서브넷/보안그룹 설계 요건 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "VPC 내부 통신만 허용 (퍼블릭 접근 제한)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "보안 그룹 인바운드/아웃바운드 규칙 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "IAM Role/Policy 최소 권한 원칙 적용",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
@@ -219,7 +219,7 @@
                 }
               ],
               "totalChecks": 34,
-              "doneChecks": 0
+              "doneChecks": 10
             },
             {
               "name": "Docker Compose 4-서비스 구성",
@@ -593,7 +593,7 @@
             }
           ],
           "totalChecks": 89,
-          "doneChecks": 0
+          "doneChecks": 10
         },
         {
           "week": "W2",
@@ -2031,7 +2031,7 @@
     {
       "date": "2026-05-19",
       "totalChecks": 277,
-      "doneChecks": 44
+      "doneChecks": 54
     }
   ],
   "changelog": [
@@ -2050,6 +2050,19 @@
           "type": "check_done",
           "target": "W2 > Schema Registry BACKWARD 호환성 강제",
           "detail": "23개 항목 완료 (0 → 23)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T05:16:16.883Z",
+      "commit": "516dce7",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > AWS 인프라 프로비저닝",
+          "detail": "10개 항목 완료 (0 → 10)"
         }
       ]
     }
