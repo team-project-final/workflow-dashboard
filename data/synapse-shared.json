@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-19T07:26:58.616Z",
+  "updatedAt": "2026-05-19T08:07:35.587Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1073,22 +1073,22 @@
                 {
                   "name": "Gateway 구현",
                   "total": 4,
-                  "done": 1,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "Spring Cloud Gateway 라우트 설정 (4-서비스 경로 매핑) — 별도 Gateway 레포에서 진행",
-                      "done": false
+                      "text": "Spring Cloud Gateway 라우트 설정 (4-서비스 경로 매핑) — RoutesConfig.java (프로그래밍 방식, Boot 4.0.6 YAML 라우트 버그 대응)",
+                      "done": true
                     },
                     {
-                      "text": "Rate Limit 필터 설정 (Redis 기반 RequestRateLimiter) — 별도 Gateway 레포에서 진행",
-                      "done": false
+                      "text": "Rate Limit 필터 설정 (Redis 기반 RedisRateLimiter) — RoutesConfig.java (1 req/sec, burst 60)",
+                      "done": true
                     },
                     {
-                      "text": "CORS 글로벌 설정 — 별도 Gateway 레포에서 진행",
-                      "done": false
+                      "text": "CORS 글로벌 설정 — CorsConfig.java (CorsWebFilter)",
+                      "done": true
                     },
                     {
-                      "text": "docker-compose에 Gateway 서비스 추가/갱신 (stub)",
+                      "text": "docker-compose에 Gateway 서비스 추가/갱신 (실제 빌드 이미지)",
                       "done": true
                     }
                   ]
@@ -1096,23 +1096,23 @@
                 {
                   "name": "라우팅 테스트",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "각 서비스 경로 라우팅 동작 확인 — Gateway 프로젝트 빌드 후",
-                      "done": false
+                      "text": "각 서비스 경로 라우팅 동작 확인 (500 — stub upstream, 404 — 미매치 경로)",
+                      "done": true
                     },
                     {
-                      "text": "Rate Limit 초과 시 429 응답 확인 — Gateway 프로젝트 빌드 후",
-                      "done": false
+                      "text": "Rate Limit 초과 시 429 응답 확인 (#64에서 429 발생)",
+                      "done": true
                     },
                     {
-                      "text": "CORS preflight 요청 처리 확인 — Gateway 프로젝트 빌드 후",
-                      "done": false
+                      "text": "CORS preflight 요청 처리 확인 (Access-Control-Allow-Origin 헤더 확인)",
+                      "done": true
                     },
                     {
-                      "text": "Health endpoint 바이패스 확인 — Gateway 프로젝트 빌드 후",
-                      "done": false
+                      "text": "Health endpoint 확인 (/actuator/health → UP, Redis UP)",
+                      "done": true
                     }
                   ]
                 },
@@ -1130,11 +1130,11 @@
                 }
               ],
               "totalChecks": 27,
-              "doneChecks": 19
+              "doneChecks": 26
             }
           ],
           "totalChecks": 77,
-          "doneChecks": 63
+          "doneChecks": 70
         },
         {
           "week": "W3",
@@ -2031,7 +2031,7 @@
     {
       "date": "2026-05-19",
       "totalChecks": 277,
-      "doneChecks": 150
+      "doneChecks": 157
     }
   ],
   "changelog": [
@@ -2099,6 +2099,19 @@
           "type": "check_done",
           "target": "W2 > Gateway 라우팅",
           "detail": "19개 항목 완료 (0 → 19)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T08:07:35.586Z",
+      "commit": "328a61a",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > Gateway 라우팅",
+          "detail": "7개 항목 완료 (19 → 26)"
         }
       ]
     }
