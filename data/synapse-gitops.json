@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-05-18T03:31:16.188Z",
+  "updatedAt": "2026-05-19T03:39:29.211Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -320,27 +320,27 @@
           "steps": [
             {
               "name": "dev overlay 5개 앱 완성",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "5개 앱별 리소스 요구사항 수집 (메모리/CPU/replica)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "환경 변수 / ConfigMap 목록 정리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Service 포트 / Health endpoint 표준 합의",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "dev 전용 도메인 패턴 결정 (dev-<app>.<도메인>)",
+                      "text": "dev 전용 도메인 패턴 결정 (dev-<app>.<도메인>) — EKS 배포 후",
                       "done": false
                     }
                   ]
@@ -348,53 +348,53 @@
                 {
                   "name": "base 매니페스트 작성",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "apps/platform-svc/base/{deployment,service,configmap}.yaml",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "apps/engagement-svc/base/* 동일 구조",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "apps/knowledge-svc/base/* 동일 구조",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "apps/learning-card/base/* 동일 구조",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "apps/learning-ai/base/* 동일 구조",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "kustomization.yaml로 base 리소스 묶기",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "dev overlay 작성",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "apps/<app>/overlays/dev/kustomization.yaml × 5",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "dev용 replicaCount=1, resources.requests 최소화",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "dev 전용 ConfigMap patch (LOG_LEVEL=DEBUG 등)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Ingress 또는 Service LoadBalancer 정의",
+                      "text": "Ingress 또는 Service LoadBalancer 정의 — EKS 배포 후",
                       "done": false
                     }
                   ]
@@ -402,219 +402,219 @@
                 {
                   "name": "적용 + 검증",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
-                      "text": "git push → ArgoCD 5개 앱 모두 Synced + Healthy 확인",
+                      "text": "git push → ArgoCD 5개 앱 모두 Synced + Healthy 확인 (kind)",
+                      "done": true
+                    },
+                    {
+                      "text": "각 앱 Pod 로그 정상 (startup error 없음) — EKS 배포 후",
                       "done": false
                     },
                     {
-                      "text": "각 앱 Pod 로그 정상 (startup error 없음)",
+                      "text": "/actuator/health 또는 동등 endpoint 200 응답 — EKS 배포 후",
                       "done": false
                     },
                     {
-                      "text": "/actuator/health 또는 동등 endpoint 200 응답",
-                      "done": false
-                    },
-                    {
-                      "text": "dev 도메인으로 5개 앱 도달",
+                      "text": "dev 도메인으로 5개 앱 도달 — EKS 배포 후",
                       "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 18,
-              "doneChecks": 0
+              "doneChecks": 13
             },
             {
               "name": "Secret 관리 (External Secrets Operator)",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "Secret 저장소 결정 (AWS Secrets Manager vs Parameter Store vs Vault)",
-                      "done": false
+                      "text": "Secret 저장소 결정 (AWS Secrets Manager vs Parameter Store vs Vault) → AWS SM 채택",
+                      "done": true
                     },
                     {
-                      "text": "ESO vs SOPS vs Sealed Secrets 비교 후 선택",
-                      "done": false
+                      "text": "ESO vs SOPS vs Sealed Secrets 비교 후 선택 → ESO 채택",
+                      "done": true
                     },
                     {
                       "text": "IRSA 권한 설계 (서비스 계정 → IAM Role)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "시크릿 명명 규칙 (예: synapse/<env>/<app>/<key>)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ESO 설치 + 구성",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "external-secrets helm chart 또는 매니페스트 적용",
+                      "text": "external-secrets helm chart 또는 매니페스트 적용 (kind: fake provider 검증)",
+                      "done": true
+                    },
+                    {
+                      "text": "IRSA 어노테이션 + IAM Policy 생성 (Secrets Manager read) — EKS 배포 시",
                       "done": false
                     },
                     {
-                      "text": "IRSA 어노테이션 + IAM Policy 생성 (Secrets Manager read)",
-                      "done": false
+                      "text": "ClusterSecretStore 정의 (AWS provider) — `infra/external-secrets/cluster-secret-store.yaml`",
+                      "done": true
                     },
                     {
-                      "text": "ClusterSecretStore 정의 (AWS provider)",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 ExternalSecret로 sync 동작 확인",
-                      "done": false
+                      "text": "테스트 ExternalSecret로 sync 동작 확인 (kind: fake provider)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "5개 앱 적용",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "platform-svc ExternalSecret 정의 (DB 비밀번호, JWT 키, OAuth 시크릿)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "engagement-svc ExternalSecret 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "knowledge-svc ExternalSecret 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "learning-card ExternalSecret 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "learning-ai ExternalSecret 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "기존 평문 Secret 모두 제거",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "보안 검증 + 문서화",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "gitleaks 또는 trufflehog로 git history 스캔 → 0건",
+                      "text": "gitleaks 또는 trufflehog로 git history 스캔 → 0건 — EKS 배포 후",
                       "done": false
                     },
                     {
-                      "text": "ESO sync 실패 시 알람 설정",
+                      "text": "ESO sync 실패 시 알람 설정 — W3 Observability",
                       "done": false
                     },
                     {
                       "text": "README에 새 시크릿 추가 절차 문서화",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "HISTORY에 결정 배경 + 대안 비교 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 18,
-              "doneChecks": 0
+              "doneChecks": 15
             },
             {
               "name": "이미지 태그 자동 sync",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "ArgoCD Image Updater vs git PR 기반 비교",
-                      "done": false
+                      "text": "ArgoCD Image Updater vs git PR 기반 비교 → Image Updater 채택",
+                      "done": true
                     },
                     {
                       "text": "각 svc 레포의 이미지 태그 규칙 통일 합의",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "semver vs sha 태그 정책 결정",
-                      "done": false
+                      "text": "semver vs sha 태그 정책 결정 → semver (`^[0-9]+\\.[0-9]+\\.[0-9]+$`)",
+                      "done": true
                     },
                     {
-                      "text": "write-back 방식 결정 (git commit vs annotation)",
-                      "done": false
+                      "text": "write-back 방식 결정 (git commit vs annotation) → git commit (kustomization)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "구현",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "ArgoCD Image Updater 설치 (선택한 경우)",
-                      "done": false
+                      "text": "ArgoCD Image Updater 설치 (kind 검증 완료)",
+                      "done": true
                     },
                     {
-                      "text": "각 Application에 image-updater annotation 추가",
-                      "done": false
+                      "text": "각 Application에 image-updater annotation 추가 (ApplicationSet)",
+                      "done": true
                     },
                     {
-                      "text": "또는 svc 레포의 release 워크플로우에서 gitops 레포로 PR 생성하는 스크립트",
-                      "done": false
+                      "text": "ImageUpdater CR 작성 (`argocd/image-updater.yaml`)",
+                      "done": true
                     },
                     {
-                      "text": "write-back PR의 자동 머지 정책 정의",
-                      "done": false
+                      "text": "ECR 이미지 경로로 교체 완료",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "적용 + 검증",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
-                      "text": "5개 앱 모두 새 이미지 푸시 → dev 자동 반영 확인",
+                      "text": "5개 앱 모두 새 이미지 푸시 → dev 자동 반영 확인 — EKS 배포 후",
                       "done": false
                     },
                     {
-                      "text": "평균 반영 시간 측정 (목표 5분 이내)",
+                      "text": "평균 반영 시간 측정 (목표 5분 이내) — EKS 배포 후",
                       "done": false
                     },
                     {
-                      "text": "롤백 케이스: 잘못된 이미지 → 이전 태그로 복귀 가능",
+                      "text": "롤백 케이스: 잘못된 이미지 → 이전 태그로 복귀 가능 — EKS 배포 후",
                       "done": false
                     },
                     {
-                      "text": "image 태그 변경 이력이 git log에 남는지 확인",
-                      "done": false
+                      "text": "image 태그 변경 이력이 git log에 남는지 확인 (write-back-method: git 설정)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서화 + 인수인계",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "이미지 태그 정책 문서화",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "자동 sync 비활성화 절차 (긴급 상황 대비)",
@@ -626,17 +626,17 @@
                     },
                     {
                       "text": "HISTORY 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 16,
-              "doneChecks": 0
+              "doneChecks": 11
             }
           ],
           "totalChecks": 52,
-          "doneChecks": 0
+          "doneChecks": 39
         },
         {
           "week": "W3",
@@ -1289,67 +1289,7 @@
       ]
     }
   ],
-  "prd": [
-    {
-      "week": "W1",
-      "items": [
-        { "id": "FR-GO-101", "title": "EKS에 ArgoCD HA 모드로 설치", "status": "not_started" },
-        { "id": "FR-GO-102", "title": "ArgoCD UI를 외부에 TLS로 노출", "status": "not_started" },
-        { "id": "FR-GO-103", "title": "5개 앱을 ApplicationSet으로 일괄 정의", "status": "not_started" },
-        { "id": "FR-GO-104", "title": "validate-manifests CI에 kubeconform 추가", "status": "not_started" },
-        { "id": "FR-GO-105", "title": "main 브랜치 보호 + 필수 CI 체크", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W2",
-      "items": [
-        { "id": "FR-GO-201", "title": "5개 앱 dev overlay 작성 + 자동 sync", "status": "not_started" },
-        { "id": "FR-GO-202", "title": "dev 도메인으로 5개 앱 외부 접근 가능", "status": "not_started" },
-        { "id": "FR-GO-203", "title": "External Secrets Operator 도입", "status": "not_started" },
-        { "id": "FR-GO-204", "title": "AWS Secrets Manager에서 5개 앱 시크릿 sync", "status": "not_started" },
-        { "id": "FR-GO-205", "title": "새 이미지 푸시 시 dev 자동 반영", "status": "not_started" },
-        { "id": "FR-GO-206", "title": "이미지 태그 변경 이력이 git log에 남음", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W3",
-      "items": [
-        { "id": "FR-GO-301", "title": "5개 앱 staging overlay 작성 + 자동 sync", "status": "not_started" },
-        { "id": "FR-GO-302", "title": "dev → staging 승격 절차 문서화 + 1회 실행", "status": "not_started" },
-        { "id": "FR-GO-303", "title": "kube-prometheus-stack 설치", "status": "not_started" },
-        { "id": "FR-GO-304", "title": "5개 앱 ServiceMonitor 정의 + 메트릭 수집", "status": "not_started" },
-        { "id": "FR-GO-305", "title": "로그 수집 스택(Loki 또는 CloudWatch) 설치", "status": "not_started" },
-        { "id": "FR-GO-306", "title": "기본 알람 3개 이상 + 채널 도달 검증", "status": "not_started" },
-        { "id": "FR-GO-307", "title": "Synapse 개요 Grafana 대시보드", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W4",
-      "items": [
-        { "id": "FR-GO-401", "title": "5개 앱 prod overlay 작성", "status": "not_started" },
-        { "id": "FR-GO-402", "title": "prod는 Manual Sync 정책 적용", "status": "not_started" },
-        { "id": "FR-GO-403", "title": "prod sync 권한 분리", "status": "not_started" },
-        { "id": "FR-GO-404", "title": "첫 prod 배포 1회 실행 + 검증", "status": "not_started" },
-        { "id": "FR-GO-405", "title": "ArgoCD History 롤백 절차 검증", "status": "not_started" },
-        { "id": "FR-GO-406", "title": "git revert 기반 롤백 절차 검증", "status": "not_started" },
-        { "id": "FR-GO-407", "title": "Velero 일일 백업 스케줄 동작", "status": "not_started" },
-        { "id": "FR-GO-408", "title": "백업으로부터 네임스페이스 복구 시뮬레이션", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W5",
-      "items": [
-        { "id": "FR-GO-501", "title": "장애 시나리오 Runbook 5종 작성", "status": "not_started" },
-        { "id": "FR-GO-502", "title": "Runbook 따라하기 검증 (team-lead)", "status": "not_started" },
-        { "id": "FR-GO-503", "title": "staging 환경 장애 시뮬레이션 3건 이상 통과", "status": "not_started" },
-        { "id": "FR-GO-504", "title": "On-call 연락처 + 알람 라우팅 정리", "status": "not_started" },
-        { "id": "FR-GO-505", "title": "5개 앱 resources requests/limits 적정화", "status": "not_started" },
-        { "id": "FR-GO-506", "title": "HPA 정의 + 동작 검증 (2개 앱)", "status": "not_started" },
-        { "id": "FR-GO-507", "title": "AWS Cost 태그 정책 적용 + 가시성 확보", "status": "not_started" },
-        { "id": "FR-GO-508", "title": "핸드오프 문서 최종 검토 + 사인오프", "status": "not_started" }
-      ]
-    }
-  ],
+  "prd": [],
   "history": [
     {
       "date": "2026-05-12",
@@ -1365,7 +1305,36 @@
       "date": "2026-05-18",
       "totalChecks": 202,
       "doneChecks": 40
+    },
+    {
+      "date": "2026-05-19",
+      "totalChecks": 202,
+      "doneChecks": 79
     }
   ],
-  "changelog": []
+  "changelog": [
+    {
+      "date": "2026-05-19T03:39:29.210Z",
+      "commit": "4524ed8",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > dev overlay 5개 앱 완성",
+          "detail": "13개 항목 완료 (0 → 13)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > Secret 관리 (External Secrets Operator)",
+          "detail": "15개 항목 완료 (0 → 15)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > 이미지 태그 자동 sync",
+          "detail": "11개 항목 완료 (0 → 11)"
+        }
+      ]
+    }
+  ]
 }
