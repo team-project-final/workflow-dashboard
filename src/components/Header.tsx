@@ -19,9 +19,12 @@ export default function Header({ overallPercent, subtitle, backLink }: HeaderPro
           <p className="text-xs text-stone-400">{subtitle || 'Workflow Dashboard'}</p>
         </div>
       </div>
-      <div className="text-right">
-        <div className="text-4xl font-bold text-amber-light font-display">{overallPercent}%</div>
-        <p className="text-xs text-stone-400">전체 진행률</p>
+      <div className="flex items-center gap-6">
+        <a href="#/settings" className="text-stone-400 hover:text-amber-light text-sm transition-colors">⚙ Settings</a>
+        <div className="text-right">
+          <div className="text-4xl font-bold text-amber-light font-display">{overallPercent}%</div>
+          <p className="text-xs text-stone-400">전체 진행률</p>
+        </div>
       </div>
     </header>
   )

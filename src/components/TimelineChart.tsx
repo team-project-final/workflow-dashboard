@@ -20,6 +20,18 @@ const TRACK_COLORS: Record<string, string> = {
   'synapse-shared': '#22D3EE',
 }
 
+const AUTO_COLORS = ['#6366F1', '#14B8A6', '#F43F5E', '#8B5CF6', '#F97316', '#06B6D4', '#84CC16', '#E879F9']
+
+function getTrackColor(trackName: string): string {
+  if (TRACK_COLORS[trackName]) return TRACK_COLORS[trackName]
+  let hash = 0
+  for (let i = 0; i < trackName.length; i++) {
+    hash = ((hash << 5) - hash) + trackName.charCodeAt(i)
+    hash |= 0
+  }
+  return AUTO_COLORS[Math.abs(hash) % AUTO_COLORS.length]
+}
+
 interface Props {
   data: RepoData[]
 }
@@ -61,7 +73,7 @@ export default function TimelineChart({ data }: Props) {
     d.tracks.map(t => ({
       label: t.name,
       data: carryForward(d.history, allDates),
-      borderColor: TRACK_COLORS[t.name] || '#78716C',
+      borderColor: getTrackColor(t.name),
       backgroundColor: 'transparent',
       tension: 0.3,
       pointRadius: 2,
