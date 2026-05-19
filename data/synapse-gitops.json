@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-05-19T03:41:01.630Z",
+  "updatedAt": "2026-05-19T05:47:36.181Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1289,67 +1289,7 @@
       ]
     }
   ],
-  "prd": [
-    {
-      "week": "W1",
-      "items": [
-        { "id": "FR-GO-101", "title": "EKS에 ArgoCD HA 모드로 설치", "status": "done" },
-        { "id": "FR-GO-102", "title": "ArgoCD UI를 외부에 TLS로 노출", "status": "in_progress" },
-        { "id": "FR-GO-103", "title": "5개 앱을 ApplicationSet으로 일괄 정의", "status": "done" },
-        { "id": "FR-GO-104", "title": "validate-manifests CI에 kubeconform 추가", "status": "done" },
-        { "id": "FR-GO-105", "title": "main 브랜치 보호 + 필수 CI 체크", "status": "done" }
-      ]
-    },
-    {
-      "week": "W2",
-      "items": [
-        { "id": "FR-GO-201", "title": "5개 앱 dev overlay 작성 + 자동 sync", "status": "in_progress" },
-        { "id": "FR-GO-202", "title": "dev 도메인으로 5개 앱 외부 접근 가능", "status": "not_started" },
-        { "id": "FR-GO-203", "title": "External Secrets Operator 도입", "status": "in_progress" },
-        { "id": "FR-GO-204", "title": "AWS Secrets Manager에서 5개 앱 시크릿 sync", "status": "not_started" },
-        { "id": "FR-GO-205", "title": "새 이미지 푸시 시 dev 자동 반영", "status": "in_progress" },
-        { "id": "FR-GO-206", "title": "이미지 태그 변경 이력이 git log에 남음", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W3",
-      "items": [
-        { "id": "FR-GO-301", "title": "5개 앱 staging overlay 작성 + 자동 sync", "status": "not_started" },
-        { "id": "FR-GO-302", "title": "dev → staging 승격 절차 문서화 + 1회 실행", "status": "not_started" },
-        { "id": "FR-GO-303", "title": "kube-prometheus-stack 설치", "status": "not_started" },
-        { "id": "FR-GO-304", "title": "5개 앱 ServiceMonitor 정의 + 메트릭 수집", "status": "not_started" },
-        { "id": "FR-GO-305", "title": "로그 수집 스택(Loki 또는 CloudWatch) 설치", "status": "not_started" },
-        { "id": "FR-GO-306", "title": "기본 알람 3개 이상 + 채널 도달 검증", "status": "not_started" },
-        { "id": "FR-GO-307", "title": "Synapse 개요 Grafana 대시보드", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W4",
-      "items": [
-        { "id": "FR-GO-401", "title": "5개 앱 prod overlay 작성", "status": "not_started" },
-        { "id": "FR-GO-402", "title": "prod는 Manual Sync 정책 적용", "status": "not_started" },
-        { "id": "FR-GO-403", "title": "prod sync 권한 분리", "status": "not_started" },
-        { "id": "FR-GO-404", "title": "첫 prod 배포 1회 실행 + 검증", "status": "not_started" },
-        { "id": "FR-GO-405", "title": "ArgoCD History 롤백 절차 검증", "status": "not_started" },
-        { "id": "FR-GO-406", "title": "git revert 기반 롤백 절차 검증", "status": "not_started" },
-        { "id": "FR-GO-407", "title": "Velero 일일 백업 스케줄 동작", "status": "not_started" },
-        { "id": "FR-GO-408", "title": "백업으로부터 네임스페이스 복구 시뮬레이션", "status": "not_started" }
-      ]
-    },
-    {
-      "week": "W5",
-      "items": [
-        { "id": "FR-GO-501", "title": "장애 시나리오 Runbook 5종 작성", "status": "not_started" },
-        { "id": "FR-GO-502", "title": "Runbook 따라하기 검증 (team-lead)", "status": "not_started" },
-        { "id": "FR-GO-503", "title": "staging 환경 장애 시뮬레이션 3건 이상 통과", "status": "not_started" },
-        { "id": "FR-GO-504", "title": "On-call 연락처 + 알람 라우팅 정리", "status": "not_started" },
-        { "id": "FR-GO-505", "title": "5개 앱 resources requests/limits 적정화", "status": "not_started" },
-        { "id": "FR-GO-506", "title": "HPA 정의 + 동작 검증 (2개 앱)", "status": "not_started" },
-        { "id": "FR-GO-507", "title": "AWS Cost 태그 정책 적용 + 가시성 확보", "status": "not_started" },
-        { "id": "FR-GO-508", "title": "핸드오프 문서 최종 검토 + 사인오프", "status": "not_started" }
-      ]
-    }
-  ],
+  "prd": [],
   "history": [
     {
       "date": "2026-05-12",
