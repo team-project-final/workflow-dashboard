@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "repos": [
+    {
+      "repo": "synapse-platform-svc",
+      "tracks": [{ "name": "platform", "owner": "김해준" }]
+    },
+    {
+      "repo": "synapse-engagement-svc",
+      "tracks": [{ "name": "engagement", "owner": "한승완" }]
+    },
+    {
+      "repo": "synapse-knowledge-svc",
+      "tracks": [
+        { "name": "knowledge-1", "owner": "김현지" },
+        { "name": "knowledge-2", "owner": "박은서" }
+      ]
+    },
+    {
+      "repo": "synapse-learning-svc",
+      "tracks": [
+        { "name": "learning-card", "owner": "조유지" },
+        { "name": "learning-ai", "owner": "김나경" }
+      ]
+    },
+    {
+      "repo": "synapse-frontend",
+      "tracks": [{ "name": "frontend", "owner": "전원" }]
+    },
+    {
+      "repo": "synapse-gitops",
+      "tracks": [{ "name": "team-lead", "owner": "김민구" }]
+    },
+    {
+      "repo": "synapse-shared",
+      "tracks": [{ "name": "team-lead", "owner": "김민구" }]
+    }
+  ],
+  "virtualTracks": [
+    {
+      "name": "team-lead",
+      "owner": "김민구",
+      "sources": [
+        { "repo": "synapse-gitops", "track": "team-lead" },
+        { "repo": "synapse-shared", "track": "team-lead" }
+      ]
+    }
+  ]
+}
