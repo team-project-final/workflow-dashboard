@@ -7,20 +7,29 @@ interface Props {
   onCancel: () => void
 }
 
+function extractRepoName(input: string): string {
+  const trimmed = input.trim().replace(/\/+$/, '')
+  const segments = trimmed.split('/')
+  return segments[segments.length - 1] || trimmed
+}
+
 export default function RepoEditModal({ initial, onSave, onCancel }: Props) {
-  const [repoName, setRepoName] = useState(initial?.repo || '')
+  const [repoInput, setRepoInput] = useState(initial?.repo || '')
   const [tracks, setTracks] = useState<TrackDef[]>(initial?.tracks || [{ name: '', owner: '' }])
+
+  const repoName = extractRepoName(repoInput)
+  const hasSlash = repoInput.includes('/')
 
   const addTrack = () => setTracks([...tracks, { name: '', owner: '' }])
   const removeTrack = (i: number) => setTracks(tracks.filter((_, idx) => idx !== i))
   const updateTrack = (i: number, field: keyof TrackDef, value: string) =>
     setTracks(tracks.map((t, idx) => idx === i ? { ...t, [field]: value } : t))
 
-  const canSave = repoName.trim() !== '' && tracks.every(t => t.name.trim() !== '' && t.owner.trim() !== '')
+  const canSave = repoName !== '' && tracks.every(t => t.name.trim() !== '' && t.owner.trim() !== '')
 
   const handleSave = () => {
     if (!canSave) return
-    onSave({ repo: repoName.trim(), tracks: tracks.map(t => ({ name: t.name.trim(), owner: t.owner.trim() })) })
+    onSave({ repo: repoName, tracks: tracks.map(t => ({ name: t.name.trim(), owner: t.owner.trim() })) })
   }
 
   return (
@@ -30,12 +39,15 @@ export default function RepoEditModal({ initial, onSave, onCancel }: Props) {
 
         <label className="block text-sm font-semibold text-stone-700 mb-1">레포 이름</label>
         <input
-          value={repoName}
-          onChange={e => setRepoName(e.target.value)}
-          placeholder="synapse-example-svc"
+          value={repoInput}
+          onChange={e => setRepoInput(e.target.value)}
+          placeholder="team-project-final/synapse-svc-template 또는 synapse-svc-template"
           className="w-full px-3 py-2 border border-stone-300 rounded-md text-sm mb-1"
         />
-        <p className="text-xs text-stone-400 mb-4">data/ 폴더의 JSON 파일명과 일치해야 합니다</p>
+        {hasSlash && repoName && (
+          <p className="text-xs text-info mb-1">→ 레포명: <span className="font-semibold">{repoName}</span></p>
+        )}
+        <p className="text-xs text-stone-400 mb-4">org/repo 형식 또는 레포명만 입력 가능. JSON이 없으면 빈 데이터로 시작됩니다.</p>
 
         <div className="flex justify-between items-center mb-2">
           <label className="text-sm font-semibold text-stone-700">트랙 목록</label>
