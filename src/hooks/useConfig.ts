@@ -26,21 +26,28 @@ export function useConfig() {
   const [isOverridden, setIsOverridden] = useState(false)
 
   useEffect(() => {
+    let cancelled = false
     const localConfig = loadLocalConfig()
     if (localConfig) {
-      setConfig(localConfig)
-      setIsOverridden(true)
-      setLoading(false)
-      return
+      // Defer to avoid sync setState in effect
+      Promise.resolve().then(() => {
+        if (cancelled) return
+        setConfig(localConfig)
+        setIsOverridden(true)
+        setLoading(false)
+      })
+      return () => { cancelled = true }
     }
 
     fetch(`${import.meta.env.BASE_URL}data/config.json`)
       .then(r => r.ok ? r.json() : null)
       .then((data: DashboardConfig | null) => {
+        if (cancelled) return
         setConfig(data)
         setLoading(false)
       })
-      .catch(() => setLoading(false))
+      .catch(() => { if (!cancelled) setLoading(false) })
+    return () => { cancelled = true }
   }, [])
 
   const updateConfig = useCallback((newConfig: DashboardConfig) => {

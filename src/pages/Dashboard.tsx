@@ -10,8 +10,8 @@ export default function Dashboard() {
   if (loading) return <div className="p-8 text-stone-400">Loading...</div>
 
   const trackEntries = data.flatMap(d => {
-    if (d.repo === 'team-lead') {
-      return [{ repoData: d, trackName: 'team-lead', owner: '김민구' }]
+    if (d.tracks.length > 1 && d.tracks[0].owner === d.tracks[1]?.owner) {
+      return [{ repoData: d, trackName: d.repo, owner: d.tracks[0].owner }]
     }
     return d.tracks.map(t => ({ repoData: d, trackName: t.name, owner: t.owner }))
   })

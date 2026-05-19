@@ -1,21 +1,7 @@
 import { useState, useEffect } from 'react'
 import type { PrdWeek, RepoData, Track, Week } from '../types'
-
-const DEFAULT_TRACKS: { repo: string; tracks: { name: string; owner: string }[] }[] = [
-  { repo: 'synapse-platform-svc', tracks: [{ name: 'platform', owner: '김해준' }] },
-  { repo: 'synapse-engagement-svc', tracks: [{ name: 'engagement', owner: '한승완' }] },
-  { repo: 'synapse-knowledge-svc', tracks: [{ name: 'knowledge-1', owner: '김현지' }, { name: 'knowledge-2', owner: '박은서' }] },
-  { repo: 'synapse-learning-svc', tracks: [{ name: 'learning-card', owner: '조유지' }, { name: 'learning-ai', owner: '김나경' }] },
-  { repo: 'synapse-frontend', tracks: [{ name: 'frontend', owner: '전원' }] },
-]
-
-const TEAM_LEAD_CONFIG = {
-  virtualRepo: 'team-lead',
-  sources: ['synapse-gitops', 'synapse-shared'] as const,
-  owner: '김민구',
-}
-
-const REPOS = DEFAULT_TRACKS.map(d => d.repo)
+import type { RepoDef, TrackDef, VirtualTrackDef } from '../types/config'
+import { useConfig } from './useConfig'
 
 export const WEEKS_META = [
   { week: 'W1', period: '05-12~05-16' },
@@ -25,21 +11,23 @@ export const WEEKS_META = [
   { week: 'W5', period: '06-08~06-12' },
 ]
 
-type TrackDef = { name: string; owner: string }
+const LS_DATA_PREFIX = 'dashboard-data-'
+
+function loadLocalData(repo: string): RepoData | null {
+  try {
+    const raw = localStorage.getItem(LS_DATA_PREFIX + repo)
+    return raw ? JSON.parse(raw) : null
+  } catch {
+    return null
+  }
+}
 
 function emptyWeek(week: string, period: string): Week {
-  return {
-    week,
-    period,
-    steps: [],
-    totalChecks: 0,
-    doneChecks: 0,
-  }
+  return { week, period, steps: [], totalChecks: 0, doneChecks: 0 }
 }
 
 function normalizeWeek(week: Week | undefined, weekMeta: typeof WEEKS_META[number]): Week {
   if (!week) return emptyWeek(weekMeta.week, weekMeta.period)
-
   return {
     ...week,
     week: weekMeta.week,
@@ -54,17 +42,12 @@ function normalizeTrack(track: Track | undefined, def: TrackDef): Track {
   return {
     name: def.name,
     owner: track?.owner || def.owner,
-    weeks: WEEKS_META.map(weekMeta =>
-      normalizeWeek(track?.weeks?.find(w => w.week === weekMeta.week), weekMeta)
-    ),
+    weeks: WEEKS_META.map(wm => normalizeWeek(track?.weeks?.find(w => w.week === wm.week), wm)),
   }
 }
 
 function normalizePrdWeek(prdWeek: PrdWeek | undefined, weekMeta: typeof WEEKS_META[number]): PrdWeek {
-  return {
-    week: weekMeta.week,
-    items: prdWeek?.items || [],
-  }
+  return { week: weekMeta.week, items: prdWeek?.items || [] }
 }
 
 function emptyRepoData(repo: string, tracks: TrackDef[]): RepoData {
@@ -78,114 +61,114 @@ function emptyRepoData(repo: string, tracks: TrackDef[]): RepoData {
   }
 }
 
-function normalizeRepoData(raw: RepoData | null, def: { repo: string; tracks: TrackDef[] }): RepoData {
+function normalizeRepoData(raw: RepoData | null, def: RepoDef): RepoData {
   if (!raw) return emptyRepoData(def.repo, def.tracks)
-
   return {
     ...raw,
     repo: raw.repo || def.repo,
     updatedAt: raw.updatedAt || '',
-    tracks: def.tracks.map(trackDef =>
-      normalizeTrack(raw.tracks?.find(t => t.name === trackDef.name), trackDef)
-    ),
-    prd: WEEKS_META.map(weekMeta =>
-      normalizePrdWeek(raw.prd?.find(p => p.week === weekMeta.week), weekMeta)
-    ),
+    tracks: def.tracks.map(td => normalizeTrack(raw.tracks?.find(t => t.name === td.name), td)),
+    prd: WEEKS_META.map(wm => normalizePrdWeek(raw.prd?.find(p => p.week === wm.week), wm)),
     history: raw.history || [],
     changelog: raw.changelog || [],
   }
 }
 
-function mergeTeamLeadData(
-  gitopsRaw: RepoData | null,
-  sharedRaw: RepoData | null,
+function fetchRepoJson(repo: string): Promise<RepoData | null> {
+  const localData = loadLocalData(repo)
+  if (localData) return Promise.resolve(localData)
+  return fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
+    .then(r => r.ok ? r.json() : null)
+    .catch(() => null)
+}
+
+function mergeVirtualTrackData(
+  vtDef: VirtualTrackDef,
+  sourceResults: (RepoData | null)[],
+  sourceDefs: RepoDef[],
 ): RepoData {
-  const gitopsDef = { repo: 'synapse-gitops', tracks: [{ name: 'team-lead', owner: TEAM_LEAD_CONFIG.owner }] }
-  const sharedDef = { repo: 'synapse-shared', tracks: [{ name: 'team-lead', owner: TEAM_LEAD_CONFIG.owner }] }
+  const normalizedSources = sourceDefs.map((def, i) => normalizeRepoData(sourceResults[i], def))
+  const tracks: Track[] = normalizedSources.map((nd, i) => ({
+    name: sourceDefs[i].repo,
+    owner: vtDef.owner,
+    weeks: nd.tracks[0]?.weeks || WEEKS_META.map(wm => emptyWeek(wm.week, wm.period)),
+  }))
 
-  const gitopsData = normalizeRepoData(gitopsRaw, gitopsDef)
-  const sharedData = normalizeRepoData(sharedRaw, sharedDef)
-
-  const gitopsTrack = gitopsData.tracks[0]
-  const sharedTrack = sharedData.tracks[0]
-
-  const tracks: Track[] = [
-    { name: 'synapse-gitops', owner: TEAM_LEAD_CONFIG.owner, weeks: gitopsTrack.weeks },
-    { name: 'synapse-shared', owner: TEAM_LEAD_CONFIG.owner, weeks: sharedTrack.weeks },
-  ]
-
-  // Merge history by date: sum totalChecks/doneChecks from both repos per date
   const historyMap = new Map<string, { totalChecks: number; doneChecks: number }>()
-  for (const h of [...gitopsData.history, ...sharedData.history]) {
-    const existing = historyMap.get(h.date)
-    if (existing) {
-      existing.totalChecks += h.totalChecks
-      existing.doneChecks += h.doneChecks
-    } else {
-      historyMap.set(h.date, { totalChecks: h.totalChecks, doneChecks: h.doneChecks })
+  for (const nd of normalizedSources) {
+    for (const h of nd.history) {
+      const existing = historyMap.get(h.date)
+      if (existing) {
+        existing.totalChecks += h.totalChecks
+        existing.doneChecks += h.doneChecks
+      } else {
+        historyMap.set(h.date, { totalChecks: h.totalChecks, doneChecks: h.doneChecks })
+      }
     }
   }
   const mergedHistory = [...historyMap].map(([date, v]) => ({ date, ...v }))
 
-  const mergedChangelog = [...gitopsData.changelog, ...sharedData.changelog]
+  const mergedChangelog = normalizedSources
+    .flatMap(nd => nd.changelog)
     .sort((a, b) => b.date.localeCompare(a.date))
 
-  const combinedPrd: PrdWeek[] = WEEKS_META.map(wm => {
-    const gitopsItems = gitopsData.prd.find(p => p.week === wm.week)?.items || []
-    const sharedItems = sharedData.prd.find(p => p.week === wm.week)?.items || []
-    return { week: wm.week, items: [...gitopsItems, ...sharedItems] }
-  })
+  const combinedPrd: PrdWeek[] = WEEKS_META.map(wm => ({
+    week: wm.week,
+    items: normalizedSources.flatMap(nd => nd.prd.find(p => p.week === wm.week)?.items || []),
+  }))
+
+  const latestUpdate = normalizedSources
+    .map(nd => nd.updatedAt)
+    .filter(Boolean)
+    .sort()
+    .pop() || ''
 
   return {
-    repo: 'team-lead',
-    updatedAt: gitopsData.updatedAt > sharedData.updatedAt ? gitopsData.updatedAt : sharedData.updatedAt,
+    repo: vtDef.name,
+    updatedAt: latestUpdate,
     tracks,
     prd: combinedPrd,
-    prdPerTrack: [gitopsData.prd, sharedData.prd],
+    prdPerTrack: normalizedSources.map(nd => nd.prd),
     history: mergedHistory,
     changelog: mergedChangelog,
   }
 }
 
 export function useData() {
+  const { config, loading: configLoading } = useConfig()
   const [data, setData] = useState<RepoData[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const allFetches = [
-      ...REPOS.map(repo =>
-        fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
-          .then(r => r.ok ? r.json() : null)
-          .catch(() => null)
-      ),
-      ...TEAM_LEAD_CONFIG.sources.map(repo =>
-        fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
-          .then(r => r.ok ? r.json() : null)
-          .catch(() => null)
-      ),
-    ]
+    if (configLoading || !config) return
 
-    Promise.all(allFetches).then(results => {
-      const repoResults = results.slice(0, REPOS.length)
-      const [gitopsResult, sharedResult] = results.slice(REPOS.length)
+    const vtSourceRepos = new Set(config.virtualTracks.flatMap(vt => vt.sources.map(s => s.repo)))
+    const regularRepos = config.repos.filter(r => !vtSourceRepos.has(r.repo))
 
-      const merged = DEFAULT_TRACKS.map((def, i) =>
-        normalizeRepoData(repoResults[i] as RepoData | null, def)
-      )
+    const regularFetches = regularRepos.map(def =>
+      fetchRepoJson(def.repo).then(raw => normalizeRepoData(raw, def))
+    )
 
-      const teamLeadData = mergeTeamLeadData(
-        gitopsResult as RepoData | null,
-        sharedResult as RepoData | null,
-      )
-
-      setData([...merged, teamLeadData])
-      setLoading(false)
-    }).catch(err => {
-      setError(err.message)
-      setLoading(false)
+    const vtFetches = config.virtualTracks.map(vtDef => {
+      const sourceDefs = vtDef.sources.map(s => {
+        const repoDef = config.repos.find(r => r.repo === s.repo)
+        return repoDef || { repo: s.repo, tracks: [{ name: s.track, owner: vtDef.owner }] }
+      })
+      return Promise.all(sourceDefs.map(sd => fetchRepoJson(sd.repo)))
+        .then(results => mergeVirtualTrackData(vtDef, results, sourceDefs))
     })
-  }, [])
+
+    Promise.all([...regularFetches, ...vtFetches])
+      .then(results => {
+        setData(results)
+        setLoading(false)
+      })
+      .catch(err => {
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [config, configLoading])
 
   const totalChecks = data.reduce((s, d) =>
     s + d.tracks.reduce((ts, t) => ts + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0), 0)
@@ -197,46 +180,49 @@ export function useData() {
 }
 
 export function useRepoData(repo: string) {
-  const def = DEFAULT_TRACKS.find(d => d.repo === repo)
-  const isTeamLead = repo === 'team-lead'
-  const shouldFetch = !!(def || isTeamLead)
+  const { config, loading: configLoading } = useConfig()
   const [data, setData] = useState<RepoData | null>(null)
-  const [loading, setLoading] = useState(shouldFetch)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!shouldFetch) return
+    if (configLoading || !config) return
 
-    if (isTeamLead) {
-      Promise.all(
-        TEAM_LEAD_CONFIG.sources.map(r =>
-          fetch(`${import.meta.env.BASE_URL}data/${r}.json`)
-            .then(res => res.ok ? res.json() : null)
-            .catch(() => null)
-        )
-      ).then(([gitopsResult, sharedResult]) => {
-        setData(mergeTeamLeadData(
-          gitopsResult as RepoData | null,
-          sharedResult as RepoData | null,
-        ))
-        setLoading(false)
-      }).catch(() => {
-        setData(mergeTeamLeadData(null, null))
+    const vtDef = config.virtualTracks.find(vt => vt.name === repo)
+    if (vtDef) {
+      const sourceDefs = vtDef.sources.map(s => {
+        const repoDef = config.repos.find(r => r.repo === s.repo)
+        return repoDef || { repo: s.repo, tracks: [{ name: s.track, owner: vtDef.owner }] }
+      })
+      Promise.all(sourceDefs.map(sd => fetchRepoJson(sd.repo)))
+        .then(results => {
+          setData(mergeVirtualTrackData(vtDef, results, sourceDefs))
+          setLoading(false)
+        })
+        .catch(() => {
+          setData(null)
+          setLoading(false)
+        })
+      return
+    }
+
+    const def = config.repos.find(d => d.repo === repo)
+    if (!def) {
+      // Defer to avoid sync setState in effect
+      Promise.resolve().then(() => {
+        setData(null)
         setLoading(false)
       })
       return
     }
 
-    fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
-      .then(r => r.ok ? r.json() : null)
-      .then(d => {
-        setData(normalizeRepoData(d, def!))
-        setLoading(false)
-      })
-      .catch(() => {
-        setData(emptyRepoData(def!.repo, def!.tracks))
-        setLoading(false)
-      })
-  }, [repo, def, isTeamLead, shouldFetch])
+    fetchRepoJson(repo).then(raw => {
+      setData(normalizeRepoData(raw, def))
+      setLoading(false)
+    }).catch(() => {
+      setData(emptyRepoData(def.repo, def.tracks))
+      setLoading(false)
+    })
+  }, [repo, config, configLoading])
 
-  return shouldFetch ? { data, loading } : { data: null, loading: false }
+  return { data, loading }
 }
