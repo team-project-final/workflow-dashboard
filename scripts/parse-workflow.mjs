@@ -4,7 +4,7 @@
  * Usage: node parse-workflow.mjs <docs-dir> <repo-name> <output-json>
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs'
-import { join } from 'path'
+import { join, resolve, dirname } from 'path'
 
 const [docsDir, repoName, outputPath] = process.argv.slice(2)
 if (!docsDir || !repoName || !outputPath) {
@@ -82,18 +82,20 @@ for (const file of workflowFiles) {
   trackMap.get(trackName).set(week, join(workflowDir, file))
 }
 
-// 트랙 이름 정규화 (소스 파일명과 대시보드 트랙명이 다른 경우)
-const trackAliasMap = {
-  'gitops': 'team-lead',
+// config에서 ownerMap 구성
+const configPath = join(dirname(outputPath), 'config.json')
+const ownerMap = {}
+if (existsSync(configPath)) {
+  const config = JSON.parse(readFileSync(configPath, 'utf-8'))
+  for (const repo of config.repos) {
+    for (const track of repo.tracks) {
+      ownerMap[track.name] = track.owner
+    }
+  }
 }
 
-// 트랙별 파싱
-const ownerMap = {
-  'platform': '김해준', 'engagement': '한승완',
-  'knowledge-1': '김현지', 'knowledge-2': '박은서',
-  'learning-card': '조유지', 'learning-ai': '김나경',
-  'frontend': '전원', 'team-lead': '김민구',
-}
+// trackAliasMap — config의 명시적 매핑으로 대체
+const trackAliasMap = {}
 
 const periodMap = {
   W1: '05-12~05-16', W2: '05-19~05-23', W3: '05-26~05-29',

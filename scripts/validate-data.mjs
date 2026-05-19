@@ -3,15 +3,16 @@ import path from 'node:path'
 
 const DATA_DIR = path.resolve('data')
 
-const EXPECTED_REPOS = [
-  { repo: 'synapse-platform-svc', tracks: ['platform'] },
-  { repo: 'synapse-engagement-svc', tracks: ['engagement'] },
-  { repo: 'synapse-knowledge-svc', tracks: ['knowledge-1', 'knowledge-2'] },
-  { repo: 'synapse-learning-svc', tracks: ['learning-card', 'learning-ai'] },
-  { repo: 'synapse-frontend', tracks: ['frontend'] },
-  { repo: 'synapse-gitops', tracks: ['team-lead'] },
-  { repo: 'synapse-shared', tracks: ['team-lead'] },
-]
+const configPath = path.resolve('data/config.json')
+if (!fs.existsSync(configPath)) {
+  console.error('data/config.json not found')
+  process.exit(1)
+}
+const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
+const EXPECTED_REPOS = config.repos.map(r => ({
+  repo: r.repo,
+  tracks: r.tracks.map(t => t.name),
+}))
 
 const WEEKS = ['W1', 'W2', 'W3', 'W4', 'W5']
 const CHANGE_TYPES = new Set([
