@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-19T03:15:20.699Z",
+  "updatedAt": "2026-05-19T05:23:30.580Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -12,10 +12,209 @@
           "steps": [
             {
               "name": "knowledge-svc 골격 생성",
-              "status": "Not Started",
-              "phases": [],
-              "totalChecks": 0,
-              "doneChecks": 0
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "TASK 시작",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Step Goal / Done When / Scope / Input 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration 산정 확인 (0.5일)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
+                      "done": false
+                    },
+                    {
+                      "text": "note/graph/chunking 3개 모듈 역할 정의",
+                      "done": false
+                    },
+                    {
+                      "text": "platform-svc와 동일 빌드 구조 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 1차 검토",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: No (골격만 생성)",
+                      "done": false
+                    },
+                    {
+                      "text": "권한 종류: 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "공개 API 여부: No (Health endpoint만)",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — ERD 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "모듈별 패키지 구조도 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 2차 검토",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당 (골격 단계)",
+                      "done": false
+                    },
+                    {
+                      "text": "Soft Delete 정책: 비해당",
+                      "done": false
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 불필요",
+                      "done": false
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "DTO / Entity 설계 (API First)",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
+                      "done": false
+                    },
+                    {
+                      "text": "각 모듈 package-info.java 작성",
+                      "done": false
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Repository 구현",
+                  "total": 2,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "골격 단계 — Repository 해당 없음",
+                      "done": false
+                    },
+                    {
+                      "text": "ApplicationModulesTest 구조 검증 테스트 작성",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Service + Test",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "빈 Service 클래스 생성 (3개 모듈)",
+                      "done": false
+                    },
+                    {
+                      "text": "ApplicationModulesTest 통과 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "`./gradlew build` 성공 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "Controller + Test",
+                  "total": 3,
+                  "done": 3,
+                  "items": [
+                    {
+                      "text": "빈 Controller 클래스 생성 (3개 모듈)",
+                      "done": true
+                    },
+                    {
+                      "text": "Dockerfile 작성 (multi-stage build)",
+                      "done": true
+                    },
+                    {
+                      "text": "Docker 이미지 빌드 성공 확인",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "View + Test (해당 시)",
+                  "total": 3,
+                  "done": 3,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음",
+                      "done": true
+                    },
+                    {
+                      "text": "docker compose에서 knowledge-svc 실행 확인",
+                      "done": true
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": true
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 32,
+              "doneChecks": 6
             },
             {
               "name": "note Markdown CRUD",
@@ -39,10 +238,229 @@
                       "done": true
                     }
                   ]
+                },
+                {
+                  "name": "요구사항 분석",
+                  "total": 4,
+                  "done": 4,
+                  "items": [
+                    {
+                      "text": "노트 CRUD API 엔드포인트 5개 정의",
+                      "done": true
+                    },
+                    {
+                      "text": "Markdown 원문 저장 정책 확인 (서버 렌더링 X)",
+                      "done": true
+                    },
+                    {
+                      "text": "소유자 권한 검증 로직 설계",
+                      "done": true
+                    },
+                    {
+                      "text": "Instructions 초안 → TASK 문서 반영",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 1차 검토",
+                  "total": 4,
+                  "done": 4,
+                  "items": [
+                    {
+                      "text": "인증 필요 여부: Yes (JWT 인증 필요)",
+                      "done": true
+                    },
+                    {
+                      "text": "권한 종류: 로그인 사용자 (수정/삭제는 소유자만)",
+                      "done": true
+                    },
+                    {
+                      "text": "공개 API 여부: No",
+                      "done": true
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "ERD 설계",
+                  "total": 4,
+                  "done": 4,
+                  "items": [
+                    {
+                      "text": "notes 테이블 설계 (id, tenant_id, user_id, title, content_md, content_plain, status: active|archived|trashed, word_count, metadata jsonb, created_at, updated_at, deleted_at)",
+                      "done": true
+                    },
+                    {
+                      "text": "인덱스 설계 (user_id, created_at DESC)",
+                      "done": true
+                    },
+                    {
+                      "text": "관계 정의 (notes.user_id → users.id FK)",
+                      "done": true
+                    },
+                    {
+                      "text": "Duration(final) 갱신",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "Security 2차 검토",
+                  "total": 4,
+                  "done": 4,
+                  "items": [
+                    {
+                      "text": "민감 정보 암호화: 비해당 (노트 내용은 평문 저장)",
+                      "done": true
+                    },
+                    {
+                      "text": "Soft Delete 정책: 논리삭제 (deleted_at)",
+                      "done": true
+                    },
+                    {
+                      "text": "행 단위 접근 제어: 필요 (수정/삭제 시 user_id 확인)",
+                      "done": true
+                    },
+                    {
+                      "text": "결과 → TASK Constraints 반영",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "DTO / Entity 설계 (API First)",
+                  "total": 7,
+                  "done": 7,
+                  "items": [
+                    {
+                      "text": "NoteCreateRequest 정의 (title, content_md)",
+                      "done": true
+                    },
+                    {
+                      "text": "NoteUpdateRequest 정의 (title, content_md)",
+                      "done": true
+                    },
+                    {
+                      "text": "NoteResponse 정의 (id, title, content_md, content_plain, userId, status, word_count, createdAt, updatedAt)",
+                      "done": true
+                    },
+                    {
+                      "text": "NoteListResponse 정의 (id, title, userId, status, createdAt — content 제외)",
+                      "done": true
+                    },
+                    {
+                      "text": "Note Entity 작성",
+                      "done": true
+                    },
+                    {
+                      "text": "MapStruct 매퍼 작성",
+                      "done": true
+                    },
+                    {
+                      "text": "Output Format → TASK 반영",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "Repository 구현",
+                  "total": 3,
+                  "done": 3,
+                  "items": [
+                    {
+                      "text": "NoteRepository 인터페이스 작성",
+                      "done": true
+                    },
+                    {
+                      "text": "findByUserIdAndDeletedAtIsNull 커스텀 쿼리",
+                      "done": true
+                    },
+                    {
+                      "text": "페이징 처리 (Pageable)",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "Service + Test",
+                  "total": 5,
+                  "done": 5,
+                  "items": [
+                    {
+                      "text": "NoteService 구현 (create, findAll, findById, update, delete)",
+                      "done": true
+                    },
+                    {
+                      "text": "소유자 권한 검증 로직 구현",
+                      "done": true
+                    },
+                    {
+                      "text": "제목 200자/본문 100,000자 검증 구현",
+                      "done": true
+                    },
+                    {
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": true
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "Controller + Test",
+                  "total": 5,
+                  "done": 5,
+                  "items": [
+                    {
+                      "text": "NoteController REST API 구현 (5개 엔드포인트)",
+                      "done": true
+                    },
+                    {
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": true
+                    },
+                    {
+                      "text": "401/403 응답 테스트 (미인증, 비소유자)",
+                      "done": true
+                    },
+                    {
+                      "text": "통합 테스트 (@SpringBootTest + TestContainers)",
+                      "done": true
+                    },
+                    {
+                      "text": "테스트 통과 확인",
+                      "done": true
+                    }
+                  ]
+                },
+                {
+                  "name": "View + Test (해당 시)",
+                  "total": 3,
+                  "done": 3,
+                  "items": [
+                    {
+                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
+                      "done": true
+                    },
+                    {
+                      "text": "Swagger API 문서 확인",
+                      "done": true
+                    },
+                    {
+                      "text": "RULE Reference → TASK 반영",
+                      "done": true
+                    }
+                  ]
                 }
               ],
-              "totalChecks": 3,
-              "doneChecks": 3
+              "totalChecks": 42,
+              "doneChecks": 42
             },
             {
               "name": "note 위키링크 파싱",
@@ -287,8 +705,8 @@
               "doneChecks": 41
             }
           ],
-          "totalChecks": 44,
-          "doneChecks": 44
+          "totalChecks": 115,
+          "doneChecks": 89
         },
         {
           "week": "W2",
@@ -3638,8 +4056,8 @@
     },
     {
       "date": "2026-05-19",
-      "totalChecks": 548,
-      "doneChecks": 112
+      "totalChecks": 619,
+      "doneChecks": 157
     }
   ],
   "changelog": [
@@ -3789,6 +4207,24 @@
           "type": "check_done",
           "target": "W1 > note 위키링크 파싱",
           "detail": "41개 항목 완료 (0 → 41)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T05:23:30.580Z",
+      "commit": "40fea8c",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > knowledge-svc 골격 생성",
+          "detail": "6개 항목 완료 (0 → 6)"
+        },
+        {
+          "type": "check_done",
+          "target": "W1 > note Markdown CRUD",
+          "detail": "39개 항목 완료 (3 → 42)"
         }
       ]
     }
