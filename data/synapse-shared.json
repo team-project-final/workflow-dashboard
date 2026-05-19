@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-19T05:16:16.883Z",
+  "updatedAt": "2026-05-19T05:32:28.523Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -12,7 +12,7 @@
           "steps": [
             {
               "name": "AWS 인프라 프로비저닝",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -59,7 +59,7 @@
                 {
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "items": [
                     {
                       "text": "VPC 내부 통신만 허용 (퍼블릭 접근 제한)",
@@ -75,61 +75,61 @@
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "인프라 아키텍처 설계",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "EKS 클러스터 노드 구성 (3 node) 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RDS PostgreSQL 16 (db.t3.medium) 구성 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MSK Kafka 3.x (3 broker) + Schema Registry 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ElastiCache Redis 7 (cache.t3.micro) 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OpenSearch 8.x (1 node dev) + nori 플러그인 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "RDS 암호화 at-rest/in-transit 설정 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MSK TLS 통신 설정 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ElastiCache AUTH 토큰 설정 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -142,66 +142,66 @@
                 {
                   "name": "Terraform/eksctl 구현",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "EKS 클러스터 생성 (eksctl 또는 Terraform)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RDS PostgreSQL 인스턴스 생성 + 보안 그룹 설정",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MSK 클러스터 생성 + Schema Registry 설정",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ElastiCache Redis 클러스터 생성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OpenSearch 도메인 생성 + nori 플러그인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ArgoCD 설치 + ApplicationSet(5서비스x3환경) 구성",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "접속 테스트",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
                       "text": "kubectl get nodes → Ready 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RDS PostgreSQL 접속 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MSK 브로커 접속 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ElastiCache Redis 접속 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OpenSearch 도메인 접속 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ArgoCD 대시보드 접근 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "팀원 접근 권한 부여 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -219,7 +219,7 @@
                 }
               ],
               "totalChecks": 34,
-              "doneChecks": 10
+              "doneChecks": 34
             },
             {
               "name": "Docker Compose 4-서비스 구성",
@@ -593,7 +593,7 @@
             }
           ],
           "totalChecks": 89,
-          "doneChecks": 10
+          "doneChecks": 34
         },
         {
           "week": "W2",
@@ -2031,7 +2031,7 @@
     {
       "date": "2026-05-19",
       "totalChecks": 277,
-      "doneChecks": 54
+      "doneChecks": 78
     }
   ],
   "changelog": [
@@ -2063,6 +2063,19 @@
           "type": "check_done",
           "target": "W1 > AWS 인프라 프로비저닝",
           "detail": "10개 항목 완료 (0 → 10)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-19T05:32:28.523Z",
+      "commit": "1d0455e",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > AWS 인프라 프로비저닝",
+          "detail": "24개 항목 완료 (10 → 34)"
         }
       ]
     }
