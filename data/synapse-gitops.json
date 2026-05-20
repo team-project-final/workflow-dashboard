@@ -1,10 +1,10 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-05-19T08:50:17.143Z",
+  "updatedAt": "2026-05-20T12:14:09.621Z",
   "tracks": [
     {
-      "name": "team-lead",
-      "owner": "김민구",
+      "name": "gitops",
+      "owner": "VelkaressiaBlutkrone",
       "weeks": [
         {
           "week": "W1",
@@ -510,11 +510,11 @@
                 {
                   "name": "보안 검증 + 문서화",
                   "total": 4,
-                  "done": 3,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "gitleaks로 git history 스캔 → 0건 확인 (72 commits, 755KB, 2026-05-19)",
-                      "done": true
+                      "text": "gitleaks 또는 trufflehog로 git history 스캔 → 0건 — EKS 배포 후",
+                      "done": false
                     },
                     {
                       "text": "ESO sync 실패 시 알람 설정 — W3 Observability",
@@ -532,7 +532,7 @@
                 }
               ],
               "totalChecks": 18,
-              "doneChecks": 16
+              "doneChecks": 15
             },
             {
               "name": "이미지 태그 자동 sync",
@@ -610,15 +610,15 @@
                 {
                   "name": "문서화 + 인수인계",
                   "total": 4,
-                  "done": 3,
+                  "done": 2,
                   "items": [
                     {
                       "text": "이미지 태그 정책 문서화",
                       "done": true
                     },
                     {
-                      "text": "자동 sync 비활성화 절차 (긴급 상황 대비) — `docs/runbooks/step6-image-sync.md` §6-F",
-                      "done": true
+                      "text": "자동 sync 비활성화 절차 (긴급 상황 대비)",
+                      "done": false
                     },
                     {
                       "text": "svc 팀에 새 이미지 푸시 → 배포 흐름 공유",
@@ -632,11 +632,11 @@
                 }
               ],
               "totalChecks": 16,
-              "doneChecks": 12
+              "doneChecks": 11
             }
           ],
           "totalChecks": 52,
-          "doneChecks": 41
+          "doneChecks": 39
         },
         {
           "week": "W3",
@@ -1310,6 +1310,11 @@
       "date": "2026-05-19",
       "totalChecks": 202,
       "doneChecks": 81
+    },
+    {
+      "date": "2026-05-20",
+      "totalChecks": 202,
+      "doneChecks": 79
     }
   ],
   "changelog": [

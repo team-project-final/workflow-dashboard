@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-20T02:39:11.968Z",
+  "updatedAt": "2026-05-20T12:14:07.102Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -922,8 +922,8 @@
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 6,
-                  "done": 6,
+                  "total": 5,
+                  "done": 5,
                   "items": [
                     {
                       "text": "POST /ai/embeddings 엔드포인트 구현 (임베딩 생성)",
@@ -931,10 +931,6 @@
                     },
                     {
                       "text": "POST /ai/search/semantic 엔드포인트 구현 (시맨틱 검색)",
-                      "done": true
-                    },
-                    {
-                      "text": "**W2 공통 아키텍처 규정 준수 (ErrorCode L_ 접두사 적용)**",
                       "done": true
                     },
                     {
@@ -971,8 +967,8 @@
                   ]
                 }
               ],
-              "totalChecks": 47,
-              "doneChecks": 47
+              "totalChecks": 46,
+              "doneChecks": 46
             },
             {
               "name": "AI 카드 자동 생성 골격 — Note → LLM → Card 목록 생성",
@@ -1253,8 +1249,8 @@
               "doneChecks": 50
             }
           ],
-          "totalChecks": 97,
-          "doneChecks": 97
+          "totalChecks": 96,
+          "doneChecks": 96
         },
         {
           "week": "W3",
@@ -2096,7 +2092,7 @@
           "steps": [
             {
               "name": "프로젝트 초기 설정",
-              "status": "Done",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -2265,7 +2261,7 @@
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 3,
+                  "done": 1,
                   "items": [
                     {
                       "text": "빈 Controller 클래스 생성 (card, srs 모듈)",
@@ -2273,26 +2269,26 @@
                     },
                     {
                       "text": "Dockerfile 작성 (multi-stage build)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Docker 이미지 빌드 성공 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 1,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "docker compose에서 learning-card 런타임 실행 확인 (actuator/health → UP ✅)",
-                      "done": true
+                      "text": "docker compose에서 learning-card 런타임 실행 확인",
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
@@ -2302,11 +2298,11 @@
                 }
               ],
               "totalChecks": 33,
-              "doneChecks": 33
+              "doneChecks": 29
             },
             {
               "name": "덱/카드 CRUD API",
-              "status": "Done",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -2330,7 +2326,7 @@
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Deck/Card CRUD API 엔드포인트 정의",
@@ -2341,8 +2337,8 @@
                       "done": true
                     },
                     {
-                      "text": "페이지네이션 요건 (기본 20건, 최대 100건) — PageResponse<T> 도입, GET /decks + GET /decks/{id}/cards 적용 (2026-05-19)",
-                      "done": true
+                      "text": "페이지네이션 요건 (기본 20건, 최대 100건)",
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
@@ -2376,7 +2372,7 @@
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 5,
+                  "done": 3,
                   "items": [
                     {
                       "text": "card_decks 테이블 설계 (id, tenant_id, user_id, name, description, created_at, updated_at, deleted_at)",
@@ -2384,7 +2380,7 @@
                     },
                     {
                       "text": "cards 테이블 설계 (id, deck_id, front_content, back_content, card_type: basic|cloze|reverse, status: new|learning|review|suspended, easiness_factor float DEFAULT 2.5, interval_days, repetitions, lapses, due_date, source_note_id, source_chunk_id, created_at, updated_at, deleted_at)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "인덱스 설계 (card_decks.user_id, cards.deck_id)",
@@ -2392,7 +2388,7 @@
                     },
                     {
                       "text": "관계 정의 (cards.deck_id → card_decks.id FK)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
@@ -2426,7 +2422,7 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 8,
-                  "done": 8,
+                  "done": 5,
                   "items": [
                     {
                       "text": "DeckCreateRequest 정의 (name, description)",
@@ -2438,11 +2434,11 @@
                     },
                     {
                       "text": "CardCreateRequest 정의 (front_content, back_content, card_type)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "CardResponse 정의 (id, front_content, back_content, card_type, status, due_date, createdAt)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "CardDeck Entity 작성",
@@ -2450,7 +2446,7 @@
                     },
                     {
                       "text": "Card Entity 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
@@ -2465,7 +2461,7 @@
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 4,
+                  "done": 3,
                   "items": [
                     {
                       "text": "CardDeckRepository 인터페이스 작성",
@@ -2473,7 +2469,7 @@
                     },
                     {
                       "text": "CardRepository 인터페이스 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "findByUserIdAndDeletedAtIsNull 커스텀 쿼리",
@@ -2488,7 +2484,7 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 6,
+                  "done": 3,
                   "items": [
                     {
                       "text": "CardDeckService CRUD 구현 (create, findAll, findById, update, delete)",
@@ -2496,7 +2492,7 @@
                     },
                     {
                       "text": "CardService CRUD 구현 (create, findByDeckId, update, delete)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "소유자 검증 로직 구현",
@@ -2507,54 +2503,54 @@
                       "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito) — CardServiceTest, DeckServiceTest 작성 완료 ✅",
-                      "done": true
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
                     },
                     {
-                      "text": "테스트 통과 확인 (Swagger 수동 + 단위 테스트)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 6,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "CardDeckController REST API 구현 (POST/GET/PATCH/DELETE)",
+                      "text": "CardDeckController REST API 구현 (POST/GET/PUT/DELETE)",
                       "done": true
                     },
                     {
                       "text": "CardController REST API 구현 (`/decks/{deckId}/cards`)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "슬라이스 테스트 — @WebMvcTest 미지원(Spring Boot 4) → @SpringBootTest(MOCK) 방식으로 DeckControllerTest(5개), CardControllerTest(5개) 작성 (2026-05-19)",
-                      "done": true
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
                     },
                     {
-                      "text": "403 응답 테스트 — 소유자 아님 시나리오 (DECK_ACCESS_DENIED) 검증 완료 / 401은 JWT 미구현으로 추후 진행",
-                      "done": true
+                      "text": "401/403 응답 테스트",
+                      "done": false
                     },
                     {
                       "text": "통합 테스트 (각 엔드포인트별)",
                       "done": true
                     },
                     {
-                      "text": "테스트 통과 확인 (Swagger 수동)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 2,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
@@ -2568,300 +2564,257 @@
                 }
               ],
               "totalChecks": 47,
-              "doneChecks": 47
+              "doneChecks": 32
             },
             {
               "name": "SM-2 알고리즘 구현",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-LC-xxx SM-2 복습)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (1.5일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "SM-2 알고리즘 논문/명세 분석",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "rating 값 정의: int 1-4 (1=Again, 2=Hard, 3=Good, 4=Easy)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "interval/EF 계산 규칙 정리",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 카드만 복습)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "card_reviews 테이블 설계 (id, tenant_id, card_id, rating, prev/new_ease_factor, prev/new_interval, repetitions, reviewed_at)",
-                      "done": true
+                      "text": "card_reviews 테이블 설계 (id, card_id, user_id, session_id, rating int 1-4, interval_days, ease_factor, time_spent_ms, prev_ef, new_ef, prev_interval, new_interval, reviewed_at)",
+                      "done": false
                     },
                     {
-                      "text": "인덱스 설계 (card_id+reviewed_at DESC, tenant_id+reviewed_at DESC)",
-                      "done": true
+                      "text": "인덱스 설계 (card_id+user_id, reviewed_at DESC)",
+                      "done": false
                     },
                     {
                       "text": "관계 정의 (card_reviews.card_id → cards.id FK)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Soft Delete 정책: 물리삭제 (로그 누적 보관)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (본인 카드 복습 기록만)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "ReviewSubmitRequest 정의 (rating int 1-4, @Min @Max validation)",
-                      "done": true
+                      "text": "ReviewSubmitRequest 정의 (card_id, rating int 1-4, time_spent_ms)",
+                      "done": false
                     },
                     {
-                      "text": "ReviewSubmitResponse 정의 (cardId, rating, newEaseFactor, newIntervalDays, repetitions, nextReviewAt)",
-                      "done": true
+                      "text": "ReviewResponse 정의 (due_date, new_interval, new_ef)",
+                      "done": false
                     },
                     {
-                      "text": "CardReview Entity 작성 (BIGSERIAL PK)",
-                      "done": true
+                      "text": "CardReview Entity 작성",
+                      "done": false
                     },
                     {
                       "text": "Rating 값 정의: int 1=Again, 2=Hard, 3=Good, 4=Easy",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "MapStruct 매퍼 작성 (직접 매핑으로 대체 — N/A)",
-                      "done": true
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "CardReviewRepository 인터페이스 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "findTopByCardIdOrderByReviewedAtDesc 커스텀 쿼리",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Flyway 마이그레이션 스크립트 작성 (V10__init_card_reviews.sql, pgAdmin 수동 실행)",
-                      "done": true
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 6,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Sm2Calculator 도메인 서비스 구현",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "interval 계산 로직 (Again/Hard→1, 첫성공→1, 두번째→6, 이후→interval*EF)",
-                      "done": true
+                      "text": "interval 계산 로직 (Again→1, Hard→유지, Good→interval*EF, Easy→interval*EF\\*2)",
+                      "done": false
                     },
                     {
-                      "text": "easeFactor 업데이트 로직 (최소 1.3 보장, 소수점 2자리 반올림)",
-                      "done": true
+                      "text": "easeFactor 업데이트 로직 (최소 1.3 보장)",
+                      "done": false
                     },
                     {
-                      "text": "단위 테스트 작성 (4개 rating x 초기/중간/고EF 경계값) — Sm2CalculatorTest, ReviewServiceTest 작성 완료 ✅",
-                      "done": true
+                      "text": "단위 테스트 작성 (4개 rating x 초기/중간/고EF 경계값)",
+                      "done": false
                     },
                     {
                       "text": "부동소수점 반올림 처리 확인",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Swagger 수동 검증 통과 (rating 1~4 전체 시나리오)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "POST /cards/{cardId}/reviews 엔드포인트 구현 (ReviewController → ReviewSessionController로 대체)",
-                      "done": true
+                      "text": "POST /reviews/sessions/{sessionId}/submit 엔드포인트 구현 (body: { cardId, rating, timeSpentMs })",
+                      "done": false
                     },
                     {
-                      "text": "슬라이스 테스트 — @SpringBootTest(MOCK) 방식으로 ReviewSessionControllerTest에 submitReview(200) + 403 테스트 추가 (2026-05-19)",
-                      "done": true
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
                     },
                     {
-                      "text": "403 응답 테스트 — 세션 접근 불가 시나리오 검증 완료 / 401은 JWT 미구현으로 추후 진행",
-                      "done": true
+                      "text": "401/403 응답 테스트",
+                      "done": false
                     },
                     {
-                      "text": "통합 테스트 (4개 rating 순서 테스트, EF/interval/rep 모두 정확)",
-                      "done": true
+                      "text": "통합 테스트 (복습 → interval 변경 확인)",
+                      "done": false
                     },
                     {
-                      "text": "테스트 통과 확인 (Swagger 수동)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
-                    }
-                  ]
-                },
-                {
-                  "name": "아키텍처 문서 기준 정렬 (추가 작업)",
-                  "total": 9,
-                  "done": 9,
-                  "items": [
-                    {
-                      "text": "SM-2 공식 수정: quality 매핑 제거 → (4-rating) 직접 공식, AGAIN=EF-0.2, interval=0(10분 후)",
-                      "done": true
-                    },
-                    {
-                      "text": "cards 테이블: srs_state JSONB → 개별 SRS 컬럼 (easiness_factor, interval_days, repetitions, lapses, due_date)",
-                      "done": true
-                    },
-                    {
-                      "text": "front/back → front_content/back_content, state → status 컬럼 이름 정렬",
-                      "done": true
-                    },
-                    {
-                      "text": "card_reviews: id BIGSERIAL→UUID, repetitions 제거, time_spent_ms 추가",
-                      "done": true
-                    },
-                    {
-                      "text": "tenant_id: TEXT → UUID 전 테이블 적용 (V13 마이그레이션)",
-                      "done": true
-                    },
-                    {
-                      "text": "BaseEntity tenantId String → UUID, 서비스 레이어 전체 연동",
-                      "done": true
-                    },
-                    {
-                      "text": "ReviewService JSONB 파싱 전면 제거 → 직접 필드 접근으로 단순화",
-                      "done": true
-                    },
-                    {
-                      "text": "Flyway V11~V13 작성 및 pgAdmin 수동 실행 완료",
-                      "done": true
-                    },
-                    {
-                      "text": "Swagger 최종 검증: rating=3, newEaseFactor=2.5, intervalDays=1, lapses=0, dueDate=내일 ✅",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 51,
-              "doneChecks": 51
+              "totalChecks": 42,
+              "doneChecks": 0
             }
           ],
-          "totalChecks": 131,
-          "doneChecks": 131
+          "totalChecks": 122,
+          "doneChecks": 61
         },
         {
           "week": "W2",
@@ -2869,439 +2822,439 @@
           "steps": [
             {
               "name": "SRS 복습 세션 완성 — 오늘 복습 카드 큐 + rating → SM-2 → 다음 복습일",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (SRS 복습 세션)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "오늘 복습 대상 카드 큐 조회 로직 정의 (due_date <= today)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "복습 세션 생성/완료 플로우 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "rating 제출 → SM-2 → 다음 복습일 계산 플로우 확인",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "세션 내 카드 순서 정책 (due_date ASC 오래된 순)",
-                      "done": true
+                      "text": "세션 내 카드 순서 정책 (오래된 순 / 랜덤)",
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 카드만 복습)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "review_sessions 테이블 설계 (id UUID, tenant_id, user_id, deck_id, status: in_progress|completed|abandoned, started_at, completed_at, total_cards, reviewed_cards)",
-                      "done": true
+                      "text": "review_sessions 테이블 설계 (id, user_id, deck_id, started_at, ended_at, total_cards, completed_cards, correct_count, again_count, total_time_ms bigint, status: in_progress|completed|abandoned, created_at)",
+                      "done": false
                     },
                     {
                       "text": "cards 테이블 갱신 확인 (due_date, interval_days, easiness_factor 컬럼)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "인덱스 설계 (tenant_id+user_id+started_at DESC, deck_id+status)",
-                      "done": true
+                      "text": "인덱스 설계 (review_sessions.user_id, cards.user_id+due_date)",
+                      "done": false
                     },
                     {
-                      "text": "관계 정의 (review_sessions.deck_id → card_decks.id FK)",
-                      "done": true
+                      "text": "관계 정의 (review_sessions.user_id → users.id)",
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "세션 데이터 접근 제어 (본인 세션만 — tenantId 기반)",
-                      "done": true
+                      "text": "세션 데이터 접근 제어 (본인 세션만)",
+                      "done": false
                     },
                     {
                       "text": "Soft Delete 정책: 물리삭제 없음 (세션 이력 보관)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "행 단위 접근 제어: 필요 (tenantId 기반)",
-                      "done": true
+                      "text": "행 단위 접근 제어: 필요 (userId 기반)",
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 7,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "ReviewSessionResponse 정의 (sessionId, deckId, status, totalCards, reviewedCards, startedAt, completedAt)",
-                      "done": true
+                      "text": "ReviewSessionResponse 정의 (id, total_cards, completed_cards, correct_count, again_count, total_time_ms, started_at, ended_at, status)",
+                      "done": false
                     },
                     {
-                      "text": "ReviewCardResponse 정의 (cardId, cardType, frontContent, backContent, bloomLevel, repetitions, easinessFactor, dueDate)",
-                      "done": true
+                      "text": "ReviewQueueResponse 정의 (cards[], totalCount)",
+                      "done": false
                     },
                     {
-                      "text": "ReviewSessionSubmitRequest 정의 (cardId, rating, timeSpentMs)",
-                      "done": true
+                      "text": "ReviewCardResponse 정의 (cardId, front, back, deckTitle)",
+                      "done": false
                     },
                     {
-                      "text": "ReviewSessionStartRequest 정의 (deckId)",
-                      "done": true
+                      "text": "ReviewSubmitRequest 정의 (cardId, rating, timeSpentMs)",
+                      "done": false
                     },
                     {
                       "text": "ReviewSession Entity 작성",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "MapStruct 매퍼 작성 — N/A (직접 매핑)",
-                      "done": true
+                      "text": "MapStruct 매퍼 작성",
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "ReviewSessionRepository 인터페이스 작성",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "findByIdAndTenantId 쿼리",
-                      "done": true
+                      "text": "findByUserIdOrderByStartedAtDesc 커스텀 쿼리",
+                      "done": false
                     },
                     {
-                      "text": "findDueCards 쿼리 (due_date <= now AND status IN ('new','learning','review','relearning'), max 50)",
-                      "done": true
+                      "text": "findDueCards 쿼리 (due_date <= today AND user_id = ?)",
+                      "done": false
                     },
                     {
-                      "text": "Flyway 마이그레이션 스크립트 작성 (V14__init_review_sessions.sql, V15__add_session_id_to_reviews.sql)",
-                      "done": true
+                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 9,
-                  "done": 9,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "ReviewSessionService 구현 (startSession, getReviewQueue, submitReview, completeSession)",
-                      "done": true
+                      "text": "ReviewSessionService 구현 (startSession, submitReview, completeSession, getQueue)",
+                      "done": false
                     },
                     {
-                      "text": "오늘 복습 카드 큐 조회 서비스 (due cards, max 50)",
-                      "done": true
+                      "text": "오늘 복습 카드 큐 조회 서비스 (due cards)",
+                      "done": false
                     },
                     {
                       "text": "세션 시작 로직 (totalCards 스냅샷)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "rating 제출 → SM-2 호출 → due_date 갱신 → reviewedCards 증가",
-                      "done": true
+                      "text": "rating 제출 → SM-2 호출 → due_date 갱신",
+                      "done": false
                     },
                     {
-                      "text": "세션 완료 로직 (completedAt + status: completed 갱신)",
-                      "done": true
+                      "text": "세션 완료 로직 (ended_at + completed_cards + status: completed 갱신)",
+                      "done": false
                     },
                     {
                       "text": "Bean Validation 적용",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito) — ReviewSessionServiceTest 작성 및 통과 ✅ (2026-05-20)",
-                      "done": true
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false
                     },
                     {
-                      "text": "통합 테스트 (세션 시작 → 복습 → 완료 플로우 검증)",
-                      "done": true
+                      "text": "통합 테스트 (세션 시작 → 복습 → 완료 플로우)",
+                      "done": false
                     },
                     {
-                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 8,
-                  "done": 8,
+                  "done": 0,
                   "items": [
                     {
                       "text": "POST /reviews/sessions 엔드포인트 구현 (세션 시작)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "GET /reviews/queue 엔드포인트 구현 (카드 큐 — 별도 최상위 엔드포인트)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "POST /reviews/sessions/{sessionId}/submit 엔드포인트 구현 (rating 제출)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PUT /reviews/sessions/{sessionId}/complete 엔드포인트 구현 (세션 완료)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "슬라이스 테스트 — @SpringBootTest(MOCK) + webAppContextSetup 방식으로 ReviewSessionControllerTest 작성 ✅ (2026-05-20)",
-                      "done": true
+                      "text": "슬라이스 테스트 (@WebMvcTest)",
+                      "done": false
                     },
                     {
-                      "text": "403 응답 테스트 — submitReview 접근 불가 시나리오 검증 완료 / 401은 API Gateway 영역 (JWT 검증 후 X-User-Id 헤더 주입) — 이 서비스 범위 아님",
-                      "done": true
+                      "text": "401/403 응답 테스트",
+                      "done": false
                     },
                     {
-                      "text": "통합 테스트 (전체 복습 플로우 검증)",
-                      "done": true
+                      "text": "통합 테스트 (전체 복습 플로우)",
+                      "done": false
                     },
                     {
-                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Swagger API 문서 확인 (4개 엔드포인트 전체 동작 확인)",
-                      "done": true
+                      "text": "Swagger API 문서 확인",
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 52,
-              "doneChecks": 52
+              "doneChecks": 0
             },
             {
               "name": "card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
-              "status": "In Progress",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (card.reviewed Kafka 발행)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "card.reviewed 이벤트 페이로드 정의 (userId, cardId, deckId, rating, reviewedAt)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Avro 스키마 필드 타입 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Schema Registry 등록 절차 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "이벤트 발행 시점 정의 (rating 제출 직후)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Kafka 프로듀서 인증 설정 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "메시지 무결성 보장 (Avro 직렬화)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "민감 정보 포함 여부 확인 (userId만, 개인정보 미포함)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "ERD 해당 없음 (이벤트 발행 — DB 변경 없음)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Avro 스키마 파일 설계 (.avsc)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Schema Registry BACKWARD 호환성 검증 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "메시지 암호화 전송 (TLS) 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "CardReviewedEvent Avro 스키마 정의 (card_reviewed.avsc)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "필드 정의: userId(string), cardId(string), deckId(string), rating(enum), reviewedAt(timestamp-millis)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "default 값 설정 (BACKWARD 호환성)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 2,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Avro 스키마 파일 작성 (src/main/avro/card_reviewed.avsc)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Avro 코드 생성 플러그인 설정 (Gradle avro plugin)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Schema Registry에 스키마 등록 (POST /subjects/card.reviewed-value/versions) — 로컬 실행 후",
+                      "text": "Schema Registry에 스키마 등록 (POST /subjects/card.reviewed-value/versions)",
                       "done": false
                     }
                   ]
@@ -3309,83 +3262,83 @@
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 7,
+                  "done": 0,
                   "items": [
                     {
                       "text": "CardReviewedEventPublisher 구현 (KafkaTemplate + Avro 직렬화)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "ReviewService에 이벤트 발행 로직 추가 (rating 제출 후, 트랜잭션 커밋 후 발행)",
-                      "done": true
+                      "text": "ReviewSessionService에 이벤트 발행 로직 추가 (rating 제출 후)",
+                      "done": false
                     },
                     {
                       "text": "이벤트 발행 실패 시 재시도/로깅 처리",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "트랜잭션 아웃박스 패턴 검토 (선택) — TransactionSynchronization afterCommit + 비동기 whenComplete 로깅 적용",
-                      "done": true
+                      "text": "트랜잭션 아웃박스 패턴 검토 (선택)",
+                      "done": false
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito — KafkaTemplate mock) ✅ CardReviewedEventPublisherTest (3개)",
-                      "done": true
+                      "text": "단위 테스트 작성 (Mockito — KafkaTemplate mock)",
+                      "done": false
                     },
                     {
-                      "text": "Kafka 발행 테스트 (@EmbeddedKafka) ✅ CardReviewedEventPublisherIntegrationTest (1개)",
-                      "done": true
+                      "text": "Kafka 발행 테스트 (@EmbeddedKafka)",
+                      "done": false
                     },
                     {
-                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Controller 해당 없음 (내부 이벤트 발행)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "통합 테스트 (rating 제출 → Kafka 메시지 발행 확인) ✅ EmbeddedKafka로 검증",
-                      "done": true
+                      "text": "통합 테스트 (rating 제출 → Kafka 메시지 발행 확인)",
+                      "done": false
                     },
                     {
-                      "text": "Schema Registry 호환성 테스트 (비호환 스키마 → 거부) — mock://test-scope로 검증",
-                      "done": true
+                      "text": "Schema Registry 호환성 테스트 (비호환 스키마 → 거부)",
+                      "done": false
                     },
                     {
-                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
-                      "done": true
+                      "text": "테스트 통과 확인",
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 2,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "Kafka 토픽 메시지 확인 (kafka-console-consumer) — 로컬 실행 후",
+                      "text": "Kafka 토픽 메시지 확인 (kafka-console-consumer)",
                       "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 37
+              "doneChecks": 0
             },
             {
               "name": "review_sessions 통계 — 일별/주별 복습 수, 정답률 API",
@@ -3643,7 +3596,7 @@
             }
           ],
           "totalChecks": 135,
-          "doneChecks": 89
+          "doneChecks": 0
         },
         {
           "week": "W3",
@@ -4650,8 +4603,8 @@
     },
     {
       "date": "2026-05-20",
-      "totalChecks": 725,
-      "doneChecks": 431
+      "totalChecks": 715,
+      "doneChecks": 271
     }
   ],
   "changelog": [
@@ -4767,6 +4720,44 @@
           "type": "check_done",
           "target": "W2 > card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
           "detail": "37개 항목 완료 (0 → 37)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20T12:14:07.102Z",
+      "commit": "ba420e9",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W2 > 시맨틱 검색 골격 — pgvector 임베딩 저장/조회 + 코사인 유사도 검색",
+          "detail": "1개 항목 해제 (47 → 46)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > 프로젝트 초기 설정",
+          "detail": "4개 항목 해제 (33 → 29)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > 덱/카드 CRUD API",
+          "detail": "15개 항목 해제 (47 → 32)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W1 > SM-2 알고리즘 구현",
+          "detail": "51개 항목 해제 (51 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W2 > SRS 복습 세션 완성 — 오늘 복습 카드 큐 + rating → SM-2 → 다음 복습일",
+          "detail": "52개 항목 해제 (52 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W2 > card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
+          "detail": "37개 항목 해제 (37 → 0)"
         }
       ]
     }
