@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-19T07:40:30.513Z",
+  "updatedAt": "2026-05-20T02:32:57.741Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -3078,15 +3078,15 @@
                       "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito) — ReviewSessionServiceTest 5개 작성 및 통과 ✅ (2026-05-19)",
+                      "text": "단위 테스트 작성 (Mockito) — ReviewSessionServiceTest 작성 및 통과 ✅ (2026-05-20)",
                       "done": true
                     },
                     {
-                      "text": "통합 테스트 (세션 시작 → 복습 → 완료 플로우 Swagger 수동 검증 ✅)",
+                      "text": "통합 테스트 (세션 시작 → 복습 → 완료 플로우 검증)",
                       "done": true
                     },
                     {
-                      "text": "테스트 통과 확인 (Swagger 수동)",
+                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
                       "done": true
                     }
                   ]
@@ -3113,7 +3113,7 @@
                       "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 — @SpringBootTest(MOCK) + webAppContextSetup 방식으로 ReviewSessionControllerTest(5개) 작성 ✅ (2026-05-19)",
+                      "text": "슬라이스 테스트 — @SpringBootTest(MOCK) + webAppContextSetup 방식으로 ReviewSessionControllerTest 작성 ✅ (2026-05-20)",
                       "done": true
                     },
                     {
@@ -3121,11 +3121,11 @@
                       "done": true
                     },
                     {
-                      "text": "통합 테스트 (전체 복습 플로우 Swagger 수동 검증 ✅)",
+                      "text": "통합 테스트 (전체 복습 플로우 검증)",
                       "done": true
                     },
                     {
-                      "text": "테스트 통과 확인 (Swagger 수동)",
+                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
                       "done": true
                     }
                   ]
@@ -3140,7 +3140,7 @@
                       "done": true
                     },
                     {
-                      "text": "Swagger API 문서 확인 (4개 엔드포인트 전체 동작 확인 ✅)",
+                      "text": "Swagger API 문서 확인 (4개 엔드포인트 전체 동작 확인)",
                       "done": true
                     },
                     {
@@ -3155,153 +3155,153 @@
             },
             {
               "name": "card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (card.reviewed Kafka 발행)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "card.reviewed 이벤트 페이로드 정의 (userId, cardId, deckId, rating, reviewedAt)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Avro 스키마 필드 타입 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Schema Registry 등록 절차 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "이벤트 발행 시점 정의 (rating 제출 직후)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Kafka 프로듀서 인증 설정 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "메시지 무결성 보장 (Avro 직렬화)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "민감 정보 포함 여부 확인 (userId만, 개인정보 미포함)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "ERD 해당 없음 (이벤트 발행 — DB 변경 없음)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Avro 스키마 파일 설계 (.avsc)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Schema Registry BACKWARD 호환성 검증 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "메시지 암호화 전송 (TLS) 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "CardReviewedEvent Avro 스키마 정의 (card_reviewed.avsc)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "필드 정의: userId(string), cardId(string), deckId(string), rating(enum), reviewedAt(timestamp-millis)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "default 값 설정 (BACKWARD 호환성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "Avro 스키마 파일 작성 (src/main/avro/card_reviewed.avsc)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Avro 코드 생성 플러그인 설정 (Gradle avro plugin)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Schema Registry에 스키마 등록 (POST /subjects/card.reviewed-value/versions)",
+                      "text": "Schema Registry에 스키마 등록 (POST /subjects/card.reviewed-value/versions) — 로컬 실행 후",
                       "done": false
                     }
                   ]
@@ -3309,83 +3309,83 @@
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
                       "text": "CardReviewedEventPublisher 구현 (KafkaTemplate + Avro 직렬화)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "ReviewSessionService에 이벤트 발행 로직 추가 (rating 제출 후)",
-                      "done": false
+                      "text": "ReviewService에 이벤트 발행 로직 추가 (rating 제출 후, 트랜잭션 커밋 후 발행)",
+                      "done": true
                     },
                     {
                       "text": "이벤트 발행 실패 시 재시도/로깅 처리",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "트랜잭션 아웃박스 패턴 검토 (선택)",
-                      "done": false
+                      "text": "트랜잭션 아웃박스 패턴 검토 (선택) — TransactionSynchronization afterCommit + 비동기 whenComplete 로깅 적용",
+                      "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito — KafkaTemplate mock)",
-                      "done": false
+                      "text": "단위 테스트 작성 (Mockito — KafkaTemplate mock) ✅ CardReviewedEventPublisherTest (3개)",
+                      "done": true
                     },
                     {
-                      "text": "Kafka 발행 테스트 (@EmbeddedKafka)",
-                      "done": false
+                      "text": "Kafka 발행 테스트 (@EmbeddedKafka) ✅ CardReviewedEventPublisherIntegrationTest (1개)",
+                      "done": true
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Controller 해당 없음 (내부 이벤트 발행)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "통합 테스트 (rating 제출 → Kafka 메시지 발행 확인)",
-                      "done": false
+                      "text": "통합 테스트 (rating 제출 → Kafka 메시지 발행 확인) ✅ EmbeddedKafka로 검증",
+                      "done": true
                     },
                     {
-                      "text": "Schema Registry 호환성 테스트 (비호환 스키마 → 거부)",
-                      "done": false
+                      "text": "Schema Registry 호환성 테스트 (비호환 스키마 → 거부) — mock://test-scope로 검증",
+                      "done": true
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "테스트 통과 확인 (`./gradlew.bat test` BUILD SUCCESSFUL ✅ 2026-05-20)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Kafka 토픽 메시지 확인 (kafka-console-consumer)",
+                      "text": "Kafka 토픽 메시지 확인 (kafka-console-consumer) — 로컬 실행 후",
                       "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 0
+              "doneChecks": 37
             },
             {
               "name": "review_sessions 통계 — 일별/주별 복습 수, 정답률 API",
@@ -3643,7 +3643,7 @@
             }
           ],
           "totalChecks": 135,
-          "doneChecks": 52
+          "doneChecks": 89
         },
         {
           "week": "W3",
@@ -4647,6 +4647,11 @@
       "date": "2026-05-19",
       "totalChecks": 725,
       "doneChecks": 394
+    },
+    {
+      "date": "2026-05-20",
+      "totalChecks": 725,
+      "doneChecks": 431
     }
   ],
   "changelog": [
@@ -4749,6 +4754,19 @@
           "type": "check_done",
           "target": "W2 > 시맨틱 검색 골격 — pgvector 임베딩 저장/조회 + 코사인 유사도 검색",
           "detail": "1개 항목 완료 (46 → 47)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20T02:32:57.741Z",
+      "commit": "accae43",
+      "author": "choyj358-ai",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
+          "detail": "37개 항목 완료 (0 → 37)"
         }
       ]
     }
