@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-20T03:34:12.064Z",
+  "updatedAt": "2026-05-20T03:36:59.137Z",
   "tracks": [
     {
       "name": "frontend",
@@ -718,51 +718,51 @@
           "steps": [
             {
               "name": "노트 에디터 화면 — Markdown 편집 + 미리보기 + 저장",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (노트 에디터)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Markdown 편집기 위젯 선정 (flutter_markdown, markdown_editable_textinput 등)",
+                      "text": "Markdown 편집기 위젯 선정 (flutter_markdown 채택)",
+                      "done": true
+                    },
+                    {
+                      "text": "편집/미리보기 전환 모드 요건 (Desktop: split / Mobile: tab)",
+                      "done": true
+                    },
+                    {
+                      "text": "자동 저장 요건 (debounce 2초 또는 수동 저장) — 팀원 구현",
                       "done": false
                     },
                     {
-                      "text": "편집/미리보기 전환 모드 요건 (split / tab)",
-                      "done": false
-                    },
-                    {
-                      "text": "자동 저장 요건 (debounce 2초 또는 수동 저장)",
-                      "done": false
-                    },
-                    {
-                      "text": "노트 CRUD API 연동 엔드포인트 확인 (knowledge-svc)",
+                      "text": "노트 CRUD API 연동 엔드포인트 확인 (knowledge-svc) — 팀원 구현",
                       "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -919,26 +919,26 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "노트 에디터 페이지 Widget 구현 (편집 영역 + 미리보기 영역)",
+                      "text": "노트 에디터 페이지 Widget 구현 (편집 영역 + 미리보기 영역) — 뼈대 완료",
+                      "done": true
+                    },
+                    {
+                      "text": "편집/미리보기 모드 전환 탭/토글 구현 — Desktop split, Mobile tab",
+                      "done": true
+                    },
+                    {
+                      "text": "Markdown 툴바 구현 (Bold, Italic, Heading, Link, Code) — 뼈대 완료",
+                      "done": true
+                    },
+                    {
+                      "text": "저장 버튼 + 자동 저장 인디케이터 구현 — 팀원 구현",
                       "done": false
                     },
                     {
-                      "text": "편집/미리보기 모드 전환 탭/토글 구현",
-                      "done": false
-                    },
-                    {
-                      "text": "Markdown 툴바 구현 (Bold, Italic, Heading, Link, Code)",
-                      "done": false
-                    },
-                    {
-                      "text": "저장 버튼 + 자동 저장 인디케이터 구현",
-                      "done": false
-                    },
-                    {
-                      "text": "노트 제목/태그 입력 폼 구현",
+                      "text": "노트 제목/태그 입력 폼 구현 — 팀원 구현",
                       "done": false
                     },
                     {
@@ -972,55 +972,55 @@
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 0
+              "doneChecks": 9
             },
             {
               "name": "SRS 복습 화면 — 카드 제시 → 뒤집기 → 난이도 선택 → 다음 카드",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (SRS 복습 화면)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드)",
+                      "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드) — 팀원 구현",
                       "done": false
                     },
                     {
-                      "text": "카드 제시 UI 요건 (앞면 → 탭/클릭 → 뒷면 뒤집기 애니메이션)",
-                      "done": false
+                      "text": "카드 제시 UI 요건 (앞면 → 탭/클릭 → 뒷면 뒤집기 애니메이션) — FlipCard 위젯 완료",
+                      "done": true
                     },
                     {
-                      "text": "난이도 선택 버튼 요건 (Again, Hard, Good, Easy)",
-                      "done": false
+                      "text": "난이도 선택 버튼 요건 (Again, Hard, Good, Easy) — 4버튼 레이아웃 완료",
+                      "done": true
                     },
                     {
-                      "text": "세션 완료 화면 요건 (복습 결과 요약)",
+                      "text": "세션 완료 화면 요건 (복습 결과 요약) — 팀원 구현",
                       "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -1165,26 +1165,26 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼)",
+                      "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼) — 팀원 구현",
                       "done": false
                     },
                     {
-                      "text": "카드 제시 Widget 구현 (앞면 표시 → 뒤집기 애니메이션)",
-                      "done": false
+                      "text": "카드 제시 Widget 구현 (앞면 표시 → 뒤집기 애니메이션) — FlipCard 뼈대 완료",
+                      "done": true
                     },
                     {
-                      "text": "난이도 선택 버튼 Widget 구현 (Again/Hard/Good/Easy 4버튼)",
-                      "done": false
+                      "text": "난이도 선택 버튼 Widget 구현 (Again/Hard/Good/Easy 4버튼) — 레이아웃 완료",
+                      "done": true
                     },
                     {
-                      "text": "진행률 표시 Widget 구현 (n/total 프로그레스 바)",
-                      "done": false
+                      "text": "진행률 표시 Widget 구현 (n/total 프로그레스 바) — LinearProgressIndicator 완료",
+                      "done": true
                     },
                     {
-                      "text": "세션 완료 화면 Widget 구현 (결과 요약 + 돌아가기 버튼)",
+                      "text": "세션 완료 화면 Widget 구현 (결과 요약 + 돌아가기 버튼) — 팀원 구현",
                       "done": false
                     },
                     {
@@ -1222,28 +1222,28 @@
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 0
+              "doneChecks": 9
             },
             {
               "name": "커뮤니티 그룹 목록/상세 화면",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (커뮤니티 화면)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -1411,26 +1411,26 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "커뮤니티 그룹 목록 페이지 Widget 구현",
+                      "text": "커뮤니티 그룹 목록 페이지 Widget 구현 — 탭(내 그룹/탐색) + 빈 상태 UI 뼈대 완료",
+                      "done": true
+                    },
+                    {
+                      "text": "검색 바 + 카테고리 필터 칩 Widget 구현 — 팀원 구현",
                       "done": false
                     },
                     {
-                      "text": "검색 바 + 카테고리 필터 칩 Widget 구현",
+                      "text": "공유 콘텐츠 카드 리스트 Widget 구현 (제목, 설명, 태그, 다운로드 수) — 팀원 구현",
                       "done": false
                     },
                     {
-                      "text": "공유 콘텐츠 카드 리스트 Widget 구현 (제목, 설명, 태그, 다운로드 수)",
-                      "done": false
+                      "text": "공유 콘텐츠 상세 화면 Widget 구현 — 멤버/공유 콘텐츠 탭 뼈대 완료",
+                      "done": true
                     },
                     {
-                      "text": "공유 콘텐츠 상세 화면 Widget 구현 (미리보기 + 복사 버튼)",
-                      "done": false
-                    },
-                    {
-                      "text": "복사 확인 다이얼로그 Widget 구현",
+                      "text": "복사 확인 다이얼로그 Widget 구현 — 팀원 구현",
                       "done": false
                     },
                     {
@@ -1468,11 +1468,11 @@
                 }
               ],
               "totalChecks": 42,
-              "doneChecks": 0
+              "doneChecks": 5
             }
           ],
           "totalChecks": 130,
-          "doneChecks": 0
+          "doneChecks": 23
         },
         {
           "week": "W3",
@@ -3055,7 +3055,7 @@
     {
       "date": "2026-05-20",
       "totalChecks": 474,
-      "doneChecks": 35
+      "doneChecks": 58
     }
   ],
   "changelog": [
@@ -3069,6 +3069,29 @@
           "type": "check_done",
           "target": "W1 > Flutter 프로젝트 기본 구조 생성",
           "detail": "35개 항목 완료 (0 → 35)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20T03:36:59.137Z",
+      "commit": "c351f4b",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > 노트 에디터 화면 — Markdown 편집 + 미리보기 + 저장",
+          "detail": "9개 항목 완료 (0 → 9)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > SRS 복습 화면 — 카드 제시 → 뒤집기 → 난이도 선택 → 다음 카드",
+          "detail": "9개 항목 완료 (0 → 9)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > 커뮤니티 그룹 목록/상세 화면",
+          "detail": "5개 항목 완료 (0 → 5)"
         }
       ]
     }
