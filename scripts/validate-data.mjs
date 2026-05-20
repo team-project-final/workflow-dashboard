@@ -9,12 +9,57 @@ if (!fs.existsSync(configPath)) {
   process.exit(1)
 }
 const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'))
-const EXPECTED_REPOS = config.repos.map(r => ({
-  repo: r.repo,
-  tracks: r.tracks.map(t => t.name),
-}))
 
-const WEEKS = ['W1', 'W2', 'W3', 'W4', 'W5']
+// Detect config format: new format has repos[].id, legacy has repos[].tracks
+function detectConfigFormat(cfg) {
+  if (cfg.repos?.[0]?.id) return 'new'
+  if (cfg.repos?.[0]?.repo) return 'legacy'
+  return 'unknown'
+}
+
+function validateNewConfig(cfg) {
+  const errs = []
+  if (!cfg.project?.name) errs.push('config.project.name is required')
+  if (!Array.isArray(cfg.periods) || cfg.periods.length === 0) {
+    errs.push('config.periods must be a non-empty array')
+  }
+  for (const p of (cfg.periods || [])) {
+    if (!p.id || !p.start || !p.end) errs.push(`Period missing required fields: ${JSON.stringify(p)}`)
+  }
+  if (!Array.isArray(cfg.columns) || cfg.columns.length === 0) {
+    errs.push('config.columns must be a non-empty array')
+  }
+  for (const c of (cfg.columns || [])) {
+    if (!c.id || !c.label || !c.type) errs.push(`Column missing required fields: ${JSON.stringify(c)}`)
+    if (c.type && !['list', 'checklist', 'kanban'].includes(c.type)) errs.push(`Unknown column type: ${c.type}`)
+  }
+  for (const r of (cfg.repos || [])) {
+    if (!r.id || !r.trackName || !r.owner) errs.push(`Repo missing required fields: ${JSON.stringify(r)}`)
+  }
+  return errs
+}
+
+const configFormat = detectConfigFormat(config)
+
+// Validate new config format if detected
+if (configFormat === 'new') {
+  const configErrors = validateNewConfig(config)
+  if (configErrors.length > 0) {
+    console.error('Config validation failed:')
+    configErrors.forEach(e => console.error(`  ❌ ${e}`))
+    process.exitCode = 1
+  }
+}
+
+// Build expected repos list based on config format
+const EXPECTED_REPOS = configFormat === 'new'
+  ? config.repos.map(r => ({ repo: r.id, tracks: [r.trackName] }))
+  : config.repos.map(r => ({ repo: r.repo, tracks: r.tracks.map(t => t.name) }))
+
+// Determine expected weeks based on config format
+const WEEKS = configFormat === 'new'
+  ? config.periods.map(p => p.id)
+  : ['W1', 'W2', 'W3', 'W4', 'W5']
 const CHANGE_TYPES = new Set([
   'step_added',
   'step_deleted',
