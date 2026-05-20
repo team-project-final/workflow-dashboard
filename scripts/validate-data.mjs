@@ -117,10 +117,13 @@ for (const expected of EXPECTED_REPOS) {
     }
   }
 
-  const prdWeeks = (data.prd || []).map(week => week.week)
-  for (const week of WEEKS) {
-    if (!prdWeeks.includes(week)) {
-      addError(file, `PRD is missing ${week}`)
+  const prdArray = data.prd || []
+  if (prdArray.length > 0) {
+    const prdWeeks = prdArray.map(week => week.week)
+    for (const week of WEEKS) {
+      if (!prdWeeks.includes(week)) {
+        addError(file, `PRD is missing ${week}`)
+      }
     }
   }
 
