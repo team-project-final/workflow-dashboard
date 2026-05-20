@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-19T08:48:02.342Z",
+  "updatedAt": "2026-05-20T00:24:17.425Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -12,165 +12,165 @@
           "steps": [
             {
               "name": "knowledge-svc 골격 생성",
-              "status": "Done",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인 (0.5일)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "note/graph/chunking 3개 모듈 역할 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "platform-svc와 동일 빌드 구조 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No (Health endpoint만)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "골격 단계 — ERD 해당 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "모듈별 패키지 구조도 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Soft Delete 정책: 비해당",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "각 모듈 package-info.java 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "items": [
                     {
                       "text": "골격 단계 — Repository 해당 없음",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "ApplicationModulesTest 구조 검증 테스트 작성",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "빈 Service 클래스 생성 (3개 모듈)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "ApplicationModulesTest 통과 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "`./gradlew build` 성공 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
@@ -214,7 +214,7 @@
                 }
               ],
               "totalChecks": 32,
-              "doneChecks": 32
+              "doneChecks": 6
             },
             {
               "name": "note Markdown CRUD",
@@ -706,7 +706,7 @@
             }
           ],
           "totalChecks": 115,
-          "doneChecks": 115
+          "doneChecks": 89
         },
         {
           "week": "W2",
@@ -2506,261 +2506,261 @@
           "steps": [
             {
               "name": "chunking 모듈 — 비동기 청크 분할",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (chunking 모듈)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "노트 → N개 청크 분할 전략 정의 (문단/토큰 단위)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "청크 크기/오버랩 정책 (max_tokens, overlap_tokens)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비동기 분할 트리거 시점 정의 (노트 저장/갱신 시)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "청크 재생성 정책 (노트 갱신 시 기존 청크 삭제 후 재생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "인증 필요 여부: 내부 서비스 호출 (Kafka 기반, 직접 API 노출 없음)",
-                      "done": false
+                      "text": "인증 필요 여부: 내부 서비스 호출 (Spring event 기반, 직접 API 노출 없음)",
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 시스템 내부 처리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "note_chunks 테이블 설계 (id, note_id, chunk_index, chunk_text, token_count, embedding vector(1536), created_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "참고: 임베딩은 별도 테이블(chunk_embeddings)이 아닌 note_chunks.embedding 컬럼에 저장",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "인덱스 설계 (note_chunks.note_id, note_chunks.note_id+chunk_index UNIQUE)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "관계 정의 (note_chunks.note_id → notes.id FK)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "청크 데이터 접근 제어 (내부 서비스만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "노트 삭제 시 관련 청크 cascade 삭제 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 노트 소유자 기반 간접 제어",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "ChunkResponse 정의 (id, note_id, chunk_index, chunk_text, token_count)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ChunkCreateEvent 정의 (note_id, chunk_text)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "NoteChunk Entity 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "NoteChunkRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "findByNoteIdOrderByChunkIndex 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "deleteByNoteId 벌크 삭제 쿼리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Flyway 마이그레이션 스크립트 작성",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 8,
-                  "done": 0,
+                  "done": 8,
                   "items": [
                     {
                       "text": "ChunkingService 구현 (chunkNote, getNoteChunksByNoteId, deleteNoteChunksByNoteId)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "노트 → N개 청크 분할 로직 구현 (문단/토큰 기반)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비동기 처리 구현 (@Async 또는 Kafka Consumer)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "청크 재생성 로직 (기존 삭제 → 새 청크 생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "토큰 카운팅 유틸리티 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito — 다양한 노트 길이)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "경계값 테스트 (빈 노트, 매우 긴 노트, 한국어 포함)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "내부 서비스 — 외부 Controller 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "관리용 청크 조회 엔드포인트 (선택): GET /notes/{noteId}/chunks",
-                      "done": false
+                      "text": "관리용 청크 조회 엔드포인트 (선택): 이번 Step Scope에서 제외",
+                      "done": true
                     },
                     {
                       "text": "통합 테스트 (노트 입력 → 청크 분할 결과 검증)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "청크 분할 결과 DB 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 0
+              "doneChecks": 45
             },
             {
               "name": "검색 BM25 통합 — ES nori 기반 한국어 검색",
@@ -3022,7 +3022,7 @@
             }
           ],
           "totalChecks": 90,
-          "doneChecks": 0
+          "doneChecks": 45
         },
         {
           "week": "W3",
@@ -4058,6 +4058,11 @@
       "date": "2026-05-19",
       "totalChecks": 619,
       "doneChecks": 183
+    },
+    {
+      "date": "2026-05-20",
+      "totalChecks": 619,
+      "doneChecks": 202
     }
   ],
   "changelog": [
@@ -4238,6 +4243,24 @@
           "type": "check_done",
           "target": "W1 > knowledge-svc 골격 생성",
           "detail": "26개 항목 완료 (6 → 32)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20T00:24:17.424Z",
+      "commit": "b2f208e",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W1 > knowledge-svc 골격 생성",
+          "detail": "26개 항목 해제 (32 → 6)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > chunking 모듈 — 비동기 청크 분할",
+          "detail": "45개 항목 완료 (0 → 45)"
         }
       ]
     }
