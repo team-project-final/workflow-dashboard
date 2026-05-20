@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-20T05:15:43.261Z",
+  "updatedAt": "2026-05-20T07:16:43.089Z",
   "tracks": [
     {
       "name": "frontend",
@@ -315,7 +315,7 @@
                       "done": false
                     },
                     {
-                      "text": "토큰 저장 구조 설계 (access_token, refresh_token)",
+                      "text": "토큰 저장 구조 설계 (access_token: SecureStorage 저장, refresh_token: httpOnly Cookie — 서버에서 Set-Cookie로 발급되므로 클라이언트에서 직접 저장 불필요)",
                       "done": false
                     },
                     {
@@ -361,7 +361,7 @@
                       "done": false
                     },
                     {
-                      "text": "AuthToken 모델 정의 (accessToken, refreshToken, expiresIn)",
+                      "text": "AuthToken 모델 정의 (accessToken, expiresIn) — refreshToken은 httpOnly Cookie로 서버 관리, JSON body 미포함",
                       "done": false
                     },
                     {
