@@ -1,0 +1,64 @@
+{
+  "tracks": [
+    {
+      "name": "testtrack",
+      "owner": "unknown",
+      "weeks": [
+        {
+          "week": "W1",
+          "period": "",
+          "steps": [
+            {
+              "name": "Setup project",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "Initialize repo",
+                  "total": 3,
+                  "done": 2,
+                  "items": [
+                    { "text": "Create repository", "done": true },
+                    { "text": "Add README", "done": true },
+                    { "text": "Configure CI", "done": false }
+                  ]
+                },
+                {
+                  "name": "Setup dependencies",
+                  "total": 3,
+                  "done": 1,
+                  "items": [
+                    { "text": "Install Node.js", "done": true },
+                    { "text": "Install packages", "done": false },
+                    { "text": "Run initial build", "done": false }
+                  ]
+                }
+              ],
+              "totalChecks": 6,
+              "doneChecks": 3
+            },
+            {
+              "name": "Implement API",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "Design endpoints",
+                  "total": 2,
+                  "done": 0,
+                  "items": [
+                    { "text": "Define REST routes", "done": false },
+                    { "text": "Write OpenAPI spec", "done": false }
+                  ]
+                }
+              ],
+              "totalChecks": 2,
+              "doneChecks": 0
+            }
+          ],
+          "totalChecks": 8,
+          "doneChecks": 3
+        }
+      ]
+    }
+  ],
+  "prd": []
+}
