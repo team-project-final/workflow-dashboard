@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-20T00:36:35.338Z",
+  "updatedAt": "2026-05-20T08:16:28.943Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -2764,265 +2764,265 @@
             },
             {
               "name": "검색 BM25 통합 — ES nori 기반 한국어 검색",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (BM25 검색)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "검색 API 요건 정의 (키워드 검색, 필터, 정렬, 페이지네이션)",
-                      "done": false
+                      "text": "검색 API 요건 정의 (키워드 검색, 태그 필터, relevance 정렬, cursor 페이지네이션)",
+                      "done": true
                     },
                     {
                       "text": "ES nori 분석기 한국어 형태소 분석 요건",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "하이라이팅(검색어 강조) 요건 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "검색 범위 (title, content, tags)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 노트만 검색)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "인프라 설계",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "ES 인덱스 매핑 설계 (nori analyzer + BM25 scoring)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "nori_tokenizer + nori_part_of_speech 필터 설정",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "multi_match 쿼리 전략 (best_fields / cross_fields)",
-                      "done": false
+                      "text": "multi_match 쿼리 전략 (AND multi_match + field boost)",
+                      "done": true
                     },
                     {
-                      "text": "하이라이팅 태그 설정 (<em> 또는 <mark>)",
-                      "done": false
+                      "text": "하이라이팅 태그 설정 (`<mark>`)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "검색 결과 userId 필터 강제 (본인 노트만)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "검색 쿼리 인젝션 방지 (쿼리 이스케이프)",
-                      "done": false
+                      "text": "검색 쿼리 인젝션 방지 (구조화된 ES DSL 사용, 문자열 concat 미사용)",
+                      "done": true
                     },
                     {
-                      "text": "검색 결과 민감정보 노출 방지",
-                      "done": false
+                      "text": "검색 결과 민감정보 노출 방지 (title, highlights, score만 응답)",
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "SearchRequest 정의 (query, filters, cursor, limit)",
-                      "done": false
+                      "text": "SearchRequest 정의 (query, tags, cursor, limit)",
+                      "done": true
                     },
                     {
                       "text": "SearchResultResponse 정의 (noteId, title, highlights[], score)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "SearchPageResponse 정의 (results[], totalCount, cursor — cursor-based pagination)",
-                      "done": false
+                      "text": "SearchPageResponse 정의 (results[], totalCount, nextCursor, hasNext)",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "NoteSearchRepository 갱신 (BM25 검색 메서드 추가)",
-                      "done": false
+                      "text": "NoteSearchRepository 추가 (BM25 검색/인덱싱/삭제 메서드)",
+                      "done": true
                     },
                     {
-                      "text": "ES 인덱스 매핑 JSON 갱신 (nori analyzer 설정)",
-                      "done": false
+                      "text": "ES 인덱스 매핑 코드 추가 (nori analyzer 설정)",
+                      "done": true
                     },
                     {
                       "text": "multi_match + highlight 쿼리 빌더 구현",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 8,
-                  "done": 0,
+                  "done": 8,
                   "items": [
                     {
-                      "text": "SearchService 구현 (search, searchWithHighlight)",
-                      "done": false
+                      "text": "SearchService 구현 (search)",
+                      "done": true
                     },
                     {
                       "text": "BM25 키워드 검색 구현 (multi_match query)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "하이라이팅 결과 파싱 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "userId 필터 강제 적용",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "페이지네이션 처리",
-                      "done": false
+                      "text": "페이지네이션 처리 (`search_after` cursor)",
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "한국어 형태소 분석 검증 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
-                      "text": "GET /notes/search?q={query}&cursor=...&limit=20 엔드포인트 구현",
-                      "done": false
+                      "text": "GET /api/v1/notes/search?q={query}&cursor=...&limit=20 엔드포인트 구현",
+                      "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "MockMvc 컨트롤러 테스트 (Boot 4 webmvc-test)",
+                      "done": true
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "통합 테스트 (인덱싱 → 검색 → 하이라이팅 검증)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "한국어 검색 통합 테스트 (nori 형태소 분석)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "text": "Swagger API 문서 확인 (현재 프로젝트에 Swagger/OpenAPI 미구성 상태 확인)",
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 0
+              "doneChecks": 45
             }
           ],
           "totalChecks": 90,
-          "doneChecks": 45
+          "doneChecks": 90
         },
         {
           "week": "W3",
@@ -4062,7 +4062,7 @@
     {
       "date": "2026-05-20",
       "totalChecks": 619,
-      "doneChecks": 228
+      "doneChecks": 273
     }
   ],
   "changelog": [
@@ -4274,6 +4274,19 @@
           "type": "check_done",
           "target": "W1 > knowledge-svc 골격 생성",
           "detail": "26개 항목 완료 (6 → 32)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20T08:16:28.943Z",
+      "commit": "beccd81",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > 검색 BM25 통합 — ES nori 기반 한국어 검색",
+          "detail": "45개 항목 완료 (0 → 45)"
         }
       ]
     }
