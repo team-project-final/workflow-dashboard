@@ -1,4 +1,5 @@
 import type { RepoData } from '../types'
+import { progressText } from '../utils/progressColor'
 
 interface Props {
   data: RepoData[]
@@ -7,10 +8,7 @@ interface Props {
 const WEEKS = ['W1', 'W2', 'W3', 'W4', 'W5']
 
 function percentColor(p: number) {
-  if (p >= 60) return 'text-success font-semibold'
-  if (p >= 30) return 'text-amber font-semibold'
-  if (p > 0) return 'text-danger font-semibold'
-  return 'text-stone-400'
+  return `${progressText(p)} font-semibold`
 }
 
 export default function ProgressTable({ data }: Props) {
@@ -56,7 +54,7 @@ export default function ProgressTable({ data }: Props) {
         </tbody>
       </table>
       <div className="mt-2 text-[10px] text-stone-400">
-        🟢 60%+ &nbsp; 🟠 30~59% &nbsp; 🔴 &lt;30% &nbsp; — 미시작
+        🟢 90%+ &nbsp; 🔵 60~89% &nbsp; 🟠 30~59% &nbsp; 🔴 1~29% &nbsp; — 미시작
       </div>
     </div>
   )

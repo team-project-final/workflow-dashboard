@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import type { RepoData } from '../types'
+import { progressBorder, progressText, progressBg } from '../utils/progressColor'
 
 interface TrackCardProps {
   repoData: RepoData
@@ -33,24 +34,21 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
     : track!.weeks
 
   const hasData = totalChecks > 0
-  const borderColor = !hasData ? 'border-stone-200' : percent >= 60 ? 'border-amber' : percent >= 30 ? 'border-stone-300' : 'border-danger'
 
   return (
     <div
       onClick={() => navigate(`/detail/${repoData.repo}`)}
-      className={`bg-white border-2 ${borderColor} rounded-xl p-4 text-center cursor-pointer
+      className={`bg-white border-2 ${!hasData ? 'border-stone-200' : progressBorder(percent)} rounded-xl p-4 text-center cursor-pointer
         hover:shadow-lg transition-shadow`}
     >
-      <div className={`text-3xl font-bold font-display ${
-        !hasData ? 'text-stone-400' : percent >= 60 ? 'text-amber' : percent >= 30 ? 'text-stone-600' : 'text-danger'
-      }`}>
+      <div className={`text-3xl font-bold font-display ${!hasData ? 'text-stone-400' : progressText(percent)}`}>
         {percent}%
       </div>
       <div className="text-xs font-semibold text-stone-600 mt-1">{trackName}</div>
       <div className="text-[10px] text-stone-400">{owner}</div>
       <div className="mt-2 h-1.5 bg-stone-200 rounded-full overflow-hidden">
         <div
-          className={`h-full rounded-full ${percent >= 60 ? 'bg-amber' : percent >= 30 ? 'bg-stone-500' : 'bg-danger'}`}
+          className={`h-full rounded-full ${progressBg(percent)}`}
           style={{ width: `${percent}%` }}
         />
       </div>
@@ -60,7 +58,7 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
           return (
             <div key={w.week} className="flex flex-col items-center">
               <div
-                className={`w-3.5 rounded-sm ${wp > 60 ? 'bg-success' : wp > 0 ? 'bg-amber' : 'bg-stone-200'}`}
+                className={`w-3.5 rounded-sm ${wp > 0 ? progressBg(wp) : 'bg-stone-200'}`}
                 style={{ height: `${Math.max(4, wp * 0.2)}px` }}
               />
               <span className="text-[7px] text-stone-400 mt-0.5">{w.week}</span>
