@@ -40,7 +40,7 @@ jobs:
       - name: Copy data to dist
         run: cp -r data dist/data
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: dist
 
