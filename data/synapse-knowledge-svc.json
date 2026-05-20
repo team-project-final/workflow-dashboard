@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-20T00:24:17.425Z",
+  "updatedAt": "2026-05-20T00:26:56.206Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -12,165 +12,165 @@
           "steps": [
             {
               "name": "knowledge-svc 골격 생성",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (0.5일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "note/graph/chunking 3개 모듈 역할 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "platform-svc와 동일 빌드 구조 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No (Health endpoint만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "골격 단계 — ERD 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "모듈별 패키지 구조도 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Soft Delete 정책: 비해당",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "각 모듈 package-info.java 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "골격 단계 — Repository 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ApplicationModulesTest 구조 검증 테스트 작성",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "빈 Service 클래스 생성 (3개 모듈)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ApplicationModulesTest 통과 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "`./gradlew build` 성공 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -214,7 +214,7 @@
                 }
               ],
               "totalChecks": 32,
-              "doneChecks": 6
+              "doneChecks": 32
             },
             {
               "name": "note Markdown CRUD",
@@ -706,7 +706,7 @@
             }
           ],
           "totalChecks": 115,
-          "doneChecks": 89
+          "doneChecks": 115
         },
         {
           "week": "W2",
@@ -4062,7 +4062,7 @@
     {
       "date": "2026-05-20",
       "totalChecks": 619,
-      "doneChecks": 202
+      "doneChecks": 228
     }
   ],
   "changelog": [
@@ -4261,6 +4261,19 @@
           "type": "check_done",
           "target": "W2 > chunking 모듈 — 비동기 청크 분할",
           "detail": "45개 항목 완료 (0 → 45)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-20T00:26:56.206Z",
+      "commit": "f739614",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > knowledge-svc 골격 생성",
+          "detail": "26개 항목 완료 (6 → 32)"
         }
       ]
     }
