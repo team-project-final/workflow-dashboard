@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-20T03:23:31.387Z",
+  "updatedAt": "2026-05-20T03:33:54.788Z",
   "tracks": [
     {
       "name": "frontend",
@@ -876,7 +876,7 @@
                       "done": false
                     },
                     {
-                      "text": "CRUD API 호출 (POST/GET/PUT/DELETE /api/v1/notes)",
+                      "text": "CRUD API 호출 (POST/GET/PATCH/DELETE /notes)",
                       "done": false
                     },
                     {
@@ -1118,7 +1118,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card-svc 연동)",
+                      "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card 런타임 연동)",
                       "done": false
                     },
                     {
@@ -1383,7 +1383,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "CommunityNotifier 구현 (search, loadSharedContent, forkContent)",
+                      "text": "CommunityNotifier 구현 (search, loadSharedContent, copyContent)",
                       "done": false
                     },
                     {
@@ -1395,7 +1395,7 @@
                       "done": false
                     },
                     {
-                      "text": "콘텐츠 복사(fork) 확인 다이얼로그 로직",
+                      "text": "콘텐츠 복사(copy) 확인 다이얼로그 로직",
                       "done": false
                     },
                     {
@@ -1453,7 +1453,7 @@
                       "done": false
                     },
                     {
-                      "text": "콘텐츠 복사(fork) 전체 플로우 확인",
+                      "text": "콘텐츠 복사(copy) 전체 플로우 확인",
                       "done": false
                     },
                     {
@@ -1615,7 +1615,7 @@
                       "done": false
                     },
                     {
-                      "text": "API 연동 모델 (engagement-svc /gamification/me 응답 매핑)",
+                      "text": "API 연동 모델 (engagement-svc /gamification/profile 응답 매핑 — level, totalXp, currentStreak, longestStreak, title, nextLevelXp, recentBadges)",
                       "done": false
                     },
                     {
@@ -1634,7 +1634,7 @@
                       "done": false
                     },
                     {
-                      "text": "GET /gamification/me API 호출",
+                      "text": "GET /gamification/profile API 호출",
                       "done": false
                     },
                     {
@@ -1892,11 +1892,11 @@
                       "done": false
                     },
                     {
-                      "text": "GET /notification-settings API 호출",
+                      "text": "GET /notifications/preferences API 호출",
                       "done": false
                     },
                     {
-                      "text": "PUT /notification-settings API 호출",
+                      "text": "PUT /notifications/preferences API 호출",
                       "done": false
                     }
                   ]
@@ -2142,7 +2142,7 @@
                       "done": false
                     },
                     {
-                      "text": "PATCH /admin/reports/{id} API 호출 (승인/거부)",
+                      "text": "PUT /admin/reports/{id}/resolve API 호출 (승인/거부)",
                       "done": false
                     }
                   ]
@@ -2180,7 +2180,7 @@
                       "done": false
                     },
                     {
-                      "text": "상태 필터 Widget 구현 (PENDING/APPROVED/REJECTED 탭)",
+                      "text": "상태 필터 Widget 구현 (pending/reviewed/resolved/dismissed 탭)",
                       "done": false
                     },
                     {
@@ -2365,7 +2365,7 @@
                       "done": false
                     },
                     {
-                      "text": "API 연동 모델 (learning-card-svc /shared-decks 응답 매핑)",
+                      "text": "API 연동 모델 (engagement-svc /community/shared-decks 응답 매핑)",
                       "done": false
                     },
                     {
@@ -2380,19 +2380,19 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "SharedDeckRepository 클래스 작성 (HTTP client + learning-card-svc 연동)",
+                      "text": "SharedDeckRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
                       "done": false
                     },
                     {
-                      "text": "GET /shared-decks API 호출 (페이징, 정렬, 태그 필터)",
+                      "text": "GET /community/shared-decks API 호출 (페이징, 정렬, 태그 필터)",
                       "done": false
                     },
                     {
-                      "text": "GET /shared-decks/{id} API 호출 (상세)",
+                      "text": "GET /community/shared-decks/{id} API 호출 (상세)",
                       "done": false
                     },
                     {
-                      "text": "POST /shared-decks/{id}/copy API 호출 (복사)",
+                      "text": "POST /community/shared-decks/{id}/copy API 호출 (복사)",
                       "done": false
                     }
                   ]
@@ -2799,6 +2799,122 @@
           ],
           "totalChecks": 40,
           "doneChecks": 0
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "반응형 검증",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "뷰포트 검증",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "Mobile, Tablet, Desktop 뷰포트 기준 확정",
+                      "done": false
+                    },
+                    {
+                      "text": "인증/노트/카드/커뮤니티/검색/알림 화면 검증",
+                      "done": false
+                    },
+                    {
+                      "text": "텍스트 오버플로우와 터치 타겟 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "수정",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "레이아웃 깨짐 수정",
+                      "done": false
+                    },
+                    {
+                      "text": "사이드바/Drawer 전환 검증",
+                      "done": false
+                    },
+                    {
+                      "text": "Widget 테스트 또는 시각 검증 결과 기록",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 6,
+              "doneChecks": 0
+            },
+            {
+              "name": "에러/로딩 상태 통일",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "공통 상태 점검",
+                  "total": 3,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "AppErrorWidget 적용 여부 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "AppLoadingWidget 적용 여부 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "API 실패/권한 실패/빈 상태 UI 확인",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "발표 데모 정돈",
+                  "total": 7,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "데모 시나리오 화면 전환 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "시드 데이터 표시 상태 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "깨진 링크/이미지/버튼 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "주요 화면이 3개 뷰포트에서 깨지지 않는다.",
+                      "done": false
+                    },
+                    {
+                      "text": "에러/로딩 상태가 일관되게 표시된다.",
+                      "done": false
+                    },
+                    {
+                      "text": "발표용 데모 흐름이 안정적으로 동작한다.",
+                      "done": false
+                    },
+                    {
+                      "text": "frontend 관련 P0 버그가 0건이다.",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 10,
+              "doneChecks": 0
+            }
+          ],
+          "totalChecks": 16,
+          "doneChecks": 0
         }
       ]
     }
@@ -2938,7 +3054,7 @@
     },
     {
       "date": "2026-05-20",
-      "totalChecks": 458,
+      "totalChecks": 474,
       "doneChecks": 35
     }
   ],
