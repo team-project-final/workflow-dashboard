@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-13T00:42:03.747Z",
+  "updatedAt": "2026-05-20T03:07:50.981Z",
   "tracks": [
     {
       "name": "frontend",
@@ -12,221 +12,221 @@
           "steps": [
             {
               "name": "Flutter 프로젝트 기본 구조 생성",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Flutter 3.24+ / Dart 3.5+ 프로젝트 구조 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Riverpod + GoRouter + Material 3 의존성 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "DESIGN.md 테마 규격 (ColorScheme, Typography) 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No (프론트엔드 앱)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "폴더 구조 설계 (lib/core/, lib/features/, lib/shared/)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "라우트 구조 정의 (/, /login, /dashboard)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "환경변수 관리 (.env, API base URL)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "코드 내 시크릿 하드코딩 금지 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Scaffold 페이지만 생성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "GoRouter 라우트 설정 (/, /login, /dashboard)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ThemeData 생성 (DESIGN.md 기반)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "pubspec.yaml 의존성 추가 (flutter_riverpod, go_router, google_fonts)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ProviderScope 최상위 래핑",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "GoRouter 설정 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ThemeData (ColorScheme + Typography) 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "라우트별 빈 Scaffold 페이지 생성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Widget 테스트 (라우팅 전환 확인)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "`flutter run -d chrome` 동작 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "라우팅 전환 동작 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "DESIGN.md 테마 적용 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "각 라우트 빈 화면 렌더링 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Smoke Test 1건 (앱 실행 → 에러 없음)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 35,
-              "doneChecks": 0
+              "doneChecks": 35
             },
             {
               "name": "로그인/회원가입 화면 및 OAuth 인증",
@@ -710,7 +710,7 @@
             }
           ],
           "totalChecks": 116,
-          "doneChecks": 0
+          "doneChecks": 35
         },
         {
           "week": "W2",
@@ -2935,7 +2935,26 @@
       "date": "2026-05-13",
       "totalChecks": 458,
       "doneChecks": 0
+    },
+    {
+      "date": "2026-05-20",
+      "totalChecks": 458,
+      "doneChecks": 35
     }
   ],
-  "changelog": []
+  "changelog": [
+    {
+      "date": "2026-05-20T03:07:50.980Z",
+      "commit": "e4c69d9",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > Flutter 프로젝트 기본 구조 생성",
+          "detail": "35개 항목 완료 (0 → 35)"
+        }
+      ]
+    }
+  ]
 }
