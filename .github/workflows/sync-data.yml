@@ -1,0 +1,129 @@
+name: Sync Workflow Data
+
+on:
+  schedule:
+    # 매일 KST 09:00, 14:00, 19:00 (UTC 00:00, 05:00, 10:00)
+    - cron: '0 0,5,10 * * *'
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: '특정 레포만 동기화 (비우면 전체)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout dashboard
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Sync repos
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TARGET_REPO: ${{ inputs.repo || '' }}
+        run: |
+          set -e
+
+          ORG="team-project-final"
+          DOCS_SUBDIR="docs/project-management"
+          REPOS=("synapse-platform-svc" "synapse-engagement-svc" "synapse-knowledge-svc" "synapse-learning-svc" "synapse-frontend" "synapse-gitops" "synapse-shared")
+
+          UPDATED=()
+
+          for REPO in "${REPOS[@]}"; do
+            # 특정 레포 지정 시 해당 레포만 처리
+            if [ -n "$TARGET_REPO" ] && [ "$TARGET_REPO" != "$REPO" ]; then
+              continue
+            fi
+
+            echo "::group::Syncing $REPO"
+
+            # 기본 브랜치 확인
+            DEFAULT_BRANCH=$(gh api "repos/$ORG/$REPO" --jq '.default_branch' 2>/dev/null || echo "")
+            if [ -z "$DEFAULT_BRANCH" ]; then
+              echo "⚠️ $REPO: 접근 불가 또는 존재하지 않음 — 건너뜀"
+              echo "::endgroup::"
+              continue
+            fi
+
+            # docs 디렉토리 체크아웃
+            TMPDIR=$(mktemp -d)
+            if ! gh api "repos/$ORG/$REPO/tarball/$DEFAULT_BRANCH" > "$TMPDIR/archive.tar.gz" 2>/dev/null; then
+              echo "⚠️ $REPO: tarball 다운로드 실패 — 건너뜀"
+              rm -rf "$TMPDIR"
+              echo "::endgroup::"
+              continue
+            fi
+
+            tar -xzf "$TMPDIR/archive.tar.gz" -C "$TMPDIR" 2>/dev/null
+            EXTRACTED=$(find "$TMPDIR" -maxdepth 1 -type d -not -name "$(basename $TMPDIR)" | head -1)
+
+            DOCS_PATH="$EXTRACTED/$DOCS_SUBDIR"
+            if [ ! -d "$DOCS_PATH/workflow" ]; then
+              echo "⚠️ $REPO: $DOCS_SUBDIR/workflow 디렉토리 없음 — 건너뜀"
+              rm -rf "$TMPDIR"
+              echo "::endgroup::"
+              continue
+            fi
+
+            # 최신 커밋 SHA 확인
+            LATEST_SHA=$(gh api "repos/$ORG/$REPO/commits/$DEFAULT_BRANCH" --jq '.sha' 2>/dev/null | head -c 7)
+
+            # 이전 데이터와 비교하여 변경 여부 확인
+            OLD_CHECKSUM=""
+            if [ -f "data/$REPO.json" ]; then
+              OLD_CHECKSUM=$(md5sum "data/$REPO.json" | cut -d' ' -f1)
+            fi
+
+            # 파서 실행
+            GITHUB_SHA="$LATEST_SHA" GITHUB_ACTOR="sync-bot" \
+              node scripts/parse-workflow.mjs "$DOCS_PATH" "$REPO" "data/$REPO.json"
+
+            NEW_CHECKSUM=$(md5sum "data/$REPO.json" | cut -d' ' -f1)
+
+            if [ "$OLD_CHECKSUM" != "$NEW_CHECKSUM" ]; then
+              UPDATED+=("$REPO ($DEFAULT_BRANCH) from $LATEST_SHA")
+              echo "✅ $REPO: 데이터 변경 감지 — 업데이트됨"
+            else
+              echo "⏭️ $REPO: 변경 없음 — 건너뜀"
+              # 변경 없으면 git checkout으로 복원
+              git checkout -- "data/$REPO.json" 2>/dev/null || true
+            fi
+
+            rm -rf "$TMPDIR"
+            echo "::endgroup::"
+          done
+
+          # 변경된 파일이 있으면 커밋
+          if [ ${#UPDATED[@]} -gt 0 ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+
+            git add data/*.json
+
+            COMMIT_MSG="data: sync workflow data"
+            for item in "${UPDATED[@]}"; do
+              COMMIT_MSG="$COMMIT_MSG
+            - update $item"
+            done
+
+            git commit -m "$COMMIT_MSG"
+            git push
+
+            echo "🚀 ${#UPDATED[@]}개 레포 데이터 업데이트 완료"
+          else
+            echo "✅ 모든 레포 데이터 최신 상태 — 커밋 불필요"
+          fi

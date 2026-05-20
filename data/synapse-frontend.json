@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-20T03:37:15.918Z",
+  "updatedAt": "2026-05-20T05:15:43.261Z",
   "tracks": [
     {
       "name": "frontend",
@@ -3060,24 +3060,16 @@
   ],
   "changelog": [
     {
-      "date": "2026-05-20T03:07:50.980Z",
-      "commit": "e4c69d9",
-      "author": "VelkaressiaBlutkrone",
+      "date": "2026-05-20T03:53:50.287Z",
+      "commit": "local",
+      "author": "unknown",
       "file": "WORKFLOW_*",
       "changes": [
         {
           "type": "check_done",
           "target": "W1 > Flutter 프로젝트 기본 구조 생성",
           "detail": "35개 항목 완료 (0 → 35)"
-        }
-      ]
-    },
-    {
-      "date": "2026-05-20T03:36:59.137Z",
-      "commit": "c351f4b",
-      "author": "VelkaressiaBlutkrone",
-      "file": "WORKFLOW_*",
-      "changes": [
+        },
         {
           "type": "check_done",
           "target": "W2 > 노트 에디터 화면 — Markdown 편집 + 미리보기 + 저장",
