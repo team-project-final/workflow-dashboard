@@ -1,43 +1,32 @@
-import { useWorkflowRun, type RunStatus, type RunConclusion } from '../../hooks/useWorkflowRun'
+import { ACTIONS_URL } from '../../hooks/useWorkflowDispatch'
 
 interface Props {
-  runId: number | null
-  dispatchError: string | null
+  success: string | null
+  error: string | null
 }
 
-function statusLabel(status: RunStatus, conclusion: RunConclusion): string {
-  if (status === 'completed') {
-    if (conclusion === 'success') return '✅ 완료 (success)'
-    if (conclusion === 'failure') return '❌ 실패 (failure)'
-    return `⏹️ 완료 (${conclusion || 'unknown'})`
-  }
-  if (status === 'queued') return '⏳ 대기 (queued)'
-  if (status === 'in_progress') return '🔄 실행 중 (in_progress)'
-  if (status === 'waiting') return '⏸ 승인 대기 (waiting)'
-  return status
-}
-
-export default function RunStatusPanel({ runId, dispatchError }: Props) {
-  const { run, fatalError } = useWorkflowRun(runId)
-
-  if (dispatchError) {
-    return <div className="mt-4 p-3 bg-red-50 text-red-700 text-sm rounded">트리거 실패: {dispatchError}</div>
-  }
-  if (runId == null) return null
-
-  return (
-    <div className="mt-4 p-3 bg-stone-50 border border-stone-200 rounded text-sm">
-      <div className="flex items-center justify-between">
-        <div>
-          Run #{runId}: {run ? statusLabel(run.status, run.conclusion) : '시작 중…'}
-        </div>
-        {run && (
-          <a href={run.htmlUrl} target="_blank" rel="noreferrer" className="text-info underline text-xs">
-            Actions에서 보기 ↗
-          </a>
-        )}
+export default function RunStatusPanel({ success, error }: Props) {
+  if (error) {
+    return (
+      <div className="mt-4 p-3 bg-red-50 text-red-700 text-sm rounded">
+        트리거 실패: {error}
+        {' '}
+        <a href={ACTIONS_URL} target="_blank" rel="noreferrer" className="underline">
+          Actions에서 확인 ↗
+        </a>
       </div>
-      {fatalError && <div className="text-red-600 text-xs mt-2">{fatalError}</div>}
-    </div>
-  )
+    )
+  }
+  if (success) {
+    return (
+      <div className="mt-4 p-3 bg-emerald-50 text-emerald-700 text-sm rounded">
+        ✅ {success}.{' '}
+        <a href={ACTIONS_URL} target="_blank" rel="noreferrer" className="underline">
+          Actions에서 진행 상황 보기 ↗
+        </a>
+        {' '}— 동기화가 끝나면 GitHub Pages 재배포 후 캐시·실시간 비교가 자동으로 갱신됩니다.
+      </div>
+    )
+  }
+  return null
 }

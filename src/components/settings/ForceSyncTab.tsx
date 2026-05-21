@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import PatRegister from './PatRegister'
 import RepoForceList from './RepoForceList'
 import TriggerBar from './TriggerBar'
@@ -8,8 +8,6 @@ import { useWorkflowDispatch } from '../../hooks/useWorkflowDispatch'
 import { useData } from '../../hooks/useData'
 import type { DashboardConfig } from '../../types/config'
 
-const LS_RUN_ID = 'forceSync.runId'
-
 interface Props {
   config: DashboardConfig
 }
@@ -17,17 +15,8 @@ interface Props {
 export default function ForceSyncTab({ config }: Props) {
   const { token } = useForceSyncPat()
   const { rawByRepo } = useData()
-  const { dispatch, dispatching, error: dispatchError } = useWorkflowDispatch()
+  const { dispatch, dispatching, error, success } = useWorkflowDispatch()
   const [selected, setSelected] = useState<Set<string>>(new Set())
-  const [runId, setRunId] = useState<number | null>(() => {
-    const stored = localStorage.getItem(LS_RUN_ID)
-    return stored ? Number(stored) : null
-  })
-
-  useEffect(() => {
-    if (runId == null) localStorage.removeItem(LS_RUN_ID)
-    else localStorage.setItem(LS_RUN_ID, String(runId))
-  }, [runId])
 
   const onToggle = (repoId: string) => {
     setSelected(prev => {
@@ -40,8 +29,7 @@ export default function ForceSyncTab({ config }: Props) {
 
   const onTrigger = async () => {
     const repos = [...selected].join(',')
-    const newRunId = await dispatch({ repos, force: true })
-    if (newRunId != null) setRunId(newRunId)
+    await dispatch({ repos, force: true })
   }
 
   return (
@@ -59,7 +47,7 @@ export default function ForceSyncTab({ config }: Props) {
         dispatching={dispatching}
         onTrigger={onTrigger}
       />
-      <RunStatusPanel runId={runId} dispatchError={dispatchError} />
+      <RunStatusPanel success={success} error={error} />
     </div>
   )
 }
