@@ -104,10 +104,17 @@ for (const repo of repos) {
     const doneChecks = transformed.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
     const oldHistory = oldData?.history || []
     const todayIdx = oldHistory.findIndex(h => h.date === today)
-    const historyEntry = { date: today, totalChecks, doneChecks }
+    // today entry는 단조 증가만 허용 (max). 같은 날 여러 sync가 작은 값으로 덮어쓰는 회귀를 막음.
+    const todayEntry = todayIdx >= 0
+      ? {
+          date: today,
+          totalChecks: Math.max(Number(oldHistory[todayIdx].totalChecks) || 0, totalChecks),
+          doneChecks: Math.max(Number(oldHistory[todayIdx].doneChecks) || 0, doneChecks),
+        }
+      : { date: today, totalChecks, doneChecks }
     const history = todayIdx >= 0
-      ? [...oldHistory.slice(0, todayIdx), historyEntry, ...oldHistory.slice(todayIdx + 1)]
-      : [...oldHistory, historyEntry]
+      ? [...oldHistory.slice(0, todayIdx), todayEntry, ...oldHistory.slice(todayIdx + 1)]
+      : [...oldHistory, todayEntry]
 
     const output = {
       repo: repo.id,

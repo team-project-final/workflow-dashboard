@@ -157,10 +157,17 @@ const doneChecks = tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.
 
 const oldHistory = oldData?.history || []
 const todayIdx = oldHistory.findIndex(h => h.date === today)
-const historyEntry = { date: today, totalChecks, doneChecks }
+// today entry는 단조 증가만 허용 (max). 다른 브랜치 sync 결과를 main sync가 작은 값으로 덮어쓰는 회귀를 막음.
+const todayEntry = todayIdx >= 0
+  ? {
+      date: today,
+      totalChecks: Math.max(Number(oldHistory[todayIdx].totalChecks) || 0, totalChecks),
+      doneChecks: Math.max(Number(oldHistory[todayIdx].doneChecks) || 0, doneChecks),
+    }
+  : { date: today, totalChecks, doneChecks }
 const history = todayIdx >= 0
-  ? [...oldHistory.slice(0, todayIdx), historyEntry, ...oldHistory.slice(todayIdx + 1)]
-  : [...oldHistory, historyEntry]
+  ? [...oldHistory.slice(0, todayIdx), todayEntry, ...oldHistory.slice(todayIdx + 1)]
+  : [...oldHistory, todayEntry]
 
 const prd = oldData?.prd || []
 const changelog = [...(oldData?.changelog || []), ...newChangelog]
