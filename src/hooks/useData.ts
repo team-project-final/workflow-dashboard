@@ -137,6 +137,7 @@ function mergeVirtualTrackData(
 export function useData() {
   const { config, loading: configLoading } = useConfig()
   const [data, setData] = useState<RepoData[]>([])
+  const [rawByRepo, setRawByRepo] = useState<Record<string, RepoData | null>>({})
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -159,9 +160,16 @@ export function useData() {
         .then(results => mergeVirtualTrackData(vtDef, results, sourceDefs))
     })
 
-    Promise.all([...regularFetches, ...vtFetches])
-      .then(results => {
+    const allRawFetches = Promise.all(
+      config.repos.map(def =>
+        fetchRepoJson(def.repo).then(raw => [def.repo, raw] as const)
+      )
+    ).then(entries => Object.fromEntries(entries) as Record<string, RepoData | null>)
+
+    Promise.all([Promise.all([...regularFetches, ...vtFetches]), allRawFetches])
+      .then(([results, raws]) => {
         setData(results)
+        setRawByRepo(raws)
         setLoading(false)
       })
       .catch(err => {
@@ -176,7 +184,7 @@ export function useData() {
     s + d.tracks.reduce((ts, t) => ts + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0), 0)
   const overallPercent = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0
 
-  return { data, loading, error, overallPercent, totalChecks, doneChecks }
+  return { data, rawByRepo, loading, error, overallPercent, totalChecks, doneChecks }
 }
 
 export function useRepoData(repo: string) {
