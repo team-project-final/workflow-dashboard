@@ -344,14 +344,69 @@ else
 fi
 ```
 
-- [ ] **Step 4: 수동 검증 — Actions UI에서 트리거**
+- [ ] **Step 4: 빈 커밋 가드 추가**
+
+`force=true`이고 실제 변경이 없을 때 `git commit`이 실패하지 않도록 staged diff 체크를 추가한다.
+
+기존 워크플로의 마지막 커밋 블록:
+```bash
+if [ ${#UPDATED[@]} -gt 0 ]; then
+  git config user.name "github-actions[bot]"
+  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+  git add data/*.json
+
+  COMMIT_MSG="data: sync workflow data"
+  for item in "${UPDATED[@]}"; do
+    COMMIT_MSG="$COMMIT_MSG
+  - update $item"
+  done
+
+  git commit -m "$COMMIT_MSG"
+  git push
+
+  echo "🚀 ${#UPDATED[@]}개 레포 데이터 업데이트 완료"
+else
+  echo "✅ 모든 레포 데이터 최신 상태 — 커밋 불필요"
+fi
+```
+
+교체:
+```bash
+if [ ${#UPDATED[@]} -gt 0 ]; then
+  git config user.name "github-actions[bot]"
+  git config user.email "github-actions[bot]@users.noreply.github.com"
+
+  git add data/*.json
+
+  if git diff --cached --quiet; then
+    echo "ℹ️ force 트리거였으나 실제 변경 없음 — 커밋 건너뜀"
+  else
+    COMMIT_MSG="data: sync workflow data"
+    for item in "${UPDATED[@]}"; do
+      COMMIT_MSG="$COMMIT_MSG
+  - update $item"
+    done
+
+    git commit -m "$COMMIT_MSG"
+    git push
+
+    echo "🚀 ${#UPDATED[@]}개 레포 데이터 업데이트 완료"
+  fi
+else
+  echo "✅ 모든 레포 데이터 최신 상태 — 커밋 불필요"
+fi
+```
+
+- [ ] **Step 5: 수동 검증 — Actions UI에서 트리거**
 
 Push 후 Actions 탭 → "Sync Workflow Data" → Run workflow:
 - `repos = synapse-platform-svc`, `force = true` 입력
-- 실행 후 로그에서 `[force]` 마커 + commit 메시지에 `[force]` 포함 확인
+- 실행 후 로그에서 `[force]` 마커 + commit 메시지에 `[force]` 포함 확인 (변경 있을 때)
+- 변경 없을 때는 "force 트리거였으나 실제 변경 없음 — 커밋 건너뜀" 메시지 확인
 - 7 레포 중 1 레포만 처리됐는지 확인
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
 git add .github/workflows/sync-data.yml
