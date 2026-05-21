@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-21T01:57:40.241Z",
+  "updatedAt": "2026-05-21T02:38:25.052Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -410,7 +410,7 @@
             },
             {
               "name": "CI/CD 파이프라인 구성",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -555,7 +555,7 @@
                 {
                   "name": "파이프라인 테스트",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "items": [
                     {
                       "text": "dummy commit → mirror.yml 동작 확인 (PR #2 머지 시 확인)",
@@ -566,8 +566,8 @@
                       "done": true
                     },
                     {
-                      "text": "main push → deploy.yml ECR push + ArgoCD 동기화 확인 — Dockerfile 준비 후 테스트",
-                      "done": false
+                      "text": "main push → deploy.yml ECR push + ArgoCD 동기화 확인 — gitops 세션에서 5개 서비스 ECR push + ArgoCD Sync 동작 확인 (05-21)",
+                      "done": true
                     },
                     {
                       "text": "CI 실행 시간 < 5분 확인",
@@ -589,11 +589,11 @@
                 }
               ],
               "totalChecks": 27,
-              "doneChecks": 26
+              "doneChecks": 27
             }
           ],
           "totalChecks": 89,
-          "doneChecks": 87
+          "doneChecks": 88
         },
         {
           "week": "W2",
@@ -655,11 +655,11 @@
                   "done": 2,
                   "items": [
                     {
-                      "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의 — MSK 배포 후",
+                      "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` ACL 섹션)",
                       "done": false
                     },
                     {
-                      "text": "SASL/TLS 인증 설정 확인 — MSK 배포 후",
+                      "text": "SASL/TLS 인증 설정 확인 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` TLS 섹션)",
                       "done": false
                     },
                     {
@@ -701,11 +701,11 @@
                   "done": 1,
                   "items": [
                     {
-                      "text": "토픽 메시지 암호화 전송 (TLS) 확인 — MSK 배포 후",
+                      "text": "토픽 메시지 암호화 전송 (TLS) 확인 — 다음 gitops 세션에서 openssl s_client로 검증",
                       "done": false
                     },
                     {
-                      "text": "민감 데이터 토픽 접근 제한 확인 — MSK 배포 후",
+                      "text": "민감 데이터 토픽 접근 제한 확인 — 다음 gitops 세션에서 ACL 또는 IAM Policy 적용",
                       "done": false
                     },
                     {
@@ -726,7 +726,7 @@
                   "done": 3,
                   "items": [
                     {
-                      "text": "MSK/Kafka 클러스터에 토픽 생성 — MSK 배포 후 (`scripts/create-kafka-topics.sh` 준비됨)",
+                      "text": "MSK/Kafka 클러스터에 토픽 생성 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` \"다음 세션 실행 절차\" 섹션)",
                       "done": false
                     },
                     {
@@ -753,7 +753,7 @@
                       "done": true
                     },
                     {
-                      "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트 — MSK 배포 후",
+                      "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트 — 다음 gitops 세션에서 MSK 토픽 생성 직후 실행",
                       "done": false
                     },
                     {
@@ -2041,7 +2041,7 @@
     {
       "date": "2026-05-21",
       "totalChecks": 277,
-      "doneChecks": 157
+      "doneChecks": 158
     }
   ],
   "changelog": [
@@ -2122,6 +2122,19 @@
           "type": "check_done",
           "target": "W2 > Gateway 라우팅",
           "detail": "7개 항목 완료 (19 → 26)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-21T02:38:25.052Z",
+      "commit": "4645bca",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > CI/CD 파이프라인 구성",
+          "detail": "1개 항목 완료 (26 → 27)"
         }
       ]
     }
