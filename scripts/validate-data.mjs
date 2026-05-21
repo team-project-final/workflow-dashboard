@@ -56,6 +56,14 @@ const EXPECTED_REPOS = configFormat === 'new'
   ? config.repos.map(r => ({ repo: r.id, tracks: [r.trackName] }))
   : config.repos.map(r => ({ repo: r.repo, tracks: r.tracks.map(t => t.name) }))
 
+// (repo, track) pairs feeding a virtualTrack are allowed to be missing
+// (the virtualTrack aggregates whatever sources exist).
+const VIRTUAL_TRACK_SOURCES = new Set(
+  (config.virtualTracks || []).flatMap(vt =>
+    (vt.sources || []).map(s => `${s.repo}::${s.track}`)
+  )
+)
+
 // Determine expected weeks based on config format
 const WEEKS = configFormat === 'new'
   ? config.periods.map(p => p.id)
@@ -142,7 +150,11 @@ for (const expected of EXPECTED_REPOS) {
   for (const trackName of expected.tracks) {
     const track = tracks.find(item => item?.name === trackName)
     if (!track) {
-      addError(file, `missing track "${trackName}"`)
+      if (VIRTUAL_TRACK_SOURCES.has(`${expected.repo}::${trackName}`)) {
+        addWarning(file, `missing track "${trackName}"; consumed by a virtualTrack and will be treated as empty`)
+      } else {
+        addError(file, `missing track "${trackName}"`)
+      }
       continue
     }
 
