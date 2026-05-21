@@ -19,7 +19,12 @@ export function useWorkflowDispatch() {
     setDispatching(true)
     setError(null)
     try {
-      const dispatchAt = new Date()
+      // POST 직전 가장 큰 run id 기록 (clock skew 비의존 식별)
+      const before = await call<{ workflow_runs: Array<{ id: number }> }>(
+        `/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/runs?event=workflow_dispatch&per_page=1`
+      )
+      const prevMaxId = before.ok && before.data?.workflow_runs?.[0]?.id ? before.data.workflow_runs[0].id : 0
+
       const post = await call(
         `/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/dispatches`,
         {
@@ -37,21 +42,20 @@ export function useWorkflowDispatch() {
         return null
       }
 
-      // grace + identify new run
-      await new Promise(r => setTimeout(r, 5000))
-      const list = await call<{ workflow_runs: Array<{ id: number; event: string; created_at: string }> }>(
-        `/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/runs?event=workflow_dispatch&per_page=5`
-      )
-      if (!list.ok || !list.data) {
-        setError('run id 식별 실패 (조회 오류)')
-        return null
+      // 1초 간격 폴링, 최대 20초까지 새 run id 식별
+      const POLL_INTERVAL_MS = 1000
+      const MAX_ATTEMPTS = 20
+      for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
+        await new Promise(r => setTimeout(r, POLL_INTERVAL_MS))
+        const list = await call<{ workflow_runs: Array<{ id: number }> }>(
+          `/repos/${REPO_OWNER}/${REPO_NAME}/actions/workflows/${WORKFLOW_FILE}/runs?event=workflow_dispatch&per_page=5`
+        )
+        if (!list.ok || !list.data) continue
+        const candidate = list.data.workflow_runs.find(r => r.id > prevMaxId)
+        if (candidate) return candidate.id
       }
-      const candidate = list.data.workflow_runs.find(r => new Date(r.created_at) >= dispatchAt)
-      if (!candidate) {
-        setError('run id 식별 실패 (grace 후에도 새 run 없음)')
-        return null
-      }
-      return candidate.id
+      setError('run id 식별 실패 (20초 polling 후에도 새 run 없음)')
+      return null
     } finally {
       setDispatching(false)
     }
