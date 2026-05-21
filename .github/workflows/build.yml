@@ -7,6 +7,10 @@ on:
       - 'data/**'
       - 'scripts/**'
       - 'src/**'
+      - 'index.html'
+      - 'eslint.config.js'
+      - 'tsconfig*.json'
+      - 'vite.config.ts'
       - 'package.json'
       - 'package-lock.json'
       - '.github/workflows/build.yml'
@@ -16,6 +20,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 concurrency:
   group: pages
