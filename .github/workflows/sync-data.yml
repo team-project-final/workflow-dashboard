@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  actions: write  # Build & Deploy dispatch용
 
 # 동시 실행 시 git push race condition 방지 (큐로 직렬화)
 concurrency:
@@ -170,6 +171,12 @@ jobs:
               git push
 
               echo "🚀 ${#UPDATED[@]}개 레포 데이터 업데이트 완료"
+
+              # GITHUB_TOKEN으로 push한 commit은 다른 workflow를 자동 트리거하지 않으므로
+              # Pages 재배포를 위해 Build & Deploy를 명시적으로 dispatch
+              gh workflow run "Build & Deploy" --ref main \
+                && echo "📦 Build & Deploy 트리거됨" \
+                || echo "⚠️ Build & Deploy 트리거 실패"
             fi
           else
             echo "✅ 모든 레포 데이터 최신 상태 — 커밋 불필요"
