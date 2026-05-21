@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-05-21T01:57:39.417Z",
+  "updatedAt": "2026-05-21T02:14:43.747Z",
   "tracks": [
     {
       "name": "gitops",
@@ -401,30 +401,50 @@
                 },
                 {
                   "name": "적용 + 검증",
-                  "total": 4,
-                  "done": 1,
+                  "total": 9,
+                  "done": 5,
                   "items": [
                     {
                       "text": "git push → ArgoCD 5개 앱 모두 Synced + Healthy 확인 (kind)",
                       "done": true
                     },
                     {
-                      "text": "각 앱 Pod 로그 정상 (startup error 없음) — EKS 배포 후",
+                      "text": "EKS 배포: 3/5 Pod 정상 (engagement-svc, knowledge-svc, learning-card)",
+                      "done": true
+                    },
+                    {
+                      "text": "EKS 배포: platform-svc 정상 기동 (앱 코드 수정 필요 — mfa_credentials)",
                       "done": false
                     },
                     {
-                      "text": "/actuator/health 또는 동등 endpoint 200 응답 — EKS 배포 후",
+                      "text": "EKS 배포: learning-ai 정상 기동 (앱 코드 수정 필요 — Python 기동)",
                       "done": false
                     },
                     {
-                      "text": "dev 도메인으로 5개 앱 도달 — EKS 배포 후",
+                      "text": "/actuator/health 200 응답 (3/5 확인, 2개 미확인)",
                       "done": false
+                    },
+                    {
+                      "text": "dev 도메인으로 5개 앱 도달 — Ingress 미설정",
+                      "done": false
+                    },
+                    {
+                      "text": "KAFKA_BROKERS endpoint 갱신 (PR #34, terraform re-apply 후 MSK 주소 변경)",
+                      "done": true
+                    },
+                    {
+                      "text": "liveness probe initialDelaySeconds 30s → 90s (PR #35, D-028)",
+                      "done": true
+                    },
+                    {
+                      "text": "EKS cluster SG를 RDS/Redis/MSK/OpenSearch SG에 추가 (D-026)",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 18,
-              "doneChecks": 13
+              "totalChecks": 23,
+              "doneChecks": 17
             },
             {
               "name": "Secret 관리 (External Secrets Operator)",
@@ -456,15 +476,15 @@
                 {
                   "name": "ESO 설치 + 구성",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "items": [
                     {
                       "text": "external-secrets helm chart 또는 매니페스트 적용 (kind: fake provider 검증)",
                       "done": true
                     },
                     {
-                      "text": "IRSA 어노테이션 + IAM Policy 생성 (Secrets Manager read) — EKS 배포 시",
-                      "done": false
+                      "text": "IRSA 어노테이션 + IAM Policy 생성 (Role: `synapse-dev-eso-role`, 8차 세션 trust policy 갱신)",
+                      "done": true
                     },
                     {
                       "text": "ClusterSecretStore 정의 (AWS provider) — `infra/external-secrets/cluster-secret-store.yaml`",
@@ -532,7 +552,7 @@
                 }
               ],
               "totalChecks": 18,
-              "doneChecks": 15
+              "doneChecks": 16
             },
             {
               "name": "이미지 태그 자동 sync",
@@ -635,8 +655,8 @@
               "doneChecks": 11
             }
           ],
-          "totalChecks": 52,
-          "doneChecks": 39
+          "totalChecks": 57,
+          "doneChecks": 44
         },
         {
           "week": "W3",
@@ -1318,8 +1338,8 @@
     },
     {
       "date": "2026-05-21",
-      "totalChecks": 202,
-      "doneChecks": 79
+      "totalChecks": 207,
+      "doneChecks": 84
     }
   ],
   "changelog": [
@@ -1366,6 +1386,24 @@
           "type": "check_done",
           "target": "W2 > 이미지 태그 자동 sync",
           "detail": "11개 항목 완료 (0 → 11)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-21T02:14:43.747Z",
+      "commit": "5ba4b0f",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > dev overlay 5개 앱 완성",
+          "detail": "4개 항목 완료 (13 → 17)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > Secret 관리 (External Secrets Operator)",
+          "detail": "1개 항목 완료 (15 → 16)"
         }
       ]
     }
