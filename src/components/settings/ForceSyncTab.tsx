@@ -32,9 +32,29 @@ export default function ForceSyncTab({ config }: Props) {
     await dispatch({ repos, force: true })
   }
 
+  const onClearCache = () => {
+    if (!confirm('로컬 캐시(dashboard-data-*)를 비우고 정적 JSON을 다시 불러옵니다. 계속할까요?')) return
+    Object.keys(localStorage)
+      .filter(k => k.startsWith('dashboard-data-'))
+      .forEach(k => localStorage.removeItem(k))
+    location.reload()
+  }
+
   return (
     <div>
       <PatRegister />
+      <div className="flex items-center justify-between mb-2">
+        <div className="text-xs text-stone-500">
+          캐시는 정적 JSON(data/*.json)보다 우선합니다. 표시가 서버 상태와 다르면 캐시를 비워 보세요.
+        </div>
+        <button
+          type="button"
+          onClick={onClearCache}
+          className="px-3 py-1 text-xs text-stone-600 border border-stone-300 rounded hover:bg-stone-100"
+        >
+          로컬 캐시 비우기 + 새로고침
+        </button>
+      </div>
       <RepoForceList
         config={config}
         cacheByRepo={rawByRepo}

@@ -65,7 +65,7 @@ jobs:
 
             echo "::group::Syncing $REPO"
 
-            # 기본 브랜치 확인
+            # 기본 브랜치 확인 (fallback 용)
             DEFAULT_BRANCH=$(gh api "repos/$ORG/$REPO" --jq '.default_branch' 2>/dev/null || echo "")
             if [ -z "$DEFAULT_BRANCH" ]; then
               echo "⚠️ $REPO: 접근 불가 또는 존재하지 않음 — 건너뜀"
@@ -73,9 +73,32 @@ jobs:
               continue
             fi
 
+            # 모든 브랜치 중 일정문서가 있는, 가장 최근 commit branch 선택
+            BRANCHES_BY_DATE=$(
+              gh api "repos/$ORG/$REPO/branches" --paginate --jq '.[].name' 2>/dev/null | while read br; do
+                d=$(gh api "repos/$ORG/$REPO/commits/$br" --jq '.commit.committer.date' 2>/dev/null)
+                [ -n "$d" ] && echo "$d $br"
+              done | sort -r | awk '{print $2}'
+            )
+
+            TARGET_BRANCH=""
+            for br in $BRANCHES_BY_DATE; do
+              if gh api "repos/$ORG/$REPO/contents/$DOCS_SUBDIR/workflow?ref=$br" --jq '.[0].name' >/dev/null 2>&1; then
+                TARGET_BRANCH="$br"
+                break
+              fi
+            done
+
+            if [ -z "$TARGET_BRANCH" ]; then
+              echo "⚠️ $REPO: 일정문서가 있는 브랜치 없음 — default($DEFAULT_BRANCH)로 fallback"
+              TARGET_BRANCH="$DEFAULT_BRANCH"
+            elif [ "$TARGET_BRANCH" != "$DEFAULT_BRANCH" ]; then
+              echo "📍 $REPO: 대상 브랜치 = $TARGET_BRANCH (default: $DEFAULT_BRANCH)"
+            fi
+
             # docs 디렉토리 체크아웃
             TMPDIR=$(mktemp -d)
-            if ! gh api "repos/$ORG/$REPO/tarball/$DEFAULT_BRANCH" > "$TMPDIR/archive.tar.gz" 2>/dev/null; then
+            if ! gh api "repos/$ORG/$REPO/tarball/$TARGET_BRANCH" > "$TMPDIR/archive.tar.gz" 2>/dev/null; then
               echo "⚠️ $REPO: tarball 다운로드 실패 — 건너뜀"
               rm -rf "$TMPDIR"
               echo "::endgroup::"
@@ -94,7 +117,7 @@ jobs:
             fi
 
             # 최신 커밋 SHA 확인
-            LATEST_SHA=$(gh api "repos/$ORG/$REPO/commits/$DEFAULT_BRANCH" --jq '.sha' 2>/dev/null | head -c 7)
+            LATEST_SHA=$(gh api "repos/$ORG/$REPO/commits/$TARGET_BRANCH" --jq '.sha' 2>/dev/null | head -c 7)
 
             # 이전 데이터와 비교하여 변경 여부 확인
             OLD_CHECKSUM=""
@@ -111,7 +134,7 @@ jobs:
             if [ "$FORCE" = "true" ] || [ "$OLD_CHECKSUM" != "$NEW_CHECKSUM" ]; then
               MARK=""
               [ "$FORCE" = "true" ] && MARK=" [force]"
-              UPDATED+=("$REPO ($DEFAULT_BRANCH) from $LATEST_SHA$MARK")
+              UPDATED+=("$REPO ($TARGET_BRANCH) from $LATEST_SHA$MARK")
               if [ "$FORCE" = "true" ]; then
                 echo "✅ $REPO: 강제 동기화 — 업데이트됨"
               else
