@@ -4047,11 +4047,11 @@
     {
       "date": "2026-05-16",
       "totalChecks": 618,
-      "doneChecks": 0
+      "doneChecks": 46
     },
     {
       "date": "2026-05-18",
-      "totalChecks": 547,
+      "totalChecks": 618,
       "doneChecks": 90
     },
     {
@@ -4061,8 +4061,8 @@
     },
     {
       "date": "2026-05-20",
-      "totalChecks": 581,
-      "doneChecks": 0
+      "totalChecks": 619,
+      "doneChecks": 273
     },
     {
       "date": "2026-05-21",

@@ -57,8 +57,11 @@ if (existsSync(configPath)) {
   }
 }
 
-// trackAliasMap — config의 명시적 매핑으로 대체
-const trackAliasMap = {}
+// trackAliasMap — 워크플로 파일명의 트랙명을 config 트랙명에 매핑
+// (e.g. WORKFLOW_gitops_W1.md → team-lead 트랙)
+const trackAliasMap = {
+  gitops: 'team-lead',
+}
 
 const periodMap = {
   W1: '05-12~05-16', W2: '05-19~05-23', W3: '05-26~05-29',
