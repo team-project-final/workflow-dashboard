@@ -52,15 +52,15 @@ export default function RepoCompareRow({ repoId, cache, live, selected, onToggle
         ) : live.error ? (
           <span className="text-red-500" title={live.error}>오류</span>
         ) : (
-          <span className="text-stone-700">{live.done}/{live.total}</span>
+          <span className="text-stone-700">{live.doneChecks}/{live.totalChecks}</span>
         )}
       </td>
       <td className="px-3 py-2 text-sm text-center">
         {live && !live.fetching && !live.error ? (
           <>
-            <span>{diffMarker(c.done, live.done)} done</span>
+            <span>{diffMarker(c.done, live.doneChecks)} done</span>
             {' '}
-            <span>{diffMarker(c.total, live.total)} total</span>
+            <span>{diffMarker(c.total, live.totalChecks)} total</span>
           </>
         ) : '—'}
       </td>
