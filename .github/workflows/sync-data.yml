@@ -6,10 +6,15 @@ on:
     - cron: '0 0,5,10 * * *'
   workflow_dispatch:
     inputs:
-      repo:
-        description: '특정 레포만 동기화 (비우면 전체)'
+      repos:
+        description: '동기화할 레포 (콤마 구분, 비우면 전체)'
         required: false
         type: string
+      force:
+        description: '강제 동기화 (md5 우회 + history/changelog 재계산)'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -36,7 +41,8 @@ jobs:
       - name: Sync repos
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TARGET_REPO: ${{ inputs.repo || '' }}
+          TARGET_REPOS: ${{ inputs.repos || '' }}
+          FORCE: ${{ inputs.force || 'false' }}
         run: |
           set -e
 
@@ -47,9 +53,9 @@ jobs:
           UPDATED=()
 
           for REPO in "${REPOS[@]}"; do
-            # 특정 레포 지정 시 해당 레포만 처리
-            if [ -n "$TARGET_REPO" ] && [ "$TARGET_REPO" != "$REPO" ]; then
-              continue
+            # 선택된 레포만 처리 (콤마 구분)
+            if [ -n "$TARGET_REPOS" ]; then
+              echo ",$TARGET_REPOS," | grep -q ",$REPO," || { echo "⏭️ $REPO: not in selection — skip"; continue; }
             fi
 
             echo "::group::Syncing $REPO"
@@ -97,9 +103,15 @@ jobs:
 
             NEW_CHECKSUM=$(md5sum "data/$REPO.json" | cut -d' ' -f1)
 
-            if [ "$OLD_CHECKSUM" != "$NEW_CHECKSUM" ]; then
-              UPDATED+=("$REPO ($DEFAULT_BRANCH) from $LATEST_SHA")
-              echo "✅ $REPO: 데이터 변경 감지 — 업데이트됨"
+            if [ "$FORCE" = "true" ] || [ "$OLD_CHECKSUM" != "$NEW_CHECKSUM" ]; then
+              MARK=""
+              [ "$FORCE" = "true" ] && MARK=" [force]"
+              UPDATED+=("$REPO ($DEFAULT_BRANCH) from $LATEST_SHA$MARK")
+              if [ "$FORCE" = "true" ]; then
+                echo "✅ $REPO: 강제 동기화 — 업데이트됨"
+              else
+                echo "✅ $REPO: 데이터 변경 감지 — 업데이트됨"
+              fi
             else
               echo "⏭️ $REPO: 변경 없음 — 건너뜀"
               # 변경 없으면 git checkout으로 복원
@@ -117,16 +129,20 @@ jobs:
 
             git add data/*.json
 
-            COMMIT_MSG="data: sync workflow data"
-            for item in "${UPDATED[@]}"; do
-              COMMIT_MSG="$COMMIT_MSG
+            if git diff --cached --quiet; then
+              echo "ℹ️ force 트리거였으나 실제 변경 없음 — 커밋 건너뜀"
+            else
+              COMMIT_MSG="data: sync workflow data"
+              for item in "${UPDATED[@]}"; do
+                COMMIT_MSG="$COMMIT_MSG
             - update $item"
-            done
+              done
 
-            git commit -m "$COMMIT_MSG"
-            git push
+              git commit -m "$COMMIT_MSG"
+              git push
 
-            echo "🚀 ${#UPDATED[@]}개 레포 데이터 업데이트 완료"
+              echo "🚀 ${#UPDATED[@]}개 레포 데이터 업데이트 완료"
+            fi
           else
             echo "✅ 모든 레포 데이터 최신 상태 — 커밋 불필요"
           fi

@@ -3,15 +3,17 @@ import Header from '../components/Header'
 import RepoManager from '../components/settings/RepoManager'
 import DataEditor from '../components/settings/DataEditor'
 import ImportExport from '../components/settings/ImportExport'
+import ForceSyncTab from '../components/settings/ForceSyncTab'
 import { useData } from '../hooks/useData'
 import { useConfig } from '../hooks/useConfig'
 
-type SettingsTab = 'repos' | 'editor' | 'import-export'
+type SettingsTab = 'repos' | 'editor' | 'import-export' | 'force-sync'
 
 const TABS: { id: SettingsTab; label: string }[] = [
   { id: 'repos', label: '레포/트랙 관리' },
   { id: 'editor', label: '데이터 편집' },
   { id: 'import-export', label: 'Import/Export' },
+  { id: 'force-sync', label: '강제 동기화' },
 ]
 
 export default function Settings() {
@@ -45,6 +47,7 @@ export default function Settings() {
         {activeTab === 'import-export' && (
           <ImportExport config={config} isOverridden={isOverridden} onImport={updateConfig} onReset={resetConfig} />
         )}
+        {activeTab === 'force-sync' && <ForceSyncTab config={config} />}
       </div>
     </div>
   )
