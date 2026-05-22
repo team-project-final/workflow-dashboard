@@ -10,7 +10,10 @@ Parse remaining arguments after `sync`:
 |---|---|
 | (empty) | Sync all repos |
 | `{repo-id}` | Sync only this repo |
+| `{repo1},{repo2},...` | 콤마 구분으로 여러 레포 동기화 |
 | `--dry-run` | Preview changes without writing files |
+| `--force` | md5 비교 우회 + history/changelog 재계산 |
+| `--force {repo1},{repo2}` | 특정 레포만 강제 동기화 |
 
 ## Sync Flow
 
@@ -103,6 +106,58 @@ When merging synced data with existing data:
    - Show the conflict: "'{item.text}' was manually set to {done/not done} but sync says {opposite}"
    - Ask: "Keep manual edit / Use synced value / Skip this item"
 4. Apply the user's choice
+
+## Force Sync
+
+강제 동기화는 md5 체크섬 비교를 우회하고 history/changelog를 재계산한다. 데이터가 의심스럽거나 history가 꼬였을 때 사용한다.
+
+### 동작 차이
+
+| | 일반 sync | 강제 sync |
+|---|---|---|
+| md5 비교 | 변경 시만 커밋 | 우회 — 항상 처리 |
+| updatedAt | 변경 시만 갱신 | 항상 갱신 |
+| history | 기존에 append | 전체 재계산 |
+| changelog | diff 기반 추가 | 전체 재계산 |
+| 커밋 메시지 | `- update repo (branch) from sha` | `- update repo (branch) from sha [force]` |
+
+### 실행 경로 1: 로컬
+
+```bash
+# 전체 레포 강제 동기화
+DOCS_DIR=/path/to/docs npm run sync -- --force
+
+# 특정 레포만
+DOCS_DIR=/path/to/docs npm run sync -- --force synapse-platform-svc
+```
+
+### 실행 경로 2: GitHub Actions (원격 트리거)
+
+GitHub Actions `workflow_dispatch` API를 호출한다. PAT(Personal Access Token)가 필요하다.
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer $PAT" \
+  -H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/repos/team-project-final/workflow-dashboard/actions/workflows/sync-data.yml/dispatches \
+  -d '{"ref":"main","inputs":{"repos":"synapse-platform-svc,synapse-frontend","force":"true"}}'
+```
+
+### 실행 경로 3: 대시보드 Settings UI
+
+1. Settings → 강제 동기화 탭 이동
+2. PAT 등록 (최초 1회, localStorage에 저장)
+3. 레포 목록에서 대상 선택 (체크박스 다중 선택)
+4. "강제 동기화 실행" 버튼 클릭
+5. RunStatusPanel에서 진행 상황 폴링 확인
+
+UI 컴포넌트 구조:
+- `ForceSyncTab.tsx` — 탭 컨테이너
+- `PatRegister.tsx` — PAT 입력/저장
+- `RepoForceList.tsx` — 레포 선택 체크박스
+- `RepoCompareRow.tsx` — 캐시 vs 실시간 비교 행
+- `TriggerBar.tsx` — 실행 버튼
+- `RunStatusPanel.tsx` — 워크플로 실행 상태 폴링
 
 ## Batch Sync for GitHub Actions
 
