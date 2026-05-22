@@ -57,7 +57,8 @@ Location: `data/config.json` (project root)
       "owner": "string — person responsible",
       "sources": ["string — repo IDs to combine"]
     }
-  ]
+  ],
+  "basePath": "string — deploy base path (default: '/'), e.g. '/my-dashboard/' for GitHub Pages subdirectory"
 }
 ```
 
@@ -119,7 +120,8 @@ Location: `data/{repo-id}.json`
                   "items": [
                     {
                       "text": "string — check item label",
-                      "done": "boolean"
+                      "done": "boolean",
+                      "source": "string — optional. 'manual' if edited via /project-dashboard edit, 'sync' if from external sync. Omitted for legacy items."
                     }
                   ]
                 }
@@ -217,3 +219,17 @@ Location: `data/.edit-log.json`
 ```
 
 Items edited manually get `"source": "manual"` in the check item.
+
+## Edit Log vs Changelog
+
+These are two separate change tracking mechanisms:
+
+| | Edit Log | Changelog |
+|---|---|---|
+| Location | `data/.edit-log.json` | `data/{repo-id}.json → changelog[]` |
+| Written by | `/project-dashboard edit` (manual edits) | `/project-dashboard sync` (external sync) |
+| Scope | Cross-repo (single file for all tracks) | Per-repo (embedded in each data file) |
+| Purpose | Audit trail for manual edits | Git-based change history from source repos |
+| Includes | User actions (check, uncheck, add, delete) | Commit-level diffs (step_added, check_done, etc.) |
+
+Manual edits are **not** written to `changelog[]`. The changelog only captures changes from external sync operations. To see a complete history of all changes, consult both sources.

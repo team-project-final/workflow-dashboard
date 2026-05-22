@@ -1,6 +1,6 @@
 ---
 name: project-dashboard
-description: Team project progress dashboard — create, manage, and monitor workflow dashboards with multi-source data sync. Subcommands: init, sync, status, config, edit. Use when asked to "project dashboard", "track progress", "workflow dashboard", "team progress", or "project status board".
+description: Team project progress dashboard — create, manage, and monitor workflow dashboards with multi-source data sync. Subcommands: init, sync, status, config, edit. Use when asked to "project dashboard", "track progress", "workflow dashboard", "team progress", "project status board", "진행률 확인", "프로젝트 현황", "대시보드 만들기", "데이터 동기화", "워크플로우 대시보드", "팀 진행 상황", or "프로젝트 현황판".
 ---
 
 # Project Dashboard

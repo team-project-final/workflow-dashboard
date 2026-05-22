@@ -114,7 +114,11 @@ Then:
 3. Confirm: "This will remove {id} from config. Delete data/{id}.json too? (y/n)"
 4. Remove from config.repos
 5. If confirmed, delete the data file
-6. Also check virtualTracks — if any reference this repo, warn the user
+6. Check virtualTracks — if any reference this repo in their `sources` array:
+   - Show which virtual tracks are affected
+   - Ask: "가상 트랙 '{virtualTrack.trackName}'에서 이 레포 참조를 제거할까요? (y/n)"
+   - If yes, remove the repo ID from `virtualTrack.sources`
+   - If the virtual track's `sources` becomes empty after removal, ask: "가상 트랙 '{virtualTrack.trackName}'에 남은 소스가 없습니다. 가상 트랙도 삭제할까요? (y/n)"
 7. Write updated config
 
 ## Add Virtual Track

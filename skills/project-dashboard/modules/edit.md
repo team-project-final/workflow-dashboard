@@ -48,8 +48,11 @@ Parse remaining arguments after `edit`:
 
 **Quick mode** (`--check` / `--uncheck`):
 1. Read the track data file
-2. Search all weeks/steps/phases/items for an item whose `text` contains the search string
-3. If multiple matches, show them and ask which one
+2. Search all weeks/steps/phases/items for an item whose `text` matches the search string:
+   - First try exact match (case-insensitive)
+   - If no exact match, fall back to substring match (case-insensitive)
+3. If multiple matches, show them numbered with their full path (week > step > phase) and ask which one
+4. If no matches found, report: "'{search}' 항목을 찾을 수 없습니다."
 4. Toggle the `done` field
 5. Recalculate `phase.done`, `step.doneChecks`, `week.doneChecks`
 6. Write the updated file

@@ -81,6 +81,26 @@ When `--compare` is provided, show deltas for each metric:
 - Calculate: `current_pct - previous_pct` as percentage change
 - Show: `+{n} items (+{pct}%)` or `unchanged` if no change
 
+## Risk Highlights
+
+After rendering the summary or detail view, scan the data for risks and append a section:
+
+1. **Delayed tracks**: Any track below 30% in the current or past weeks (danger band)
+2. **Unstarted weeks**: Any week that should have started (based on period dates vs today) but has 0% progress
+3. **Stalled tracks**: Tracks where the latest two history entries show zero change (no progress)
+
+**Output format** (append after the main view):
+
+```
+⚠️ 주요 리스크
+
+- {trackName}: {current_pct}% — {reason}
+  (예: "frontend: 12% — W1, W2 모두 목표 대비 지연")
+- {trackName}: W{n} 미시작 — 시작일({start_date}) 경과
+```
+
+If no risks are found, omit this section entirely.
+
 ## Reading Data Files
 
 1. Read `data/config.json` using the Read tool

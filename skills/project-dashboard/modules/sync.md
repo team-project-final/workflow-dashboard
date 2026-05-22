@@ -51,10 +51,11 @@ For each repo (or the specified repo):
 4. Write a temporary JSON file with the Notion data
 5. Run the transform step via Node.js:
    ```bash
-   node -e "
+   node --input-type=module -e "
      import parser from './scripts/parsers/notion.mjs';
-     const raw = JSON.parse(require('fs').readFileSync('/tmp/notion-data.json'));
-     const result = parser.transform(raw, { mapping: {source.mapping}, periodMap: {periodMap} });
+     import { readFileSync } from 'fs';
+     const raw = JSON.parse(readFileSync('/tmp/notion-data.json', 'utf-8'));
+     const result = parser.transform(raw, { mapping: ${JSON.stringify(source.mapping)}, periodMap: ${JSON.stringify(periodMap)} });
      console.log(JSON.stringify(result));
    "
    ```
@@ -151,13 +152,7 @@ curl -X POST \
 4. "강제 동기화 실행" 버튼 클릭
 5. RunStatusPanel에서 진행 상황 폴링 확인
 
-UI 컴포넌트 구조:
-- `ForceSyncTab.tsx` — 탭 컨테이너
-- `PatRegister.tsx` — PAT 입력/저장
-- `RepoForceList.tsx` — 레포 선택 체크박스
-- `RepoCompareRow.tsx` — 캐시 vs 실시간 비교 행
-- `TriggerBar.tsx` — 실행 버튼
-- `RunStatusPanel.tsx` — 워크플로 실행 상태 폴링
+> **Note:** 강제 동기화 UI 컴포넌트(ForceSyncTab, PatRegister 등)는 기본 scaffold에 포함되지 않습니다. 이 기능이 필요하면 Settings 페이지(`src/pages/Settings.tsx`)에 새 탭을 추가하여 구현하세요.
 
 ## Batch Sync for GitHub Actions
 

@@ -98,14 +98,16 @@ After collecting all input, build the config object:
 }
 ```
 
-Then run the scaffold generator:
+Then run the scaffold generator. All source paths below are relative to **the skill's own directory** (`skills/project-dashboard/`), not the output directory.
 
 1. Write config to a temporary file
-2. Run: `node scripts/scaffold.mjs {output-dir} {temp-config-path}`
+2. Run: `node {skill-dir}/scripts/scaffold.mjs {output-dir} {temp-config-path}`
+   - `{skill-dir}` = the directory containing this skill (where `project-dashboard.md` lives)
+   - If `scripts/scaffold.mjs` does not exist in the skill directory, fall back to using the template files in `{skill-dir}/templates/scaffold/` to copy and populate the project structure directly
 3. Delete temporary config file
-4. Copy parser scripts from `scripts/parsers/` to `{output-dir}/scripts/parsers/`
-5. Copy `scripts/sync.mjs` to `{output-dir}/scripts/sync.mjs`
-6. Copy `scripts/validate-data.mjs` to `{output-dir}/scripts/validate-data.mjs`
+4. Copy parser scripts from `{skill-dir}/scripts/parsers/` to `{output-dir}/scripts/parsers/` (if the directory exists)
+5. Copy `{skill-dir}/scripts/sync.mjs` to `{output-dir}/scripts/sync.mjs` (if the file exists)
+6. Copy `{skill-dir}/scripts/validate-data.mjs` to `{output-dir}/scripts/validate-data.mjs` (if the file exists)
 
 Report:
 
