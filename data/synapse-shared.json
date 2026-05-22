@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-22T01:59:17.404Z",
+  "updatedAt": "2026-05-22T06:00:14.650Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1166,68 +1166,68 @@
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "Kafka 이벤트 체인 E2E 시나리오 목록 도출",
-                      "done": false
+                      "text": "Kafka 이벤트 체인 E2E 시나리오 목록 도출 → `docs/guides/E2E_SCENARIOS_W3.md`",
+                      "done": true
                     },
                     {
-                      "text": "서비스 간 이벤트 발행/소비 매핑표 작성",
-                      "done": false
+                      "text": "서비스 간 이벤트 발행/소비 매핑표 작성 → `docs/guides/EVENT_FLOW_MATRIX.md`",
+                      "done": true
                     },
                     {
-                      "text": "코드 리뷰 승인 기준 정의 (PR 템플릿, 리뷰어 지정)",
-                      "done": false
+                      "text": "코드 리뷰 승인 기준 정의 (PR 템플릿, 리뷰어 지정) → TASK Step 7 갱신 완료",
+                      "done": true
                     },
                     {
-                      "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "text": "Instructions 초안 → TASK 문서 반영 (05-22 선행 준비)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Kafka 토픽 ACL 설정 확인 (서비스별 발행/소비 권한)",
+                      "text": "Kafka 토픽 ACL 설정 확인 (서비스별 발행/소비 권한) — Day 1 gitops 세션에서 확인",
                       "done": false
                     },
                     {
-                      "text": "이벤트 페이로드 민감정보 포함 여부 점검",
-                      "done": false
+                      "text": "이벤트 페이로드 민감정보 포함 여부 점검 → UserRegistered.email만 PII (EVENT_FLOW_MATRIX.md §4)",
+                      "done": true
                     },
                     {
-                      "text": "서비스 간 인증 토큰 전파 방식 확인",
-                      "done": false
+                      "text": "서비스 간 인증 토큰 전파 방식 확인 → CloudEvent traceparent 기반 (TASK Constraints 반영)",
+                      "done": true
                     },
                     {
-                      "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "text": "결과 → TASK Constraints 반영 (05-22 선행 준비)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 시나리오 설계",
                   "total": 5,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "gamification 이벤트 체인 시나리오 (카드 복습 → XP 적립 → 레벨업 → 배지 수여 → 알림)",
+                      "text": "gamification 이벤트 체인 시나리오 (카드 복습 → XP 적립 → 레벨업 → 배지 수여 → 알림) → E2E_SCENARIOS_W3.md S2",
+                      "done": true
+                    },
+                    {
+                      "text": "community 이벤트 체인 시나리오 (신고 접수 → 모더레이션 → 알림) — W3 범위 외, W4 이월",
                       "done": false
                     },
                     {
-                      "text": "community 이벤트 체인 시나리오 (신고 접수 → 모더레이션 → 알림)",
-                      "done": false
+                      "text": "card.review.due 이벤트 체인 시나리오 (스케줄러 → Kafka → 알림 발송) → E2E_SCENARIOS_W3.md S3 (샘플 추가 완료)",
+                      "done": true
                     },
                     {
-                      "text": "card.review.due 이벤트 체인 시나리오 (스케줄러 → Kafka → 알림 발송)",
-                      "done": false
-                    },
-                    {
-                      "text": "audit 이벤트 소비 시나리오 (각 서비스 이벤트 → audit_logs 적재)",
+                      "text": "audit 이벤트 소비 시나리오 (각 서비스 이벤트 → audit_logs 적재) — W4 범위",
                       "done": false
                     },
                     {
@@ -1364,7 +1364,7 @@
                 }
               ],
               "totalChecks": 37,
-              "doneChecks": 3
+              "doneChecks": 12
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1586,7 +1586,7 @@
             }
           ],
           "totalChecks": 72,
-          "doneChecks": 3
+          "doneChecks": 12
         },
         {
           "week": "W4",
@@ -2046,7 +2046,7 @@
     {
       "date": "2026-05-22",
       "totalChecks": 277,
-      "doneChecks": 161
+      "doneChecks": 170
     }
   ],
   "changelog": [
@@ -2153,6 +2153,19 @@
           "type": "check_done",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "3개 항목 완료 (0 → 3)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22T06:00:14.650Z",
+      "commit": "4b1f44c",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "9개 항목 완료 (3 → 12)"
         }
       ]
     }
