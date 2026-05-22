@@ -21,7 +21,7 @@ export default function Header({ overallPercent, subtitle, backLink }: HeaderPro
         )}
         <div>
           <h1 className="text-xl font-bold text-amber font-display m-0">{projectName}</h1>
-          <p className="text-xs text-stone-400">{subtitle || 'Workflow Dashboard'}</p>
+          <p className="text-xs text-stone-300">{subtitle || 'Workflow Dashboard'}</p>
         </div>
       </div>
       <div className="flex items-center gap-6">
