@@ -1,10 +1,18 @@
 import { useState, useEffect } from 'react'
-import type { PrdWeek, RepoData, Track, Week } from '../types'
+import type { RepoData, Track, Week } from '../types'
 import type { DashboardConfig, LegacyRepoDef, LegacyVirtualTrackDef, VirtualTrackSource } from '../types/config'
 import { useConfig } from './useConfig'
 import { isNewFormat, getRepoId } from '../types/config'
 
 // Fallback weeks for legacy configs without periods
+export const WEEKS_META = [
+  { week: 'W1', period: '' },
+  { week: 'W2', period: '' },
+  { week: 'W3', period: '' },
+  { week: 'W4', period: '' },
+  { week: 'W5', period: '' },
+]
+
 const LEGACY_WEEKS = [
   { week: 'W1', period: '' },
   { week: 'W2', period: '' },

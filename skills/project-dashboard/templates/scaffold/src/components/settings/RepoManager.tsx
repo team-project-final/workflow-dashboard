@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import type { DashboardConfig, RepoDef, VirtualTrackDef } from '../../types/config'
+import type { DashboardConfig, RepoDef, LegacyRepoDef, VirtualTrackDef, LegacyVirtualTrackDef, VirtualTrackSource } from '../../types/config'
+import { getRepoId, getRepoTrackName, getRepoOwner } from '../../types/config'
 import RepoEditModal from './RepoEditModal'
 import VirtualTrackModal from './VirtualTrackModal'
 
@@ -16,7 +17,7 @@ type ModalState =
 export default function RepoManager({ config, onUpdate }: Props) {
   const [modal, setModal] = useState<ModalState>({ type: 'none' })
 
-  const saveRepo = (repo: RepoDef, index?: number) => {
+  const saveRepo = (repo: RepoDef | LegacyRepoDef, index?: number) => {
     const repos = [...config.repos]
     if (index !== undefined) {
       repos[index] = repo
@@ -28,12 +29,12 @@ export default function RepoManager({ config, onUpdate }: Props) {
   }
 
   const deleteRepo = (index: number) => {
-    if (!confirm(`"${config.repos[index].repo}" 레포를 삭제하시겠습니까?`)) return
+    if (!confirm(`"${getRepoId(config.repos[index])}" 레포를 삭제하시겠습니까?`)) return
     const repos = config.repos.filter((_, i) => i !== index)
     onUpdate({ ...config, repos })
   }
 
-  const saveVirtual = (vt: VirtualTrackDef, index?: number) => {
+  const saveVirtual = (vt: VirtualTrackDef | LegacyVirtualTrackDef, index?: number) => {
     const virtualTracks = [...config.virtualTracks]
     if (index !== undefined) {
       virtualTracks[index] = vt
@@ -45,7 +46,9 @@ export default function RepoManager({ config, onUpdate }: Props) {
   }
 
   const deleteVirtual = (index: number) => {
-    if (!confirm(`"${config.virtualTracks[index].name}" 가상 트랙을 삭제하시겠습니까?`)) return
+    const vtDel = config.virtualTracks[index]
+    const vtName = 'trackName' in vtDel ? vtDel.trackName : (vtDel as LegacyVirtualTrackDef).name
+    if (!confirm(`"${vtName}" 가상 트랙을 삭제하시겠습니까?`)) return
     const virtualTracks = config.virtualTracks.filter((_, i) => i !== index)
     onUpdate({ ...config, virtualTracks })
   }
@@ -64,11 +67,11 @@ export default function RepoManager({ config, onUpdate }: Props) {
 
       <div className="flex flex-col gap-2">
         {config.repos.map((repo, i) => (
-          <div key={repo.repo} className="border border-stone-200 rounded-lg px-4 py-3 flex justify-between items-center">
+          <div key={getRepoId(repo)} className="border border-stone-200 rounded-lg px-4 py-3 flex justify-between items-center">
             <div>
-              <div className="font-semibold text-sm">{repo.repo}</div>
+              <div className="font-semibold text-sm">{getRepoId(repo)}</div>
               <div className="text-xs text-stone-500 mt-0.5">
-                트랙: {repo.tracks.map(t => `${t.name} (${t.owner})`).join(', ')}
+                트랙: {getRepoTrackName(repo)} ({getRepoOwner(repo)})
               </div>
             </div>
             <div className="flex gap-2">
@@ -80,14 +83,19 @@ export default function RepoManager({ config, onUpdate }: Props) {
           </div>
         ))}
 
-        {config.virtualTracks.map((vt, i) => (
-          <div key={vt.name} className="border border-blue-200 rounded-lg px-4 py-3 flex justify-between items-center bg-blue-50">
+        {config.virtualTracks.map((vt, i) => {
+          const vtName = 'trackName' in vt ? vt.trackName : (vt as LegacyVirtualTrackDef).name
+          const vtSources = 'trackName' in vt
+            ? (vt.sources as string[]).join(' + ')
+            : (vt as LegacyVirtualTrackDef).sources.map((s: VirtualTrackSource) => s.repo).join(' + ')
+          return (
+          <div key={vtName} className="border border-blue-200 rounded-lg px-4 py-3 flex justify-between items-center bg-blue-50">
             <div>
               <div className="font-semibold text-sm">
-                🔗 {vt.name} <span className="text-xs text-info font-normal">(가상 트랙 — 병합)</span>
+                🔗 {vtName} <span className="text-xs text-info font-normal">(가상 트랙 — 병합)</span>
               </div>
               <div className="text-xs text-stone-500 mt-0.5">
-                소스: {vt.sources.map(s => s.repo).join(' + ')} → 담당: {vt.owner}
+                소스: {vtSources} → 담당: {vt.owner}
               </div>
             </div>
             <div className="flex gap-2">
@@ -97,7 +105,8 @@ export default function RepoManager({ config, onUpdate }: Props) {
                 className="text-xs px-3 py-1 border border-red-200 text-danger rounded">삭제</button>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
 
       {modal.type === 'repo' && (

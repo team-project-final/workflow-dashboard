@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from 'react'
 import type { DashboardConfig } from '../../types/config'
+import { getRepoId } from '../../types/config'
 import type { RepoData, Step } from '../../types'
 import { WEEKS_META } from '../../hooks/useData'
 
-const WEEKS = WEEKS_META.map(w => w.week)
+const WEEKS = WEEKS_META.map((w: { week: string; period: string }) => w.week)
 const LS_DATA_PREFIX = 'dashboard-data-'
 
 interface Props {
@@ -53,7 +54,7 @@ function recomputeTotals(data: RepoData): RepoData {
 }
 
 export default function DataEditor({ config }: Props) {
-  const allRepos = config.repos.map(r => r.repo)
+  const allRepos = config.repos.map(r => getRepoId(r))
   const [selectedRepo, setSelectedRepo] = useState(allRepos[0] || '')
   const [selectedWeek, setSelectedWeek] = useState('W1')
   const [repoData, setRepoData] = useState<RepoData | null>(null)

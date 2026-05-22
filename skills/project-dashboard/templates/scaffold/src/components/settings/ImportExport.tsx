@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import type { DashboardConfig } from '../../types/config'
+import { getRepoId } from '../../types/config'
 
 interface Props {
   config: DashboardConfig
@@ -26,7 +27,7 @@ function getModifiedRepos(repos: string[]): string[] {
 
 export default function ImportExport({ config, isOverridden, onImport, onReset }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null)
-  const allRepos = config.repos.map(r => r.repo)
+  const allRepos = config.repos.map(r => getRepoId(r))
   const modifiedRepos = getModifiedRepos(allRepos)
 
   const exportConfig = () => downloadJson(config, 'config.json')

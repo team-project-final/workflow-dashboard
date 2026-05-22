@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import type { VirtualTrackDef, VirtualTrackSource, RepoDef } from '../../types/config'
+import type { VirtualTrackDef, LegacyVirtualTrackDef, VirtualTrackSource, RepoDef, LegacyRepoDef } from '../../types/config'
+import { getRepoId } from '../../types/config'
 
 interface Props {
-  initial?: VirtualTrackDef
-  availableRepos: RepoDef[]
-  onSave: (vt: VirtualTrackDef) => void
+  initial?: VirtualTrackDef | LegacyVirtualTrackDef
+  availableRepos: (RepoDef | LegacyRepoDef)[]
+  onSave: (vt: VirtualTrackDef | LegacyVirtualTrackDef) => void
   onCancel: () => void
 }
 
@@ -15,11 +16,15 @@ function extractRepoName(input: string): string {
 }
 
 export default function VirtualTrackModal({ initial, availableRepos, onSave, onCancel }: Props) {
-  const [name, setName] = useState(initial?.name || '')
+  const initialName = initial ? ('trackName' in initial ? initial.trackName : (initial as LegacyVirtualTrackDef).name) : ''
+  const [name, setName] = useState(initialName)
   const [owner, setOwner] = useState(initial?.owner || '')
-  const [sources, setSources] = useState<(VirtualTrackSource & { customRepo?: string })[]>(
-    initial?.sources || [{ repo: '', track: '' }]
-  )
+  const initialSources: (VirtualTrackSource & { customRepo?: string })[] = initial
+    ? ('trackName' in initial
+      ? (initial.sources as string[]).map(s => ({ repo: s, track: '' }))
+      : (initial as LegacyVirtualTrackDef).sources.map(s => ({ repo: s.repo, track: s.track })))
+    : [{ repo: '', track: '' }]
+  const [sources, setSources] = useState<(VirtualTrackSource & { customRepo?: string })[]>(initialSources)
 
   const addSource = () => setSources([...sources, { repo: '', track: '' }])
   const removeSource = (i: number) => setSources(sources.filter((_, idx) => idx !== i))
@@ -52,7 +57,7 @@ export default function VirtualTrackModal({ initial, availableRepos, onSave, onC
       name: name.trim(),
       owner: owner.trim(),
       sources: sources.map(s => ({ repo: s.repo.trim(), track: s.track.trim() })),
-    })
+    } as LegacyVirtualTrackDef)
   }
 
   return (
@@ -101,9 +106,10 @@ export default function VirtualTrackModal({ initial, availableRepos, onSave, onC
                         <select value={src.repo} onChange={e => updateSourceRepo(i, e.target.value)}
                           className="w-full px-2 py-1 border border-stone-300 rounded text-sm bg-white">
                           <option value="">선택...</option>
-                          {availableRepos.map(r => (
-                            <option key={r.repo} value={r.repo}>{r.repo}</option>
-                          ))}
+                          {availableRepos.map(r => {
+                            const rid = getRepoId(r)
+                            return <option key={rid} value={rid}>{rid}</option>
+                          })}
                           <option value="__custom__">직접 입력...</option>
                         </select>
                       )}

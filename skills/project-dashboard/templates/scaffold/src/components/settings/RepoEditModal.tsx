@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import type { RepoDef, TrackDef } from '../../types/config'
+import type { RepoDef, LegacyRepoDef, TrackDef } from '../../types/config'
+import { getRepoId } from '../../types/config'
 
 interface Props {
-  initial?: RepoDef
-  onSave: (repo: RepoDef) => void
+  initial?: RepoDef | LegacyRepoDef
+  onSave: (repo: RepoDef | LegacyRepoDef) => void
   onCancel: () => void
 }
 
@@ -14,8 +15,10 @@ function extractRepoName(input: string): string {
 }
 
 export default function RepoEditModal({ initial, onSave, onCancel }: Props) {
-  const [repoInput, setRepoInput] = useState(initial?.repo || '')
-  const [tracks, setTracks] = useState<TrackDef[]>(initial?.tracks || [{ name: '', owner: '' }])
+  const [repoInput, setRepoInput] = useState(initial ? getRepoId(initial) : '')
+  const [tracks, setTracks] = useState<TrackDef[]>(
+    initial && 'tracks' in initial ? initial.tracks : [{ name: '', owner: '' }]
+  )
 
   const repoName = extractRepoName(repoInput)
   const hasSlash = repoInput.includes('/')
@@ -29,7 +32,7 @@ export default function RepoEditModal({ initial, onSave, onCancel }: Props) {
 
   const handleSave = () => {
     if (!canSave) return
-    onSave({ repo: repoName, tracks: tracks.map(t => ({ name: t.name.trim(), owner: t.owner.trim() })) })
+    onSave({ repo: repoName, tracks: tracks.map(t => ({ name: t.name.trim(), owner: t.owner.trim() })) } as LegacyRepoDef)
   }
 
   return (
