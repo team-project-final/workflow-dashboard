@@ -143,9 +143,43 @@ When `--test` is passed:
      "virtualTracks": []
    }
    ```
-3. Run scaffold generator
-4. Run: `cd {temp-dir} && npm install && npm run build`
-5. Run: `npm run validate:data`
-6. If all pass: "✅ Self-test passed"
-7. Clean up temp directory
-8. If any step fails: show error and keep temp directory for debugging
+3. Build a minimal test repo data file (`data/test-repo.json`):
+   ```json
+   {
+     "repo": "test-repo",
+     "updatedAt": "2026-01-01T00:00:00.000Z",
+     "tracks": [
+       {
+         "name": "Test",
+         "owner": "tester",
+         "weeks": [
+           {
+             "week": "W1",
+             "period": "01-01~01-07",
+             "steps": [
+               {
+                 "step": "Setup",
+                 "phases": [
+                   { "phase": "Init", "checks": [{ "text": "Project init", "done": true }], "total": 1, "done": 1 }
+                 ],
+                 "totalChecks": 1,
+                 "doneChecks": 1
+               }
+             ],
+             "totalChecks": 1,
+             "doneChecks": 1
+           }
+         ]
+       }
+     ],
+     "prd": [{ "week": "W1", "items": [{ "text": "Test PRD item", "done": true }] }],
+     "history": [],
+     "changelog": []
+   }
+   ```
+4. Run scaffold generator
+5. Run: `cd {temp-dir} && npm install && npm run build`
+6. Run: `npm run validate:data`
+7. If all pass: "✅ Self-test passed"
+8. Clean up temp directory
+9. If any step fails: show error and keep temp directory for debugging
