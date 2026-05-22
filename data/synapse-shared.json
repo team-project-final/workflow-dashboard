@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-21T23:35:26.161Z",
+  "updatedAt": "2026-05-22T01:26:46.312Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1142,24 +1142,24 @@
           "steps": [
             {
               "name": "전체 통합 테스트 조율",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "PRD_W3 해당 요구사항 확인 (서비스 간 통합 검증)",
-                      "done": false
+                      "text": "PRD_W3 해당 요구사항 확인 (서비스 간 통합 검증 — FR-TL-201)",
+                      "done": true
                     },
                     {
-                      "text": "Duration 산정 확인",
-                      "done": false
+                      "text": "Duration 산정 확인 (2일: Day 3~4)",
+                      "done": true
                     }
                   ]
                 },
@@ -1364,7 +1364,7 @@
                 }
               ],
               "totalChecks": 37,
-              "doneChecks": 0
+              "doneChecks": 3
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1586,7 +1586,7 @@
             }
           ],
           "totalChecks": 72,
-          "doneChecks": 0
+          "doneChecks": 3
         },
         {
           "week": "W4",
@@ -2042,6 +2042,11 @@
       "date": "2026-05-21",
       "totalChecks": 277,
       "doneChecks": 158
+    },
+    {
+      "date": "2026-05-22",
+      "totalChecks": 277,
+      "doneChecks": 161
     }
   ],
   "changelog": [
@@ -2135,6 +2140,19 @@
           "type": "check_done",
           "target": "W1 > CI/CD 파이프라인 구성",
           "detail": "1개 항목 완료 (26 → 27)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22T01:26:46.312Z",
+      "commit": "b24029b",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "3개 항목 완료 (0 → 3)"
         }
       ]
     }
