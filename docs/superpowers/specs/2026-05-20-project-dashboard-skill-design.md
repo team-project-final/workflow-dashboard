@@ -35,7 +35,7 @@
 | 서브커맨드 | 설명 | 예시 |
 |---|---|---|
 | `init` | 새 프로젝트 대시보드 스캐폴딩 | `/project-dashboard init` |
-| `sync` | 외부 소스에서 데이터 동기화 | `/project-dashboard sync` |
+| `sync` | 외부 소스에서 데이터 동기화 (일반/강제) | `/project-dashboard sync --force` |
 | `status` | 터미널에서 진행률 조회 | `/project-dashboard status` |
 | `config` | 리포/트랙/주차 설정 관리 | `/project-dashboard config add-repo` |
 | `edit` | 체크아이템/스텝/페이즈 직접 편집 | `/project-dashboard edit` |
@@ -120,9 +120,12 @@ my-project-dashboard/
 ### 서브커맨드
 
 ```
-/project-dashboard sync              # 전체 트랙 동기화
-/project-dashboard sync {track}      # 특정 트랙만 동기화
-/project-dashboard sync --dry-run    # 변경사항 미리보기 (실제 파일 변경 없음)
+/project-dashboard sync                          # 전체 트랙 동기화
+/project-dashboard sync {track}                  # 특정 트랙만 동기화
+/project-dashboard sync {track1},{track2}        # 여러 트랙 동기화
+/project-dashboard sync --dry-run                # 변경사항 미리보기 (실제 파일 변경 없음)
+/project-dashboard sync --force                  # 전체 트랙 강제 동기화
+/project-dashboard sync --force {track1},{track2} # 특정 트랙 강제 동기화
 ```
 
 ### 동기화 플로우
@@ -137,6 +140,22 @@ my-project-dashboard/
 ### 충돌 처리
 
 - 로컬에서 `edit`으로 수정한 데이터와 외부 소스 데이터가 충돌 시 사용자에게 선택지 제시 (로컬 유지 / 외부 소스 덮어쓰기 / 수동 병합)
+
+### 강제 동기화
+
+> 관련 설계: [Force Sync 설계](2026-05-21-force-sync-design.md)
+
+"강제"의 의미는 **md5 변경 감지 우회 + `updatedAt` 갱신 + history/changelog 재계산**이다. 기존 누적 데이터는 보존된다(파괴적이지 않음).
+
+실행 경로는 세 가지:
+1. **로컬 CLI:** `npm run sync -- --force`
+2. **GitHub Actions:** `workflow_dispatch` API 호출 (PAT 필요)
+3. **대시보드 UI:** Settings → 강제 동기화 탭 (ForceSyncTab 컴포넌트)
+
+사용 시나리오:
+- 동기화 결과가 의심스러울 때 (history 회귀 등)
+- md5가 같지만 changelog/history 재계산이 필요할 때
+- 새 파서 로직 배포 후 전체 데이터 재생성 시
 
 ---
 
