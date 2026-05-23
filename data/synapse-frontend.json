@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-23T07:24:44.252Z",
+  "updatedAt": "2026-05-23T11:03:34.410Z",
   "tracks": [
     {
       "name": "frontend",
@@ -230,20 +230,20 @@
             },
             {
               "name": "로그인/회원가입 화면 및 OAuth 인증",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx 인증 화면)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
@@ -254,11 +254,11 @@
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
                       "text": "로그인 화면 UI 요소 정의 (이메일/비밀번호 폼 + OAuth 버튼)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "회원가입 화면 UI 요소 정의 (이메일/비밀번호/확인 폼)",
@@ -277,19 +277,19 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (인증 화면 자체는 공개)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 없음 (인증 전 화면)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: Yes (인증 화면)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "토큰 저장: SecureStorage만 허용 (localStorage 금지)",
@@ -304,15 +304,15 @@
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "인증 상태 모델 설계 (AuthState: unauthenticated/loading/authenticated)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "토큰 저장 구조 설계 (access_token: SecureStorage 저장, refresh_token: httpOnly Cookie — 서버에서 Set-Cookie로 발급되므로 클라이언트에서 직접 저장 불필요)",
@@ -327,7 +327,7 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
                       "text": "토큰 SecureStorage 전용 저장 확인",
@@ -339,7 +339,7 @@
                     },
                     {
                       "text": "platform-svc 베이스 URL 환경변수 관리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
@@ -350,7 +350,7 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
                       "text": "LoginRequest 모델 정의 (email, password)",
@@ -366,7 +366,7 @@
                     },
                     {
                       "text": "AuthState Provider 설계",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
@@ -396,38 +396,38 @@
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "AuthNotifier (Riverpod StateNotifier) 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "OAuth 콜백 처리 및 토큰 수신 로직",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "GoRouter redirect guard 구현 (미인증 시 /login 이동)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Unit 테스트 (AuthNotifier 상태 전이)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
                       "text": "로그인 페이지 Widget 구현 (폼 + OAuth 버튼)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "회원가입 페이지 Widget 구현 (폼 + 유효성 검증)",
@@ -450,11 +450,11 @@
                 {
                   "name": "View + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
                       "text": "로그인 화면 렌더링 + OAuth 버튼 동작 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "회원가입 화면 렌더링 + 유효성 검증 확인",
@@ -472,11 +472,11 @@
                 }
               ],
               "totalChecks": 42,
-              "doneChecks": 0
+              "doneChecks": 17
             },
             {
               "name": "대시보드 및 사이드바 네비게이션",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -523,23 +523,23 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 로그인 사용자",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "GoRouter guard로 미인증 리다이렉트 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
@@ -706,11 +706,11 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 0
+              "doneChecks": 4
             }
           ],
           "totalChecks": 116,
-          "doneChecks": 35
+          "doneChecks": 56
         },
         {
           "week": "W2",
@@ -3135,6 +3135,24 @@
           "type": "check_undone",
           "target": "W1 > 대시보드 및 사이드바 네비게이션",
           "detail": "4개 항목 해제 (4 → 0)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-23T11:03:34.410Z",
+      "commit": "4a43d7a",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > 로그인/회원가입 화면 및 OAuth 인증",
+          "detail": "17개 항목 완료 (0 → 17)"
+        },
+        {
+          "type": "check_done",
+          "target": "W1 > 대시보드 및 사이드바 네비게이션",
+          "detail": "4개 항목 완료 (0 → 4)"
         }
       ]
     }
