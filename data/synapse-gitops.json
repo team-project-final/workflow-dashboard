@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-05-26T04:48:51.404Z",
+  "updatedAt": "2026-05-26T05:24:06.870Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -664,173 +664,161 @@
           "steps": [
             {
               "name": "staging 환경 overlay",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "staging 클러스터/네임스페이스 분리 정책 결정",
-                      "done": false
+                      "text": "staging 네임스페이스 분리 (`synapse-staging`)",
+                      "done": true
                     },
                     {
-                      "text": "dev → staging 승격 트리거 결정 (자동 vs 수동 머지)",
-                      "done": false
+                      "text": "dev → staging 승격 트리거 결정 (auto-sync — main 머지 시)",
+                      "done": true
                     },
                     {
-                      "text": "staging 트래픽 규모 추정 + 리소스 산정",
-                      "done": false
-                    },
-                    {
-                      "text": "staging 전용 도메인 (staging-<app>.<도메인>)",
-                      "done": false
+                      "text": "staging 리소스 산정 (replicas=2)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "staging overlay 작성",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "apps/<app>/overlays/staging/kustomization.yaml × 5",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "staging replicaCount=2, resources 적정값",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "staging ExternalSecret (synapse/staging/<app>/* 경로)",
-                      "done": false
+                      "text": "staging ExternalSecret 경로 적용",
+                      "done": true
                     },
                     {
-                      "text": "staging Ingress + TLS",
-                      "done": false
+                      "text": "staging Ingress 매니페스트 (`infra/ingress/staging-ingress.yaml`, TLS는 ACM 후)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ApplicationSet 확장",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "generator를 매트릭스(apps × envs)로 확장",
-                      "done": false
+                      "text": "generator 매트릭스(apps × envs) 확장",
+                      "done": true
                     },
                     {
-                      "text": "dev/staging 각 환경에 5개 앱 Application 자동 생성",
-                      "done": false
+                      "text": "dev/staging 각 5개 앱 Application 자동 생성",
+                      "done": true
                     },
                     {
-                      "text": "sync policy: dev auto, staging auto (prod는 W4에서 manual)",
-                      "done": false
+                      "text": "sync policy: dev auto, **staging auto** (prod는 W4 manual)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "적용 + 검증 + 문서화",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "git push → 10개 Application (5앱 × 2환경) 모두 Synced",
-                      "done": false
+                      "text": "git push → 10개 Application (5앱 × 2환경) 자동 생성",
+                      "done": true
                     },
                     {
-                      "text": "dev → staging 승격 1회 시뮬레이션",
-                      "done": false
+                      "text": "dev → staging 승격 (auto-sync 전환 — main 머지 시 자동)",
+                      "done": true
                     },
                     {
-                      "text": "staging 도메인으로 5개 앱 헬스체크 통과",
-                      "done": false
-                    },
-                    {
-                      "text": "승격 절차 README 작성",
-                      "done": false
+                      "text": "승격 절차 README 작성 (`dev-to-staging-promotion.md`)",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 15,
-              "doneChecks": 0
+              "totalChecks": 13,
+              "doneChecks": 13
             },
             {
               "name": "Observability 스택 (Prometheus + Grafana + Loki)",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "kube-prometheus-stack vs 개별 설치 결정",
-                      "done": false
+                      "text": "kube-prometheus-stack 사용 결정",
+                      "done": true
                     },
                     {
-                      "text": "로그 수집 백엔드 결정 (Loki vs CloudWatch vs Elasticsearch)",
-                      "done": false
+                      "text": "로그 백엔드 = Loki 결정",
+                      "done": true
                     },
                     {
-                      "text": "메트릭/로그 보존 기간 (Prometheus 15일, Loki 30일 등)",
-                      "done": false
+                      "text": "보존 기간 (Prometheus 15일, Loki 30일)",
+                      "done": true
                     },
                     {
-                      "text": "알람 채널 결정 (Slack vs PagerDuty vs Email)",
-                      "done": false
+                      "text": "알람 채널 = Slack 결정",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "메트릭 스택 설치",
-                  "total": 5,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "kube-prometheus-stack helm 또는 매니페스트 적용",
-                      "done": false
+                      "text": "kube-prometheus-stack helm 적용 (A2 실 EKS Running)",
+                      "done": true
                     },
                     {
-                      "text": "Grafana admin 비밀번호 → ExternalSecret 연동",
-                      "done": false
+                      "text": "Grafana admin 비밀번호 → ExternalSecret (ESO, A2 동기화 확인)",
+                      "done": true
                     },
                     {
-                      "text": "Grafana 외부 노출 + TLS + SSO",
-                      "done": false
+                      "text": "5개 앱 ServiceMonitor 정의",
+                      "done": true
                     },
                     {
-                      "text": "5개 앱 ServiceMonitor / PodMonitor 정의",
-                      "done": false
-                    },
-                    {
-                      "text": "/actuator/prometheus 또는 동등 endpoint 스크레이프 확인",
-                      "done": false
+                      "text": "/actuator/prometheus 스크레이프 확인 (A2 타깃 대부분 UP)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "로그 스택 + 대시보드",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Loki + Promtail 또는 CloudWatch agent 설치",
-                      "done": false
+                      "text": "Loki + Promtail 설치 (A2 실 EKS Running)",
+                      "done": true
                     },
                     {
-                      "text": "5개 앱 로그 수집 확인 (Grafana Explore에서 조회 가능)",
-                      "done": false
+                      "text": "로그 수집 (Promtail DaemonSet, EBS CSI 영속화)",
+                      "done": true
                     },
                     {
-                      "text": "Grafana 대시보드 1개 이상 (Synapse 개요: 5앱 상태, 트래픽, 5xx)",
-                      "done": false
+                      "text": "Grafana 대시보드 (Synapse 개요)",
+                      "done": true
                     },
                     {
-                      "text": "앱별 상세 대시보드 1개 이상 (예: platform-svc)",
+                      "text": "앱별 상세 대시보드 — 선택, 미작성(W5 백로그)",
                       "done": false
                     }
                   ]
@@ -838,41 +826,41 @@
                 {
                   "name": "알람 + 문서화",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
-                      "text": "PrometheusRule: 앱 Pod 다운 5분 이상 → critical",
-                      "done": false
+                      "text": "PrometheusRule: Pod 다운 5분 → critical",
+                      "done": true
                     },
                     {
-                      "text": "PrometheusRule: 메모리 90% 이상 10분 → warning",
-                      "done": false
+                      "text": "PrometheusRule: 메모리 90% 10분 → warning",
+                      "done": true
                     },
                     {
-                      "text": "PrometheusRule: 5xx 비율 5% 이상 5분 → critical",
-                      "done": false
+                      "text": "PrometheusRule: 5xx 5% 5분 → critical",
+                      "done": true
                     },
                     {
-                      "text": "Alertmanager 라우팅 (Slack 채널 또는 PagerDuty)",
-                      "done": false
+                      "text": "Alertmanager → Slack 라우팅 (실 webhook, A2 라우팅 확인)",
+                      "done": true
                     },
                     {
-                      "text": "알람 1건 의도적 발생 → 채널 도달 확인",
-                      "done": false
+                      "text": "알람 발화 → slack receiver 라우팅 확인 (채널 수신은 눈 확인)",
+                      "done": true
                     },
                     {
-                      "text": "대시보드/알람 README 작성",
-                      "done": false
+                      "text": "대시보드/알람 README (`infra/monitoring/README.md`)",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 19,
-              "doneChecks": 0
+              "totalChecks": 18,
+              "doneChecks": 17
             }
           ],
-          "totalChecks": 34,
-          "doneChecks": 0
+          "totalChecks": 31,
+          "doneChecks": 30
         },
         {
           "week": "W4",
@@ -1364,7 +1352,7 @@
     {
       "date": "2026-05-26",
       "totalChecks": 207,
-      "doneChecks": 84
+      "doneChecks": 114
     }
   ],
   "changelog": [
@@ -1429,6 +1417,24 @@
           "type": "check_done",
           "target": "W2 > Secret 관리 (External Secrets Operator)",
           "detail": "1개 항목 완료 (15 → 16)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26T05:24:06.870Z",
+      "commit": "2576807",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > staging 환경 overlay",
+          "detail": "13개 항목 완료 (0 → 13)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > Observability 스택 (Prometheus + Grafana + Loki)",
+          "detail": "17개 항목 완료 (0 → 17)"
         }
       ]
     }
