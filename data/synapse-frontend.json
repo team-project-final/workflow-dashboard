@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-05-26T08:25:32.120Z",
+  "updatedAt": "2026-05-26T09:00:49.680Z",
   "tracks": [
     {
       "name": "frontend",
@@ -277,7 +277,7 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 3,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (인증 화면 자체는 공개)",
@@ -293,7 +293,7 @@
                     },
                     {
                       "text": "토큰 저장: SecureStorage만 허용 (localStorage 금지)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
@@ -304,7 +304,7 @@
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 2,
+                  "done": 3,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
@@ -316,7 +316,7 @@
                     },
                     {
                       "text": "토큰 저장 구조 설계 (access_token: SecureStorage 저장, refresh_token: httpOnly Cookie — 서버에서 Set-Cookie로 발급되므로 클라이언트에서 직접 저장 불필요)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
@@ -327,11 +327,11 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 1,
+                  "done": 2,
                   "items": [
                     {
                       "text": "토큰 SecureStorage 전용 저장 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비밀번호 입력 마스킹 확인",
@@ -350,15 +350,15 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 1,
+                  "done": 3,
                   "items": [
                     {
                       "text": "LoginRequest 모델 정의 (email, password)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "SignupRequest 모델 정의 (email, password, confirmPassword)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "AuthToken 모델 정의 (accessToken, expiresIn) — refreshToken은 httpOnly Cookie로 서버 관리, JSON body 미포함",
@@ -376,20 +376,24 @@
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 3,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "AuthRepository 클래스 작성 (HTTP client + platform-svc 연동)",
-                      "done": false
+                      "text": "AuthRepositoryPort + platform AuthRepository 구현 (OAuth redirect + token storage 경계)",
+                      "done": true
+                    },
+                    {
+                      "text": "PLAT-009 email/password login/signup API 연동 구현",
+                      "done": true
                     },
                     {
                       "text": "SecureStorage 토큰 저장/조회/삭제 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "flutter_secure_storage 의존성 추가",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -423,7 +427,7 @@
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 1,
+                  "done": 5,
                   "items": [
                     {
                       "text": "로그인 페이지 Widget 구현 (폼 + OAuth 버튼)",
@@ -431,26 +435,26 @@
                     },
                     {
                       "text": "회원가입 페이지 Widget 구현 (폼 + 유효성 검증)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "폼 유효성 검증 (비밀번호 8자+, 영문+숫자+특수문자)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "로딩 상태 및 에러 상태 UI 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Widget 테스트 (폼 제출, 에러 표시)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test",
                   "total": 4,
-                  "done": 1,
+                  "done": 2,
                   "items": [
                     {
                       "text": "로그인 화면 렌더링 + OAuth 버튼 동작 확인",
@@ -458,7 +462,7 @@
                     },
                     {
                       "text": "회원가입 화면 렌더링 + 유효성 검증 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Smoke Test 1건 (로그인 → 대시보드 이동)",
@@ -471,8 +475,8 @@
                   ]
                 }
               ],
-              "totalChecks": 42,
-              "doneChecks": 17
+              "totalChecks": 43,
+              "doneChecks": 31
             },
             {
               "name": "대시보드 및 사이드바 네비게이션",
@@ -709,8 +713,8 @@
               "doneChecks": 4
             }
           ],
-          "totalChecks": 116,
-          "doneChecks": 56
+          "totalChecks": 117,
+          "doneChecks": 70
         },
         {
           "week": "W2",
@@ -3084,8 +3088,8 @@
     },
     {
       "date": "2026-05-26",
-      "totalChecks": 474,
-      "doneChecks": 79
+      "totalChecks": 475,
+      "doneChecks": 93
     }
   ],
   "changelog": [
@@ -3168,6 +3172,19 @@
           "type": "check_done",
           "target": "W1 > 대시보드 및 사이드바 네비게이션",
           "detail": "4개 항목 완료 (0 → 4)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-26T09:00:49.680Z",
+      "commit": "c202da4",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > 로그인/회원가입 화면 및 OAuth 인증",
+          "detail": "14개 항목 완료 (17 → 31)"
         }
       ]
     }
