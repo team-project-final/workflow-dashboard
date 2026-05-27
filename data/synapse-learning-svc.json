@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-27T01:47:34.062Z",
+  "updatedAt": "2026-05-27T01:49:40.482Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -4429,6 +4429,11 @@
         {
           "id": "FR-LA-202",
           "title": "시맨틱 캐시로 중복 요청이 최적화된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-203",
+          "title": "사용자가 노트 기반 Q&A로 AI에게 질문할 수 있다",
           "status": "not_started"
         }
       ]
