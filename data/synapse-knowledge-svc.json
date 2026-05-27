@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-27T02:02:40.468Z",
+  "updatedAt": "2026-05-27T08:33:12.337Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -714,277 +714,281 @@
           "steps": [
             {
               "name": "graph 모듈 — 백링크 + D3.js 데이터 API",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (graph 모듈)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "note_links 기반 양방향 조회 요건 분석 (outgoing/incoming 링크)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "백링크 조회 API 요건 정의 (특정 노트를 참조하는 노트 목록)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "D3.js 시각화용 노드/엣지 JSON 데이터 구조 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "그래프 탐색 깊이 제한 (depth) 정책 정의",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 노트 그래프만)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "note_links 테이블 확인/갱신 (sourceNoteId, targetNoteId, createdAt)",
-                      "done": true
+                      "text": "note_links 테이블 확인/갱신 (source_note_id, target_note_id, link_type: wikilink|reference|embed, context_snippet, created_at)",
+                      "done": false
                     },
                     {
-                      "text": "양방향 조회를 위한 인덱스 설계 (sourceNoteId, targetNoteId)",
-                      "done": true
+                      "text": "양방향 조회를 위한 인덱스 설계 (source_note_id, target_note_id)",
+                      "done": false
                     },
                     {
-                      "text": "복합 유니크 제약 (sourceNoteId + targetNoteId)",
-                      "done": true
+                      "text": "복합 유니크 제약 (source_note_id + target_note_id)",
+                      "done": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "items": [
                     {
                       "text": "그래프 데이터 노출 범위 제한 (본인 노트만)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "깊이 제한으로 과도한 탐색 방지",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (노트 소유자 확인)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 7,
-                  "done": 7,
+                  "done": 0,
                   "items": [
                     {
                       "text": "BacklinkResponse 정의 (noteId, title, createdAt)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "GraphNodeDto 정의 (id, title, group)",
-                      "done": true
+                      "text": "GraphNodeDto 정의 (id, title, linkCount, pageRank)",
+                      "done": false
                     },
                     {
-                      "text": "GraphEdgeDto 정의 (source, target)",
-                      "done": true
+                      "text": "GraphEdgeDto 정의 (source, target, type)",
+                      "done": false
                     },
                     {
                       "text": "GraphDataResponse 정의 (nodes[], edges[])",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "NoteLink Entity 확인/갱신",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 5,
-                  "done": 5,
+                  "done": 0,
                   "items": [
                     {
                       "text": "NoteLinkRepository 인터페이스 작성/갱신",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "findByTargetNoteId (백링크 조회) 커스텀 쿼리",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "findBySourceNoteId (아웃링크 조회) 커스텀 쿼리",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "재귀 그래프 탐색 쿼리 (depth 제한 CTE)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Flyway 마이그레이션 스크립트 작성 (필요 시)",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 7,
+                  "done": 0,
                   "items": [
                     {
                       "text": "GraphService 구현 (getBacklinks, getOutlinks, getGraphData)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "백링크 조회 서비스 (targetNoteId → source 노트 목록)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "아웃링크 조회 서비스 (sourceNoteId → target 노트 목록)",
-                      "done": true
+                      "done": false
                     },
                     {
-                      "text": "D3.js용 노드/엣지 JSON 생성 서비스 (depth 제한 BFS/DFS)",
-                      "done": true
+                      "text": "D3.js용 노드/엣지 JSON 생성 서비스 (depth 제한 BFS/DFS — 노드: {id,title,linkCount,pageRank}, 엣지: {source,target,type})",
+                      "done": false
                     },
                     {
                       "text": "소유자 검증 로직 구현",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 7,
-                  "done": 7,
+                  "total": 8,
+                  "done": 0,
                   "items": [
                     {
-                      "text": "GET /api/v1/notes/{noteId}/backlinks 엔드포인트 구현",
-                      "done": true
+                      "text": "GET /notes/{noteId}/backlinks 엔드포인트 구현",
+                      "done": false
                     },
                     {
-                      "text": "GET /api/v1/notes/{noteId}/outlinks 엔드포인트 구현",
-                      "done": true
+                      "text": "GET /notes/{noteId}/links 엔드포인트 구현 (forward links — Wiki 추가 예정)",
+                      "done": false
                     },
                     {
-                      "text": "GET /api/v1/graph?noteId={id}&depth={n} 엔드포인트 구현 (D3.js 데이터)",
-                      "done": true
+                      "text": "GET /graph/data 엔드포인트 구현 (D3.js 데이터 — nodes[{id,title,linkCount,pageRank}], edges[{source,target,type}])",
+                      "done": false
+                    },
+                    {
+                      "text": "GET /graph/neighbors/{noteId} 엔드포인트 구현 (인접 노드 탐색)",
+                      "done": false
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "통합 테스트 (양방향 링크 + 그래프 JSON 검증)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 49,
-              "doneChecks": 49
+              "totalChecks": 50,
+              "doneChecks": 0
             },
             {
               "name": "ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
@@ -1019,7 +1023,7 @@
                       "done": false
                     },
                     {
-                      "text": "Kafka consumer 그룹 및 토픽 (note.updated) 확인",
+                      "text": "Kafka consumer 그룹 및 토픽 (note.created, note.updated, note.deleted — 3개 토픽 모두) 확인",
                       "done": false
                     },
                     {
@@ -1149,7 +1153,7 @@
                       "done": false
                     },
                     {
-                      "text": "Kafka Consumer 구현 (note.updated 토픽 소비 → ES 인덱싱)",
+                      "text": "Kafka Consumer 구현 (note.created, note.updated, note.deleted 3개 토픽 소비 → ES 인덱싱)",
                       "done": false
                     },
                     {
@@ -1221,8 +1225,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 88,
-          "doneChecks": 49
+          "totalChecks": 89,
+          "doneChecks": 0
         },
         {
           "week": "W3",
@@ -4092,7 +4096,7 @@
     },
     {
       "date": "2026-05-27",
-      "totalChecks": 618,
+      "totalChecks": 619,
       "doneChecks": 322
     }
   ],
@@ -4549,6 +4553,19 @@
           "type": "check_done",
           "target": "W2 > graph 모듈 — 백링크 + D3.js 데이터 API",
           "detail": "49개 항목 완료 (0 → 49)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27T08:33:12.337Z",
+      "commit": "e18d422",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W2 > graph 모듈 — 백링크 + D3.js 데이터 API",
+          "detail": "49개 항목 해제 (49 → 0)"
         }
       ]
     }
