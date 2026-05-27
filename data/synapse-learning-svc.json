@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-26T08:25:27.697Z",
+  "updatedAt": "2026-05-27T01:46:13.329Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -1262,503 +1262,371 @@
           "steps": [
             {
               "name": "AI 카드 자동 생성 — note.created Kafka 소비 → LLM → Card 생성 → learning-card API 호출",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (AI 카드 자동 생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
-                  "total": 5,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "note.created Kafka 이벤트 스키마 분석 (noteId, userId, title, content)",
-                      "done": false
+                      "text": "note.created Kafka 이벤트 스키마 분석 (event_id, note_id, user_id, tenant_id, deck_id)",
+                      "done": true
                     },
                     {
-                      "text": "LLM 프롬프트 설계 (노트 내용 → Q&A 카드 생성, 최대 5장)",
-                      "done": false
+                      "text": "LLM 프롬프트 설계 (노트 내용 → Q&A 카드 생성, 3~5장)",
+                      "done": true
                     },
                     {
-                      "text": "learning-card API 호출 스펙 분석 (POST /cards bulk create)",
-                      "done": false
+                      "text": "learning-card API 호출 스펙 분석 (POST /decks/{deck_id}/cards)",
+                      "done": true
                     },
                     {
-                      "text": "생성 실패 시 재시도/DLQ 전략 정의",
-                      "done": false
-                    },
-                    {
-                      "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "text": "생성 실패 시 재시도/DLQ 전략 정의 (3회, 2s→4s→8s, DLQ: note.created.dlq)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (내부 Kafka 소비 + 서비스 간 호출)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "LLM API 키 관리 (External Secrets)",
-                      "done": false
+                      "text": "LLM API 키 관리 (pydantic-settings, .env)",
+                      "done": true
                     },
                     {
-                      "text": "서비스 간 인증 (ServiceAccount JWT 또는 내부 토큰)",
-                      "done": false
-                    },
-                    {
-                      "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "text": "서비스 간 인증 (X-User-Id / X-Tenant-Id 헤더)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "아키텍처 설계",
-                  "total": 5,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "파이프라인 설계 (note.created 소비 → 노트 내용 조회 → LLM 호출 → 카드 생성 API)",
-                      "done": false
+                      "text": "파이프라인 설계: note.created 소비 → NoteApiClient(노트 조회) → LLM → CardApiClient(카드 저장)",
+                      "done": true
                     },
                     {
-                      "text": "LLM 모델 선택 (GPT-4o / Claude 등) + 토큰 제한 설정",
-                      "done": false
+                      "text": "LLM 모델: Claude (claude-3-5-sonnet-20240620), Jinja2 프롬프트 템플릿",
+                      "done": true
                     },
                     {
-                      "text": "프롬프트 템플릿 설계 (시스템 프롬프트 + 노트 내용 + 출력 포맷)",
-                      "done": false
-                    },
-                    {
-                      "text": "비동기 처리 설계 (Kafka 소비 → 별도 스레드풀에서 LLM 호출)",
-                      "done": false
-                    },
-                    {
-                      "text": "Duration(final) 갱신",
-                      "done": false
+                      "text": "비동기 처리: asyncio.create_task로 consume loop 분리",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
-                  "total": 4,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "LLM으로 전송되는 노트 내용 민감정보 필터링",
-                      "done": false
+                      "text": "LLM 응답 검증 (JSON 파싱 + Pydantic 모델 검증)",
+                      "done": true
                     },
                     {
-                      "text": "LLM 응답 검증 (유효한 Q&A 포맷인지 확인)",
-                      "done": false
-                    },
-                    {
-                      "text": "비용 제어 (사용자당 일일 호출 제한)",
-                      "done": false
-                    },
-                    {
-                      "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "text": "비용 제어: 기존 `@track_tokens` 데코레이터 유지",
+                      "done": true
                     }
                   ]
                 },
                 {
-                  "name": "DTO / Entity 설계 (API First)",
-                  "total": 5,
-                  "done": 0,
+                  "name": "DTO / Entity 설계",
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "NoteCreatedEvent DTO 정의 (Kafka 소비용)",
-                      "done": false
+                      "text": "`NoteCreatedEvent` DTO (`app/kafka/schemas.py`)",
+                      "done": true
                     },
                     {
-                      "text": "LlmCardGenerationRequest DTO 정의 (noteContent, maxCards)",
-                      "done": false
-                    },
-                    {
-                      "text": "LlmCardGenerationResponse DTO 정의 (cards[]: question, answer, difficulty)",
-                      "done": false
-                    },
-                    {
-                      "text": "CardCreateRequest DTO 정의 (learning-card API 호출용)",
-                      "done": false
-                    },
-                    {
-                      "text": "Output Format → TASK 반영",
-                      "done": false
+                      "text": "`GeneratedCard` / `CardGenerateResponse` (기존 `app/schemas/ai.py` 활용)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Client 구현",
-                  "total": 3,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "NoteApiClient 구현 (knowledge-svc에서 노트 내용 조회)",
-                      "done": false
+                      "text": "`NoteApiClient` 구현 (`app/clients/note_client.py`)",
+                      "done": true
                     },
                     {
-                      "text": "LlmClient 구현 (OpenAI/Anthropic API 호출, 프롬프트 전송, 응답 파싱)",
-                      "done": false
-                    },
-                    {
-                      "text": "CardApiClient 구현 (learning-card 런타임 POST /cards 호출)",
-                      "done": false
+                      "text": "`CardApiClient` 구현 (`app/clients/card_client.py`) — W2에서 구현 완료",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 7,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "AiCardKafkaConsumer 구현 (note.created 토픽 소비)",
-                      "done": false
+                      "text": "`AiCardKafkaConsumer` 구현 (`app/kafka/consumer.py`)",
+                      "done": true
                     },
                     {
-                      "text": "AiCardGenerationService 구현 (노트 조회 → LLM 호출 → 응답 파싱 → 카드 생성)",
-                      "done": false
+                      "text": "`AiCardPipelineService` 구현 (`app/services/card_pipeline_service.py`) — W2에서 구현 완료",
+                      "done": true
                     },
                     {
-                      "text": "프롬프트 템플릿 관리 (외부 설정 파일)",
-                      "done": false
+                      "text": "lifespan으로 Consumer 시작/종료 연결 (`app/main.py`)",
+                      "done": true
                     },
                     {
-                      "text": "실패 시 재시도 (3회) + DLQ 전송",
-                      "done": false
-                    },
-                    {
-                      "text": "일일 호출 제한 (Redis 카운터, 사용자당 최대 N회)",
-                      "done": false
-                    },
-                    {
-                      "text": "단위 테스트 작성 (LLM 응답 모킹)",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "단위 테스트 4개 작성 및 통과 (`tests/test_kafka_consumer.py`)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 검증",
-                  "total": 4,
+                  "total": 1,
                   "done": 0,
                   "items": [
                     {
-                      "text": "Docker Compose 환경에서 note.created 이벤트 발행 → 카드 자동 생성 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "생성된 카드 품질 검수 (Q&A 포맷, 한국어/영어 지원)",
-                      "done": false
-                    },
-                    {
-                      "text": "실패 시 DLQ 적재 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "LLM 응답 시간 측정 (< 10초 기준)",
+                      "text": "Docker Compose 환경에서 note.created 이벤트 발행 → 카드 자동 생성 확인 (W4에서 진행 예정)",
                       "done": false
                     }
                   ]
                 },
                 {
                   "name": "결과 정리",
-                  "total": 3,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "프롬프트 템플릿 문서화",
-                      "done": false
+                      "text": "REPORT.md 업데이트",
+                      "done": true
                     },
                     {
-                      "text": "비용 추정 (일일 예상 LLM API 호출 비용)",
-                      "done": false
-                    },
-                    {
-                      "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "text": "HISTORY / WORKFLOW 문서 갱신",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 43,
-              "doneChecks": 0
+              "totalChecks": 26,
+              "doneChecks": 25
             },
             {
               "name": "RAG Q&A (시간 허용 시) — 관련 청크 검색 → LLM 답변 생성 + 시맨틱 캐시",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (RAG Q&A)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Duration 산정 확인 (시간 허용 시 진행)",
-                      "done": false
+                      "text": "Duration 산정 확인",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "RAG 파이프라인 분석 (질문 → 관련 청크 검색 → LLM 컨텍스트 주입 → 답변)",
-                      "done": false
+                      "text": "RAG 파이프라인 분석 (질문 임베딩 → Redis 캐시 → pgvector 검색 → LLM → 답변)",
+                      "done": true
                     },
                     {
-                      "text": "시맨틱 캐시 요건 분석 (유사 질문 캐시 히트 → LLM 호출 스킵)",
-                      "done": false
+                      "text": "시맨틱 캐시 요건 분석 (코사인 유사도 ≥ 0.95 → LLM 호출 스킵)",
+                      "done": true
                     },
                     {
-                      "text": "청크 검색 전략 (pgvector 시맨틱 검색, top-K=5)",
-                      "done": false
-                    },
-                    {
-                      "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "text": "청크 검색 전략 (pgvector top-K=5, threshold=0.7)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
-                  "total": 4,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "text": "인증 필요 여부: X-User-Id 헤더 기반 (기존 패턴 준수)",
+                      "done": true
                     },
                     {
-                      "text": "권한 종류: 본인 노트 기반 RAG만 허용",
-                      "done": false
-                    },
-                    {
-                      "text": "청크 검색 시 접근 제어 필터 적용 필수",
-                      "done": false
-                    },
-                    {
-                      "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "text": "시맨틱 캐시 tenant_id 기반 격리 적용",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "아키텍처 설계",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "RAG 파이프라인 설계 (질문 임베딩 → pgvector 검색 → 청크 수집 → LLM 프롬프트 구성 → 답변)",
-                      "done": false
+                      "text": "RAG 파이프라인: 임베딩 → Redis 캐시 → pgvector → Claude LLM → 캐싱",
+                      "done": true
                     },
                     {
-                      "text": "시맨틱 캐시 설계 (질문 임베딩 → Redis 유사도 검색, threshold=0.95)",
-                      "done": false
+                      "text": "시맨틱 캐시: Redis `rag_cache:{tenant_id}`, numpy 코사인 유사도, TTL 3600s, 최대 100항목",
+                      "done": true
                     },
                     {
-                      "text": "프롬프트 템플릿 설계 (시스템 프롬프트 + 관련 청크 + 질문)",
-                      "done": false
-                    },
-                    {
-                      "text": "Duration(final) 갱신",
-                      "done": false
+                      "text": "프롬프트 템플릿: `app/prompts/qa/system.txt` + `user.jinja2` (context + question)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
-                  "total": 4,
-                  "done": 0,
+                  "total": 1,
+                  "done": 1,
                   "items": [
                     {
-                      "text": "LLM 프롬프트 인젝션 방지 (사용자 질문 새니타이징)",
-                      "done": false
-                    },
-                    {
-                      "text": "답변에 출처(노트 제목, 링크) 포함",
-                      "done": false
-                    },
-                    {
-                      "text": "시맨틱 캐시 사용자별 격리",
-                      "done": false
-                    },
-                    {
-                      "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "text": "시맨틱 캐시 tenant_id 단위 격리 (사용자 간 데이터 누출 방지)",
+                      "done": true
                     }
                   ]
                 },
                 {
-                  "name": "DTO / Entity 설계 (API First)",
-                  "total": 5,
-                  "done": 0,
+                  "name": "DTO / Entity 설계",
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "RagQuestionRequest DTO 정의 (question, maxChunks)",
-                      "done": false
+                      "text": "`QaRequest` (question, stream)",
+                      "done": true
                     },
                     {
-                      "text": "RagAnswerResponse DTO 정의 (answer, sources[], cached)",
-                      "done": false
+                      "text": "`QaSource` (chunk_id, note_id, content, score)",
+                      "done": true
                     },
                     {
-                      "text": "RagSource DTO 정의 (noteId, noteTitle, chunkText, similarity)",
-                      "done": false
-                    },
-                    {
-                      "text": "SemanticCacheEntry 모델 정의 (query_hash, question_embedding, result_data jsonb, hit_count, created_at) — answer/sources는 result_data jsonb 필드로 통합",
-                      "done": false
-                    },
-                    {
-                      "text": "Output Format → TASK 반영",
-                      "done": false
+                      "text": "`QaResponse` (answer, sources, from_cache)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository / Client 구현",
-                  "total": 3,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "ChunkSearchRepository 구현 (pgvector 유사도 검색 + 사용자 필터)",
-                      "done": false
+                      "text": "`NoteChunkRepository.search_similar` 재사용 (Step 4 구현체)",
+                      "done": true
                     },
                     {
-                      "text": "SemanticCacheRepository 구현 (Redis 기반 임베딩 유사도 검색)",
-                      "done": false
-                    },
-                    {
-                      "text": "LlmClient 재사용 (Step 6 구현체)",
-                      "done": false
+                      "text": "Redis 클라이언트: `redis.asyncio.Redis`, decode_responses=True",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 6,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "RagService 구현 (질문 → 캐시 확인 → 청크 검색 → LLM 호출 → 답변 생성)",
-                      "done": false
+                      "text": "`RagService` 구현 (`app/services/rag_service.py`)",
+                      "done": true
                     },
                     {
-                      "text": "SemanticCacheService 구현 (유사 질문 검색, 캐시 저장, TTL 관리)",
-                      "done": false
+                      "text": "`ClaudeService.generate_qa` / `stream_qa` 추가",
+                      "done": true
                     },
                     {
-                      "text": "청크 수집 로직 (top-K=5, 최소 유사도 threshold=0.7)",
-                      "done": false
+                      "text": "컨텍스트 최대 12000자(≈3000 토큰) 제한",
+                      "done": true
                     },
                     {
-                      "text": "프롬프트 구성 로직 (청크 컨텍스트 + 질문 + 출처 포맷 지시)",
-                      "done": false
-                    },
-                    {
-                      "text": "단위 테스트 작성 (LLM 응답 모킹, 캐시 히트/미스 시나리오)",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "전체 테스트 12개 통과 (기존 테스트 회귀 없음)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 5,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "POST /ai/qa 엔드포인트 구현 (RAG Q&A — `{ \"stream\": true }` 파라미터 지원, Server-Sent Events 스트리밍 응답)",
-                      "done": false
+                      "text": "`POST /ai/qa` 엔드포인트 (`app/api/ai.py`)",
+                      "done": true
                     },
                     {
-                      "text": "응답에 출처 정보 포함 (노트 제목 + 관련도)",
-                      "done": false
+                      "text": "`stream=true` 시 `StreamingResponse(media_type=\"text/event-stream\")` 반환",
+                      "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
-                    },
-                    {
-                      "text": "캐시 히트 시 빠른 응답 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "SSE 포맷: `data: {\"text\": \"...\"}\\n\\n`, 마지막 `data: [DONE]\\n\\n`",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "결과 정리",
-                  "total": 4,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "RAG 파이프라인 아키텍처 문서화",
-                      "done": false
+                      "text": "REPORT.md 업데이트",
+                      "done": true
                     },
                     {
-                      "text": "시맨틱 캐시 히트율 측정 방안",
-                      "done": false
-                    },
-                    {
-                      "text": "답변 품질 평가 기준 정의",
-                      "done": false
-                    },
-                    {
-                      "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "text": "HISTORY / WORKFLOW 문서 갱신",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 42,
-              "doneChecks": 0
+              "totalChecks": 26,
+              "doneChecks": 26
             }
           ],
-          "totalChecks": 85,
-          "doneChecks": 0
+          "totalChecks": 52,
+          "doneChecks": 51
         },
         {
           "week": "W4",
@@ -4686,6 +4554,11 @@
       "date": "2026-05-26",
       "totalChecks": 726,
       "doneChecks": 475
+    },
+    {
+      "date": "2026-05-27",
+      "totalChecks": 693,
+      "doneChecks": 526
     }
   ],
   "changelog": [
@@ -4968,6 +4841,24 @@
           "type": "check_done",
           "target": "W2 > review_sessions 통계 — 일별/주별 복습 수, 정답률 API",
           "detail": "44개 항목 완료 (0 → 44)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27T01:46:13.329Z",
+      "commit": "cdca2b6",
+      "author": "KimNaKim",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > AI 카드 자동 생성 — note.created Kafka 소비 → LLM → Card 생성 → learning-card API 호출",
+          "detail": "25개 항목 완료 (0 → 25)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > RAG Q&A (시간 허용 시) — 관련 청크 검색 → LLM 답변 생성 + 시맨틱 캐시",
+          "detail": "26개 항목 완료 (0 → 26)"
         }
       ]
     }
