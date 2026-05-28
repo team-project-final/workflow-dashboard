@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-05-28T01:47:14.078Z",
+  "updatedAt": "2026-05-28T05:36:48.801Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -12,7 +12,7 @@
           "steps": [
             {
               "name": "ArgoCD 클러스터 부트스트랩",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -39,7 +39,7 @@
                 },
                 {
                   "name": "매니페스트 작성",
-                  "total": 5,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -53,20 +53,12 @@
                     {
                       "text": "argocd-server Service 외부 노출 (LoadBalancer + AWS NLB annotation)",
                       "done": true
-                    },
-                    {
-                      "text": "ACM 인증서 ARN 매핑 (HTTPS 종료)  <!-- W2 옵션1 마이그레이션으로 이월 (도메인 미확보) -->",
-                      "done": false
-                    },
-                    {
-                      "text": "DNS 레코드 정의 (argocd.<도메인>)  <!-- W2 옵션1 마이그레이션으로 이월 -->",
-                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "적용 + 검증",
-                  "total": 5,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -80,14 +72,6 @@
                     {
                       "text": "argocd CLI 로그인 성공 (bootstrap-argocd.sh 5/8)",
                       "done": true
-                    },
-                    {
-                      "text": "외부 도메인으로 UI 접속 + TLS 인증서 유효  <!-- W2 옵션1 마이그레이션으로 이월 (NLB DNS + self-signed 사용 중) -->",
-                      "done": false
-                    },
-                    {
-                      "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping)  <!-- W2 외부 노출 마이그레이션과 함께 이월 -->",
-                      "done": false
                     }
                   ]
                 },
@@ -115,12 +99,12 @@
                   ]
                 }
               ],
-              "totalChecks": 18,
+              "totalChecks": 14,
               "doneChecks": 14
             },
             {
               "name": "app-of-apps / ApplicationSet 골격",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -147,7 +131,7 @@
                 },
                 {
                   "name": "매니페스트 작성",
-                  "total": 4,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -161,10 +145,6 @@
                     {
                       "text": "각 app의 source/destination/syncPolicy 템플릿 (`spec.template`)",
                       "done": true
-                    },
-                    {
-                      "text": "argocd/apps/root.yaml (선택, app-of-apps 진입점)  <!-- 선택 항목, W1 미사용. ApplicationSet 단독 운영 -->",
-                      "done": false
                     }
                   ]
                 },
@@ -211,16 +191,16 @@
                   ]
                 }
               ],
-              "totalChecks": 15,
+              "totalChecks": 14,
               "doneChecks": 14
             },
             {
               "name": "validate-manifests CI 강화",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
-                  "total": 4,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -232,10 +212,6 @@
                       "done": true
                     },
                     {
-                      "text": "PR 영향 범위(diff) 코멘트 도구 후보 (Atlantis, kustomize-diff GH action 등)  <!-- W3 이월 (선택 항목) -->",
-                      "done": false
-                    },
-                    {
                       "text": "branch protection 룰 적용 범위 결정 (필수 status check + REVIEWS 토글, scripts/setup-branch-protection.sh)",
                       "done": true
                     }
@@ -243,7 +219,7 @@
                 },
                 {
                   "name": "워크플로우 보강",
-                  "total": 4,
+                  "total": 2,
                   "done": 2,
                   "items": [
                     {
@@ -253,14 +229,6 @@
                     {
                       "text": "kubeconform 단계 추가 (CRD-catalog schema 포함, `-strict -ignore-missing-schemas`)",
                       "done": true
-                    },
-                    {
-                      "text": "kustomize build 결과 캐싱 (속도 개선, 선택)  <!-- 선택, W3 성능 개선 시 검토 -->",
-                      "done": false
-                    },
-                    {
-                      "text": "PR diff 코멘트 액션 추가 (선택)  <!-- 선택, W3 이월 -->",
-                      "done": false
                     }
                   ]
                 },
@@ -307,11 +275,11 @@
                   ]
                 }
               ],
-              "totalChecks": 15,
+              "totalChecks": 12,
               "doneChecks": 12
             }
           ],
-          "totalChecks": 48,
+          "totalChecks": 40,
           "doneChecks": 40
         },
         {
@@ -320,11 +288,11 @@
           "steps": [
             {
               "name": "dev overlay 5개 앱 완성",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
-                  "total": 4,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -338,10 +306,6 @@
                     {
                       "text": "Service 포트 / Health endpoint 표준 합의",
                       "done": true
-                    },
-                    {
-                      "text": "dev 전용 도메인 패턴 결정 (dev-<app>.<도메인>) — EKS 배포 후",
-                      "done": false
                     }
                   ]
                 },
@@ -378,7 +342,7 @@
                 },
                 {
                   "name": "dev overlay 작성",
-                  "total": 4,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -392,17 +356,13 @@
                     {
                       "text": "dev 전용 ConfigMap patch (LOG_LEVEL=DEBUG 등)",
                       "done": true
-                    },
-                    {
-                      "text": "Ingress 또는 Service LoadBalancer 정의 — EKS 배포 후",
-                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "적용 + 검증",
-                  "total": 9,
-                  "done": 5,
+                  "total": 8,
+                  "done": 8,
                   "items": [
                     {
                       "text": "git push → ArgoCD 5개 앱 모두 Synced + Healthy 확인 (kind)",
@@ -413,20 +373,16 @@
                       "done": true
                     },
                     {
-                      "text": "EKS 배포: platform-svc 정상 기동 (앱 코드 수정 필요 — mfa_credentials)",
-                      "done": false
+                      "text": "EKS 배포: platform-svc 정상 기동 (9차 세션: PR #40 환경변수 14개 + Flyway V28 + AES 키 수정)",
+                      "done": true
                     },
                     {
-                      "text": "EKS 배포: learning-ai 정상 기동 (앱 코드 수정 필요 — Python 기동)",
-                      "done": false
+                      "text": "EKS 배포: learning-ai 정상 기동 (9차 세션: 포트 8090 통일 PR #38 자동 해결)",
+                      "done": true
                     },
                     {
-                      "text": "/actuator/health 200 응답 (3/5 확인, 2개 미확인)",
-                      "done": false
-                    },
-                    {
-                      "text": "dev 도메인으로 5개 앱 도달 — Ingress 미설정",
-                      "done": false
+                      "text": "/actuator/health 200 응답 (5/5 — 9차 세션 5/5 Healthy 달성)",
+                      "done": true
                     },
                     {
                       "text": "KAFKA_BROKERS endpoint 갱신 (PR #34, terraform re-apply 후 MSK 주소 변경)",
@@ -443,12 +399,12 @@
                   ]
                 }
               ],
-              "totalChecks": 23,
-              "doneChecks": 17
+              "totalChecks": 20,
+              "doneChecks": 20
             },
             {
               "name": "Secret 관리 (External Secrets Operator)",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -529,16 +485,12 @@
                 },
                 {
                   "name": "보안 검증 + 문서화",
-                  "total": 4,
-                  "done": 2,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "gitleaks 또는 trufflehog로 git history 스캔 → 0건 — EKS 배포 후",
-                      "done": false
-                    },
-                    {
-                      "text": "ESO sync 실패 시 알람 설정 — W3 Observability",
-                      "done": false
+                      "text": "gitleaks 또는 trufflehog로 git history 스캔 → 0건 (gitleaks 8.30.1 / 114 commits / 0 leaks, 2026-05-26)",
+                      "done": true
                     },
                     {
                       "text": "README에 새 시크릿 추가 절차 문서화",
@@ -551,12 +503,12 @@
                   ]
                 }
               ],
-              "totalChecks": 18,
-              "doneChecks": 16
+              "totalChecks": 17,
+              "doneChecks": 17
             },
             {
               "name": "이미지 태그 자동 sync",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -606,21 +558,9 @@
                 },
                 {
                   "name": "적용 + 검증",
-                  "total": 4,
+                  "total": 1,
                   "done": 1,
                   "items": [
-                    {
-                      "text": "5개 앱 모두 새 이미지 푸시 → dev 자동 반영 확인 — EKS 배포 후",
-                      "done": false
-                    },
-                    {
-                      "text": "평균 반영 시간 측정 (목표 5분 이내) — EKS 배포 후",
-                      "done": false
-                    },
-                    {
-                      "text": "롤백 케이스: 잘못된 이미지 → 이전 태그로 복귀 가능 — EKS 배포 후",
-                      "done": false
-                    },
                     {
                       "text": "image 태그 변경 이력이 git log에 남는지 확인 (write-back-method: git 설정)",
                       "done": true
@@ -630,19 +570,19 @@
                 {
                   "name": "문서화 + 인수인계",
                   "total": 4,
-                  "done": 2,
+                  "done": 4,
                   "items": [
                     {
                       "text": "이미지 태그 정책 문서화",
                       "done": true
                     },
                     {
-                      "text": "자동 sync 비활성화 절차 (긴급 상황 대비)",
-                      "done": false
+                      "text": "자동 sync 비활성화 절차 (긴급 상황 대비) — `docs/runbooks/image-updater-ecr-setup.md` \"긴급 정지 / 자동 sync 비활성화 절차\" 섹션",
+                      "done": true
                     },
                     {
-                      "text": "svc 팀에 새 이미지 푸시 → 배포 흐름 공유",
-                      "done": false
+                      "text": "svc 팀에 새 이미지 푸시 → 배포 흐름 공유 — `docs/synapse-developer-guide.md` §5 \"GitOps 배포 흐름\" (PR #28, 808줄 통합 가이드)",
+                      "done": true
                     },
                     {
                       "text": "HISTORY 갱신",
@@ -651,12 +591,12 @@
                   ]
                 }
               ],
-              "totalChecks": 16,
-              "doneChecks": 11
+              "totalChecks": 13,
+              "doneChecks": 13
             }
           ],
-          "totalChecks": 57,
-          "doneChecks": 44
+          "totalChecks": 50,
+          "doneChecks": 50
         },
         {
           "week": "W3",
@@ -825,7 +765,7 @@
                 },
                 {
                   "name": "알람 + 문서화",
-                  "total": 6,
+                  "total": 7,
                   "done": 6,
                   "items": [
                     {
@@ -851,15 +791,19 @@
                     {
                       "text": "대시보드/알람 README (`infra/monitoring/README.md`)",
                       "done": true
+                    },
+                    {
+                      "text": "ESO sync 실패 PrometheusRule 추가 (`external_secrets_sync_calls_error{}` rate) — W2 Step 5.4에서 이월 (D-041)",
+                      "done": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 18,
+              "totalChecks": 19,
               "doneChecks": 17
             }
           ],
-          "totalChecks": 31,
+          "totalChecks": 32,
           "doneChecks": 30
         },
         {
@@ -872,7 +816,7 @@
               "phases": [
                 {
                   "name": "사전 분석",
-                  "total": 4,
+                  "total": 8,
                   "done": 0,
                   "items": [
                     {
@@ -889,6 +833,22 @@
                     },
                     {
                       "text": "변경 관리 절차 (PR 라벨 + 리뷰어 합의)",
+                      "done": false
+                    },
+                    {
+                      "text": "ACM 인증서 ARN 매핑 (HTTPS 종료) — W1 Step 1.2에서 이월 (D-041)",
+                      "done": false
+                    },
+                    {
+                      "text": "DNS 레코드 정의 (argocd.<도메인> + prod 앱 도메인) — W1 Step 1.2에서 이월 (D-041)",
+                      "done": false
+                    },
+                    {
+                      "text": "외부 도메인으로 ArgoCD UI 접속 + TLS 인증서 유효 — W1 Step 1.3에서 이월 (D-041)",
+                      "done": false
+                    },
+                    {
+                      "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping) — W1 Step 1.3에서 이월 (D-041)",
                       "done": false
                     }
                   ]
@@ -922,7 +882,7 @@
                 },
                 {
                   "name": "적용 + 검증",
-                  "total": 5,
+                  "total": 8,
                   "done": 0,
                   "items": [
                     {
@@ -943,6 +903,18 @@
                     },
                     {
                       "text": "prod 도메인으로 5개 앱 응답 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — W2 Step 4.1에서 이월 (D-041)",
+                      "done": false
+                    },
+                    {
+                      "text": "dev Ingress 또는 Service LoadBalancer 정의 + 적용 — W2 Step 4.3에서 이월 (D-041)",
+                      "done": false
+                    },
+                    {
+                      "text": "dev 도메인으로 5개 앱 도달 (HTTP 200) — W2 Step 4.4에서 이월 (D-041)",
                       "done": false
                     }
                   ]
@@ -971,7 +943,7 @@
                   ]
                 }
               ],
-              "totalChecks": 18,
+              "totalChecks": 25,
               "doneChecks": 0
             },
             {
@@ -1003,7 +975,7 @@
                 },
                 {
                   "name": "롤백 절차 구현",
-                  "total": 4,
+                  "total": 7,
                   "done": 0,
                   "items": [
                     {
@@ -1020,6 +992,18 @@
                     },
                     {
                       "text": "DB 마이그레이션이 포함된 경우 롤백 가이드 (forward-only 정책 등)",
+                      "done": false
+                    },
+                    {
+                      "text": "Image Updater 5개 앱 새 이미지 푸시 → dev 자동 반영 E2E 검증 — W2 Step 6.3에서 이월 (D-041, A안 실행 필요)",
+                      "done": false
+                    },
+                    {
+                      "text": "Image Updater 평균 반영 시간 측정 (목표 5분 이내) — W2 Step 6.3에서 이월 (D-041)",
+                      "done": false
+                    },
+                    {
+                      "text": "Image Updater 롤백 케이스: 잘못된 이미지 → 이전 태그 복귀 가능 — W2 Step 6.3에서 이월 (D-041)",
                       "done": false
                     }
                   ]
@@ -1071,11 +1055,11 @@
                   ]
                 }
               ],
-              "totalChecks": 16,
+              "totalChecks": 19,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 34,
+          "totalChecks": 44,
           "doneChecks": 0
         },
         {
@@ -1088,7 +1072,7 @@
               "phases": [
                 {
                   "name": "사전 분석",
-                  "total": 4,
+                  "total": 6,
                   "done": 0,
                   "items": [
                     {
@@ -1105,6 +1089,14 @@
                     },
                     {
                       "text": "에스컬레이션 기준 (level 1 / 2 / 3)",
+                      "done": false
+                    },
+                    {
+                      "text": "PR 영향 범위(diff) 코멘트 도구 후보 비교 (Atlantis, kustomize-diff GH action) — W1 Step 3.1에서 이월 (D-041, 선택)",
+                      "done": false
+                    },
+                    {
+                      "text": "PR diff 코멘트 GitHub Action 도입 — W1 Step 3.2에서 이월 (D-041, 선택)",
                       "done": false
                     }
                   ]
@@ -1187,7 +1179,7 @@
                   ]
                 }
               ],
-              "totalChecks": 18,
+              "totalChecks": 20,
               "doneChecks": 0
             },
             {
@@ -1242,7 +1234,7 @@
                 },
                 {
                   "name": "안정화 + 회귀 검증",
-                  "total": 4,
+                  "total": 5,
                   "done": 0,
                   "items": [
                     {
@@ -1259,6 +1251,10 @@
                     },
                     {
                       "text": "알람 false-positive 비율 점검 + 룰 조정",
+                      "done": false
+                    },
+                    {
+                      "text": "kustomize build 결과 캐싱 (CI 속도 개선) — W1 Step 3.2에서 이월 (D-041, 선택)",
                       "done": false
                     }
                   ]
@@ -1287,11 +1283,11 @@
                   ]
                 }
               ],
-              "totalChecks": 16,
+              "totalChecks": 17,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 34,
+          "totalChecks": 37,
           "doneChecks": 0
         }
       ]
@@ -1362,7 +1358,7 @@
     {
       "date": "2026-05-28",
       "totalChecks": 204,
-      "doneChecks": 114
+      "doneChecks": 120
     }
   ],
   "changelog": [
@@ -1445,6 +1441,29 @@
           "type": "check_done",
           "target": "W3 > Observability 스택 (Prometheus + Grafana + Loki)",
           "detail": "17개 항목 완료 (0 → 17)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28T05:36:48.801Z",
+      "commit": "8fc9f49",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > dev overlay 5개 앱 완성",
+          "detail": "3개 항목 완료 (17 → 20)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > Secret 관리 (External Secrets Operator)",
+          "detail": "1개 항목 완료 (16 → 17)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > 이미지 태그 자동 sync",
+          "detail": "2개 항목 완료 (11 → 13)"
         }
       ]
     }
