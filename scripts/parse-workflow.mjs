@@ -137,6 +137,21 @@ function computeChangelog(oldData, newTracks) {
             detail: `${-doneDiff}개 항목 해제 (${oldStep?.doneChecks || 0} → ${newStep.doneChecks})`,
           })
         }
+        // 박스 라인 자체의 추가/제거 추적 (다음 주차로 이월, 항목 정리 등)
+        const totalDiff = newStep.totalChecks - (oldStep?.totalChecks || 0)
+        if (totalDiff > 0) {
+          changes.push({
+            type: 'boxes_added',
+            target: `${newWeek.week} > ${newStep.name}`,
+            detail: `${totalDiff}개 박스 추가 (${oldStep?.totalChecks || 0} → ${newStep.totalChecks})`,
+          })
+        } else if (totalDiff < 0) {
+          changes.push({
+            type: 'boxes_removed',
+            target: `${newWeek.week} > ${newStep.name}`,
+            detail: `${-totalDiff}개 박스 제거 (${oldStep?.totalChecks || 0} → ${newStep.totalChecks})`,
+          })
+        }
       }
     }
   }
