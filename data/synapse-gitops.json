@@ -1660,6 +1660,61 @@
           "type": "check_done",
           "target": "W2 > 이미지 태그 자동 sync",
           "detail": "2개 항목 완료 (11 → 13)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W1 > ArgoCD 클러스터 부트스트랩",
+          "detail": "4개 박스 제거 (18 → 14)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W1 > app-of-apps / ApplicationSet 골격",
+          "detail": "1개 박스 제거 (15 → 14)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W1 > validate-manifests CI 강화",
+          "detail": "3개 박스 제거 (15 → 12)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W2 > dev overlay 5개 앱 완성",
+          "detail": "3개 박스 제거 (23 → 20)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W2 > Secret 관리 (External Secrets Operator)",
+          "detail": "1개 박스 제거 (18 → 17)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W2 > 이미지 태그 자동 sync",
+          "detail": "3개 박스 제거 (16 → 13)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > Observability 스택 (Prometheus + Grafana + Loki)",
+          "detail": "1개 박스 추가 (18 → 19)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > prod 환경 + 승인 게이트",
+          "detail": "7개 박스 추가 (18 → 25)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > 롤백 / 백업 전략",
+          "detail": "3개 박스 추가 (16 → 19)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > Runbook + 장애 시나리오",
+          "detail": "2개 박스 추가 (18 → 20)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > Cost 최적화 + 안정화",
+          "detail": "1개 박스 추가 (16 → 17)"
         }
       ]
     }
