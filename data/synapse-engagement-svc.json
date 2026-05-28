@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-05-28T09:09:40.016Z",
+  "updatedAt": "2026-05-28T09:27:34.778Z",
   "tracks": [
     {
       "name": "engagement",
@@ -2579,7 +2579,7 @@
         },
         {
           "id": "FR-EG-205",
-          "title": "gamification.* Kafka 이벤트가 발행된다",
+          "title": "그룹 초대/가입 신청 워크플로우가 완성된다",
           "status": "not_started"
         }
       ]
@@ -2589,11 +2589,21 @@
       "items": [
         {
           "id": "FR-EG-401",
-          "title": "사용자가 부적절한 콘텐츠를 신고할 수 있다",
+          "title": "engagement-svc가 card.reviewed 이벤트를 소비해 XP를 적립한다",
           "status": "not_started"
         },
         {
           "id": "FR-EG-402",
+          "title": "engagement-svc가 gamification 이벤트를 발행한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-403",
+          "title": "사용자가 부적절한 콘텐츠를 신고할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-404",
           "title": "관리자가 신고를 처리할 수 있다",
           "status": "not_started"
         }
