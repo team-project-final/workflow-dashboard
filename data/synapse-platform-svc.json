@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-05-28T08:37:11.690Z",
+  "updatedAt": "2026-05-28T09:23:41.653Z",
   "tracks": [
     {
       "name": "platform",
@@ -1528,507 +1528,463 @@
             },
             {
               "name": "notification Kafka 연동 — 이벤트 소비 → FCM 푸시 + SES 이메일 발송",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (알림 발송)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "소비 대상 토픽 정의 (`notification.send` 토픽 — 아키텍처 표준 패턴. 각 서비스(gamification, community, card 등)는 직접 notification 모듈을 호출하는 대신 `notification.send` 토픽에 이벤트를 발행하며, notification 모듈은 이 단일 토픽만 소비하여 채널별 발송을 처리함)",
-                      "done": false
+                      "text": "소비 대상 토픽 정의 (`notification.send` 토픽)",
+                      "done": true
                     },
                     {
                       "text": "알림 채널별 발송 조건 정의 (FCM: 모바일, SES: 이메일)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "사용자 알림 설정 (opt-in/opt-out) 반영 로직 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (내부 Kafka 소비)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "FCM 서비스 계정 키 관리 방안 (External Secrets)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "SES IAM Role 최소 권한 설정",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "notifications 테이블 설계 (id, user_id, channel, title, body, category, data_json, template_code, is_read, created_at)",
-                      "done": false
+                      "text": "notifications 테이블 설계 (V31 마이그레이션)",
+                      "done": true
                     },
                     {
-                      "text": "참고: notification_settings 테이블 → notification_preferences 테이블로 통합 (컬럼 기반 구조: push_enabled, email_enabled, in_app_enabled, quiet_hours_start, quiet_hours_end)",
-                      "done": false
-                    },
-                    {
-                      "text": "인덱스 설계 (user_id + is_read, created_at)",
-                      "done": false
+                      "text": "인덱스 설계 (user_id, created_at)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "FCM 토큰 암호화 저장",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "SES 발송 도메인 SPF/DKIM 설정 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "알림 페이로드 민감정보 제외 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
-                  "total": 5,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Notification Entity 작성 (channel, category, data_json, template_code 컬럼 포함)",
-                      "done": false
+                      "text": "Notification Entity 작성",
+                      "done": true
                     },
                     {
-                      "text": "NotificationEventMessage DTO 정의 (Kafka 소비용)",
-                      "done": false
-                    },
-                    {
-                      "text": "NotificationResponse DTO 정의 (사용자 조회용)",
-                      "done": false
-                    },
-                    {
-                      "text": "NotificationPreferenceRequest/Response DTO 정의 (notification_preferences 기반)",
-                      "done": false
+                      "text": "NotificationChannel / NotificationStatus enum 정의",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 3,
-                  "done": 0,
+                  "total": 1,
+                  "done": 1,
                   "items": [
                     {
                       "text": "NotificationRepository 인터페이스 작성",
-                      "done": false
-                    },
-                    {
-                      "text": "NotificationPreferenceRepository 인터페이스 작성",
-                      "done": false
-                    },
-                    {
-                      "text": "findByUserIdAndIsReadFalse 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 7,
-                  "done": 0,
+                  "total": 6,
+                  "done": 6,
                   "items": [
                     {
-                      "text": "NotificationKafkaConsumer 구현 (`notification.send` 토픽 소비 — 아키텍처 표준 패턴. gamification/community/card 등 각 서비스는 `notification.send` 토픽에 발행하며, 이 Consumer가 라우팅 처리)",
-                      "done": false
+                      "text": "NotificationKafkaConsumer 구현 (`notification.send` 토픽 소비)",
+                      "done": true
                     },
                     {
                       "text": "NotificationService 구현 (알림 생성 + 채널별 발송 분기)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "FcmPushService 구현 (Firebase Admin SDK → FCM 발송)",
-                      "done": false
+                      "text": "FcmPushService 구현 (Firebase Admin SDK)",
+                      "done": true
                     },
                     {
-                      "text": "SesEmailService 구현 (AWS SES SDK → 이메일 발송)",
-                      "done": false
+                      "text": "SesEmailService 구현 (AWS SES SDK v2)",
+                      "done": true
                     },
                     {
-                      "text": "사용자 알림 설정 확인 로직 (notification_preferences — push_enabled/email_enabled/in_app_enabled 기반 opt-out 시 발송 스킵)",
-                      "done": false
-                    },
-                    {
-                      "text": "단위 테스트 작성 (각 서비스별 Mockito)",
-                      "done": false
+                      "text": "단위 테스트 작성 (FcmPushServiceTest, SesEmailServiceTest, NotificationServiceTest 등)",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 6,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "GET /notifications 엔드포인트 구현 (사용자별 알림 목록)",
-                      "done": false
-                    },
-                    {
-                      "text": "PATCH /notifications/{id}/read 엔드포인트 구현 (읽음 처리)",
-                      "done": false
-                    },
-                    {
-                      "text": "GET /notifications/preferences 엔드포인트 구현",
-                      "done": false
-                    },
-                    {
-                      "text": "PUT /notifications/preferences 엔드포인트 구현",
-                      "done": false
-                    },
-                    {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "NotificationKafkaConsumerIT 통합 테스트 작성",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
-                  "total": 3,
-                  "done": 0,
+                  "total": 2,
+                  "done": 2,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
-                    },
-                    {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 43,
-              "doneChecks": 0
+              "totalChecks": 32,
+              "doneChecks": 32
             },
             {
               "name": "테넌트/사용자 관리 API — 관리자 사용자 목록/검색/정지/삭제",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (관리자 사용자 관리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "관리자 사용자 목록 조회 (페이징, 정렬) 요건 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "사용자 검색 (이름, 이메일) 요건 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "사용자 정지/삭제 비즈니스 로직 분석 (정지: status 변경, 삭제: soft delete)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (관리자 전용)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: ROLE_ADMIN",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "사용자 정지/삭제 시 감사 로그 기록 필수",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "users 테이블 확장: status 컬럼 확인 (active|suspended|deleted — 소문자)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "suspended_at, deleted_at 컬럼 추가",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "인덱스 설계 (status, email LIKE 검색용)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "관리자 본인 삭제/정지 방지 로직",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "정지/삭제 시 활성 세션 즉시 무효화 (Redis 토큰 삭제)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "행 단위 접근 제어: 관리자만 조회/수정 가능",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "AdminUserListResponse DTO 정의 (id, email, display_name, status: active|suspended|deleted, created_at)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "AdminUserSearchRequest DTO 정의 (query, status, page, size)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "UserSuspendRequest DTO 정의 (reason)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "User Entity 수정 (status 필드 추가)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "UserRepository 확장: findByStatusAndNameContaining 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Specification 기반 동적 검색 쿼리 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "페이징/정렬 지원",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "AdminUserService 구현 (목록 조회, 검색, 정지, 삭제)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "사용자 정지 로직 (status → suspended, 세션 무효화, audit 이벤트 발행)",
-                      "done": false
+                      "text": "사용자 정지 로직 (status → suspended, 세션 무효화, UserSessionsRevocationRequested 이벤트 발행)",
+                      "done": true
                     },
                     {
-                      "text": "사용자 삭제 로직 (status → deleted, soft delete, 세션 무효화, audit 이벤트 발행)",
-                      "done": false
+                      "text": "사용자 삭제 로직 (status → deleted, soft delete, 세션 무효화, UserSessionsRevocationRequested 이벤트 발행)",
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "GET /admin/users 엔드포인트 구현 (목록 + 페이징)",
-                      "done": false
+                      "text": "GET /api/v1/admin/users 엔드포인트 구현 (목록 + 페이징)",
+                      "done": true
                     },
                     {
-                      "text": "GET /admin/users?q=검색어 엔드포인트 구현 (쿼리 파라미터 방식 검색)",
-                      "done": false
+                      "text": "GET /api/v1/admin/users?q=검색어 엔드포인트 구현 (쿼리 파라미터 방식 검색)",
+                      "done": true
                     },
                     {
-                      "text": "PUT /admin/users/{id}/status 엔드포인트 구현 (suspend/activate)",
-                      "done": false
+                      "text": "PUT /api/v1/admin/users/{id}/status 엔드포인트 구현 (suspend/activate)",
+                      "done": true
                     },
                     {
-                      "text": "DELETE /admin/users/{id} 엔드포인트 구현 (soft delete)",
-                      "done": false
+                      "text": "DELETE /api/v1/admin/users/{id} 엔드포인트 구현 (soft delete)",
+                      "done": true
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "403 Forbidden 테스트 (비관리자 접근)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 0
+              "doneChecks": 43
             }
           ],
-          "totalChecks": 127,
-          "doneChecks": 41
+          "totalChecks": 116,
+          "doneChecks": 116
         },
         {
           "week": "W4",
@@ -2571,7 +2527,7 @@
     {
       "date": "2026-05-28",
       "totalChecks": 387,
-      "doneChecks": 258
+      "doneChecks": 333
     }
   ],
   "changelog": [
@@ -2716,6 +2672,29 @@
           "type": "check_done",
           "target": "W3 > audit 모듈 — Kafka 이벤트 소비 → audit_logs 적재",
           "detail": "41개 항목 완료 (0 → 41)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28T09:23:41.653Z",
+      "commit": "56434d8",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > notification Kafka 연동 — 이벤트 소비 → FCM 푸시 + SES 이메일 발송",
+          "detail": "32개 항목 완료 (0 → 32)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W3 > notification Kafka 연동 — 이벤트 소비 → FCM 푸시 + SES 이메일 발송",
+          "detail": "11개 박스 제거 (43 → 32)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 테넌트/사용자 관리 API — 관리자 사용자 목록/검색/정지/삭제",
+          "detail": "43개 항목 완료 (0 → 43)"
         }
       ]
     }
