@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-05-28T01:46:56.454Z",
+  "updatedAt": "2026-05-28T05:01:34.540Z",
   "tracks": [
     {
       "name": "platform",
@@ -1286,237 +1286,245 @@
           "steps": [
             {
               "name": "audit 모듈 — Kafka 이벤트 소비 → audit_logs 적재",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (감사 로그)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "소비 대상 Kafka 토픽 목록 정의 (audit.event, user.registered, billing.subscription.changed — 아키텍처 표준. gamification.*, community.*, card.* 토픽은 audit 모듈 소비 대상 아님)",
-                      "done": false
+                      "text": "소비 대상 Kafka 토픽 목록 정의 (`platform.auth.user-registered-v1`)",
+                      "done": true
                     },
                     {
                       "text": "audit_logs 테이블 스키마 요건 분석",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "90일 보존 정책 구현 방안 분석 (pg_partman / 스케줄러 삭제)",
-                      "done": false
+                      "text": "90일 보존 정책 구현 방안 분석 (@Scheduled 스케줄러 삭제)",
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (내부 Kafka 소비, API 미노출)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 시스템 내부 처리",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "audit_logs 접근 권한: 관리자 전용",
-                      "done": false
+                      "text": "audit_logs 접근 권한: 관리자 전용 (ROLE_ADMIN)",
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "audit_logs 테이블 설계 (id, action, user_id, resource_type, resource_id, old_value jsonb, new_value jsonb, ip_address inet, user_agent, created_at)",
-                      "done": false
+                      "text": "audit_logs 테이블 설계 (id, event_id, action, user_id, resource_type, resource_id, old_value jsonb, new_value jsonb, ip_address, user_agent, created_at)",
+                      "done": true
                     },
                     {
-                      "text": "인덱스 설계 (action, user_id, created_at)",
-                      "done": false
+                      "text": "인덱스 설계 (event_id UNIQUE, action, user_id, created_at)",
+                      "done": true
                     },
                     {
-                      "text": "파티셔닝 전략 설계 (월별 파티션, 90일 보존)",
-                      "done": false
+                      "text": "outbox_events 테이블 설계 (Producer 유실 방지)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "민감 정보 암호화: payload 내 PII 마스킹 정책 정의",
-                      "done": false
-                    },
-                    {
                       "text": "90일 이후 자동 삭제 검증 방안",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "audit_logs 위변조 방지 (append-only, 삭제 API 미제공)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "AuditLog Entity 작성 (audit_logs 매핑)",
-                      "done": false
+                      "text": "AuditLog Entity 작성 (audit_logs 매핑, JSONB @JdbcTypeCode)",
+                      "done": true
                     },
                     {
-                      "text": "AuditEventMessage DTO 정의 (Kafka 소비용)",
-                      "done": false
+                      "text": "AuditLogResponse DTO 정의 (oldValue, userAgent 포함 전체 컬럼)",
+                      "done": true
                     },
                     {
-                      "text": "AuditLogResponse DTO 정의 (관리자 조회용)",
-                      "done": false
+                      "text": "OutboxEvent Entity 작성 (outbox_events 매핑)",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 3,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
                       "text": "AuditLogRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "findByAction, findByUserId 커스텀 쿼리",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "90일 이전 데이터 삭제 쿼리 (deleteByCreatedAtBefore)",
-                      "done": false
+                      "done": true
+                    },
+                    {
+                      "text": "OutboxEventRepository (claimPending, resetTimedOutPublishing JPQL)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 5,
-                  "done": 0,
+                  "total": 7,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "AuditKafkaConsumer 구현 (consumer group: audit-consumer-group)",
-                      "done": false
+                      "text": "AuditKafkaConsumer 구현 (consumer group: audit-consumer-group, ErrorHandlingDeserializer)",
+                      "done": true
                     },
                     {
-                      "text": "AuditLogService 구현 (이벤트 파싱 → audit_logs INSERT)",
-                      "done": false
+                      "text": "AuditLogService 구현 (이벤트 파싱 → audit_logs INSERT, DataIntegrityViolationException 멱등)",
+                      "done": true
                     },
                     {
-                      "text": "90일 보존 스케줄러 구현 (@Scheduled, 매일 실행)",
-                      "done": false
+                      "text": "90일 보존 스케줄러 구현 (@Scheduled cron 매일 03:00)",
+                      "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (이벤트 소비 → 적재 검증)",
-                      "done": false
+                      "text": "UserEventPublisher 구현 (outbox 저장, tenantId null 방어)",
+                      "done": true
+                    },
+                    {
+                      "text": "OutboxEventPublisher 구현 (PUBLISHING lease, async 실패 기록)",
+                      "done": true
+                    },
+                    {
+                      "text": "단위 테스트 작성 (AuditLogServiceTest, OutboxEventPublisherTest 등)",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "GET /admin/audit-logs 엔드포인트 구현 (관리자 전용)",
-                      "done": false
+                      "text": "GET /api/v1/admin/audit-logs 엔드포인트 구현 (관리자 전용)",
+                      "done": true
                     },
                     {
-                      "text": "페이징 + 필터링 (action, user_id, 기간)",
-                      "done": false
+                      "text": "페이징 + 필터링 (action, userId)",
+                      "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "@PreAuthorize(\"hasRole('ADMIN')\") + @EnableMethodSecurity",
+                      "done": true
                     },
                     {
-                      "text": "403 Forbidden 테스트 (비관리자 접근)",
-                      "done": false
+                      "text": "AuditLogControllerTest (@WebMvcTest)",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (관리자 화면은 frontend 담당)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "text": "AuditKafkaIntegrationTest (EmbeddedKafka + mock Schema Registry)",
+                      "done": true
                     },
                     {
-                      "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "text": "`./gradlew test` + `./gradlew check` 전체 통과",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 39,
-              "doneChecks": 0
+              "totalChecks": 41,
+              "doneChecks": 41
             },
             {
               "name": "notification Kafka 연동 — 이벤트 소비 → FCM 푸시 + SES 이메일 발송",
@@ -2019,8 +2027,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 125,
-          "doneChecks": 0
+          "totalChecks": 127,
+          "doneChecks": 41
         },
         {
           "week": "W4",
@@ -2562,8 +2570,8 @@
     },
     {
       "date": "2026-05-28",
-      "totalChecks": 385,
-      "doneChecks": 217
+      "totalChecks": 387,
+      "doneChecks": 258
     }
   ],
   "changelog": [
@@ -2695,6 +2703,19 @@
           "type": "check_done",
           "target": "W2 > notification 모듈 기초 — FCM 설정 + device_tokens",
           "detail": "45개 항목 완료 (0 → 45)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28T05:01:34.539Z",
+      "commit": "54667be",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > audit 모듈 — Kafka 이벤트 소비 → audit_logs 적재",
+          "detail": "41개 항목 완료 (0 → 41)"
         }
       ]
     }
