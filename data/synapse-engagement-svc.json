@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-05-28T08:37:14.722Z",
+  "updatedAt": "2026-05-28T09:09:40.016Z",
   "tracks": [
     {
       "name": "engagement",
@@ -268,7 +268,7 @@
                   "done": 4,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 인증 필요, W1 임시 X-User-Id 헤더)",
+                      "text": "인증 필요 여부: Yes (현재 JWT subject 기반 사용자 식별)",
                       "done": true
                     },
                     {
@@ -506,7 +506,7 @@
                   "done": 4,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 인증 필요, W1 임시 X-User-Id 헤더)",
+                      "text": "인증 필요 여부: Yes (현재 JWT subject 기반 사용자 식별)",
                       "done": true
                     },
                     {
@@ -772,7 +772,7 @@
                   "done": 6,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 필요 여부 확인, platform-svc 연동 전까지 W2 임시 X-User-Id 헤더)",
+                      "text": "인증 필요 여부: Yes (JWT subject 기반 사용자 식별)",
                       "done": true
                     },
                     {
@@ -954,11 +954,11 @@
                   "done": 6,
                   "items": [
                     {
-                      "text": "GET /gamification/profile 엔드포인트 구현 (임시 X-User-Id 기준 사용자 XP/레벨/스트릭/배지 프로필 조회)",
+                      "text": "GET /gamification/profile 엔드포인트 구현 (JWT subject 기준 사용자 XP/레벨/스트릭/배지 프로필 조회)",
                       "done": true
                     },
                     {
-                      "text": "GET /gamification/xp/history 엔드포인트 구현 (임시 X-User-Id 기준 사용자 XP 이력 조회)",
+                      "text": "GET /gamification/xp/history 엔드포인트 구현 (JWT subject 기준 사용자 XP 이력 조회)",
                       "done": true
                     },
                     {
@@ -1058,7 +1058,7 @@
                   "done": 5,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (공유 등록/복사 시 최종 JWT 필요, platform-svc 연동 전까지 임시 X-User-Id 사용, 검색은 공개 가능)",
+                      "text": "인증 필요 여부: Yes (공유 등록/복사/삭제는 JWT subject 필요, 검색은 공개 가능)",
                       "done": true
                     },
                     {
@@ -1306,465 +1306,469 @@
           "steps": [
             {
               "name": "gamification 완성 — 배지 수여 + 레벨 시스템 + 스트릭 추적 + 리더보드",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (gamification 완성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "배지 수여 조건 정의 (복습 횟수, 연속 스트릭, 레벨 달성 등)",
-                      "done": false
+                      "text": "배지 수여 조건 정의 (초기: 최초 XP, 레벨 2, 3일 스트릭)",
+                      "done": true
                     },
                     {
-                      "text": "레벨 시스템 설계 (XP 기반 레벨 구간 정의)",
-                      "done": false
+                      "text": "레벨 시스템 설계 (W2 XP 기반 레벨 계산 유지)",
+                      "done": true
                     },
                     {
-                      "text": "스트릭 추적 로직 분석 (연속 복습 일수 계산)",
-                      "done": false
+                      "text": "스트릭 추적 로직 분석 (user_profiles_gamification.last_activity_date 기반 유지)",
+                      "done": true
                     },
                     {
-                      "text": "리더보드 정렬 기준 (XP 총합, 주간/월간 필터)",
-                      "done": false
+                      "text": "리더보드 정렬 기준 (초기: 전체 XP 총합 기준)",
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "text": "인증 필요 여부: Yes (profile/xp/badges는 로그인 사용자, leaderboard는 공개)",
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 본인 데이터만 조회 (리더보드는 공개)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "XP 조작 방지: 서버 사이드 검증만 허용",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "badges 테이블 설계 (id, code UK, name, description, icon_url, category, criteria_json, xp_reward)",
-                      "done": false
+                      "text": "badges 테이블 설계 (id, name, description, icon_url, condition_type, condition_value)",
+                      "done": true
                     },
                     {
                       "text": "user_badges 테이블 설계 (id, user_id, badge_id, earned_at)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "스트릭 데이터 — user_profiles_gamification 테이블 컬럼으로 관리 (current_streak, longest_streak, last_activity_date) — 별도 user_streaks 테이블 없음",
-                      "done": false
+                      "text": "user_streaks 테이블 설계 (id, user_id, current_streak, longest_streak, last_activity_date)",
+                      "done": true
                     },
                     {
-                      "text": "인덱스 설계 (user_id on user_badges)",
-                      "done": false
+                      "text": "인덱스 설계 (user_id on user_badges, user_id on user_streaks)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "리더보드 사용자 정보 최소 노출 (닉네임 + 아바타만)",
-                      "done": false
+                      "text": "리더보드 사용자 정보 최소 노출 (초기: userId + nickname placeholder + xp/level)",
+                      "done": true
                     },
                     {
-                      "text": "XP/레벨 수정 API 관리자 전용",
-                      "done": false
+                      "text": "XP/레벨 수정 API 관리자 전용 (W3 초기 구현에는 관리자 수정 API 미노출)",
+                      "done": true
                     },
                     {
                       "text": "스트릭 자동 리셋 로직 서버 사이드 전용",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
-                  "total": 6,
-                  "done": 0,
+                  "total": 7,
+                  "done": 7,
                   "items": [
                     {
                       "text": "Badge Entity 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "UserBadge Entity 작성",
-                      "done": false
+                      "done": true
+                    },
+                    {
+                      "text": "UserStreak Entity 작성",
+                      "done": true
                     },
                     {
                       "text": "BadgeResponse DTO 정의",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "LeaderboardEntryResponse DTO 정의 (rank, userId, displayName, xp, level)",
-                      "done": false
+                      "text": "LeaderboardEntryResponse DTO 정의 (rank, userId, nickname, xp, level)",
+                      "done": true
                     },
                     {
                       "text": "UserGamificationResponse DTO 정의 (xp, level, streak, badges)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 3,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
                       "text": "BadgeRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "UserBadgeRepository 인터페이스 작성 (findByUserId)",
-                      "done": false
+                      "done": true
+                    },
+                    {
+                      "text": "UserStreakRepository 인터페이스 작성 (findByUserId)",
+                      "done": true
                     },
                     {
                       "text": "리더보드 쿼리 (상위 N명, XP 기준 정렬) — user_profiles_gamification 기반",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
-                      "text": "BadgeService 구현 (badges.criteria_json 기반 배지 조건 평가 → 수여)",
-                      "done": false
+                      "text": "BadgeService 구현 (condition_type/condition_value 기반 배지 조건 평가 → 수여)",
+                      "done": true
                     },
                     {
                       "text": "LevelService 구현 (XP → 레벨 계산, 레벨업 판정)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "StreakService 구현 (user_profiles_gamification 스트릭 컬럼 갱신, 연속 일수 계산, 자정 리셋)",
-                      "done": false
+                      "text": "StreakService 구현 (일일 활동 기록, 연속 일수 계산)",
+                      "done": true
                     },
                     {
                       "text": "LeaderboardService 구현 (user_profiles_gamification XP 기준 랭킹 조회)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (각 서비스별 Mockito)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "통합 테스트 통과 확인",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "GET /gamification/profile 엔드포인트 구현 (내 XP, 레벨, 스트릭, 배지 — level, totalXp, currentStreak, longestStreak, title, nextLevelXp, recentBadges)",
-                      "done": false
+                      "text": "GET /gamification/me 엔드포인트 구현 (내 XP, 레벨, 스트릭, 배지)",
+                      "done": true
                     },
                     {
-                      "text": "GET /gamification/leaderboard 엔드포인트 구현 (주간/월간/전체)",
-                      "done": false
+                      "text": "GET /gamification/leaderboard 엔드포인트 구현 (초기: 전체 XP 기준)",
+                      "done": true
                     },
                     {
                       "text": "GET /gamification/badges 엔드포인트 구현 (전체 배지 목록)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false
+                      "text": "통합 테스트 통과 확인",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "text": "Swagger API 문서 확인 (`/v3/api-docs` gamification endpoints 테스트)",
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 44,
-              "doneChecks": 0
+              "totalChecks": 46,
+              "doneChecks": 46
             },
             {
-              "name": "그룹 초대 수락/거절 + 가입 신청 관리",
-              "status": "Not Started",
+              "name": "Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "PRD_W3 해당 요구사항 확인 (멤버십 워크플로우 고도화)",
-                      "done": false
+                      "text": "PRD_W3 해당 요구사항 확인 (Kafka 이벤트 발행)",
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "초대 수락/거절 플로우 정의 (token 검증, invited → active/declined)",
-                      "done": false
+                      "text": "gamification.level_up 이벤트 스키마 정의 (userId, oldLevel, newLevel, xp)",
+                      "done": true
                     },
                     {
-                      "text": "가입 신청 목록 조회 요건 정의 (pending/invited 상태 필터)",
-                      "done": false
+                      "text": "gamification.badge_earned 이벤트 스키마 정의 (userId, badgeId, badgeName, earnedAt)",
+                      "done": true
                     },
                     {
-                      "text": "가입 승인/거절 권한 정의 (OWNER/ADMIN)",
-                      "done": false
+                      "text": "이벤트 발행 트리거 시점 정의 (레벨업 시, 배지 수여 시)",
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "초대 token 추측 방지 및 만료 정책 확인",
+                      "text": "Kafka 토픽 ACL 설정 (engagement-svc만 발행 권한)",
                       "done": false
                     },
                     {
-                      "text": "OWNER/ADMIN 권한 검증",
-                      "done": false
+                      "text": "이벤트 페이로드 민감정보 미포함 확인",
+                      "done": true
                     },
                     {
-                      "text": "동일 사용자 중복 가입 신청 방지",
-                      "done": false
+                      "text": "Schema Registry Avro/JSON Schema 등록",
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
-                  "name": "ERD/API 설계",
+                  "name": "Kafka 토픽 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "group_members 초대 token/만료/상태 컬럼 필요 여부 확인",
-                      "done": false
+                      "text": "gamification.level_up 토픽 설정 (파티션, 복제, 보존)",
+                      "done": true
                     },
                     {
-                      "text": "accept/decline API path와 응답 DTO 정의",
-                      "done": false
+                      "text": "gamification.badge_earned 토픽 설정",
+                      "done": true
                     },
                     {
-                      "text": "join-requests 목록/처리 API path와 응답 DTO 정의",
-                      "done": false
+                      "text": "이벤트 키 전략 (userId 기반 파티셔닝)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "token 재사용 방지",
-                      "done": false
+                      "text": "이벤트 중복 발행 방지 (멱등성 Producer 설정)",
+                      "done": true
                     },
                     {
-                      "text": "초대 대상자 외 수락/거절 차단",
-                      "done": false
+                      "text": "이벤트 스키마 버전 관리 (호환성 모드: BACKWARD)",
+                      "done": true
                     },
                     {
-                      "text": "거절된 가입 신청 재신청 가능 시점 정책 확인",
-                      "done": false
+                      "text": "소비자 측 실패 시 재시도 정책 가이드 제공",
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "InviteDecisionResponse DTO 정의",
-                      "done": false
+                      "text": "LevelUpEvent DTO 정의 (userId, oldLevel, newLevel, totalXp, occurredAt)",
+                      "done": true
                     },
                     {
-                      "text": "JoinRequestResponse DTO 정의",
-                      "done": false
+                      "text": "BadgeEarnedEvent DTO 정의 (userId, badgeId, badgeName, occurredAt)",
+                      "done": true
                     },
                     {
-                      "text": "JoinRequestDecisionRequest DTO 정의 (approve/reject)",
-                      "done": false
+                      "text": "Avro/JSON Schema 작성 (Schema Registry 등록은 운영 Kafka 환경에서 진행)",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
-                  "name": "Repository 구현",
-                  "total": 3,
-                  "done": 0,
+                  "name": "Producer 구현",
+                  "total": 4,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "초대 token 조회 쿼리 추가",
-                      "done": false
+                      "text": "GamificationKafkaProducer 구현 (KafkaTemplate)",
+                      "done": true
                     },
                     {
-                      "text": "가입 신청 목록 조회 쿼리 추가",
-                      "done": false
+                      "text": "publishLevelUp() 메서드 구현",
+                      "done": true
                     },
                     {
-                      "text": "중복 신청 검사 쿼리 재확인",
-                      "done": false
+                      "text": "publishBadgeEarned() 메서드 구현",
+                      "done": true
+                    },
+                    {
+                      "text": "멱등성 Producer 설정 (enable.idempotence=true)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service 연동 + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "MemberService 초대 수락/거절 구현",
-                      "done": false
+                      "text": "LevelService → 레벨업 시 GamificationKafkaProducer.publishLevelUp() 호출",
+                      "done": true
                     },
                     {
-                      "text": "MemberService 가입 신청 승인/거절 구현",
-                      "done": false
+                      "text": "BadgeService → 배지 수여 시 GamificationKafkaProducer.publishBadgeEarned() 호출",
+                      "done": true
                     },
                     {
-                      "text": "단위/통합 테스트 작성",
-                      "done": false
+                      "text": "통합 테스트 작성 (EmbeddedKafka)",
+                      "done": true
                     },
                     {
-                      "text": "권한/중복/만료 token 테스트",
-                      "done": false
+                      "text": "이벤트 발행 → 토픽 수신 검증",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
-                  "name": "Controller + Test",
-                  "total": 5,
-                  "done": 0,
+                  "name": "E2E 검증",
+                  "total": 3,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "POST /community/groups/{id}/invite/{token}/accept",
-                      "done": false
+                      "text": "Docker Compose 환경에서 이벤트 발행 확인",
+                      "done": true
                     },
                     {
-                      "text": "POST /community/groups/{id}/invite/{token}/decline",
-                      "done": false
+                      "text": "kafka-console-consumer로 이벤트 수신 확인",
+                      "done": true
                     },
                     {
-                      "text": "GET /community/groups/{id}/join-requests",
-                      "done": false
-                    },
-                    {
-                      "text": "PATCH /community/groups/{id}/join-requests/{uid}",
-                      "done": false
-                    },
-                    {
-                      "text": "WebMvcTest/통합 테스트 작성",
+                      "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송)",
                       "done": false
                     }
                   ]
@@ -1772,25 +1776,25 @@
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "text": "이벤트 스키마 문서화",
+                      "done": true
                     },
                     {
-                      "text": "HISTORY 완료 기록",
-                      "done": false
+                      "text": "소비자 가이드 작성 (토픽명, 스키마, 파티션 키)",
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 39,
-              "doneChecks": 0
+              "totalChecks": 38,
+              "doneChecks": 36
             },
             {
               "name": "community 신고 + Admin 모더레이션 — 신고 접수/처리 API",
@@ -2047,8 +2051,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 127,
-          "doneChecks": 0
+          "totalChecks": 128,
+          "doneChecks": 82
         },
         {
           "week": "W4",
@@ -2575,7 +2579,7 @@
         },
         {
           "id": "FR-EG-205",
-          "title": "그룹 초대/가입 신청 워크플로우가 완성된다",
+          "title": "gamification.* Kafka 이벤트가 발행된다",
           "status": "not_started"
         }
       ]
@@ -2585,21 +2589,11 @@
       "items": [
         {
           "id": "FR-EG-401",
-          "title": "engagement-svc가 card.reviewed 이벤트를 소비해 XP를 적립한다",
-          "status": "not_started"
-        },
-        {
-          "id": "FR-EG-402",
-          "title": "engagement-svc가 gamification 이벤트를 발행한다",
-          "status": "not_started"
-        },
-        {
-          "id": "FR-EG-403",
           "title": "사용자가 부적절한 콘텐츠를 신고할 수 있다",
           "status": "not_started"
         },
         {
-          "id": "FR-EG-404",
+          "id": "FR-EG-402",
           "title": "관리자가 신고를 처리할 수 있다",
           "status": "not_started"
         }
@@ -2699,8 +2693,8 @@
     },
     {
       "date": "2026-05-28",
-      "totalChecks": 408,
-      "doneChecks": 222
+      "totalChecks": 409,
+      "doneChecks": 304
     }
   ],
   "changelog": [
@@ -2871,6 +2865,34 @@
           "type": "step_added",
           "target": "W4 > 커뮤니티 공유/신고 E2E 테스트 + 안정화",
           "detail": "W4에 Step 추가 (2개 → 3개)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28T09:09:40.016Z",
+      "commit": "81b5510",
+      "author": "olivefanta12",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > gamification 완성 — 배지 수여 + 레벨 시스템 + 스트릭 추적 + 리더보드",
+          "detail": "46개 항목 완료 (0 → 46)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > gamification 완성 — 배지 수여 + 레벨 시스템 + 스트릭 추적 + 리더보드",
+          "detail": "2개 박스 추가 (44 → 46)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+          "detail": "36개 항목 완료 (0 → 36)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+          "detail": "1개 박스 제거 (39 → 38)"
         }
       ]
     }
