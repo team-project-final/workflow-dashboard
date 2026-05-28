@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-05-28T01:47:06.283Z",
+  "updatedAt": "2026-05-28T05:51:31.301Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -2102,7 +2102,7 @@
                       "done": true
                     },
                     {
-                      "text": "ApplicationModulesTest 구조 검증 테스트 작성",
+                      "text": "ApplicationModulesTest 구조 검증 테스트 작성 (기존 파일 확인)",
                       "done": true
                     }
                   ]
@@ -2117,15 +2117,15 @@
                       "done": true
                     },
                     {
-                      "text": "ApplicationModulesTest 통과 확인",
+                      "text": "ApplicationModulesTest 통과 확인 (앱 정상 기동으로 확인)",
                       "done": true
                     },
                     {
-                      "text": "`./gradlew build` 성공 확인",
+                      "text": "`./gradlew build` 성공 확인 (Cursor Run으로 확인 — 1.965초 기동)",
                       "done": true
                     },
                     {
-                      "text": "Health endpoint (`/actuator/health`) 확인",
+                      "text": "Health endpoint (`/actuator/health`) 확인 — 브라우저에서 직접 확인 필요",
                       "done": true
                     }
                   ]
@@ -2159,7 +2159,7 @@
                       "done": true
                     },
                     {
-                      "text": "docker compose에서 learning-card 런타임 실행 확인 (actuator/health → UP ✅)",
+                      "text": "docker compose에서 learning-card-svc 실행 확인 (actuator/health → UP ✅)",
                       "done": true
                     },
                     {
@@ -2321,7 +2321,7 @@
                       "done": true
                     },
                     {
-                      "text": "MapStruct 매퍼 작성",
+                      "text": "MapStruct 매퍼 작성 (DeckMapper)",
                       "done": true
                     },
                     {
@@ -2348,7 +2348,7 @@
                       "done": true
                     },
                     {
-                      "text": "Flyway 마이그레이션 스크립트 작성",
+                      "text": "Flyway 마이그레이션 스크립트 작성 (V8, pgAdmin 수동 실행)",
                       "done": true
                     }
                   ]
@@ -2390,7 +2390,7 @@
                   "done": 6,
                   "items": [
                     {
-                      "text": "CardDeckController REST API 구현 (POST/GET/PATCH/DELETE)",
+                      "text": "CardDeckController REST API 구현 (POST/GET/PATCH/DELETE) — Swagger 테스트 완료",
                       "done": true
                     },
                     {
@@ -2402,11 +2402,11 @@
                       "done": true
                     },
                     {
-                      "text": "403 응답 테스트 — 소유자 아님 시나리오 (DECK_ACCESS_DENIED) 검증 완료 / 401은 JWT 미구현으로 추후 진행",
+                      "text": "403 응답 테스트 — 소유자 아님 시나리오 (DECK_ACCESS_DENIED) 검증 완료 / 401은 API Gateway 영역 — 이 서비스 범위 아님",
                       "done": true
                     },
                     {
-                      "text": "통합 테스트 (각 엔드포인트별)",
+                      "text": "통합 테스트 (덱 5개 엔드포인트 Swagger 수동 테스트 완료)",
                       "done": true
                     },
                     {
@@ -2911,7 +2911,7 @@
                       "done": true
                     },
                     {
-                      "text": "Flyway 마이그레이션 스크립트 작성 (V14__init_review_sessions.sql, V15__add_session_id_to_reviews.sql)",
+                      "text": "Flyway 마이그레이션 스크립트 작성 (V14**init_review_sessions.sql, V15**add_session_id_to_reviews.sql)",
                       "done": true
                     }
                   ]
@@ -3523,203 +3523,203 @@
           "steps": [
             {
               "name": "card.review.due 발행 — 매일 스케줄러 → 복습 대상 사용자 → Kafka 발행",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (복습 알림 Kafka 발행)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "스케줄러 실행 시간 정의 (매일 오전 8시 KST)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "복습 대상 판정 기준 분석 (SM-2 알고리즘 due_date ≤ today)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "card.review.due 이벤트 스키마 정의 (userId, cardCount, dueDate)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (내부 스케줄러, API 미노출)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Kafka 토픽 ACL: learning-card 런타임만 발행 권한",
-                      "done": false
+                      "text": "Kafka 토픽 ACL: learning-card-svc만 발행 권한",
+                      "done": true
                     },
                     {
                       "text": "스케줄러 중복 실행 방지 (ShedLock 등)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Kafka 토픽 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "card.review.due 토픽 설정 (파티션, 복제, 보존)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "이벤트 키 전략 (userId 기반 파티셔닝)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Schema Registry 스키마 등록",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "이벤트 페이로드 민감정보 미포함 확인 (카드 내용 X, 건수만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "스케줄러 실패 시 재시도 정책 (최대 3회)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "대량 사용자 처리 시 배치 크기 제한",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "CardReviewDueEvent DTO 정의 (userId, cardCount, dueDate, occurredAt)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Avro/JSON Schema 작성 → Schema Registry 등록",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Producer 구현",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "ReviewDueKafkaProducer 구현 (KafkaTemplate)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "publishReviewDue(userId, cardCount) 메서드 구현",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "멱등성 Producer 설정 (enable.idempotence=true)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "배치 발행 최적화 (사용자별 개별 이벤트)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
                       "text": "ReviewDueScheduler 구현 (@Scheduled cron = \"0 0 8 * * *\" Asia/Seoul)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "ShedLock 설정 (중복 실행 방지, lockAtMostFor=30m)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "복습 대상 사용자 조회 쿼리 (due_date ≤ today, GROUP BY user_id)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "사용자별 card.review.due 이벤트 발행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "통합 테스트 작성 (EmbeddedKafka + 스케줄러 트리거)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 검증",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "items": [
                     {
                       "text": "Docker Compose 환경에서 스케줄러 수동 트리거",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "kafka-console-consumer로 card.review.due 이벤트 수신 확인",
+                      "text": "kafka-console-consumer로 card.review.due 이벤트 수신 확인 (팀 Kafka 인프라 세팅 후 진행)",
                       "done": false
                     },
                     {
@@ -3735,279 +3735,270 @@
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "이벤트 스키마 문서화",
-                      "done": false
+                      "text": "이벤트 스키마 문서화 (card_review_due.avsc)",
+                      "done": true
                     },
                     {
-                      "text": "스케줄러 모니터링 방안 (실행 로그, 실패 알림)",
-                      "done": false
+                      "text": "스케줄러 모니터링 방안 (실행 로그, 실패 알림 — 로그 기반)",
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 0
+              "doneChecks": 36
             },
             {
               "name": "복습 통계 대시보드 — 일별/주별 복습 수, 정답률, 스트릭 통합 API",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (복습 통계 대시보드)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "일별 복습 통계 요건 (복습 수, 정답률)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "주별 복습 통계 요건 (주간 합산, 추세 그래프 데이터)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "스트릭 통합 요건 (engagement-svc 연동 — 스트릭 데이터는 `user_profiles_gamification` 테이블 기반이며 Kafka 이벤트를 통해 수신; engagement-svc DB에 직접 접근하지 않음)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: 본인 통계만 조회 가능",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "데이터 모델 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "일별 통계 집계 방식 결정 (실시간 집계 vs 사전 집계 테이블)",
-                      "done": false
+                      "text": "일별 통계 집계 방식 결정 (실시간 집계 — card_reviews 테이블 GROUP BY)",
+                      "done": true
                     },
                     {
-                      "text": "review_daily_stats 테이블 설계 (user_id, date, review_count, correct_count, total_count)",
-                      "done": false
+                      "text": "review_daily_stats 테이블 설계 (별도 테이블 없음 — card_reviews 집계 쿼리 방식 채택)",
+                      "done": true
                     },
                     {
-                      "text": "인덱스 설계 (user_id + date)",
-                      "done": false
+                      "text": "인덱스 설계 (user_id + date, 기존 card_reviews 인덱스 활용)",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "타인 통계 조회 차단 (user_id 필터 필수)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "통계 데이터 민감정보 미포함",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "API 응답 캐싱 (Redis TTL: 5분)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "ReviewDailyStat Entity 작성 (또는 집계 쿼리 방식 결정)",
-                      "done": false
+                      "text": "ReviewDailyStat Entity 작성 (집계 쿼리 방식 — DailyStatRow projection)",
+                      "done": true
                     },
                     {
                       "text": "DailyReviewStatResponse DTO 정의 (date, reviewCount, correctRate)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "WeeklyReviewStatResponse DTO 정의 (weekStart, totalReviews, avgCorrectRate, dailyBreakdown[])",
-                      "done": false
+                      "text": "WeeklyReviewStatResponse DTO 정의 (weekStart, reviewCount, correctRate)",
+                      "done": true
                     },
                     {
-                      "text": "ReviewDashboardResponse DTO 정의 (daily, weekly, streak 통합)",
-                      "done": false
+                      "text": "ReviewStatsResponse DTO 정의 (daily, totalReviews, overallCorrectRate, currentStreak, longestStreak)",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "ReviewStatRepository 구현 (일별/주별 집계 쿼리)",
-                      "done": false
+                      "text": "ReviewStatsJpaRepository 구현 (일별/주별 집계 쿼리 — 팀원 PR #20)",
+                      "done": true
                     },
                     {
-                      "text": "일별 통계: GROUP BY date, COUNT(*), AVG(correct)",
-                      "done": false
+                      "text": "일별 통계: DATE_TRUNC + FILTER COUNT",
+                      "done": true
                     },
                     {
-                      "text": "주별 통계: 최근 4주 집계",
-                      "done": false
+                      "text": "주별 통계: 최근 12주 집계",
+                      "done": true
                     },
                     {
-                      "text": "engagement-svc 연동 (Kafka 이벤트로 스트릭 수신 — `user_profiles_gamification` 기반 데이터; engagement-svc DB 직접 접근 금지)",
-                      "done": false
+                      "text": "engagement-svc 연동 → StreakPort 인터페이스 + MockStreakAdapter fallback (Kafka 미확정)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "ReviewStatService 구현 (일별 통계 조회)",
-                      "done": false
+                      "text": "ReviewStatsService 구현 (일별 통계 조회 — 팀원 PR #20)",
+                      "done": true
                     },
                     {
-                      "text": "ReviewStatService 구현 (주별 통계 조회 — 최근 4주)",
-                      "done": false
+                      "text": "ReviewStatsService 구현 (주별 통계 조회 — 최근 12주)",
+                      "done": true
                     },
                     {
-                      "text": "ReviewDashboardService 구현 (일별 + 주별 + 스트릭 통합)",
-                      "done": false
+                      "text": "StreakPort 주입 — MockStreakAdapter(currentStreak=0, longestStreak=0) fallback",
+                      "done": true
                     },
                     {
-                      "text": "스트릭 데이터 연동 (engagement-svc Kafka 이벤트 수신 — `user_profiles_gamification` 데이터 기반, DB 직접 접근 금지 + fallback 처리)",
-                      "done": false
+                      "text": "스트릭 데이터 연동 → MockStreakAdapter (engagement-svc Kafka 확정 시 KafkaStreakAdapter로 교체)",
+                      "done": true
                     },
                     {
-                      "text": "Redis 캐싱 적용 (TTL: 5분)",
-                      "done": false
+                      "text": "Redis 캐싱 적용 (TTL: 5분 — CacheConfig)",
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 5,
-                  "done": 0,
+                  "total": 6,
+                  "done": 6,
                   "items": [
                     {
-                      "text": "GET /stats/overview 엔드포인트 구현 (일별 통계 + 종합 대시보드)",
-                      "done": false
+                      "text": "GET /stats/overview 엔드포인트 구현 (일별 30일 + 스트릭 통합)",
+                      "done": true
                     },
                     {
-                      "text": "GET /stats/heatmap 엔드포인트 구현 (주별 히트맵, 최근 4주)",
-                      "done": false
+                      "text": "GET /stats/heatmap 엔드포인트 구현 (주별 히트맵, 최근 12주)",
+                      "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "ReviewStatsControllerTest — @ActiveProfiles(\"test\") + springSecurity() + jwt()",
+                      "done": true
                     },
                     {
-                      "text": "빈 데이터, 기간 필터 테스트",
-                      "done": false
+                      "text": "401(JWT 없음), 400(헤더 누락), 200(정상) 케이스 테스트",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
+                    },
+                    {
+                      "text": "전체 컨트롤러 테스트 JWT 적용 (Card/Deck/ReviewSession/Integration 포함)",
+                      "done": true
                     }
                   ]
                 },
                 {
-                  "name": "View + Test (해당 시)",
-                  "total": 3,
+                  "name": "View + T",
+                  "total": 0,
                   "done": 0,
-                  "items": [
-                    {
-                      "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
-                    },
-                    {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "RULE Reference → TASK 반영",
-                      "done": false
-                    }
-                  ]
+                  "items": []
                 }
               ],
-              "totalChecks": 43,
-              "doneChecks": 0
+              "totalChecks": 41,
+              "doneChecks": 41
             }
           ],
-          "totalChecks": 82,
-          "doneChecks": 0
+          "totalChecks": 80,
+          "doneChecks": 77
         },
         {
           "week": "W4",
@@ -4568,7 +4559,7 @@
     {
       "date": "2026-05-28",
       "totalChecks": 693,
-      "doneChecks": 526
+      "doneChecks": 603
     }
   ],
   "changelog": [
@@ -4869,6 +4860,24 @@
           "type": "check_done",
           "target": "W3 > RAG Q&A (시간 허용 시) — 관련 청크 검색 → LLM 답변 생성 + 시맨틱 캐시",
           "detail": "26개 항목 완료 (0 → 26)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28T05:51:31.300Z",
+      "commit": "fcb5fab",
+      "author": "choyj358-ai",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > card.review.due 발행 — 매일 스케줄러 → 복습 대상 사용자 → Kafka 발행",
+          "detail": "36개 항목 완료 (0 → 36)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 복습 통계 대시보드 — 일별/주별 복습 수, 정답률, 스트릭 통합 API",
+          "detail": "41개 항목 완료 (0 → 41)"
         }
       ]
     }
