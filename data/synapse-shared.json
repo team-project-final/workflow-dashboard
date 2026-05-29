@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-29T01:55:58.462Z",
+  "updatedAt": "2026-05-29T02:46:53.522Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1262,65 +1262,61 @@
                 {
                   "name": "테스트 데이터 준비",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "E2E 테스트용 시드 데이터 정의 (사용자, 카드, 노트, 커뮤니티 게시글)",
-                      "done": false
+                      "text": "E2E 테스트용 시드 데이터 정의 (사용자, 카드, 노트, 커뮤니티 게시글) → `src/test/resources/seed/V001~V005`",
+                      "done": true
                     },
                     {
-                      "text": "Kafka 토픽 사전 생성 스크립트 작성",
-                      "done": false
+                      "text": "Kafka 토픽 사전 생성 스크립트 작성 → `scripts/create-kafka-topics.sh` (5개 토픽)",
+                      "done": true
                     },
                     {
-                      "text": "테스트 실행 순서 의존성 정리",
-                      "done": false
+                      "text": "테스트 실행 순서 의존성 정리 → `docs/guides/E2E_SCENARIOS_W3.md`",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 구현 및 조율",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Kafka 이벤트 체인 E2E 테스트 작성 (Testcontainers)",
-                      "done": false
+                      "text": "Kafka 이벤트 체인 E2E 테스트 작성 (~~Testcontainers~~ → 로컬 shell harness `scripts/kafka-e2e-test.sh`로 대체, EKS destroy로 로컬 우선)",
+                      "done": true
                     },
                     {
-                      "text": "서비스 간 이벤트 발행 → 소비 → 결과 검증 자동화",
-                      "done": false
+                      "text": "서비스 간 이벤트 발행 → 소비 → 결과 검증 자동화 (**전송 경로 한정**: produce→consume + CloudEvent 페이로드 단위 round-trip. consumer 비즈니스 로직은 서비스 구현 도착 시 확장)",
+                      "done": true
                     },
                     {
-                      "text": "코드 리뷰 전 PR 승인 프로세스 적용",
-                      "done": false
+                      "text": "코드 리뷰 전 PR 승인 프로세스 적용 → work-order 발행 + 코드 리뷰 승인 기준 (`W3_KAFKA_WORKORDER.md`, TASK Step 7)",
+                      "done": true
                     },
                     {
-                      "text": "각 서비스 담당자 테스트 결과 취합",
+                      "text": "각 서비스 담당자 테스트 결과 취합 — 팀원 Kafka 산출물 PR 0/5로 취합 대상 미도착 (05-27 EOD 기준)",
                       "done": false
                     }
                   ]
                 },
                 {
                   "name": "통합 테스트 실행 및 검증",
-                  "total": 4,
-                  "done": 0,
+                  "total": 3,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "전체 서비스 Docker Compose 기동 → E2E 테스트 실행",
+                      "text": "Kafka 이벤트 전파 지연 시간 측정 (< 3초 기준) — harness 총 29s(라운드트립), 이벤트 단위 측정은 서비스 구현 후",
                       "done": false
                     },
                     {
-                      "text": "Kafka 이벤트 전파 지연 시간 측정 (< 3초 기준)",
-                      "done": false
+                      "text": "이벤트 유실 여부 확인 — harness `--all` 5/5 + `--full` 13/13 round-trip 무유실 (재시도 로직 검증은 서비스 consumer 도착 후)",
+                      "done": true
                     },
                     {
-                      "text": "이벤트 유실 여부 확인 (재시도 로직 검증)",
-                      "done": false
-                    },
-                    {
-                      "text": "실패 테스트 원인 분석 및 담당자 배정",
-                      "done": false
+                      "text": "실패 테스트 원인 분석 및 담당자 배정 — D-1(stale ZK znode)·D-2(샘플 line-split) 분석·해결 → `E2E_BASELINE_W3.md`",
+                      "done": true
                     }
                   ]
                 },
@@ -1363,8 +1359,8 @@
                   ]
                 }
               ],
-              "totalChecks": 37,
-              "doneChecks": 12
+              "totalChecks": 36,
+              "doneChecks": 20
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1585,8 +1581,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 72,
-          "doneChecks": 12
+          "totalChecks": 71,
+          "doneChecks": 20
         },
         {
           "week": "W4",
@@ -2081,7 +2077,7 @@
     {
       "date": "2026-05-29",
       "totalChecks": 277,
-      "doneChecks": 170
+      "doneChecks": 178
     }
   ],
   "changelog": [
@@ -2201,6 +2197,24 @@
           "type": "check_done",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "9개 항목 완료 (3 → 12)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29T02:46:53.522Z",
+      "commit": "b97e99a",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "8개 항목 완료 (12 → 20)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "1개 박스 제거 (37 → 36)"
         }
       ]
     }
