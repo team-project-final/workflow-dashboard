@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-29T08:19:08.154Z",
+  "updatedAt": "2026-05-29T08:29:21.049Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1303,9 +1303,13 @@
                 },
                 {
                   "name": "통합 테스트 실행 및 검증",
-                  "total": 3,
-                  "done": 2,
+                  "total": 4,
+                  "done": 3,
                   "items": [
+                    {
+                      "text": "전체 서비스 Docker Compose 기동 → E2E 테스트 실행 — 인프라(zookeeper/kafka/schema-registry/kafka-init) 기동 + **`--avro` 라이브 8/8 PASSED**(8토픽 Avro 라운드트립 + subject 자동등록, 전역 BACKWARD). 앱 서비스 비즈니스 로직 E2E는 구현 도착 후(W4)",
+                      "done": true
+                    },
                     {
                       "text": "Kafka 이벤트 전파 지연 시간 측정 (< 3초 기준) — harness 총 29s(라운드트립), 이벤트 단위 측정은 서비스 구현 후",
                       "done": false
@@ -1359,8 +1363,8 @@
                   ]
                 }
               ],
-              "totalChecks": 36,
-              "doneChecks": 29
+              "totalChecks": 37,
+              "doneChecks": 30
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1573,8 +1577,8 @@
               "doneChecks": 23
             }
           ],
-          "totalChecks": 69,
-          "doneChecks": 52
+          "totalChecks": 70,
+          "doneChecks": 53
         },
         {
           "week": "W4",
@@ -2069,7 +2073,7 @@
     {
       "date": "2026-05-29",
       "totalChecks": 277,
-      "doneChecks": 210
+      "doneChecks": 211
     }
   ],
   "changelog": [
@@ -2251,6 +2255,24 @@
           "type": "boxes_removed",
           "target": "W3 > ArgoCD dev/staging 배포 검증",
           "detail": "2개 박스 제거 (35 → 33)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29T08:29:21.049Z",
+      "commit": "c0a55a5",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "1개 항목 완료 (29 → 30)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "1개 박스 추가 (36 → 37)"
         }
       ]
     }
