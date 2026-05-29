@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-29T02:46:53.522Z",
+  "updatedAt": "2026-05-29T02:59:16.987Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1239,23 +1239,23 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "E2E 테스트 환경 시크릿 분리 확인",
-                      "done": false
+                      "text": "E2E 테스트 환경 시크릿 분리 확인 → 로컬 throwaway 스택, 테스트 리소스 실 시크릿 0건",
+                      "done": true
                     },
                     {
-                      "text": "테스트 데이터 민감정보 마스킹 확인",
-                      "done": false
+                      "text": "테스트 데이터 민감정보 마스킹 확인 → 샘플 email 전부 `@test.synapse.dev` 합성값 (운영 Consumer 로그 마스킹은 구현 시 권장)",
+                      "done": true
                     },
                     {
-                      "text": "테스트 환경 네트워크 격리 확인",
-                      "done": false
+                      "text": "테스트 환경 네트워크 격리 확인 → 로컬 `synapse-net` bridge, EKS private endpoint + 네임스페이스 분리",
+                      "done": true
                     },
                     {
-                      "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "text": "결과 → TASK Constraints 반영 (Step 7 \"Security 2차 검토\", 05-29)",
+                      "done": true
                     }
                   ]
                 },
@@ -1360,7 +1360,7 @@
                 }
               ],
               "totalChecks": 36,
-              "doneChecks": 20
+              "doneChecks": 24
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1582,7 +1582,7 @@
             }
           ],
           "totalChecks": 71,
-          "doneChecks": 20
+          "doneChecks": 24
         },
         {
           "week": "W4",
@@ -2077,7 +2077,7 @@
     {
       "date": "2026-05-29",
       "totalChecks": 277,
-      "doneChecks": 178
+      "doneChecks": 182
     }
   ],
   "changelog": [
@@ -2215,6 +2215,19 @@
           "type": "boxes_removed",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "1개 박스 제거 (37 → 36)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29T02:59:16.987Z",
+      "commit": "0d53afa",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "4개 항목 완료 (20 → 24)"
         }
       ]
     }
