@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-05-29T02:59:16.987Z",
+  "updatedAt": "2026-05-29T08:14:52.649Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1323,18 +1323,18 @@
                 {
                   "name": "코드 리뷰 조율",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "각 서비스 PR 리뷰 현황 취합",
-                      "done": false
+                      "text": "각 서비스 PR 리뷰 현황 취합 — cross-repo 실측(05-29): learning main 머지 / platform·engagement dev / knowledge 미구현",
+                      "done": true
                     },
                     {
-                      "text": "크로스 서비스 영향도 리뷰 (이벤트 스키마 호환성)",
-                      "done": false
+                      "text": "크로스 서비스 영향도 리뷰 (이벤트 스키마 호환성) — **스키마 패밀리 분기(D-002) 발견 → Avro 사수 결정 + 이벤트 계약 표준 수립**(`EVENT_CONTRACT_STANDARD.md`). cards-generated HTTP 드리프트 정정(D-001)",
+                      "done": true
                     },
                     {
-                      "text": "PR 승인 및 main 브랜치 머지 조율",
+                      "text": "PR 승인 및 main 브랜치 머지 조율 — 계약 표준 적용 이슈 발행(#43/#13/#26/#32), 머지는 W4",
                       "done": false
                     }
                   ]
@@ -1342,25 +1342,25 @@
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "E2E 테스트 결과 리포트 작성",
-                      "done": false
+                      "text": "E2E 테스트 결과 리포트 작성 → `docs/reports/E2E_REPORT_W3.md` + 종료 게이트 `W3_EXIT_GATE.md`(미통과 1/5)",
+                      "done": true
                     },
                     {
-                      "text": "미해결 이슈 목록화 및 우선순위 지정",
-                      "done": false
+                      "text": "미해결 이슈 목록화 및 우선순위 지정 → `W4_KAFKA_WORKORDER.md`(knowledge P0·engagement P0·platform P1) + 서비스 이슈 4건",
+                      "done": true
                     },
                     {
-                      "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "text": "RULE Reference → TASK 반영 (Security 2차 Constraints 등)",
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 36,
-              "doneChecks": 24
+              "doneChecks": 29
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1582,7 +1582,7 @@
             }
           ],
           "totalChecks": 71,
-          "doneChecks": 24
+          "doneChecks": 29
         },
         {
           "week": "W4",
@@ -2077,7 +2077,7 @@
     {
       "date": "2026-05-29",
       "totalChecks": 277,
-      "doneChecks": 182
+      "doneChecks": 187
     }
   ],
   "changelog": [
@@ -2228,6 +2228,19 @@
           "type": "check_done",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "4개 항목 완료 (20 → 24)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29T08:14:52.649Z",
+      "commit": "69d7c3c",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "5개 항목 완료 (24 → 29)"
         }
       ]
     }
