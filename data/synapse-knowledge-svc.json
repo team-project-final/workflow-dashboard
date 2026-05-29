@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-05-29T08:36:22.410Z",
+  "updatedAt": "2026-05-29T08:47:07.251Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -3026,261 +3026,265 @@
           "steps": [
             {
               "name": "검색 RRF — 시맨틱(pgvector) + BM25(ES) 결합 하이브리드 검색",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (하이브리드 검색)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "Reciprocal Rank Fusion (RRF) 알고리즘 분석 (k=60 파라미터)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "pgvector 시맨틱 검색 요건 분석 (임베딩 모델, 유사도 함수)",
-                      "done": false
+                      "text": "learning-ai 시맨틱 검색 프록시 연동 요건 분석",
+                      "done": true
                     },
                     {
                       "text": "Elasticsearch BM25 검색 요건 분석 (nori 분석기, 필드 가중치)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "두 검색 결과 병합 전략 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "권한 종류: 본인 노트/공개 노트만 검색 가능",
-                      "done": false
+                      "text": "권한 종류: 본인 노트만 검색 가능",
+                      "done": true
                     },
                     {
                       "text": "검색 결과 접근 제어 필터 적용 필수",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "아키텍처 설계",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "검색 파이프라인 설계 (쿼리 → 임베딩 → pgvector 검색 + ES 검색 → RRF 병합)",
-                      "done": false
+                      "text": "검색 파이프라인 설계 (쿼리 → learning-ai semantic proxy + ES 검색 → RRF 병합)",
+                      "done": true
                     },
                     {
-                      "text": "pgvector 인덱스 설정 (IVFFlat / HNSW, 차원 수)",
-                      "done": false
+                      "text": "BM25 후보 검색과 semantic 후보 검색의 공통 결과 모델 정의",
+                      "done": true
                     },
                     {
-                      "text": "ES 인덱스 매핑 설정 (nori 분석기, 필드 가중치)",
-                      "done": false
+                      "text": "ES 인덱스 매핑 재사용 여부 확인 (nori 분석기, 필드 가중치)",
+                      "done": true
                     },
                     {
                       "text": "RRF 병합 로직 설계 (score = Σ 1/(k + rank_i))",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "검색 쿼리 인젝션 방지 (ES query sanitization)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "임베딩 벡터 접근 제어 (사용자별 필터)",
-                      "done": false
+                      "text": "시맨틱 검색 프록시 호출 시 사용자 컨텍스트 전달",
+                      "done": true
                     },
                     {
                       "text": "검색 결과 민감정보 마스킹",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "HybridSearchRequest DTO 정의 (query, cursor, limit, filters)",
-                      "done": false
+                      "text": "HybridSearchRequest DTO 정의 (query, limit, tags)",
+                      "done": true
                     },
                     {
-                      "text": "HybridSearchResponse DTO 정의 (results[], totalCount, cursor, searchTime)",
-                      "done": false
+                      "text": "HybridSearchResponse DTO 정의 (results[], totalCount, searchTime, semanticFallback)",
+                      "done": true
                     },
                     {
-                      "text": "SearchResultItem DTO 정의 (noteId, title, snippet, score, source)",
-                      "done": false
+                      "text": "SemanticSearchRequest / SemanticSearchResponse / UnifiedSearchResultResponse DTO 정의",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository / Client 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "PgVectorSearchRepository 구현 (pgvector cosine similarity 검색)",
-                      "done": false
+                      "text": "LearningAiSearchClient 구현 (시맨틱 검색 프록시)",
+                      "done": true
                     },
                     {
-                      "text": "ElasticsearchClient 구현 (BM25 검색 + nori 분석)",
-                      "done": false
+                      "text": "Elasticsearch 후보 검색 구현 (BM25 검색 + nori 분석)",
+                      "done": true
                     },
                     {
-                      "text": "EmbeddingClient 구현 (쿼리 텍스트 → 임베딩 벡터 변환)",
-                      "done": false
+                      "text": "SearchProperties / RestClient 설정 구현",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
-                  "total": 7,
-                  "done": 0,
+                  "total": 8,
+                  "done": 8,
                   "items": [
                     {
-                      "text": "SemanticSearchService 구현 (쿼리 임베딩 → pgvector top-K 검색)",
-                      "done": false
+                      "text": "SemanticSearchService 구현 (learning-ai semantic API 프록시)",
+                      "done": true
                     },
                     {
-                      "text": "BM25SearchService 구현 (ES BM25 top-K 검색)",
-                      "done": false
+                      "text": "기존 BM25 검색 경로를 후보 조회와 페이지 조회로 분리",
+                      "done": true
                     },
                     {
                       "text": "RRFMergeService 구현 (두 결과 리스트 RRF 병합, k=60)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "HybridSearchService 구현 (시맨틱 + BM25 → RRF → 최종 결과)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "접근 제어 필터 적용 (사용자 소유 + 공개 노트만)",
-                      "done": false
+                      "text": "접근 제어 필터 적용 (사용자 소유 노트만)",
+                      "done": true
                     },
                     {
-                      "text": "단위 테스트 작성 (각 서비스별 Mockito)",
-                      "done": false
+                      "text": "단위 테스트 작성 (서비스/병합 로직)",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
+                    },
+                    {
+                      "text": "learning-ai UUID `note_id`와 knowledge `Long noteId`를 연결하는 `note_identity_map` 전략 구현 및 semantic 결과 실제 RRF 병합 반영",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "GET /notes/search?q=... 엔드포인트 구현 (키워드 검색)",
-                      "done": false
+                      "text": "GET /api/v1/notes/search?q=... 엔드포인트 유지 (키워드 검색)",
+                      "done": true
                     },
                     {
-                      "text": "POST /ai/search/semantic 엔드포인트 구현 (시맨틱 검색) — **아키텍처 주의**: `/ai/search/semantic` 및 `/ai/search/hybrid` API는 learning-ai 서비스 소관입니다. knowledge-svc에서 직접 구현하지 말고 learning-ai 런타임이 제공하는 API를 호출(프록시)하는 방식으로 연동하십시오.",
-                      "done": false
+                      "text": "POST /api/v1/ai/search/semantic 엔드포인트 구현 (시맨틱 검색 프록시)",
+                      "done": true
                     },
                     {
-                      "text": "POST /ai/search/hybrid 엔드포인트 구현 (하이브리드 검색) — **아키텍처 주의**: 위 항목 참조. 해당 엔드포인트의 실제 구현 책임은 learning-ai 팀에 있습니다.",
-                      "done": false
+                      "text": "POST /api/v1/ai/search/hybrid 엔드포인트 구현 (하이브리드 검색 조합)",
+                      "done": true
                     },
                     {
-                      "text": "검색 결과 하이라이트 (매칭 키워드 강조)",
-                      "done": false
+                      "text": "검색 결과 하이라이트 / snippet 유지",
+                      "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "MockMvc 기반 인증/응답 테스트 추가",
+                      "done": true
                     },
                     {
-                      "text": "빈 결과, 페이징, 필터 테스트",
-                      "done": false
+                      "text": "빈 결과, fallback, 필터 테스트",
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "text": "Swagger/OpenAPI 미구성으로 확인 불가",
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 45,
-              "doneChecks": 0
+              "totalChecks": 46,
+              "doneChecks": 46
             },
             {
               "name": "검색 정확도 측정 — 테스트 쿼리 세트 → 정확도 리포트",
@@ -3533,8 +3537,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 88,
-          "doneChecks": 0
+          "totalChecks": 89,
+          "doneChecks": 46
         },
         {
           "week": "W4",
@@ -4103,7 +4107,7 @@
     {
       "date": "2026-05-29",
       "totalChecks": 619,
-      "doneChecks": 322
+      "doneChecks": 368
     }
   ],
   "changelog": [
@@ -4590,6 +4594,24 @@
           "type": "boxes_removed",
           "target": "W2 > graph 모듈 — 백링크 + D3.js 데이터 API",
           "detail": "1개 박스 제거 (50 → 49)"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29T08:47:07.250Z",
+      "commit": "c9e40af",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 검색 RRF — 시맨틱(pgvector) + BM25(ES) 결합 하이브리드 검색",
+          "detail": "46개 항목 완료 (0 → 46)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > 검색 RRF — 시맨틱(pgvector) + BM25(ES) 결합 하이브리드 검색",
+          "detail": "1개 박스 추가 (45 → 46)"
         }
       ]
     }
