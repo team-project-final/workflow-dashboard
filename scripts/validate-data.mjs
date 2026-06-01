@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import { CHANGE_TYPE_IDS } from '../src/constants/changeTypes.js'
 
 const DATA_DIR = path.resolve('data')
 
@@ -68,17 +69,7 @@ const VIRTUAL_TRACK_SOURCES = new Set(
 const WEEKS = configFormat === 'new'
   ? config.periods.map(p => p.id)
   : ['W1', 'W2', 'W3', 'W4', 'W5']
-const CHANGE_TYPES = new Set([
-  'step_added',
-  'step_deleted',
-  'step_modified',
-  'check_done',
-  'check_undone',
-  'phase_added',
-  'phase_deleted',
-  'boxes_added',    // 박스(체크 항목) 총개수 증가 — parse-workflow.mjs가 생성
-  'boxes_removed',  // 박스(체크 항목) 총개수 감소 — parse-workflow.mjs가 생성
-])
+const CHANGE_TYPES = new Set(CHANGE_TYPE_IDS)
 
 const errors = []
 const warnings = []
