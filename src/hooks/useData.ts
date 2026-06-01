@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import type { PrdWeek, RepoData, Track, Week } from '../types'
 import type { RepoDef, TrackDef, VirtualTrackDef } from '../types/config'
 import { useConfig } from './useConfig'
+import { computeOverrideStatus, type OverrideStatus } from '../utils/overrideStatus'
 
 export const WEEKS_META = [
   { week: 'W1', period: '05-12~05-16' },
@@ -82,6 +83,12 @@ function fetchRepoJson(repo: string): Promise<RepoData | null> {
     .catch(() => null)
 }
 
+function fetchServerJson(repo: string): Promise<RepoData | null> {
+  return fetch(`${import.meta.env.BASE_URL}data/${repo}.json`)
+    .then(r => r.ok ? r.json() : null)
+    .catch(() => null)
+}
+
 function mergeVirtualTrackData(
   vtDef: VirtualTrackDef,
   sourceResults: (RepoData | null)[],
@@ -138,8 +145,15 @@ export function useData() {
   const { config, loading: configLoading } = useConfig()
   const [data, setData] = useState<RepoData[]>([])
   const [rawByRepo, setRawByRepo] = useState<Record<string, RepoData | null>>({})
+  const [overrides, setOverrides] = useState<OverrideStatus[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [version, setVersion] = useState(0)
+
+  const clearOverrides = useCallback((repos: string[]) => {
+    repos.forEach(r => localStorage.removeItem(LS_DATA_PREFIX + r))
+    setVersion(v => v + 1)
+  }, [])
 
   useEffect(() => {
     if (configLoading || !config) return
@@ -147,36 +161,46 @@ export function useData() {
     const vtSourceRepos = new Set(config.virtualTracks.flatMap(vt => vt.sources.map(s => s.repo)))
     const regularRepos = config.repos.filter(r => !vtSourceRepos.has(r.repo))
 
-    const regularFetches = regularRepos.map(def =>
-      fetchRepoJson(def.repo).then(raw => normalizeRepoData(raw, def))
-    )
-
-    const vtFetches = config.virtualTracks.map(vtDef => {
-      const sourceDefs = vtDef.sources.map(s => {
-        const repoDef = config.repos.find(r => r.repo === s.repo)
-        return repoDef || { repo: s.repo, tracks: [{ name: s.track, owner: vtDef.owner }] }
-      })
-      return Promise.all(sourceDefs.map(sd => fetchRepoJson(sd.repo)))
-        .then(results => mergeVirtualTrackData(vtDef, results, sourceDefs))
-    })
-
-    const allRawFetches = Promise.all(
+    Promise.all(
       config.repos.map(def =>
-        fetchRepoJson(def.repo).then(raw => [def.repo, raw] as const)
+        fetchServerJson(def.repo).then(server =>
+          [def.repo, { local: loadLocalData(def.repo), server }] as const
+        )
       )
-    ).then(entries => Object.fromEntries(entries) as Record<string, RepoData | null>)
+    )
+      .then(entries => {
+        const layers = Object.fromEntries(entries) as Record<string, { local: RepoData | null; server: RepoData | null }>
+        const effective = (repo: string): RepoData | null =>
+          layers[repo]?.local ?? layers[repo]?.server ?? null
 
-    Promise.all([Promise.all([...regularFetches, ...vtFetches]), allRawFetches])
-      .then(([results, raws]) => {
-        setData(results)
+        const regularResults = regularRepos.map(def => normalizeRepoData(effective(def.repo), def))
+
+        const vtResults = config.virtualTracks.map(vtDef => {
+          const sourceDefs = vtDef.sources.map(s => {
+            const repoDef = config.repos.find(r => r.repo === s.repo)
+            return repoDef || { repo: s.repo, tracks: [{ name: s.track, owner: vtDef.owner }] }
+          })
+          return mergeVirtualTrackData(vtDef, sourceDefs.map(sd => effective(sd.repo)), sourceDefs)
+        })
+
+        const raws = Object.fromEntries(
+          config.repos.map(def => [def.repo, effective(def.repo)]),
+        ) as Record<string, RepoData | null>
+
+        const ovr = config.repos.map(def =>
+          computeOverrideStatus(def.repo, layers[def.repo].local, layers[def.repo].server),
+        )
+
+        setData([...regularResults, ...vtResults])
         setRawByRepo(raws)
+        setOverrides(ovr)
         setLoading(false)
       })
       .catch(err => {
         setError(err.message)
         setLoading(false)
       })
-  }, [config, configLoading])
+  }, [config, configLoading, version])
 
   const totalChecks = data.reduce((s, d) =>
     s + d.tracks.reduce((ts, t) => ts + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0), 0)
@@ -184,7 +208,7 @@ export function useData() {
     s + d.tracks.reduce((ts, t) => ts + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0), 0)
   const overallPercent = totalChecks > 0 ? Math.round(doneChecks / totalChecks * 100) : 0
 
-  return { data, rawByRepo, loading, error, overallPercent, totalChecks, doneChecks }
+  return { data, rawByRepo, overrides, clearOverrides, loading, error, overallPercent, totalChecks, doneChecks }
 }
 
 export function useRepoData(repo: string) {
