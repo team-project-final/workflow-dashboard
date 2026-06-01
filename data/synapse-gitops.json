@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-01T02:12:37.636Z",
+  "updatedAt": "2026-06-01T02:49:18.344Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -812,43 +812,43 @@
           "steps": [
             {
               "name": "prod 환경 + 승인 게이트",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 8,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "prod 클러스터 / 네임스페이스 분리 정책 (별도 클러스터 권장)",
+                      "text": "prod 클러스터 / 네임스페이스 분리 정책 — 논리 분리(dev 클러스터 내 `synapse-prod` ns) 채택 (D-042, spec §2)",
+                      "done": true
+                    },
+                    {
+                      "text": "승인 게이트 방식 결정 — ArgoCD Manual Sync (D-042)",
+                      "done": true
+                    },
+                    {
+                      "text": "prod 접근 권한 분리 — ArgoCD RBAC `role:prod-deployer` + 로컬 계정 `gitops-admin` (D-042)",
+                      "done": true
+                    },
+                    {
+                      "text": "변경 관리 절차 — 변경 게이트=기존 main PR 보호, prod 이미지=명시적 PR 승격 (D-042)",
+                      "done": true
+                    },
+                    {
+                      "text": "ACM 인증서 ARN 매핑 (HTTPS 종료) — W1 Step 1.2에서 이월 (D-041). 실 도메인 부재로 미충족, 라이브 기동 후 (FR-404)",
                       "done": false
                     },
                     {
-                      "text": "승인 게이트 방식 결정 (ArgoCD Manual Sync vs GH Environment Approval)",
+                      "text": "DNS 레코드 정의 (argocd.<도메인> + prod 앱 도메인) — W1 Step 1.2에서 이월 (D-041). 실 도메인 부재",
                       "done": false
                     },
                     {
-                      "text": "prod 접근 권한 분리 (별도 IAM/RBAC)",
+                      "text": "외부 도메인으로 ArgoCD UI 접속 + TLS 인증서 유효 — W1 Step 1.3에서 이월 (D-041). 실 도메인 부재",
                       "done": false
                     },
                     {
-                      "text": "변경 관리 절차 (PR 라벨 + 리뷰어 합의)",
-                      "done": false
-                    },
-                    {
-                      "text": "ACM 인증서 ARN 매핑 (HTTPS 종료) — W1 Step 1.2에서 이월 (D-041)",
-                      "done": false
-                    },
-                    {
-                      "text": "DNS 레코드 정의 (argocd.<도메인> + prod 앱 도메인) — W1 Step 1.2에서 이월 (D-041)",
-                      "done": false
-                    },
-                    {
-                      "text": "외부 도메인으로 ArgoCD UI 접속 + TLS 인증서 유효 — W1 Step 1.3에서 이월 (D-041)",
-                      "done": false
-                    },
-                    {
-                      "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping) — W1 Step 1.3에서 이월 (D-041)",
+                      "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping) — W1 Step 1.3에서 이월 (D-041). 실 도메인 부재",
                       "done": false
                     }
                   ]
@@ -856,57 +856,57 @@
                 {
                   "name": "prod overlay + 정책 작성",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "apps/<app>/overlays/prod/kustomization.yaml × 5",
-                      "done": false
+                      "text": "apps/<app>/overlays/prod/kustomization.yaml × 5 (PR #74, 렌더 5/5 OK)",
+                      "done": true
                     },
                     {
-                      "text": "prod resources: replicas 3+, requests 운영급",
-                      "done": false
+                      "text": "prod resources: replicas 3+, requests 운영급 (replicas=3)",
+                      "done": true
                     },
                     {
                       "text": "prod ExternalSecret (synapse/prod/<app>/*)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "AppProject `synapse-prod`에 Manual Sync 정책",
-                      "done": false
+                      "text": "AppProject `synapse-prod`에 Manual Sync 정책 (`applicationset-prod.yaml` automated 없음)",
+                      "done": true
                     },
                     {
                       "text": "prod sync 권한 그룹 정의 (예: gitops-admin)",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "적용 + 검증",
                   "total": 8,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "prod 매니페스트 적용 (단, Application은 syncPolicy 없음)",
+                      "text": "prod 매니페스트 적용 (단, Application은 syncPolicy 없음) — 라이브 apply, 5개 OutOfSync 확인 (FR-402)",
+                      "done": true
+                    },
+                    {
+                      "text": "dev/staging → prod 승격 PR 1회 시뮬레이션 — prod 이미지=명시적 PR 승격 경로 결정 (D-042)",
+                      "done": true
+                    },
+                    {
+                      "text": "권한 없는 계정으로 prod sync 시도 → 거부 확인 — `argocd admin settings rbac can` 평가 No (FR-403)",
+                      "done": true
+                    },
+                    {
+                      "text": "권한 있는 계정으로 prod sync → 성공 확인 — gitops-admin can sync Yes (FR-403). ※ 워크로드 5/5 기동은 자원 차단 (FR-404)",
+                      "done": true
+                    },
+                    {
+                      "text": "prod 도메인으로 5개 앱 응답 확인 — **FR-404 미충족**: 노드 maxSize=3·RDS 연결·이미지 자원 차단 + 실 도메인 부재. 라이브 기동 후 확인",
                       "done": false
                     },
                     {
-                      "text": "dev/staging → prod 승격 PR 1회 시뮬레이션",
-                      "done": false
-                    },
-                    {
-                      "text": "권한 없는 계정으로 prod sync 시도 → 거부 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "권한 있는 계정으로 prod sync → 성공 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "prod 도메인으로 5개 앱 응답 확인",
-                      "done": false
-                    },
-                    {
-                      "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — W2 Step 4.1에서 이월 (D-041)",
+                      "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — W2 Step 4.1에서 이월 (D-041). 실 도메인 부재",
                       "done": false
                     },
                     {
@@ -914,7 +914,7 @@
                       "done": false
                     },
                     {
-                      "text": "dev 도메인으로 5개 앱 도달 (HTTP 200) — W2 Step 4.4에서 이월 (D-041)",
+                      "text": "dev 도메인으로 5개 앱 도달 (HTTP 200) — W2 Step 4.4에서 이월 (D-041). 실 도메인 부재",
                       "done": false
                     }
                   ]
@@ -922,77 +922,77 @@
                 {
                   "name": "문서화 + 핸드오프",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "prod 배포 절차 README (PR → 리뷰 → 머지 → ArgoCD 승인 → 검증)",
+                      "text": "prod 배포 절차 README (PR → 리뷰 → 머지 → ArgoCD 승인 → 검증) — `argocd/README.md` (PR #74)",
+                      "done": true
+                    },
+                    {
+                      "text": "prod 권한 신청 절차 문서화 — `argocd/README.md` RBAC/계정 섹션 (PR #74)",
+                      "done": true
+                    },
+                    {
+                      "text": "team-lead와 권한 모델 검토 + 합의 — 사인오프 대기",
                       "done": false
                     },
                     {
-                      "text": "prod 권한 신청 절차 문서화",
-                      "done": false
-                    },
-                    {
-                      "text": "team-lead와 권한 모델 검토 + 합의",
-                      "done": false
-                    },
-                    {
-                      "text": "HISTORY에 prod 첫 배포 일자 기록",
-                      "done": false
+                      "text": "HISTORY에 prod 첫 배포 일자 기록 — HISTORY 2026-05-28 W4 라이브 사이클 섹션 (D-042)",
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 25,
-              "doneChecks": 0
+              "doneChecks": 16
             },
             {
               "name": "롤백 / 백업 전략",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "롤백 시나리오 분류 (단일 앱 매니페스트 / 이미지만 / 클러스터 전체)",
-                      "done": false
+                      "text": "롤백 시나리오 분류 (단일 앱 매니페스트 / 이미지만 / 클러스터 전체) — runbook `w4-prod-rollback-backup-runbook.md`",
+                      "done": true
                     },
                     {
-                      "text": "백업 대상 결정 (etcd, PV, Velero 범위)",
-                      "done": false
+                      "text": "백업 대상 결정 (etcd, PV, Velero 범위) — Velero ns 최소(synapse-prod/staging)+PV, etcd=관리형 EKS AWS 책임",
+                      "done": true
                     },
                     {
-                      "text": "RTO/RPO 목표 합의 (예: RTO 30분, RPO 1시간)",
-                      "done": false
+                      "text": "RTO/RPO 목표 합의 (예: RTO 30분, RPO 1시간) — RTO 30분/RPO 1시간 설정 (사인오프는 1.4)",
+                      "done": true
                     },
                     {
-                      "text": "백업 저장소 결정 (S3 + 별도 리전)",
-                      "done": false
+                      "text": "백업 저장소 결정 (S3 + 별도 리전) — 전용 S3 버킷 (별도 리전 미적용, 캡스톤 한계)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "롤백 절차 구현",
                   "total": 7,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "ArgoCD History rollback 절차 검증 (UI에서 1 step 이전 sync)",
+                      "text": "ArgoCD History rollback 절차 검증 (UI에서 1 step 이전 sync) — 절차 runbook 문서화 완료. **1-step 검증은 라이브 기동 후 (FR-405)**",
                       "done": false
                     },
                     {
-                      "text": "git revert + 자동 sync로 롤백 절차 검증",
+                      "text": "git revert + 자동 sync로 롤백 절차 검증 — 플로우 runbook 문서화 완료. **검증은 라이브 기동 후 (FR-406)**",
                       "done": false
                     },
                     {
-                      "text": "Image Updater 사용 시 태그 강제 고정 절차",
-                      "done": false
+                      "text": "Image Updater 사용 시 태그 강제 고정 절차 — prod=명시적 PR 승격(image-updater 어노테이션 없음), runbook",
+                      "done": true
                     },
                     {
-                      "text": "DB 마이그레이션이 포함된 경우 롤백 가이드 (forward-only 정책 등)",
-                      "done": false
+                      "text": "DB 마이그레이션이 포함된 경우 롤백 가이드 (forward-only 정책 등) — runbook §4 (Flyway forward-only, 데이터=RDS PITR)",
+                      "done": true
                     },
                     {
                       "text": "Image Updater 5개 앱 새 이미지 푸시 → dev 자동 반영 E2E 검증 — W2 Step 6.3에서 이월 (D-041, A안 실행 필요)",
@@ -1011,56 +1011,56 @@
                 {
                   "name": "백업 / 복구 시뮬레이션",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "Velero 설치 + S3 BackupStorageLocation 설정",
-                      "done": false
+                      "text": "Velero 설치 + S3 BackupStorageLocation 설정 — 라이브 설치(IRSA+S3), BSL Available (FR-407)",
+                      "done": true
                     },
                     {
-                      "text": "일일 스케줄 백업 정의",
-                      "done": false
+                      "text": "일일 스케줄 백업 정의 — `velero-schedule.yaml` + 라이브 백업 Completed + S3 저장 (FR-407)",
+                      "done": true
                     },
                     {
-                      "text": "staging에서 네임스페이스 삭제 → 복구 시뮬레이션",
-                      "done": false
+                      "text": "staging에서 네임스페이스 삭제 → 복구 시뮬레이션 — 격리 ns 백업→삭제→restore 복구 확인 (FR-408)",
+                      "done": true
                     },
                     {
-                      "text": "etcd snapshot 정책 정의 (관리형 EKS는 AWS 책임 영역 명시)",
-                      "done": false
+                      "text": "etcd snapshot 정책 정의 (관리형 EKS는 AWS 책임 영역 명시) — runbook 명시",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서화 + 검증",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "Runbook 초안에 롤백 절차 포함",
+                      "text": "Runbook 초안에 롤백 절차 포함 — `docs/runbooks/w4-prod-rollback-backup-runbook.md`",
+                      "done": true
+                    },
+                    {
+                      "text": "백업 모니터링 알람 (백업 실패 시 알림) — `velero.rules` PrometheusRule (W3 Alertmanager 재사용)",
+                      "done": true
+                    },
+                    {
+                      "text": "team-lead와 RTO/RPO 합의 + 사인오프 — 사인오프 대기",
                       "done": false
                     },
                     {
-                      "text": "백업 모니터링 알람 (백업 실패 시 알림)",
-                      "done": false
-                    },
-                    {
-                      "text": "team-lead와 RTO/RPO 합의 + 사인오프",
-                      "done": false
-                    },
-                    {
-                      "text": "HISTORY 갱신",
-                      "done": false
+                      "text": "HISTORY 갱신 — HISTORY 2026-05-28 W4 라이브 사이클 섹션 (D-042)",
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 19,
-              "doneChecks": 0
+              "doneChecks": 13
             }
           ],
           "totalChecks": 44,
-          "doneChecks": 0
+          "doneChecks": 29
         },
         {
           "week": "W5",
@@ -1574,7 +1574,7 @@
     {
       "date": "2026-06-01",
       "totalChecks": 203,
-      "doneChecks": 120
+      "doneChecks": 149
     }
   ],
   "changelog": [
@@ -1735,6 +1735,24 @@
           "type": "boxes_added",
           "target": "W5 > Cost 최적화 + 안정화",
           "detail": "1개 박스 추가 (16 → 17)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T02:49:18.344Z",
+      "commit": "b9f7182",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > prod 환경 + 승인 게이트",
+          "detail": "16개 항목 완료 (0 → 16)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 롤백 / 백업 전략",
+          "detail": "13개 항목 완료 (0 → 13)"
         }
       ]
     }
