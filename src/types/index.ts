@@ -50,7 +50,7 @@ export interface HistoryEntry {
 }
 
 export interface ChangeDetail {
-  type: 'step_added' | 'step_deleted' | 'step_modified' | 'check_done' | 'check_undone' | 'phase_added' | 'phase_deleted'
+  type: string
   target: string
   detail?: string
   field?: string

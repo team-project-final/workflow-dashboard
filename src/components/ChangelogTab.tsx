@@ -1,15 +1,6 @@
 import { useState } from 'react'
 import type { ChangelogEntry } from '../types'
-
-const TYPE_CONFIG: Record<string, { bg: string; text: string; border: string; label: string }> = {
-  step_added:    { bg: 'bg-sky-50',    text: 'text-sky-800',    border: 'border-l-info',    label: 'Step 추가' },
-  step_deleted:  { bg: 'bg-red-50',    text: 'text-red-800',    border: 'border-l-danger',  label: 'Step 삭제' },
-  step_modified: { bg: 'bg-amber-50',  text: 'text-amber-800',  border: 'border-l-amber',   label: '내용 수정' },
-  check_done:    { bg: 'bg-green-50',  text: 'text-green-800',  border: 'border-l-success',  label: '체크 완료' },
-  check_undone:  { bg: 'bg-stone-50',  text: 'text-stone-600',  border: 'border-l-stone-400', label: '체크 해제' },
-  phase_added:   { bg: 'bg-sky-50',    text: 'text-sky-800',    border: 'border-l-info',    label: '단계 추가' },
-  phase_deleted: { bg: 'bg-red-50',    text: 'text-red-800',    border: 'border-l-danger',  label: '단계 삭제' },
-}
+import { CHANGE_TYPE_META } from '../constants/changeTypes.js'
 
 type FilterType = 'all' | 'structure' | 'modified' | 'checks'
 
@@ -23,13 +14,7 @@ export default function ChangelogTab({ changelog }: Props) {
   const filtered = changelog
     .flatMap(entry =>
       entry.changes
-        .filter(c => {
-          if (filter === 'all') return true
-          if (filter === 'structure') return ['step_added', 'step_deleted', 'phase_added', 'phase_deleted'].includes(c.type)
-          if (filter === 'modified') return c.type === 'step_modified'
-          if (filter === 'checks') return ['check_done', 'check_undone'].includes(c.type)
-          return true
-        })
+        .filter(c => filter === 'all' || CHANGE_TYPE_META[c.type]?.category === filter)
         .map(c => ({ ...c, date: entry.date, commit: entry.commit, author: entry.author, file: entry.file }))
     )
     .sort((a, b) => b.date.localeCompare(a.date))
@@ -75,7 +60,7 @@ export default function ChangelogTab({ changelog }: Props) {
               <div className="flex-1 h-px bg-stone-200" />
             </div>
             {items.map((item, i) => {
-              const cfg = TYPE_CONFIG[item.type] || TYPE_CONFIG.check_done
+              const cfg = CHANGE_TYPE_META[item.type] || CHANGE_TYPE_META.check_done
               return (
                 <div key={i} className={`ml-5 mb-2 p-2.5 bg-white rounded-lg border-l-[3px] ${cfg.border} shadow-sm`}>
                   <div className="flex justify-between items-start">
