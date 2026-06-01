@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-01T04:39:48.985Z",
+  "updatedAt": "2026-06-01T05:24:34.387Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -921,8 +921,8 @@
                 },
                 {
                   "name": "문서화 + 핸드오프",
-                  "total": 4,
-                  "done": 3,
+                  "total": 5,
+                  "done": 4,
                   "items": [
                     {
                       "text": "prod 배포 절차 README (PR → 리뷰 → 머지 → ArgoCD 승인 → 검증) — `argocd/README.md` (PR #74)",
@@ -939,12 +939,16 @@
                     {
                       "text": "HISTORY에 prod 첫 배포 일자 기록 — HISTORY 2026-05-28(거버넌스) + 2026-06-01(5/5 재현, D-043)",
                       "done": true
+                    },
+                    {
+                      "text": "docs-portal 배포 복구 — deploy-pages 익명 체크아웃 전환(PR #83)으로 6일간 끊겼던 포털 정상화, W4 런북(롤백/백업/라이브 재현)이 https://team-project-final.github.io/synapse-gitops/ 에 실제 공개 (HISTORY 2026-06-01 CI 참조)",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 25,
-              "doneChecks": 17
+              "totalChecks": 26,
+              "doneChecks": 18
             },
             {
               "name": "롤백 / 백업 전략",
@@ -1059,8 +1063,8 @@
               "doneChecks": 15
             }
           ],
-          "totalChecks": 44,
-          "doneChecks": 32
+          "totalChecks": 45,
+          "doneChecks": 33
         },
         {
           "week": "W5",
@@ -1573,8 +1577,8 @@
     },
     {
       "date": "2026-06-01",
-      "totalChecks": 203,
-      "doneChecks": 152
+      "totalChecks": 204,
+      "doneChecks": 153
     }
   ],
   "changelog": [
@@ -1771,6 +1775,24 @@
           "type": "check_done",
           "target": "W4 > 롤백 / 백업 전략",
           "detail": "2개 항목 완료 (13 → 15)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T05:24:34.387Z",
+      "commit": "458cd15",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > prod 환경 + 승인 게이트",
+          "detail": "1개 항목 완료 (17 → 18)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > prod 환경 + 승인 게이트",
+          "detail": "1개 박스 추가 (25 → 26)"
         }
       ]
     }
