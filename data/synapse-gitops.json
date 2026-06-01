@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-01T02:52:02.667Z",
+  "updatedAt": "2026-06-01T04:39:08.344Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -883,7 +883,7 @@
                 {
                   "name": "적용 + 검증",
                   "total": 8,
-                  "done": 4,
+                  "done": 5,
                   "items": [
                     {
                       "text": "prod 매니페스트 적용 (단, Application은 syncPolicy 없음) — 라이브 apply, 5개 OutOfSync 확인 (FR-402)",
@@ -898,12 +898,12 @@
                       "done": true
                     },
                     {
-                      "text": "권한 있는 계정으로 prod sync → 성공 확인 — gitops-admin can sync Yes (FR-403). ※ 워크로드 5/5 기동은 자원 차단 (FR-404)",
+                      "text": "권한 있는 계정으로 prod sync → 성공 확인 — gitops-admin can sync Yes, 2026-06-01 라이브 5/5 기동 (FR-403/404)",
                       "done": true
                     },
                     {
-                      "text": "prod 도메인으로 5개 앱 응답 확인 — **FR-404 미충족**: 노드 maxSize=3·RDS 연결·이미지 자원 차단 + 실 도메인 부재. 라이브 기동 후 확인",
-                      "done": false
+                      "text": "prod 도메인으로 5개 앱 응답 확인 — 2026-06-01 라이브 재현: synapse-prod 15/15 Healthy, readiness probe(=/actuator/health 200)로 충족(실 도메인 미적용은 W1 이월). 인프라 증설(t3.large×4/db.t3.small) 적용 (FR-404, D-043)",
+                      "done": true
                     },
                     {
                       "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — W2 Step 4.1에서 이월 (D-041). 실 도메인 부재",
@@ -937,14 +937,14 @@
                       "done": false
                     },
                     {
-                      "text": "HISTORY에 prod 첫 배포 일자 기록 — HISTORY 2026-05-28 W4 라이브 사이클 섹션 (D-042)",
+                      "text": "HISTORY에 prod 첫 배포 일자 기록 — HISTORY 2026-05-28(거버넌스) + 2026-06-01(5/5 재현, D-043)",
                       "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 25,
-              "doneChecks": 16
+              "doneChecks": 17
             },
             {
               "name": "롤백 / 백업 전략",
@@ -976,15 +976,15 @@
                 {
                   "name": "롤백 절차 구현",
                   "total": 7,
-                  "done": 2,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "ArgoCD History rollback 절차 검증 (UI에서 1 step 이전 sync) — 절차 runbook 문서화 완료. **1-step 검증은 라이브 기동 후 (FR-405)**",
-                      "done": false
+                      "text": "ArgoCD History rollback 절차 검증 (UI에서 1 step 이전 sync) — 2026-06-01 라이브: prod engagement-svc `argocd app rollback` 1-step → Synced/Healthy (FR-405)",
+                      "done": true
                     },
                     {
-                      "text": "git revert + 자동 sync로 롤백 절차 검증 — 플로우 runbook 문서화 완료. **검증은 라이브 기동 후 (FR-406)**",
-                      "done": false
+                      "text": "git revert + 자동 sync로 롤백 절차 검증 — 2026-06-01 라이브: PR #80(DEBUG)→sync→PR #81(git revert)→sync→INFO 복원 (FR-406)",
+                      "done": true
                     },
                     {
                       "text": "Image Updater 사용 시 태그 강제 고정 절차 — prod=명시적 PR 승격(image-updater 어노테이션 없음), runbook",
@@ -1049,18 +1049,18 @@
                       "done": false
                     },
                     {
-                      "text": "HISTORY 갱신 — HISTORY 2026-05-28 W4 라이브 사이클 섹션 (D-042)",
+                      "text": "HISTORY 갱신 — HISTORY 2026-05-28 + 2026-06-01 라이브 재현 섹션 (D-043)",
                       "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 19,
-              "doneChecks": 13
+              "doneChecks": 15
             }
           ],
           "totalChecks": 44,
-          "doneChecks": 29
+          "doneChecks": 32
         },
         {
           "week": "W5",
@@ -1574,7 +1574,7 @@
     {
       "date": "2026-06-01",
       "totalChecks": 203,
-      "doneChecks": 149
+      "doneChecks": 152
     }
   ],
   "changelog": [
@@ -1753,6 +1753,24 @@
           "type": "check_done",
           "target": "W4 > 롤백 / 백업 전략",
           "detail": "13개 항목 완료 (0 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T04:39:08.344Z",
+      "commit": "ab97841",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > prod 환경 + 승인 게이트",
+          "detail": "1개 항목 완료 (16 → 17)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 롤백 / 백업 전략",
+          "detail": "2개 항목 완료 (13 → 15)"
         }
       ]
     }
