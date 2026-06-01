@@ -76,6 +76,8 @@ const CHANGE_TYPES = new Set([
   'check_undone',
   'phase_added',
   'phase_deleted',
+  'boxes_added',    // 박스(체크 항목) 총개수 증가 — parse-workflow.mjs가 생성
+  'boxes_removed',  // 박스(체크 항목) 총개수 감소 — parse-workflow.mjs가 생성
 ])
 
 const errors = []
