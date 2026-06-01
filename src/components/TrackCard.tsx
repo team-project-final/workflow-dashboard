@@ -6,9 +6,10 @@ interface TrackCardProps {
   repoData: RepoData
   trackName: string
   owner: string
+  staleOverride?: boolean
 }
 
-export default function TrackCard({ repoData, trackName, owner }: TrackCardProps) {
+export default function TrackCard({ repoData, trackName, owner, staleOverride }: TrackCardProps) {
   const navigate = useNavigate()
   const track = repoData.tracks.find(t => t.name === trackName)
   const isCombined = !track && repoData.tracks.length > 0
@@ -38,9 +39,17 @@ export default function TrackCard({ repoData, trackName, owner }: TrackCardProps
   return (
     <div
       onClick={() => navigate(`/detail/${repoData.repo}`)}
-      className={`bg-white border-2 ${!hasData ? 'border-stone-200' : progressBorder(percent)} rounded-xl p-4 text-center cursor-pointer
+      className={`relative bg-white border-2 ${!hasData ? 'border-stone-200' : progressBorder(percent)} rounded-xl p-4 text-center cursor-pointer
         hover:shadow-lg transition-shadow`}
     >
+      {staleOverride && (
+        <span
+          title="서버에 더 최신 데이터가 있습니다"
+          className="absolute top-1.5 right-1.5 text-[10px] leading-none px-1.5 py-0.5 rounded-full bg-amber-500 text-white font-semibold"
+        >
+          ●
+        </span>
+      )}
       <div className={`text-3xl font-bold font-display ${!hasData ? 'text-stone-400' : progressText(percent)}`}>
         {percent}%
       </div>
