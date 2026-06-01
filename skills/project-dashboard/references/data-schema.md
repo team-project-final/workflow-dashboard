@@ -163,7 +163,7 @@ Location: `data/{repo-id}.json`
       "file": "string — source file",
       "changes": [
         {
-          "type": "'step_added' | 'step_deleted' | 'step_modified' | 'check_done' | 'check_undone' | 'phase_added' | 'phase_deleted'",
+          "type": "change type id — 단일 소스: src/constants/changeTypes.js (step_added, step_deleted, step_modified, check_done, check_undone, phase_added, phase_deleted, boxes_added, boxes_removed)",
           "target": "string — e.g. 'W1 > step-name'",
           "detail": "string — optional detail"
         }
@@ -230,6 +230,6 @@ These are two separate change tracking mechanisms:
 | Written by | `/project-dashboard edit` (manual edits) | `/project-dashboard sync` (external sync) |
 | Scope | Cross-repo (single file for all tracks) | Per-repo (embedded in each data file) |
 | Purpose | Audit trail for manual edits | Git-based change history from source repos |
-| Includes | User actions (check, uncheck, add, delete) | Commit-level diffs (step_added, check_done, etc.) |
+| Includes | User actions (check, uncheck, add, delete) | Commit-level diffs (step_added, check_done, boxes_added, etc.) |
 
 Manual edits are **not** written to `changelog[]`. The changelog only captures changes from external sync operations. To see a complete history of all changes, consult both sources.
