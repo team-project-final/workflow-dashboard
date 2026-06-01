@@ -1,4 +1,3 @@
-// @ts-expect-error — .mjs 모듈; Vite가 빌드 시 처리
 import { parseWorkflowMarkdown as _parseWorkflowMarkdown, parseCheckboxes as _parseCheckboxes } from '../../scripts/parsers/parse-workflow-md.mjs'
 
 export interface ParsedCheckbox {
