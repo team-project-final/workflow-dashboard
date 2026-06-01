@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-01T02:12:40.385Z",
+  "updatedAt": "2026-06-01T05:52:52.628Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1188,13 +1188,9 @@
                 },
                 {
                   "name": "Security 1차 검토",
-                  "total": 4,
+                  "total": 3,
                   "done": 3,
                   "items": [
-                    {
-                      "text": "Kafka 토픽 ACL 설정 확인 (서비스별 발행/소비 권한) — Day 1 gitops 세션에서 확인",
-                      "done": false
-                    },
                     {
                       "text": "이벤트 페이로드 민감정보 포함 여부 점검 → UserRegistered.email만 PII (EVENT_FLOW_MATRIX.md §4)",
                       "done": true
@@ -1280,7 +1276,7 @@
                 },
                 {
                   "name": "E2E 테스트 구현 및 조율",
-                  "total": 4,
+                  "total": 3,
                   "done": 3,
                   "items": [
                     {
@@ -1294,25 +1290,21 @@
                     {
                       "text": "코드 리뷰 전 PR 승인 프로세스 적용 → work-order 발행 + 코드 리뷰 승인 기준 (`W3_KAFKA_WORKORDER.md`, TASK Step 7)",
                       "done": true
-                    },
-                    {
-                      "text": "각 서비스 담당자 테스트 결과 취합 — 팀원 Kafka 산출물 PR 0/5로 취합 대상 미도착 (05-27 EOD 기준)",
-                      "done": false
                     }
                   ]
                 },
                 {
                   "name": "통합 테스트 실행 및 검증",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "items": [
                     {
                       "text": "전체 서비스 Docker Compose 기동 → E2E 테스트 실행 — 인프라(zookeeper/kafka/schema-registry/kafka-init) 기동 + **`--avro` 라이브 8/8 PASSED**(8토픽 Avro 라운드트립 + subject 자동등록, 전역 BACKWARD). 앱 서비스 비즈니스 로직 E2E는 구현 도착 후(W4)",
                       "done": true
                     },
                     {
-                      "text": "Kafka 이벤트 전파 지연 시간 측정 (< 3초 기준) — harness 총 29s(라운드트립), 이벤트 단위 측정은 서비스 구현 후",
-                      "done": false
+                      "text": "Kafka 이벤트 전파 지연 측정 (< 3초) — **로컬 `EndToEndLatency` (06-01, acks=1, 2토픽×1000건): avg 1.3ms, p50 1ms, p99 3~4ms, p99.9 ~40ms** → transport 전파 **NFR(<3초) 입증**. (기존 \"총 29s\"는 8토픽 순차+JVM부팅 포함 비대표). end-to-end 체인(복습→알림 <10초, NFR-401)은 서비스 consumer 후",
+                      "done": true
                     },
                     {
                       "text": "이벤트 유실 여부 확인 — harness `--all` 5/5 + `--full` 13/13 round-trip 무유실 (재시도 로직 검증은 서비스 consumer 도착 후)",
@@ -1326,7 +1318,7 @@
                 },
                 {
                   "name": "코드 리뷰 조율",
-                  "total": 3,
+                  "total": 2,
                   "done": 2,
                   "items": [
                     {
@@ -1336,10 +1328,6 @@
                     {
                       "text": "크로스 서비스 영향도 리뷰 (이벤트 스키마 호환성) — **스키마 패밀리 분기(D-002) 발견 → Avro 사수 결정 + 이벤트 계약 표준 수립**(`EVENT_CONTRACT_STANDARD.md`). cards-generated HTTP 드리프트 정정(D-001)",
                       "done": true
-                    },
-                    {
-                      "text": "PR 승인 및 main 브랜치 머지 조율 — 계약 표준 적용 이슈 발행(#43/#13/#26/#32), 머지는 W4",
-                      "done": false
                     }
                   ]
                 },
@@ -1349,7 +1337,7 @@
                   "done": 3,
                   "items": [
                     {
-                      "text": "E2E 테스트 결과 리포트 작성 → `docs/reports/E2E_REPORT_W3.md` + 종료 게이트 `W3_EXIT_GATE.md`(미통과 1/5)",
+                      "text": "E2E 테스트 결과 리포트 작성 → `docs/reports/E2E_REPORT_W3.md` + 종료 게이트 `W3_EXIT_GATE.md`(미통과 충족 0/5)",
                       "done": true
                     },
                     {
@@ -1363,8 +1351,8 @@
                   ]
                 }
               ],
-              "totalChecks": 37,
-              "doneChecks": 30
+              "totalChecks": 34,
+              "doneChecks": 31
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1577,8 +1565,8 @@
               "doneChecks": 23
             }
           ],
-          "totalChecks": 70,
-          "doneChecks": 53
+          "totalChecks": 67,
+          "doneChecks": 54
         },
         {
           "week": "W4",
@@ -2088,7 +2076,7 @@
     {
       "date": "2026-06-01",
       "totalChecks": 275,
-      "doneChecks": 211
+      "doneChecks": 212
     }
   ],
   "changelog": [
@@ -2288,6 +2276,24 @@
           "type": "boxes_added",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "1개 박스 추가 (36 → 37)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T05:52:52.628Z",
+      "commit": "c5b2080",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "1개 항목 완료 (30 → 31)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "3개 박스 제거 (37 → 34)"
         }
       ]
     }
