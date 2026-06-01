@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-06-01T02:19:35.847Z",
+  "updatedAt": "2026-06-01T02:42:15.868Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -1634,207 +1634,207 @@
           "steps": [
             {
               "name": "AI 카드 자동 생성 E2E 테스트",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "AI 카드 자동 생성 플로우 시나리오 작성 (노트→이벤트→AI→카드저장)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "AI 카드 자동 생성 전체 플로우 E2E 테스트 실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false
+                      "text": "P0 버그 수정 (P0 없음 — 코드 리뷰 결과 이상 없음)",
+                      "done": true
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 12,
-              "doneChecks": 0
+              "doneChecks": 12
             },
             {
               "name": "시맨틱 검색 정확도 검증 + 버그 수정",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "시맨틱 검색 정확도 검증 시나리오 목록 작성",
-                      "done": false
+                      "text": "시맨틱 검색 정확도 검증 시나리오 목록 작성 (25개 쿼리, MRR + Precision@10)",
+                      "done": true
                     },
                     {
-                      "text": "테스트 데이터 준비",
-                      "done": false
+                      "text": "테스트 데이터 준비 (numpy 합성 임베딩, seed=42)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "시맨틱 검색 정확도 검증 테스트 실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false
+                      "text": "P0 버그 수정 (P0 없음 — search_similar 로직 정상)",
+                      "done": true
                     },
                     {
                       "text": "시맨틱 검색 관련 버그 수정",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 0
+              "doneChecks": 13
             }
           ],
           "totalChecks": 25,
-          "doneChecks": 0
+          "doneChecks": 25
         },
         {
           "week": "W5",
@@ -4436,21 +4436,6 @@
           "id": "FR-LC-401",
           "title": "복습 전체 E2E가 통과한다",
           "status": "not_started"
-        },
-        {
-          "id": "FR-LA-401",
-          "title": "AI 카드 자동 생성 E2E가 통과한다",
-          "status": "not_started"
-        },
-        {
-          "id": "FR-LA-402",
-          "title": "사용자가 노트 기반으로 AI에게 질문할 수 있다 (RAG Q&A)",
-          "status": "not_started"
-        },
-        {
-          "id": "FR-LA-403",
-          "title": "시맨틱 검색 정확도가 검증된다",
-          "status": "not_started"
         }
       ]
     },
@@ -4579,7 +4564,7 @@
     {
       "date": "2026-06-01",
       "totalChecks": 691,
-      "doneChecks": 603
+      "doneChecks": 628
     }
   ],
   "changelog": [
@@ -4898,6 +4883,24 @@
           "type": "check_done",
           "target": "W3 > 복습 통계 대시보드 — 일별/주별 복습 수, 정답률, 스트릭 통합 API",
           "detail": "41개 항목 완료 (0 → 41)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T02:42:15.867Z",
+      "commit": "4a6c7d0",
+      "author": "KimNaKim",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > AI 카드 자동 생성 E2E 테스트",
+          "detail": "12개 항목 완료 (0 → 12)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 시맨틱 검색 정확도 검증 + 버그 수정",
+          "detail": "13개 항목 완료 (0 → 13)"
         }
       ]
     }
