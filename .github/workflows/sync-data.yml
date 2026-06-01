@@ -153,6 +153,9 @@ jobs:
 
           # 변경된 파일이 있으면 커밋
           if [ ${#UPDATED[@]} -gt 0 ]; then
+            # 커밋 전 데이터 검증 — 잘못된 데이터가 main에 들어가지 않도록 차단 (set -e로 실패 시 잡 중단)
+            npm run validate:data
+
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
 
