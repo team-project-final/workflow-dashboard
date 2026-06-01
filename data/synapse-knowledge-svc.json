@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-01T02:12:23.697Z",
+  "updatedAt": "2026-06-01T03:18:01.018Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -3288,257 +3288,257 @@
             },
             {
               "name": "검색 정확도 측정 — 테스트 쿼리 세트 → 정확도 리포트",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (검색 정확도 측정)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "테스트 쿼리 세트 규모 정의 (최소 50개 쿼리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "정확도 지표 정의 (Precision@K, Recall@K, MRR, NDCG)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "기대 결과 (ground truth) 라벨링 방법론 정의",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "테스트 데이터 민감정보 미포함 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "측정 API 관리자/개발자 전용 접근 제어",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 쿼리 세트 저장 위치 (리포지토리 내부)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "측정 프레임워크 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "테스트 쿼리 세트 포맷 정의 (JSON: query, expectedNoteIds[], relevanceScores[])",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "측정 파이프라인 설계 (쿼리 실행 → 결과 수집 → 지표 계산 → 리포트 생성)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비교 모드 설계 (시맨틱 only vs BM25 only vs 하이브리드 RRF)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "측정 결과 외부 유출 방지 (내부 리포트만)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 데이터 격리 (프로덕션 데이터 미사용)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "측정 실행 리소스 제한 (동시 실행 제한)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "SearchTestQuery DTO 정의 (query, expectedNoteIds, relevanceScores)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "SearchAccuracyReport DTO 정의 (precision, recall, mrr, ndcg, details[])",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "SearchComparisonReport DTO 정의 (semantic, bm25, hybrid 각 지표)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "테스트 쿼리 세트 구축",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "한국어 + 영어 테스트 쿼리 50건 작성",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "각 쿼리별 기대 결과 (ground truth) 라벨링",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "relevance score 부여 (0: 무관, 1: 관련, 2: 매우 관련)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 데이터 시드 스크립트 작성",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
                       "text": "SearchAccuracyService 구현 (테스트 쿼리 실행 → 지표 계산)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PrecisionRecallCalculator 구현 (Precision@K, Recall@K 계산)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "MRRCalculator 구현 (Mean Reciprocal Rank 계산)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "NDCGCalculator 구현 (Normalized Discounted Cumulative Gain 계산)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "비교 리포트 생성 (시맨틱 vs BM25 vs RRF)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (지표 계산 검증)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "POST /admin/search/accuracy-test 엔드포인트 구현 (측정 실행)",
-                      "done": false
+                      "text": "POST /api/v1/admin/search/accuracy-test 엔드포인트 구현 (측정 실행)",
+                      "done": true
                     },
                     {
-                      "text": "GET /admin/search/accuracy-report 엔드포인트 구현 (결과 조회)",
-                      "done": false
+                      "text": "GET /api/v1/admin/search/accuracy-report 엔드포인트 구현 (결과 조회)",
+                      "done": true
                     },
                     {
-                      "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "text": "MockMvc 기반 controller 테스트 (SpringBootTest)",
+                      "done": true
                     },
                     {
                       "text": "403 Forbidden 테스트 (비관리자 접근)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "결과 정리",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "정확도 리포트 생성 (Precision@10, MRR, NDCG 기준)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "시맨틱 vs BM25 vs 하이브리드 비교 분석",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "개선 포인트 도출 (임베딩 모델 교체, 필드 가중치 튜닝 등)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 0
+              "doneChecks": 43
             }
           ],
           "totalChecks": 89,
-          "doneChecks": 46
+          "doneChecks": 89
         },
         {
           "week": "W4",
@@ -4122,7 +4122,7 @@
     {
       "date": "2026-06-01",
       "totalChecks": 619,
-      "doneChecks": 368
+      "doneChecks": 411
     }
   ],
   "changelog": [
@@ -4627,6 +4627,19 @@
           "type": "boxes_added",
           "target": "W3 > 검색 RRF — 시맨틱(pgvector) + BM25(ES) 결합 하이브리드 검색",
           "detail": "1개 박스 추가 (45 → 46)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-01T03:18:01.018Z",
+      "commit": "4c04aca",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 검색 정확도 측정 — 테스트 쿼리 세트 → 정확도 리포트",
+          "detail": "43개 항목 완료 (0 → 43)"
         }
       ]
     }
