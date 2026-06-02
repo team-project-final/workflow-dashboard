@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-06-02T06:45:16.182Z",
+  "updatedAt": "2026-06-02T07:59:20.751Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -3023,7 +3023,7 @@
             },
             {
               "name": "card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -3158,7 +3158,7 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 2,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Avro 스키마 파일 작성 (src/main/avro/card_reviewed.avsc)",
@@ -3170,7 +3170,7 @@
                     },
                     {
                       "text": "Schema Registry에 스키마 등록 (POST /subjects/card.reviewed-value/versions) — 로컬 실행 후",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
@@ -3235,7 +3235,7 @@
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 2,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
@@ -3243,7 +3243,7 @@
                     },
                     {
                       "text": "Kafka 토픽 메시지 확인 (kafka-console-consumer) — 로컬 실행 후",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
@@ -3253,11 +3253,11 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 37
+              "doneChecks": 39
             },
             {
               "name": "review_sessions 통계 — 일별/주별 복습 수, 정답률 API",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -3493,7 +3493,7 @@
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 2,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
@@ -3501,7 +3501,7 @@
                     },
                     {
                       "text": "Swagger API 문서 확인 — 로컬 실행 후",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
@@ -3511,11 +3511,11 @@
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 44
+              "doneChecks": 45
             }
           ],
           "totalChecks": 136,
-          "doneChecks": 133
+          "doneChecks": 136
         },
         {
           "week": "W3",
@@ -3712,7 +3712,7 @@
                 {
                   "name": "E2E 검증",
                   "total": 4,
-                  "done": 1,
+                  "done": 2,
                   "items": [
                     {
                       "text": "Docker Compose 환경에서 스케줄러 수동 트리거",
@@ -3720,7 +3720,7 @@
                     },
                     {
                       "text": "kafka-console-consumer로 card.review.due 이벤트 수신 확인 (팀 Kafka 인프라 세팅 후 진행)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송)",
@@ -3753,7 +3753,7 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 36
+              "doneChecks": 37
             },
             {
               "name": "복습 통계 대시보드 — 일별/주별 복습 수, 정답률, 스트릭 통합 API",
@@ -3998,7 +3998,7 @@
             }
           ],
           "totalChecks": 80,
-          "doneChecks": 77
+          "doneChecks": 78
         },
         {
           "week": "W4",
@@ -4006,101 +4006,101 @@
           "steps": [
             {
               "name": "복습 E2E 테스트",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "복습 플로우 시나리오 작성 (카드→복습→SM-2→통계→XP)",
-                      "done": false
+                      "text": "복습 플로우 시나리오 작성 (카드→복습→SM-2→Kafka 이벤트)",
+                      "done": true
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "복습 전체 플로우 E2E 테스트 실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false
+                      "text": "P0 버그 수정 (FlashCardJpaRepository 쿼리 2건)",
+                      "done": true
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "text": "수정 후 전체 테스트 재실행 (BUILD SUCCESSFUL)",
+                      "done": true
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "API 문서 최신화",
-                      "done": false
+                      "text": "WORKFLOW W4 체크박스 업데이트",
+                      "done": true
                     },
                     {
-                      "text": "HISTORY 완료 기록",
-                      "done": false
+                      "text": "노션 작업 보고서 작성",
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 12,
-              "doneChecks": 0
+              "doneChecks": 12
             },
             {
               "name": "버그 수정 + Kafka 이벤트 안정화",
@@ -4206,7 +4206,7 @@
             }
           ],
           "totalChecks": 25,
-          "doneChecks": 0
+          "doneChecks": 12
         },
         {
           "week": "W5",
@@ -4569,7 +4569,7 @@
     {
       "date": "2026-06-02",
       "totalChecks": 691,
-      "doneChecks": 628
+      "doneChecks": 644
     }
   ],
   "changelog": [
@@ -4906,6 +4906,34 @@
           "type": "check_done",
           "target": "W4 > 시맨틱 검색 정확도 검증 + 버그 수정",
           "detail": "13개 항목 완료 (0 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02T07:59:20.750Z",
+      "commit": "7b2028c",
+      "author": "choyj358-ai",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > card.reviewed Kafka 발행 — Avro 스키마 + 이벤트 발행",
+          "detail": "2개 항목 완료 (37 → 39)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > review_sessions 통계 — 일별/주별 복습 수, 정답률 API",
+          "detail": "1개 항목 완료 (44 → 45)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > card.review.due 발행 — 매일 스케줄러 → 복습 대상 사용자 → Kafka 발행",
+          "detail": "1개 항목 완료 (36 → 37)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 복습 E2E 테스트",
+          "detail": "12개 항목 완료 (0 → 12)"
         }
       ]
     }
