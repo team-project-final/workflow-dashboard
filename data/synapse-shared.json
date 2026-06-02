@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-01T10:09:49.053Z",
+  "updatedAt": "2026-06-02T01:48:19.362Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1574,20 +1574,16 @@
           "steps": [
             {
               "name": "전체 E2E 시나리오 정의 + 테스트 실행 조율",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
-                  "total": 2,
-                  "done": 0,
+                  "total": 1,
+                  "done": 1,
                   "items": [
                     {
-                      "text": "전체 서비스 통합 E2E 시나리오 목록 작성",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 데이터 준비",
-                      "done": false
+                      "text": "전체 서비스 통합 E2E 시나리오 목록 작성 — [E2E_SCENARIOS_W4.md](../../guides/E2E_SCENARIOS_W4.md) (W1~W5 + W3 S1~S4/E1~E3/M1 재사용), 06-02 prep",
+                      "done": true
                     }
                   ]
                 },
@@ -1667,25 +1663,21 @@
                   ]
                 }
               ],
-              "totalChecks": 12,
-              "doneChecks": 0
+              "totalChecks": 11,
+              "doneChecks": 1
             },
             {
               "name": "성능 SLA 검증",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
-                  "total": 2,
-                  "done": 0,
+                  "total": 1,
+                  "done": 1,
                   "items": [
                     {
-                      "text": "성능 SLA 검증 시나리오 목록 작성 (API P95, Kafka, 검색)",
-                      "done": false
-                    },
-                    {
-                      "text": "테스트 데이터 준비 (부하 테스트용)",
-                      "done": false
+                      "text": "성능 SLA 검증 시나리오 목록 작성 (API P95, Kafka, 검색) — [SLA_VERIFICATION_W4.md](../../reports/SLA_VERIFICATION_W4.md) P1~P7 + 측정방법, 06-02 prep",
+                      "done": true
                     }
                   ]
                 },
@@ -1773,8 +1765,8 @@
                   ]
                 }
               ],
-              "totalChecks": 14,
-              "doneChecks": 0
+              "totalChecks": 13,
+              "doneChecks": 1
             },
             {
               "name": "Staging 배포 + 모니터링 대시보드 가동",
@@ -1879,8 +1871,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 39,
-          "doneChecks": 0
+          "totalChecks": 37,
+          "doneChecks": 2
         }
       ]
     }
@@ -2077,6 +2069,11 @@
       "date": "2026-06-01",
       "totalChecks": 275,
       "doneChecks": 212
+    },
+    {
+      "date": "2026-06-02",
+      "totalChecks": 270,
+      "doneChecks": 214
     }
   ],
   "changelog": [
@@ -2294,6 +2291,34 @@
           "type": "boxes_removed",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "3개 박스 제거 (37 → 34)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02T01:48:19.362Z",
+      "commit": "b48910c",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 전체 E2E 시나리오 정의 + 테스트 실행 조율",
+          "detail": "1개 항목 완료 (0 → 1)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W4 > 전체 E2E 시나리오 정의 + 테스트 실행 조율",
+          "detail": "1개 박스 제거 (12 → 11)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 성능 SLA 검증",
+          "detail": "1개 항목 완료 (0 → 1)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W4 > 성능 SLA 검증",
+          "detail": "1개 박스 제거 (14 → 13)"
         }
       ]
     }
