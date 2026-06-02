@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-01T10:09:47.058Z",
+  "updatedAt": "2026-06-02T01:46:21.349Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1037,8 +1037,8 @@
                 },
                 {
                   "name": "문서화 + 검증",
-                  "total": 4,
-                  "done": 3,
+                  "total": 8,
+                  "done": 7,
                   "items": [
                     {
                       "text": "Runbook 초안에 롤백 절차 포함 — `docs/runbooks/w4-prod-rollback-backup-runbook.md`",
@@ -1055,16 +1055,32 @@
                     {
                       "text": "HISTORY 갱신 — HISTORY 2026-05-28 + 2026-06-01 라이브 재현 섹션 (D-043)",
                       "done": true
+                    },
+                    {
+                      "text": "**MSK 인증 모델 B(TLS-only) 확정** (D-044) — `msk.tf` 무변경, 서비스 코드/config 무변경. A(SASL/IAM)는 W5+ 백로그.",
+                      "done": true
+                    },
+                    {
+                      "text": "**9개 Kafka 토픽 terraform 선언화** — `infra/aws/dev/kafka-topics/`(Mongey/kafka). 라이브 재기동에서 bastion apply로 9/9 생성 입증(RF=2). 기존 bastion 수동 스크립트 제거.",
+                      "done": true
+                    },
+                    {
+                      "text": "**bastion→MSK SG 9094 인바운드 추가**(vpc.tf) — \"bastion 차단\"의 네트워크 실체 해소.",
+                      "done": true
+                    },
+                    {
+                      "text": "**shared `KAFKA_AUTH_MATRIX` TLS-only 정합** — 브랜치 `docs/kafka-auth-tls-only`(team-lead 검토 후 push).",
+                      "done": true
                     }
                   ]
                 }
               ],
-              "totalChecks": 19,
-              "doneChecks": 15
+              "totalChecks": 23,
+              "doneChecks": 19
             }
           ],
-          "totalChecks": 45,
-          "doneChecks": 33
+          "totalChecks": 49,
+          "doneChecks": 37
         },
         {
           "week": "W5",
@@ -1579,6 +1595,11 @@
       "date": "2026-06-01",
       "totalChecks": 204,
       "doneChecks": 153
+    },
+    {
+      "date": "2026-06-02",
+      "totalChecks": 208,
+      "doneChecks": 157
     }
   ],
   "changelog": [
@@ -1793,6 +1814,24 @@
           "type": "boxes_added",
           "target": "W4 > prod 환경 + 승인 게이트",
           "detail": "1개 박스 추가 (25 → 26)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02T01:46:21.348Z",
+      "commit": "a79ce36",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 롤백 / 백업 전략",
+          "detail": "4개 항목 완료 (15 → 19)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > 롤백 / 백업 전략",
+          "detail": "4개 박스 추가 (19 → 23)"
         }
       ]
     }
