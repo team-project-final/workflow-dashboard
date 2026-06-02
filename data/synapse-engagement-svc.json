@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-06-02T02:13:08.826Z",
+  "updatedAt": "2026-06-02T05:28:40.038Z",
   "tracks": [
     {
       "name": "engagement",
@@ -1614,19 +1614,23 @@
                 },
                 {
                   "name": "Security 1차 검토",
-                  "total": 4,
-                  "done": 3,
+                  "total": 5,
+                  "done": 4,
                   "items": [
                     {
                       "text": "Kafka 토픽 ACL 설정 (engagement-svc만 발행 권한)",
                       "done": false
                     },
                     {
+                      "text": "Kafka ACL 계약 시뮬레이션 테스트 (허용 토픽 + tenantId partition key 검증)",
+                      "done": true
+                    },
+                    {
                       "text": "이벤트 페이로드 민감정보 미포함 확인",
                       "done": true
                     },
                     {
-                      "text": "Schema Registry Avro/JSON Schema 등록",
+                      "text": "Schema Registry Avro 스키마 등록",
                       "done": true
                     },
                     {
@@ -1649,7 +1653,7 @@
                       "done": true
                     },
                     {
-                      "text": "이벤트 키 전략 (userId 기반 파티셔닝)",
+                      "text": "이벤트 키 전략 (tenantId 기반 파티셔닝)",
                       "done": true
                     },
                     {
@@ -1687,15 +1691,15 @@
                   "done": 4,
                   "items": [
                     {
-                      "text": "LevelUpEvent DTO 정의 (userId, oldLevel, newLevel, totalXp, occurredAt)",
+                      "text": "`com.synapse.engagement.LevelUp` Avro record 정의 (eventId, tenantId, userId, newLevel, previousLevel, totalXp, occurredAt)",
                       "done": true
                     },
                     {
-                      "text": "BadgeEarnedEvent DTO 정의 (userId, badgeId, badgeName, occurredAt)",
+                      "text": "`com.synapse.engagement.BadgeEarned` Avro record 정의 (eventId, tenantId, userId, badgeId, badgeCode, badgeName, occurredAt)",
                       "done": true
                     },
                     {
-                      "text": "Avro/JSON Schema 작성 (Schema Registry 등록은 운영 Kafka 환경에서 진행)",
+                      "text": "shared Avro 스키마 벤더링 (`src/main/avro/engagement`) 및 Schema Registry 발행 경로 반영",
                       "done": true
                     },
                     {
@@ -1756,8 +1760,8 @@
                 },
                 {
                   "name": "E2E 검증",
-                  "total": 3,
-                  "done": 2,
+                  "total": 4,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Docker Compose 환경에서 이벤트 발행 확인",
@@ -1765,6 +1769,10 @@
                     },
                     {
                       "text": "kafka-console-consumer로 이벤트 수신 확인",
+                      "done": true
+                    },
+                    {
+                      "text": "mock notification processor 계약 테스트 (Avro consume → notification command 변환)",
                       "done": true
                     },
                     {
@@ -1793,266 +1801,266 @@
                   ]
                 }
               ],
-              "totalChecks": 38,
-              "doneChecks": 36
+              "totalChecks": 40,
+              "doneChecks": 38
             },
             {
               "name": "community 신고 + Admin 모더레이션 — 신고 접수/처리 API",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (신고/모더레이션)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "신고 유형 정의 (스팸, 욕설, 부적절 콘텐츠 등)",
-                      "done": false
+                      "text": "신고 유형 정의 (초기: 자유 입력 reason, 1000자 제한)",
+                      "done": true
                     },
                     {
-                      "text": "신고 대상 정의 (게시글, 댓글, 사용자)",
-                      "done": false
+                      "text": "신고 대상 정의 (`SHARED_DECK`, `SHARED_NOTE`, `STUDY_GROUP`, `USER`)",
+                      "done": true
                     },
                     {
                       "text": "관리자 모더레이션 워크플로우 (접수 → 검토 → 승인/거부)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (신고: 로그인 사용자, 처리: 관리자)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "권한 종류: USER(신고), ADMIN(처리)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "중복 신고 방지 (동일 사용자 → 동일 대상 1회 제한)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "ERD 설계",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "items": [
                     {
-                      "text": "reports 테이블 설계 (id, reporter_user_id, target_type, target_id, reason, status, action_taken, created_at, reviewed_at)",
-                      "done": false
+                      "text": "reports 테이블 설계 (id, reporter_id, target_type, target_id, reason, status, admin_note, created_at, resolved_at)",
+                      "done": true
                     },
                     {
-                      "text": "target_type 값: shared_deck|shared_note|study_group|user",
-                      "done": false
+                      "text": "target_type 값: `SHARED_DECK`|`SHARED_NOTE`|`STUDY_GROUP`|`USER`",
+                      "done": true
                     },
                     {
-                      "text": "status ENUM 정의 (pending, reviewed, resolved, dismissed)",
-                      "done": false
+                      "text": "status ENUM 정의 (`PENDING`, `APPROVED`, `REJECTED`)",
+                      "done": true
                     },
                     {
-                      "text": "인덱스 설계 (status, reporter_user_id, target_type+target_id)",
-                      "done": false
+                      "text": "인덱스 설계 (status, reporter_id, target_type+target_id)",
+                      "done": true
                     },
                     {
-                      "text": "UNIQUE 제약: reporter_user_id + target_type + target_id",
-                      "done": false
+                      "text": "UNIQUE 제약: reporter_id + target_type + target_id",
+                      "done": true
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "items": [
                     {
-                      "text": "신고자 익명성 보장 (신고 대상자에게 신고자 미노출)",
-                      "done": false
+                      "text": "신고자 익명성 보장 (ReportResponse에 reporterId 미포함)",
+                      "done": true
                     },
                     {
-                      "text": "승인 시 콘텐츠 숨김/삭제 처리 + audit 로그 기록",
-                      "done": false
+                      "text": "승인 시 콘텐츠 숨김/삭제 처리 + DB audit 기록 (`admin_note`, `resolved_at`)",
+                      "done": true
                     },
                     {
                       "text": "거부 시 신고 무효 처리 + 사유 기록",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
                       "text": "Report Entity 작성",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "ReportCreateRequest DTO 정의 (target_type, target_id, reason)",
-                      "done": false
+                      "text": "ReportCreateRequest DTO 정의 (targetType, targetId, reason)",
+                      "done": true
                     },
                     {
                       "text": "ReportResponse DTO 정의",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "ReportModerateRequest DTO 정의 (status, action_taken)",
-                      "done": false
+                      "text": "ReportModerateRequest DTO 정의 (status, adminNote)",
+                      "done": true
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "ReportRepository 인터페이스 작성",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "findByStatus 커스텀 쿼리 (pending 목록)",
-                      "done": false
+                      "text": "findByStatus 쿼리 (pending 목록)",
+                      "done": true
                     },
                     {
-                      "text": "existsByReporterUserIdAndTargetTypeAndTargetId 중복 검사 쿼리",
-                      "done": false
+                      "text": "existsByReporterIdAndTargetTypeAndTargetId 중복 검사 쿼리",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Service + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "items": [
                     {
-                      "text": "ReportService 구현 (신고 접수 — 중복 검사, 생성)",
-                      "done": false
+                      "text": "ReportService 구현 (신고 접수 — 대상 존재 검증, 중복 검사, 생성)",
+                      "done": true
                     },
                     {
                       "text": "ModerationService 구현 (관리자 처리 — 승인/거부, 콘텐츠 숨김)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "승인 시 community.report.created 기반 후속 처리 실행 (별도 approved 토픽 없음 — 아키텍처 미정의)",
-                      "done": false
+                      "text": "승인 시 community report DB audit 기반 후속 처리 실행 (별도 approved 토픽 없음 — shared Avro 계약 미정의)",
+                      "done": true
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "items": [
                     {
-                      "text": "POST /community/reports 엔드포인트 구현 (신고 접수)",
-                      "done": false
+                      "text": "POST `/api/v1/community/reports` 엔드포인트 구현 (신고 접수)",
+                      "done": true
                     },
                     {
-                      "text": "GET /admin/reports 엔드포인트 구현 (관리자 신고 목록, 페이징)",
-                      "done": false
+                      "text": "GET `/api/v1/admin/reports` 엔드포인트 구현 (관리자 신고 목록, status 필터)",
+                      "done": true
                     },
                     {
-                      "text": "PUT /admin/reports/{id}/resolve 엔드포인트 구현 (승인/거부 처리)",
-                      "done": false
+                      "text": "PATCH `/api/v1/admin/reports/{id}` 엔드포인트 구현 (승인/거부 처리)",
+                      "done": true
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "403 Forbidden 테스트 (비관리자 처리 시도)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "409 Conflict 테스트 (중복 신고)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "Swagger API 문서 확인",
-                      "done": false
+                      "text": "Swagger API 문서 확인 (`/v3/api-docs` report/admin endpoints 테스트)",
+                      "done": true
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 44,
-              "doneChecks": 0
+              "doneChecks": 44
             }
           ],
-          "totalChecks": 128,
-          "doneChecks": 82
+          "totalChecks": 130,
+          "doneChecks": 128
         },
         {
           "week": "W4",
@@ -2728,8 +2736,8 @@
     },
     {
       "date": "2026-06-02",
-      "totalChecks": 409,
-      "doneChecks": 304
+      "totalChecks": 411,
+      "doneChecks": 350
     }
   ],
   "changelog": [
@@ -2928,6 +2936,29 @@
           "type": "boxes_removed",
           "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
           "detail": "1개 박스 제거 (39 → 38)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-02T05:28:40.038Z",
+      "commit": "4113be1",
+      "author": "olivefanta12",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+          "detail": "2개 항목 완료 (36 → 38)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+          "detail": "2개 박스 추가 (38 → 40)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > community 신고 + Admin 모더레이션 — 신고 접수/처리 API",
+          "detail": "44개 항목 완료 (0 → 44)"
         }
       ]
     }
