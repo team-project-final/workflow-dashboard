@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-04T02:28:30.954Z",
+  "updatedAt": "2026-06-04T03:00:36.143Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1517,7 +1517,7 @@
                       "done": false
                     },
                     {
-                      "text": "RDS/Redis/OpenSearch 연결 상태 확인",
+                      "text": "RDS/Redis/Elasticsearch 연결 상태 확인",
                       "done": false
                     }
                   ]
