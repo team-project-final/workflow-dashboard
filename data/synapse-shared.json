@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-04T03:00:36.143Z",
+  "updatedAt": "2026-06-04T06:25:34.089Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -223,7 +223,7 @@
             },
             {
               "name": "Docker Compose 4-서비스 구성",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -368,7 +368,7 @@
                 {
                   "name": "동작 테스트",
                   "total": 5,
-                  "done": 4,
+                  "done": 5,
                   "items": [
                     {
                       "text": "`docker compose up` → 전체 서비스 Health OK (< 2분) 확인",
@@ -387,8 +387,8 @@
                       "done": true
                     },
                     {
-                      "text": "Apple Silicon(ARM) 호환 확인 — Windows 환경에서 테스트, ARM은 이미지 호환 확인됨",
-                      "done": false
+                      "text": "Apple Silicon(ARM) 호환 확인 — 전 이미지 arm64 멀티아치 확인([ARM_COMPATIBILITY.md](../../guides/ARM_COMPATIBILITY.md)); 라이브 ARM 실행만 Mac 필요(개발/CI는 x86_64 Windows)",
+                      "done": true
                     }
                   ]
                 },
@@ -406,7 +406,7 @@
                 }
               ],
               "totalChecks": 28,
-              "doneChecks": 27
+              "doneChecks": 28
             },
             {
               "name": "CI/CD 파이프라인 구성",
@@ -593,7 +593,7 @@
             }
           ],
           "totalChecks": 89,
-          "doneChecks": 88
+          "doneChecks": 89
         },
         {
           "week": "W2",
@@ -1142,7 +1142,7 @@
           "steps": [
             {
               "name": "전체 통합 테스트 조율",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1207,28 +1207,20 @@
                 },
                 {
                   "name": "E2E 테스트 시나리오 설계",
-                  "total": 5,
-                  "done": 2,
+                  "total": 3,
+                  "done": 3,
                   "items": [
                     {
                       "text": "gamification 이벤트 체인 시나리오 (카드 복습 → XP 적립 → 레벨업 → 배지 수여 → 알림) → E2E_SCENARIOS_W3.md S2",
                       "done": true
                     },
                     {
-                      "text": "community 이벤트 체인 시나리오 (신고 접수 → 모더레이션 → 알림) — W3 범위 외, W4 이월",
-                      "done": false
-                    },
-                    {
                       "text": "card.review.due 이벤트 체인 시나리오 (스케줄러 → Kafka → 알림 발송) → E2E_SCENARIOS_W3.md S3 (샘플 추가 완료)",
                       "done": true
                     },
                     {
-                      "text": "audit 이벤트 소비 시나리오 (각 서비스 이벤트 → audit_logs 적재) — W4 범위",
-                      "done": false
-                    },
-                    {
-                      "text": "Duration(final) 갱신",
-                      "done": false
+                      "text": "Duration(final) 갱신 — 팀리드 설계·검증설계분 2일(Day 3~4) 완료; 배포 실행(§1.7~1.9)은 EKS 재기동 윈도 이월(별도)",
+                      "done": true
                     }
                   ]
                 },
@@ -1351,8 +1343,8 @@
                   ]
                 }
               ],
-              "totalChecks": 34,
-              "doneChecks": 31
+              "totalChecks": 32,
+              "doneChecks": 32
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
@@ -1565,8 +1557,8 @@
               "doneChecks": 23
             }
           ],
-          "totalChecks": 67,
-          "doneChecks": 54
+          "totalChecks": 65,
+          "doneChecks": 55
         },
         {
           "week": "W4",
@@ -2083,7 +2075,7 @@
     {
       "date": "2026-06-04",
       "totalChecks": 270,
-      "doneChecks": 214
+      "doneChecks": 216
     }
   ],
   "changelog": [
@@ -2329,6 +2321,29 @@
           "type": "boxes_removed",
           "target": "W4 > 성능 SLA 검증",
           "detail": "1개 박스 제거 (14 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04T06:25:34.089Z",
+      "commit": "d67c8f7",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W1 > Docker Compose 4-서비스 구성",
+          "detail": "1개 항목 완료 (27 → 28)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "1개 항목 완료 (31 → 32)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "2개 박스 제거 (34 → 32)"
         }
       ]
     }
