@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-06-05T03:03:23.767Z",
+  "updatedAt": "2026-06-05T08:37:26.200Z",
   "tracks": [
     {
       "name": "frontend",
@@ -18,18 +18,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -37,22 +41,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 3.24+ / Dart 3.5+ 프로젝트 구조 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Riverpod + GoRouter + Material 3 의존성 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DESIGN.md 테마 규격 (ColorScheme, Typography) 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -60,22 +69,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No (프론트엔드 앱)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -83,22 +97,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "폴더 구조 설계 (lib/core/, lib/features/, lib/shared/)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "라우트 구조 정의 (/, /login, /dashboard)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -106,22 +125,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "환경변수 관리 (.env, API base URL)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "코드 내 시크릿 하드코딩 금지 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -129,22 +153,27 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Scaffold 페이지만 생성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GoRouter 라우트 설정 (/, /login, /dashboard)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ThemeData 생성 (DESIGN.md 기반)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -152,14 +181,17 @@
                   "name": "Repository 구현",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "pubspec.yaml 의존성 추가 (flutter_riverpod, go_router, google_fonts)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ProviderScope 최상위 래핑",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -167,22 +199,27 @@
                   "name": "Service + Test",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GoRouter 설정 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ThemeData (ColorScheme + Typography) 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "라우트별 빈 Scaffold 페이지 생성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (라우팅 전환 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -190,18 +227,22 @@
                   "name": "Controller + Test",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "`flutter run -d chrome` 동작 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "라우팅 전환 동작 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DESIGN.md 테마 적용 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -209,18 +250,22 @@
                   "name": "View + Test",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "각 라우트 빈 화면 렌더링 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (앱 실행 → 에러 없음)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -236,18 +281,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx 인증 화면)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -255,22 +304,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 1,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "로그인 화면 UI 요소 정의 (이메일/비밀번호 폼 + OAuth 버튼)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "회원가입 화면 UI 요소 정의 (이메일/비밀번호/확인 폼)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "OAuth 2.0 + PKCE 플로우 분석",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -278,26 +332,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (인증 화면 자체는 공개)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 없음 (인증 전 화면)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: Yes (인증 화면)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "토큰 저장: SecureStorage만 허용 (localStorage 금지)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -305,22 +365,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인증 상태 모델 설계 (AuthState: unauthenticated/loading/authenticated)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "토큰 저장 구조 설계 (access_token: SecureStorage 저장, refresh_token: httpOnly Cookie — 서버에서 Set-Cookie로 발급되므로 클라이언트에서 직접 저장 불필요)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -328,22 +393,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "토큰 SecureStorage 전용 저장 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "비밀번호 입력 마스킹 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "platform-svc 베이스 URL 환경변수 관리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -351,26 +421,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "LoginRequest 모델 정의 (email, password)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SignupRequest 모델 정의 (email, password, confirmPassword)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AuthToken 모델 정의 (accessToken, expiresIn) — refreshToken은 httpOnly Cookie로 서버 관리, JSON body 미포함",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "AuthState Provider 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -378,22 +454,27 @@
                   "name": "Repository 구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AuthRepositoryPort + platform AuthRepository 구현 (OAuth redirect + token storage 경계)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PLAT-009 email/password login/signup API 연동 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SecureStorage 토큰 저장/조회/삭제 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "flutter_secure_storage 의존성 추가",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -401,26 +482,32 @@
                   "name": "Service + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AuthNotifier (Riverpod StateNotifier) 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OAuth 콜백 처리 및 토큰 수신 로직",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GoRouter redirect guard 구현 (미인증 시 /login 이동)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (AuthNotifier 상태 전이)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -428,26 +515,32 @@
                   "name": "Controller + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "로그인 페이지 Widget 구현 (폼 + OAuth 버튼)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "회원가입 페이지 Widget 구현 (폼 + 유효성 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "폼 유효성 검증 (비밀번호 8자+, 영문+숫자+특수문자)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "로딩 상태 및 에러 상태 UI 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (폼 제출, 에러 표시)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -455,22 +548,27 @@
                   "name": "View + Test",
                   "total": 4,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "로그인 화면 렌더링 + OAuth 버튼 동작 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "회원가입 화면 렌더링 + 유효성 검증 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (로그인 → 대시보드 이동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -486,18 +584,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-UI-xxx 대시보드)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -505,22 +607,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "대시보드 ShellRoute 레이아웃 구조 분석",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "사이드바 확장/축소 토글 (240px / 56px) 요건",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "반응형 브레이크포인트 (768px) 요건",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -528,26 +635,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GoRouter guard로 미인증 리다이렉트 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -555,22 +668,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "네비게이션 항목 정의 (대시보드, 노트, 카드, 설정)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "라우트 구조도 (nested routes) 설계",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -578,22 +696,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "인증 토큰 만료 시 자동 리다이렉트 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "키보드 접근성 (Tab 이동, Enter 선택) 지원",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -601,18 +724,22 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NavigationItem 모델 정의 (icon, label, route)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "SidebarState Provider 설계 (expanded/collapsed)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -620,14 +747,17 @@
                   "name": "Repository 구현",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "대시보드 — API 연동 해당 없음 (레이아웃 구현)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Riverpod Provider 등록 (SidebarNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -635,22 +765,27 @@
                   "name": "Service + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "SidebarNotifier 구현 (확장/축소 토글 상태 관리)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "반응형 감지 로직 (LayoutBuilder / MediaQuery)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "애니메이션 전환 (200ms ease-in-out)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (SidebarNotifier 상태 토글)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -658,30 +793,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "대시보드 ShellRoute Widget 구현 (사이드바 + 콘텐츠 영역)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "사이드바 컴포넌트 구현 (확장 240px / 축소 56px)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "네비게이션 항목 클릭 시 GoRouter nested route 이동",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "현재 활성 라우트 하이라이트 표시",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "반응형 처리: 모바일(< 768px) 시 Drawer로 전환",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (사이드바 토글, 라우트 이동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -689,22 +831,27 @@
                   "name": "View + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "대시보드 확장/축소 상태 렌더링 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "반응형 동작 확인 (데스크탑 ↔ 모바일)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (사이드바 토글 + 페이지 이동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -728,18 +875,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (노트 에디터)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -747,26 +898,32 @@
                   "name": "요구사항 분석",
                   "total": 5,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Markdown 편집기 위젯 선정 (flutter_markdown 채택)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "편집/미리보기 전환 모드 요건 (Desktop: split / Mobile: tab)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "자동 저장 요건 (debounce 2초 또는 수동 저장) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "노트 CRUD API 연동 엔드포인트 확인 (knowledge-svc) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -774,26 +931,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 노트만)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "XSS 방지: Markdown 렌더링 시 HTML sanitization",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -801,22 +964,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "노트 상태 모델 설계 (NoteState: loading/editing/saving/saved/error)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "자동 저장 debounce 로직 설계",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -824,22 +992,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Markdown → HTML 변환 시 스크립트 태그 제거 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "이미지 URL 외부 리소스 로딩 정책 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "미저장 데이터 유실 방지 (beforeunload 경고)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -847,26 +1020,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NoteCreateRequest 모델 정의 (title, content, tags)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "NoteUpdateRequest 모델 정의 (title, content, tags)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "NoteResponse 모델 정의 (id, title, content, tags, createdAt, updatedAt)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "NoteEditorState Provider 설계 (content, isDirty, isSaving)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -874,18 +1053,22 @@
                   "name": "Repository 구현",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NoteRepository 클래스 작성 (HTTP client + knowledge-svc 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "CRUD API 호출 (POST/GET/PATCH/DELETE /notes)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Riverpod Provider 등록 (NoteNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -893,30 +1076,37 @@
                   "name": "Service + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NoteNotifier 구현 (create, load, update, delete)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Markdown 편집 상태 관리 (isDirty 추적)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "자동 저장 로직 구현 (Timer debounce)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Markdown → 미리보기 렌더링 서비스",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (NoteNotifier 상태 전이, 자동 저장 debounce)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -924,30 +1114,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "노트 에디터 페이지 Widget 구현 (편집 영역 + 미리보기 영역) — 뼈대 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "편집/미리보기 모드 전환 탭/토글 구현 — Desktop split, Mobile tab",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Markdown 툴바 구현 (Bold, Italic, Heading, Link, Code) — 뼈대 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "저장 버튼 + 자동 저장 인디케이터 구현 — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "노트 제목/태그 입력 폼 구현 — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (편집 → 미리보기 전환, 저장 동작)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -955,22 +1152,27 @@
                   "name": "View + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Markdown 편집 + 실시간 미리보기 렌더링 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "자동 저장 동작 확인 (입력 후 2초 대기 → 저장 표시)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (노트 생성 → 편집 → 저장 → 재로드)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -986,18 +1188,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (SRS 복습 화면)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1005,26 +1211,32 @@
                   "name": "요구사항 분석",
                   "total": 5,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카드 제시 UI 요건 (앞면 → 탭/클릭 → 뒷면 뒤집기 애니메이션) — FlipCard 위젯 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "난이도 선택 버튼 요건 (Again, Hard, Good, Easy) — 4버튼 레이아웃 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "세션 완료 화면 요건 (복습 결과 요약) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1032,22 +1244,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 카드만)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1055,22 +1272,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복습 세션 상태 모델 설계 (ReviewSessionState: loading/reviewing/flipped/completed)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카드 큐 상태 관리 설계 (currentIndex, totalCards, remainingCards)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1078,18 +1300,22 @@
                   "name": "Security 2차 검토",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "세션 데이터 메모리 관리 (세션 종료 시 클리어)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "네트워크 에러 시 복습 데이터 유실 방지 (로컬 버퍼)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1097,22 +1323,27 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ReviewSessionState Provider 설계",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "ReviewCardDisplay 모델 정의 (front, back, isFlipped)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "ReviewResult 모델 정의 (totalCards, correctCount, sessionDuration)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1120,18 +1351,22 @@
                   "name": "Repository 구현",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card 런타임 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "세션 시작/카드 큐/rating 제출/세션 완료 API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Riverpod Provider 등록 (ReviewSessionNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1139,30 +1374,37 @@
                   "name": "Service + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ReviewSessionNotifier 구현 (startSession, flipCard, submitRating, nextCard, completeSession)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카드 큐 관리 로직 (현재 카드 인덱스, 남은 카드 수)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카드 뒤집기 상태 관리",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "세션 완료 시 결과 집계 (정답률, 소요 시간)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (ReviewSessionNotifier 상태 전이)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1170,30 +1412,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카드 제시 Widget 구현 (앞면 표시 → 뒤집기 애니메이션) — FlipCard 뼈대 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "난이도 선택 버튼 Widget 구현 (Again/Hard/Good/Easy 4버튼) — 레이아웃 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "진행률 표시 Widget 구현 (n/total 프로그레스 바) — LinearProgressIndicator 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "세션 완료 화면 Widget 구현 (결과 요약 + 돌아가기 버튼) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (뒤집기 → 난이도 선택 → 다음 카드 플로우)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1201,26 +1450,32 @@
                   "name": "View + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "복습 시작 → 카드 뒤집기 → 난이도 선택 → 다음 카드 전체 플로우 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카드 뒤집기 애니메이션 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "세션 완료 결과 화면 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (세션 시작 → 3장 복습 → 완료)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1236,18 +1491,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (커뮤니티 화면)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1255,26 +1514,32 @@
                   "name": "요구사항 분석",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "커뮤니티 그룹 목록 화면 요건 (검색, 카테고리 필터, 정렬)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "그룹 상세 화면 요건 (공유 콘텐츠 목록, 복사 기능)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 콘텐츠 검색/필터 요건",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "engagement-svc API 연동 엔드포인트 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1282,22 +1547,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1305,22 +1575,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커뮤니티 상태 모델 설계 (CommunityState: loading/loaded/error)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "검색/필터 상태 관리 설계",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1328,18 +1603,22 @@
                   "name": "Security 2차 검토",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "공유 콘텐츠 복사 시 소유권 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "부적절 콘텐츠 신고 UI 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1347,18 +1626,22 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "SharedContentDisplay 모델 정의 (id, title, description, tags, downloadCount, shareToken)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "CommunitySearchState Provider 설계 (query, filters, results)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1366,18 +1649,22 @@
                   "name": "Repository 구현",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "CommunityRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "검색/필터/공유 콘텐츠 조회/복사 API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Riverpod Provider 등록 (CommunityNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1385,30 +1672,37 @@
                   "name": "Service + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "CommunityNotifier 구현 (search, loadSharedContent, copyContent)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "검색 + 필터링 상태 관리",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "페이지네이션 (무한 스크롤 또는 페이지 번호)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "콘텐츠 복사(copy) 확인 다이얼로그 로직",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (CommunityNotifier 상태 전이)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1416,30 +1710,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "커뮤니티 그룹 목록 페이지 Widget 구현 — 탭(내 그룹/탐색) + 빈 상태 UI 뼈대 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "검색 바 + 카테고리 필터 칩 Widget 구현 — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 콘텐츠 카드 리스트 Widget 구현 (제목, 설명, 태그, 다운로드 수) — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 콘텐츠 상세 화면 Widget 구현 — 멤버/공유 콘텐츠 탭 뼈대 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "복사 확인 다이얼로그 Widget 구현 — 팀원 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (검색 → 결과 표시 → 콘텐츠 복사 플로우)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1447,26 +1748,32 @@
                   "name": "View + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "커뮤니티 목록 렌더링 + 검색 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "카테고리 필터 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "콘텐츠 복사(copy) 전체 플로우 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (검색 → 상세 보기 → 복사)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1490,18 +1797,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (게이미피케이션 UI)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1509,26 +1820,32 @@
                   "name": "요구사항 분석",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "XP 바 UI 요건 분석 (현재 XP / 다음 레벨 XP, 프로그레스 바)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "배지 갤러리 UI 요건 분석 (획득/미획득 배지 그리드, 상세 모달)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨 표시 UI 요건 분석 (프로필 영역, 사이드바)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨업 축하 애니메이션 요건 분석 (Lottie / Rive 애니메이션)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1536,22 +1853,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 본인 XP/배지/레벨 조회",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1559,22 +1881,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "게이미피케이션 상태 모델 설계 (GamificationState: xp, level, streak, badges[])",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨업 이벤트 감지 로직 설계 (이전 레벨 vs 현재 레벨 비교)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1582,22 +1909,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "XP/레벨 데이터 클라이언트 측 조작 방지 (서버 데이터만 표시)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "배지 이미지 URL XSS 방지",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "민감 정보 노출: 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1605,26 +1937,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GamificationProvider 설계 (Riverpod StateNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GamificationState 모델 (xp, level, nextLevelXp, streak, badges[])",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Badge 모델 (id, name, description, iconUrl, earned)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "API 연동 모델 (engagement-svc /gamification/profile 응답 매핑 — level, totalXp, currentStreak, longestStreak, title, nextLevelXp, recentBadges)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1632,22 +1970,27 @@
                   "name": "Repository 구현",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GamificationRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /gamification/profile API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /gamification/badges API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /gamification/leaderboard API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1655,22 +1998,27 @@
                   "name": "Service + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GamificationNotifier 구현 (데이터 로드, 레벨업 감지)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨업 축하 트리거 로직 (이전 레벨 < 현재 레벨 시 애니메이션 표시)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "주기적 갱신 로직 (복습 완료 후 자동 갱신)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (상태 전이, 레벨업 감지)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1678,30 +2026,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "XP 프로그레스 바 Widget 구현 (LinearProgressIndicator + 레벨 라벨)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "배지 갤러리 Widget 구현 (GridView + 획득/미획득 구분)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "배지 상세 모달 Widget 구현 (이름, 설명, 획득 조건, 획득일)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨 표시 Widget 구현 (사이드바 프로필 영역)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨업 축하 애니메이션 Widget 구현 (Overlay + Lottie/Rive)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (XP 바, 배지 그리드, 애니메이션 트리거)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1709,26 +2064,32 @@
                   "name": "View + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "게이미피케이션 페이지 전체 렌더링 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "레벨업 시 축하 애니메이션 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "반응형 레이아웃 확인 (데스크탑 ↔ 모바일)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (XP 표시 + 배지 갤러리 + 레벨 표시)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1744,18 +2105,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (알림 센터)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1763,22 +2128,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "알림 목록 UI 요건 분석 (무한 스크롤, 시간순 정렬)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "읽음/안읽음 표시 요건 분석 (뱃지 카운트, 볼드 처리)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 설정 UI 요건 분석 (채널별 on/off 토글)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1786,22 +2156,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 본인 알림만 조회",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1809,22 +2184,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 상태 모델 설계 (NotificationState: notifications[], unreadCount, settings)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 타입별 라우팅 설계 (알림 클릭 → 관련 페이지 이동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1832,22 +2212,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "알림 내용 XSS 방지 (HTML 태그 이스케이프)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 설정 변경 시 서버 동기화 필수",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "민감 정보 노출: 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1855,26 +2240,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NotificationProvider 설계 (Riverpod StateNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "NotificationState 모델 (notifications[], unreadCount, hasMore)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Notification 모델 (id, type, title, body, isRead, createdAt)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "NotificationSetting 모델 (channel, eventType, enabled)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1882,26 +2273,32 @@
                   "name": "Repository 구현",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NotificationRepository 클래스 작성 (HTTP client + platform-svc 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /notifications API 호출 (페이징)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PATCH /notifications/{id}/read API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /notifications/preferences API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PUT /notifications/preferences API 호출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1909,22 +2306,27 @@
                   "name": "Service + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NotificationNotifier 구현 (알림 목록 로드, 무한 스크롤, 읽음 처리)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "안읽은 알림 카운트 실시간 갱신 (폴링 30초 간격)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 설정 관리 로직 (토글 on/off → API 호출)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (알림 상태 전이, 읽음 처리)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1932,30 +2334,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "알림 벨 아이콘 Widget 구현 (AppBar, 안읽은 카운트 뱃지)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 목록 페이지 Widget 구현 (ListView + 무한 스크롤)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 항목 Widget 구현 (아이콘 + 제목 + 시간 + 읽음/안읽음 스타일)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 클릭 시 상세 이동 로직 (타입별 라우팅)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 설정 페이지 Widget 구현 (채널별 토글 스위치)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (알림 목록, 읽음 처리, 설정 토글)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1963,26 +2372,32 @@
                   "name": "View + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "알림 센터 전체 렌더링 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "읽음/안읽음 스타일 전환 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 설정 토글 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (알림 목록 → 읽음 처리 → 설정 변경)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1998,18 +2413,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (관리자 모더레이션 화면)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2017,22 +2436,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "관리자 신고 목록 UI 요건 분석 (테이블, 필터, 페이징)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "신고 상세 UI 요건 분석 (신고 사유, 대상 콘텐츠, 처리 입력)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "승인/거부 처리 UI 요건 분석 (사유 입력, 확인 다이얼로그)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2040,22 +2464,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (관리자 전용)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: ROLE_ADMIN",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "라우트 가드: 관리자가 아닌 경우 접근 차단",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2063,22 +2492,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "관리자 상태 모델 설계 (AdminReportState: reports[], filters, pagination)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "관리자 라우트 설계 (/admin/reports, /admin/reports/:id)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2086,22 +2520,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "관리자 권한 확인 로직 (JWT role 기반)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "비관리자 접근 시 403 페이지 표시",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "처리 액션 확인 다이얼로그 필수 (실수 방지)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2109,26 +2548,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AdminReportProvider 설계 (Riverpod StateNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Report 모델 (id, targetType, targetId, reason, status, createdAt)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "ReportModerateRequest 모델 (status, adminNote)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "API 연동 모델 (engagement-svc /admin/reports 응답 매핑)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2136,18 +2581,22 @@
                   "name": "Repository 구현",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AdminReportRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /admin/reports API 호출 (페이징, 필터)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PUT /admin/reports/{id}/resolve API 호출 (승인/거부)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2155,22 +2604,27 @@
                   "name": "Service + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AdminReportNotifier 구현 (신고 목록 로드, 필터, 페이징)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "신고 처리 로직 (승인/거부 → API 호출 → 목록 갱신)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "처리 결과 스낵바 알림 (성공/실패)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (상태 전이, 처리 로직)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2178,30 +2632,37 @@
                   "name": "Controller + Test",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "관리자 신고 목록 페이지 Widget 구현 (DataTable + 필터 드롭다운)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "상태 필터 Widget 구현 (pending/reviewed/resolved/dismissed 탭)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "신고 상세 다이얼로그 Widget 구현 (사유 + 대상 콘텐츠 미리보기)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "승인/거부 버튼 + 사유 입력 + 확인 다이얼로그 구현",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "관리자 라우트 가드 구현 (GoRouter redirect)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (목록 렌더링, 필터, 처리 다이얼로그)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2209,26 +2670,32 @@
                   "name": "View + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "관리자 신고 목록 페이지 전체 렌더링 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "필터링/페이징 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "승인/거부 처리 → 목록 갱신 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (신고 목록 → 상세 → 승인 처리)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2244,18 +2711,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (공유 덱 탐색)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2263,22 +2734,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "공유 덱 목록 UI 요건 분석 (카드 그리드, 정렬, 필터)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 덱 상세 UI 요건 분석 (덱 정보, 카드 미리보기, 통계)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복사 기능 요건 분석 (공유 덱 → 내 덱으로 복사)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2286,22 +2762,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (로그인 사용자)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 공유된 덱만 조회 가능",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복사 시 원본 소유자 정보 비노출",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2309,22 +2790,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 덱 상태 모델 설계 (SharedDeckState: decks[], selectedDeck, filters)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "라우트 설계 (/explore, /explore/:deckId)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2332,22 +2818,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "비공개 덱 접근 차단 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복사 시 원본 덱 ID 참조만 저장 (콘텐츠 독립 복사)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "민감 정보 노출: 없음",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2355,26 +2846,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "SharedDeckProvider 설계 (Riverpod StateNotifier)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "SharedDeck 모델 (id, title, description, cardCount, author, tags[])",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "SharedDeckDetail 모델 (deck + cards[] 미리보기)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "API 연동 모델 (engagement-svc /community/shared-decks 응답 매핑)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2382,22 +2879,27 @@
                   "name": "Repository 구현",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "SharedDeckRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /community/shared-decks API 호출 (페이징, 정렬, 태그 필터)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "GET /community/shared-decks/{id} API 호출 (상세)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "POST /community/shared-decks/{id}/copy API 호출 (복사)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2405,22 +2907,27 @@
                   "name": "Service + Test",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "SharedDeckNotifier 구현 (목록 로드, 무한 스크롤, 필터)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "SharedDeckDetailNotifier 구현 (상세 로드)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복사 로직 (복사 API 호출 → 성공 시 내 덱 목록 갱신)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Unit 테스트 (상태 전이, 복사 로직)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2428,26 +2935,32 @@
                   "name": "Controller + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "공유 덱 탐색 페이지 Widget 구현 (카드 그리드 + 검색바 + 태그 필터)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 덱 카드 Widget 구현 (썸네일 + 제목 + 카드 수 + 태그)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "공유 덱 상세 페이지 Widget 구현 (덱 정보 + 카드 미리보기 리스트)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복사 버튼 Widget 구현 (복사 확인 다이얼로그 + 로딩 + 성공 피드백)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 (목록 렌더링, 상세, 복사 버튼)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2455,26 +2968,32 @@
                   "name": "View + Test",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "공유 덱 탐색 페이지 전체 렌더링 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "덱 상세 → 카드 미리보기 동작 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "복사 버튼 → 내 덱 추가 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (탐색 → 상세 → 복사)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2498,14 +3017,17 @@
                   "name": "E2E 시나리오 정의",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "반응형 검증 시나리오 작성 (Mobile/Tablet/Desktop)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2513,22 +3035,27 @@
                   "name": "E2E 테스트 실행",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Mobile 뷰포트 전체 화면 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Tablet 뷰포트 전체 화면 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Desktop 뷰포트 전체 화면 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2536,14 +3063,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2551,14 +3081,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2566,14 +3099,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2581,14 +3117,17 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2604,14 +3143,17 @@
                   "name": "E2E 시나리오 정의",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "에러/로딩 상태 검증 시나리오 작성 (AppErrorWidget/AppLoadingWidget 전수 확인)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2619,18 +3161,22 @@
                   "name": "E2E 테스트 실행",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AppErrorWidget 일관성 전수 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "AppLoadingWidget 일관성 전수 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2638,14 +3184,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2653,14 +3202,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2668,14 +3220,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2683,14 +3238,17 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2706,14 +3264,17 @@
                   "name": "E2E 시나리오 정의",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "DESIGN.md 토큰 일관성 검증 시나리오 작성 (하드코딩 색상/스페이싱 0건 목표)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2721,18 +3282,22 @@
                   "name": "E2E 테스트 실행",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "하드코딩 색상 전수 검색 + 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "하드코딩 스페이싱 전수 검색 + 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2740,14 +3305,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2755,14 +3323,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정 (하드코딩 → 디자인 토큰 교체)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2770,14 +3341,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2785,14 +3359,17 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2816,18 +3393,22 @@
                   "name": "뷰포트 검증",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Mobile, Tablet, Desktop 뷰포트 기준 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "인증/노트/카드/커뮤니티/검색/알림 화면 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "텍스트 오버플로우와 터치 타겟 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2835,18 +3416,22 @@
                   "name": "수정",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "레이아웃 깨짐 수정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "사이드바/Drawer 전환 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Widget 테스트 또는 시각 검증 결과 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2862,18 +3447,22 @@
                   "name": "공통 상태 점검",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AppErrorWidget 적용 여부 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "AppLoadingWidget 적용 여부 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "API 실패/권한 실패/빈 상태 UI 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2881,34 +3470,42 @@
                   "name": "발표 데모 정돈",
                   "total": 7,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "데모 시나리오 화면 전환 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "시드 데이터 표시 상태 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "깨진 링크/이미지/버튼 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "주요 화면이 3개 뷰포트에서 깨지지 않는다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "에러/로딩 상태가 일관되게 표시된다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "발표용 데모 흐름이 안정적으로 동작한다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "frontend 관련 P0 버그가 0건이다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }

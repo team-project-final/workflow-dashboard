@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-05T06:29:26.311Z",
+  "updatedAt": "2026-06-05T08:37:29.834Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -18,18 +18,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (인프라 프로비저닝)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -37,22 +41,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "EKS/RDS/MSK/ElastiCache/OpenSearch 각 서비스 스펙 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD ApplicationSet 구성 요건 분석 (5서비스x3환경)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "VPC/서브넷/보안그룹 설계 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -60,22 +69,27 @@
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "VPC 내부 통신만 허용 (퍼블릭 접근 제한)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "보안 그룹 인바운드/아웃바운드 규칙 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "IAM Role/Policy 최소 권한 원칙 적용",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -83,30 +97,37 @@
                   "name": "인프라 아키텍처 설계",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "EKS 클러스터 노드 구성 (3 node) 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RDS PostgreSQL 16 (db.t3.medium) 구성 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MSK Kafka 3.x (3 broker) + Schema Registry 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ElastiCache Redis 7 (cache.t3.micro) 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OpenSearch 8.x (1 node dev) + nori 플러그인 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -114,22 +135,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "RDS 암호화 at-rest/in-transit 설정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MSK TLS 통신 설정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ElastiCache AUTH 토큰 설정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -137,36 +163,44 @@
                   "name": "N/A (인프라 — DTO/Entity 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "Terraform/eksctl 구현",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "EKS 클러스터 생성 (eksctl 또는 Terraform)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RDS PostgreSQL 인스턴스 생성 + 보안 그룹 설정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MSK 클러스터 생성 + Schema Registry 설정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ElastiCache Redis 클러스터 생성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OpenSearch 도메인 생성 + nori 플러그인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD 설치 + ApplicationSet(5서비스x3환경) 구성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -174,34 +208,42 @@
                   "name": "접속 테스트",
                   "total": 7,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "kubectl get nodes → Ready 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RDS PostgreSQL 접속 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MSK 브로커 접속 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ElastiCache Redis 접속 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OpenSearch 도메인 접속 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD 대시보드 접근 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "팀원 접근 권한 부여 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -209,12 +251,14 @@
                   "name": "N/A (인프라 — Controller 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "N/A (인프라 — View 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -229,18 +273,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (로컬 개발환경)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -248,22 +296,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "4-서비스 + infra 컨테이너 목록 확정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Health check 기준 정의 (각 서비스별)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": ".env.example 환경변수 목록 도출",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -271,22 +324,27 @@
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "컨테이너 간 네트워크 격리 정책 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "외부 포트 바인딩 최소화",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "시크릿 관리 (.env 파일 gitignore 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -294,22 +352,27 @@
                   "name": "인프라 아키텍처 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "docker-compose.yml 서비스 구성도 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "서비스 간 depends_on 의존관계 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "볼륨/네트워크 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -317,22 +380,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "DB 비밀번호 환경변수 관리 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Redis AUTH 설정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "민감정보 .env.example에 플레이스홀더만 기재",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -340,28 +408,34 @@
                   "name": "N/A (인프라 — DTO/Entity 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "Docker Compose 구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "docker-compose.yml 작성 (platform, engagement, knowledge, learning-card, learning-ai, postgres, redis, kafka, zookeeper, schema-registry, opensearch)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 서비스 health check 설정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": ".env.example 전체 환경 변수 정리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "README에 실행 방법 문서화",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -369,26 +443,32 @@
                   "name": "동작 테스트",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "`docker compose up` → 전체 서비스 Health OK (< 2분) 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Schema Registry 접속 테스트 (http://localhost:8086)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PostgreSQL + Redis + Kafka + OpenSearch 접속 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "메모리 8GB 환경 동작 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Apple Silicon(ARM) 호환 확인 — 전 이미지 arm64 멀티아치 확인([ARM_COMPATIBILITY.md](../../guides/ARM_COMPATIBILITY.md)); 라이브 ARM 실행만 Mac 필요(개발/CI는 x86_64 Windows)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -396,12 +476,14 @@
                   "name": "N/A (인프라 — Controller 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "N/A (인프라 — View 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -416,18 +498,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (CI/CD 파이프라인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -435,22 +521,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "mirror.yml 동기화 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ci.yml 빌드+테스트+lint 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "deploy.yml ECR push + ArgoCD 연동 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -458,22 +549,27 @@
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GitHub Secrets 관리 (AWS credentials, ECR URL, ArgoCD token)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OIDC 연동 여부 검토 (GitHub Actions → AWS)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "빌드 환경 시크릿 노출 방지",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -481,22 +577,27 @@
                   "name": "인프라 아키텍처 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "CI/CD 파이프라인 흐름도 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "트리거 조건 정의 (PR, push main)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "환경별 배포 전략 (dev: auto, staging/prod: manual)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -504,22 +605,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ECR 이미지 스캐닝 설정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD 토큰 최소 권한 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "브랜치 보호 규칙 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -527,28 +633,34 @@
                   "name": "N/A (인프라 — DTO/Entity 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "파이프라인 구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "mirror.yml 작성 (on: push main → mirror sync) — W1에 이미 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ci.yml 작성 (on: PR → gradle build + test + modulith verify) — ci-java.yml로 W1에 이미 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "deploy.yml 작성 (on: push main → docker build → ECR push → gitops image tag patch)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GitHub Secrets 설정 (MIRROR_TOKEN, GITOPS_TOKEN 등록 완료)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -556,22 +668,27 @@
                   "name": "파이프라인 테스트",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "dummy commit → mirror.yml 동작 확인 (PR #2 머지 시 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PR 생성 → ci.yml 빌드+테스트 확인 (PR #2에서 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "main push → deploy.yml ECR push + ArgoCD 동기화 확인 — gitops 세션에서 5개 서비스 ECR push + ArgoCD Sync 동작 확인 (05-21)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "CI 실행 시간 < 5분 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -579,12 +696,14 @@
                   "name": "N/A (인프라 — Controller 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "N/A (인프라 — View 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -607,18 +726,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (FR-TL-101)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -626,26 +749,32 @@
                   "name": "요구사항 분석",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "도메인별 토픽 목록 확정 (5개: user-registered, note-created, note-updated, review-completed, cards-generated)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "토픽 파티션 수 / 복제 팩터 정의 (3 partitions, replication-factor 2)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "토픽 네이밍 컨벤션 확정 (`{service}.{domain}.{event}-v1`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "메시지 보존 기간 정책 정의 (7일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -653,22 +782,27 @@
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` ACL 섹션)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "SASL/TLS 인증 설정 확인 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` TLS 섹션)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "토픽 접근 제어 최소 권한 원칙 적용 (설계 완료)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -676,22 +810,27 @@
                   "name": "인프라 아키텍처 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "도메인별 토픽 목록 및 파티션 구성도 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "프로듀서/컨슈머 매핑 다이어그램 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "토픽 보존 기간 / cleanup.policy 설정 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -699,18 +838,22 @@
                   "name": "Security 2차 검토",
                   "total": 3,
                   "done": 1,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "토픽 메시지 암호화 전송 (TLS) 확인 — 다음 gitops 세션에서 openssl s_client로 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "민감 데이터 토픽 접근 제한 확인 — 다음 gitops 세션에서 ACL 또는 IAM Policy 적용",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -718,28 +861,34 @@
                   "name": "N/A (인프라 — DTO/Entity 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "Kafka 토픽 생성",
                   "total": 4,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "MSK/Kafka 클러스터에 토픽 생성 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` \"다음 세션 실행 절차\" 섹션)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "각 토픽 파티션 수 / 복제 팩터 설정 (스크립트에 반영)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "토픽 config 설정 (retention.ms, cleanup.policy)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "docker-compose에 토픽 자동 생성 스크립트 반영 (`kafka-init` 서비스)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -747,22 +896,27 @@
                   "name": "토픽 검증 테스트",
                   "total": 4,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "kafka-topics.sh --list 로 토픽 목록 확인 (Docker Compose 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트 — 다음 gitops 세션에서 MSK 토픽 생성 직후 실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "파티션 배분 확인 (Docker Compose 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "docker compose 환경에서 토픽 자동 생성 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -770,12 +924,14 @@
                   "name": "N/A (인프라 — Controller 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "N/A (인프라 — View 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -790,18 +946,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (FR-TL-102)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -809,22 +969,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Schema Registry 글로벌 호환성 정책 요건 분석 (BACKWARD)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Avro 스키마 호환성 규칙 분석 (필드 추가=default 필수, 삭제 불가)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "서비스별 스키마 등록 절차 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -832,18 +997,22 @@
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Schema Registry API 접근 제한 (내부 네트워크만) — VPC 내부 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "스키마 등록/수정 권한 관리 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -851,18 +1020,22 @@
                   "name": "인프라 아키텍처 설계",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "글로벌 호환성 레벨 설정 전략 수립 (BACKWARD)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "스키마 버전 관리 정책 정의 (`docs/SCHEMA_EVOLUTION.md`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -870,18 +1043,22 @@
                   "name": "Security 2차 검토",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "스키마 삭제 방지 정책 확인 (soft delete만)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "비인가 스키마 등록 방지 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -889,24 +1066,29 @@
                   "name": "N/A (인프라 — DTO/Entity 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "Schema Registry 설정 적용",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "글로벌 호환성 레벨 BACKWARD 설정 (Docker Compose `SCHEMA_REGISTRY_COMPATIBILITY_LEVEL: BACKWARD`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "기존 토픽 subject별 호환성 레벨 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "docker-compose Schema Registry 환경변수 반영 (포트 8085)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -914,22 +1096,27 @@
                   "name": "호환성 검증 테스트",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "호환 스키마 등록 → 성공 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "비호환 스키마 등록 → 409 거부 확인 (필드 삭제 시)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "`GET /config` → BACKWARD 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 서비스별 호환성 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -937,12 +1124,14 @@
                   "name": "N/A (인프라 — Controller 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "N/A (인프라 — View 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -957,18 +1146,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (Gateway 라우팅)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -976,22 +1169,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "4-서비스 경로 매핑 요건 정의 (/api/platform/**, /api/engagement/**, /api/knowledge/**, /api/learning/**)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Rate Limit 요건 분석 (서비스별/글로벌 제한)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "CORS 설정 요건 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -999,22 +1197,27 @@
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Gateway → 서비스 간 내부 통신만 허용",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "외부 접근 Gateway 단일 진입점 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Rate Limit으로 DDoS 완화 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1022,22 +1225,27 @@
                   "name": "인프라 아키텍처 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "서비스별 라우팅 테이블 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Rate Limit 정책 설계 (req/sec per IP)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Health check 엔드포인트 바이패스 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1045,22 +1253,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "JWT 검증 Gateway 레벨 적용 확인 — Out of Scope (향후 Step)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Rate Limit 버스트 정책 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "민감 헤더 전파 제한 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1068,28 +1281,34 @@
                   "name": "N/A (인프라 — DTO/Entity 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "Gateway 구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Spring Cloud Gateway 라우트 설정 (4-서비스 경로 매핑) — RoutesConfig.java (프로그래밍 방식, Boot 4.0.6 YAML 라우트 버그 대응)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Rate Limit 필터 설정 (Redis 기반 RedisRateLimiter) — RoutesConfig.java (1 req/sec, burst 60)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "CORS 글로벌 설정 — CorsConfig.java (CorsWebFilter)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "docker-compose에 Gateway 서비스 추가/갱신 (실제 빌드 이미지)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1097,22 +1316,27 @@
                   "name": "라우팅 테스트",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "각 서비스 경로 라우팅 동작 확인 (500 — stub upstream, 404 — 미매치 경로)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Rate Limit 초과 시 429 응답 확인 (#64에서 429 발생)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "CORS preflight 요청 처리 확인 (Access-Control-Allow-Origin 헤더 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Health endpoint 확인 (/actuator/health → UP, Redis UP)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1120,12 +1344,14 @@
                   "name": "N/A (인프라 — Controller 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "N/A (인프라 — View 해당 없음)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -1142,24 +1368,28 @@
           "steps": [
             {
               "name": "전체 통합 테스트 조율",
-              "status": "Done",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (서비스 간 통합 검증 — FR-TL-201)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일: Day 3~4)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1167,60 +1397,88 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Kafka 이벤트 체인 E2E 시나리오 목록 도출 → `docs/guides/E2E_SCENARIOS_W3.md`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "서비스 간 이벤트 발행/소비 매핑표 작성 → `docs/guides/EVENT_FLOW_MATRIX.md`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "코드 리뷰 승인 기준 정의 (PR 템플릿, 리뷰어 지정) → TASK Step 7 갱신 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영 (05-22 선행 준비)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
-                  "total": 3,
+                  "total": 4,
                   "done": 3,
+                  "partial": 1,
                   "items": [
                     {
+                      "text": "Kafka 토픽 ACL/권한 확인 — **인증 모델(MSK IAM, ACL 미사용) + 서비스별 produce/consume 권한 매트릭스 확정** → `docs/guides/KAFKA_AUTH_MATRIX.md`. IAM Policy/IRSA 실적용·검증만 EKS window",
+                      "done": false,
+                      "partial": true
+                    },
+                    {
                       "text": "이벤트 페이로드 민감정보 포함 여부 점검 → UserRegistered.email만 PII (EVENT_FLOW_MATRIX.md §4)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "서비스 간 인증 토큰 전파 방식 확인 → CloudEvent traceparent 기반 (TASK Constraints 반영)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영 (05-22 선행 준비)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 시나리오 설계",
-                  "total": 3,
+                  "total": 5,
                   "done": 3,
+                  "partial": 2,
                   "items": [
                     {
                       "text": "gamification 이벤트 체인 시나리오 (카드 복습 → XP 적립 → 레벨업 → 배지 수여 → 알림) → E2E_SCENARIOS_W3.md S2",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "community 이벤트 체인 시나리오 (신고 접수 → 모더레이션 → 알림) — 설계 선반영 완료(E2E_SCENARIOS_W3.md S5); 구현(engagement 알림 발행)·실행 W4",
+                      "done": false,
+                      "partial": true
                     },
                     {
                       "text": "card.review.due 이벤트 체인 시나리오 (스케줄러 → Kafka → 알림 발송) → E2E_SCENARIOS_W3.md S3 (샘플 추가 완료)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "audit 이벤트 소비 시나리오 (각 서비스 이벤트 → audit_logs 적재) — 설계 선반영 완료(E2E_SCENARIOS_W3.md S6); 현재 user-registered 단일 토픽, 추가 토픽 W4",
+                      "done": false,
+                      "partial": true
                     },
                     {
                       "text": "Duration(final) 갱신 — 팀리드 설계·검증설계분 2일(Day 3~4) 완료; 배포 실행(§1.7~1.9)은 EKS 재기동 윈도 이월(별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1228,22 +1486,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "E2E 테스트 환경 시크릿 분리 확인 → 로컬 throwaway 스택, 테스트 리소스 실 시크릿 0건",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 데이터 민감정보 마스킹 확인 → 샘플 email 전부 `@test.synapse.dev` 합성값 (운영 Consumer 로그 마스킹은 구현 시 권장)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 환경 네트워크 격리 확인 → 로컬 `synapse-net` bridge, EKS private endpoint + 네임스페이스 분리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영 (Step 7 \"Security 2차 검토\", 05-29)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1251,37 +1514,50 @@
                   "name": "테스트 데이터 준비",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "E2E 테스트용 시드 데이터 정의 (사용자, 카드, 노트, 커뮤니티 게시글) → `src/test/resources/seed/V001~V005`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Kafka 토픽 사전 생성 스크립트 작성 → `scripts/create-kafka-topics.sh` (5개 토픽)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 실행 순서 의존성 정리 → `docs/guides/E2E_SCENARIOS_W3.md`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 구현 및 조율",
-                  "total": 3,
+                  "total": 4,
                   "done": 3,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "Kafka 이벤트 체인 E2E 테스트 작성 (~~Testcontainers~~ → 로컬 shell harness `scripts/kafka-e2e-test.sh`로 대체, EKS destroy로 로컬 우선)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "서비스 간 이벤트 발행 → 소비 → 결과 검증 자동화 (**전송 경로 한정**: produce→consume + CloudEvent 페이로드 단위 round-trip. consumer 비즈니스 로직은 서비스 구현 도착 시 확장)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "코드 리뷰 전 PR 승인 프로세스 적용 → work-order 발행 + 코드 리뷰 승인 기준 (`W3_KAFKA_WORKORDER.md`, TASK Step 7)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "각 서비스 담당자 테스트 결과 취합 — **06-01 코드 실측(전체 레포 pull)**: platform 🟢(Avro+Outbox+notification/audit Consumer)·learning 🟢(Avro 소비+알림) dev 완성 / engagement 🟡(06-02: 스키마 비호환 해소·Producer Avro ✅ #13 CLOSED / Consumer 0건 잔여 → #15) / knowledge 🟡(06-02: NoteCreated/Updated Producer ✅ #32, 스키마 바이트동일 / dev→main 잔여 #26). 상세 [W4_KAFKA_WORKORDER §0.5](../../work-orders/W4_KAFKA_WORKORDER.md). 완전 취합은 main 머지 후",
+                      "done": false,
+                      "partial": true
                     }
                   ]
                 },
@@ -1289,37 +1565,50 @@
                   "name": "통합 테스트 실행 및 검증",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "전체 서비스 Docker Compose 기동 → E2E 테스트 실행 — 인프라(zookeeper/kafka/schema-registry/kafka-init) 기동 + **`--avro` 라이브 8/8 PASSED**(8토픽 Avro 라운드트립 + subject 자동등록, 전역 BACKWARD). 앱 서비스 비즈니스 로직 E2E는 구현 도착 후(W4)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Kafka 이벤트 전파 지연 측정 (< 3초) — **로컬 `EndToEndLatency` (06-01, acks=1, 2토픽×1000건): avg 1.3ms, p50 1ms, p99 3~4ms, p99.9 ~40ms** → transport 전파 **NFR(<3초) 입증**. (기존 \"총 29s\"는 8토픽 순차+JVM부팅 포함 비대표). end-to-end 체인(복습→알림 <10초, NFR-401)은 서비스 consumer 후",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "이벤트 유실 여부 확인 — harness `--all` 5/5 + `--full` 13/13 round-trip 무유실 (재시도 로직 검증은 서비스 consumer 도착 후)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "실패 테스트 원인 분석 및 담당자 배정 — D-1(stale ZK znode)·D-2(샘플 line-split) 분석·해결 → `E2E_BASELINE_W3.md`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "코드 리뷰 조율",
-                  "total": 2,
+                  "total": 3,
                   "done": 2,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "각 서비스 PR 리뷰 현황 취합 — cross-repo 실측(05-29): learning main 머지 / platform·engagement dev / knowledge 미구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "크로스 서비스 영향도 리뷰 (이벤트 스키마 호환성) — **스키마 패밀리 분기(D-002) 발견 → Avro 사수 결정 + 이벤트 계약 표준 수립**(`EVENT_CONTRACT_STANDARD.md`). cards-generated HTTP 드리프트 정정(D-001)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "PR 승인 및 main 브랜치 머지 조율 — 계약 표준 이슈(#43/#13/#26 OPEN·#32 CLOSED). **06-01 재측정: 작업이 전부 dev 고립, 열린 PR 0건** → platform(#44)·learning(#35) **dev→main PR 유도**가 즉시 조율 대상",
+                      "done": false,
+                      "partial": true
                     }
                   ]
                 },
@@ -1327,23 +1616,27 @@
                   "name": "결과 정리",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "E2E 테스트 결과 리포트 작성 → `docs/reports/E2E_REPORT_W3.md` + 종료 게이트 `W3_EXIT_GATE.md`(미통과 충족 0/5)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "미해결 이슈 목록화 및 우선순위 지정 → `W4_KAFKA_WORKORDER.md`(knowledge P0·engagement P0·platform P1) + 서비스 이슈 4건",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영 (Security 2차 Constraints 등)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 32,
+              "totalChecks": 37,
               "doneChecks": 32
             },
             {
@@ -1354,18 +1647,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (배포 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1373,41 +1670,55 @@
                   "name": "요구사항 분석 → DEPLOY_REPORT §A",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "dev 환경 autoSync 설정 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging 환경 수동 승인 배포 플로우 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "배포 후 헬스체크 기준 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토 → DEPLOY_REPORT §C",
-                  "total": 3,
+                  "total": 4,
                   "done": 3,
+                  "partial": 1,
                   "items": [
                     {
+                      "text": "ArgoCD RBAC 설정 확인 (dev: 자동, staging: 승인 필요) — 정책 정의됨, 실제 RBAC 구성·확인은 재기동 후",
+                      "done": false,
+                      "partial": true
+                    },
+                    {
                       "text": "배포 시 시크릿 주입 방식 확인 — ExternalSecret + ClusterSecretStore(ESO IRSA), dev 5/5 SecretSynced",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "환경별 접근 권한 분리 확인 — 네임스페이스 분리(synapse-dev / synapse-staging)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1415,41 +1726,55 @@
                   "name": "배포 전략 설계 → DEPLOY_REPORT §A·§B",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "dev 환경 ArgoCD autoSync 정책 설정 (automated, prune/selfHeal)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging 환경 수동 승인 워크플로우 설계 (manual sync)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "롤백 절차 정의 (자동/수동) — §B 5단계, 목표 <3분",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "Security 2차 검토 → DEPLOY_REPORT §C",
-                  "total": 3,
+                  "total": 4,
                   "done": 3,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "환경별 환경변수/시크릿 분리 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "staging 배포 승인 권한자 지정 — @team-lead 지정, ArgoCD RBAC 명문화는 재기동 후(W4)",
+                      "done": false,
+                      "partial": true
                     },
                     {
                       "text": "배포 이력 추적 (audit trail) 확인 — ArgoCD app history + gitops 커밋 이력",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1457,18 +1782,22 @@
                   "name": "배포 설정 구현 (gitops, 05-21 구성)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ArgoCD Application 매니페스트 갱신 (dev autoSync: true)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging Application 매니페스트 갱신 (syncPolicy: manual) — staging overlay + ApplicationSet (gitops PR #34)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "환경별 values.yaml 분리 확인 — dev/staging overlay 분리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1476,18 +1805,22 @@
                   "name": "배포 실행 — ⛔ EKS destroy로 대기 (재기동 후)",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "dev 환경: main push → autoSync 자동 배포 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "staging 환경: 수동 Sync 버튼 → 배포 실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "ECR 이미지 태그 일치 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1495,22 +1828,27 @@
                   "name": "배포 후 검증 — ⛔ EKS destroy로 대기 (재기동 후)",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "dev 환경 전체 서비스 Health OK 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "staging 환경 전체 서비스 Health OK 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Kafka 연결 상태 확인 (consumer group lag = 0) — consumer 배포 필요(W4 Kafka 구현 후)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "RDS/Redis/Elasticsearch 연결 상태 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1518,18 +1856,22 @@
                   "name": "배포 이슈 대응 — ⛔ EKS destroy로 대기 (절차는 §B 정의됨)",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "배포 실패 시 롤백 절차 실행 및 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "환경별 로그 수집 및 이슈 분석",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "배포 성공 기준 충족 여부 최종 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1537,27 +1879,31 @@
                   "name": "결과 정리",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "배포 검증 결과 리포트 작성 → `docs/reports/DEPLOY_REPORT_W3.md` (실행 검증 체크리스트는 재기동 후 채움)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging 배포 승인 프로세스 문서화 → DEPLOY_REPORT §A·§C",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 33,
+              "totalChecks": 35,
               "doneChecks": 23
             }
           ],
-          "totalChecks": 65,
+          "totalChecks": 72,
           "doneChecks": 55
         },
         {
@@ -1570,27 +1916,42 @@
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
-                  "total": 1,
+                  "total": 2,
                   "done": 1,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "전체 서비스 통합 E2E 시나리오 목록 작성 — [E2E_SCENARIOS_W4.md](../../guides/E2E_SCENARIOS_W4.md) (W1~W5 + W3 S1~S4/E1~E3/M1 재사용), 06-02 prep",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비 — seed V001~V005 S1~S4 커버 ✅ / **갭 2건**(레벨업 경계 사용자·신고 reports) = engagement 임계·스키마 확정 후",
+                      "done": false,
+                      "partial": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 실행",
-                  "total": 2,
+                  "total": 3,
                   "done": 2,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "**계약·전송 E2E 06-05 실행** — harness 4모드 PASS(`--avro`8/8·`--all`5/5·`--full`13/13·`--scenarios`5/5), [E2E_REPORT_W4](../../reports/E2E_REPORT_W4.md)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "서비스 비즈니스 로직 E2E — shared compose app=스텁이라 불가 → **W5 서비스 스택/staging에서 실행**(이월)",
+                      "done": false,
+                      "partial": true
                     },
                     {
                       "text": "실패 항목 기록 — 전송/계약 0건 실패",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1598,14 +1959,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1613,14 +1977,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정 지시 + 추적",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1628,14 +1995,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1643,19 +2013,22 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 11,
+              "totalChecks": 13,
               "doneChecks": 3
             },
             {
@@ -1664,12 +2037,19 @@
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
-                  "total": 1,
+                  "total": 2,
                   "done": 1,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "성능 SLA 검증 시나리오 목록 작성 (API P95, Kafka, 검색) — [SLA_VERIFICATION_W4.md](../../reports/SLA_VERIFICATION_W4.md) P1~P7 + 측정방법, 06-02 prep",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비 (부하 테스트용) — 측정방법·쿼리세트 초안 정의 / 부하 생성 스크립트·코퍼스 확장은 측정 직전(Day4)",
+                      "done": false,
+                      "partial": true
                     }
                   ]
                 },
@@ -1677,22 +2057,27 @@
                   "name": "E2E 테스트 실행",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "API P95 < 200ms 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Kafka 이벤트 처리 < 5s 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "검색 응답 < 2s 검증",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1700,14 +2085,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1715,14 +2103,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "성능 미달 항목 P0 수정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1730,14 +2121,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1745,19 +2139,22 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "성능 SLA 검증 결과 문서화",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 13,
+              "totalChecks": 14,
               "doneChecks": 1
             },
             {
@@ -1768,14 +2165,17 @@
                   "name": "E2E 시나리오 정의",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Staging 배포 검증 시나리오 목록 작성",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1783,18 +2183,22 @@
                   "name": "E2E 테스트 실행",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Staging 환경 전체 서비스 배포 실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "모니터링 대시보드 가동 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1802,14 +2206,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1817,14 +2224,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1832,14 +2242,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1847,14 +2260,17 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Staging 배포 결과 문서화",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1863,7 +2279,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 37,
+          "totalChecks": 40,
           "doneChecks": 4
         },
         {
@@ -1878,18 +2294,22 @@
                   "name": "E2E 테스트 실행",
                   "total": 3,
                   "done": 1,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "계약·전송 E2E (W4 06-05 PASS — E2E_REPORT_W4)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "**서비스 단위 E2E** — 4서비스 origin/main 빌드 기동 후 consumer 비즈니스 로직 검증(핵심 10 시나리오, FR-ALL-301/NFR-303)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "전체 체인 < 10초(FR-TL-401) · audit 적재 < 30초(NFR-403)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1897,14 +2317,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류 + P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "P0 수정 지시·추적 → 회귀 → 커버리지 80%(9.5) → API 문서/HISTORY(9.6)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1914,27 +2337,35 @@
             },
             {
               "name": "성능 SLA 검증 (W4 이월)",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "정의 — [x] SLA_VERIFICATION_W4 P1~P7 (W4 완료)",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 },
                 {
                   "name": "실행",
-                  "total": 1,
+                  "total": 2,
                   "done": 0,
+                  "partial": 1,
                   "items": [
                     {
+                      "text": "**P2 Kafka<5s** — 06-05 **브로커 전송 지연 부분측정 PASS**(발행 p99 113ms·소비 fetch 39ms/1k, [SLA_VERIFICATION_W4 §5.1](../../reports/SLA_VERIFICATION_W4.md)). **잔여=풀 홉(consumer→DB) eventId correlation 측정**(서비스 E2E 후)",
+                      "done": false,
+                      "partial": true
+                    },
+                    {
                       "text": "P1 API P95<200ms · P3 검색<2s · P4 체인<10s · P5 audit<30s · P6 AI카드<30s · P7 FCM>95% (3회 평균, Day 3)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 1,
+              "totalChecks": 2,
               "doneChecks": 0
             },
             {
@@ -1945,22 +2376,27 @@
                   "name": "실행",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "EKS 재apply → ArgoCD 부트스트랩 → dev 5/5 재확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "하드닝 머지 staging 배포 → **platform CrashLoop(#37/#48) 해소 → staging 5/5**",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Observability(kube-prometheus-stack) + ServiceMonitor 5 + Grafana(FR-TL-303) + 알림 규칙",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "staging 24h 안정(NFR-305)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1968,6 +2404,7 @@
                   "name": "— [ ] Staging 배포 결과 + 운영 가이드 문서화",
                   "total": 0,
                   "done": 0,
+                  "partial": 0,
                   "items": []
                 }
               ],
@@ -1982,7 +2419,7 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 10,
+          "totalChecks": 11,
           "doneChecks": 1
         }
       ]
@@ -2198,7 +2635,7 @@
     },
     {
       "date": "2026-06-05",
-      "totalChecks": 278,
+      "totalChecks": 289,
       "doneChecks": 219
     }
   ],
@@ -2494,6 +2931,39 @@
           "type": "boxes_added",
           "target": "W5 > 성능 SLA 검증 (W4 이월)",
           "detail": "1개 박스 추가 (0 → 1)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T08:37:29.834Z",
+      "commit": "4d63fd7",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "boxes_added",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "5개 박스 추가 (32 → 37)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > ArgoCD dev/staging 배포 검증",
+          "detail": "2개 박스 추가 (33 → 35)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > 전체 E2E 시나리오 정의 + 테스트 실행 조율",
+          "detail": "2개 박스 추가 (11 → 13)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > 성능 SLA 검증",
+          "detail": "1개 박스 추가 (13 → 14)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 성능 SLA 검증 (W4 이월)",
+          "detail": "1개 박스 추가 (1 → 2)"
         }
       ]
     }

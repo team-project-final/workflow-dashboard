@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-06-05T07:04:14.689Z",
+  "updatedAt": "2026-06-05T08:37:16.156Z",
   "tracks": [
     {
       "name": "platform",
@@ -18,18 +18,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (프로젝트 골격)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (1일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -37,22 +41,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Spring Boot 4 + Modulith 프로젝트 구조 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "auth/audit/billing/notification 4개 모듈 역할 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Gradle 의존성 목록 도출",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -60,22 +69,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (골격만 생성)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 없음",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No (Health endpoint만)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -83,18 +97,22 @@
                   "name": "ERD 설계",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "골격 단계 — ERD 해당 없음 (DB 마이그레이션 Out of Scope)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "모듈별 패키지 구조도 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -102,22 +120,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: 비해당 (골격 단계)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Soft Delete 정책: 비해당",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -125,18 +148,22 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "골격 단계 — 빈 Controller/Service 클래스만 생성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 모듈 package-info.java 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -144,14 +171,17 @@
                   "name": "Repository 구현",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "골격 단계 — Repository 해당 없음",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ApplicationModulesTest 구조 검증 테스트 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -159,18 +189,22 @@
                   "name": "Service + Test",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "빈 Service 클래스 생성 (4개 모듈)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ApplicationModulesTest 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "`./gradlew build` 성공 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -178,18 +212,22 @@
                   "name": "Controller + Test",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "빈 Controller 클래스 생성 (4개 모듈)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Dockerfile 작성 (multi-stage build)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Docker 이미지 빌드 성공 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -197,18 +235,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "docker compose에서 platform-svc 실행 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -224,18 +266,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx OAuth 인증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -243,22 +289,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Google/GitHub/Apple OAuth 연동 플로우 분석 (Microsoft는 확장 Provider로 문서화)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "신규 사용자 자동 회원가입 로직 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "기존 사용자 매핑 로직 (email 기준) 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -266,26 +317,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (인증 생성 API 자체)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 없음 (공개 접근)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: Yes (OAuth 콜백 엔드포인트)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OAuth state 파라미터 CSRF 방어 필수",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -293,30 +350,37 @@
                   "name": "ERD 설계",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "users 테이블 설계 (id, tenant_id, email, display_name, avatar_url, locale, status: active|suspended|deleted, created_at, updated_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "참고: provider, provider_id 컬럼은 users 테이블에 없음 — oauth_identities 테이블로 분리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "oauth_identities 테이블 설계 (id, user_id, provider, provider_id, access_token_enc)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (email UNIQUE, provider+provider_id UNIQUE)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "관계 정의 (users 1:N oauth_identities)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -324,22 +388,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: OAuth access_token 암호화 저장",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Soft Delete 정책: 논리삭제 (deleted_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "행 단위 접근 제어: 불필요 (OAuth 콜백은 시스템 처리)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -347,30 +416,37 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "OAuthCallbackRequest 정의 (code, state)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OAuthTokenResponse 정의 (accessToken, refreshToken, expiresIn)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "User Entity 작성 (display_name, avatar_url, locale, status)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OAuthIdentity Entity 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -378,18 +454,22 @@
                   "name": "Repository 구현",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "UserRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OAuthIdentityRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "findByEmail, findByProviderAndProviderId 커스텀 쿼리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -397,26 +477,32 @@
                   "name": "Service + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "OAuth2UserService 구현 (사용자 조회/생성 로직)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "신규 사용자 자동 회원가입 로직 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "기존 사용자 매핑 로직 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -424,22 +510,27 @@
                   "name": "Controller + Test",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "OAuth2 콜백 핸들러 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OAuth2 성공 핸들러 구현 (JWT 발급 연계)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "통합 테스트 작성 (MockOAuth2User)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -447,18 +538,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: Step 2에서는 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -474,18 +569,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W1 해당 요구사항 확인 (FR-AU-xxx JWT/MFA)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인 (2일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -493,22 +592,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "JWT Access/Refresh Token 발급 플로우 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Refresh Token Redis 저장 구조 설계",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "TOTP(RFC 6238) MFA 플로우 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -516,26 +620,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (MFA 설정은 인증 필요)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: POST /auth/refresh는 공개, POST /auth/mfa/\\* 는 인증 필요",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "JWT 서명 알고리즘: RS256",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -543,22 +653,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "refresh_tokens 테이블 설계 (id, user_id, token_hash, device_fingerprint, ip_address, expires_at, created_at) — ERD에 DB 테이블로 정의됨 (Redis 전용이 아님)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "mfa_credentials 테이블 설계 (id, user_id, type: totp, secret_enc, is_active, verified_at, created_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (user_id UNIQUE on mfa_credentials)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -566,22 +681,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "민감 정보 암호화: TOTP secret AES-256-GCM 암호화 저장",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Refresh Token 이중 저장 전략: Redis(활성 세션 빠른 조회용) + DB `refresh_tokens` 테이블(영속성/감사용) 병행 — token_hash, device_fingerprint, ip_address, expires_at 포함",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (본인 MFA만 관리)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -589,30 +709,37 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "TokenRefreshRequest 정의 (refreshToken)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "TokenResponse 정의 (accessToken, refreshToken)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MfaSetupResponse 정의 (otpAuthUri, secret)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MfaVerifyRequest 정의 (code)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MfaCredential Entity 작성 (type, is_active, verified_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -620,14 +747,17 @@
                   "name": "Repository 구현",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "MfaCredentialRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RefreshTokenRepository 인터페이스 작성 (DB 저장 + Redis 캐싱 병행)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -635,26 +765,32 @@
                   "name": "Service + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "JwtTokenProvider 구현 (생성, 파싱, 검증 — RS256)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RefreshTokenService 구현 (DB + Redis 이중 저장, rotate 포함)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "TotpService 구현 (TOTP 생성, QR URL, 검증 — mfa_credentials 기반)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito + Testcontainers)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -662,34 +798,42 @@
                   "name": "Controller + Test",
                   "total": 7,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "POST /auth/refresh 엔드포인트 구현 (AuthController)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "POST /auth/mfa/setup 엔드포인트 구현 (MfaController)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "POST /auth/mfa/verify 엔드포인트 구현 (MfaController)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Security Filter에 JWT 검증 추가 (JwtAuthenticationFilter)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -697,18 +841,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -732,18 +880,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (billing 모듈)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -751,26 +903,32 @@
                   "name": "요구사항 분석",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Stripe Checkout Session 생성 플로우 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "구독 플랜 종류 정의 (Free, Pro, Team 등)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Webhook 이벤트 처리 목록 확정 (checkout.session.completed, invoice.paid, customer.subscription.deleted)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결제 이력 조회 요건 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -778,26 +936,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 구독만)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Webhook 검증: Stripe Signature 검증 필수",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Stripe API Key 관리: 환경변수 관리, 코드 내 하드코딩 금지",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -805,26 +969,32 @@
                   "name": "ERD 설계",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "subscriptions 테이블 설계 (id, tenant_id FK, plan_code, stripe_subscription_id, status, current_period_start, current_period_end, created_at, updated_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "payment_history 테이블 설계 (id, tenant_id, subscription_id, stripe_payment_intent_id, amount, currency, status, paid_at, created_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (subscriptions.tenant_id, payment_history.tenant_id, payment_history.subscription_id)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "관계 정의 (payment_history.subscription_id → subscriptions.id FK)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -832,26 +1002,32 @@
                   "name": "Security 2차 검토",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "결제 정보 PCI DSS 준수 확인 (카드 정보 직접 저장 금지, Stripe 위임)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Webhook endpoint 서명 검증 구현 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Soft Delete 정책: 논리삭제 (구독 이력 보관)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (userId 기반)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -859,38 +1035,47 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 8,
                   "done": 8,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "CheckoutSessionRequest 정의 (plan_code, successUrl, cancelUrl)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SubscriptionResponse 정의 (id, plan_code, status, current_period_end)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PaymentHistoryResponse 정의 (id, amount, currency, status, paidAt)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Subscription Entity 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PaymentHistory Entity 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PlanCode Enum 작성 (FREE, PRO, TEAM)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "MapStruct 매퍼 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -898,26 +1083,32 @@
                   "name": "Repository 구현",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "SubscriptionRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PaymentHistoryRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "findByUserIdAndStatusActive 커스텀 쿼리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "findByUserIdOrderByPaidAtDesc 커스텀 쿼리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Flyway 마이그레이션 스크립트 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -925,34 +1116,42 @@
                   "name": "Service + Test",
                   "total": 7,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "BillingService 구현 (createCheckoutSession, handleWebhook, getSubscription, getPaymentHistory)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Stripe Checkout Session 생성 로직 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Stripe Webhook 핸들러 구현 (이벤트별 분기 처리)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "구독 상태 관리 로직 (active, canceled, past_due)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Bean Validation 적용",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito — Stripe API mock)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -960,38 +1159,47 @@
                   "name": "Controller + Test",
                   "total": 8,
                   "done": 8,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "POST /billing/checkout 엔드포인트 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "POST /billing/webhooks 엔드포인트 구현 (Stripe Signature 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GET /billing/subscription 엔드포인트 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Webhook 서명 검증 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "통합 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -999,18 +1207,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -1026,18 +1238,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W2 해당 요구사항 확인 (notification 모듈)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1045,22 +1261,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "FCM (Firebase Cloud Messaging) 연동 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "디바이스 토큰 등록/갱신/삭제 플로우 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "알림 선호도 (notification_preferences) 항목 정의 — Step 7로 이관 결정 (ERD 충돌)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1068,22 +1289,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (JWT 인증 필요)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 로그인 사용자 (본인 디바이스만)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "FCM 서버 키 관리: 환경변수 관리, 코드 내 하드코딩 금지",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1091,26 +1317,32 @@
                   "name": "ERD 설계",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "device_tokens 테이블 설계 (id, tenant_id, user_id, token, platform: ios|android|web, is_active, created_at, updated_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "참고: deviceName 컬럼은 ERD에 없음 — 제거",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "notification_preferences — Step 7로 이관 (ERD JSONB vs WORKFLOW 컬럼 기반 충돌 존재)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (idx_device_tokens_tenant_user ON device_tokens(tenant_id, user_id), UNIQUE(token))",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1118,22 +1350,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "디바이스 토큰 암호화 저장 검토 — 불필요 (FCM 토큰은 공개 식별자)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Soft Delete 정책: 물리삭제 (토큰 만료 시 삭제)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "행 단위 접근 제어: 필요 (userId 기반)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1141,30 +1378,37 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "DeviceTokenRequest 정의 (token, platform: ios|android|web)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DeviceTokenResponse 정의 (id, platform, is_active, createdAt)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DeviceToken Entity 작성 (tenant_id, is_active 컬럼 포함)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Platform Enum 작성 (ios, android, web — 소문자, @JsonCreator/@JsonValue)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PlatformConverter 작성 (AttributeConverter<Platform, String>)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1172,22 +1416,27 @@
                   "name": "Repository 구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "DeviceTokenRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "findByToken, countByUserId, findByUserId 커스텀 쿼리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "native UPSERT (@Modifying clearAutomatically=true, flushAutomatically=true)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "V27__create_device_tokens.sql Flyway 마이그레이션 스크립트 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1195,26 +1444,32 @@
                   "name": "Service + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "DeviceTokenService 구현 (register, unregister)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "tenantId resolve — UserApi.findById(userId).defaultTenantId() 패턴",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DeviceRegistrationLimitExceededException — BusinessException 상속, PLAT-NOTIFICATION-001",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Bean Validation 적용",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "통합 테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1222,34 +1477,42 @@
                   "name": "Controller + Test",
                   "total": 7,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "POST /api/v1/notifications/devices 엔드포인트 구현 (201)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DELETE /api/v1/notifications/devices/{id} 엔드포인트 구현 (204/403/404)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "NotificationSecurityConfig @Order(1) FilterChain 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GlobalExceptionHandler EntityNotFoundException→404, HttpMessageNotReadableException→400 추가",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "401/403 응답 테스트",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "통합 테스트 9개 시나리오 통과",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "JaCoCo 라인 커버리지 92.38% (기준 80% 충족)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1257,18 +1520,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -1292,18 +1559,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (감사 로그)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1311,22 +1582,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "소비 대상 Kafka 토픽 목록 정의 (`platform.auth.user-registered-v1`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "audit_logs 테이블 스키마 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "90일 보존 정책 구현 방안 분석 (@Scheduled 스케줄러 삭제)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1334,22 +1610,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (내부 Kafka 소비, API 미노출)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: 시스템 내부 처리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "audit_logs 접근 권한: 관리자 전용 (ROLE_ADMIN)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1357,22 +1638,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "audit_logs 테이블 설계 (id, event_id, action, user_id, resource_type, resource_id, old_value jsonb, new_value jsonb, ip_address, user_agent, created_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (event_id UNIQUE, action, user_id, created_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "outbox_events 테이블 설계 (Producer 유실 방지)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1380,18 +1666,22 @@
                   "name": "Security 2차 검토",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "90일 이후 자동 삭제 검증 방안",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "audit_logs 위변조 방지 (append-only, 삭제 API 미제공)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1399,22 +1689,27 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AuditLog Entity 작성 (audit_logs 매핑, JSONB @JdbcTypeCode)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AuditLogResponse DTO 정의 (oldValue, userAgent 포함 전체 컬럼)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OutboxEvent Entity 작성 (outbox_events 매핑)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1422,22 +1717,27 @@
                   "name": "Repository 구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AuditLogRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "findByAction, findByUserId 커스텀 쿼리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "90일 이전 데이터 삭제 쿼리 (deleteByCreatedAtBefore)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OutboxEventRepository (claimPending, resetTimedOutPublishing JPQL)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1445,34 +1745,42 @@
                   "name": "Service + Test",
                   "total": 7,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AuditKafkaConsumer 구현 (consumer group: audit-consumer-group, ErrorHandlingDeserializer)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AuditLogService 구현 (이벤트 파싱 → audit_logs INSERT, DataIntegrityViolationException 멱등)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "90일 보존 스케줄러 구현 (@Scheduled cron 매일 03:00)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "UserEventPublisher 구현 (outbox 저장, tenantId null 방어)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "OutboxEventPublisher 구현 (PUBLISHING lease, async 실패 기록)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (AuditLogServiceTest, OutboxEventPublisherTest 등)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1480,26 +1788,32 @@
                   "name": "Controller + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GET /api/v1/admin/audit-logs 엔드포인트 구현 (관리자 전용)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "페이징 + 필터링 (action, userId)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "@PreAuthorize(\"hasRole('ADMIN')\") + @EnableMethodSecurity",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AuditLogControllerTest (@WebMvcTest)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1507,18 +1821,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (관리자 화면은 frontend 담당)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AuditKafkaIntegrationTest (EmbeddedKafka + mock Schema Registry)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "`./gradlew test` + `./gradlew check` 전체 통과",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -1534,18 +1852,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (알림 발송)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1553,22 +1875,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "소비 대상 토픽 정의 (`notification.send` 토픽)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "알림 채널별 발송 조건 정의 (FCM: 모바일, SES: 이메일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "사용자 알림 설정 (opt-in/opt-out) 반영 로직 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1576,22 +1903,27 @@
                   "name": "Security 1차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: No (내부 Kafka 소비)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "FCM 서비스 계정 키 관리 방안 (External Secrets)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SES IAM Role 최소 권한 설정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1599,18 +1931,22 @@
                   "name": "ERD 설계",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "notifications 테이블 설계 (V31 마이그레이션)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (user_id, created_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1618,22 +1954,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "FCM 토큰 암호화 저장",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SES 발송 도메인 SPF/DKIM 설정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "알림 페이로드 민감정보 제외 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1641,18 +1982,22 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Notification Entity 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "NotificationChannel / NotificationStatus enum 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1660,10 +2005,12 @@
                   "name": "Repository 구현",
                   "total": 1,
                   "done": 1,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NotificationRepository 인터페이스 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1671,30 +2018,37 @@
                   "name": "Service + Test",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NotificationKafkaConsumer 구현 (`notification.send` 토픽 소비)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "NotificationService 구현 (알림 생성 + 채널별 발송 분기)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "FcmPushService 구현 (Firebase Admin SDK)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SesEmailService 구현 (AWS SES SDK v2)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (FcmPushServiceTest, SesEmailServiceTest, NotificationServiceTest 등)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1702,14 +2056,17 @@
                   "name": "Controller + Test",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "NotificationKafkaConsumerIT 통합 테스트 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1717,14 +2074,17 @@
                   "name": "View + Test (해당 시)",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -1740,18 +2100,22 @@
                   "name": "TASK 시작",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (관리자 사용자 관리)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1759,22 +2123,27 @@
                   "name": "요구사항 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "관리자 사용자 목록 조회 (페이징, 정렬) 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "사용자 검색 (이름, 이메일) 요건 분석",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "사용자 정지/삭제 비즈니스 로직 분석 (정지: status 변경, 삭제: soft delete)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1782,26 +2151,32 @@
                   "name": "Security 1차 검토",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 필요 여부: Yes (관리자 전용)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 종류: ROLE_ADMIN",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "사용자 정지/삭제 시 감사 로그 기록 필수",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1809,22 +2184,27 @@
                   "name": "ERD 설계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "users 테이블 확장: status 컬럼 확인 (active|suspended|deleted — 소문자)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "suspended_at, deleted_at 컬럼 추가",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "인덱스 설계 (status, email LIKE 검색용)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1832,22 +2212,27 @@
                   "name": "Security 2차 검토",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "관리자 본인 삭제/정지 방지 로직",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "정지/삭제 시 활성 세션 즉시 무효화 (Redis 토큰 삭제)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "행 단위 접근 제어: 관리자만 조회/수정 가능",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1855,26 +2240,32 @@
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AdminUserListResponse DTO 정의 (id, email, display_name, status: active|suspended|deleted, created_at)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AdminUserSearchRequest DTO 정의 (query, status, page, size)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "UserSuspendRequest DTO 정의 (reason)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "User Entity 수정 (status 필드 추가)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1882,18 +2273,22 @@
                   "name": "Repository 구현",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "UserRepository 확장: findByStatusAndNameContaining 커스텀 쿼리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Specification 기반 동적 검색 쿼리 구현",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "페이징/정렬 지원",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1901,26 +2296,32 @@
                   "name": "Service + Test",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AdminUserService 구현 (목록 조회, 검색, 정지, 삭제)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "사용자 정지 로직 (status → suspended, 세션 무효화, UserSessionsRevocationRequested 이벤트 발행)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "사용자 삭제 로직 (status → deleted, soft delete, 세션 무효화, UserSessionsRevocationRequested 이벤트 발행)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1928,34 +2329,42 @@
                   "name": "Controller + Test",
                   "total": 7,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GET /api/v1/admin/users 엔드포인트 구현 (목록 + 페이징)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "GET /api/v1/admin/users?q=검색어 엔드포인트 구현 (쿼리 파라미터 방식 검색)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PUT /api/v1/admin/users/{id}/status 엔드포인트 구현 (suspend/activate)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DELETE /api/v1/admin/users/{id} 엔드포인트 구현 (soft delete)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "슬라이스 테스트 (@WebMvcTest)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "403 Forbidden 테스트 (비관리자 접근)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1963,18 +2372,22 @@
                   "name": "View + Test (해당 시)",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Swagger API 문서 확인",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -1998,18 +2411,22 @@
                   "name": "E2E 시나리오 정의",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 플로우 시나리오 작성 (회원가입→로그인→JWT→MFA→토큰갱신) *(로그아웃 전용 엔드포인트 없음 → 토큰 갱신/무효화로 대체)*",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결제 플로우 시나리오 작성 (Stripe Checkout→Webhook→구독 활성화)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비 (유저별 unique email, 테스트 간 TRUNCATE 격리)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2017,18 +2434,22 @@
                   "name": "E2E 테스트 실행",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증 플로우 E2E 테스트 실행",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "결제 플로우 E2E 테스트 실행",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록 (billing `ON CONFLICT`가 H2에서 미검증 → 이슈 #56)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2036,14 +2457,17 @@
                   "name": "버그 트리아지",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류 (flaky 테스트 2건=P0, billing H2 gap=P2/tech-debt)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정 (Audit Kafka flaky, JWT 변조 flaky)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2051,14 +2475,17 @@
                   "name": "버그 수정",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정 (PLAT-018 consumer earliest, PLAT-021 JWT 결정적 변조)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트 (PR #50, #55)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2066,14 +2493,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행 (`./gradlew clean build` green)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인 (JaCoCo 게이트 통과)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2081,14 +2511,17 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화 (Step 9는 API 변경 없음 — 해당 없음)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록 (PR #58, TASK Step 9 Done)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -2104,14 +2537,17 @@
                   "name": "P0 버그 트리아지",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "GitHub Issues P0/bug 필터 — P0 버그 목록 확인 (`P0` 라벨 0건, `bug`=#47 완료)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "P0/P1/P2 분류 + P0 즉시 수정 대상 확정 (**P0 0건** — Step 9 발견 flaky 2건은 PLAT-018/021로 기수정)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2119,14 +2555,17 @@
                   "name": "P0 버그 수정",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "각 P0 재현 → 원인 분석 → 수정 (신규 P0 없음)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "수정 후 재현 테스트 작성 및 통과 (PLAT-018/021 회귀 테스트 포함)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2134,14 +2573,17 @@
                   "name": "알림 발송 안정화 (재시도 로직)",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "FCM 발송 실패 원인 분석 + 재시도 로직 보강 (설정형 max-attempts/backoff)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "SES 발송 실패 원인 분석 + 안정화",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2149,14 +2591,17 @@
                   "name": "알림 모니터링 메트릭",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "발송 성공/실패/지연 메트릭 추가 (Micrometer `notification.send`·`notification.send.latency`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "성공률 > 99% / SLA(FCM < 10s, SES < 30s) 기준 반영·관찰 (재시도+메트릭으로 충족·관측)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2164,14 +2609,17 @@
                   "name": "회귀 테스트",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행 (`clean build` green)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인 (JaCoCo 게이트 통과)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -2179,14 +2627,17 @@
                   "name": "문서 업데이트",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "안정화 리포트 작성 (PR #64 본문 + HISTORY)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -2210,18 +2661,22 @@
                   "name": "시나리오 준비",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "OAuth 회원가입/로그인 테스트 계정 준비",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "JWT 갱신, 로그아웃, MFA 등록/검증 시나리오 작성",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Stripe Test Mode 결제 시나리오 작성",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2229,18 +2684,22 @@
                   "name": "실행",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "회원가입 → 로그인 → JWT 갱신 → MFA → 로그아웃 E2E 실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Stripe Checkout → Webhook → 플랜 활성화 E2E 실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "실패 케이스를 P0/P1/P2로 분류",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -2256,18 +2715,22 @@
                   "name": "알림 플로우 검증",
                   "total": 3,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "`card.review.due` → notification → FCM/SES 경로 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "`gamification.*` → notification 경로 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "`community.*` → notification 경로 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -2275,34 +2738,42 @@
                   "name": "P0 수정",
                   "total": 7,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "인증/결제/알림 P0 버그 수정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 발송 지연 SLA 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "회귀 테스트 실행",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "인증 E2E가 통과한다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "결제 E2E가 통과한다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알림 발송 성공률과 지연 SLA가 기준을 만족한다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "platform P0 버그가 0건이다.",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
