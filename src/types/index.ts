@@ -1,12 +1,14 @@
 export interface CheckItem {
   text: string
   done: boolean
+  partial?: boolean
 }
 
 export interface Phase {
   name: string
   total: number
   done: number
+  partial?: number
   items: CheckItem[]
 }
 

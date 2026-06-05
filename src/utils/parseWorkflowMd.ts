@@ -2,6 +2,7 @@ import { parseWorkflowMarkdown as _parseWorkflowMarkdown, parseCheckboxes as _pa
 
 export interface ParsedCheckbox {
   done: boolean
+  partial: boolean
   text: string
 }
 
@@ -9,6 +10,7 @@ export interface ParsedPhase {
   name: string
   total: number
   done: number
+  partial: number
   items: ParsedCheckbox[]
 }
 
