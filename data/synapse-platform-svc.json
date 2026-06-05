@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-06-05T03:03:13.101Z",
+  "updatedAt": "2026-06-05T03:33:03.013Z",
   "tracks": [
     {
       "name": "platform",
@@ -1992,174 +1992,170 @@
           "steps": [
             {
               "name": "인증/결제 E2E 테스트",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
-                      "text": "인증 플로우 시나리오 작성 (회원가입→로그인→JWT→MFA→로그아웃)",
-                      "done": false
+                      "text": "인증 플로우 시나리오 작성 (회원가입→로그인→JWT→MFA→토큰갱신) *(로그아웃 전용 엔드포인트 없음 → 토큰 갱신/무효화로 대체)*",
+                      "done": true
                     },
                     {
-                      "text": "결제 플로우 시나리오 작성 (Stripe 연동)",
-                      "done": false
+                      "text": "결제 플로우 시나리오 작성 (Stripe Checkout→Webhook→구독 활성화)",
+                      "done": true
                     },
                     {
-                      "text": "테스트 데이터 준비",
-                      "done": false
+                      "text": "테스트 데이터 준비 (유저별 unique email, 테스트 간 TRUNCATE 격리)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "인증 플로우 E2E 테스트 실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "결제 플로우 E2E 테스트 실행",
-                      "done": false
+                      "done": true
                     },
                     {
-                      "text": "실패 항목 기록",
-                      "done": false
+                      "text": "실패 항목 기록 (billing `ON CONFLICT`가 H2에서 미검증 → 이슈 #56)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "P0/P1/P2 분류",
-                      "done": false
+                      "text": "P0/P1/P2 분류 (flaky 테스트 2건=P0, billing H2 gap=P2/tech-debt)",
+                      "done": true
                     },
                     {
-                      "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "text": "P0 즉시 수정 대상 확정 (Audit Kafka flaky, JWT 변조 flaky)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false
+                      "text": "P0 버그 수정 (PLAT-018 consumer earliest, PLAT-021 JWT 결정적 변조)",
+                      "done": true
                     },
                     {
-                      "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "text": "수정 코드 리뷰 + 테스트 (PR #50, #55)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "text": "수정 후 전체 테스트 재실행 (`./gradlew clean build` green)",
+                      "done": true
                     },
                     {
-                      "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "text": "커버리지 80% 이상 확인 (JaCoCo 게이트 통과)",
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "API 문서 최신화",
-                      "done": false
+                      "text": "API 문서 최신화 (Step 9는 API 변경 없음 — 해당 없음)",
+                      "done": true
                     },
                     {
-                      "text": "HISTORY 완료 기록",
-                      "done": false
+                      "text": "HISTORY 완료 기록 (PR #58, TASK Step 9 Done)",
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 14,
-              "doneChecks": 0
+              "doneChecks": 14
             },
             {
               "name": "버그 수정 + 알림 안정화",
               "status": "Not Started",
               "phases": [
                 {
-                  "name": "E2E 시나리오 정의",
+                  "name": "P0 버그 트리아지",
                   "total": 2,
                   "done": 0,
                   "items": [
                     {
-                      "text": "알림 안정화 시나리오 목록 작성",
+                      "text": "GitHub Issues P0/bug 필터 — P0 버그 목록 확인",
                       "done": false
                     },
                     {
-                      "text": "테스트 데이터 준비",
+                      "text": "P0/P1/P2 분류 + P0 즉시 수정 대상 확정",
                       "done": false
                     }
                   ]
                 },
                 {
-                  "name": "E2E 테스트 실행",
+                  "name": "P0 버그 수정",
                   "total": 2,
                   "done": 0,
                   "items": [
                     {
-                      "text": "알림 플로우 E2E 테스트 실행",
+                      "text": "각 P0 재현 → 원인 분석 → 수정",
                       "done": false
                     },
                     {
-                      "text": "실패 항목 기록",
+                      "text": "수정 후 재현 테스트 작성 및 통과 (회귀 방지)",
                       "done": false
                     }
                   ]
                 },
                 {
-                  "name": "버그 트리아지",
+                  "name": "알림 발송 안정화 (재시도 로직)",
                   "total": 2,
                   "done": 0,
                   "items": [
                     {
-                      "text": "P0/P1/P2 분류",
+                      "text": "FCM 발송 실패 원인 분석 + 재시도 로직 보강",
                       "done": false
                     },
                     {
-                      "text": "P0 즉시 수정 대상 확정",
+                      "text": "SES 발송 실패 원인 분석 + 안정화",
                       "done": false
                     }
                   ]
                 },
                 {
-                  "name": "버그 수정",
-                  "total": 3,
+                  "name": "알림 모니터링 메트릭",
+                  "total": 2,
                   "done": 0,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
+                      "text": "발송 성공/실패/지연 메트릭 추가 (Micrometer)",
                       "done": false
                     },
                     {
-                      "text": "알림 안정화 관련 수정",
-                      "done": false
-                    },
-                    {
-                      "text": "수정 코드 리뷰 + 테스트",
+                      "text": "성공률 > 99% / SLA(FCM < 10s, SES < 30s) 기준 반영·관찰",
                       "done": false
                     }
                   ]
@@ -2170,7 +2166,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
+                      "text": "수정 후 전체 테스트 재실행 (`clean build`)",
                       "done": false
                     },
                     {
@@ -2185,7 +2181,7 @@
                   "done": 0,
                   "items": [
                     {
-                      "text": "API 문서 최신화",
+                      "text": "안정화 리포트 작성",
                       "done": false
                     },
                     {
@@ -2195,12 +2191,12 @@
                   ]
                 }
               ],
-              "totalChecks": 13,
+              "totalChecks": 12,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 27,
-          "doneChecks": 0
+          "totalChecks": 26,
+          "doneChecks": 14
         },
         {
           "week": "W5",
@@ -2567,7 +2563,7 @@
     {
       "date": "2026-06-05",
       "totalChecks": 376,
-      "doneChecks": 333
+      "doneChecks": 347
     }
   ],
   "changelog": [
@@ -2735,6 +2731,24 @@
           "type": "check_done",
           "target": "W3 > 테넌트/사용자 관리 API — 관리자 사용자 목록/검색/정지/삭제",
           "detail": "43개 항목 완료 (0 → 43)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T03:33:03.013Z",
+      "commit": "c3dc389",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 인증/결제 E2E 테스트",
+          "detail": "14개 항목 완료 (0 → 14)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W4 > 버그 수정 + 알림 안정화",
+          "detail": "1개 박스 제거 (13 → 12)"
         }
       ]
     }
