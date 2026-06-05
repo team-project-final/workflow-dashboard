@@ -39,7 +39,7 @@ export default function WorkflowColumn({ step }: Props) {
       <div className="space-y-0.5">
         {step.phases.map((phase, i) => {
           const done = phase.done === phase.total && phase.total > 0
-          const inProgress = phase.done > 0 && phase.done < phase.total
+          const inProgress = (phase.done > 0 || (phase.partial ?? 0) > 0) && phase.done < phase.total
           const hasItems = phase.items && phase.items.length > 0
           const isOpen = openPhases.has(i)
 
@@ -69,9 +69,9 @@ export default function WorkflowColumn({ step }: Props) {
                 <div className="ml-8 mt-0.5 mb-1 space-y-0.5">
                   {phase.items.map((item, j) => (
                     <div key={j} className={`flex items-start gap-1.5 text-[10px] ${
-                      item.done ? 'text-success' : 'text-stone-500'
+                      item.done ? 'text-success' : item.partial ? 'text-amber-600' : 'text-stone-500'
                     }`}>
-                      <span className="mt-0.5 shrink-0">{item.done ? '✅' : '⬜'}</span>
+                      <span className="mt-0.5 shrink-0">{item.done ? '✅' : item.partial ? '◐' : '⬜'}</span>
                       <span>{item.text}</span>
                     </div>
                   ))}
