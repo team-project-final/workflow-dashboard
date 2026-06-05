@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-05T03:03:18.136Z",
+  "updatedAt": "2026-06-05T06:39:19.775Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -3546,105 +3546,105 @@
           "steps": [
             {
               "name": "검색 E2E 테스트 + 정확도 리포트",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "검색 E2E 시나리오 작성 (BM25+시맨틱 RRF)",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "E2E 테스트 실행",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "items": [
                     {
                       "text": "검색 E2E 테스트 실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "정확도 리포트 산출",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": false
+                      "done": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false
+                      "done": true
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false
+                      "done": true
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 0
+              "doneChecks": 13
             },
             {
               "name": "검색 튜닝 + 버그 수정",
@@ -3750,7 +3750,7 @@
             }
           ],
           "totalChecks": 26,
-          "doneChecks": 0
+          "doneChecks": 13
         },
         {
           "week": "W5",
@@ -4142,7 +4142,7 @@
     {
       "date": "2026-06-05",
       "totalChecks": 619,
-      "doneChecks": 494
+      "doneChecks": 507
     }
   ],
   "changelog": [
@@ -4691,6 +4691,19 @@
           "type": "check_done",
           "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
           "detail": "25개 항목 완료 (0 → 25)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T06:39:19.775Z",
+      "commit": "672a61e",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 검색 E2E 테스트 + 정확도 리포트",
+          "detail": "13개 항목 완료 (0 → 13)"
         }
       ]
     }
