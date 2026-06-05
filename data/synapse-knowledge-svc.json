@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-05T08:37:20.958Z",
+  "updatedAt": "2026-06-05T12:29:02.768Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -1192,7 +1192,7 @@
             },
             {
               "name": "ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
-              "status": "In Progress",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1220,22 +1220,22 @@
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "노트 변경 이벤트 종류 정의 (created, updated, deleted)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "Kafka consumer 그룹 및 토픽 (note.updated) 확인",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "Elasticsearch 인덱스 매핑 요건 분석 (title, content, tags, userId)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1253,12 +1253,12 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Kafka 메시지 위변조 방지 확인",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1268,7 +1268,7 @@
                     },
                     {
                       "text": "사용자 데이터 격리 (userId 필드 기반 검색 필터)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1281,22 +1281,22 @@
                 {
                   "name": "인프라 설계",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Kafka consumer 설정 (group-id, auto-offset-reset, concurrency)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "ES 인덱스 매핑 설계 (notes 인덱스 — text/keyword 필드 타입)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "nori 분석기 설정 (한국어 형태소 분석)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1309,17 +1309,17 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "ES 인덱스 데이터 삭제 동기화 확인 (노트 삭제 → ES 문서 삭제)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "인덱스 갱신 실패 시 재처리 전략 (DLQ 또는 재시도)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1332,17 +1332,17 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 3,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "NoteIndexDocument 정의 (noteId, userId, title, content, tags, updatedAt)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "NoteEvent Avro/DTO 정의 (eventType, noteId, userId, title, content, tags)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1355,22 +1355,22 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "NoteSearchRepository 인터페이스 작성 (Spring Data Elasticsearch)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "ES 인덱스 매핑 JSON 작성 (nori analyzer, 필드별 타입)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "인덱스 초기화 스크립트 작성",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -1378,42 +1378,42 @@
                 {
                   "name": "Service + Test",
                   "total": 7,
-                  "done": 7,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "NoteIndexService 구현 (index, update, delete)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "Kafka Consumer 구현 (note.updated 토픽 소비 → ES 인덱싱)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "이벤트별 분기 처리 (created→index, updated→update, deleted→delete)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "재시도 로직 구현 (RetryTemplate 또는 @Retryable)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "단위 테스트 작성 (Mockito)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "Kafka Consumer 테스트 (@EmbeddedKafka)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -1421,27 +1421,27 @@
                 {
                   "name": "Controller + Test",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "ES 동기화는 Controller 없음 (Kafka Consumer 기반)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "인덱스 상태 확인용 Actuator/Admin 엔드포인트 (선택)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "통합 테스트 (노트 이벤트 → Kafka → ES 인덱스 확인)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -1449,12 +1449,12 @@
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 1,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1471,11 +1471,11 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 27
+              "doneChecks": 0
             }
           ],
           "totalChecks": 88,
-          "doneChecks": 76
+          "doneChecks": 49
         },
         {
           "week": "W3",
@@ -1483,7 +1483,7 @@
           "steps": [
             {
               "name": "note 버전 이력 — 수정 히스토리 저장/조회/복원",
-              "status": "In Progress",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1511,22 +1511,22 @@
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "버전 생성 트리거 정의 (노트 수정 시 자동 저장) — `NoteService.update()` → `saveVersion()` 훅",
-                      "done": true,
+                      "text": "버전 생성 트리거 정의 (노트 수정 시 자동 저장)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "버전 조회 요건 분석 (목록, 상세, diff 비교) — `listVersions`, `getVersion` 구현",
-                      "done": true,
+                      "text": "버전 조회 요건 분석 (목록, 상세, diff 비교)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "버전 복원 요건 분석 (특정 버전으로 되돌리기) — `NoteService.restoreVersion()` 이벤트 위임 방식",
-                      "done": true,
+                      "text": "버전 복원 요건 분석 (특정 버전으로 되돌리기)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1539,22 +1539,22 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (로그인 사용자) — `/api/v1/notes/**` authenticated",
-                      "done": true,
+                      "text": "인증 필요 여부: Yes (로그인 사용자)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "권한 종류: 본인 노트 버전만 접근 가능 — `NoteVersionService.validateOwner()` 구현",
-                      "done": true,
+                      "text": "권한 종류: 본인 노트 버전만 접근 가능",
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1567,32 +1567,32 @@
                 {
                   "name": "ERD 설계",
                   "total": 6,
-                  "done": 5,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "note_versions 테이블 설계 (id, note_id, version_no, title, content_md, created_at) — V8 Flyway",
-                      "done": true,
+                      "text": "note_versions 테이블 설계 (id, note_id, version_number, title, content_md, change_summary, created_at)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "참고: created_by 컬럼은 ERD에 없음 — 소유자는 note_id → notes.user_id 로 참조 (CONFLICT-1 적용)",
-                      "done": true,
+                      "text": "참고: created_by 컬럼은 ERD에 없음 — 소유자는 note_id → notes.user_id 로 참조",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "인덱스 설계 (note_id + version_no UNIQUE, note_id + created_at DESC)",
-                      "done": true,
+                      "text": "인덱스 설계 (note_id + version_number UNIQUE, note_id + created_at DESC)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "관계 정의 (notes 1:N note_versions, ON DELETE CASCADE)",
-                      "done": true,
+                      "text": "관계 정의 (notes 1:N note_versions)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "버전 번호 자동 증가 로직 설계 — `findMaxVersionNoByNoteId() + 1`",
-                      "done": true,
+                      "text": "버전 번호 자동 증가 로직 설계",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1605,22 +1605,22 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "버전 삭제 불가 (append-only) — 복원 시 새 버전 생성으로 이력 보존",
-                      "done": true,
+                      "text": "버전 삭제 불가 (append-only)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "복원 시 새 버전으로 추가 (덮어쓰기 아님) — `restoreVersion()` 내부에서 `update()` 호출",
-                      "done": true,
+                      "text": "복원 시 새 버전으로 추가 (덮어쓰기 아님)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "행 단위 접근 제어: 노트 소유자만 버전 접근 — `validateOwner()` 모든 메서드에 적용",
-                      "done": true,
+                      "text": "행 단위 접근 제어: 노트 소유자만 버전 접근",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1633,26 +1633,26 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "NoteVersion Entity 작성",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteVersionListResponse DTO 정의 → `NoteVersionSummaryResponse` (id, versionNo, title, createdAt)",
-                      "done": true,
+                      "text": "NoteVersionListResponse DTO 정의 (id, versionNumber, createdAt, summary)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteVersionDetailResponse DTO 정의 (id, versionNo, title, contentMd, createdAt)",
-                      "done": true,
+                      "text": "NoteVersionDetailResponse DTO 정의 (id, versionNumber, title, content, createdAt)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteVersionRestoreRequest DTO 정의 — path variable 방식으로 대체 (요청 바디 불필요)",
+                      "text": "NoteVersionRestoreRequest DTO 정의 (versionId)",
                       "done": false,
                       "partial": false
                     },
@@ -1666,27 +1666,27 @@
                 {
                   "name": "Repository 구현",
                   "total": 4,
-                  "done": 4,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "NoteVersionRepository 인터페이스 작성",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "findByNoteIdOrderByVersionNumberDesc 커스텀 쿼리 — `findByNoteIdOrderByVersionNoDesc`",
-                      "done": true,
+                      "text": "findByNoteIdOrderByVersionNumberDesc 커스텀 쿼리",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "findByNoteIdAndVersionNumber 조회 쿼리 — `findByNoteIdAndVersionNo`",
-                      "done": true,
+                      "text": "findByNoteIdAndVersionNumber 조회 쿼리",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "getMaxVersionNumberByNoteId 쿼리 — `findMaxVersionNoByNoteId` (COALESCE 처리)",
-                      "done": true,
+                      "text": "getMaxVersionNumberByNoteId 쿼리 (다음 버전 번호 산출)",
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -1694,32 +1694,32 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 5,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "NoteVersionService 구현 (버전 생성 — 노트 수정 시 자동 호출)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "NoteVersionService 구현 (버전 목록 조회 — 페이징)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "NoteVersionService 구현 (버전 상세 조회)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteVersionService 구현 (버전 복원 — NoteService.restoreVersion()으로 이벤트 위임)",
-                      "done": true,
+                      "text": "NoteVersionService 구현 (버전 복원 — 선택 버전 내용을 새 버전으로 생성)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito) — `NoteVersionServiceTest` 6건",
-                      "done": true,
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1732,22 +1732,22 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 4,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "GET /notes/{noteId}/versions 엔드포인트 구현 (버전 목록)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "GET /notes/{noteId}/versions/{versionNumber} 엔드포인트 구현 (버전 상세)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "POST /notes/{noteId}/versions/{versionNumber}/restore 엔드포인트 구현 (복원)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1756,8 +1756,8 @@
                       "partial": false
                     },
                     {
-                      "text": "403 Forbidden 테스트 (타인 노트 버전 접근) — `NoteVersionIntegrationTest` 통합 테스트 포함",
-                      "done": true,
+                      "text": "403 Forbidden 테스트 (타인 노트 버전 접근)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1770,12 +1770,12 @@
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 1,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1792,11 +1792,11 @@
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 31
+              "doneChecks": 0
             },
             {
               "name": "태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
-              "status": "In Progress",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1824,22 +1824,22 @@
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "태그 기반 필터링 요건 분석 — `GET /notes?tag=` 단일 태그 필터 구현",
-                      "done": true,
+                      "text": "태그 기반 필터링 요건 분석 (단일/다중 태그 AND/OR 필터)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "태그 자동완성 요건 분석 — prefix LIKE, 사용 빈도 내림차순, 최대 10건",
-                      "done": true,
+                      "text": "태그 자동완성 요건 분석 (prefix 기반 검색, 최대 10건)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "인기 태그 요건 분석 — Redis 단일 키 캐싱, 상위 50개 저장 후 슬라이싱",
-                      "done": true,
+                      "text": "인기 태그 요건 분석 (사용 빈도 기준 상위 N개)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1852,22 +1852,22 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes — `/api/v1/tags/autocomplete` authenticated (SecurityConfig)",
-                      "done": true,
+                      "text": "인증 필요 여부: Yes (로그인 사용자)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "권한 종류: 본인 노트의 태그만 자동완성 반환 — note_tags JOIN notes WHERE user_id=:userId",
-                      "done": true,
+                      "text": "권한 종류: 본인 노트의 태그만 수정 가능",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "인기 태그 API: 인증 사용자 전체 공개 — `/api/v1/tags/popular` permitAll",
-                      "done": true,
+                      "text": "인기 태그 API: 인증 사용자 전체 공개",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1880,27 +1880,27 @@
                 {
                   "name": "ERD / 쿼리 설계",
                   "total": 5,
-                  "done": 4,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "기존 note_tags 테이블 활용 확인 — V4 마이그레이션 기준 (CONFLICT-2 적용)",
-                      "done": true,
+                      "text": "기존 tags / note_tags 테이블 활용 확인",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "태그 사용 빈도 집계 쿼리 설계 — COUNT(*) GROUP BY tag",
-                      "done": true,
+                      "text": "태그 사용 빈도 집계 쿼리 설계 (COUNT GROUP BY)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "태그 prefix 검색 쿼리 설계 — LIKE ':prefix%' + setMaxResults(10)",
-                      "done": true,
+                      "text": "태그 prefix 검색 쿼리 설계 (LIKE 'prefix%' + 빈도 정렬)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "태그 기반 노트 필터링 쿼리 설계 — JPQL JOIN @ElementCollection",
-                      "done": true,
+                      "text": "태그 기반 노트 필터링 쿼리 설계 (JOIN + IN/EXISTS)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1913,22 +1913,22 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "태그 자동완성 응답에 사용자 개인정보 미포함 — tag 문자열만 반환",
-                      "done": true,
+                      "text": "태그 자동완성 응답에 사용자 개인정보 미포함",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "SQL Injection 방지 (파라미터 바인딩 확인) — setParameter() 사용",
-                      "done": true,
+                      "text": "SQL Injection 방지 (파라미터 바인딩 확인)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "태그 길이 제한 (최대 30자) — `NoteCreateRequest @Size(max=30)` 적용",
-                      "done": true,
+                      "text": "태그 길이 제한 (최대 50자)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -1941,26 +1941,26 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "TagAutoCompleteResponse DTO 정의 (tag, count)",
-                      "done": true,
-                      "partial": false
-                    },
-                    {
-                      "text": "PopularTagResponse DTO 정의 (tag, count)",
-                      "done": true,
-                      "partial": false
-                    },
-                    {
-                      "text": "TagAutoCompleteRequest DTO — @RequestParam 직접 수신으로 대체",
+                      "text": "TagAutoCompleteRequest DTO 정의 (prefix, limit)",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteFilterByTagsRequest DTO — @RequestParam String tag 단일 필터로 구현",
+                      "text": "TagAutoCompleteResponse DTO 정의 (name, count)",
+                      "done": false,
+                      "partial": false
+                    },
+                    {
+                      "text": "PopularTagResponse DTO 정의 (name, count)",
+                      "done": false,
+                      "partial": false
+                    },
+                    {
+                      "text": "NoteFilterByTagsRequest DTO 정의 (tags[], operator: AND/OR)",
                       "done": false,
                       "partial": false
                     },
@@ -1974,22 +1974,22 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 1,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "TagRepository 확장: findByNameStartingWith — CONFLICT-2: TagRepository 미생성, EntityManager 네이티브 쿼리 직접 사용",
+                      "text": "TagRepository 확장: findByNameStartingWith (자동완성)",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "TagRepository 확장: findPopularTags — 동일",
+                      "text": "TagRepository 확장: findPopularTags (사용 빈도 상위 N)",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteRepository 확장: findByTags — `findByUserIdAndTagAndDeletedAtIsNull` JPQL 구현",
-                      "done": true,
+                      "text": "NoteRepository 확장: findByTags (태그 기반 필터링)",
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -1997,32 +1997,32 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 5,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "TagService 구현 (자동완성 — prefix 검색 + userId 필터 + 빈도 정렬)",
-                      "done": true,
+                      "text": "TagService 구현 (자동완성 — prefix 검색 + 빈도 정렬)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "TagService 구현 (인기 태그 — 상위 50개 캐싱 후 limit 슬라이싱)",
-                      "done": true,
+                      "text": "TagService 구현 (인기 태그 — 상위 N개 캐싱)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "NoteService 확장 (태그 기반 필터링 — findAllByTag)",
-                      "done": true,
+                      "text": "NoteService 확장 (태그 기반 필터링 — AND/OR 지원)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "Redis 캐싱 (인기 태그 TTL: 1시간, 단일 키 `tags:popular`)",
-                      "done": true,
+                      "text": "Redis 캐싱 (인기 태그 TTL: 1시간)",
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "단위 테스트 작성 (Mockito) — `TagServiceTest` 4건",
-                      "done": true,
+                      "text": "단위 테스트 작성 (Mockito)",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -2035,22 +2035,22 @@
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "GET /tags/autocomplete?q=xxx 엔드포인트 구현",
-                      "done": true,
+                      "text": "GET /tags/autocomplete?prefix=xxx 엔드포인트 구현",
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "GET /tags/popular 엔드포인트 구현",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "GET /notes?tag= 엔드포인트 확장",
-                      "done": true,
+                      "text": "GET /notes?tags=a,b&tagOp=AND 엔드포인트 확장",
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -2068,12 +2068,12 @@
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 1,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Flutter 화면 연동: 해당 없음 (프론트 별도)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
@@ -2090,11 +2090,11 @@
                 }
               ],
               "totalChecks": 42,
-              "doneChecks": 25
+              "doneChecks": 0
             }
           ],
           "totalChecks": 87,
-          "doneChecks": 56
+          "doneChecks": 0
         },
         {
           "week": "W4",
@@ -4268,22 +4268,22 @@
           "steps": [
             {
               "name": "검색 E2E 테스트 + 정확도 리포트",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "검색 E2E 시나리오 작성 (BM25+시맨틱 RRF)",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4291,22 +4291,22 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "검색 E2E 테스트 실행",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "정확도 리포트 산출",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4314,17 +4314,17 @@
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4332,17 +4332,17 @@
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4350,17 +4350,17 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4368,24 +4368,24 @@
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 13
+              "doneChecks": 0
             },
             {
               "name": "검색 튜닝 + 버그 수정",
@@ -4510,7 +4510,7 @@
             }
           ],
           "totalChecks": 26,
-          "doneChecks": 13
+          "doneChecks": 0
         },
         {
           "week": "W5",
@@ -5484,6 +5484,34 @@
           "type": "check_done",
           "target": "W4 > 검색 E2E 테스트 + 정확도 리포트",
           "detail": "13개 항목 완료 (0 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T12:29:02.768Z",
+      "commit": "0f6d340",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W2 > ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
+          "detail": "27개 항목 해제 (27 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W3 > note 버전 이력 — 수정 히스토리 저장/조회/복원",
+          "detail": "31개 항목 해제 (31 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
+          "detail": "25개 항목 해제 (25 → 0)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W4 > 검색 E2E 테스트 + 정확도 리포트",
+          "detail": "13개 항목 해제 (13 → 0)"
         }
       ]
     }

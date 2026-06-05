@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-06-05T08:37:22.958Z",
+  "updatedAt": "2026-06-05T12:29:05.257Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -4470,7 +4470,7 @@
                 {
                   "name": "E2E 검증",
                   "total": 4,
-                  "done": 3,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -4484,13 +4484,13 @@
                       "partial": false
                     },
                     {
-                      "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송) — notification-svc 별도 팀 담당, 범위 외",
+                      "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송)",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "대량 사용자 시뮬레이션 (1000명 기준 처리 시간 측정) — ReviewDueSchedulerLoadTest: 1000명 3초 이내 완료 확인",
-                      "done": true,
+                      "text": "대량 사용자 시뮬레이션 (1000명 기준 처리 시간 측정)",
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4520,7 +4520,7 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 38
+              "doneChecks": 37
             },
             {
               "name": "복습 통계 대시보드 — 일별/주별 복습 수, 정답률, 스트릭 통합 API",
@@ -4816,7 +4816,7 @@
             }
           ],
           "totalChecks": 80,
-          "doneChecks": 79
+          "doneChecks": 78
         },
         {
           "week": "W4",
@@ -4940,22 +4940,22 @@
             },
             {
               "name": "버그 수정 + Kafka 이벤트 안정화",
-              "status": "Done",
+              "status": "Not Started",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Kafka 이벤트 안정화 시나리오 목록 작성",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4963,17 +4963,17 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Kafka 이벤트 플로우 E2E 테스트 실행",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4981,17 +4981,17 @@
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -4999,22 +4999,22 @@
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 3,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
-                      "text": "Kafka 이벤트 관련 버그 수정 (DLQ 미구현 → KafkaDlqPublisher 신설)",
-                      "done": true,
+                      "text": "Kafka 이벤트 관련 버그 수정",
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -5022,17 +5022,17 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행 (BUILD SUCCESSFUL)",
-                      "done": true,
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
@@ -5040,28 +5040,28 @@
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 2,
+                  "done": 0,
                   "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": true,
+                      "done": false,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 13
+              "doneChecks": 0
             }
           ],
           "totalChecks": 25,
-          "doneChecks": 25
+          "doneChecks": 12
         },
         {
           "week": "W5",
@@ -5841,6 +5841,24 @@
           "type": "check_done",
           "target": "W4 > 버그 수정 + Kafka 이벤트 안정화",
           "detail": "13개 항목 완료 (0 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T12:29:05.257Z",
+      "commit": "9530b62",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_undone",
+          "target": "W3 > card.review.due 발행 — 매일 스케줄러 → 복습 대상 사용자 → Kafka 발행",
+          "detail": "1개 항목 해제 (38 → 37)"
+        },
+        {
+          "type": "check_undone",
+          "target": "W4 > 버그 수정 + Kafka 이벤트 안정화",
+          "detail": "13개 항목 해제 (13 → 0)"
         }
       ]
     }
