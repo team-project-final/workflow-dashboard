@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-05T02:47:32.412Z",
+  "updatedAt": "2026-06-05T03:03:28.115Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1582,15 +1582,15 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "items": [
                     {
-                      "text": "각 파트별 E2E 테스트 실행 조율",
-                      "done": false
+                      "text": "**계약·전송 E2E 06-05 실행** — harness 4모드 PASS(`--avro`8/8·`--all`5/5·`--full`13/13·`--scenarios`5/5), [E2E_REPORT_W4](../../reports/E2E_REPORT_W4.md)",
+                      "done": true
                     },
                     {
-                      "text": "실패 항목 기록",
-                      "done": false
+                      "text": "실패 항목 기록 — 전송/계약 0건 실패",
+                      "done": true
                     }
                   ]
                 },
@@ -1656,7 +1656,7 @@
                 }
               ],
               "totalChecks": 11,
-              "doneChecks": 1
+              "doneChecks": 3
             },
             {
               "name": "성능 SLA 검증",
@@ -1864,7 +1864,121 @@
             }
           ],
           "totalChecks": 37,
-          "doneChecks": 2
+          "doneChecks": 4
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "전체 E2E 서비스 단위 실행 (W4 이월)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "E2E 테스트 실행",
+                  "total": 3,
+                  "done": 1,
+                  "items": [
+                    {
+                      "text": "계약·전송 E2E (W4 06-05 PASS — E2E_REPORT_W4)",
+                      "done": true
+                    },
+                    {
+                      "text": "**서비스 단위 E2E** — 4서비스 origin/main 빌드 기동 후 consumer 비즈니스 로직 검증(핵심 10 시나리오, FR-ALL-301/NFR-303)",
+                      "done": false
+                    },
+                    {
+                      "text": "전체 체인 < 10초(FR-TL-401) · audit 적재 < 30초(NFR-403)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "버그 트리아지",
+                  "total": 2,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류 + P0 즉시 수정 대상 확정",
+                      "done": false
+                    },
+                    {
+                      "text": "P0 수정 지시·추적 → 회귀 → 커버리지 80%(9.5) → API 문서/HISTORY(9.6)",
+                      "done": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 5,
+              "doneChecks": 1
+            },
+            {
+              "name": "성능 SLA 검증 (W4 이월)",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "정의 — [x] SLA_VERIFICATION_W4 P1~P7 (W4 완료)",
+                  "total": 0,
+                  "done": 0,
+                  "items": []
+                },
+                {
+                  "name": "실행 — [ ] API P95<200ms · Kafka<5s · 검색<2s (3회 평균, Day 3)",
+                  "total": 0,
+                  "done": 0,
+                  "items": []
+                }
+              ],
+              "totalChecks": 0,
+              "doneChecks": 0
+            },
+            {
+              "name": "Staging 배포 + 모니터링 대시보드 (W4 이월)",
+              "status": "Not Started",
+              "phases": [
+                {
+                  "name": "실행",
+                  "total": 4,
+                  "done": 0,
+                  "items": [
+                    {
+                      "text": "EKS 재apply → ArgoCD 부트스트랩 → dev 5/5 재확인",
+                      "done": false
+                    },
+                    {
+                      "text": "하드닝 머지 staging 배포 → **platform CrashLoop(#37/#48) 해소 → staging 5/5**",
+                      "done": false
+                    },
+                    {
+                      "text": "Observability(kube-prometheus-stack) + ServiceMonitor 5 + Grafana(FR-TL-303) + 알림 규칙",
+                      "done": false
+                    },
+                    {
+                      "text": "staging 24h 안정(NFR-305)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "— [ ] Staging 배포 결과 + 운영 가이드 문서화",
+                  "total": 0,
+                  "done": 0,
+                  "items": []
+                }
+              ],
+              "totalChecks": 4,
+              "doneChecks": 0
+            },
+            {
+              "name": "최종 발표 자료 + 시연 리허설",
+              "status": "Not Started",
+              "phases": [],
+              "totalChecks": 0,
+              "doneChecks": 0
+            }
+          ],
+          "totalChecks": 9,
+          "doneChecks": 1
         }
       ]
     }
@@ -2079,8 +2193,8 @@
     },
     {
       "date": "2026-06-05",
-      "totalChecks": 268,
-      "doneChecks": 216
+      "totalChecks": 277,
+      "doneChecks": 219
     }
   ],
   "changelog": [
@@ -2349,6 +2463,19 @@
           "type": "boxes_removed",
           "target": "W3 > 전체 통합 테스트 조율",
           "detail": "2개 박스 제거 (34 → 32)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T03:03:28.115Z",
+      "commit": "68d1cb0",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 전체 E2E 시나리오 정의 + 테스트 실행 조율",
+          "detail": "2개 항목 완료 (1 → 3)"
         }
       ]
     }
