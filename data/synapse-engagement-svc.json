@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-06-05T03:03:15.427Z",
+  "updatedAt": "2026-06-05T07:10:29.624Z",
   "tracks": [
     {
       "name": "engagement",
@@ -2398,7 +2398,7 @@
           "steps": [
             {
               "name": "게이미피케이션 E2E",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "시나리오 정의",
@@ -2421,7 +2421,7 @@
                 },
                 {
                   "name": "실행 및 수정",
-                  "total": 3,
+                  "total": 4,
                   "done": 0,
                   "items": [
                     {
@@ -2435,12 +2435,47 @@
                     {
                       "text": "P0 버그 수정 및 회귀 테스트",
                       "done": false
+                    },
+                    {
+                      "text": "notification 서비스 연동 테스트 (gamification 이벤트 → 알림 발송)",
+                      "done": false
+                    }
+                  ]
+                },
+                {
+                  "name": "배포 선결조건",
+                  "total": 6,
+                  "done": 3,
+                  "items": [
+                    {
+                      "text": "MSK TLS-only 대비 `spring.kafka.security.protocol` 배선 반영 ([#26](https://github.com/team-project-final/synapse-engagement-svc/issues/26))",
+                      "done": true
+                    },
+                    {
+                      "text": "semver 이미지 릴리스 workflow 보정 ([#25](https://github.com/team-project-final/synapse-engagement-svc/issues/25))",
+                      "done": true
+                    },
+                    {
+                      "text": "Flyway migration guard 및 표준 runtime 옵션 반영 ([#28](https://github.com/team-project-final/synapse-engagement-svc/issues/28))",
+                      "done": true
+                    },
+                    {
+                      "text": "ECR `synapse/engagement-svc:<신규 semver>` 도착 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "image-updater dev `newTag` 자동 bump 확인",
+                      "done": false
+                    },
+                    {
+                      "text": "EKS engagement 파드 Kafka 초기화/MSK 연결 로그 확인",
+                      "done": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 6,
-              "doneChecks": 0
+              "totalChecks": 13,
+              "doneChecks": 3
             },
             {
               "name": "커뮤니티 E2E",
@@ -2467,7 +2502,7 @@
                 },
                 {
                   "name": "실행 및 수정",
-                  "total": 7,
+                  "total": 8,
                   "done": 0,
                   "items": [
                     {
@@ -2480,6 +2515,10 @@
                     },
                     {
                       "text": "P0 버그 수정 및 회귀 테스트",
+                      "done": false
+                    },
+                    {
+                      "text": "커뮤니티 신고 → 모더레이션 → notification-send 발행 라이브 E2E 확인",
                       "done": false
                     },
                     {
@@ -2501,12 +2540,12 @@
                   ]
                 }
               ],
-              "totalChecks": 10,
+              "totalChecks": 11,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 16,
-          "doneChecks": 0
+          "totalChecks": 24,
+          "doneChecks": 3
         }
       ]
     }
@@ -2751,8 +2790,8 @@
     },
     {
       "date": "2026-06-05",
-      "totalChecks": 411,
-      "doneChecks": 393
+      "totalChecks": 419,
+      "doneChecks": 396
     }
   ],
   "changelog": [
@@ -3043,6 +3082,29 @@
           "type": "check_done",
           "target": "W4 > 커뮤니티 공유/신고 E2E 테스트 + 안정화",
           "detail": "13개 항목 완료 (0 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05T07:10:29.623Z",
+      "commit": "c4a6018",
+      "author": "olivefanta12",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 게이미피케이션 E2E",
+          "detail": "3개 항목 완료 (0 → 3)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 게이미피케이션 E2E",
+          "detail": "7개 박스 추가 (6 → 13)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 커뮤니티 E2E",
+          "detail": "1개 박스 추가 (10 → 11)"
         }
       ]
     }
