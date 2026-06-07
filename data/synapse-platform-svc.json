@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-06-07T11:40:16.040Z",
+  "updatedAt": "2026-06-07T23:10:49.786Z",
   "tracks": [
     {
       "name": "platform",
@@ -2736,7 +2736,7 @@
                 },
                 {
                   "name": "P0 수정",
-                  "total": 7,
+                  "total": 8,
                   "done": 0,
                   "partial": 0,
                   "items": [
@@ -2774,15 +2774,20 @@
                       "text": "platform P0 버그가 0건이다.",
                       "done": false,
                       "partial": false
+                    },
+                    {
+                      "text": "frontend 연동 사전 보정 PR이 `dev`에 머지된다.",
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 10,
+              "totalChecks": 11,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 16,
+          "totalChecks": 17,
           "doneChecks": 0
         }
       ]
@@ -3043,7 +3048,7 @@
     },
     {
       "date": "2026-06-07",
-      "totalChecks": 375,
+      "totalChecks": 376,
       "doneChecks": 359
     }
   ],
@@ -3243,6 +3248,19 @@
           "type": "check_done",
           "target": "W4 > 버그 수정 + 알림 안정화",
           "detail": "12개 항목 완료 (0 → 12)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-07T23:10:49.785Z",
+      "commit": "11b18bd",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "boxes_added",
+          "target": "W5 > 알림 안정화",
+          "detail": "1개 박스 추가 (10 → 11)"
         }
       ]
     }
