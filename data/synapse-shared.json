@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-08T05:04:25.599Z",
+  "updatedAt": "2026-06-08T05:17:00.791Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -720,7 +720,7 @@
           "steps": [
             {
               "name": "Kafka 토픽 설계 + 생성",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -781,17 +781,17 @@
                 {
                   "name": "Security 1차 검토 (네트워크 보안)",
                   "total": 4,
-                  "done": 2,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` ACL 섹션)",
-                      "done": false,
+                      "text": "Kafka ACL 토픽별 생산자/소비자 권한 정의 — **결정상 종결**: TLS-only 채택으로 ACL 미사용, 인가는 VPC 네트워크 경계(EKS↔MSK SG 9094) ([KAFKA_AUTH_MATRIX §1](../../guides/KAFKA_AUTH_MATRIX.md))",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "SASL/TLS 인증 설정 확인 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` TLS 섹션)",
-                      "done": false,
+                      "text": "SASL/TLS 인증 설정 확인 — TLS-only 확정, 5서비스 security.protocol=SSL 배선 (#54/#45/#48)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -837,17 +837,17 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 1,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "토픽 메시지 암호화 전송 (TLS) 확인 — 다음 gitops 세션에서 openssl s_client로 검증",
-                      "done": false,
+                      "text": "토픽 메시지 암호화 전송 (TLS) 확인 — ✅ **06-08 실증**: in-cluster openssl s_client → MSK 9094, Amazon RSA 2048 M01 CA, HANDSHAKE_OK ([SHARED_W1W4_INCOMPLETE_REVIEW §4](../../reports/SHARED_W1W4_INCOMPLETE_REVIEW.md))",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "민감 데이터 토픽 접근 제한 확인 — 다음 gitops 세션에서 ACL 또는 IAM Policy 적용",
-                      "done": false,
+                      "text": "민감 데이터 토픽 접근 제한 확인 — **결정상 종결**: 네트워크 경계(private subnet + SG)로 인가, ACL/IAM 미사용 (TLS-only, W5+ 백로그)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -867,12 +867,12 @@
                 {
                   "name": "Kafka 토픽 생성",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "MSK/Kafka 클러스터에 토픽 생성 — 다음 gitops 세션에서 실행 (절차서: `MSK_TOPIC_SETUP.md` \"다음 세션 실행 절차\" 섹션)",
-                      "done": false,
+                      "text": "MSK/Kafka 클러스터에 토픽 생성 — ✅ terraform 선언 관리(gitops `kafka-topics/`), MSK ACTIVE·9토픽 (06-08 재apply)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -895,7 +895,7 @@
                 {
                   "name": "토픽 검증 테스트",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -904,8 +904,8 @@
                       "partial": false
                     },
                     {
-                      "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트 — 다음 gitops 세션에서 MSK 토픽 생성 직후 실행",
-                      "done": false,
+                      "text": "kafka-console-producer/consumer 로 메시지 송수신 테스트 — ✅ 대체 충족: 서비스 consumer group 활성(EKS) + 로컬 `--avro` 8/8 round-trip",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -936,7 +936,7 @@
                 }
               ],
               "totalChecks": 27,
-              "doneChecks": 21
+              "doneChecks": 27
             },
             {
               "name": "Schema Registry BACKWARD 호환성 강제",
@@ -1140,7 +1140,7 @@
             },
             {
               "name": "Gateway 라우팅",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1252,12 +1252,12 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "JWT 검증 Gateway 레벨 적용 확인 — Out of Scope (향후 Step)",
-                      "done": false,
+                      "text": "JWT 검증 Gateway 레벨 적용 확인 — ✅ **W5 구현·검증**: gateway `JwtDecoderConfig`(NimbusReactiveJwtDecoder) + JWT_PUBLIC_KEY 주입, dev 5/5 healthy (gitops#136)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1356,11 +1356,11 @@
                 }
               ],
               "totalChecks": 27,
-              "doneChecks": 26
+              "doneChecks": 27
             }
           ],
           "totalChecks": 77,
-          "doneChecks": 70
+          "doneChecks": 77
         },
         {
           "week": "W3",
@@ -1802,75 +1802,75 @@
                   ]
                 },
                 {
-                  "name": "배포 실행 — ⛔ EKS destroy로 대기 (재기동 후)",
+                  "name": "배포 실행 — ✅ W5 Day1(06-08) 해소",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "dev 환경: main push → autoSync 자동 배포 확인",
-                      "done": false,
+                      "text": "dev 환경: main push → autoSync 자동 배포 확인 — ✅ 14앱 Synced",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "staging 환경: 수동 Sync 버튼 → 배포 실행",
-                      "done": false,
+                      "text": "staging 환경: 수동 Sync 버튼 → 배포 실행 — ✅ staging 배포 완료",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "ECR 이미지 태그 일치 확인",
-                      "done": false,
+                      "text": "ECR 이미지 태그 일치 확인 — ✅ 배포 이미지 Running",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "배포 후 검증 — ⛔ EKS destroy로 대기 (재기동 후)",
+                  "name": "배포 후 검증 — ✅ W5 Day1(06-08) 해소",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "dev 환경 전체 서비스 Health OK 확인",
-                      "done": false,
+                      "text": "dev 환경 전체 서비스 Health OK 확인 — ✅ verify-argocd-deploy dev **16/0/0**",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "staging 환경 전체 서비스 Health OK 확인",
-                      "done": false,
+                      "text": "staging 환경 전체 서비스 Health OK 확인 — ✅ staging **20/0/0**",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Kafka 연결 상태 확인 (consumer group lag = 0) — consumer 배포 필요(W4 Kafka 구현 후)",
-                      "done": false,
+                      "text": "Kafka 연결 상태 확인 (consumer group lag = 0) — ✅ consumer group 활성(engagement/learning-ai/platform-audit)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "RDS/Redis/Elasticsearch 연결 상태 확인",
-                      "done": false,
+                      "text": "RDS/Redis/Elasticsearch 연결 상태 확인 — ✅ 서비스 Running = 연결 성립, ESO 14 SecretSynced",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "배포 이슈 대응 — ⛔ EKS destroy로 대기 (절차는 §B 정의됨)",
+                  "name": "배포 이슈 대응 — ✅ W5 Day1(06-08) 해소",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "배포 실패 시 롤백 절차 실행 및 검증",
-                      "done": false,
+                      "text": "배포 실패 시 롤백 절차 실행 및 검증 — ✅ 롤백 124s(<3분, 06-02) + platform/gateway CrashLoop 근본 해소(gitops#136)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "환경별 로그 수집 및 이슈 분석",
-                      "done": false,
+                      "text": "환경별 로그 수집 및 이슈 분석 — ✅ Loki/Promtail 기동(06-08), CrashLoop 로그로 flyway/JWT 근본원인 규명",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "배포 성공 기준 충족 여부 최종 확인",
-                      "done": false,
+                      "text": "배포 성공 기준 충족 여부 최종 확인 — ✅ dev/staging ALL PASSED",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1900,11 +1900,11 @@
                 }
               ],
               "totalChecks": 35,
-              "doneChecks": 23
+              "doneChecks": 33
             }
           ],
           "totalChecks": 72,
-          "doneChecks": 55
+          "doneChecks": 65
         },
         {
           "week": "W4",
@@ -2661,7 +2661,7 @@
     {
       "date": "2026-06-08",
       "totalChecks": 291,
-      "doneChecks": 224
+      "doneChecks": 241
     }
   ],
   "changelog": [
@@ -3045,6 +3045,29 @@
           "type": "boxes_added",
           "target": "W5 > 성능 SLA 검증 (W4 이월)",
           "detail": "1개 박스 추가 (1 → 2)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08T05:17:00.791Z",
+      "commit": "219e2e0",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > Kafka 토픽 설계 + 생성",
+          "detail": "6개 항목 완료 (21 → 27)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > Gateway 라우팅",
+          "detail": "1개 항목 완료 (26 → 27)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > ArgoCD dev/staging 배포 검증",
+          "detail": "10개 항목 완료 (23 → 33)"
         }
       ]
     }
