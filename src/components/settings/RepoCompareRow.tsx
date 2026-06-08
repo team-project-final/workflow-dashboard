@@ -5,6 +5,7 @@ export interface LiveMeta {
   doneChecks: number
   fetching: boolean
   error: string | null
+  branch?: string
 }
 
 interface Props {
@@ -52,7 +53,10 @@ export default function RepoCompareRow({ repoId, cache, live, selected, onToggle
         ) : live.error ? (
           <span className="text-red-500" title={live.error}>오류</span>
         ) : (
-          <span className="text-stone-700">{live.doneChecks}/{live.totalChecks}</span>
+          <span className="text-stone-700">
+            {live.doneChecks}/{live.totalChecks}
+            {live.branch && <span className="ml-1.5 text-xs text-stone-400">@{live.branch}</span>}
+          </span>
         )}
       </td>
       <td className="px-3 py-2 text-sm text-center">
