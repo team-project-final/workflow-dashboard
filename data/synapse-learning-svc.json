@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-06-07T11:40:22.740Z",
+  "updatedAt": "2026-06-08T00:16:12.734Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -2212,27 +2212,27 @@
           "steps": [
             {
               "name": "AI 카드 자동 생성 E2E",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "시나리오 정의",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "note.created 수신 → LLM 호출 → 카드 생성 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "생성 카드 → learning-card API 저장 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "LLM 실패/429/DLQ 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2240,53 +2240,53 @@
                 {
                   "name": "실행 및 수정",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "AI 카드 자동 생성 E2E 테스트 실행",
-                      "done": false,
+                      "text": "AI 카드 자동 생성 E2E 테스트 실행 (3/3 PASS — 2026-06-08)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "재시도 및 DLQ 동작 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "P0 버그 수정 및 회귀 테스트",
-                      "done": false,
+                      "text": "P0 버그 수정 및 회귀 테스트 (P0 버그 0건)",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 6,
-              "doneChecks": 0
+              "doneChecks": 6
             },
             {
               "name": "시맨틱 검색 정확도",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "검증",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "테스트 쿼리와 기대 결과 세트 확정",
-                      "done": false,
+                      "text": "테스트 쿼리와 기대 결과 세트 확정 (25개 합성 쿼리)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Top-5 관련도 80% 이상 기준으로 검증",
-                      "done": false,
+                      "text": "Top-5 관련도 80% 이상 기준으로 검증 (MRR ≥ 0.7, Precision@10 ≥ 0.6 충족 — 2026-06-08)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "실패 쿼리 원인 분류",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2294,53 +2294,53 @@
                 {
                   "name": "발표 준비",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "AI 카드 생성 데모 노트 준비",
-                      "done": false,
+                      "text": "AI 카드 생성 데모 노트 준비 (`learning-ai/demo/demo_note.md` — 운영체제 기초)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "시맨틱 검색 데모 쿼리 준비",
-                      "done": false,
+                      "text": "시맨틱 검색 데모 쿼리 준비 (`learning-ai/demo/demo_queries.json` — 6개 쿼리)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "RAG Q&A는 시간 허용 항목으로 상태 명시",
-                      "done": false,
+                      "text": "RAG Q&A는 시간 허용 항목으로 상태 명시 (`learning-ai/demo/README.md` — P2 표기)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "AI 카드 자동 생성 E2E가 통과한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "시맨틱 검색 정확도 기준을 만족한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "learning-ai P0 버그가 0건이다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "발표용 AI 데모가 안정적으로 동작한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 10,
-              "doneChecks": 0
+              "doneChecks": 10
             }
           ],
           "totalChecks": 16,
-          "doneChecks": 0
+          "doneChecks": 16
         }
       ]
     },
@@ -5343,12 +5343,12 @@
         },
         {
           "id": "FR-LA-301",
-          "title": "AI 카드 자동 생성 E2E가 통과한다",
+          "title": "✅ AI 카드 자동 생성 E2E가 통과한다",
           "status": "not_started"
         },
         {
           "id": "FR-LA-302",
-          "title": "시맨틱 검색 정확도가 검증된다",
+          "title": "✅ 시맨틱 검색 정확도가 검증된다",
           "status": "not_started"
         }
       ]
@@ -5469,6 +5469,11 @@
       "date": "2026-06-07",
       "totalChecks": 691,
       "doneChecks": 644
+    },
+    {
+      "date": "2026-06-08",
+      "totalChecks": 691,
+      "doneChecks": 660
     }
   ],
   "changelog": [
@@ -5869,6 +5874,24 @@
           "type": "check_undone",
           "target": "W4 > 버그 수정 + Kafka 이벤트 안정화",
           "detail": "13개 항목 해제 (13 → 0)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08T00:16:12.734Z",
+      "commit": "8e2ff37",
+      "author": "KimNaKim",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > AI 카드 자동 생성 E2E",
+          "detail": "6개 항목 완료 (0 → 6)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > 시맨틱 검색 정확도",
+          "detail": "10개 항목 완료 (0 → 10)"
         }
       ]
     }
