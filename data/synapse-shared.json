@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-08T02:13:55.560Z",
+  "updatedAt": "2026-06-08T02:55:17.106Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -2292,8 +2292,8 @@
               "phases": [
                 {
                   "name": "E2E 테스트 실행",
-                  "total": 3,
-                  "done": 1,
+                  "total": 4,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -2302,12 +2302,17 @@
                       "partial": false
                     },
                     {
-                      "text": "**서비스 단위 E2E** — 4서비스 origin/main 빌드 기동 후 consumer 비즈니스 로직 검증(핵심 10 시나리오, FR-ALL-301/NFR-303)",
+                      "text": "**서비스 단위 E2E 환경** — `docker-compose.e2e.yml`(origin/main worktree 실빌드, 13/13 healthy, 06-08). 가입 스모크 통과 ([E2E_SMOKE_W5_DAY1](../../reports/E2E_SMOKE_W5_DAY1.md))",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "**핵심 10 시나리오 풀 실행** (FR-ALL-301/NFR-303) — Day 2. **선결: owner P0 2건 수정**(AVRO_CONTRACT_FIX_W5)",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "전체 체인 < 10초(FR-TL-401) · audit 적재 < 30초(NFR-403)",
+                      "text": "전체 체인 < 10초(FR-TL-401) · audit 적재 < 30초(NFR-403) — Day 2",
                       "done": false,
                       "partial": false
                     }
@@ -2315,12 +2320,17 @@
                 },
                 {
                   "name": "버그 트리아지",
-                  "total": 2,
-                  "done": 0,
+                  "total": 3,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "P0/P1/P2 분류 + P0 즉시 수정 대상 확정",
+                      "text": "**P0 선발견(스모크)**: F1 engagement UserRegistered reader / F2·F3 learning-ai NotificationSend writer → 정본 정렬(shared#26) + owner 지시서. P2: F4 learning-ai AI키 게이트",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "Day 2 풀 시나리오 후 잔여 버그 P0/P1/P2 분류",
                       "done": false,
                       "partial": false
                     },
@@ -2332,8 +2342,8 @@
                   ]
                 }
               ],
-              "totalChecks": 5,
-              "doneChecks": 1
+              "totalChecks": 7,
+              "doneChecks": 3
             },
             {
               "name": "성능 SLA 검증 (W4 이월)",
@@ -2370,38 +2380,38 @@
             },
             {
               "name": "Staging 배포 + 모니터링 대시보드 (W4 이월)",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "실행",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "EKS 재apply → ArgoCD 부트스트랩 → dev 5/5 재확인",
-                      "done": false,
+                      "text": "EKS 재apply → ArgoCD 부트스트랩 → dev 5/5 재확인 — **06-08 완료 (dev 16/0/0)**",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "하드닝 머지 staging 배포 → **platform CrashLoop(#37/#48) 해소 → staging 5/5**",
-                      "done": false,
+                      "text": "**platform/gateway CrashLoop 해소 → staging 5/5** — **06-08 완료 (staging 20/0/0)**. 근본 원인=DB 공유 flyway 충돌(#37 실체) + gateway JWT 미매핑 → [gitops#136](https://github.com/team-project-final/synapse-gitops/pull/136)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Observability(kube-prometheus-stack) + ServiceMonitor 5 + Grafana(FR-TL-303) + 알림 규칙",
-                      "done": false,
+                      "text": "Observability(kube-prometheus-stack) + Grafana + 알림 규칙 — **bring-up에 포함, 06-08 기동** (ServiceMonitor/대시보드 검증·SLA 알림 튜닝은 Day 4)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "staging 24h 안정(NFR-305)",
+                      "text": "staging 24h 안정(NFR-305) — Day 4 시작",
                       "done": false,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "— [ ] Staging 배포 결과 + 운영 가이드 문서화",
+                  "name": "— [ ] Staging 배포 결과 + 운영 가이드 문서화 — Day 4",
                   "total": 0,
                   "done": 0,
                   "partial": 0,
@@ -2409,7 +2419,7 @@
                 }
               ],
               "totalChecks": 4,
-              "doneChecks": 0
+              "doneChecks": 3
             },
             {
               "name": "최종 발표 자료 + 시연 리허설",
@@ -2419,8 +2429,8 @@
               "doneChecks": 0
             }
           ],
-          "totalChecks": 11,
-          "doneChecks": 1
+          "totalChecks": 13,
+          "doneChecks": 6
         }
       ]
     }
@@ -2650,8 +2660,8 @@
     },
     {
       "date": "2026-06-08",
-      "totalChecks": 289,
-      "doneChecks": 219
+      "totalChecks": 291,
+      "doneChecks": 224
     }
   ],
   "changelog": [
@@ -2979,6 +2989,29 @@
           "type": "boxes_added",
           "target": "W5 > 성능 SLA 검증 (W4 이월)",
           "detail": "1개 박스 추가 (1 → 2)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08T02:55:17.106Z",
+      "commit": "1f93427",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 전체 E2E 서비스 단위 실행 (W4 이월)",
+          "detail": "2개 항목 완료 (1 → 3)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 전체 E2E 서비스 단위 실행 (W4 이월)",
+          "detail": "2개 박스 추가 (5 → 7)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > Staging 배포 + 모니터링 대시보드 (W4 이월)",
+          "detail": "3개 항목 완료 (0 → 3)"
         }
       ]
     }
