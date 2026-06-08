@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-08T06:11:52.371Z",
+  "updatedAt": "2026-06-08T06:17:44.457Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1368,7 +1368,7 @@
           "steps": [
             {
               "name": "전체 통합 테스트 조율",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1424,13 +1424,13 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 3,
-                  "partial": 1,
+                  "done": 4,
+                  "partial": 0,
                   "items": [
                     {
-                      "text": "Kafka 토픽 ACL/권한 확인 — **인증 모델(MSK IAM, ACL 미사용) + 서비스별 produce/consume 권한 매트릭스 확정** → `docs/guides/KAFKA_AUTH_MATRIX.md`. IAM Policy/IRSA 실적용·검증만 EKS window",
-                      "done": false,
-                      "partial": true
+                      "text": "Kafka 토픽 ACL/권한 확인 — ✅ **인증 모델 TLS-only 확정**(B 채택, SASL/IAM·ACL 미사용 → VPC 네트워크 경계로 인가) + 권한 매트릭스 → [KAFKA_AUTH_MATRIX](../../guides/KAFKA_AUTH_MATRIX.md). TLS 전송 06-08 실증([리뷰 §4](../../reports/SHARED_W1W4_INCOMPLETE_REVIEW.md))",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "이벤트 페이로드 민감정보 포함 여부 점검 → UserRegistered.email만 PII (EVENT_FLOW_MATRIX.md §4)",
@@ -1452,8 +1452,8 @@
                 {
                   "name": "E2E 테스트 시나리오 설계",
                   "total": 5,
-                  "done": 3,
-                  "partial": 2,
+                  "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "gamification 이벤트 체인 시나리오 (카드 복습 → XP 적립 → 레벨업 → 배지 수여 → 알림) → E2E_SCENARIOS_W3.md S2",
@@ -1461,9 +1461,9 @@
                       "partial": false
                     },
                     {
-                      "text": "community 이벤트 체인 시나리오 (신고 접수 → 모더레이션 → 알림) — 설계 선반영 완료(E2E_SCENARIOS_W3.md S5); 구현(engagement 알림 발행)·실행 W4",
-                      "done": false,
-                      "partial": true
+                      "text": "community 이벤트 체인 시나리오 (신고 접수 → 모더레이션 → 알림) — ✅ 설계(E2E_SCENARIOS_W3.md S5) + 구현 머지(engagement #23 S5 모더레이션→알림). E2E 실행은 W5 Day2",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "card.review.due 이벤트 체인 시나리오 (스케줄러 → Kafka → 알림 발송) → E2E_SCENARIOS_W3.md S3 (샘플 추가 완료)",
@@ -1471,9 +1471,9 @@
                       "partial": false
                     },
                     {
-                      "text": "audit 이벤트 소비 시나리오 (각 서비스 이벤트 → audit_logs 적재) — 설계 선반영 완료(E2E_SCENARIOS_W3.md S6); 현재 user-registered 단일 토픽, 추가 토픽 W4",
-                      "done": false,
-                      "partial": true
+                      "text": "audit 이벤트 소비 시나리오 (각 서비스 이벤트 → audit_logs 적재) — ✅ 설계(E2E_SCENARIOS_W3.md S6) + 구현 머지(platform #52 audit 다중토픽 S6). E2E 실행은 W5 Day2",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신 — 팀리드 설계·검증설계분 2일(Day 3~4) 완료; 배포 실행(§1.7~1.9)은 EKS 재기동 윈도 이월(별도)",
@@ -1536,8 +1536,8 @@
                 {
                   "name": "E2E 테스트 구현 및 조율",
                   "total": 4,
-                  "done": 3,
-                  "partial": 1,
+                  "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Kafka 이벤트 체인 E2E 테스트 작성 (~~Testcontainers~~ → 로컬 shell harness `scripts/kafka-e2e-test.sh`로 대체, EKS destroy로 로컬 우선)",
@@ -1555,9 +1555,9 @@
                       "partial": false
                     },
                     {
-                      "text": "각 서비스 담당자 테스트 결과 취합 — **06-01 코드 실측(전체 레포 pull)**: platform 🟢(Avro+Outbox+notification/audit Consumer)·learning 🟢(Avro 소비+알림) dev 완성 / engagement 🟡(06-02: 스키마 비호환 해소·Producer Avro ✅ #13 CLOSED / Consumer 0건 잔여 → #15) / knowledge 🟡(06-02: NoteCreated/Updated Producer ✅ #32, 스키마 바이트동일 / dev→main 잔여 #26). 상세 [W4_KAFKA_WORKORDER §0.5](../../work-orders/W4_KAFKA_WORKORDER.md). 완전 취합은 main 머지 후",
-                      "done": false,
-                      "partial": true
+                      "text": "각 서비스 담당자 테스트 결과 취합 — ✅ **4서비스 Kafka Producer/Consumer 전원 origin/main 머지 완료**(06-05 실측: knowledge #40·platform #46·engagement #23·learning). 상세 [W4_KAFKA_WORKORDER §0.5](../../work-orders/W4_KAFKA_WORKORDER.md)",
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1592,8 +1592,8 @@
                 {
                   "name": "코드 리뷰 조율",
                   "total": 3,
-                  "done": 2,
-                  "partial": 1,
+                  "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "각 서비스 PR 리뷰 현황 취합 — cross-repo 실측(05-29): learning main 머지 / platform·engagement dev / knowledge 미구현",
@@ -1606,9 +1606,9 @@
                       "partial": false
                     },
                     {
-                      "text": "PR 승인 및 main 브랜치 머지 조율 — 계약 표준 이슈(#43/#13/#26 OPEN·#32 CLOSED). **06-01 재측정: 작업이 전부 dev 고립, 열린 PR 0건** → platform(#44)·learning(#35) **dev→main PR 유도**가 즉시 조율 대상",
-                      "done": false,
-                      "partial": true
+                      "text": "PR 승인 및 main 브랜치 머지 조율 — ✅ 4서비스 Kafka 전원 dev→main 머지 완료(#40/#46/#23/learning). W4 하드닝 잔여 머지는 별도 추적(SHARED_W1W4_INCOMPLETE_REVIEW)",
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1637,11 +1637,11 @@
                 }
               ],
               "totalChecks": 37,
-              "doneChecks": 32
+              "doneChecks": 37
             },
             {
               "name": "ArgoCD dev/staging 배포 검증",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1697,13 +1697,13 @@
                 {
                   "name": "Security 1차 검토 → DEPLOY_REPORT §C",
                   "total": 4,
-                  "done": 3,
-                  "partial": 1,
+                  "done": 4,
+                  "partial": 0,
                   "items": [
                     {
-                      "text": "ArgoCD RBAC 설정 확인 (dev: 자동, staging: 승인 필요) — 정책 정의됨, 실제 RBAC 구성·확인은 재기동 후",
-                      "done": false,
-                      "partial": true
+                      "text": "ArgoCD RBAC 설정 확인 (dev: 자동, staging: 승인 필요) — ✅ W5 Day1 ArgoCD 부트스트랩(projects.yaml), 14앱 Synced. dev autoSync 동작 확인",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "배포 시 시크릿 주입 방식 확인 — ExternalSecret + ClusterSecretStore(ESO IRSA), dev 5/5 SecretSynced",
@@ -1753,8 +1753,8 @@
                 {
                   "name": "Security 2차 검토 → DEPLOY_REPORT §C",
                   "total": 4,
-                  "done": 3,
-                  "partial": 1,
+                  "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "환경별 환경변수/시크릿 분리 확인",
@@ -1762,9 +1762,9 @@
                       "partial": false
                     },
                     {
-                      "text": "staging 배포 승인 권한자 지정 — @team-lead 지정, ArgoCD RBAC 명문화는 재기동 후(W4)",
-                      "done": false,
-                      "partial": true
+                      "text": "staging 배포 승인 권한자 지정 — ✅ @team-lead 지정, staging 배포·검증 W5 Day1 완료(20/0/0)",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "배포 이력 추적 (audit trail) 확인 — ArgoCD app history + gitops 커밋 이력",
@@ -1900,11 +1900,11 @@
                 }
               ],
               "totalChecks": 35,
-              "doneChecks": 33
+              "doneChecks": 35
             }
           ],
           "totalChecks": 72,
-          "doneChecks": 65
+          "doneChecks": 72
         },
         {
           "week": "W4",
@@ -2661,7 +2661,7 @@
     {
       "date": "2026-06-08",
       "totalChecks": 291,
-      "doneChecks": 241
+      "doneChecks": 248
     }
   ],
   "changelog": [
@@ -3068,6 +3068,24 @@
           "type": "check_done",
           "target": "W3 > ArgoCD dev/staging 배포 검증",
           "detail": "10개 항목 완료 (23 → 33)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08T06:17:44.457Z",
+      "commit": "01fbf40",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 전체 통합 테스트 조율",
+          "detail": "5개 항목 완료 (32 → 37)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > ArgoCD dev/staging 배포 검증",
+          "detail": "2개 항목 완료 (33 → 35)"
         }
       ]
     }
