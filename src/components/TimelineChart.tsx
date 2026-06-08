@@ -13,9 +13,12 @@ const TRACK_COLORS: Record<string, string> = {
   engagement: '#0D9488',
   'knowledge-1': '#78716C',
   'knowledge-2': '#A8A29E',
+  knowledge: '#78716C',
   'learning-card': '#0EA5E9',
   'learning-ai': '#8B5CF6',
+  learning: '#0EA5E9',
   frontend: '#EC4899',
+  'team-lead': '#16A34A',
   'synapse-gitops': '#16A34A',
   'synapse-shared': '#22D3EE',
 }
@@ -69,17 +72,23 @@ export default function TimelineChart({ data }: Props) {
   const rawDates = [...new Set(data.flatMap(d => d.history.map(h => h.date)))]
   const allDates = buildDateRange(rawDates)
 
-  const datasets = data.flatMap(d =>
-    d.tracks.map(t => ({
-      label: t.name,
+  // history는 repo(가상트랙) 단위로만 적재되므로, 라인도 데이터 소스당 1개로 그린다.
+  // 멀티 트랙 repo(knowledge-1/2, learning-card/ai, gitops+shared)의 트랙별 라인은
+  // 모두 같은 합산 history가 되어 카드/테이블 값과 어긋났다(예: shared 83% → 라인 79%).
+  const datasets = data.map(d => {
+    const label = d.tracks.length === 1
+      ? d.tracks[0].name
+      : d.repo.replace(/^synapse-/, '').replace(/-svc$/, '')
+    return {
+      label,
       data: carryForward(d.history, allDates),
-      borderColor: getTrackColor(t.name),
+      borderColor: getTrackColor(label),
       backgroundColor: 'transparent',
       tension: 0.3,
       pointRadius: 2,
       borderWidth: 2,
-    }))
-  )
+    }
+  })
 
   return (
     <div className="bg-white rounded-xl p-4 shadow-sm">
