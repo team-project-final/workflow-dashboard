@@ -1,10 +1,10 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-08T03:25:28.800Z",
+  "updatedAt": "2026-06-08T03:27:26.693Z",
   "tracks": [
     {
-      "name": "gitops",
-      "owner": "VelkaressiaBlutkrone",
+      "name": "team-lead",
+      "owner": "김민구",
       "weeks": [
         {
           "week": "W1",
@@ -18,22 +18,27 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "EKS 클러스터 버전/노드 그룹 확인 (1.28+ — 1.29 선택)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "kubeconfig 접근 권한 점검 (kubectl get nodes 성공)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD HA 토폴로지 결정 (server=3, controller=1, repoServer=2, applicationSet=2, redis-ha=true → D-003)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "외부 노출 방식 결정 (NLB TCP passthrough + self-signed TLS, 옵션 2 → D-001)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -41,18 +46,22 @@
                   "name": "매니페스트 작성",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "argocd 네임스페이스 매니페스트 (Helm `create_namespace=true`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD Helm values 커스터마이즈 (`infra/aws/dev/argocd.tf` local.argocd_values)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "argocd-server Service 외부 노출 (LoadBalancer + AWS NLB annotation)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -60,18 +69,22 @@
                   "name": "적용 + 검증",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "매니페스트 dev 클러스터 적용 (terraform apply, Task 14)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "argocd-server Pod Ready 확인 (bootstrap-argocd.sh 3/8)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "argocd CLI 로그인 성공 (bootstrap-argocd.sh 5/8)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -79,22 +92,27 @@
                   "name": "보안 + 문서화",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "admin 비밀번호 회전 + AWS Secrets Manager에 저장 (bootstrap-argocd.sh 5/8, secret: synapse/argocd/admin)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RBAC 정책 정의 (admin/readonly — `argocd/bootstrap/rbac-cm.yaml`. dev 등급은 W2 SSO 후 추가)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "README에 접속 방법 + 로그인 절차 기록 (`README.md`, `argocd/README.md`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY에 의사결정 기록 (D-001 ~ D-005)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -110,22 +128,27 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "app-of-apps vs ApplicationSet 패턴 결정 (ApplicationSet 채택)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "generator 종류 결정 (matrix: list × list)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "5개 앱의 디렉토리 구조 표준화 합의 (apps/<app>/{base,overlays/{dev,staging,prod}})",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "sync 정책 정의 (dev=auto-sync prune selfHeal, staging/prod은 W3/W4에서 분기 재도입)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -133,18 +156,22 @@
                   "name": "매니페스트 작성",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "argocd/projects.yaml (AppProject 정의, synapse-* namespace 한정)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "argocd/applicationset.yaml (matrix: 5 svc × [dev] = 5 Application, C3)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 app의 source/destination/syncPolicy 템플릿 (`spec.template`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -152,22 +179,27 @@
                   "name": "적용 + 검증",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ApplicationSet 매니페스트 적용 (bootstrap-argocd.sh 8/8)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ArgoCD UI에 5개 Application 표시 확인 (bootstrap-argocd.sh APP_COUNT 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 Application의 source가 올바른 경로 가리키는지 확인 (`argocd app get` 출력)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "git push → ArgoCD 자동 인식 (polling interval 3분, webhook은 W2 이월)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -175,18 +207,22 @@
                   "name": "문서화",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "argocd/README.md에 ApplicationSet 사용법",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "새 앱 추가 절차 문서화 (argocd/README.md \"새 앱 추가 절차\")",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "generator 변경 시 영향 범위 명시 (argocd/README.md \"환경 추가 (W3, W4)\")",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -202,18 +238,22 @@
                   "name": "사전 분석",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "현재 CI(`validate-manifests.yml`) 동작 범위 점검 (kustomize build + yamllint relaxed 확인 완료)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "추가 검증 도구 후보 비교 (kubeconform vs kubeval — kubeconform 채택, D-005)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "branch protection 룰 적용 범위 결정 (필수 status check + REVIEWS 토글, scripts/setup-branch-protection.sh)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -221,14 +261,17 @@
                   "name": "워크플로우 보강",
                   "total": 2,
                   "done": 2,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "yamllint 룰 강화 (`.yamllint` — line-length 160, indentation 2, truthy disable)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "kubeconform 단계 추가 (CRD-catalog schema 포함, `-strict -ignore-missing-schemas`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -236,22 +279,27 @@
                   "name": "적용 + 검증",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "의도적 오류 PR로 검증 (잘못된 apiVersion → CI 실패 확인 — Task 14 step 8 실행)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "정상 PR로 검증 (CI 통과 — feature/w1-argocd-bootstrap-finalize PR로 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "main 브랜치 보호 규칙에 필수 체크 추가 (Public 전환 + GitHub Ruleset `main-protection` id 16480319, scripts/setup-branch-protection.sh로 재현 가능 — D-006)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "CI 평균 실행 시간 측정 (`echo \"Total: ${SECONDS}s\"` 추가, 첫 PR에서 측정)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -259,18 +307,22 @@
                   "name": "문서화",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "README에 CI 검증 단계 명시 (`README.md` \"CI 검증\" 섹션)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "실패 시 디버깅 가이드 (CONTRIBUTING.md \"문제 해결\")",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "CONTRIBUTING.md + `.github/PULL_REQUEST_TEMPLATE.md` 작성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -294,18 +346,22 @@
                   "name": "사전 분석",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "5개 앱별 리소스 요구사항 수집 (메모리/CPU/replica)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "환경 변수 / ConfigMap 목록 정리",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Service 포트 / Health endpoint 표준 합의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -313,30 +369,37 @@
                   "name": "base 매니페스트 작성",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "apps/platform-svc/base/{deployment,service,configmap}.yaml",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "apps/engagement-svc/base/* 동일 구조",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "apps/knowledge-svc/base/* 동일 구조",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "apps/learning-card/base/* 동일 구조",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "apps/learning-ai/base/* 동일 구조",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "kustomization.yaml로 base 리소스 묶기",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -344,18 +407,22 @@
                   "name": "dev overlay 작성",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "apps/<app>/overlays/dev/kustomization.yaml × 5",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev용 replicaCount=1, resources.requests 최소화",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev 전용 ConfigMap patch (LOG_LEVEL=DEBUG 등)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -363,38 +430,47 @@
                   "name": "적용 + 검증",
                   "total": 8,
                   "done": 8,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "git push → ArgoCD 5개 앱 모두 Synced + Healthy 확인 (kind)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "EKS 배포: 3/5 Pod 정상 (engagement-svc, knowledge-svc, learning-card)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "EKS 배포: platform-svc 정상 기동 (9차 세션: PR #40 환경변수 14개 + Flyway V28 + AES 키 수정)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "EKS 배포: learning-ai 정상 기동 (9차 세션: 포트 8090 통일 PR #38 자동 해결)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "/actuator/health 200 응답 (5/5 — 9차 세션 5/5 Healthy 달성)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "KAFKA_BROKERS endpoint 갱신 (PR #34, terraform re-apply 후 MSK 주소 변경)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "liveness probe initialDelaySeconds 30s → 90s (PR #35, D-028)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "EKS cluster SG를 RDS/Redis/MSK/OpenSearch SG에 추가 (D-026)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -410,22 +486,27 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Secret 저장소 결정 (AWS Secrets Manager vs Parameter Store vs Vault) → AWS SM 채택",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ESO vs SOPS vs Sealed Secrets 비교 후 선택 → ESO 채택",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "IRSA 권한 설계 (서비스 계정 → IAM Role)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "시크릿 명명 규칙 (예: synapse/<env>/<app>/<key>)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -433,22 +514,27 @@
                   "name": "ESO 설치 + 구성",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "external-secrets helm chart 또는 매니페스트 적용 (kind: fake provider 검증)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "IRSA 어노테이션 + IAM Policy 생성 (Role: `synapse-dev-eso-role`, 8차 세션 trust policy 갱신)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ClusterSecretStore 정의 (AWS provider) — `infra/external-secrets/cluster-secret-store.yaml`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "테스트 ExternalSecret로 sync 동작 확인 (kind: fake provider)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -456,30 +542,37 @@
                   "name": "5개 앱 적용",
                   "total": 6,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "platform-svc ExternalSecret 정의 (DB 비밀번호, JWT 키, OAuth 시크릿)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "engagement-svc ExternalSecret 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "knowledge-svc ExternalSecret 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "learning-card ExternalSecret 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "learning-ai ExternalSecret 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "기존 평문 Secret 모두 제거",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -487,18 +580,22 @@
                   "name": "보안 검증 + 문서화",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "gitleaks 또는 trufflehog로 git history 스캔 → 0건 (gitleaks 8.30.1 / 114 commits / 0 leaks, 2026-05-26)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "README에 새 시크릿 추가 절차 문서화",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY에 결정 배경 + 대안 비교 기록",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -514,22 +611,27 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ArgoCD Image Updater vs git PR 기반 비교 → Image Updater 채택",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 svc 레포의 이미지 태그 규칙 통일 합의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "semver vs sha 태그 정책 결정 → semver (`^[0-9]+\\.[0-9]+\\.[0-9]+$`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "write-back 방식 결정 (git commit vs annotation) → git commit (kustomization)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -537,22 +639,27 @@
                   "name": "구현",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ArgoCD Image Updater 설치 (kind 검증 완료)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "각 Application에 image-updater annotation 추가 (ApplicationSet)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ImageUpdater CR 작성 (`argocd/image-updater.yaml`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ECR 이미지 경로로 교체 완료",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -560,10 +667,12 @@
                   "name": "적용 + 검증",
                   "total": 1,
                   "done": 1,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "image 태그 변경 이력이 git log에 남는지 확인 (write-back-method: git 설정)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -571,22 +680,27 @@
                   "name": "문서화 + 인수인계",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "이미지 태그 정책 문서화",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "자동 sync 비활성화 절차 (긴급 상황 대비) — `docs/runbooks/image-updater-ecr-setup.md` \"긴급 정지 / 자동 sync 비활성화 절차\" 섹션",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "svc 팀에 새 이미지 푸시 → 배포 흐름 공유 — `docs/synapse-developer-guide.md` §5 \"GitOps 배포 흐름\" (PR #28, 808줄 통합 가이드)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 갱신",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -604,24 +718,33 @@
           "steps": [
             {
               "name": "staging 환경 overlay",
-              "status": "Done",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
-                  "total": 3,
+                  "total": 4,
                   "done": 3,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "staging 네임스페이스 분리 (`synapse-staging`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev → staging 승격 트리거 결정 (auto-sync — main 머지 시)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging 리소스 산정 (replicas=2)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "staging 전용 도메인 — 결정됨(`staging-<app>.<도메인>`), ACM 인증서 확보 후 Ingress 적용",
+                      "done": false,
+                      "partial": true
                     }
                   ]
                 },
@@ -629,22 +752,27 @@
                   "name": "staging overlay 작성",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "apps/<app>/overlays/staging/kustomization.yaml × 5",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging replicaCount=2, resources 적정값",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging ExternalSecret 경로 적용",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging Ingress 매니페스트 (`infra/ingress/staging-ingress.yaml`, TLS는 ACM 후)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -652,42 +780,55 @@
                   "name": "ApplicationSet 확장",
                   "total": 3,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "generator 매트릭스(apps × envs) 확장",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev/staging 각 5개 앱 Application 자동 생성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "sync policy: dev auto, **staging auto** (prod는 W4 manual)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "적용 + 검증 + 문서화",
-                  "total": 3,
+                  "total": 4,
                   "done": 3,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "git push → 10개 Application (5앱 × 2환경) 자동 생성",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev → staging 승격 (auto-sync 전환 — main 머지 시 자동)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "staging 헬스체크 — A2 실 EKS에서 **4/5 Healthy** (platform-svc Degraded = cross-repo 앱 레포). 도메인 헬스체크는 port-forward로 대체(ACM/도메인 확보 후 Ingress)",
+                      "done": false,
+                      "partial": true
                     },
                     {
                       "text": "승격 절차 README 작성 (`dev-to-staging-promotion.md`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 13,
+              "totalChecks": 15,
               "doneChecks": 13
             },
             {
@@ -698,45 +839,60 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "kube-prometheus-stack 사용 결정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "로그 백엔드 = Loki 결정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "보존 기간 (Prometheus 15일, Loki 30일)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "알람 채널 = Slack 결정",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
                 {
                   "name": "메트릭 스택 설치",
-                  "total": 4,
+                  "total": 5,
                   "done": 4,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "kube-prometheus-stack helm 적용 (A2 실 EKS Running)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Grafana admin 비밀번호 → ExternalSecret (ESO, A2 동기화 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "Grafana 외부 노출 — port-forward로 검증 (TLS/SSO는 ACM/도메인 후)",
+                      "done": false,
+                      "partial": true
                     },
                     {
                       "text": "5개 앱 ServiceMonitor 정의",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "/actuator/prometheus 스크레이프 확인 (A2 타깃 대부분 UP)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -744,22 +900,27 @@
                   "name": "로그 스택 + 대시보드",
                   "total": 4,
                   "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Loki + Promtail 설치 (A2 실 EKS Running)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "로그 수집 (Promtail DaemonSet, EBS CSI 영속화)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Grafana 대시보드 (Synapse 개요)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "앱별 상세 대시보드 — 선택, 미작성(W5 백로그)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -767,43 +928,51 @@
                   "name": "알람 + 문서화",
                   "total": 7,
                   "done": 6,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "PrometheusRule: Pod 다운 5분 → critical",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PrometheusRule: 메모리 90% 10분 → warning",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "PrometheusRule: 5xx 5% 5분 → critical",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Alertmanager → Slack 라우팅 (실 webhook, A2 라우팅 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "알람 발화 → slack receiver 라우팅 확인 (채널 수신은 눈 확인)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "대시보드/알람 README (`infra/monitoring/README.md`)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ESO sync 실패 PrometheusRule 추가 (`external_secrets_sync_calls_error{}` rate) — W2 Step 5.4에서 이월 (D-041)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 19,
+              "totalChecks": 20,
               "doneChecks": 17
             }
           ],
-          "totalChecks": 32,
+          "totalChecks": 35,
           "doneChecks": 30
         },
         {
@@ -818,38 +987,47 @@
                   "name": "사전 분석",
                   "total": 8,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "prod 클러스터 / 네임스페이스 분리 정책 — 논리 분리(dev 클러스터 내 `synapse-prod` ns) 채택 (D-042, spec §2)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "승인 게이트 방식 결정 — ArgoCD Manual Sync (D-042)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "prod 접근 권한 분리 — ArgoCD RBAC `role:prod-deployer` + 로컬 계정 `gitops-admin` (D-042)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "변경 관리 절차 — 변경 게이트=기존 main PR 보호, prod 이미지=명시적 PR 승격 (D-042)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "ACM 인증서 ARN 매핑 (HTTPS 종료) — W1 Step 1.2에서 이월 (D-041). 실 도메인 부재로 미충족, 라이브 기동 후 (FR-404)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "DNS 레코드 정의 (argocd.<도메인> + prod 앱 도메인) — W1 Step 1.2에서 이월 (D-041). 실 도메인 부재",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "외부 도메인으로 ArgoCD UI 접속 + TLS 인증서 유효 — W1 Step 1.3에서 이월 (D-041). 실 도메인 부재",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping) — W1 Step 1.3에서 이월 (D-041). 실 도메인 부재",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -857,26 +1035,32 @@
                   "name": "prod overlay + 정책 작성",
                   "total": 5,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "apps/<app>/overlays/prod/kustomization.yaml × 5 (PR #74, 렌더 5/5 OK)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "prod resources: replicas 3+, requests 운영급 (replicas=3)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "prod ExternalSecret (synapse/prod/<app>/*)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "AppProject `synapse-prod`에 Manual Sync 정책 (`applicationset-prod.yaml` automated 없음)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "prod sync 권한 그룹 정의 (예: gitops-admin)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -884,38 +1068,47 @@
                   "name": "적용 + 검증",
                   "total": 8,
                   "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "prod 매니페스트 적용 (단, Application은 syncPolicy 없음) — 라이브 apply, 5개 OutOfSync 확인 (FR-402)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev/staging → prod 승격 PR 1회 시뮬레이션 — prod 이미지=명시적 PR 승격 경로 결정 (D-042)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 없는 계정으로 prod sync 시도 → 거부 확인 — `argocd admin settings rbac can` 평가 No (FR-403)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "권한 있는 계정으로 prod sync → 성공 확인 — gitops-admin can sync Yes, 2026-06-01 라이브 5/5 기동 (FR-403/404)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "prod 도메인으로 5개 앱 응답 확인 — 2026-06-01 라이브 재현: synapse-prod 15/15 Healthy, readiness probe(=/actuator/health 200)로 충족(실 도메인 미적용은 W1 이월). 인프라 증설(t3.large×4/db.t3.small) 적용 (FR-404, D-043)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — W2 Step 4.1에서 이월 (D-041). 실 도메인 부재",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "dev Ingress 또는 Service LoadBalancer 정의 + 적용 — W2 Step 4.3에서 이월 (D-041)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "dev 도메인으로 5개 앱 도달 (HTTP 200) — W2 Step 4.4에서 이월 (D-041). 실 도메인 부재",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -923,26 +1116,32 @@
                   "name": "문서화 + 핸드오프",
                   "total": 5,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "prod 배포 절차 README (PR → 리뷰 → 머지 → ArgoCD 승인 → 검증) — `argocd/README.md` (PR #74)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "prod 권한 신청 절차 문서화 — `argocd/README.md` RBAC/계정 섹션 (PR #74)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "team-lead와 권한 모델 검토 + 합의 — 사인오프 대기",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY에 prod 첫 배포 일자 기록 — HISTORY 2026-05-28(거버넌스) + 2026-06-01(5/5 재현, D-043)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "docs-portal 배포 복구 — deploy-pages 익명 체크아웃 전환(PR #83)으로 6일간 끊겼던 포털 정상화, W4 런북(롤백/백업/라이브 재현)이 https://team-project-final.github.io/synapse-gitops/ 에 실제 공개 (HISTORY 2026-06-01 CI 참조)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -958,22 +1157,27 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "롤백 시나리오 분류 (단일 앱 매니페스트 / 이미지만 / 클러스터 전체) — runbook `w4-prod-rollback-backup-runbook.md`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "백업 대상 결정 (etcd, PV, Velero 범위) — Velero ns 최소(synapse-prod/staging)+PV, etcd=관리형 EKS AWS 책임",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "RTO/RPO 목표 합의 (예: RTO 30분, RPO 1시간) — RTO 30분/RPO 1시간 설정 (사인오프는 1.4)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "백업 저장소 결정 (S3 + 별도 리전) — 전용 S3 버킷 (별도 리전 미적용, 캡스톤 한계)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -981,34 +1185,42 @@
                   "name": "롤백 절차 구현",
                   "total": 7,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "ArgoCD History rollback 절차 검증 (UI에서 1 step 이전 sync) — 2026-06-01 라이브: prod engagement-svc `argocd app rollback` 1-step → Synced/Healthy (FR-405)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "git revert + 자동 sync로 롤백 절차 검증 — 2026-06-01 라이브: PR #80(DEBUG)→sync→PR #81(git revert)→sync→INFO 복원 (FR-406)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Image Updater 사용 시 태그 강제 고정 절차 — prod=명시적 PR 승격(image-updater 어노테이션 없음), runbook",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "DB 마이그레이션이 포함된 경우 롤백 가이드 (forward-only 정책 등) — runbook §4 (Flyway forward-only, 데이터=RDS PITR)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "Image Updater 5개 앱 새 이미지 푸시 → dev 자동 반영 E2E 검증 — W2 Step 6.3에서 이월 (D-041, A안 실행 필요)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Image Updater 평균 반영 시간 측정 (목표 5분 이내) — W2 Step 6.3에서 이월 (D-041)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Image Updater 롤백 케이스: 잘못된 이미지 → 이전 태그 복귀 가능 — W2 Step 6.3에서 이월 (D-041)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1016,22 +1228,27 @@
                   "name": "백업 / 복구 시뮬레이션",
                   "total": 4,
                   "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Velero 설치 + S3 BackupStorageLocation 설정 — 라이브 설치(IRSA+S3), BSL Available (FR-407)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "일일 스케줄 백업 정의 — `velero-schedule.yaml` + 라이브 백업 Completed + S3 저장 (FR-407)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "staging에서 네임스페이스 삭제 → 복구 시뮬레이션 — 격리 ns 백업→삭제→restore 복구 확인 (FR-408)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "etcd snapshot 정책 정의 (관리형 EKS는 AWS 책임 영역 명시) — runbook 명시",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -1039,38 +1256,47 @@
                   "name": "문서화 + 검증",
                   "total": 8,
                   "done": 7,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "Runbook 초안에 롤백 절차 포함 — `docs/runbooks/w4-prod-rollback-backup-runbook.md`",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "백업 모니터링 알람 (백업 실패 시 알림) — `velero.rules` PrometheusRule (W3 Alertmanager 재사용)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "team-lead와 RTO/RPO 합의 + 사인오프 — 사인오프 대기",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY 갱신 — HISTORY 2026-05-28 + 2026-06-01 라이브 재현 섹션 (D-043)",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "**MSK 인증 모델 B(TLS-only) 확정** (D-044) — `msk.tf` 무변경, 서비스 코드/config 무변경. A(SASL/IAM)는 W5+ 백로그.",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "**9개 Kafka 토픽 terraform 선언화** — `infra/aws/dev/kafka-topics/`(Mongey/kafka). 라이브 재기동에서 bastion apply로 9/9 생성 입증(RF=2). 기존 bastion 수동 스크립트 제거.",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "**bastion→MSK SG 9094 인바운드 추가**(vpc.tf) — \"bastion 차단\"의 네트워크 실체 해소.",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "**shared `KAFKA_AUTH_MATRIX` TLS-only 정합** — 브랜치 `docs/kafka-auth-tls-only`(team-lead 검토 후 push).",
-                      "done": true
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 }
@@ -1094,30 +1320,37 @@
                   "name": "사전 분석",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "자주 발생할 장애 유형 도출 (Pod CrashLoop, OOM, sync 실패, 인증서 만료, DB 연결 실패)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "각 장애의 신호(symptom) → 원인(cause) → 조치(action) 매핑",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "On-call 로테이션 합의 (W5 이후 운영)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "에스컬레이션 기준 (level 1 / 2 / 3)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PR 영향 범위(diff) 코멘트 도구 후보 비교 (Atlantis, kustomize-diff GH action) — W1 Step 3.1에서 이월 (D-041, 선택)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PR diff 코멘트 GitHub Action 도입 — W1 Step 3.2에서 이월 (D-041, 선택)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1125,30 +1358,37 @@
                   "name": "Runbook 작성",
                   "total": 6,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "docs/runbook/pod-crashloop.md",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "docs/runbook/oom-killed.md",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "docs/runbook/argocd-sync-failed.md",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "docs/runbook/cert-expired.md",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "docs/runbook/db-connection-failed.md",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "각 문서: 진단 명령 + 단계별 조치 + 회피 방법 + 사후 점검",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1156,22 +1396,27 @@
                   "name": "시뮬레이션 + 검증",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "staging에서 Pod 강제 kill → Runbook 따라 복구",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "staging에서 메모리 limit 일부러 낮춰 OOM 유발 → 복구",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "staging에서 ArgoCD sync 실패 유도 (잘못된 manifest) → 복구",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "team-lead가 Runbook만 보고 1회 처리 가능한지 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1179,22 +1424,27 @@
                   "name": "On-call 체계 + 문서화",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "On-call 연락처 + Slack 채널 정리",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알람 → On-call 전달 경로 확인 (PagerDuty 또는 Slack)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "야간/주말 에스컬레이션 정책",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "Runbook 위치 README 링크",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
@@ -1210,22 +1460,27 @@
                   "name": "사전 분석",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "AWS Cost Explorer 태그 정책 확인 (Project=synapse, Environment=dev/staging/prod)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "현재 비용 분포 측정 (EC2/EBS/네트워크/Secrets Manager 등)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "5개 앱 P95 메모리/CPU 사용량 측정 (Prometheus)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "미사용 리소스 식별 (orphan LoadBalancer, unattached EBS, idle Pod)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1233,22 +1488,27 @@
                   "name": "리소스 적정화",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "resources.requests/limits 적정값으로 5개 앱 조정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HPA 정의 (CPU 또는 메모리 기반, 트래픽 변동 큰 2개 앱)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "PDB 정의 (prod 환경 최소 가용성)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "미사용 리소스 정리",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1256,26 +1516,32 @@
                   "name": "안정화 + 회귀 검증",
                   "total": 5,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "W1~W4 잔여 P1 이슈 목록 점검 + 처리",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "전체 환경 (dev/staging/prod) 헬스체크 통과 확인",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "CI/CD 평균 실행 시간 점검 (회귀 없는지)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "알람 false-positive 비율 점검 + 룰 조정",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "kustomize build 결과 캐싱 (CI 속도 개선) — W1 Step 3.2에서 이월 (D-041, 선택)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 },
@@ -1283,22 +1549,27 @@
                   "name": "핸드오프 + 종료",
                   "total": 4,
                   "done": 0,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "핸드오프 문서 최종 검토 (KICKOFF, TASK, Runbook, README)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "운영 인수자 또는 후속 담당자에게 트랜지션 미팅",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "HISTORY에 5주차 회고 기록 (잘된 점, 아쉬운 점, 다음 사이클 권고)",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     },
                     {
                       "text": "team-lead 사인오프",
-                      "done": false
+                      "done": false,
+                      "partial": false
                     }
                   ]
                 }
