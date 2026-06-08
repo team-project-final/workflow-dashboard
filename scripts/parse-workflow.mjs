@@ -6,6 +6,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs'
 import { join, resolve, dirname } from 'path'
 import { parseWorkflowMarkdown } from './parsers/parse-workflow-md.mjs'
+import { applyDoneGuard } from './parsers/done-guard.mjs'
 
 const [docsDir, repoName, outputPath] = process.argv.slice(2)
 if (!docsDir || !repoName || !outputPath) {
@@ -95,6 +96,11 @@ if (existsSync(outputPath)) {
   oldData = JSON.parse(readFileSync(outputPath, 'utf-8'))
 }
 
+// done 회귀 방지 가드 — WIP 브랜치가 최신 커밋이어도 done 수가 역행하지 않도록
+// Step별로 이전(높은) 스냅샷을 유지. FORCE=true면 우회. changelog/합계 계산 전에 적용.
+const force = process.env.FORCE === 'true'
+const guardedTracks = applyDoneGuard(oldData?.tracks, tracks, { force })
+
 function computeChangelog(oldData, newTracks) {
   if (!oldData) return []
   const changes = []
@@ -166,12 +172,12 @@ function computeChangelog(oldData, newTracks) {
   }]
 }
 
-const newChangelog = computeChangelog(oldData, tracks)
+const newChangelog = computeChangelog(oldData, guardedTracks)
 
 // history 업데이트
 const today = new Date().toISOString().slice(0, 10)
-const totalChecks = tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0)
-const doneChecks = tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
+const totalChecks = guardedTracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0)
+const doneChecks = guardedTracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
 
 const oldHistory = oldData?.history || []
 const todayIdx = oldHistory.findIndex(h => h.date === today)
@@ -193,7 +199,7 @@ const changelog = [...(oldData?.changelog || []), ...newChangelog]
 const output = {
   repo: repoName,
   updatedAt: new Date().toISOString(),
-  tracks,
+  tracks: guardedTracks,
   prd,
   history,
   changelog,

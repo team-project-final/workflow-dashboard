@@ -123,8 +123,8 @@ jobs:
               OLD_CHECKSUM=$(md5sum "data/$REPO.json" | cut -d' ' -f1)
             fi
 
-            # 파서 실행
-            GITHUB_SHA="$LATEST_SHA" GITHUB_ACTOR="sync-bot" \
+            # 파서 실행 (FORCE=true면 done 회귀 방지 가드 우회)
+            GITHUB_SHA="$LATEST_SHA" GITHUB_ACTOR="sync-bot" FORCE="$FORCE" \
               node scripts/parse-workflow.mjs "$DOCS_PATH" "$REPO" "data/$REPO.json"
 
             NEW_CHECKSUM=$(md5sum "data/$REPO.json" | cut -d' ' -f1)

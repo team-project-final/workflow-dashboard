@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs'
 import { resolve } from 'path'
 import { getParser, listParsers } from './parsers/index.mjs'
+import { applyDoneGuard } from './parsers/done-guard.mjs'
 
 const args = process.argv.slice(2)
 const dryRun = args.includes('--dry-run')
@@ -95,13 +96,17 @@ for (const repo of repos) {
     const outputPath = resolve(`data/${repo.id}.json`)
     const oldData = existsSync(outputPath) ? JSON.parse(readFileSync(outputPath, 'utf-8')) : null
 
+    // done 회귀 방지 가드 — Step별로 이전(높은) 스냅샷 유지. FORCE=true면 우회.
+    const force = process.env.FORCE === 'true'
+    const guardedTracks = applyDoneGuard(oldData?.tracks, transformed.tracks, { force })
+
     // Compute changelog
-    const newChangelog = computeChangelog(oldData, transformed.tracks)
+    const newChangelog = computeChangelog(oldData, guardedTracks)
 
     // Compute history entry
     const today = new Date().toISOString().slice(0, 10)
-    const totalChecks = transformed.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0)
-    const doneChecks = transformed.tracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
+    const totalChecks = guardedTracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.totalChecks, 0), 0)
+    const doneChecks = guardedTracks.reduce((s, t) => s + t.weeks.reduce((ws, w) => ws + w.doneChecks, 0), 0)
     const oldHistory = oldData?.history || []
     const todayIdx = oldHistory.findIndex(h => h.date === today)
     // today entry는 단조 증가만 허용 (max). 같은 날 여러 sync가 작은 값으로 덮어쓰는 회귀를 막음.
@@ -119,7 +124,7 @@ for (const repo of repos) {
     const output = {
       repo: repo.id,
       updatedAt: new Date().toISOString(),
-      tracks: transformed.tracks,
+      tracks: guardedTracks,
       prd: transformed.prd.length > 0 ? transformed.prd : (oldData?.prd || []),
       history,
       changelog: [...(oldData?.changelog || []), ...newChangelog],
