@@ -1,6 +1,6 @@
 {
   "repo": "synapse-platform-svc",
-  "updatedAt": "2026-06-07T23:16:18.956Z",
+  "updatedAt": "2026-06-08T00:20:37.327Z",
   "tracks": [
     {
       "name": "platform",
@@ -2736,7 +2736,7 @@
                 },
                 {
                   "name": "P0 수정",
-                  "total": 8,
+                  "total": 7,
                   "done": 0,
                   "partial": 0,
                   "items": [
@@ -2774,20 +2774,15 @@
                       "text": "platform P0 버그가 0건이다.",
                       "done": false,
                       "partial": false
-                    },
-                    {
-                      "text": "frontend 연동 사전 보정 PR이 `dev`에 머지된다.",
-                      "done": false,
-                      "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 11,
+              "totalChecks": 10,
               "doneChecks": 0
             }
           ],
-          "totalChecks": 17,
+          "totalChecks": 16,
           "doneChecks": 0
         }
       ]
@@ -3050,6 +3045,11 @@
       "date": "2026-06-07",
       "totalChecks": 376,
       "doneChecks": 359
+    },
+    {
+      "date": "2026-06-08",
+      "totalChecks": 375,
+      "doneChecks": 359
     }
   ],
   "changelog": [
@@ -3261,6 +3261,19 @@
           "type": "boxes_added",
           "target": "W5 > 알림 안정화",
           "detail": "1개 박스 추가 (10 → 11)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-08T00:20:37.327Z",
+      "commit": "78bca66",
+      "author": "sync-bot",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "boxes_removed",
+          "target": "W5 > 알림 안정화",
+          "detail": "1개 박스 제거 (11 → 10)"
         }
       ]
     }
