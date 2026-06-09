@@ -1,6 +1,6 @@
 {
   "repo": "synapse-learning-svc",
-  "updatedAt": "2026-06-09T01:51:12.980Z",
+  "updatedAt": "2026-06-09T03:36:58.278Z",
   "tracks": [
     {
       "name": "learning-ai",
@@ -5069,27 +5069,32 @@
           "steps": [
             {
               "name": "복습 E2E",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "시나리오 정의",
-                  "total": 3,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "덱 생성 → 카드 생성 → 복습 큐 조회 시나리오 작성",
-                      "done": false,
+                      "text": "덱 생성 → 카드 생성 → 복습 큐 조회 시나리오 작성 (`ReviewFlowE2ETest`)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복습 제출 → SM-2 계산 → 다음 복습일 갱신 시나리오 작성",
-                      "done": false,
+                      "text": "복습 제출 → SM-2 계산 → 다음 복습일 갱신 시나리오 작성 (`ReviewFlowE2ETest`)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 → 통계 반영 시나리오 작성",
-                      "done": false,
+                      "text": "세션 완료 → 통계 반영 시나리오 작성 (`ReviewStatsPostgresE2ETest`)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "note.created → AI 카드 자동 생성 → 덱 저장 시나리오 작성 (`AiCardGenerationE2ETest`)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -5097,102 +5102,117 @@
                 {
                   "name": "실행 및 수정",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "복습 전체 플로우 E2E 테스트 실행",
-                      "done": false,
+                      "text": "복습 전체 플로우 E2E 테스트 실행 — BUILD SUCCESSFUL",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "알고리즘 경계값 테스트 실행",
-                      "done": false,
+                      "text": "알고리즘 경계값 테스트 실행 (`Sm2CalculatorTest`)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "P0 버그 수정 및 회귀 테스트",
-                      "done": false,
+                      "text": "P0 버그 수정 — H2 공유 컨텍스트 스키마 DROP 버그 수정 (KafkaEventFlowE2ETest 독립 DB 분리)",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 6,
-              "doneChecks": 0
+              "totalChecks": 7,
+              "doneChecks": 7
             },
             {
               "name": "Kafka 이벤트 안정화",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "이벤트 검증",
-                  "total": 3,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "`card.reviewed` 발행 확인",
-                      "done": false,
+                      "text": "`card.reviewed` 발행 확인 — `KafkaEventFlowE2ETest` (Avro 역직렬화 필드 검증)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "`card.review.due` 발행 확인",
-                      "done": false,
+                      "text": "`card.review.due` 발행 확인 — `KafkaEventFlowE2ETest` (Avro 역직렬화 필드 검증)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "engagement/platform 소비 연동 확인",
-                      "done": false,
+                      "text": "파티션 키 = userId 보장 확인 — `KafkaEventFlowE2ETest`",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "engagement/platform 소비 연동 확인 — KafkaLiveContainerE2ETest (Testcontainers cp-kafka:7.6.1 실제 컨테이너, 2 tests passed)",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
                   "name": "발표 준비",
-                  "total": 6,
-                  "done": 0,
+                  "total": 8,
+                  "done": 8,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "발표용 덱/카드/복습 데이터 준비",
-                      "done": false,
+                      "text": "발표용 덱/카드/복습 데이터 준비 — V999__demo_seed_data.sql (demo 프로파일, 덱 1·카드 5·세션 2·복습이력 5)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복습 데모 시나리오 검증",
-                      "done": false,
+                      "text": "복습 데모 시나리오 검증 — docs/demo/DEMO_SCENARIO.md (시나리오 5개, curl 명령어 포함)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복습 E2E가 통과한다.",
-                      "done": false,
+                      "text": "복습 E2E가 통과한다. (91 tests, 0 failed)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "card 이벤트 발행과 소비 연동이 확인된다.",
-                      "done": false,
+                      "text": "card 이벤트 발행 및 Avro 필드 검증 완료",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "AI 카드 자동 생성 → 덱 저장 E2E 통과",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "learning-card P0 버그가 0건이다.",
-                      "done": false,
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "Docker Compose 라이브 E2E engagement/platform 소비 연동 확인",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "발표용 복습 데모가 안정적으로 동작한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 9,
-              "doneChecks": 0
+              "totalChecks": 12,
+              "doneChecks": 12
             }
           ],
-          "totalChecks": 15,
-          "doneChecks": 0
+          "totalChecks": 19,
+          "doneChecks": 19
         }
       ]
     }
@@ -5477,8 +5497,8 @@
     },
     {
       "date": "2026-06-09",
-      "totalChecks": 691,
-      "doneChecks": 674
+      "totalChecks": 695,
+      "doneChecks": 693
     }
   ],
   "changelog": [
@@ -6007,6 +6027,34 @@
           "type": "check_done",
           "target": "W5 > 시맨틱 검색 정확도",
           "detail": "10개 항목 완료 (0 → 10)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09T03:36:58.278Z",
+      "commit": "e7e5386",
+      "author": "choyj358-ai",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 복습 E2E",
+          "detail": "7개 항목 완료 (0 → 7)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 복습 E2E",
+          "detail": "1개 박스 추가 (6 → 7)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > Kafka 이벤트 안정화",
+          "detail": "12개 항목 완료 (0 → 12)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > Kafka 이벤트 안정화",
+          "detail": "3개 박스 추가 (9 → 12)"
         }
       ]
     }
