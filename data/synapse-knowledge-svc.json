@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-09T01:51:10.745Z",
+  "updatedAt": "2026-06-09T02:48:19.347Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -4518,27 +4518,27 @@
           "steps": [
             {
               "name": "검색 E2E",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "시나리오 정의",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "BM25 검색 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "시맨틱 검색 프록시 연동 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "하이브리드 RRF 검색 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -4546,53 +4546,53 @@
                 {
                   "name": "실행 및 수정",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "검색 E2E 테스트 실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "검색 권한/tenant 격리 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "P0 버그 수정 및 회귀 테스트",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 6,
-              "doneChecks": 0
+              "doneChecks": 6
             },
             {
               "name": "정확도 리포트",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "데이터셋 준비",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "테스트 쿼리와 기대 결과 세트 확정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "MRR@10 또는 Top-5 관련도 기준 확정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "실패 쿼리 분류",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -4600,53 +4600,53 @@
                 {
                   "name": "튜닝 결과 정리",
                   "total": 7,
-                  "done": 0,
+                  "done": 7,
                   "partial": 0,
                   "items": [
                     {
                       "text": "BM25/시맨틱/RRF 비교 결과 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "정확도 미달 항목 개선안 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "발표용 검색 데모 쿼리 확정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "검색 E2E가 통과한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "정확도 리포트가 작성된다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "knowledge-2 P0 버그가 0건이다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "발표용 검색 쿼리가 안정적으로 동작한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 10,
-              "doneChecks": 0
+              "doneChecks": 10
             }
           ],
           "totalChecks": 16,
-          "doneChecks": 0
+          "doneChecks": 16
         }
       ]
     }
@@ -4942,7 +4942,7 @@
     {
       "date": "2026-06-09",
       "totalChecks": 619,
-      "doneChecks": 529
+      "doneChecks": 545
     }
   ],
   "changelog": [
@@ -5647,6 +5647,24 @@
           "type": "check_done",
           "target": "W4 > 검색 튜닝 + 버그 수정",
           "detail": "13개 항목 완료 (0 → 13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09T02:48:19.347Z",
+      "commit": "953b8a7",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 검색 E2E",
+          "detail": "6개 항목 완료 (0 → 6)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > 정확도 리포트",
+          "detail": "10개 항목 완료 (0 → 10)"
         }
       ]
     }
