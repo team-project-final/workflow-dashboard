@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-09T08:25:47.057Z",
+  "updatedAt": "2026-06-09T11:06:55.610Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -2347,22 +2347,22 @@
           "steps": [
             {
               "name": "노트/그래프 E2E",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "시나리오 정의",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "노트 생성 → 위키링크 추출 → 백링크 조회 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "그래프 데이터 조회 및 렌더링 데이터 검증 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2375,17 +2375,17 @@
                 {
                   "name": "실행 및 수정",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "노트/그래프 E2E 테스트 실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "권한 및 tenant 격리 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2397,11 +2397,11 @@
                 }
               ],
               "totalChecks": 6,
-              "doneChecks": 0
+              "doneChecks": 4
             },
             {
               "name": "ES 동기화 안정화",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "동기화 검증",
@@ -2429,7 +2429,7 @@
                 {
                   "name": "발표 데이터",
                   "total": 6,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
@@ -2444,7 +2444,7 @@
                     },
                     {
                       "text": "노트/그래프 E2E가 통과한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2466,11 +2466,11 @@
                 }
               ],
               "totalChecks": 9,
-              "doneChecks": 0
+              "doneChecks": 1
             }
           ],
           "totalChecks": 15,
-          "doneChecks": 0
+          "doneChecks": 5
         }
       ]
     },
@@ -4942,7 +4942,7 @@
     {
       "date": "2026-06-09",
       "totalChecks": 619,
-      "doneChecks": 545
+      "doneChecks": 550
     }
   ],
   "changelog": [
@@ -5665,6 +5665,24 @@
           "type": "check_done",
           "target": "W5 > 정확도 리포트",
           "detail": "10개 항목 완료 (0 → 10)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-09T11:06:55.610Z",
+      "commit": "4053fd2",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 노트/그래프 E2E",
+          "detail": "4개 항목 완료 (0 → 4)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > ES 동기화 안정화",
+          "detail": "1개 항목 완료 (0 → 1)"
         }
       ]
     }
