@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-10T08:27:38.280Z",
+  "updatedAt": "2026-06-10T08:39:11.533Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1935,8 +1935,8 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 3,
-                  "done": 2,
-                  "partial": 1,
+                  "done": 3,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "**계약·전송 E2E 06-05 실행** — harness 4모드 PASS(`--avro`8/8·`--all`5/5·`--full`13/13·`--scenarios`5/5), [E2E_REPORT_W4](../../reports/E2E_REPORT_W4.md)",
@@ -1944,9 +1944,9 @@
                       "partial": false
                     },
                     {
-                      "text": "서비스 비즈니스 로직 E2E — shared compose app=스텁이라 불가 → **W5 서비스 스택/staging에서 실행**(이월)",
-                      "done": false,
-                      "partial": true
+                      "text": "서비스 비즈니스 로직 E2E — **W5 핵심 시나리오 PASS**(W1 풀체인·W2·W3·W4·W5, 06-09~10). AI생성·검색 leg는 F4/nori 잔여",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "실패 항목 기록 — 전송/계약 0건 실패",
@@ -1958,17 +1958,17 @@
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1976,17 +1976,17 @@
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "P0 버그 수정 지시 + 추적",
-                      "done": false,
+                      "text": "P0 버그 수정 지시 + 추적 — F1/F2/F3/F7/F9/F10(D-004 Stage1) 수정·머지(W5)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1994,42 +1994,42 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
-                  "partial": 0,
+                  "done": 1,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
                       "done": false,
-                      "partial": false
+                      "partial": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "API 문서 최신화",
-                      "done": false,
+                      "text": "API 문서 최신화 — survey+gateway 대조(W5 shared#35)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 3
+              "doneChecks": 11
             },
             {
               "name": "성능 SLA 검증",
@@ -2056,27 +2056,27 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 4,
-                  "done": 0,
-                  "partial": 0,
+                  "done": 3,
+                  "partial": 1,
                   "items": [
                     {
-                      "text": "API P95 < 200ms 검증",
-                      "done": false,
+                      "text": "API P95 < 200ms 검증 — 79.7/15.3ms(W5)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Kafka 이벤트 처리 < 5s 검증",
-                      "done": false,
+                      "text": "Kafka 이벤트 처리 < 5s 검증 — ~1.42s(W5)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "검색 응답 < 2s 검증",
+                      "text": "검색 응답 < 2s 검증 — 레이턴시 0.012s PASS·기능검색 knowledge#71(W5)",
                       "done": false,
-                      "partial": false
+                      "partial": true
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2084,17 +2084,17 @@
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2102,17 +2102,17 @@
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "성능 미달 항목 P0 수정",
-                      "done": false,
+                      "text": "성능 미달 항목 P0 수정 — 측정분(P1/P2/P4/P5) 미달 없음(W5)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2120,61 +2120,61 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
-                  "partial": 0,
+                  "done": 1,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
                       "done": false,
-                      "partial": false
+                      "partial": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "성능 SLA 검증 결과 문서화",
-                      "done": false,
+                      "text": "성능 SLA 검증 결과 문서화 — SLA_VERIFICATION_W5(W5)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 14,
-              "doneChecks": 1
+              "doneChecks": 11
             },
             {
               "name": "Staging 배포 + 모니터링 대시보드 가동",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "Staging 배포 검증 시나리오 목록 작성",
-                      "done": false,
+                      "text": "Staging 배포 검증 시나리오 목록 작성 — verify-argocd-deploy.sh로 대체(W5)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "테스트 데이터 준비",
-                      "done": false,
+                      "text": "테스트 데이터 준비 — verify 스크립트 + 시드(W5)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2182,22 +2182,22 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "Staging 환경 전체 서비스 배포 실행",
-                      "done": false,
+                      "text": "Staging 환경 전체 서비스 배포 실행 — dev 16/0/0·staging 20/0/0(W5 D1, gitops#136)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "모니터링 대시보드 가동 확인",
-                      "done": false,
+                      "text": "모니터링 대시보드 가동 확인 — Observability(kube-prometheus-stack) 기동(W5 D1)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2205,17 +2205,17 @@
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "P0 즉시 수정 대상 확정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2223,17 +2223,17 @@
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false,
+                      "text": "P0 버그 수정 — platform/gateway CrashLoop 해소(gitops#136, W5 D1)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2241,46 +2241,46 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
-                  "partial": 0,
+                  "done": 1,
+                  "partial": 1,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "커버리지 80% 이상 확인",
                       "done": false,
-                      "partial": false
+                      "partial": true
                     }
                   ]
                 },
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
-                  "partial": 0,
+                  "done": 1,
+                  "partial": 1,
                   "items": [
                     {
-                      "text": "Staging 배포 결과 문서화",
+                      "text": "Staging 배포 결과 문서화 — dev/staging 결과 기록(HUB/HISTORY) · 24h 안정·운영가이드 Day4 잔여",
                       "done": false,
-                      "partial": false
+                      "partial": true
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 0
+              "doneChecks": 11
             }
           ],
           "totalChecks": 40,
-          "doneChecks": 4
+          "doneChecks": 33
         },
         {
           "week": "W5",
@@ -2671,7 +2671,7 @@
     {
       "date": "2026-06-10",
       "totalChecks": 291,
-      "doneChecks": 251
+      "doneChecks": 280
     }
   ],
   "changelog": [
@@ -3122,6 +3122,29 @@
           "type": "check_done",
           "target": "W5 > 전체 E2E 서비스 단위 실행 (W4 이월)",
           "detail": "2개 항목 완료 (3 → 5)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T08:39:11.532Z",
+      "commit": "b132f01",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 전체 E2E 시나리오 정의 + 테스트 실행 조율",
+          "detail": "8개 항목 완료 (3 → 11)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 성능 SLA 검증",
+          "detail": "10개 항목 완료 (1 → 11)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > Staging 배포 + 모니터링 대시보드 가동",
+          "detail": "11개 항목 완료 (0 → 11)"
         }
       ]
     }
