@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-10T02:02:29.863Z",
+  "updatedAt": "2026-06-10T02:15:04.144Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -833,7 +833,7 @@
             },
             {
               "name": "Observability 스택 (Prometheus + Grafana + Loki)",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -866,8 +866,8 @@
                 {
                   "name": "메트릭 스택 설치",
                   "total": 5,
-                  "done": 4,
-                  "partial": 1,
+                  "done": 5,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "kube-prometheus-stack helm 적용 (A2 실 EKS Running)",
@@ -880,9 +880,9 @@
                       "partial": false
                     },
                     {
-                      "text": "Grafana 외부 노출 — port-forward로 검증 (TLS/SSO는 ACM/도메인 후)",
-                      "done": false,
-                      "partial": true
+                      "text": "Grafana 외부 노출 — **nip.io ingress 추가**(`infra/ingress/nipio/grafana-ingress.yaml`, argocd 동일 패턴, 라이브 노출 검증 차기 윈도우). port-forward 대체 검증 가능",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "5개 앱 ServiceMonitor 정의",
@@ -899,7 +899,7 @@
                 {
                   "name": "로그 스택 + 대시보드",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -918,8 +918,8 @@
                       "partial": false
                     },
                     {
-                      "text": "앱별 상세 대시보드 — 선택, 미작성(W5 백로그)",
-                      "done": false,
+                      "text": "앱별 상세 대시보드 — **추가**: `grafana-dashboard-apps.yaml`(JVM/HTTP 6패널 + namespace/service 템플릿 변수, bring-up 적용 배선)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -927,7 +927,7 @@
                 {
                   "name": "알람 + 문서화",
                   "total": 7,
-                  "done": 6,
+                  "done": 7,
                   "partial": 0,
                   "items": [
                     {
@@ -961,19 +961,19 @@
                       "partial": false
                     },
                     {
-                      "text": "ESO sync 실패 PrometheusRule 추가 (`external_secrets_sync_calls_error{}` rate) — W2 Step 5.4에서 이월 (D-041)",
-                      "done": false,
+                      "text": "ESO sync 실패 PrometheusRule 추가 — **완료**: `prometheus-rules.yaml` `external-secrets.rules` 그룹(ESOSyncErrors·ESOSecretNotReady, 메트릭 `externalsecret_sync_calls_error`/`externalsecret_status_condition`). 라이브 발화는 ESO 메트릭 스크레이프 전제",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 20,
-              "doneChecks": 17
+              "doneChecks": 20
             }
           ],
           "totalChecks": 35,
-          "doneChecks": 32
+          "doneChecks": 35
         },
         {
           "week": "W4",
@@ -1910,7 +1910,7 @@
     {
       "date": "2026-06-10",
       "totalChecks": 211,
-      "doneChecks": 197
+      "doneChecks": 200
     }
   ],
   "changelog": [
@@ -2202,6 +2202,19 @@
           "type": "check_done",
           "target": "W4 > 롤백 / 백업 전략",
           "detail": "4개 항목 완료 (19 → 23)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T02:15:04.144Z",
+      "commit": "5966c5f",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > Observability 스택 (Prometheus + Grafana + Loki)",
+          "detail": "3개 항목 완료 (17 → 20)"
         }
       ]
     }
