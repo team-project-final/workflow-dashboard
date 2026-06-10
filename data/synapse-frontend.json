@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-06-10T06:51:34.434Z",
+  "updatedAt": "2026-06-10T07:42:50.766Z",
   "tracks": [
     {
       "name": "frontend",
@@ -2131,7 +2131,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "알림 목록 UI 요건 분석 (무한 스크롤은 범위 제외 — 첫 N건, 알려진 한계로 기록)",
+                      "text": "알림 목록 UI 요건 분석 (페이지네이션은 '더 보기' 버튼 방식으로 구현)",
                       "done": true,
                       "partial": false
                     },
@@ -2183,7 +2183,7 @@
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 2,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
@@ -2197,8 +2197,8 @@
                       "partial": false
                     },
                     {
-                      "text": "알림 타입별 라우팅 설계 (알림 클릭 → 관련 페이지 이동) — 미구현",
-                      "done": false,
+                      "text": "알림 타입별 라우팅 설계 (알림 클릭 → 분류별 대표 화면 이동, 시스템/미지 타입은 이동 없음)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2305,17 +2305,17 @@
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "알림 목록 로드·읽음 처리 구현 (무한 스크롤은 범위 제외)",
+                      "text": "알림 목록 로드·읽음 처리 구현 ('더 보기' 페이지네이션 포함)",
                       "done": true,
                       "partial": false
                     },
                     {
-                      "text": "안읽은 알림 카운트 실시간 갱신 (폴링 30초 간격) — 미구현 (진입 시 로드)",
-                      "done": false,
+                      "text": "안읽은 알림 카운트 실시간 갱신 (폴링 30초 간격 — 실제 앱에서만 활성)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2333,7 +2333,7 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 5,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
@@ -2342,7 +2342,7 @@
                       "partial": false
                     },
                     {
-                      "text": "알림 목록 페이지 Widget 구현 (ListView — 무한 스크롤 제외)",
+                      "text": "알림 목록 페이지 Widget 구현 (ListView + '더 보기' 페이지네이션)",
                       "done": true,
                       "partial": false
                     },
@@ -2352,8 +2352,8 @@
                       "partial": false
                     },
                     {
-                      "text": "알림 클릭 시 상세 이동 로직 (타입별 라우팅) — 미구현",
-                      "done": false,
+                      "text": "알림 클릭 시 상세 이동 로직 (분류별 라우팅 — 복습/커뮤니티/게이미피케이션)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2403,7 +2403,7 @@
                 }
               ],
               "totalChecks": 44,
-              "doneChecks": 35
+              "doneChecks": 38
             },
             {
               "name": "관리자 화면 — 신고 목록 + 처리(승인/거부)",
@@ -3003,7 +3003,7 @@
             }
           ],
           "totalChecks": 172,
-          "doneChecks": 40
+          "doneChecks": 43
         },
         {
           "week": "W4",
@@ -3761,7 +3761,7 @@
     {
       "date": "2026-06-10",
       "totalChecks": 475,
-      "doneChecks": 139
+      "doneChecks": 142
     }
   ],
   "changelog": [
@@ -3880,6 +3880,19 @@
           "type": "check_done",
           "target": "W3 > 관리자 화면 — 신고 목록 + 처리(승인/거부)",
           "detail": "5개 항목 완료 (0 → 5)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T07:42:50.766Z",
+      "commit": "07902b8",
+      "author": "MaoEmong",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > 알림 센터 — 알림 목록 + 읽음/안읽음 + 설정",
+          "detail": "3개 항목 완료 (35 → 38)"
         }
       ]
     }
