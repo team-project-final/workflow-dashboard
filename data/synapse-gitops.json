@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-09T12:29:10.662Z",
+  "updatedAt": "2026-06-10T00:39:55.214Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1314,42 +1314,42 @@
           "steps": [
             {
               "name": "Runbook + 장애 시나리오",
-              "status": "Not Started",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
                       "text": "자주 발생할 장애 유형 도출 (Pod CrashLoop, OOM, sync 실패, 인증서 만료, DB 연결 실패)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "각 장애의 신호(symptom) → 원인(cause) → 조치(action) 매핑",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "On-call 로테이션 합의 (W5 이후 운영)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "에스컬레이션 기준 (level 1 / 2 / 3)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "PR 영향 범위(diff) 코멘트 도구 후보 비교 (Atlantis, kustomize-diff GH action) — W1 Step 3.1에서 이월 (D-041, 선택)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "PR diff 코멘트 GitHub Action 도입 — W1 Step 3.2에서 이월 (D-041, 선택)",
-                      "done": false,
+                      "text": "PR diff 코멘트 GitHub Action 도입 — W1 Step 3.2에서 이월 (D-041, 선택) <!-- 기구현: validate-manifests.yml diff-comment job(47a7c67) -->",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1357,37 +1357,37 @@
                 {
                   "name": "Runbook 작성",
                   "total": 6,
-                  "done": 0,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "docs/runbook/pod-crashloop.md",
-                      "done": false,
+                      "text": "docs/runbook/pod-crashloop.md <!-- docs/runbooks/incidents/pod-crashloop.md -->",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "docs/runbook/oom-killed.md",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "docs/runbook/argocd-sync-failed.md",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "docs/runbook/cert-expired.md",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "docs/runbook/db-connection-failed.md",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "각 문서: 진단 명령 + 단계별 조치 + 회피 방법 + 사후 점검",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1395,27 +1395,27 @@
                 {
                   "name": "시뮬레이션 + 검증",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "staging에서 Pod 강제 kill → Runbook 따라 복구",
-                      "done": false,
+                      "text": "staging에서 Pod 강제 kill → Runbook 따라 복구 <!-- 2026-06-08 윈도우2 incident-sim crashloop 재현·복구 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "staging에서 메모리 limit 일부러 낮춰 OOM 유발 → 복구",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "staging에서 ArgoCD sync 실패 유도 (잘못된 manifest) → 복구",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "team-lead가 Runbook만 보고 1회 처리 가능한지 확인",
-                      "done": false,
+                      "text": "team-lead가 Runbook만 보고 1회 처리 가능한지 확인 <!-- 2026-06-09 #155 operator 드릴로 충족 -->",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1423,38 +1423,38 @@
                 {
                   "name": "On-call 체계 + 문서화",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
                       "text": "On-call 연락처 + Slack 채널 정리",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "알람 → On-call 전달 경로 확인 (PagerDuty 또는 Slack)",
-                      "done": false,
+                      "text": "알람 → On-call 전달 경로 확인 (PagerDuty 또는 Slack) <!-- amtool→route slack #synapse-gitops 검증 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "야간/주말 에스컬레이션 정책",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Runbook 위치 README 링크",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 20,
-              "doneChecks": 0
+              "doneChecks": 20
             },
             {
               "name": "Cost 최적화 + 안정화",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -1473,7 +1473,7 @@
                       "partial": false
                     },
                     {
-                      "text": "5개 앱 P95 메모리/CPU 사용량 측정 (Prometheus)",
+                      "text": "5개 앱 P95 메모리/CPU 사용량 측정 (Prometheus) <!-- 라이브 메트릭 윈도우 위임 -->",
                       "done": false,
                       "partial": false
                     },
@@ -1487,17 +1487,17 @@
                 {
                   "name": "리소스 적정화",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "resources.requests/limits 적정값으로 5개 앱 조정",
+                      "text": "resources.requests/limits 적정값으로 5개 앱 조정 <!-- 정적 리뷰 완료(resource-sizing-review-w5.md), P95 튜닝 윈도우 위임 -->",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "HPA 정의 (CPU 또는 메모리 기반, 트래픽 변동 큰 2개 앱)",
-                      "done": false,
+                      "text": "HPA 정의 (CPU 또는 메모리 기반, 트래픽 변동 큰 2개 앱) <!-- 2026-06-08 윈도우2: engagement HPA min3→max6 스케일아웃/인 관찰 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1515,22 +1515,22 @@
                 {
                   "name": "안정화 + 회귀 검증",
                   "total": 5,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "W1~W4 잔여 P1 이슈 목록 점검 + 처리",
-                      "done": false,
+                      "text": "W1~W4 잔여 P1 이슈 목록 점검 + 처리 <!-- OPEN 이슈 0건(2026-06-09) -->",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "전체 환경 (dev/staging/prod) 헬스체크 통과 확인",
-                      "done": false,
+                      "text": "전체 환경 (dev/staging/prod) 헬스체크 통과 확인 <!-- dev 16/0/0·staging 20/0/0 ALL PASSED -->",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "CI/CD 평균 실행 시간 점검 (회귀 없는지)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1539,8 +1539,8 @@
                       "partial": false
                     },
                     {
-                      "text": "kustomize build 결과 캐싱 (CI 속도 개선) — W1 Step 3.2에서 이월 (D-041, 선택)",
-                      "done": false,
+                      "text": "kustomize build 결과 캐싱 (CI 속도 개선) — W1 Step 3.2에서 이월 (D-041, 선택) <!-- build sub-second라 kubeconform+pip 캐싱으로 대체 -->",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1548,12 +1548,12 @@
                 {
                   "name": "핸드오프 + 종료",
                   "total": 4,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "핸드오프 문서 최종 검토 (KICKOFF, TASK, Runbook, README)",
-                      "done": false,
+                      "text": "핸드오프 문서 최종 검토 (KICKOFF, TASK, Runbook, README) <!-- 2026-06-10 일정문서 4종 동기화 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1575,11 +1575,11 @@
                 }
               ],
               "totalChecks": 17,
-              "doneChecks": 0
+              "doneChecks": 6
             }
           ],
           "totalChecks": 37,
-          "doneChecks": 0
+          "doneChecks": 26
         }
       ]
     }
@@ -1906,6 +1906,11 @@
       "date": "2026-06-09",
       "totalChecks": 211,
       "doneChecks": 157
+    },
+    {
+      "date": "2026-06-10",
+      "totalChecks": 211,
+      "doneChecks": 183
     }
   ],
   "changelog": [
@@ -2156,6 +2161,24 @@
           "type": "boxes_added",
           "target": "W3 > Observability 스택 (Prometheus + Grafana + Loki)",
           "detail": "1개 박스 추가 (19 → 20)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T00:39:55.213Z",
+      "commit": "66ad03e",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > Runbook + 장애 시나리오",
+          "detail": "20개 항목 완료 (0 → 20)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > Cost 최적화 + 안정화",
+          "detail": "6개 항목 완료 (0 → 6)"
         }
       ]
     }
