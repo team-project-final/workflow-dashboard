@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-10T08:41:57.543Z",
+  "updatedAt": "2026-06-10T08:50:05.972Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -2368,7 +2368,7 @@
                       "partial": true
                     },
                     {
-                      "text": "**P1·P2·P4·P5 충족 + W1 풀체인 PASS** (Day3, [SLA_VERIFICATION_W5](../../reports/SLA_VERIFICATION_W5.md)): P1 79.7/15.3ms · P2 ~1.42s · **P4 체인 1.31s(알림 leg 포함)** · **P5 audit 1.31s**. 보류: P3 검색(ES nori 미설치 → [gitops#174](https://github.com/team-project-final/synapse-gitops/issues/174)) · P6 AI(키 부재 → learning#73) · P7 실 FCM 발송률(자격; 경로·DLT 0은 입증)",
+                      "text": "**P1·P2·P4·P5·P7 충족 + W1 풀체인 PASS** (Day3, [SLA_VERIFICATION_W5](../../reports/SLA_VERIFICATION_W5.md)): P1 79.7/15.3ms · P2 ~1.42s · **P4 체인 1.31s(알림 leg 포함)** · **P5 audit 1.31s** · **P7 FCM 10/10=100%**(실 웹 토큰). 보류: P3 검색 기능(ES nori EKS → [gitops#174](https://github.com/team-project-final/synapse-gitops/issues/174)·knowledge#71) · P6 AI(knowledge#74·learning#77/#78)",
                       "done": true,
                       "partial": false
                     }
