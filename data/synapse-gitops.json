@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-10T01:49:54.829Z",
+  "updatedAt": "2026-06-10T01:59:15.461Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -718,13 +718,13 @@
           "steps": [
             {
               "name": "staging 환경 overlay",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 3,
-                  "partial": 1,
+                  "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "staging 네임스페이스 분리 (`synapse-staging`)",
@@ -742,9 +742,9 @@
                       "partial": false
                     },
                     {
-                      "text": "staging 전용 도메인 — 결정됨(`staging-<app>.<도메인>`), ACM 인증서 확보 후 Ingress 적용",
-                      "done": false,
-                      "partial": true
+                      "text": "staging 전용 도메인 — **nip.io 임시 도메인 방식 채택**(#121, 06-08): `infra/ingress/staging-ingress.yaml` 매니페스트 ready + nip.io 패턴(argocd/dev 라이브 증명). 실 도메인 확보 시 ACM 전환(`docs/argocd-tls-migration.md`)",
+                      "done": true,
+                      "partial": false
                     }
                   ]
                 },
@@ -802,8 +802,8 @@
                 {
                   "name": "적용 + 검증 + 문서화",
                   "total": 4,
-                  "done": 3,
-                  "partial": 1,
+                  "done": 4,
+                  "partial": 0,
                   "items": [
                     {
                       "text": "git push → 10개 Application (5앱 × 2환경) 자동 생성",
@@ -816,9 +816,9 @@
                       "partial": false
                     },
                     {
-                      "text": "staging 헬스체크 — A2 실 EKS에서 **4/5 Healthy** (platform-svc Degraded = cross-repo 앱 레포). 도메인 헬스체크는 port-forward로 대체(ACM/도메인 확보 후 Ingress)",
-                      "done": false,
-                      "partial": true
+                      "text": "staging 헬스체크 — **5/5 Healthy 06-08 라이브 달성** (`verify-argocd-deploy.sh staging 20/0/0 ALL PASSED`). platform-svc Degraded는 #92(datasource+flyway) PR #136으로 해소·close. 도메인 헬스체크는 nip.io 임시 도메인(#121)으로 대체",
+                      "done": true,
+                      "partial": false
                     },
                     {
                       "text": "승격 절차 README 작성 (`dev-to-staging-promotion.md`)",
@@ -829,7 +829,7 @@
                 }
               ],
               "totalChecks": 15,
-              "doneChecks": 13
+              "doneChecks": 15
             },
             {
               "name": "Observability 스택 (Prometheus + Grafana + Loki)",
@@ -973,7 +973,7 @@
             }
           ],
           "totalChecks": 35,
-          "doneChecks": 30
+          "doneChecks": 32
         },
         {
           "week": "W4",
@@ -981,12 +981,12 @@
           "steps": [
             {
               "name": "prod 환경 + 승인 게이트",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
                   "total": 8,
-                  "done": 4,
+                  "done": 8,
                   "partial": 0,
                   "items": [
                     {
@@ -1010,23 +1010,23 @@
                       "partial": false
                     },
                     {
-                      "text": "ACM 인증서 ARN 매핑 (HTTPS 종료) — W1 Step 1.2에서 이월 (D-041). 실 도메인 부재로 미충족, 라이브 기동 후 (FR-404)",
-                      "done": false,
+                      "text": "ACM 인증서 ARN 매핑 (HTTPS 종료) — **nip.io 임시 도메인 완결**: self-signed ACM import (#121, PR #123, 06-08 윈도우2)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "DNS 레코드 정의 (argocd.<도메인> + prod 앱 도메인) — W1 Step 1.2에서 이월 (D-041). 실 도메인 부재",
-                      "done": false,
+                      "text": "DNS 레코드 정의 (argocd.<도메인> + prod 앱 도메인) — **nip.io 임시 도메인**으로 충족 (#121)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "외부 도메인으로 ArgoCD UI 접속 + TLS 인증서 유효 — W1 Step 1.3에서 이월 (D-041). 실 도메인 부재",
-                      "done": false,
+                      "text": "외부 도메인으로 ArgoCD UI 접속 + TLS 인증서 유효 — **완결**: `curl --cacert` argocd 200, 체인 `Verify return code 0` (#121, 06-08 라이브)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping) — W1 Step 1.3에서 이월 (D-041). 실 도메인 부재",
-                      "done": false,
+                      "text": "webhook endpoint 외부 도달 (curl 또는 GitHub webhook ping) — **완결**: `/api/webhook` 200 (#121, 06-08 라이브)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1067,7 +1067,7 @@
                 {
                   "name": "적용 + 검증",
                   "total": 8,
-                  "done": 5,
+                  "done": 8,
                   "partial": 0,
                   "items": [
                     {
@@ -1096,18 +1096,18 @@
                       "partial": false
                     },
                     {
-                      "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — W2 Step 4.1에서 이월 (D-041). 실 도메인 부재",
-                      "done": false,
+                      "text": "dev 전용 도메인 패턴 적용 (dev-<app>.<도메인>) — **nip.io 임시 도메인** 적용 (#121, 06-08)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "dev Ingress 또는 Service LoadBalancer 정의 + 적용 — W2 Step 4.3에서 이월 (D-041)",
-                      "done": false,
+                      "text": "dev Ingress 또는 Service LoadBalancer 정의 + 적용 — nip.io ingress + ALB 컨트롤러 부트스트랩 (#121, PR #123/#124)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "dev 도메인으로 5개 앱 도달 (HTTP 200) — W2 Step 4.4에서 이월 (D-041). 실 도메인 부재",
-                      "done": false,
+                      "text": "dev 도메인으로 5개 앱 도달 (HTTP 200) — **완결**: nip.io 경유 `dev/actuator/health` 200 (#121, 06-08 라이브)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1115,7 +1115,7 @@
                 {
                   "name": "문서화 + 핸드오프",
                   "total": 5,
-                  "done": 4,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
@@ -1129,8 +1129,8 @@
                       "partial": false
                     },
                     {
-                      "text": "team-lead와 권한 모델 검토 + 합의 — 사인오프 대기",
-                      "done": false,
+                      "text": "team-lead와 권한 모델 검토 + 합의 — **D-043 사인오프 완료 (2026-06-10, velka 겸임)**",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1147,11 +1147,11 @@
                 }
               ],
               "totalChecks": 26,
-              "doneChecks": 18
+              "doneChecks": 26
             },
             {
               "name": "롤백 / 백업 전략",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "사전 분석",
@@ -1184,7 +1184,7 @@
                 {
                   "name": "롤백 절차 구현",
                   "total": 7,
-                  "done": 4,
+                  "done": 7,
                   "partial": 0,
                   "items": [
                     {
@@ -1208,18 +1208,18 @@
                       "partial": false
                     },
                     {
-                      "text": "Image Updater 5개 앱 새 이미지 푸시 → dev 자동 반영 E2E 검증 — W2 Step 6.3에서 이월 (D-041, A안 실행 필요)",
-                      "done": false,
+                      "text": "Image Updater 5개 앱 새 이미지 푸시 → dev 자동 반영 E2E 검증 — **#122 라이브 close**: engagement-svc 1.0.0→1.0.1 write-back PR 자동생성→sync (06-08 윈도우2)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Image Updater 평균 반영 시간 측정 (목표 5분 이내) — W2 Step 6.3에서 이월 (D-041)",
-                      "done": false,
+                      "text": "Image Updater 평균 반영 시간 측정 (목표 5분 이내) — **45초** (목표 충족, #122)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Image Updater 롤백 케이스: 잘못된 이미지 → 이전 태그 복귀 가능 — W2 Step 6.3에서 이월 (D-041)",
-                      "done": false,
+                      "text": "Image Updater 롤백 케이스: 잘못된 이미지 → 이전 태그 복귀 가능 — **19초** revert PR #150 → 이전 태그 복귀 (#122)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1255,7 +1255,7 @@
                 {
                   "name": "문서화 + 검증",
                   "total": 8,
-                  "done": 7,
+                  "done": 8,
                   "partial": 0,
                   "items": [
                     {
@@ -1269,12 +1269,12 @@
                       "partial": false
                     },
                     {
-                      "text": "team-lead와 RTO/RPO 합의 + 사인오프 — 사인오프 대기",
-                      "done": false,
+                      "text": "team-lead와 RTO/RPO 합의 + 사인오프 — **D-043 사인오프 완료 (2026-06-10, velka 겸임)**",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "HISTORY 갱신 — HISTORY 2026-05-28 + 2026-06-01 라이브 재현 섹션 (D-043)",
+                      "text": "HISTORY 갱신 — HISTORY 2026-05-28 + 2026-06-01 라이브 재현 섹션 (D-043) + 2026-06-10 W4 마감",
                       "done": true,
                       "partial": false
                     },
@@ -1302,11 +1302,11 @@
                 }
               ],
               "totalChecks": 23,
-              "doneChecks": 19
+              "doneChecks": 23
             }
           ],
           "totalChecks": 49,
-          "doneChecks": 37
+          "doneChecks": 49
         },
         {
           "week": "W5",
@@ -1910,7 +1910,7 @@
     {
       "date": "2026-06-10",
       "totalChecks": 211,
-      "doneChecks": 183
+      "doneChecks": 197
     }
   ],
   "changelog": [
@@ -2179,6 +2179,29 @@
           "type": "check_done",
           "target": "W5 > Cost 최적화 + 안정화",
           "detail": "6개 항목 완료 (0 → 6)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T01:59:15.461Z",
+      "commit": "756782a",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > staging 환경 overlay",
+          "detail": "2개 항목 완료 (13 → 15)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > prod 환경 + 승인 게이트",
+          "detail": "8개 항목 완료 (18 → 26)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 롤백 / 백업 전략",
+          "detail": "4개 항목 완료 (19 → 23)"
         }
       ]
     }
