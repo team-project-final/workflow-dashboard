@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-10T03:59:53.574Z",
+  "updatedAt": "2026-06-10T06:05:19.370Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -2359,7 +2359,7 @@
                 {
                   "name": "실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 1,
                   "partial": 1,
                   "items": [
                     {
@@ -2368,15 +2368,15 @@
                       "partial": true
                     },
                     {
-                      "text": "P1 API P95<200ms · P3 검색<2s · P4 체인<10s · P5 audit<30s · P6 AI카드<30s · P7 FCM>95% (3회 평균, Day 3)",
-                      "done": false,
+                      "text": "**P1·P2·P4·P5 충족 + W1 풀체인 PASS** (Day3, [SLA_VERIFICATION_W5](../../reports/SLA_VERIFICATION_W5.md)): P1 79.7/15.3ms · P2 ~1.42s · **P4 체인 1.31s(알림 leg 포함)** · **P5 audit 1.31s**. 보류: P3 검색(ES nori 미설치 → [gitops#174](https://github.com/team-project-final/synapse-gitops/issues/174)) · P6 AI(키 부재 → learning#73) · P7 실 FCM 발송률(자격; 경로·DLT 0은 입증)",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 2,
-              "doneChecks": 0
+              "doneChecks": 1
             },
             {
               "name": "Staging 배포 + 모니터링 대시보드 (W4 이월)",
@@ -2430,7 +2430,7 @@
             }
           ],
           "totalChecks": 13,
-          "doneChecks": 6
+          "doneChecks": 7
         }
       ]
     }
@@ -2671,7 +2671,7 @@
     {
       "date": "2026-06-10",
       "totalChecks": 291,
-      "doneChecks": 248
+      "doneChecks": 249
     }
   ],
   "changelog": [
@@ -3096,6 +3096,19 @@
           "type": "check_done",
           "target": "W3 > ArgoCD dev/staging 배포 검증",
           "detail": "2개 항목 완료 (33 → 35)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T06:05:19.370Z",
+      "commit": "a13d4fd",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 성능 SLA 검증 (W4 이월)",
+          "detail": "1개 항목 완료 (0 → 1)"
         }
       ]
     }
