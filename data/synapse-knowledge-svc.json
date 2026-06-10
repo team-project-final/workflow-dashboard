@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-10T05:46:17.833Z",
+  "updatedAt": "2026-06-10T08:13:31.032Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -1633,7 +1633,7 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -1652,8 +1652,8 @@
                       "partial": false
                     },
                     {
-                      "text": "NoteVersionRestoreRequest DTO 정의 — path variable 방식으로 대체 (요청 바디 불필요)",
-                      "done": false,
+                      "text": "NoteVersionRestoreRequest DTO 정의 — path variable 방식으로 대체 (요청 바디 불필요, REST 설계 판단)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1694,7 +1694,7 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 5,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
@@ -1724,7 +1724,7 @@
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1732,7 +1732,7 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 4,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
@@ -1762,7 +1762,7 @@
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1792,7 +1792,7 @@
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 31
+              "doneChecks": 34
             },
             {
               "name": "태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
@@ -1941,7 +1941,7 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 2,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -1955,13 +1955,13 @@
                       "partial": false
                     },
                     {
-                      "text": "TagAutoCompleteRequest DTO — @RequestParam 직접 수신으로 대체",
-                      "done": false,
+                      "text": "TagAutoCompleteRequest DTO — @RequestParam 직접 수신으로 대체 (단일 쿼리 파라미터, DTO 불필요)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "NoteFilterByTagsRequest DTO — @RequestParam String tag 단일 필터로 구현",
-                      "done": false,
+                      "text": "NoteFilterByTagsRequest DTO — @RequestParam String tag 단일 필터로 구현 (단일 파라미터, DTO 불필요)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1974,17 +1974,17 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 1,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "TagRepository 확장: findByNameStartingWith — CONFLICT-2: TagRepository 미생성, EntityManager 네이티브 쿼리 직접 사용",
-                      "done": false,
+                      "text": "TagRepository 확장: findByNameStartingWith — CONFLICT-2 근거: TagRepository 미생성, EntityManager 네이티브 쿼리 직접 사용",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "TagRepository 확장: findPopularTags — 동일",
-                      "done": false,
+                      "text": "TagRepository 확장: findPopularTags — 동일 (CONFLICT-2 근거: native 쿼리 대체)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1997,7 +1997,7 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 5,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
@@ -2027,7 +2027,7 @@
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2035,7 +2035,7 @@
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -2060,7 +2060,7 @@
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2090,11 +2090,11 @@
                 }
               ],
               "totalChecks": 42,
-              "doneChecks": 25
+              "doneChecks": 31
             }
           ],
           "totalChecks": 87,
-          "doneChecks": 56
+          "doneChecks": 65
         },
         {
           "week": "W4",
@@ -4947,7 +4947,7 @@
     {
       "date": "2026-06-10",
       "totalChecks": 619,
-      "doneChecks": 550
+      "doneChecks": 559
     }
   ],
   "changelog": [
@@ -5688,6 +5688,24 @@
           "type": "check_done",
           "target": "W5 > ES 동기화 안정화",
           "detail": "1개 항목 완료 (0 → 1)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-10T08:13:31.032Z",
+      "commit": "6b355b5",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > note 버전 이력 — 수정 히스토리 저장/조회/복원",
+          "detail": "3개 항목 완료 (31 → 34)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
+          "detail": "6개 항목 완료 (25 → 31)"
         }
       ]
     }
