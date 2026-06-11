@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-11T10:30:05.209Z",
+  "updatedAt": "2026-06-11T10:32:16.220Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -1281,7 +1281,7 @@
                 {
                   "name": "인프라 설계",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -1301,7 +1301,7 @@
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1471,11 +1471,11 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 37
+              "doneChecks": 38
             }
           ],
           "totalChecks": 88,
-          "doneChecks": 86
+          "doneChecks": 87
         },
         {
           "week": "W3",
@@ -4957,7 +4957,7 @@
     {
       "date": "2026-06-11",
       "totalChecks": 620,
-      "doneChecks": 606
+      "doneChecks": 607
     }
   ],
   "changelog": [
@@ -5806,6 +5806,19 @@
           "type": "check_done",
           "target": "W2 > ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
           "detail": "1개 항목 완료 (36 → 37)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T10:32:16.220Z",
+      "commit": "db2c041",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
+          "detail": "1개 항목 완료 (37 → 38)"
         }
       ]
     }
