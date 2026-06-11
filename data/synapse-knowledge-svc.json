@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-11T03:23:31.735Z",
+  "updatedAt": "2026-06-11T05:03:43.676Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -4599,8 +4599,8 @@
                 },
                 {
                   "name": "튜닝 결과 정리",
-                  "total": 7,
-                  "done": 7,
+                  "total": 8,
+                  "done": 8,
                   "partial": 0,
                   "items": [
                     {
@@ -4634,6 +4634,11 @@
                       "partial": false
                     },
                     {
+                      "text": "knowledge-svc JaCoCo service line coverage가 80% 이상이다.",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
                       "text": "발표용 검색 쿼리가 안정적으로 동작한다.",
                       "done": true,
                       "partial": false
@@ -4641,12 +4646,12 @@
                   ]
                 }
               ],
-              "totalChecks": 10,
-              "doneChecks": 10
+              "totalChecks": 11,
+              "doneChecks": 11
             }
           ],
-          "totalChecks": 16,
-          "doneChecks": 16
+          "totalChecks": 17,
+          "doneChecks": 17
         }
       ]
     }
@@ -4951,8 +4956,8 @@
     },
     {
       "date": "2026-06-11",
-      "totalChecks": 619,
-      "doneChecks": 559
+      "totalChecks": 620,
+      "doneChecks": 560
     }
   ],
   "changelog": [
@@ -5711,6 +5716,24 @@
           "type": "check_done",
           "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
           "detail": "6개 항목 완료 (25 → 31)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T05:03:43.676Z",
+      "commit": "ef5ab84",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 정확도 리포트",
+          "detail": "1개 항목 완료 (10 → 11)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 정확도 리포트",
+          "detail": "1개 박스 추가 (10 → 11)"
         }
       ]
     }
