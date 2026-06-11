@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-11T06:47:24.066Z",
+  "updatedAt": "2026-06-11T08:58:41.852Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -2352,7 +2352,7 @@
                 {
                   "name": "시나리오 정의",
                   "total": 3,
-                  "done": 2,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
@@ -2367,7 +2367,7 @@
                     },
                     {
                       "text": "버전/태그/첨부파일 회귀 시나리오 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2397,7 +2397,7 @@
                 }
               ],
               "totalChecks": 6,
-              "doneChecks": 4
+              "doneChecks": 5
             },
             {
               "name": "ES 동기화 안정화",
@@ -2406,12 +2406,12 @@
                 {
                   "name": "동기화 검증",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "노트 생성/수정 → Kafka → ES 인덱싱 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2421,7 +2421,7 @@
                     },
                     {
                       "text": "ES 장애/재시도 실패 케이스 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2429,7 +2429,7 @@
                 {
                   "name": "발표 데이터",
                   "total": 6,
-                  "done": 1,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -2449,7 +2449,7 @@
                     },
                     {
                       "text": "ES 동기화 E2E가 통과한다.",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2466,11 +2466,11 @@
                 }
               ],
               "totalChecks": 9,
-              "doneChecks": 1
+              "doneChecks": 4
             }
           ],
           "totalChecks": 15,
-          "doneChecks": 5
+          "doneChecks": 9
         }
       ]
     },
@@ -4957,7 +4957,7 @@
     {
       "date": "2026-06-11",
       "totalChecks": 620,
-      "doneChecks": 560
+      "doneChecks": 564
     }
   ],
   "changelog": [
@@ -5734,6 +5734,24 @@
           "type": "boxes_added",
           "target": "W5 > 정확도 리포트",
           "detail": "1개 박스 추가 (10 → 11)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T08:58:41.852Z",
+      "commit": "6451628",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 노트/그래프 E2E",
+          "detail": "1개 항목 완료 (4 → 5)"
+        },
+        {
+          "type": "check_done",
+          "target": "W5 > ES 동기화 안정화",
+          "detail": "3개 항목 완료 (1 → 4)"
         }
       ]
     }
