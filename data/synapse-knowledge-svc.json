@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-11T10:32:24.434Z",
+  "updatedAt": "2026-06-11T10:36:42.390Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -1192,7 +1192,7 @@
             },
             {
               "name": "ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1449,7 +1449,7 @@
                 {
                   "name": "View + Test (해당 시)",
                   "total": 3,
-                  "done": 2,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
@@ -1459,7 +1459,7 @@
                     },
                     {
                       "text": "ES 인덱스 데이터 Kibana/curl 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1471,11 +1471,11 @@
                 }
               ],
               "totalChecks": 39,
-              "doneChecks": 38
+              "doneChecks": 39
             }
           ],
           "totalChecks": 88,
-          "doneChecks": 87
+          "doneChecks": 88
         },
         {
           "week": "W3",
@@ -1567,7 +1567,7 @@
                 {
                   "name": "ERD 설계",
                   "total": 6,
-                  "done": 5,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
@@ -1597,7 +1597,7 @@
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1792,7 +1792,7 @@
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 43
+              "doneChecks": 44
             },
             {
               "name": "태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
@@ -1880,7 +1880,7 @@
                 {
                   "name": "ERD / 쿼리 설계",
                   "total": 5,
-                  "done": 4,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
@@ -1905,7 +1905,7 @@
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2090,11 +2090,11 @@
                 }
               ],
               "totalChecks": 42,
-              "doneChecks": 40
+              "doneChecks": 41
             }
           ],
           "totalChecks": 87,
-          "doneChecks": 83
+          "doneChecks": 85
         },
         {
           "week": "W4",
@@ -4957,7 +4957,7 @@
     {
       "date": "2026-06-11",
       "totalChecks": 620,
-      "doneChecks": 607
+      "doneChecks": 610
     }
   ],
   "changelog": [
@@ -5819,6 +5819,29 @@
           "type": "check_done",
           "target": "W2 > ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
           "detail": "1개 항목 완료 (37 → 38)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T10:36:42.390Z",
+      "commit": "06784b1",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > ES 동기화 — 노트 변경 → Kafka → Elasticsearch 인덱싱",
+          "detail": "1개 항목 완료 (38 → 39)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > note 버전 이력 — 수정 히스토리 저장/조회/복원",
+          "detail": "1개 항목 완료 (43 → 44)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
+          "detail": "1개 항목 완료 (40 → 41)"
         }
       ]
     }
