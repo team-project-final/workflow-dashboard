@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-06-11T02:13:46.035Z",
+  "updatedAt": "2026-06-11T05:30:35.698Z",
   "tracks": [
     {
       "name": "frontend",
@@ -3468,7 +3468,7 @@
                 },
                 {
                   "name": "발표 데모 정돈",
-                  "total": 7,
+                  "total": 3,
                   "done": 0,
                   "partial": 0,
                   "items": [
@@ -3484,6 +3484,60 @@
                     },
                     {
                       "text": "깨진 링크/이미지/버튼 확인",
+                      "done": false,
+                      "partial": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 6,
+              "doneChecks": 0
+            },
+            {
+              "name": "컨테이너 이미지 파이프라인 (이슈 #52)",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "이미지 빌드",
+                  "total": 3,
+                  "done": 3,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "멀티스테이지 Dockerfile (Flutter web → nginx-unprivileged)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "nginx default.conf (8080 · /healthz · SPA 폴백)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": ".dockerignore",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "배포 파이프라인",
+                  "total": 7,
+                  "done": 2,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "deploy.yml (semver 태그 트리거 → ECR `synapse/frontend` push)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "gitops apps/frontend/base 계약(8080·uid 101·RO 루트·/healthz) 정합 확인",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "`AWS_ROLE_ARN` 시크릿 확인 후 `1.0.0` 태그 푸시 → ECR 이미지 생성 (머지 후)",
                       "done": false,
                       "partial": false
                     },
@@ -3511,11 +3565,11 @@
                 }
               ],
               "totalChecks": 10,
-              "doneChecks": 0
+              "doneChecks": 5
             }
           ],
-          "totalChecks": 16,
-          "doneChecks": 0
+          "totalChecks": 22,
+          "doneChecks": 5
         }
       ]
     }
@@ -3765,8 +3819,8 @@
     },
     {
       "date": "2026-06-11",
-      "totalChecks": 475,
-      "doneChecks": 142
+      "totalChecks": 481,
+      "doneChecks": 147
     }
   ],
   "changelog": [
@@ -3898,6 +3952,24 @@
           "type": "check_done",
           "target": "W3 > 알림 센터 — 알림 목록 + 읽음/안읽음 + 설정",
           "detail": "3개 항목 완료 (35 → 38)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T05:30:35.697Z",
+      "commit": "e9b286b",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "step_added",
+          "target": "W5 > 컨테이너 이미지 파이프라인 (이슈 #52)",
+          "detail": "W5에 Step 추가 (2개 → 3개)"
+        },
+        {
+          "type": "boxes_removed",
+          "target": "W5 > 에러/로딩 상태 통일",
+          "detail": "4개 박스 제거 (10 → 6)"
         }
       ]
     }
