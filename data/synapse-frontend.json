@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-06-11T05:31:21.162Z",
+  "updatedAt": "2026-06-11T07:10:26.373Z",
   "tracks": [
     {
       "name": "frontend",
@@ -1210,12 +1210,12 @@
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 3,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드) — 팀원 구현",
-                      "done": false,
+                      "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드) — ReviewStartScreen + ReviewNotifier.startSession 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1229,8 +1229,8 @@
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 화면 요건 (복습 결과 요약) — 팀원 구현",
-                      "done": false,
+                      "text": "세션 완료 화면 요건 (복습 결과 요약) — ReviewResultScreen 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1243,22 +1243,22 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false,
+                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근) — router redirect 처리",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "권한 종류: 로그인 사용자 (본인 카드만)",
-                      "done": false,
+                      "text": "권한 종류: 로그인 사용자 (본인 카드만) — router redirect 처리",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1271,22 +1271,22 @@
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복습 세션 상태 모델 설계 (ReviewSessionState: loading/reviewing/flipped/completed)",
-                      "done": false,
+                      "text": "복습 세션 상태 모델 설계 (ReviewSessionState: loading/reviewing/flipped/completed) — ReviewState(isLoading/isSubmitting/isCompleted) 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "카드 큐 상태 관리 설계 (currentIndex, totalCards, remainingCards)",
-                      "done": false,
+                      "text": "카드 큐 상태 관리 설계 (currentIndex, totalCards, remainingCards) — ReviewState.currentIndex/total 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1299,12 +1299,12 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 3,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "세션 데이터 메모리 관리 (세션 종료 시 클리어)",
-                      "done": false,
+                      "text": "세션 데이터 메모리 관리 (세션 종료 시 클리어) — ReviewNotifier.reset() 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1322,22 +1322,22 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "ReviewSessionState Provider 설계",
-                      "done": false,
+                      "text": "ReviewSessionState Provider 설계 — ReviewState + ReviewNotifier 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "ReviewCardDisplay 모델 정의 (front, back, isFlipped)",
-                      "done": false,
+                      "text": "ReviewCardDisplay 모델 정의 (front, back, isFlipped) — ReviewCard entity 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "ReviewResult 모델 정의 (totalCards, correctCount, sessionDuration)",
-                      "done": false,
+                      "text": "ReviewResult 모델 정의 (totalCards, correctCount, sessionDuration) — ReviewSession + ReviewSubmitResult entity 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1350,22 +1350,22 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card 런타임 연동)",
-                      "done": false,
+                      "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card 런타임 연동) — CardsRepositoryImpl 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "세션 시작/카드 큐/rating 제출/세션 완료 API 호출",
-                      "done": false,
+                      "text": "세션 시작/카드 큐/rating 제출/세션 완료 API 호출 — CardsRemoteDatasource 전체 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Riverpod Provider 등록 (ReviewSessionNotifier)",
-                      "done": false,
+                      "text": "Riverpod Provider 등록 (ReviewSessionNotifier) — reviewNotifierProvider 등록",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1373,27 +1373,27 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "ReviewSessionNotifier 구현 (startSession, flipCard, submitRating, nextCard, completeSession)",
-                      "done": false,
+                      "text": "ReviewSessionNotifier 구현 (startSession, flipCard, submitRating, nextCard, completeSession) — ReviewNotifier 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "카드 큐 관리 로직 (현재 카드 인덱스, 남은 카드 수)",
-                      "done": false,
+                      "text": "카드 큐 관리 로직 (현재 카드 인덱스, 남은 카드 수) — ReviewState.currentIndex/total 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "카드 뒤집기 상태 관리",
-                      "done": false,
+                      "text": "카드 뒤집기 상태 관리 — FlipCard 위젯 내부 상태 관리",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 시 결과 집계 (정답률, 소요 시간)",
-                      "done": false,
+                      "text": "세션 완료 시 결과 집계 (정답률, 소요 시간) — ReviewState.accuracy/earnedXp 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1411,12 +1411,12 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 3,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼) — 팀원 구현",
-                      "done": false,
+                      "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼) — ReviewStartScreen 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1435,8 +1435,8 @@
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 화면 Widget 구현 (결과 요약 + 돌아가기 버튼) — 팀원 구현",
-                      "done": false,
+                      "text": "세션 완료 화면 Widget 구현 (결과 요약 + 돌아가기 버튼) — ReviewResultScreen 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1481,7 +1481,7 @@
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 9
+              "doneChecks": 30
             },
             {
               "name": "커뮤니티 그룹 목록/상세 화면",
@@ -1783,7 +1783,7 @@
             }
           ],
           "totalChecks": 130,
-          "doneChecks": 23
+          "doneChecks": 44
         },
         {
           "week": "W3",
@@ -3820,7 +3820,7 @@
     {
       "date": "2026-06-11",
       "totalChecks": 481,
-      "doneChecks": 147
+      "doneChecks": 168
     }
   ],
   "changelog": [
@@ -3970,6 +3970,19 @@
           "type": "boxes_removed",
           "target": "W5 > 에러/로딩 상태 통일",
           "detail": "4개 박스 제거 (10 → 6)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T07:10:26.372Z",
+      "commit": "c15a329",
+      "author": "choyj358-ai",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > SRS 복습 화면 — 카드 제시 → 뒤집기 → 난이도 선택 → 다음 카드",
+          "detail": "21개 항목 완료 (9 → 30)"
         }
       ]
     }
