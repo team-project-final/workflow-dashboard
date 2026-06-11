@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-11T09:33:01.602Z",
+  "updatedAt": "2026-06-11T10:07:50.005Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -2161,17 +2161,17 @@
                 {
                   "name": "버그 수정",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0 버그 수정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2179,12 +2179,12 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2197,24 +2197,24 @@
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 12,
-              "doneChecks": 6
+              "doneChecks": 11
             },
             {
               "name": "버그 수정 + ES 동기화 안정화",
@@ -2223,17 +2223,17 @@
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "ES 동기화 안정화 시나리오 목록 작성",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "테스트 데이터 준비",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2241,17 +2241,17 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "ES 동기화 플로우 E2E 테스트 실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "실패 항목 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2277,7 +2277,7 @@
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 1,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
@@ -2287,12 +2287,12 @@
                     },
                     {
                       "text": "ES 동기화 관련 버그 수정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2300,12 +2300,12 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
                       "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2318,28 +2318,28 @@
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "API 문서 최신화",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 3
+              "doneChecks": 12
             }
           ],
           "totalChecks": 25,
-          "doneChecks": 9
+          "doneChecks": 23
         },
         {
           "week": "W5",
@@ -4957,7 +4957,7 @@
     {
       "date": "2026-06-11",
       "totalChecks": 620,
-      "doneChecks": 591
+      "doneChecks": 605
     }
   ],
   "changelog": [
@@ -5775,6 +5775,24 @@
           "type": "check_done",
           "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
           "detail": "9개 항목 완료 (31 → 40)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-11T10:07:50.005Z",
+      "commit": "b576fb1",
+      "author": "kimyunji-01",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W4 > 노트/그래프 E2E 테스트",
+          "detail": "5개 항목 완료 (6 → 11)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 버그 수정 + ES 동기화 안정화",
+          "detail": "9개 항목 완료 (3 → 12)"
         }
       ]
     }
