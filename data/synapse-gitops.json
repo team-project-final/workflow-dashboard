@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-11T13:47:16.635Z",
+  "updatedAt": "2026-06-12T02:26:51.586Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1459,7 +1459,7 @@
                 {
                   "name": "사전 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -1473,13 +1473,13 @@
                       "partial": false
                     },
                     {
-                      "text": "5개 앱 P95 메모리/CPU 사용량 측정 (Prometheus) <!-- 라이브 메트릭 윈도우 위임 -->",
-                      "done": false,
+                      "text": "5개 앱 P95 메모리/CPU 사용량 측정 (Prometheus) <!-- 2026-06-12 라이브: 12h P95 실측 — platform 91~96.7%(진성 압박)·knowledge 81~83.5%·engagement ≤78%·노드 37~52%. #194 코멘트에 전체 수치 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "미사용 리소스 식별 (orphan LoadBalancer, unattached EBS, idle Pod)",
-                      "done": false,
+                      "text": "미사용 리소스 식별 (orphan LoadBalancer, unattached EBS, idle Pod) <!-- orphan ALB/ENI 근본원인 규명+destroy 전 선정리 자동화(PR #178, 2026-06-11). 라이브 실증은 06-12 destroy에서 -->",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1487,12 +1487,12 @@
                 {
                   "name": "리소스 적정화",
                   "total": 4,
-                  "done": 1,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "resources.requests/limits 적정값으로 5개 앱 조정 <!-- 정적 리뷰 완료(resource-sizing-review-w5.md), P95 튜닝 윈도우 위임 -->",
-                      "done": false,
+                      "text": "resources.requests/limits 적정값으로 5개 앱 조정 <!-- P95 실측 기반: learning-card 250m/768Mi(PR #172, 06-10)·platform-svc 768Mi=P95×1.3(PR #201, 06-12). 나머지 앱은 P95 90% 미만으로 현행 유지 판단 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1515,7 +1515,7 @@
                 {
                   "name": "안정화 + 회귀 검증",
                   "total": 5,
-                  "done": 4,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
@@ -1534,8 +1534,8 @@
                       "partial": false
                     },
                     {
-                      "text": "알람 false-positive 비율 점검 + 룰 조정",
-                      "done": false,
+                      "text": "알람 false-positive 비율 점검 + 룰 조정 <!-- 2026-06-11~12: EKS 컨트롤플레인 룰 비활성(#194/PR #195) + SynapseHighMemory container!=\"\" 이중합산 오탐 수정(PR #201) → 오탐 firing 해소. 잔여 PodDown/TargetDown은 앱 actuator owner 4이슈 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1575,11 +1575,11 @@
                 }
               ],
               "totalChecks": 17,
-              "doneChecks": 6
+              "doneChecks": 10
             }
           ],
           "totalChecks": 37,
-          "doneChecks": 26
+          "doneChecks": 30
         }
       ]
     }
@@ -1916,6 +1916,11 @@
       "date": "2026-06-11",
       "totalChecks": 211,
       "doneChecks": 200
+    },
+    {
+      "date": "2026-06-12",
+      "totalChecks": 211,
+      "doneChecks": 204
     }
   ],
   "changelog": [
@@ -2220,6 +2225,19 @@
           "type": "check_done",
           "target": "W3 > Observability 스택 (Prometheus + Grafana + Loki)",
           "detail": "3개 항목 완료 (17 → 20)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12T02:26:51.586Z",
+      "commit": "5e4b7c7",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > Cost 최적화 + 안정화",
+          "detail": "4개 항목 완료 (6 → 10)"
         }
       ]
     }
