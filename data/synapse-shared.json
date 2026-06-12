@@ -1,6 +1,6 @@
 {
   "repo": "synapse-shared",
-  "updatedAt": "2026-06-11T13:47:19.266Z",
+  "updatedAt": "2026-06-12T05:00:51.161Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -2380,12 +2380,12 @@
             },
             {
               "name": "Staging 배포 + 모니터링 대시보드 (W4 이월)",
-              "status": "In Progress",
+              "status": "Done",
               "phases": [
                 {
                   "name": "실행",
                   "total": 4,
-                  "done": 3,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -2404,14 +2404,14 @@
                       "partial": false
                     },
                     {
-                      "text": "staging 24h 안정(NFR-305) — Day 4 시작",
-                      "done": false,
+                      "text": "staging 24h 안정(NFR-305) — **06-12 17:15+ 사인오프 승인**([gitops#183 코멘트](https://github.com/team-project-final/synapse-gitops/issues/183)): ArgoCD 16/16 Healthy·윈도우 내 비정상 재시작 0·ES green. 알림 클린은 부분(잔여=platform#101·engagement#45·staging 태그·비대상 스크랩 [gitops#207](https://github.com/team-project-final/synapse-gitops/issues/207))",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "— [ ] Staging 배포 결과 + 운영 가이드 문서화 — Day 4",
+                  "name": "— [x] Staging 배포 결과 + 운영 가이드 문서화 — [STAGING_BRINGUP_W5_DAY4](../../reports/STAGING_BRINGUP_W5_DAY4.md) + #183 사인오프 기록. **사인오프 직후 destroy 완료**(RDS·MSK·노드 삭제 확인, ECR standalone 보존)",
                   "total": 0,
                   "done": 0,
                   "partial": 0,
@@ -2419,7 +2419,7 @@
                 }
               ],
               "totalChecks": 4,
-              "doneChecks": 3
+              "doneChecks": 4
             },
             {
               "name": "최종 발표 자료 + 시연 리허설",
@@ -2430,7 +2430,7 @@
             }
           ],
           "totalChecks": 13,
-          "doneChecks": 9
+          "doneChecks": 10
         }
       ]
     }
@@ -2677,6 +2677,11 @@
       "date": "2026-06-11",
       "totalChecks": 291,
       "doneChecks": 280
+    },
+    {
+      "date": "2026-06-12",
+      "totalChecks": 291,
+      "doneChecks": 281
     }
   ],
   "changelog": [
@@ -3150,6 +3155,19 @@
           "type": "check_done",
           "target": "W4 > Staging 배포 + 모니터링 대시보드 가동",
           "detail": "11개 항목 완료 (0 → 11)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12T05:00:51.161Z",
+      "commit": "bbc565a",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > Staging 배포 + 모니터링 대시보드 (W4 이월)",
+          "detail": "1개 항목 완료 (3 → 4)"
         }
       ]
     }
