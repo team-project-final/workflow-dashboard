@@ -1,6 +1,6 @@
 {
   "repo": "synapse-knowledge-svc",
-  "updatedAt": "2026-06-11T13:47:07.507Z",
+  "updatedAt": "2026-06-12T01:11:11.688Z",
   "tracks": [
     {
       "name": "knowledge-1",
@@ -4599,8 +4599,8 @@
                 },
                 {
                   "name": "튜닝 결과 정리",
-                  "total": 8,
-                  "done": 8,
+                  "total": 9,
+                  "done": 9,
                   "partial": 0,
                   "items": [
                     {
@@ -4634,6 +4634,11 @@
                       "partial": false
                     },
                     {
+                      "text": "live AI 카드 생성 차단 원인이던 `note-created.deckId` 누락이 해소됐다.",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
                       "text": "knowledge-svc JaCoCo service line coverage가 80% 이상이다.",
                       "done": true,
                       "partial": false
@@ -4646,12 +4651,12 @@
                   ]
                 }
               ],
-              "totalChecks": 11,
-              "doneChecks": 11
+              "totalChecks": 12,
+              "doneChecks": 12
             }
           ],
-          "totalChecks": 17,
-          "doneChecks": 17
+          "totalChecks": 18,
+          "doneChecks": 18
         }
       ]
     }
@@ -4958,6 +4963,11 @@
       "date": "2026-06-11",
       "totalChecks": 620,
       "doneChecks": 610
+    },
+    {
+      "date": "2026-06-12",
+      "totalChecks": 621,
+      "doneChecks": 611
     }
   ],
   "changelog": [
@@ -5842,6 +5852,24 @@
           "type": "check_done",
           "target": "W3 > 태그 관리 고도화 — 태그 기반 필터링, 태그 자동완성, 인기 태그",
           "detail": "1개 항목 완료 (40 → 41)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12T01:11:11.688Z",
+      "commit": "fd4f4a4",
+      "author": "parkcodings",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > 정확도 리포트",
+          "detail": "1개 항목 완료 (11 → 12)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W5 > 정확도 리포트",
+          "detail": "1개 박스 추가 (11 → 12)"
         }
       ]
     }
