@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-06-12T01:41:01.898Z",
+  "updatedAt": "2026-06-12T01:41:11.879Z",
   "tracks": [
     {
       "name": "engagement",
@@ -320,7 +320,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 인증 필요, W1 임시 X-User-Id 헤더)",
+                      "text": "인증 필요 여부: Yes (현재 JWT subject 기반 사용자 식별)",
                       "done": true,
                       "partial": false
                     },
@@ -608,7 +608,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 인증 필요, W1 임시 X-User-Id 헤더)",
+                      "text": "인증 필요 여부: Yes (현재 JWT subject 기반 사용자 식별)",
                       "done": true,
                       "partial": false
                     },
@@ -929,7 +929,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (JWT 필요 여부 확인, platform-svc 연동 전까지 W2 임시 X-User-Id 헤더)",
+                      "text": "인증 필요 여부: Yes (JWT subject 기반 사용자 식별)",
                       "done": true,
                       "partial": false
                     },
@@ -1152,12 +1152,12 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "GET /gamification/profile 엔드포인트 구현 (임시 X-User-Id 기준 사용자 XP/레벨/스트릭/배지 프로필 조회)",
+                      "text": "GET /gamification/profile 엔드포인트 구현 (JWT subject 기준 사용자 XP/레벨/스트릭/배지 프로필 조회)",
                       "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /gamification/xp/history 엔드포인트 구현 (임시 X-User-Id 기준 사용자 XP 이력 조회)",
+                      "text": "GET /gamification/xp/history 엔드포인트 구현 (JWT subject 기준 사용자 XP 이력 조회)",
                       "done": true,
                       "partial": false
                     },
@@ -1277,7 +1277,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (공유 등록/복사 시 최종 JWT 필요, platform-svc 연동 전까지 임시 X-User-Id 사용, 검색은 공개 가능)",
+                      "text": "인증 필요 여부: Yes (공유 등록/복사/삭제는 JWT subject 필요, 검색은 공개 가능)",
                       "done": true,
                       "partial": false
                     },
@@ -1896,27 +1896,27 @@
             },
             {
               "name": "Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Step Goal / Done When / Scope / Input 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "PRD_W3 해당 요구사항 확인 (Kafka 이벤트 발행)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Duration 산정 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1924,35 +1924,35 @@
                 {
                   "name": "요구사항 분석",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
                       "text": "gamification.level_up 이벤트 스키마 정의 (userId, oldLevel, newLevel, xp)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "gamification.badge_earned 이벤트 스키마 정의 (userId, badgeId, badgeName, earnedAt)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "이벤트 발행 트리거 시점 정의 (레벨업 시, 배지 수여 시)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Instructions 초안 → TASK 문서 반영",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
                   "name": "Security 1차 검토",
-                  "total": 4,
-                  "done": 0,
+                  "total": 5,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
@@ -1961,18 +1961,23 @@
                       "partial": false
                     },
                     {
-                      "text": "이벤트 페이로드 민감정보 미포함 확인",
-                      "done": false,
+                      "text": "Kafka ACL 계약 시뮬레이션 테스트 (허용 토픽 + tenantId partition key 검증)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Schema Registry Avro/JSON Schema 등록",
-                      "done": false,
+                      "text": "이벤트 페이로드 민감정보 미포함 확인",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "Schema Registry Avro 스키마 등록",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1980,27 +1985,27 @@
                 {
                   "name": "Kafka 토픽 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
                       "text": "gamification.level_up 토픽 설정 (파티션, 복제, 보존)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "gamification.badge_earned 토픽 설정",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "이벤트 키 전략 (userId 기반 파티셔닝)",
-                      "done": false,
+                      "text": "이벤트 키 전략 (tenantId 기반 파티셔닝)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Duration(final) 갱신",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2008,27 +2013,27 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
                       "text": "이벤트 중복 발행 방지 (멱등성 Producer 설정)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "이벤트 스키마 버전 관리 (호환성 모드: BACKWARD)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "소비자 측 실패 시 재시도 정책 가이드 제공",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "결과 → TASK Constraints 반영",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2036,27 +2041,27 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "LevelUpEvent DTO 정의 (userId, oldLevel, newLevel, totalXp, occurredAt)",
-                      "done": false,
+                      "text": "`com.synapse.engagement.LevelUp` Avro record 정의 (eventId, tenantId, userId, newLevel, previousLevel, totalXp, occurredAt)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "BadgeEarnedEvent DTO 정의 (userId, badgeId, badgeName, occurredAt)",
-                      "done": false,
+                      "text": "`com.synapse.engagement.BadgeEarned` Avro record 정의 (eventId, tenantId, userId, badgeId, badgeCode, badgeName, occurredAt)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Avro/JSON Schema 작성 → Schema Registry 등록",
-                      "done": false,
+                      "text": "shared Avro 스키마 벤더링 (`src/main/avro/engagement`) 및 Schema Registry 발행 경로 반영",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Output Format → TASK 반영",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2064,27 +2069,27 @@
                 {
                   "name": "Producer 구현",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
                       "text": "GamificationKafkaProducer 구현 (KafkaTemplate)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "publishLevelUp() 메서드 구현",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "publishBadgeEarned() 메서드 구현",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "멱등성 Producer 설정 (enable.idempotence=true)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2092,55 +2097,60 @@
                 {
                   "name": "Service 연동 + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
                       "text": "LevelService → 레벨업 시 GamificationKafkaProducer.publishLevelUp() 호출",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "BadgeService → 배지 수여 시 GamificationKafkaProducer.publishBadgeEarned() 호출",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "통합 테스트 작성 (EmbeddedKafka)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "이벤트 발행 → 토픽 수신 검증",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "테스트 통과 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
                   "name": "E2E 검증",
-                  "total": 3,
-                  "done": 0,
+                  "total": 4,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
                       "text": "Docker Compose 환경에서 이벤트 발행 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "kafka-console-consumer로 이벤트 수신 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "notification 서비스 연동 테스트 (이벤트 → 알림 발송)",
-                      "done": false,
+                      "text": "mock notification processor 계약 테스트 (Avro consume → notification command 변환)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "notification 연동 slice/contract 테스트 (이벤트 → fake notification command 변환)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2148,29 +2158,29 @@
                 {
                   "name": "결과 정리",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "이벤트 스키마 문서화",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "소비자 가이드 작성 (토픽명, 스키마, 파티션 키)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "RULE Reference → TASK 반영",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 38,
-              "doneChecks": 0
+              "totalChecks": 40,
+              "doneChecks": 39
             },
             {
               "name": "community 신고 + Admin 모더레이션 — 신고 접수/처리 API",
@@ -2481,103 +2491,128 @@
               "doneChecks": 44
             }
           ],
-          "totalChecks": 128,
-          "doneChecks": 90
+          "totalChecks": 130,
+          "doneChecks": 129
         },
         {
           "week": "W4",
           "period": "06-01~06-05",
           "steps": [
             {
-              "name": "게이미피케이션 E2E 테스트",
-              "status": "Not Started",
+              "name": "Kafka 이벤트 연동 — learning.card.review-completed 소비 + gamification 이벤트 발행",
+              "status": "Done",
               "phases": [
                 {
-                  "name": "E2E 시나리오 정의",
-                  "total": 2,
-                  "done": 0,
+                  "name": "이벤트 계약 확정",
+                  "total": 3,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "게이미피케이션 플로우 시나리오 작성 (복습→XP→배지→레벨업→리더보드→알림)",
-                      "done": false,
+                      "text": "`learning.card.review-completed-v1` 소비 스키마 확정 (`cardId`, `userId`, `tenantId`, `rating`, `nextReviewAt`, `reviewedAt`)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "테스트 데이터 준비",
-                      "done": false,
+                      "text": "`engagement.gamification.level-up-v1` 발행 스키마 확정",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "`engagement.gamification.badge-earned-v1` 발행 스키마 확정",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "E2E 테스트 실행",
-                  "total": 2,
-                  "done": 0,
+                  "name": "Consumer 구현",
+                  "total": 3,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "게이미피케이션 전체 플로우 E2E 테스트 실행",
-                      "done": false,
+                      "text": "W2 XP 적립 유스케이스와 `ReviewCompleted` consumer 연결",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "실패 항목 기록",
-                      "done": false,
+                      "text": "Kafka Avro + Schema Registry 역직렬화 설정",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "listener enable 플래그 정리 (`synapse.kafka.enabled`)",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "버그 트리아지",
-                  "total": 2,
-                  "done": 0,
+                  "name": "Producer 구현",
+                  "total": 3,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "P0/P1/P2 분류",
-                      "done": false,
+                      "text": "레벨 상승 시 `engagement.gamification.level-up-v1` 발행",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "P0 즉시 수정 대상 확정",
-                      "done": false,
+                      "text": "배지 수여 시 `engagement.gamification.badge-earned-v1` 발행",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "producer 멱등성 설정 정리 (`enable.idempotence=true`, `acks=all`)",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "버그 수정",
-                  "total": 2,
-                  "done": 0,
+                  "name": "멱등성/보안 검토",
+                  "total": 3,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false,
+                      "text": "중복 `ReviewCompleted` 수신 시 XP 중복 적립 방지",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "text": "이벤트 payload 민감정보 미포함 확인",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "DLQ/재처리 정책 문서화: 1초 간격 3회 재시도 후 `{원본토픽}.dlq`로 발행",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
-                  "name": "회귀 테스트",
-                  "total": 2,
-                  "done": 0,
+                  "name": "통합 테스트",
+                  "total": 3,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "text": "EmbeddedKafka 통합 테스트 작성",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "커버리지 80% 이상 확인",
-                      "done": false,
+                      "text": "`ReviewCompleted` → XP 적립 검증",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "`level-up`/`badge-earned` 발행 검증",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2585,43 +2620,43 @@
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "API 문서 최신화",
-                      "done": false,
+                      "text": "토픽/스키마/소비자 가이드 작성",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     }
                   ]
                 }
               ],
-              "totalChecks": 12,
-              "doneChecks": 0
+              "totalChecks": 17,
+              "doneChecks": 17
             },
             {
-              "name": "커뮤니티 E2E 테스트 + 버그 수정",
-              "status": "Not Started",
+              "name": "게이미피케이션 E2E 테스트 + 버그 수정",
+              "status": "Done",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "커뮤니티 플로우 시나리오 작성 (공유→검색→복사 + 신고→처리)",
-                      "done": false,
+                      "text": "게이미피케이션 플로우 시나리오 작성 (복습→XP→배지→레벨업→리더보드)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "테스트 데이터 준비",
-                      "done": false,
+                      "text": "테스트 데이터 준비 (`userId=10100`, `step10-review-*`)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2629,17 +2664,17 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "커뮤니티 전체 플로우 E2E 테스트 실행",
-                      "done": false,
+                      "text": "게이미피케이션 전체 플로우 E2E 테스트 실행 (`GamificationStep10E2ETests`)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "실패 항목 기록",
-                      "done": false,
+                      "text": "실패 항목 기록: P0/P1/P2 신규 실패 없음",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2647,17 +2682,17 @@
                 {
                   "name": "버그 트리아지",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "P0/P1/P2 분류",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "P0 즉시 수정 대상 확정",
-                      "done": false,
+                      "text": "P0 즉시 수정 대상 확정: 없음",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2665,22 +2700,22 @@
                 {
                   "name": "버그 수정",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "P0 버그 수정",
-                      "done": false,
+                      "text": "P0 버그 수정: 해당 없음",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "커뮤니티 관련 버그 수정",
-                      "done": false,
+                      "text": "게이미피케이션 관련 버그 수정: 해당 없음",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "수정 코드 리뷰 + 테스트",
-                      "done": false,
+                      "text": "수정 코드 리뷰 + 테스트: Step 10 E2E 추가 및 전체 회귀 테스트 통과",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2688,17 +2723,17 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "text": "수정 후 전체 테스트 재실행 (`.\\gradlew.bat test`)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "커버리지 80% 이상 확인",
-                      "done": false,
+                      "text": "커버리지 80% 이상 확인: 정량 커버리지 도구 미구성 확인, 전체 회귀 테스트 통과로 대체 기록",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2706,16 +2741,242 @@
                 {
                   "name": "문서 업데이트",
                   "total": 2,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "API 문서 최신화",
-                      "done": false,
+                      "text": "API 문서 최신화: 기존 `/v3/api-docs` gamification endpoint smoke 유지",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "HISTORY 완료 기록",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 13,
+              "doneChecks": 13
+            },
+            {
+              "name": "커뮤니티 공유/신고 E2E 테스트 + 안정화",
+              "status": "Done",
+              "phases": [
+                {
+                  "name": "E2E 시나리오 정의",
+                  "total": 2,
+                  "done": 2,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "커뮤니티 플로우 시나리오 작성 (공유→검색→복사 + 신고→처리)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "테스트 데이터 준비",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "E2E 테스트 실행",
+                  "total": 2,
+                  "done": 2,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "커뮤니티 전체 플로우 E2E 테스트 실행",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "실패 항목 기록",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "버그 트리아지",
+                  "total": 2,
+                  "done": 2,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "P0/P1/P2 분류",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "P0 즉시 수정 대상 확정",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "버그 수정",
+                  "total": 3,
+                  "done": 3,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "P0 버그 수정",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "커뮤니티 관련 버그 수정",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "수정 코드 리뷰 + 테스트",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "회귀 테스트",
+                  "total": 2,
+                  "done": 2,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "수정 후 전체 테스트 재실행",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "커버리지 80% 이상 확인",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "문서 업데이트",
+                  "total": 2,
+                  "done": 2,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "API 문서 최신화",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "HISTORY 완료 기록",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 13,
+              "doneChecks": 13
+            }
+          ],
+          "totalChecks": 43,
+          "doneChecks": 43
+        },
+        {
+          "week": "W5",
+          "period": "06-08~06-12",
+          "steps": [
+            {
+              "name": "게이미피케이션 E2E",
+              "status": "In Progress",
+              "phases": [
+                {
+                  "name": "시나리오 정의",
+                  "total": 3,
+                  "done": 3,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "복습 → XP 적립 → 레벨업 시나리오 작성",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "배지 조건 → 수여 → 알림 시나리오 작성",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "리더보드 조회 시나리오 작성",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "실행 및 수정",
+                  "total": 4,
+                  "done": 4,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "게이미피케이션 E2E 테스트 실행",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "이벤트 중복/멱등성 확인",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "P0 버그 수정 및 회귀 테스트: 신규 P0 없음",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "notification 연동 slice/contract 테스트 (gamification 이벤트 → fake notification command 변환)",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "배포 선결조건",
+                  "total": 6,
+                  "done": 3,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "MSK TLS-only 대비 `spring.kafka.security.protocol` 배선 반영 ([#26](https://github.com/team-project-final/synapse-engagement-svc/issues/26))",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "semver 이미지 릴리스 workflow 보정 ([#25](https://github.com/team-project-final/synapse-engagement-svc/issues/25))",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "Flyway migration guard 및 표준 runtime 옵션 반영 ([#28](https://github.com/team-project-final/synapse-engagement-svc/issues/28))",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "ECR `synapse/engagement-svc:<신규 semver>` 도착 확인",
+                      "done": false,
+                      "partial": false
+                    },
+                    {
+                      "text": "image-updater dev `newTag` 자동 bump 확인",
+                      "done": false,
+                      "partial": false
+                    },
+                    {
+                      "text": "EKS engagement 파드 Kafka 초기화/MSK 연결 로그 확인",
                       "done": false,
                       "partial": false
                     }
@@ -2723,11 +2984,90 @@
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 0
+              "doneChecks": 10
+            },
+            {
+              "name": "커뮤니티 E2E",
+              "status": "Done",
+              "phases": [
+                {
+                  "name": "시나리오 정의",
+                  "total": 3,
+                  "done": 3,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "공유 덱 생성 → 검색 → 복사 시나리오 작성: [Step 13 Community Demo Scenario](../demo/2026-06-08-step13-community-demo-scenario.md)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "공유 노트 조회 시나리오 작성: [Step 13 Community Demo Scenario](../demo/2026-06-08-step13-community-demo-scenario.md)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "신고 접수 → 관리자 처리 시나리오 작성: [Step 13 Community Demo Scenario](../demo/2026-06-08-step13-community-demo-scenario.md)",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                },
+                {
+                  "name": "실행 및 수정",
+                  "total": 8,
+                  "done": 8,
+                  "partial": 0,
+                  "items": [
+                    {
+                      "text": "커뮤니티 E2E 테스트 실행",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "권한/소유자 검증 실패 케이스 확인",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "P0 버그 수정 및 회귀 테스트: 신규 P0 없음",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "커뮤니티 신고 → 모더레이션 → notification-send 발행 slice/contract 테스트",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "게이미피케이션 E2E가 통과한다.",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "커뮤니티 공유/신고 E2E가 통과한다.",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "engagement P0 버그가 0건이다.",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "발표용 데모 데이터가 준비된다: [Step 13 Community Demo Scenario](../demo/2026-06-08-step13-community-demo-scenario.md)에 결정적 데모 actor/data/API 흐름 정리",
+                      "done": true,
+                      "partial": false
+                    }
+                  ]
+                }
+              ],
+              "totalChecks": 11,
+              "doneChecks": 11
             }
           ],
-          "totalChecks": 25,
-          "doneChecks": 0
+          "totalChecks": 24,
+          "doneChecks": 21
         }
       ]
     }
@@ -2787,8 +3127,28 @@
       "week": "W3",
       "items": [
         {
+          "id": "FR-EG-201",
+          "title": "사용자가 배지를 획득할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-202",
+          "title": "사용자의 레벨이 XP 누적에 따라 자동 상승한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-203",
+          "title": "사용자의 연속 학습 스트릭이 추적된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-204",
+          "title": "사용자가 리더보드를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
           "id": "FR-EG-205",
-          "title": "gamification.* Kafka 이벤트가 발행된다",
+          "title": "그룹 초대/가입 신청 워크플로우가 완성된다",
           "status": "not_started"
         }
       ]
@@ -2798,11 +3158,21 @@
       "items": [
         {
           "id": "FR-EG-401",
-          "title": "사용자가 부적절한 콘텐츠를 신고할 수 있다",
+          "title": "engagement-svc가 card.reviewed 이벤트를 소비해 XP를 적립한다",
           "status": "not_started"
         },
         {
           "id": "FR-EG-402",
+          "title": "engagement-svc가 gamification 이벤트를 발행한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-403",
+          "title": "사용자가 부적절한 콘텐츠를 신고할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-404",
           "title": "관리자가 신고를 처리할 수 있다",
           "status": "not_started"
         }
@@ -2977,8 +3347,8 @@
     },
     {
       "date": "2026-06-12",
-      "totalChecks": 418,
-      "doneChecks": 359
+      "totalChecks": 419,
+      "doneChecks": 415
     }
   ],
   "changelog": [
@@ -3424,6 +3794,44 @@
           "type": "check_undone",
           "target": "W4 > 커뮤니티 E2E 테스트 + 버그 수정",
           "detail": "13개 항목 해제 (13 → 0)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-12T01:41:11.879Z",
+      "commit": "7be6073",
+      "author": "KimNaKim",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+          "detail": "39개 항목 완료 (0 → 39)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > Kafka 연동 — gamification.level_up / gamification.badge_earned 이벤트 발행",
+          "detail": "2개 박스 추가 (38 → 40)"
+        },
+        {
+          "type": "step_added",
+          "target": "W4 > 커뮤니티 공유/신고 E2E 테스트 + 안정화",
+          "detail": "W4에 Step 추가 (2개 → 3개)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > Kafka 이벤트 연동 — learning.card.review-completed 소비 + gamification 이벤트 발행",
+          "detail": "17개 항목 완료 (0 → 17)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W4 > Kafka 이벤트 연동 — learning.card.review-completed 소비 + gamification 이벤트 발행",
+          "detail": "5개 박스 추가 (12 → 17)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 게이미피케이션 E2E 테스트 + 버그 수정",
+          "detail": "13개 항목 완료 (0 → 13)"
         }
       ]
     }
