@@ -1,6 +1,6 @@
 {
   "repo": "synapse-engagement-svc",
-  "updatedAt": "2026-06-12T01:55:44.485Z",
+  "updatedAt": "2026-06-12T03:02:59.357Z",
   "tracks": [
     {
       "name": "engagement",
@@ -3119,6 +3119,36 @@
         {
           "id": "FR-EG-103",
           "title": "사용자가 공유된 콘텐츠를 검색하고 복사할 수 있다",
+          "status": "not_started"
+        }
+      ]
+    },
+    {
+      "week": "W3",
+      "items": [
+        {
+          "id": "FR-EG-201",
+          "title": "사용자가 배지를 획득할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-202",
+          "title": "사용자의 레벨이 XP 누적에 따라 자동 상승한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-203",
+          "title": "사용자의 연속 학습 스트릭이 추적된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-204",
+          "title": "사용자가 리더보드를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-205",
+          "title": "그룹 초대/가입 신청 워크플로우가 완성된다",
           "status": "not_started"
         }
       ]
