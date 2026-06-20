@@ -1,6 +1,6 @@
 {
   "repo": "synapse-gitops",
-  "updatedAt": "2026-06-20T11:49:41.789Z",
+  "updatedAt": "2026-06-20T23:35:25.243Z",
   "tracks": [
     {
       "name": "team-lead",
@@ -1487,7 +1487,7 @@
                 {
                   "name": "리소스 적정화",
                   "total": 4,
-                  "done": 2,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
@@ -1501,8 +1501,8 @@
                       "partial": false
                     },
                     {
-                      "text": "PDB 정의 (prod 환경 최소 가용성)",
-                      "done": false,
+                      "text": "PDB 정의 (prod 환경 최소 가용성) <!-- 2026-06-21 Phase D: 5개 prod PDB minAvailable=2로 W5 runbook 기준 정렬 + 검증 스크립트 추가 -->",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1575,11 +1575,11 @@
                 }
               ],
               "totalChecks": 17,
-              "doneChecks": 10
+              "doneChecks": 11
             }
           ],
           "totalChecks": 37,
-          "doneChecks": 30
+          "doneChecks": 31
         }
       ]
     }
@@ -1960,7 +1960,7 @@
     {
       "date": "2026-06-20",
       "totalChecks": 211,
-      "doneChecks": 204
+      "doneChecks": 205
     }
   ],
   "changelog": [
@@ -2278,6 +2278,19 @@
           "type": "check_done",
           "target": "W5 > Cost 최적화 + 안정화",
           "detail": "4개 항목 완료 (6 → 10)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-20T23:35:25.243Z",
+      "commit": "a4dd56f",
+      "author": "VelkaressiaBlutkrone",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W5 > Cost 최적화 + 안정화",
+          "detail": "1개 항목 완료 (10 → 11)"
         }
       ]
     }
