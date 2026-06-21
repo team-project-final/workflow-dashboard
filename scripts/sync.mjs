@@ -35,6 +35,7 @@ const repos = isLegacy
       owner: r.tracks[0]?.owner || 'unknown',
       source: { type: 'github-markdown', repo: `team-project-final/${r.repo}`, path: 'docs/project-management' },
       ownerMap: Object.fromEntries(r.tracks.map(t => [t.name, t.owner])),
+      trackAliases: r.trackAliases || {},
     }))
   : config.repos
 
@@ -90,7 +91,8 @@ for (const repo of repos) {
 
     // Transform to TrackData
     const ownerMap = repo.ownerMap || {}
-    const transformed = parser.transform(raw, { ownerMap, periodMap, prdPrefixes: [] })
+    const trackAliases = repo.trackAliases || {}
+    const transformed = parser.transform(raw, { ownerMap, periodMap, prdPrefixes: [], trackAliases })
 
     // Load existing data for changelog diffing
     const outputPath = resolve(`data/${repo.id}.json`)

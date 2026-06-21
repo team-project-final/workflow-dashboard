@@ -7,6 +7,7 @@
  */
 import { readFileSync, existsSync, readdirSync } from 'fs'
 import { join } from 'path'
+import { parseCheckboxes, parseWorkflowMarkdown } from './parse-workflow-md.mjs'
 
 const name = 'github-markdown'
 
@@ -58,49 +59,9 @@ function fetch(config, options = {}) {
   return result
 }
 
-// --- Internal helpers (ported from parse-workflow.mjs) ---
+// --- Internal helpers ---
 
-function parseCheckboxes(content) {
-  const checks = []
-  const re = /^(\s*)- \[([ x])\]\s+(.+)$/gm
-  let match
-  while ((match = re.exec(content)) !== null) {
-    checks.push({ done: match[2] === 'x', text: match[3].trim() })
-  }
-  return checks
-}
-
-function parseWorkflowContent(content) {
-  const steps = []
-  const stepParts = content.split(/^## Step \d+: /m).slice(1)
-  const stepNames = [...content.matchAll(/^## Step (\d+): (.+)$/gm)].map(m => m[2])
-
-  stepParts.forEach((part, i) => {
-    const phases = []
-    const phaseParts = part.split(/^### \d+\.\d+ /m).slice(1)
-    const phaseNames = [...part.matchAll(/^### (\d+\.\d+) (.+)$/gm)].map(m => m[2])
-
-    phaseParts.forEach((pp, j) => {
-      const checks = parseCheckboxes(pp)
-      phases.push({
-        name: phaseNames[j] || `Phase ${j + 1}`,
-        total: checks.length,
-        done: checks.filter(c => c.done).length,
-        items: checks.map(c => ({ text: c.text, done: c.done })),
-      })
-    })
-
-    const totalChecks = phases.reduce((s, p) => s + p.total, 0)
-    const doneChecks = phases.reduce((s, p) => s + p.done, 0)
-    const status = totalChecks === 0 ? 'Not Started'
-      : doneChecks === totalChecks ? 'Done'
-      : doneChecks > 0 ? 'In Progress' : 'Not Started'
-
-    steps.push({ name: stepNames[i] || `Step ${i + 1}`, status, phases, totalChecks, doneChecks })
-  })
-
-  return steps
-}
+const parseWorkflowContent = parseWorkflowMarkdown
 
 function parseTaskContent(content) {
   const ownerMatch = content.match(/^# TASK: @(.+)$/m)
@@ -124,18 +85,19 @@ function parsePrdContent(content, allowedPrefixes) {
 /**
  * Transform raw fetched data into TrackData format.
  * @param {object} raw - output from fetch()
- * @param {object} options - { ownerMap, periodMap, prdPrefixes }
+ * @param {object} options - { ownerMap, periodMap, prdPrefixes, trackAliases }
  * @returns {object} { tracks, prd }
  */
 function transform(raw, options = {}) {
-  const { ownerMap = {}, periodMap = {}, prdPrefixes = [] } = options
+  const { ownerMap = {}, periodMap = {}, prdPrefixes = [], trackAliases = {} } = options
 
   // Group workflow files by track and week
   const trackMap = new Map()
   for (const file of raw.workflowFiles) {
     const match = file.name.match(/^WORKFLOW_(.+)_(W\d+)\.md$/)
     if (!match) continue
-    const [, trackName, week] = match
+    const [, rawTrackName, week] = match
+    const trackName = trackAliases[rawTrackName] || rawTrackName
     if (!trackMap.has(trackName)) trackMap.set(trackName, new Map())
     trackMap.get(trackName).set(week, file.path)
   }

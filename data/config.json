@@ -29,7 +29,8 @@
     },
     {
       "repo": "synapse-gitops",
-      "tracks": [{ "name": "team-lead", "owner": "김민구" }]
+      "tracks": [{ "name": "team-lead", "owner": "김민구" }],
+      "trackAliases": { "gitops": "team-lead" }
     },
     {
       "repo": "synapse-shared",
