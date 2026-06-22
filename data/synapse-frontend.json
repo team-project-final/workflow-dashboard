@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-06-22T01:53:11.130Z",
+  "updatedAt": "2026-06-22T07:47:38.135Z",
   "tracks": [
     {
       "name": "frontend",
@@ -1513,12 +1513,12 @@
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "커뮤니티 그룹 목록 화면 요건 (검색, 카테고리 필터, 정렬)",
-                      "done": false,
+                      "text": "커뮤니티 그룹 목록 화면 요건 (API-backed 전체/공개 그룹 탭 + 공개 그룹 검색)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1532,8 +1532,8 @@
                       "partial": false
                     },
                     {
-                      "text": "engagement-svc API 연동 엔드포인트 확인",
-                      "done": false,
+                      "text": "engagement-svc API 연동 엔드포인트 확인 — `GET /api/v1/community/groups`, `GET /api/v1/community/groups/{groupId}`, `GET /api/v1/community/groups/{groupId}/members`, `POST /api/v1/community/groups/{groupId}/members/join`",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1546,22 +1546,22 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false,
+                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근) — shared Dio bearer interceptor 경유",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "권한 종류: 로그인 사용자",
-                      "done": false,
+                      "text": "권한 종류: 로그인 사용자 — join/report는 JWT subject 기준 backend 권한 검증",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "공개 API 여부: No",
-                      "done": false,
+                      "text": "공개 API 여부: No — community group/member route는 authenticated API로 유지",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1574,22 +1574,22 @@
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "프론트엔드 — ERD 해당 없음",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "커뮤니티 상태 모델 설계 (CommunityState: loading/loaded/error)",
-                      "done": false,
+                      "text": "커뮤니티 상태 모델 설계 (CommunityState: loading/loaded/error) — `AsyncValue` + `AppLoadingWidget`/`AppErrorWidget`/empty state",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "검색/필터 상태 관리 설계",
-                      "done": false,
+                      "text": "검색/필터 상태 관리 설계 — 공개 그룹 local query filter",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1648,22 +1648,22 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "CommunityRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false,
+                      "text": "CommunityRepository 클래스 작성 (HTTP client + engagement-svc 연동) — existing `EngagementApi`에 group/member methods 추가",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "검색/필터/공유 콘텐츠 조회/복사 API 호출",
-                      "done": false,
+                      "text": "검색/필터/공유 콘텐츠 조회/복사 API 호출 — group list/detail/member/join + 기존 shared content search/detail/fork/report 계약 유지",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Riverpod Provider 등록 (CommunityNotifier)",
-                      "done": false,
+                      "text": "Riverpod Provider 등록 (CommunityNotifier) — `communityGroupsProvider`, `communityGroupDetailProvider`",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1671,7 +1671,7 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -1695,30 +1695,35 @@
                       "partial": false
                     },
                     {
-                      "text": "Unit 테스트 (CommunityNotifier 상태 전이)",
-                      "done": false,
+                      "text": "Unit 테스트 (CommunityNotifier 상태 전이) — API contract mapping test로 group/member/join path 고정",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false,
+                      "text": "테스트 통과 확인 — `flutter test test/services/engagement/engagement_api_test.dart test/services/engagement/community_screens_render_test.dart` PASS",
+                      "done": true,
                       "partial": false
                     }
                   ]
                 },
                 {
                   "name": "Controller + Test",
-                  "total": 6,
-                  "done": 2,
+                  "total": 8,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "커뮤니티 그룹 목록 페이지 Widget 구현 — 탭(내 그룹/탐색) + 빈 상태 UI 뼈대 완료",
+                      "text": "커뮤니티 그룹 목록 페이지 Widget 구현 — API-backed 전체/공개 그룹 탭 + 빈 상태 UI",
                       "done": true,
                       "partial": false
                     },
                     {
-                      "text": "검색 바 + 카테고리 필터 칩 Widget 구현 — 팀원 구현",
+                      "text": "검색 바 Widget 구현 — 공개 그룹 local query filter",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "카테고리/정렬 필터 칩 Widget 구현 — backend taxonomy/sort contract 잔여",
                       "done": false,
                       "partial": false
                     },
@@ -1728,13 +1733,18 @@
                       "partial": false
                     },
                     {
-                      "text": "공유 콘텐츠 상세 화면 Widget 구현 — 멤버/공유 콘텐츠 탭 뼈대 완료",
+                      "text": "공유 콘텐츠 상세 화면 Widget 구현 — 그룹 상세/멤버 목록 API-backed 전환, 그룹별 공유 콘텐츠 탭은 backend 계약 전 잔여",
                       "done": true,
                       "partial": false
                     },
                     {
                       "text": "복사 확인 다이얼로그 Widget 구현 — 팀원 구현",
                       "done": false,
+                      "partial": false
+                    },
+                    {
+                      "text": "Widget 테스트 (group list/detail API render smoke) — `community_screens_render_test.dart` PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1747,12 +1757,12 @@
                 {
                   "name": "View + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "커뮤니티 목록 렌더링 + 검색 동작 확인",
-                      "done": false,
+                      "text": "커뮤니티 목록 렌더링 + 검색 동작 확인 — API-backed list/detail render tests PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1778,12 +1788,12 @@
                   ]
                 }
               ],
-              "totalChecks": 42,
-              "doneChecks": 5
+              "totalChecks": 44,
+              "doneChecks": 21
             }
           ],
-          "totalChecks": 130,
-          "doneChecks": 71
+          "totalChecks": 132,
+          "doneChecks": 87
         },
         {
           "week": "W3",
@@ -4349,8 +4359,8 @@
     },
     {
       "date": "2026-06-22",
-      "totalChecks": 483,
-      "doneChecks": 260
+      "totalChecks": 485,
+      "doneChecks": 276
     }
   ],
   "changelog": [
@@ -4587,6 +4597,19 @@
           "type": "check_done",
           "target": "W4 > 에러/로딩 상태 일관성 검증",
           "detail": "3개 항목 완료 (0 → 3)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22T07:47:38.134Z",
+      "commit": "local",
+      "author": "unknown",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > 커뮤니티 그룹 목록/상세 화면",
+          "detail": "16개 항목 완료 (5 → 21)"
         }
       ]
     }
