@@ -4558,9 +4558,9 @@
       ]
     },
     {
-      "date": "2026-06-22T01:53:11.128Z",
-      "commit": "local",
-      "author": "unknown",
+      "date": "2026-06-22T00:44:14.436Z",
+      "commit": "faede91",
+      "author": "VelkaressiaBlutkrone",
       "file": "WORKFLOW_*",
       "changes": [
         {
@@ -4579,6 +4579,11 @@
           "detail": "22개 항목 완료 (0 → 22)"
         },
         {
+          "type": "boxes_added",
+          "target": "W3 > 게이미피케이션 UI — XP 바 + 배지 갤러리 + 레벨 표시 + 레벨업 축하 애니메이션",
+          "detail": "1개 박스 추가 (44 → 45)"
+        },
+        {
           "type": "check_done",
           "target": "W3 > 관리자 화면 — 신고 목록 + 처리(승인/거부)",
           "detail": "16개 항목 완료 (5 → 21)"
@@ -4587,6 +4592,11 @@
           "type": "check_done",
           "target": "W3 > 공유 덱 탐색/상세 — 공유 콘텐츠 목록 + 복사 버튼",
           "detail": "21개 항목 완료 (0 → 21)"
+        },
+        {
+          "type": "boxes_added",
+          "target": "W3 > 공유 덱 탐색/상세 — 공유 콘텐츠 목록 + 복사 버튼",
+          "detail": "1개 박스 추가 (42 → 43)"
         },
         {
           "type": "check_done",
