@@ -1,6 +1,6 @@
 {
   "repo": "synapse-frontend",
-  "updatedAt": "2026-06-21T05:14:25.261Z",
+  "updatedAt": "2026-06-22T01:53:11.130Z",
   "tracks": [
     {
       "name": "frontend",
@@ -897,7 +897,7 @@
                 {
                   "name": "요구사항 분석",
                   "total": 5,
-                  "done": 3,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
@@ -911,13 +911,13 @@
                       "partial": false
                     },
                     {
-                      "text": "자동 저장 요건 (debounce 2초 또는 수동 저장) — 팀원 구현",
-                      "done": false,
+                      "text": "자동 저장 요건 (debounce 2초 또는 수동 저장) — 2026-06-22 P0 slice: 기존 노트 2초 debounce autosave + 수동 저장 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "노트 CRUD API 연동 엔드포인트 확인 (knowledge-svc) — 팀원 구현",
-                      "done": false,
+                      "text": "노트 CRUD API 연동 엔드포인트 확인 (knowledge-svc) — 2026-06-22 P0 slice: `/api/v1/notes`, backlinks/outlinks, versions 확인",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -930,22 +930,22 @@
                 {
                   "name": "Security 1차 검토",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근)",
-                      "done": false,
+                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근) — router redirect + bearer interceptor 경유",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "권한 종류: 로그인 사용자 (본인 노트만)",
-                      "done": false,
+                      "text": "권한 종류: 로그인 사용자 (본인 노트만) — backend current user scoped API 계약 사용",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "공개 API 여부: No",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -963,7 +963,7 @@
                 {
                   "name": "ERD 설계",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -972,13 +972,13 @@
                       "partial": false
                     },
                     {
-                      "text": "노트 상태 모델 설계 (NoteState: loading/editing/saving/saved/error)",
-                      "done": false,
+                      "text": "노트 상태 모델 설계 (NoteState: loading/editing/saving/saved/error) — `AsyncValue` + editor saving/autosaving 상태",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "자동 저장 debounce 로직 설계",
-                      "done": false,
+                      "text": "자동 저장 debounce 로직 설계 — 2초 Timer debounce",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1019,27 +1019,27 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "NoteCreateRequest 모델 정의 (title, content, tags)",
-                      "done": false,
+                      "text": "NoteCreateRequest 모델 정의 (title, content, tags) — tenantId 포함 `KnowledgeApi.createNote`",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "NoteUpdateRequest 모델 정의 (title, content, tags)",
-                      "done": false,
+                      "text": "NoteUpdateRequest 모델 정의 (title, content, tags) — tenantId 포함 `KnowledgeApi.updateNote`",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "NoteResponse 모델 정의 (id, title, content, tags, createdAt, updatedAt)",
-                      "done": false,
+                      "text": "NoteResponse 모델 정의 (id, title, content, tags, createdAt, updatedAt) — `KnowledgeNote`",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "NoteEditorState Provider 설계 (content, isDirty, isSaving)",
-                      "done": false,
+                      "text": "NoteEditorState Provider 설계 (content, isDirty, isSaving) — editor local state + `noteDetailProvider`",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1052,22 +1052,22 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "NoteRepository 클래스 작성 (HTTP client + knowledge-svc 연동)",
-                      "done": false,
+                      "text": "NoteRepository 클래스 작성 (HTTP client + knowledge-svc 연동) — `KnowledgeApi`",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "CRUD API 호출 (POST/GET/PATCH/DELETE /notes)",
-                      "done": false,
+                      "text": "CRUD API 호출 (POST/GET/PATCH/DELETE /notes) — create/get/list/update/delete API wrapper 추가",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Riverpod Provider 등록 (NoteNotifier)",
-                      "done": false,
+                      "text": "Riverpod Provider 등록 (NoteNotifier) — `knowledgeApiProvider`, `noteListProvider`, `noteDetailProvider`, backlinks/outlinks/version providers",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1075,7 +1075,7 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
@@ -1090,12 +1090,12 @@
                     },
                     {
                       "text": "자동 저장 로직 구현 (Timer debounce)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Markdown → 미리보기 렌더링 서비스",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1113,7 +1113,7 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 3,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
@@ -1132,18 +1132,18 @@
                       "partial": false
                     },
                     {
-                      "text": "저장 버튼 + 자동 저장 인디케이터 구현 — 팀원 구현",
-                      "done": false,
+                      "text": "저장 버튼 + 자동 저장 인디케이터 구현 — 2026-06-22 API-backed save/autosave",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "노트 제목/태그 입력 폼 구현 — 팀원 구현",
-                      "done": false,
+                      "text": "노트 제목/태그 입력 폼 구현 — 제목 입력 + 본문 `#tag` 추출",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Widget 테스트 (편집 → 미리보기 전환, 저장 동작)",
-                      "done": false,
+                      "text": "Widget 테스트 (편집 → 미리보기 전환, 저장 동작) — note render/autocomplete smoke 유지",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1151,17 +1151,17 @@
                 {
                   "name": "View + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "Markdown 편집 + 실시간 미리보기 렌더링 확인",
-                      "done": false,
+                      "text": "Markdown 편집 + 실시간 미리보기 렌더링 확인 — render tests PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "자동 저장 동작 확인 (입력 후 2초 대기 → 저장 표시)",
-                      "done": false,
+                      "text": "자동 저장 동작 확인 (입력 후 2초 대기 → 저장 표시) — implementation + analyze/test PASS, live API smoke는 staging demo 잔여",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1178,7 +1178,7 @@
                 }
               ],
               "totalChecks": 45,
-              "doneChecks": 9
+              "doneChecks": 30
             },
             {
               "name": "SRS 복습 화면 — 카드 제시 → 뒤집기 → 난이도 선택 → 다음 카드",
@@ -1214,7 +1214,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드) — ReviewStartScreen + ReviewNotifier.startSession 구현",
+                      "text": "복습 세션 시작 플로우 정의 (세션 생성 API → 카드 큐 로드) — `LearningReviewApi.startSession` + `getReviewQueue` 확인",
                       "done": true,
                       "partial": false
                     },
@@ -1229,7 +1229,7 @@
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 화면 요건 (복습 결과 요약) — ReviewResultScreen 구현",
+                      "text": "세션 완료 화면 요건 (복습 결과 요약) — `completeSession` 결과를 provider state로 보존해 ReviewResultScreen 표시",
                       "done": true,
                       "partial": false
                     },
@@ -1247,12 +1247,12 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근) — router redirect 처리",
+                      "text": "인증 필요 여부: Yes (인증된 사용자만 접근) — router redirect + bearer interceptor 경유",
                       "done": true,
                       "partial": false
                     },
                     {
-                      "text": "권한 종류: 로그인 사용자 (본인 카드만) — router redirect 처리",
+                      "text": "권한 종류: 로그인 사용자 (본인 카드만) — learning-card user-scoped API + current tenant header 경유",
                       "done": true,
                       "partial": false
                     },
@@ -1303,7 +1303,7 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "세션 데이터 메모리 관리 (세션 종료 시 클리어) — ReviewNotifier.reset() 구현",
+                      "text": "세션 데이터 메모리 관리 (세션 종료 시 클리어) — 새 `start()` 시 세션/결과 초기화, 완료 결과는 result route 표시용 보존",
                       "done": true,
                       "partial": false
                     },
@@ -1354,12 +1354,12 @@
                   "partial": 0,
                   "items": [
                     {
-                      "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card 런타임 연동) — CardsRepositoryImpl 구현",
+                      "text": "ReviewRepository 클래스 작성 (HTTP client + learning-card 런타임 연동) — `LearningReviewApi`",
                       "done": true,
                       "partial": false
                     },
                     {
-                      "text": "세션 시작/카드 큐/rating 제출/세션 완료 API 호출 — CardsRemoteDatasource 전체 구현",
+                      "text": "세션 시작/카드 큐/rating 제출/세션 완료 API 호출 — `/reviews/sessions`, `/reviews/queue`, `/submit`, `/complete`",
                       "done": true,
                       "partial": false
                     },
@@ -1373,11 +1373,11 @@
                 {
                   "name": "Service + Test",
                   "total": 6,
-                  "done": 4,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "ReviewSessionNotifier 구현 (startSession, flipCard, submitRating, nextCard, completeSession) — ReviewNotifier 구현",
+                      "text": "ReviewSessionNotifier 구현 (startSession, flipCard, submitRating, nextCard, completeSession) — ReviewNotifier `start`, `submitRating`, `completeSession` 구현",
                       "done": true,
                       "partial": false
                     },
@@ -1392,18 +1392,18 @@
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 시 결과 집계 (정답률, 소요 시간) — ReviewState.accuracy/earnedXp 구현",
+                      "text": "세션 완료 시 결과 집계 (정답률, 소요 시간) — ReviewState.accuracy/elapsedMs 구현",
                       "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Unit 테스트 (ReviewSessionNotifier 상태 전이)",
-                      "done": false,
+                      "text": "Unit 테스트 (ReviewSessionNotifier 상태 전이) — `learning_review_provider_test.dart`",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "테스트 통과 확인",
-                      "done": false,
+                      "text": "테스트 통과 확인 — focused learning tests PASS, full `flutter test` PASS (205 tests, 1 skipped)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1411,11 +1411,11 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 5,
+                  "done": 6,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼) — ReviewStartScreen 구현",
+                      "text": "복습 시작 화면 Widget 구현 (오늘 복습 카드 수 표시 + 시작 버튼) — ReviewScreen API auto-start + loading/error/empty state",
                       "done": true,
                       "partial": false
                     },
@@ -1440,8 +1440,8 @@
                       "partial": false
                     },
                     {
-                      "text": "Widget 테스트 (뒤집기 → 난이도 선택 → 다음 카드 플로우)",
-                      "done": false,
+                      "text": "Widget 테스트 (뒤집기 → 난이도 선택 → 다음 카드 플로우) — rating 제출 후 다음 카드 이동 smoke",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1449,22 +1449,22 @@
                 {
                   "name": "View + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "복습 시작 → 카드 뒤집기 → 난이도 선택 → 다음 카드 전체 플로우 확인",
-                      "done": false,
+                      "text": "복습 시작 → 카드 뒤집기 → 난이도 선택 → 다음 카드 전체 플로우 확인 — provider/widget focused tests PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "카드 뒤집기 애니메이션 동작 확인",
-                      "done": false,
+                      "text": "카드 뒤집기 애니메이션 동작 확인 — shared FlipCard test + render smoke 유지",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "세션 완료 결과 화면 확인",
-                      "done": false,
+                      "text": "세션 완료 결과 화면 확인 — provider completion test + result render smoke",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1481,7 +1481,7 @@
                 }
               ],
               "totalChecks": 43,
-              "doneChecks": 30
+              "doneChecks": 36
             },
             {
               "name": "커뮤니티 그룹 목록/상세 화면",
@@ -1783,7 +1783,7 @@
             }
           ],
           "totalChecks": 130,
-          "doneChecks": 44
+          "doneChecks": 71
         },
         {
           "week": "W3",
@@ -1791,7 +1791,7 @@
           "steps": [
             {
               "name": "게이미피케이션 UI — XP 바 + 배지 갤러리 + 레벨 표시 + 레벨업 축하 애니메이션",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -1908,22 +1908,22 @@
                 {
                   "name": "Security 2차 검토",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "XP/레벨 데이터 클라이언트 측 조작 방지 (서버 데이터만 표시)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "배지 이미지 URL XSS 방지",
-                      "done": false,
+                      "text": "배지 이미지 URL XSS 방지 (현재 UI는 `iconUrl` 이미지를 직접 렌더링하지 않음)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "민감 정보 노출: 없음",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1936,27 +1936,27 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "GamificationProvider 설계 (Riverpod StateNotifier)",
-                      "done": false,
+                      "text": "GamificationProvider 설계 (Riverpod FutureProvider family)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GamificationState 모델 (xp, level, nextLevelXp, streak, badges[])",
-                      "done": false,
+                      "text": "GamificationProfile 모델 (xp, level, nextLevelXp, streak, badges[])",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Badge 모델 (id, name, description, iconUrl, earned)",
-                      "done": false,
+                      "text": "Badge 모델 (code, name, description, iconUrl, earnedAt)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "API 연동 모델 (engagement-svc /gamification/profile 응답 매핑 — level, totalXp, currentStreak, longestStreak, title, nextLevelXp, recentBadges)",
-                      "done": false,
+                      "text": "API 연동 모델 (engagement-svc `/api/v1/gamification/me` 응답 매핑 — xp, level, currentStreak, longestStreak, badges)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -1968,28 +1968,33 @@
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 4,
-                  "done": 0,
+                  "total": 5,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "GamificationRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false,
+                      "text": "EngagementApi gamification methods 작성 (HTTP client + engagement-svc 연동)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /gamification/profile API 호출",
-                      "done": false,
+                      "text": "GET `/api/v1/gamification/me` API 호출",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /gamification/badges API 호출",
-                      "done": false,
+                      "text": "GET `/api/v1/gamification/badges` API 호출",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /gamification/leaderboard API 호출",
-                      "done": false,
+                      "text": "GET `/api/v1/gamification/leaderboard` API 호출",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "GET `/api/v1/gamification/xp/history` API 호출",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -1997,12 +2002,12 @@
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "GamificationNotifier 구현 (데이터 로드, 레벨업 감지)",
-                      "done": false,
+                      "text": "Gamification FutureProvider 구현 (profile, badges, leaderboard, xp history 데이터 로드)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2016,8 +2021,8 @@
                       "partial": false
                     },
                     {
-                      "text": "Unit 테스트 (상태 전이, 레벨업 감지)",
-                      "done": false,
+                      "text": "API contract + render smoke 테스트 (`engagement_api_test.dart`, `gamification_screens_render_test.dart`)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2025,27 +2030,27 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 0,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
                       "text": "XP 프로그레스 바 Widget 구현 (LinearProgressIndicator + 레벨 라벨)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "배지 갤러리 Widget 구현 (GridView + 획득/미획득 구분)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "배지 상세 모달 Widget 구현 (이름, 설명, 획득 조건, 획득일)",
-                      "done": false,
+                      "text": "배지 상세 모달 Widget 구현 (이름, 설명, 획득 조건)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "레벨 표시 Widget 구현 (사이드바 프로필 영역)",
-                      "done": false,
+                      "text": "레벨 표시 Widget 구현 (프로필 route)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2054,8 +2059,8 @@
                       "partial": false
                     },
                     {
-                      "text": "Widget 테스트 (XP 바, 배지 그리드, 애니메이션 트리거)",
-                      "done": false,
+                      "text": "Widget 테스트 (profile/badge/leaderboard desktop+mobile render)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2063,12 +2068,12 @@
                 {
                   "name": "View + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
                       "text": "게이미피케이션 페이지 전체 렌더링 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2078,12 +2083,12 @@
                     },
                     {
                       "text": "반응형 레이아웃 확인 (데스크탑 ↔ 모바일)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Smoke Test 1건 (XP 표시 + 배지 갤러리 + 레벨 표시)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2094,8 +2099,8 @@
                   ]
                 }
               ],
-              "totalChecks": 44,
-              "doneChecks": 0
+              "totalChecks": 45,
+              "doneChecks": 22
             },
             {
               "name": "알림 센터 — 알림 목록 + 읽음/안읽음 + 설정",
@@ -2547,27 +2552,27 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "AdminReportProvider 설계 (Riverpod StateNotifier)",
-                      "done": false,
+                      "text": "AdminReportProvider 설계 (Riverpod FutureProvider family)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "Report 모델 (id, targetType, targetId, reason, status, createdAt)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "ReportModerateRequest 모델 (status, adminNote)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "API 연동 모델 (engagement-svc /admin/reports 응답 매핑)",
-                      "done": false,
+                      "text": "API 연동 모델 (engagement-svc `/api/v1/admin/reports` 응답 매핑)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2580,22 +2585,22 @@
                 {
                   "name": "Repository 구현",
                   "total": 3,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "AdminReportRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false,
+                      "text": "EngagementApi admin report methods 작성 (HTTP client + engagement-svc 연동)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /admin/reports API 호출 (페이징, 필터)",
-                      "done": false,
+                      "text": "GET `/api/v1/admin/reports?status=...` API 호출",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "PUT /admin/reports/{id}/resolve API 호출 (승인/거부)",
-                      "done": false,
+                      "text": "PATCH `/api/v1/admin/reports/{reportId}` API 호출 (APPROVED/REJECTED)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2603,17 +2608,17 @@
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "AdminReportNotifier 구현 (신고 목록 로드, 필터, 페이징)",
-                      "done": false,
+                      "text": "AdminReport provider 구현 (신고 목록 로드, status tab)",
+                      "done": true,
                       "partial": false
                     },
                     {
                       "text": "신고 처리 로직 (승인/거부 → API 호출 → 목록 갱신)",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2622,8 +2627,8 @@
                       "partial": false
                     },
                     {
-                      "text": "Unit 테스트 (상태 전이, 처리 로직)",
-                      "done": false,
+                      "text": "API contract + render smoke 테스트",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2631,17 +2636,17 @@
                 {
                   "name": "Controller + Test",
                   "total": 6,
-                  "done": 1,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "관리자 신고 목록 페이지 Widget 구현 (DataTable + 필터 드롭다운)",
-                      "done": false,
+                      "text": "관리자 신고 목록 페이지 Widget 구현 (DataTable + 상태 탭)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "상태 필터 Widget 구현 (pending/reviewed/resolved/dismissed 탭)",
-                      "done": false,
+                      "text": "상태 필터 Widget 구현 (PENDING/APPROVED/REJECTED 탭)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2650,8 +2655,8 @@
                       "partial": false
                     },
                     {
-                      "text": "승인/거부 버튼 + 사유 입력 + 확인 다이얼로그 구현",
-                      "done": false,
+                      "text": "승인/거부 버튼 + 확인 다이얼로그 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2660,8 +2665,8 @@
                       "partial": false
                     },
                     {
-                      "text": "Widget 테스트 (목록 렌더링, 필터, 처리 다이얼로그)",
-                      "done": false,
+                      "text": "Widget 테스트 (목록 렌더링)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2669,12 +2674,12 @@
                 {
                   "name": "View + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
                       "text": "관리자 신고 목록 페이지 전체 렌더링 확인",
-                      "done": false,
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2683,8 +2688,8 @@
                       "partial": false
                     },
                     {
-                      "text": "승인/거부 처리 → 목록 갱신 확인",
-                      "done": false,
+                      "text": "승인/거부 처리 → 목록 갱신 로직 구현",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2701,11 +2706,11 @@
                 }
               ],
               "totalChecks": 42,
-              "doneChecks": 5
+              "doneChecks": 21
             },
             {
               "name": "공유 덱 탐색/상세 — 공유 콘텐츠 목록 + 복사 버튼",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "TASK 시작",
@@ -2845,27 +2850,27 @@
                 {
                   "name": "DTO / Entity 설계 (API First)",
                   "total": 5,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "SharedDeckProvider 설계 (Riverpod StateNotifier)",
-                      "done": false,
+                      "text": "SharedContentProvider 설계 (Riverpod FutureProvider family)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "SharedDeck 모델 (id, title, description, cardCount, author, tags[])",
-                      "done": false,
+                      "text": "SharedContent 모델 (id, shareToken, contentType, contentId, ownerId, title, description, tags[])",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "SharedDeckDetail 모델 (deck + cards[] 미리보기)",
-                      "done": false,
+                      "text": "SharedContent detail 모델 (backend `SharedContentResponse` 필드만 표시)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "API 연동 모델 (engagement-svc /community/shared-decks 응답 매핑)",
-                      "done": false,
+                      "text": "API 연동 모델 (engagement-svc `/api/v1/community/search`, `/share/{token}` 응답 매핑)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2877,28 +2882,33 @@
                 },
                 {
                   "name": "Repository 구현",
-                  "total": 4,
-                  "done": 0,
+                  "total": 5,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "SharedDeckRepository 클래스 작성 (HTTP client + engagement-svc 연동)",
-                      "done": false,
+                      "text": "EngagementApi shared content methods 작성 (HTTP client + engagement-svc 연동)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /community/shared-decks API 호출 (페이징, 정렬, 태그 필터)",
-                      "done": false,
+                      "text": "GET `/api/v1/community/search?q=...&contentType=DECK|NOTE` API 호출",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "GET /community/shared-decks/{id} API 호출 (상세)",
-                      "done": false,
+                      "text": "GET `/api/v1/community/share/{token}` API 호출 (상세)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "POST /community/shared-decks/{id}/copy API 호출 (복사)",
-                      "done": false,
+                      "text": "POST `/api/v1/community/share/{token}/fork` API 호출 (복사)",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "POST `/api/v1/community/reports` API 호출 (신고)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2906,27 +2916,27 @@
                 {
                   "name": "Service + Test",
                   "total": 4,
-                  "done": 0,
+                  "done": 4,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "SharedDeckNotifier 구현 (목록 로드, 무한 스크롤, 필터)",
-                      "done": false,
+                      "text": "SharedContent provider 구현 (목록 로드, 검색, 최신/인기 정렬)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "SharedDeckDetailNotifier 구현 (상세 로드)",
-                      "done": false,
+                      "text": "SharedContent detail provider 구현 (상세 로드)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복사 로직 (복사 API 호출 → 성공 시 내 덱 목록 갱신)",
-                      "done": false,
+                      "text": "복사 로직 (fork API 호출 → provider invalidate)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Unit 테스트 (상태 전이, 복사 로직)",
-                      "done": false,
+                      "text": "API contract + render smoke 테스트",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2934,32 +2944,32 @@
                 {
                   "name": "Controller + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 5,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "공유 덱 탐색 페이지 Widget 구현 (카드 그리드 + 검색바 + 태그 필터)",
-                      "done": false,
+                      "text": "공유 덱/노트 탐색 페이지 Widget 구현 (카드 그리드/리스트 + 검색바 + 정렬)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "공유 덱 카드 Widget 구현 (썸네일 + 제목 + 카드 수 + 태그)",
-                      "done": false,
+                      "text": "공유 덱/노트 카드 Widget 구현 (제목 + 설명 + owner + tags + download count)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "공유 덱 상세 페이지 Widget 구현 (덱 정보 + 카드 미리보기 리스트)",
-                      "done": false,
+                      "text": "공유 덱/노트 상세 페이지 Widget 구현 (backend detail 필드)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복사 버튼 Widget 구현 (복사 확인 다이얼로그 + 로딩 + 성공 피드백)",
-                      "done": false,
+                      "text": "복사 버튼 Widget 구현 (로딩 + 성공/실패 피드백)",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "Widget 테스트 (목록 렌더링, 상세, 복사 버튼)",
-                      "done": false,
+                      "text": "Widget 테스트 (목록/상세 렌더링)",
+                      "done": true,
                       "partial": false
                     }
                   ]
@@ -2967,27 +2977,27 @@
                 {
                   "name": "View + Test",
                   "total": 5,
-                  "done": 0,
+                  "done": 3,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "공유 덱 탐색 페이지 전체 렌더링 확인",
+                      "text": "공유 덱/노트 탐색 페이지 전체 렌더링 확인",
+                      "done": true,
+                      "partial": false
+                    },
+                    {
+                      "text": "덱 상세 → 카드 미리보기 동작 확인 (backend detail 응답에 카드 미리보기 없음)",
                       "done": false,
                       "partial": false
                     },
                     {
-                      "text": "덱 상세 → 카드 미리보기 동작 확인",
-                      "done": false,
+                      "text": "복사 버튼 → fork API 호출 로직 확인",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "복사 버튼 → 내 덱 추가 확인",
-                      "done": false,
-                      "partial": false
-                    },
-                    {
-                      "text": "Smoke Test 1건 (탐색 → 상세 → 복사)",
-                      "done": false,
+                      "text": "Smoke Test 1건 (탐색/상세 API-backed render)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -2998,12 +3008,12 @@
                   ]
                 }
               ],
-              "totalChecks": 42,
-              "doneChecks": 0
+              "totalChecks": 43,
+              "doneChecks": 21
             }
           ],
-          "totalChecks": 172,
-          "doneChecks": 43
+          "totalChecks": 174,
+          "doneChecks": 102
         },
         {
           "week": "W4",
@@ -3011,7 +3021,7 @@
           "steps": [
             {
               "name": "전체 화면 반응형 검증",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
@@ -3034,12 +3044,12 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 4,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "Mobile 뷰포트 전체 화면 검증",
-                      "done": false,
+                      "text": "Mobile 뷰포트 전체 화면 검증 — 2026-06-22 knowledge note/search/graph + learning review render tests PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -3048,8 +3058,8 @@
                       "partial": false
                     },
                     {
-                      "text": "Desktop 뷰포트 전체 화면 검증",
-                      "done": false,
+                      "text": "Desktop 뷰포트 전체 화면 검증 — 2026-06-22 knowledge note/search/graph + learning review render tests PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -3098,12 +3108,12 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "text": "수정 후 전체 테스트 재실행 — `flutter test` PASS (202 tests, 1 skipped)",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -3133,11 +3143,11 @@
                 }
               ],
               "totalChecks": 14,
-              "doneChecks": 0
+              "doneChecks": 3
             },
             {
               "name": "에러/로딩 상태 일관성 검증",
-              "status": "Not Started",
+              "status": "In Progress",
               "phases": [
                 {
                   "name": "E2E 시나리오 정의",
@@ -3160,17 +3170,17 @@
                 {
                   "name": "E2E 테스트 실행",
                   "total": 3,
-                  "done": 0,
+                  "done": 2,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "AppErrorWidget 일관성 전수 검증",
-                      "done": false,
+                      "text": "AppErrorWidget 일관성 전수 검증 — knowledge note/search/graph + learning review route partial",
+                      "done": true,
                       "partial": false
                     },
                     {
-                      "text": "AppLoadingWidget 일관성 전수 검증",
-                      "done": false,
+                      "text": "AppLoadingWidget 일관성 전수 검증 — knowledge note/search/graph + learning review route partial",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -3219,12 +3229,12 @@
                 {
                   "name": "회귀 테스트",
                   "total": 2,
-                  "done": 0,
+                  "done": 1,
                   "partial": 0,
                   "items": [
                     {
-                      "text": "수정 후 전체 테스트 재실행",
-                      "done": false,
+                      "text": "수정 후 전체 테스트 재실행 — `flutter analyze`, focused knowledge tests, `flutter test`, `flutter build web --release` PASS",
+                      "done": true,
                       "partial": false
                     },
                     {
@@ -3254,7 +3264,7 @@
                 }
               ],
               "totalChecks": 13,
-              "doneChecks": 0
+              "doneChecks": 3
             },
             {
               "name": "DESIGN.md 토큰 일관성 검증",
@@ -3379,7 +3389,7 @@
             }
           ],
           "totalChecks": 40,
-          "doneChecks": 0
+          "doneChecks": 6
         },
         {
           "week": "W5",
@@ -3579,6 +3589,126 @@
       "week": "W1",
       "items": [
         {
+          "id": "FR-TL-001",
+          "title": "팀원이 Docker Compose로 전체 로컬 환경을 실행할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-002",
+          "title": "팀원이 AWS EKS 클러스터에 서비스를 배포할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-003",
+          "title": "main branch push 시 자동 빌드/배포가 동작한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-001",
+          "title": "사용자가 Google OAuth로 회원가입할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-002",
+          "title": "사용자가 GitHub OAuth로 로그인할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-003",
+          "title": "인증된 사용자에게 JWT Access/Refresh Token이 발급된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-004",
+          "title": "사용자가 TOTP 기반 MFA를 등록할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-001",
+          "title": "로그인 사용자가 학습 그룹을 생성할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-002",
+          "title": "사용자가 그룹 목록을 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-003",
+          "title": "그룹 소유자가 그룹 정보를 수정/삭제할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-004",
+          "title": "사용자가 그룹에 가입/탈퇴할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-005",
+          "title": "그룹 소유자가 멤버를 초대/강퇴할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-001",
+          "title": "로그인 사용자가 Markdown 노트를 생성할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-002",
+          "title": "사용자가 자신의 노트를 조회/수정/삭제할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-003",
+          "title": "노트 저장 시 `[[note-title]]` 위키링크가 자동 추출된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-001",
+          "title": "knowledge-svc의 모듈 경계가 자동 검증된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-002",
+          "title": "모듈 간 직접 import 시 빌드가 실패한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-003",
+          "title": "Avro 스키마가 Schema Registry에 등록되고 호환성이 검증된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-001",
+          "title": "사용자가 덱(Deck)을 생성/조회/수정/삭제할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-002",
+          "title": "사용자가 덱 내 카드(앞면/뒷면)를 생성/조회/수정/삭제할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-003",
+          "title": "시스템이 복습 rating으로 SM-2 알고리즘을 계산한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-001",
+          "title": "learning-ai 서비스가 Health endpoint로 상태를 확인할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-002",
+          "title": "서비스가 Claude API를 호출하여 텍스트를 생성할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-003",
+          "title": "서비스가 텍스트를 벡터(1536차원)로 변환할 수 있다",
+          "status": "not_started"
+        },
+        {
           "id": "FR-FE-001",
           "title": "Flutter 앱이 라우팅으로 화면 전환된다",
           "status": "not_started"
@@ -3598,6 +3728,116 @@
     {
       "week": "W2",
       "items": [
+        {
+          "id": "FR-TL-101",
+          "title": "팀장이 Kafka 토픽을 설계하고 생성할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-102",
+          "title": "Schema Registry에서 BACKWARD 호환성이 글로벌로 강제된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-103",
+          "title": "Gateway가 4개 서비스로 라우팅한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-101",
+          "title": "사용자가 Stripe Checkout으로 유료 플랜을 결제할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-102",
+          "title": "Stripe Webhook이 결제 이벤트를 처리한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-103",
+          "title": "사용자가 플랜별 기능 제한을 확인할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-104",
+          "title": "사용자가 FCM 푸시 알림을 받기 위해 디바이스를 등록할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-101",
+          "title": "사용자가 학습 활동으로 XP를 적립할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-102",
+          "title": "사용자가 덱/노트를 share_token으로 공유할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-103",
+          "title": "사용자가 공유된 콘텐츠를 검색하고 복사할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-101",
+          "title": "사용자가 노트 간 백링크를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-102",
+          "title": "사용자가 D3.js 지식 그래프 데이터를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-103",
+          "title": "노트 변경 시 Elasticsearch에 자동 동기화된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-101",
+          "title": "노트가 비동기로 청크 분할된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-102",
+          "title": "사용자가 키워드로 노트를 검색할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-101",
+          "title": "사용자가 복습 세션을 시작하여 오늘 복습할 카드를 받을 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-102",
+          "title": "사용자가 카드에 난이도(1=Again/2=Hard/3=Good/4=Easy, 정수)를 매기면 다음 복습일이 계산된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-103",
+          "title": "복습 완료 시 card.reviewed Kafka 이벤트가 발행된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-104",
+          "title": "사용자가 복습 통계(일별 카드 수, 정답률)를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-101",
+          "title": "시스템이 노트 텍스트를 벡터로 변환하여 pgvector에 저장한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-102",
+          "title": "사용자가 시맨틱 검색으로 유사한 노트를 찾을 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-103",
+          "title": "시스템이 노트 내용으로 플래시카드를 자동 생성할 수 있다",
+          "status": "not_started"
+        },
         {
           "id": "FR-FE-101",
           "title": "사용자가 노트 에디터에서 Markdown을 편집할 수 있다",
@@ -3619,6 +3859,86 @@
       "week": "W3",
       "items": [
         {
+          "id": "FR-TL-201",
+          "title": "모든 producer 토픽이 Schema Registry에 BACKWARD 호환으로 등록된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-201",
+          "title": "W2 FCM 디바이스 등록·테스트 잔무가 마무리된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-201",
+          "title": "사용자가 배지를 획득할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-202",
+          "title": "사용자의 레벨이 XP 누적에 따라 자동 상승한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-203",
+          "title": "사용자의 연속 학습 스트릭이 추적된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-204",
+          "title": "사용자가 리더보드를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-205",
+          "title": "gamification.* Kafka 이벤트가 발행된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-201",
+          "title": "사용자가 노트 수정 이력을 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-202",
+          "title": "사용자가 이전 버전으로 노트를 복원할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-203",
+          "title": "사용자가 태그로 노트를 필터링할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-201",
+          "title": "사용자가 하이브리드 검색(BM25+시맨틱)으로 노트를 검색할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-202",
+          "title": "검색 정확도가 측정되고 리포트된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-201",
+          "title": "시스템이 복습 대상 카드가 있으면 card.review.due Kafka 이벤트를 발행한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-202",
+          "title": "사용자가 복습 통계 대시보드를 조회할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-201",
+          "title": "노트 생성 시 AI가 자동으로 플래시카드를 생성한다 (W2 구현분 안정화)",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-202",
+          "title": "시맨틱 캐시로 중복 요청이 최적화된다",
+          "status": "not_started"
+        },
+        {
           "id": "FR-FE-201",
           "title": "사용자가 게이미피케이션 UI를 볼 수 있다",
           "status": "not_started"
@@ -3633,6 +3953,86 @@
     {
       "week": "W4",
       "items": [
+        {
+          "id": "FR-TL-401",
+          "title": "전체 서비스 간 Kafka 이벤트 흐름이 E2E로 동작한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-402",
+          "title": "ArgoCD dev/staging 환경 배포가 검증된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-401",
+          "title": "사용자에게 FCM 푸시 알림이 발송된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-402",
+          "title": "사용자에게 이메일 알림이 발송된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-403",
+          "title": "사용자가 조용한 시간을 설정할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-404",
+          "title": "시스템이 주요 이벤트를 audit_logs에 자동 기록한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-405",
+          "title": "관리자가 테넌트/사용자를 관리할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-401",
+          "title": "사용자가 부적절한 콘텐츠를 신고할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-402",
+          "title": "관리자가 신고를 처리할 수 있다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-401",
+          "title": "W3 잔무 (note 버전·태그) 안정화",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-401",
+          "title": "하이브리드 검색 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-402",
+          "title": "검색 정확도 튜닝 + P0 버그 수정",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-401",
+          "title": "복습 전체 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-401",
+          "title": "AI 카드 자동 생성 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-402",
+          "title": "사용자가 노트 기반으로 AI에게 질문할 수 있다 (RAG Q&A)",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-403",
+          "title": "시맨틱 검색 정확도가 검증된다",
+          "status": "not_started"
+        },
         {
           "id": "FR-FE-401",
           "title": "사용자가 알림 센터에서 알림을 확인할 수 있다",
@@ -3671,6 +4071,81 @@
         {
           "id": "FR-ALL-304",
           "title": "Staging 환경에 배포가 완료된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-301",
+          "title": "전체 서비스 성능이 SLA를 만족한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-302",
+          "title": "Schema Registry 전 토픽이 BACKWARD 호환된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-303",
+          "title": "모니터링 대시보드가 가동된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-304",
+          "title": "API 문서가 최신 상태로 업데이트된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-TL-305",
+          "title": "팀이 최종 발표 자료를 준비하고 시연 리허설을 1회 이상 수행한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-301",
+          "title": "인증 플로우 전체 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-PL-302",
+          "title": "결제 플로우 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-301",
+          "title": "게이미피케이션 전체 플로우가 E2E로 동작한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-EG-302",
+          "title": "커뮤니티 공유/신고 플로우가 E2E로 동작한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-KN-301",
+          "title": "노트 CRUD + 위키링크 + 그래프 전체 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-301",
+          "title": "하이브리드 검색 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-K2-302",
+          "title": "검색 정확도 리포트가 산출된다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LC-301",
+          "title": "복습 세션 전체 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-301",
+          "title": "AI 카드 자동 생성 E2E가 통과한다",
+          "status": "not_started"
+        },
+        {
+          "id": "FR-LA-302",
+          "title": "시맨틱 검색 정확도가 검증된다",
           "status": "not_started"
         },
         {
@@ -3871,6 +4346,11 @@
       "date": "2026-06-21",
       "totalChecks": 481,
       "doneChecks": 168
+    },
+    {
+      "date": "2026-06-22",
+      "totalChecks": 483,
+      "doneChecks": 260
     }
   ],
   "changelog": [
@@ -4064,6 +4544,49 @@
           "type": "boxes_removed",
           "target": "W5 > 에러/로딩 상태 통일",
           "detail": "4개 박스 제거 (10 → 6)"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22T01:53:11.128Z",
+      "commit": "local",
+      "author": "unknown",
+      "file": "WORKFLOW_*",
+      "changes": [
+        {
+          "type": "check_done",
+          "target": "W2 > 노트 에디터 화면 — Markdown 편집 + 미리보기 + 저장",
+          "detail": "21개 항목 완료 (9 → 30)"
+        },
+        {
+          "type": "check_done",
+          "target": "W2 > SRS 복습 화면 — 카드 제시 → 뒤집기 → 난이도 선택 → 다음 카드",
+          "detail": "6개 항목 완료 (30 → 36)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 게이미피케이션 UI — XP 바 + 배지 갤러리 + 레벨 표시 + 레벨업 축하 애니메이션",
+          "detail": "22개 항목 완료 (0 → 22)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 관리자 화면 — 신고 목록 + 처리(승인/거부)",
+          "detail": "16개 항목 완료 (5 → 21)"
+        },
+        {
+          "type": "check_done",
+          "target": "W3 > 공유 덱 탐색/상세 — 공유 콘텐츠 목록 + 복사 버튼",
+          "detail": "21개 항목 완료 (0 → 21)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 전체 화면 반응형 검증",
+          "detail": "3개 항목 완료 (0 → 3)"
+        },
+        {
+          "type": "check_done",
+          "target": "W4 > 에러/로딩 상태 일관성 검증",
+          "detail": "3개 항목 완료 (0 → 3)"
         }
       ]
     }
